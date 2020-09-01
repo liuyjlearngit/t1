@@ -1,0 +1,89 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.32">
+    <actions/>
+    <description>#description#</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>province</name>
+                    <description>province</description>
+                    <defaultValue>#province#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>speciality</name>
+                    <description>speciality</description>
+                    <defaultValue>#speciality#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>domain</name>
+                    <description>domain</description>
+                    <defaultValue>#domain#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>template_username</name>
+                    <description>template_username</description>
+                    <defaultValue>#template_username#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>template_password</name>
+                    <description>template_password</description>
+                    <defaultValue>#template_password#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>template_database</name>
+                    <description>template_database</description>
+                    <defaultValue>#template_database#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>data_username</name>
+                    <description>data_username</description>
+                    <defaultValue>#data_username#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>data_password</name>
+                    <description>data_password</description>
+                    <defaultValue>#data_password#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>data_url</name>
+                    <description>data_url</description>
+                    <defaultValue>#data_url#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty/>
+    </properties>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.66">
+        <script>def pipelineSupport
+            node {
+            stage(&apos;load script&apos;) {
+            sh &apos;curl ${domain}/download/batch_pipeline_gx.groovy -o batch_pipeline.groovy&apos;
+            pipelineSupport = load &apos;batch_pipeline.groovy&apos;
+            }
+            stage(&apos;create db&apos;) {
+            pipelineSupport.initializeDatabase();
+            }
+            stage(&apos;start batch&apos;) {
+            pipelineSupport.startBatch();
+            }
+            stage(&apos;start import&apos;) {
+            pipelineSupport.startImport();
+            }
+            }
+        </script>
+        <sandbox>true</sandbox>
+    </definition>
+    <triggers/>
+    <disabled>false</disabled>
+</flow-definition>

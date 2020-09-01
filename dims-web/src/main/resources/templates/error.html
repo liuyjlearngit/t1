@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout::head(~{::title},~{})">
+  <title>数据核查管理系统</title>
+</head>
+<body th:replace="fragments/layout::body(~{}, ~{::#content}, ~{::script})">
+<div id="content" class="x-hidden">
+  <div class="container">
+    <ul>
+      <li>
+        <div class="feature"><i class="fa fa-database" aria-hidden="true"></i></div>
+        <div class="title">DATA</div>
+        <div class="description">以数据为核心</div>
+      </li>
+      <li>
+        <div class="feature"><i class="fa fa-link" aria-hidden="true"></i></div>
+        <div class="title">INDEX</div>
+        <div class="description">以指标为量化</div>
+      </li>
+      <li>
+        <div class="feature"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+        <div class="title">REPORT</div>
+        <div class="description">以质量为目标</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script th:inline="javascript">
+  var error_status = /*[[${status}]]*/ 'xxx';
+  var error_info = /*[[${error}]]*/ 'error';
+</script>
+<script>
+  Ext.onReady(function () {
+
+    Ext.QuickTips.init(true);
+
+    new Ext.Viewport({
+      layout: 'border',
+      title: 'Ext Layout Browser',
+      layoutConfig: {
+        minWidth: 1000,
+        minHeight: 600
+      },
+      items: [{
+        xtype: 'box',
+        region: 'north',
+        height: 74,
+        applyTo: 'header'
+      }, {
+        xtype: 'box',
+        region: 'south',
+        height: 21,
+        applyTo: 'footer'
+      }, {
+        region: 'center',
+        border: false,
+        layout: 'fit',
+        margins: '2 2 2 2',
+        contentEl: 'content'
+      }],
+      renderTo: Ext.getBody()
+    });
+
+    Ext.Msg.alert(error_status, error_info, function () {
+      window.location.href = WEB_ROOT + '/';
+    });
+  });
+
+</script>
+</body>
+</html>

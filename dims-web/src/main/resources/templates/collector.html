@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout::head(~{::title},~{})">
+  <title>数据采集 - 数据核查管理系统</title>
+</head>
+<body th:replace="fragments/layout::body(~{}, ~{::#content}, ~{::script})">
+<div id="content" class="x-hidden">
+  <div id="chart"></div>
+</div>
+<script src="../static/echarts/echarts.common.min.js" th:src="@{/static/echarts/echarts.common.min.js}"></script>
+<script src="../static/views/collector/component.js" th:src="@{/static/views/collector/component.js}"></script>
+<script src="../static/views/collector/handler.js" th:src="@{/static/views/collector/handler.js}"></script>
+<script src="../static/views/collector/router.js" th:src="@{/static/views/collector/router.js}"></script>
+<script>
+  var contentChart = echarts.init(document.getElementById('chart'));
+
+  Ext.onReady(function () {
+
+    Ext.QuickTips.init(true);
+
+    var treeHandler = new CollectorHierarchyTreeHandler();
+
+    var rootNode = new Ext.tree.AsyncTreeNode({
+      text: '根',
+      type: 'ROOT',
+      expanded: true,
+      children: [{
+        text: '采集报告',
+        iconCls: 'fa fa-cloud-upload',
+        type: 'COLLECTOR_REPORT',
+        expanded: true,
+        children: [{
+          text: '文件数据报告',
+          iconCls: 'fa fa-file-zip-o',
+          type: 'FILE_REPORT',
+          leaf: true
+        }, {
+          text: '业务数据报告',
+          iconCls: 'fa fa-file-text-o',
+          type: 'BUSINESS_REPORT',
+          leaf: true
+        }]
+      }, {
+        text: '采集管理',
+        iconCls: 'fa fa-cog',
+        type: 'COLLECTOR_MANAGEMENT',
+        expanded: true,
+        children: [{
+          text: '任务配置',
+          iconCls: 'fa fa-server',
+          type: 'TASK_CONFIG',
+          leaf: true
+        }, {
+          text: 'FTP配置',
+          iconCls: 'fa fa-server',
+          type: 'FTP_CONFIG',
+          leaf: true
+        }, {
+          text: '采集任务',
+          iconCls: 'fa fa-tasks',
+          type: 'COLLECTOR_TASK',
+          leaf: true
+        }]
+      }]
+    });
+
+    var treePanel = new Ext.tree.TreePanel({
+      region: 'west',
+      border: true,
+      width: 250,
+      split: true,
+      minSize: 160,
+      maxSize: 400,
+      tbar: [{
+        text: '<i class="fa fa-bars" aria-hidden="true"></i> 导航',
+        disabled: true
+      }, '->', {
+        text: '&nbsp;<i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;',
+        disabled: true
+      }],
+      autoScroll: true,
+      root: rootNode,
+      rootVisible: false,
+      listeners: {
+        'dblclick': treeHandler.treeNodeClick
+      }
+    });
+
+    var tabs = new Ext.TabPanel({
+      id: 'ext-content-tab',
+      border: true,
+      region: 'center',
+      activeTab: 0,
+      enableTabScroll: true,
+      items: [{
+        id: 'ext_tab_collector',
+        border: false,
+        title: '<i class="fa fa-cloud-upload" aria-hidden="true"></i> 数据采集管理',
+        layout: 'border',
+        items: [{
+          border: false,
+          region: 'center',
+          contentEl: 'content',
+          listeners: {
+            'resize': function () {
+              if (contentChart) {
+                contentChart.resize();
+              }
+
+            },
+            'afterrender': function () {
+              initContent(contentChart);
+            }
+          }
+        }]
+      }]
+    });
+
+    new Ext.Viewport({
+      layout: 'border',
+      title: 'Ext Layout Browser',
+      layoutConfig: {
+        minWidth: 1000,
+        minHeight: 600
+      },
+      items: [{
+        xtype: 'box',
+        region: 'north',
+        height: 74,
+        applyTo: 'header'
+      }, {
+        xtype: 'box',
+        region: 'south',
+        height: 21,
+        applyTo: 'footer'
+      }, {
+        region: 'center',
+        border: false,
+        layout: 'border',
+        margins: '2 2 2 2',
+        items: [tabs, treePanel]
+      }],
+      renderTo: Ext.getBody()
+    });
+    router();
+  });
+
+</script>
+</body>
+</html>

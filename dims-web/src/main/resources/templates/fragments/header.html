@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Header Fragment</title>
+</head>
+<body>
+<header id="header" th:fragment="header">
+  <div class="clearfix l-common-header">
+    <div class="l-common-header-logo pull-left">
+      <img src="../../static/common/img/logo.png" th:src="@{/static/common/img/logo.png}"/>
+    </div>
+    <div class="l-common-header-title pull-left">
+      <img src="../../static/common/img/title.png" th:src="@{/static/common/img/title.png}"/>
+    </div>
+    <ul class="l-common-header-menu pull-right">
+      <li id="menu-user">
+        <a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> <span id="username">hello</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">个人信息</a></li>
+          <li><a href="#">修改密码</a></li>
+          <li><a href="#" id="logout">退出</a></li>
+        </ul>
+      </li>
+      <li id="menu-message">
+        <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i> 消息</a>
+      </li>
+      <li id="menu-help">
+        <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> 帮助</a>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix l-global-topbar">
+    <ul class="l-global-topbar-menu pull-left">
+      <li>
+      </li>
+      <li>
+        <a th:href="@{/system}" th:class="${#strings.contains(#request.requestURI,'system')} ? 'active' : ''"><i class="fa fa-universal-access" aria-hidden="true"></i> 系统管理</a>
+      </li>
+      <li>
+      </li>
+      <li>
+        <a th:href="@{/meta}" th:class="${#strings.contains(#request.requestURI,'meta')} ? 'active' : ''"><i class="fa fa-connectdevelop" aria-hidden="true"></i> 元数据管理</a>
+      </li>
+      <li>
+      </li>
+      <li>
+        <a th:href="@{/collector}" th:class="${#strings.contains(#request.requestURI,'collector')} ? 'active' : ''"><i class="fa fa-cloud-upload" aria-hidden="true"></i> 数据采集</a>
+      </li>
+      <li>
+      </li>
+      <li>
+        <a th:href="@{/indicator}" th:class="${#strings.contains(#request.requestURI,'indicator')} ? 'active' : ''"><i class="fa fa-tachometer" aria-hidden="true"></i> 数据指标</a>
+      </li>
+      <li>
+        <a th:href="@{/attachment}" th:class="${#strings.contains(#request.requestURI,'attachment')} ? 'active' : ''"><i class="fa fa-briefcase" aria-hidden="true"></i> 数据附件</a>
+      </li>
+      <li>
+        <a th:href="@{/admin}" th:class="${#strings.contains(#request.requestURI,'admin')} ? 'active' : ''"><i class="fa fa-lock" aria-hidden="true"></i> 后台管理</a>
+      </li>
+    </ul>
+  </div>
+</header>
+</body>
+</html>

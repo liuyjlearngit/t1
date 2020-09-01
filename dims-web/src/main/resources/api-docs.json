@@ -1,0 +1,2450 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "更多Spring Boot相关文章请关注：http://blog.didispace.com/",
+    "version": "1.0",
+    "title": "Spring Boot中使用Swagger2构建RESTful APIs",
+    "termsOfService": "http://blog.didispace.com/"
+  },
+  "host": "localhost:10001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "file-config-rest-controller",
+      "description": "File Config Rest Controller"
+    },
+    {
+      "name": "index-folder-rest-controller",
+      "description": "Index Folder Rest Controller"
+    },
+    {
+      "name": "index-rest-controller",
+      "description": "Index Rest Controller"
+    },
+    {
+      "name": "indicator-rest-controller",
+      "description": "Indicator Rest Controller"
+    },
+    {
+      "name": "metadata-rest-controller",
+      "description": "Metadata Rest Controller"
+    },
+    {
+      "name": "permission-rest-controller",
+      "description": "Permission Rest Controller"
+    },
+    {
+      "name": "role-rest-controller",
+      "description": "Role Rest Controller"
+    },
+    {
+      "name": "task-config-rest-controller",
+      "description": "Task Config Rest Controller"
+    },
+    {
+      "name": "task-item-business-rest-controller",
+      "description": "Task Item Business Rest Controller"
+    },
+    {
+      "name": "task-item-file-rest-controller",
+      "description": "Task Item File Rest Controller"
+    },
+    {
+      "name": "task-rest-controller",
+      "description": "Task Rest Controller"
+    },
+    {
+      "name": "user-rest-controller",
+      "description": "User Rest Controller"
+    }
+  ],
+  "paths": {
+    "/api/v1/filelocation": {
+      "get": {
+        "tags": [
+          "file-config-rest-controller"
+        ],
+        "summary": "fileLocations",
+        "operationId": "fileLocationsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "fileLocationId",
+            "in": "query",
+            "description": "fileLocationId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "file-config-rest-controller"
+        ],
+        "summary": "saveFileLocation",
+        "operationId": "saveFileLocationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "encoding",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fileDelimiter",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fileEncoding",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fileLocationId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "host",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "port",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "schema",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "specialityName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "taskConfigId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/filelocation/{fileLocationId}": {
+      "delete": {
+        "tags": [
+          "file-config-rest-controller"
+        ],
+        "summary": "deleteFileLocation",
+        "operationId": "deleteFileLocationUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "fileLocationId",
+            "in": "path",
+            "description": "fileLocationId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/filelocation/{fileLocationId}/test": {
+      "post": {
+        "tags": [
+          "file-config-rest-controller"
+        ],
+        "summary": "testFileLocation",
+        "operationId": "testFileLocationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "fileLocationId",
+            "in": "path",
+            "description": "fileLocationId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/folder": {
+      "get": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "folders",
+        "operationId": "foldersUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "parentFolderId",
+            "in": "query",
+            "description": "parentFolderId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "create",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parentFolderId",
+            "in": "query",
+            "description": "parentFolderId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/folder/index": {
+      "get": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "folderIndices",
+        "operationId": "folderIndicesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "query",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/folder/{folderId}": {
+      "delete": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "delete",
+        "operationId": "deleteUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "cascade",
+            "in": "query",
+            "description": "cascade",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "folderId",
+            "in": "path",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/folder/{folderId}/index": {
+      "post": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "createFolderIndices",
+        "operationId": "createFolderIndicesUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "indexIds",
+            "in": "query",
+            "description": "indexIds",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "deleteFolderIndices",
+        "operationId": "deleteFolderIndicesUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "indexIds",
+            "in": "query",
+            "description": "indexIds",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/folder/{folderId}/rename": {
+      "post": {
+        "tags": [
+          "index-folder-rest-controller"
+        ],
+        "summary": "rename",
+        "operationId": "renameUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "newName",
+            "in": "query",
+            "description": "newName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/index": {
+      "get": {
+        "tags": [
+          "index-rest-controller"
+        ],
+        "summary": "indexes",
+        "operationId": "indexesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "indexId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "specialityName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/indicator/data": {
+      "get": {
+        "tags": [
+          "indicator-rest-controller"
+        ],
+        "summary": "data",
+        "operationId": "dataUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "collectionDate",
+            "in": "query",
+            "description": "collectionDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "folderId",
+            "in": "query",
+            "description": "folderId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "indexId",
+            "in": "query",
+            "description": "indexId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "taskId",
+            "in": "query",
+            "description": "taskId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/indicator/data/export": {
+      "get": {
+        "tags": [
+          "indicator-rest-controller"
+        ],
+        "summary": "dataExport",
+        "operationId": "dataExportUsingGET",
+        "produces": [
+          "application/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "name": "collectionDate",
+            "in": "query",
+            "description": "collectionDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "folderId",
+            "in": "query",
+            "description": "folderId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "indexId",
+            "in": "query",
+            "description": "indexId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "taskId",
+            "in": "query",
+            "description": "taskId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/indicator/nav": {
+      "get": {
+        "tags": [
+          "indicator-rest-controller"
+        ],
+        "summary": "nav",
+        "operationId": "navUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "query",
+            "description": "folderId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/indicator/nav/path/{folderId}": {
+      "get": {
+        "tags": [
+          "indicator-rest-controller"
+        ],
+        "summary": "path",
+        "operationId": "pathUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "description": "folderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/attributetype": {
+      "get": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "attributeType",
+        "operationId": "attributeTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "entityTypeId",
+            "in": "query",
+            "description": "entityTypeId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/createtable": {
+      "post": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "createTable",
+        "operationId": "createTableUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/dictionary": {
+      "get": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "dictionaries",
+        "operationId": "dictionariesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "dictionaryTypeId",
+            "in": "query",
+            "description": "dictionaryTypeId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/entitytype": {
+      "get": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "entityType",
+        "operationId": "entityTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "entityTypeId",
+            "in": "query",
+            "description": "entityTypeId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/hierarchy": {
+      "get": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "hierarchy",
+        "operationId": "hierarchyUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "entityTypeId",
+            "in": "query",
+            "description": "entityTypeId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/metadata/upload": {
+      "post": {
+        "tags": [
+          "metadata-rest-controller"
+        ],
+        "summary": "upload",
+        "operationId": "uploadUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "text/html"
+        ],
+        "parameters": [
+          {
+            "name": "dictionaryTab",
+            "in": "query",
+            "description": "dictionaryTab",
+            "required": false,
+            "type": "integer",
+            "default": 1,
+            "format": "int32"
+          },
+          {
+            "name": "metadataFile",
+            "in": "formData",
+            "description": "metadataFile",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/permission": {
+      "get": {
+        "tags": [
+          "permission-rest-controller"
+        ],
+        "summary": "permission",
+        "operationId": "permissionUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "description": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 20,
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/role": {
+      "get": {
+        "tags": [
+          "role-rest-controller"
+        ],
+        "summary": "roles",
+        "operationId": "rolesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "description": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 20,
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/task": {
+      "get": {
+        "tags": [
+          "task-rest-controller"
+        ],
+        "summary": "tasks",
+        "operationId": "tasksUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "format": "int32"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/task/latest/{size}": {
+      "get": {
+        "tags": [
+          "task-rest-controller"
+        ],
+        "summary": "latest",
+        "operationId": "latestUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "size",
+            "in": "path",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/task/{taskId}/result/export": {
+      "get": {
+        "tags": [
+          "task-rest-controller"
+        ],
+        "summary": "dataExport",
+        "operationId": "dataExportUsingGET_1",
+        "produces": [
+          "application/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "description": "taskId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig": {
+      "get": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "taskConfigs",
+        "operationId": "taskConfigsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          },
+          {
+            "name": "taskConfigId",
+            "in": "query",
+            "description": "taskConfigId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "saveTaskConfig",
+        "operationId": "saveTaskConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "province",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "specialityName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "taskConfigId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/batchexecutetask": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "batchExecuteTask",
+        "operationId": "batchExecuteTaskUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigIds",
+            "in": "query",
+            "description": "taskConfigIds",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/batchexecutevalidation": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "batchExecuteValidation",
+        "operationId": "batchExecuteValidationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigIds",
+            "in": "query",
+            "description": "taskConfigIds",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/configs": {
+      "get": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "configs",
+        "operationId": "configsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/province": {
+      "get": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "province",
+        "operationId": "provinceUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/speciality": {
+      "get": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "speciality",
+        "operationId": "specialityUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/validationresult/export": {
+      "get": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "validationResult",
+        "operationId": "validationResultUsingGET",
+        "produces": [
+          "application/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigIds",
+            "in": "query",
+            "description": "taskConfigIds",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/{taskConfigId}": {
+      "delete": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "deleteTaskConfig",
+        "operationId": "deleteTaskConfigUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigId",
+            "in": "path",
+            "description": "taskConfigId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/{taskConfigId}/createtask": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "createTask",
+        "operationId": "createTaskUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigId",
+            "in": "path",
+            "description": "taskConfigId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/{taskConfigId}/pushtask": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "pushTask",
+        "operationId": "pushTaskUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigId",
+            "in": "path",
+            "description": "taskConfigId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/{taskConfigId}/pushvalidation": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "pushValidation",
+        "operationId": "pushValidationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigId",
+            "in": "path",
+            "description": "taskConfigId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskconfig/{taskConfigId}/validate": {
+      "post": {
+        "tags": [
+          "task-config-rest-controller"
+        ],
+        "summary": "validate",
+        "operationId": "validateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskConfigId",
+            "in": "path",
+            "description": "taskConfigId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskitembusiness": {
+      "get": {
+        "tags": [
+          "task-item-business-rest-controller"
+        ],
+        "summary": "taskItemBusinesses",
+        "operationId": "taskItemBusinessesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "collectionDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "format": "int32"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskitemfile": {
+      "get": {
+        "tags": [
+          "task-item-file-rest-controller"
+        ],
+        "summary": "taskItemFiles",
+        "operationId": "taskItemFilesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "collectionDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "format": "int32"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/taskitemfile/aggregation": {
+      "get": {
+        "tags": [
+          "task-item-file-rest-controller"
+        ],
+        "summary": "taskItemFileAggregation",
+        "operationId": "taskItemFileAggregationUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/user": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "users",
+        "operationId": "usersUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": 20,
+            "format": "int32"
+          },
+          {
+            "name": "mobilePhone",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "save",
+        "operationId": "saveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mobilePhone",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/user/{userId}": {
+      "delete": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "delete",
+        "operationId": "deleteUsingDELETE_1",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/user/{userId}/reset": {
+      "post": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "summary": "reset",
+        "operationId": "resetUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "ResponseDto": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "ResponseDto"
+    }
+  }
+}

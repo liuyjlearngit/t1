@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout::head(~{::title},~{})">
+  <title>数据指标 - 数据核查管理系统</title>
+</head>
+<body th:replace="fragments/layout::body(~{}, ~{}, ~{::script})">
+<script src="../static/views/indicator/component.js" th:src="@{/static/views/indicator/component.js}"></script>
+<script src="../static/views/indicator/handler.js" th:src="@{/static/views/indicator/handler.js}"></script>
+<script src="../static/views/indicator/router.js" th:src="@{/static/views/indicator/router.js}"></script>
+<script>
+  Ext.onReady(function () {
+
+    Ext.QuickTips.init(true);
+
+    var indicatorTreeLoader = new Ext.tree.TreeLoader({
+      paramOrder: ['node', 'folderId'],
+      directFn: function (node, folderId, processDirectResponse) {
+        $.ajax({
+          url: WEB_ROOT + '/app/v1/indicator/nav',
+          headers: {
+            'Authorization': 'Bearer ' + getToken()
+          },
+          data: {
+            folderId: folderId
+          },
+          method: 'GET',
+          cache: false,
+          success: function (data) {
+            if (data.status === 200) {
+              var result = [];
+              for (var i = 0, len = data.data.folders.length; i < len; i++) {
+                result.push({
+                  type: 'INDICATOR_FOLDER',
+                  text: data.data.folders[i].name,
+                  folderId: data.data.folders[i].folderId,
+                  parentFolderId: data.data.folders[i].parentFolderId,
+                  leaf: false,
+                  iconCls: 'fa fa-folder'
+                })
+              }
+              for (var i = 0, len = data.data.indices.length; i < len; i++) {
+                result.push({
+                  type: 'INDICATOR_INDEX',
+                  text: data.data.indices[i].name,
+                  code: data.data.indices[i].code,
+                  indexId: data.data.indices[i].indexId,
+                  folderId: data.data.indices[i].folderId,
+                  entityTypeId: data.data.indices[i].entityTypeId,
+                  leaf: true,
+                  iconCls: 'fa fa-thermometer-half'
+                })
+              }
+              processDirectResponse(result, data);
+            }
+          },
+          error: function (response) {
+            processResponseError(response);
+          }
+        });
+      },
+      listeners: {
+        'beforeload': function (loader, n, callback) {
+          loader.baseParams = {
+            'folderId': n.attributes.folderId
+          };
+        }
+      }
+    });
+
+    var rootNode = new Ext.tree.AsyncTreeNode({
+      text: '数据指标',
+      iconCls: 'fa fa-tachometer',
+      type: 'ROOT'
+    });
+
+    var cascadeExpand = function (n) {
+      if (n.childNodes) {
+        for (var i = 0, len = n.childNodes.length; i < len; i++) {
+          var cn = n.childNodes[i];
+          if (cn.getDepth() < 3) {
+            cn.expand(false, true, cascadeExpand);
+          }
+        }
+      }
+    };
+
+    var treeHandler = new IndicatorNavTreeHandler();
+
+    var treePanel = new Ext.tree.TreePanel({
+      id: 'ext-indicator-nav-tree',
+      region: 'west',
+      border: true,
+      width: 250,
+      split: true,
+      minSize: 160,
+      maxSize: 400,
+      tbar: [{
+        text: '<i class="fa fa-bars" aria-hidden="true"></i> 导航',
+        disabled: true
+      }, '->', {
+        text: '&nbsp;<i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;',
+        disabled: true
+      }],
+      autoScroll: true,
+      root: rootNode,
+      rootVisible: false,
+      loader: indicatorTreeLoader,
+      listeners: {
+        'render': function (c) {
+          c.getRootNode().expand(false, true, function (n) {
+            cascadeExpand(n);
+          });
+        }
+      }
+    });
+    treePanel.getSelectionModel().on('selectionchange', treeHandler.selectionChangeHandler);
+
+    var indicatorGridPanel = new IndicatorDataListViewPanel({
+      id: 'ext-indicator-grid-panel',
+      autoLoad: false,
+      toolbarHandler: function (grid, criteria) {
+        return new IndicatorDataListHandler(grid, treePanel);
+      },
+      appendCriteriaParam: function (params) {
+        var n = treePanel.getSelectionModel().getSelectedNode();
+        if (n) {
+          if (n.attributes.type === 'INDICATOR_FOLDER') {
+            params['folderId'] = n.attributes.folderId;
+          } else if (n.attributes.type === 'INDICATOR_INDEX') {
+            params['folderId'] = n.attributes.folderId;
+            params['indexId'] = n.attributes.indexId;
+          }
+        }
+        var combo = Ext.getCmp('taskItemIndex_taskId');
+        if (combo) {
+          params['taskId'] = combo.getValue();
+        }
+      }
+    });
+
+    var tabs = new Ext.TabPanel({
+      id: 'ext-content-tab',
+      border: true,
+      region: 'center',
+      activeTab: 0,
+      enableTabScroll: true,
+      items: [{
+        id: 'ext_tab_indicator',
+        border: false,
+        title: '<i class="fa fa-tachometer" aria-hidden="true"></i> 指标数据',
+        layout: 'border',
+        items: [indicatorGridPanel]
+      }]
+    });
+
+    new Ext.Viewport({
+      layout: 'border',
+      title: 'Ext Layout Browser',
+      layoutConfig: {
+        minWidth: 1000,
+        minHeight: 600
+      },
+      items: [{
+        xtype: 'box',
+        region: 'north',
+        height: 74,
+        applyTo: 'header'
+      }, {
+        xtype: 'box',
+        region: 'south',
+        height: 21,
+        applyTo: 'footer'
+      }, {
+        region: 'center',
+        border: false,
+        layout: 'border',
+        margins: '2 2 2 2',
+        items: [tabs, treePanel]
+      }],
+      renderTo: Ext.getBody()
+    });
+    router();
+  });
+
+</script>
+</body>
+</html>

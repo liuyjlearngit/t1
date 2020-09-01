@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>用户登录 - 数据核查管理系统</title>
+
+  <link rel="icon" href="../static/favicon.ico" th:href="@{/favicon.ico}">
+
+  <!-- VENDOR CSS -->
+  <link rel="stylesheet" href="../static/webjars/normalize.css/5.0.0/normalize.css" th:href="@{/static/webjars/normalize.css/5.0.0/normalize.css}"/>
+
+  <!-- PAGE CSS -->
+  <link rel="stylesheet" href="../static/common/css/login.css" th:href="@{/static/common/css/login.css}"/>
+
+</head>
+<body>
+<div class="container">
+  <div class="logo-container">
+    <div class="logo">
+      <img src="../static/common/img/logo.png" th:src="@{/static/common/img/logo.png}"/>
+    </div>
+    <div class="title">
+      <img src="../static/common/img/title.png" th:src="@{/static/common/img/title.png}"/>
+    </div>
+  </div>
+  <form>
+    <h1>
+      系统登陆
+    </h1>
+    <div class="form-content">
+      <input id="username" name="username" placeholder="用户名" type="text"/>
+      <input id="password" name="password" placeholder="密码" type="password"/><br/>
+      <input id="submit" class="button" type="submit" value="登录"/>
+
+    </div>
+  </form>
+</div>
+<script src="../static/webjars/jquery/3.3.1-1/jquery.min.js" th:src="@{/static/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+<script th:inline="javascript">
+  var WEB_ROOT = /*[[${#httpServletRequest.getContextPath()}]]*/ "/";
+</script>
+<script>
+  function setToken(token) {
+    window.localStorage.setItem('token', token);
+  }
+
+  function setUsername(username) {
+    window.localStorage.setItem('username', username);
+  }
+
+  $('#submit').click(function () {
+    $.ajax({
+      url: WEB_ROOT + '/app/v1/auth/login',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify({
+        "username": $("#username").val(),
+        "password": $("#password").val()
+      }),
+      method: 'post',
+      cache: false,
+      success: function (data) {
+        setToken(data.token);
+        setUsername(data.username);
+        window.location.href = WEB_ROOT + "/"
+      },
+      error: function (response) {
+        var result;
+        if (response.responseText) {
+          try {
+            result = JSON.parse(response.responseText);
+          } catch (e) {
+          }
+        }
+        result = result || {};
+        if (result.message) {
+          alert('系统异常: ' + response.status + ' - ' + result.message);
+        } else {
+          alert('系统异常: ' + response.status + ' - ' + response.statusText);
+        }
+      }
+    });
+    return false;
+  });
+</script>
+</body>
+</html>

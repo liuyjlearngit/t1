@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout::head(~{::title},~{::link})">
+  <title>后台管理 - 数据核查管理系统</title>
+  <link rel="stylesheet" href="../static/extjs/3.4.1/ux/fileuploadfield/css/fileuploadfield.css" th:href="@{/static/extjs/3.4.1/ux/fileuploadfield/css/fileuploadfield.css}"/>
+</head>
+<body th:replace="fragments/layout::body(~{}, ~{}, ~{::script})">
+<script src="../static/extjs/3.4.1/ux/fileuploadfield/FileUploadField.js" th:src="@{/static/extjs/3.4.1/ux/fileuploadfield/FileUploadField.js}"></script>
+<script src="../static/views/admin/component.js" th:src="@{/static/views/admin/component.js}"></script>
+<script>
+  Ext.onReady(function () {
+
+    Ext.QuickTips.init(true);
+
+    var uploadForm = new MetadataUploadFormPanel({
+      region: 'center'
+    });
+    var tabs = new Ext.TabPanel({
+      id: 'ext-content-tab',
+      border: true,
+      region: 'center',
+      activeTab: 0,
+      enableTabScroll: true,
+      items: [{
+        id: 'ext_tab_collector',
+        border: false,
+        title: '<i class="fa fa-upload" aria-hidden="true"></i> 元数据导入',
+        layout: 'border',
+        tbar: [{
+          text: '<i class="fa fa-upload" aria-hidden="true"></i>  导入&nbsp;',
+          handler: function () {
+            var metadataFile = uploadForm.getForm().findField('metadataFile').getValue();
+            if (!metadataFile) {
+              Ext.Msg.alert('提示', '请选择文件');
+              return;
+            }
+            LoadMask.show();
+            uploadForm.getForm().submit({
+              url: WEB_ROOT + '/api/v1/metadata/upload',
+              params: csrf_params,
+              success: function (fp, response) {
+                LoadMask.hide();
+                Ext.Msg.alert('提示', response.result.message);
+              },
+              failure: function () {
+                LoadMask.hide();
+                Ext.Msg.alert('错误', '系统异常');
+              }
+            });
+          }
+        }, {
+          text: '<i class="fa fa-upload" aria-hidden="true"></i>  建表&nbsp;',
+          handler: function () {
+            LoadMask.show();
+            $.ajax({
+              url: WEB_ROOT + '/api/v1/metadata/createtable',
+              headers: {
+                'Authorization': 'Bearer ' + getToken()
+              },
+              method: 'POST',
+              cache: false,
+              success: function (data) {
+                LoadMask.hide();
+                if (data.status === 200) {
+                  Ext.Msg.alert('提示', data.data);
+                } else {
+                  processDataError(data);
+                }
+              },
+              error: function (response) {
+                LoadMask.hide();
+                processResponseError(response);
+              }
+            });
+          }
+        }],
+        items: [{
+          border: false,
+          layout: 'border',
+          region: 'center',
+          margins: '2 2 2 2',
+          items: [uploadForm]
+        }]
+      }]
+    });
+
+    new Ext.Viewport({
+      layout: 'border',
+      title: 'Ext Layout Browser',
+      layoutConfig: {
+        minWidth: 1000,
+        minHeight: 600
+      },
+      items: [{
+        xtype: 'box',
+        region: 'north',
+        height: 74,
+        applyTo: 'header'
+      }, {
+        xtype: 'box',
+        region: 'south',
+        height: 21,
+        applyTo: 'footer'
+      }, tabs],
+      renderTo: Ext.getBody()
+    });
+  });
+
+</script>
+</body>
+</html>

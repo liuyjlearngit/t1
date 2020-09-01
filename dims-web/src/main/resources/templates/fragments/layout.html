@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title, links)">
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title th:replace="${title}">Fragment Layout Title</title>
+
+  <link rel="icon" href="../../static/favicon.ico" th:href="@{/favicon.ico}">
+
+  <!-- VENDOR CSS -->
+  <link rel="stylesheet" href="../../static/webjars/normalize.css/5.0.0/normalize.css" th:href="@{/static/webjars/normalize.css/5.0.0/normalize.css}"/>
+  <link rel="stylesheet" href="../../static/webjars/font-awesome/4.7.0/css/font-awesome.min.css" th:href="@{/static/webjars/font-awesome/4.7.0/css/font-awesome.min.css}"/>
+  <link rel="stylesheet" href="../../static/extjs/3.4.1/resources/css/ext-all-gray.css" th:href="@{/static/extjs/3.4.1/resources/css/ext-all-gray.css}"/>
+  <link rel="stylesheet" href="../../static/extjs/3.4.1/ux/css/ext-ux-debug.css" th:href="@{/static/extjs/3.4.1/ux/css/ext-ux-debug.css}"/>
+  <link rel="stylesheet" href="../../static/extjs/3.4.1/ux/css/ext-ux-lovcombo.css" th:href="@{/static/extjs/3.4.1/ux/css/ext-ux-lovcombo.css}">
+  <!-- COMMON CSS -->
+  <link rel="stylesheet" href="../../static/common/css/base.css" th:href="@{/static/common/css/base.css}"/>
+
+  <!-- PAGE CSS -->
+  <th:block th:replace="${links}"/>
+</head>
+<body th:fragment="body(nav, content, scripts)">
+
+<!-- HEADER SECTION -->
+<header th:replace="fragments/header :: header">
+  <div>some header here</div>
+</header>
+<!-- HEADER SECTION (END) -->
+
+<!-- NAV SECTION -->
+<div th:replace="${nav}"></div>
+<!-- NAV SECTION (END) -->
+
+<!-- CONTENT SECTION -->
+<div th:replace="${content}"></div>
+<!-- CONTENT SECTION (END) -->
+
+<!-- FOOTER SECTION -->
+<footer th:replace="fragments/footer :: footer">
+  <div>some footer here</div>
+</footer>
+<!-- FOOTER SECTION (END) -->
+
+<!-- VENDOR SCRIPT -->
+<script src="../../static/webjars/jquery/3.3.1-1/jquery.min.js" th:src="@{/static/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+<script src="../../static/extjs/3.4.1/adapter/jquery/ext-jquery-adapter.js" th:src="@{/static/extjs/3.4.1/adapter/jquery/ext-jquery-adapter.js}"></script>
+<script src="../../static/extjs/3.4.1/ext-all-debug.js" th:src="@{/static/extjs/3.4.1/ext-all-debug.js}"></script>
+<script src="../../static/extjs/3.4.1/ux/ext-ux.js" th:src="@{/static/extjs/3.4.1/ux/ext-ux.js}"></script>
+<script src="../../static/extjs/3.4.1/ux/extjs_fontawesome_treenode.js" th:src="@{/static/extjs/3.4.1/ux/extjs_fontawesome_treenode.js}"></script>
+<script src="../../static/extjs/3.4.1/ux/ext-ux-lovcombo.js" th:src="@{/static/extjs/3.4.1/ux/ext-ux-lovcombo.js}"></script>
+<script src="../../static/visionmedia-page.js-71bb2d8/page.js" th:src="@{/static/visionmedia-page.js-71bb2d8/page.js}"></script>
+
+<!-- COMMON SCRIPT -->
+<script src="../../static/common/js/base.js" th:src="@{/static/common/js/base.js}"></script>
+<script th:inline="javascript">
+  var csrf_name = 'csrf';
+  var csrf_value = 'value is here'
+  var csrf_params = {};
+  csrf_params[csrf_name] = csrf_value;
+  var WEB_ROOT = /*[[${#httpServletRequest.getContextPath()}]]*/ "/";
+</script>
+<script src="../../static/common/js/auth.js" th:src="@{/static/common/js/auth.js}"></script>
+
+<!-- PAGE SCRIPT -->
+<th:block th:replace="${scripts}"/>
+</body>
+</html>

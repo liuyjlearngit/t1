@@ -1,0 +1,74 @@
+spring:
+  thymeleaf:
+    cache: false
+    mode: HTML
+  datasource:
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://39.105.14.217:5432/newdims
+    url: jdbc:postgresql://192.168.137.128:5432/dims1
+#    url: jdbc:postgresql://127.0.0.1:5435/dims1
+    username: postgres
+    password: postgres
+    tomcat:
+      validation-query: select 1
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+      max-active: 100
+      min-idle: 5
+  jpa:
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        jdbc.lob.non_contextual_creation: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  mvc:
+    static-path-pattern: /static/**
+  servlet:
+    multipart.max-file-size: 100MB
+  session:
+    timeout: 72h
+    store-type: jdbc
+    jdbc:
+      initialize-schema: never
+      table-name: DIMS_SPRING_SESSION
+  batch:
+    initialize-schema: never
+    table-prefix: DIMS_BATCH_
+    job:
+      enabled: false
+  flyway:
+    enabled: true
+    baseline-version: 8
+    baseline-on-migrate: true
+server:
+  port: 10001
+  servlet:
+    context-path: /
+logging:
+  file: dims.log
+  level:
+    root: info
+jenkins:
+  url: http://192.168.137.128:8080/
+#  url: http://39.105.14.217:8080/jenkins
+  username: admin
+  password: admin
+template:
+  datasource:
+    username: postgres
+    password: postgres
+dims:
+#  url: http://39.105.14.217:10001
+#  url: http://192.168.31.63:10001
+  url: http://172.22.21.90:10001
+#  url: http://10.254.186.189:10001
+  license.key:
+ribbon:
+  ReadTimeOut: 60000
+  ConnectTimeOut: 6000

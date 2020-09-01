@@ -1,0 +1,318 @@
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+header {
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+
+/**
+ * MENU
+ **/
+.l-global-topbar {
+  background-color: #03A9F4;
+  height: 24px;
+}
+
+.l-global-topbar-menu {
+  display: block;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.l-global-topbar-menu > li {
+  display: block;
+  position: relative;
+  float: left;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.l-global-topbar-menu > li > a {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 4px 30px;
+  font-size: 14px;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.l-global-topbar-menu > li > a.active {
+  text-decoration: none;
+  background-color: #00BFFF;
+}
+
+.l-global-topbar-menu > li:hover > a {
+  text-decoration: none;
+  background-color: #00BFFF;
+}
+
+.l-global-topbar-menu > li:focus > a {
+  text-decoration: none;
+}
+
+/**
+ * HEADER
+ **/
+.l-common-header {
+  background: url('../img/zdhszyzs.png') no-repeat center/contain, url('../img/bg3.png') no-repeat center/cover;
+}
+
+.l-common-header-logo {
+  margin-left: 10px;
+  padding: 10px 5px 0 15px;
+}
+
+.l-common-header-title {
+  margin-left: 10px;
+  padding: 10px 15px 0 5px;
+}
+
+.l-common-header-title > img {
+  height: 30px;
+}
+
+.l-common-header-middle {
+  float: left !important;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 7px 15px 0;
+  text-align: center;
+}
+
+.l-common-header-middle > img {
+  height: 40px;
+}
+
+.l-common-header-menu {
+  display: block;
+  margin-right: 10px;
+}
+
+.l-common-header-menu > li {
+  display: block;
+  position: relative;
+  float: left;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.l-common-header-menu > li > a {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 16px 15px 15px;
+  font-size: 16px;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.l-common-header-menu > li:hover > a {
+  text-decoration: none;
+  background-color: #007bff;
+}
+
+.l-common-header-menu > li:focus > a {
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute; /*设置绝对定位，相对于父元素div.dropdown*/
+  top: 100%; /*让下拉菜单项在父菜单项底部，如果父元素不设置相对定位，该元素相对于body元素*/
+  left: 0;
+  z-index: 1000; /*让下拉菜单项不被其他元素遮盖住*/
+  display: none; /*默认隐藏下拉菜单项*/
+  float: left;
+  min-width: 115px;
+  font-size: 14px;
+  list-style: none;
+  background-clip: padding-box;
+  background-color: rgb(241, 241, 241);
+  border: 0 none #fff;
+  box-shadow: 0 1px 5px #dddbdb;
+}
+
+.l-common-header-menu > li:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu > li {
+  padding: 5px 16px;
+  height: 32px;
+  line-height: 32px;
+  display: block;
+  position: relative;
+}
+
+.dropdown-menu > li > a {
+  text-decoration: none;
+  color: #333;
+  cursor: hand;
+}
+
+.dropdown-menu > li:hover > a {
+  text-decoration: none;
+  color: #008eb7;
+}
+
+.dropdown-menu > li:focus > a {
+  text-decoration: none;
+}
+
+#menu-user {
+  border-bottom: 2px solid #00c853;
+}
+
+#menu-message {
+  border-bottom: 2px solid #00BFFF;
+}
+
+#menu-help {
+  border-bottom: 2px solid #F44336;
+}
+
+#nav {
+  padding: 10px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#nav > li > .nav-item {
+  background-color: #03A9F4;
+  border-radius: 10px;
+  width: 100px;
+  display: block;
+  margin: 16px auto;
+  padding: 16px 0;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.nav-item-icon {
+  font-size: 40px;
+}
+
+#nav > li:hover > .nav-item {
+  text-decoration: none;
+  background-color: #00BFFF;
+}
+
+#nav > li:focus > .nav-item {
+  text-decoration: none;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  text-align: center;
+  flex-direction: row
+}
+
+#chart {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+
+#content .container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  background: url('../img/content-bg.png');
+  background-size: cover;
+  color: #FFF;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+#content ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  flex-direction: row
+}
+
+#content li {
+  width: 240px;
+  height: 240px;
+  background-color: #448AFF;
+  margin: 20px;
+  border-radius: 120px;
+}
+
+#content .feature {
+  font-size: 100px;
+  padding-top: 30px;
+}
+
+#content .title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#content .description {
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.footer-info {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  font-size: 12px;
+  position: relative;
+  float: right;
+  display: block;
+  color: #FFF;
+}
+
+
