@@ -1,3 +1,4 @@
+--无线
 drop table if exists OMC;
 drop table if exists BSC;
 drop table if exists BTS;
@@ -126,6 +127,37 @@ create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
 
+--承载网
+drop table if exists CM_DEVICE_IP;
+drop table if exists CM_WARE_IP_BOARD;
+drop table if exists CE_PORT_IP_PTP;
+drop table if exists CE_PORT_IP_FTP;
+drop table if exists CE_LINK_PHYSICS;
+drop table if exists CE_LINK_IP_LOGIC;
+
+create table CM_DEVICE_IP(
+int_id varchar(500),equipment_name varchar(500),equipment_model varchar(500),alisa_name varchar(500),ce_type varchar(500),rackpos_id varchar(500),network_element_type varchar(500),ipv4_management_address varchar(500),ipv6_management_address varchar(500),soft_version varchar(500),lifecycle_status varchar(500),cutin_date varchar(500),qualitor varchar(500),business_system varchar(500),equipment_type varchar(500),network_level varchar(500),pair_equipment_name varchar(500),rated_power varchar(500),cluster_attributes varchar(500),related_equiproom varchar(500),related_site varchar(500),assets_no varchar(500),manufacturer varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CM_WARE_IP_BOARD(
+int_id varchar(500),board_name varchar(500),board_type varchar(500),board_number varchar(500),master_board_number varchar(500),slot_no varchar(500),related_shelf varchar(500),equipment_id varchar(500),series_no varchar(500),manufacturer varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_PORT_IP_PTP(
+int_id varchar(500),physical_port_name varchar(500),port_number varchar(500),port_rate varchar(500),ipv4_address varchar(500),ipv6_address varchar(500),port_status varchar(500),port_type varchar(500),equipment_id varchar(500),line_type varchar(500),related_board varchar(500),province_id  varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_PORT_IP_FTP(
+int_id varchar(500),logical_port_name varchar(500),ipv4_address varchar(500),ipv6_address varchar(500),relation_port varchar(500),equipment_id varchar(500),related_vpn varchar(500),vlan_id varchar(500),city_id varchar(500),province_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_LINK_PHYSICS(
+int_id varchar(500),physical_link_name varchar(500),transmission_circuit_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),a_ip varchar(500),z_equipment varchar(500),z_port varchar(500),z_ip varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_LINK_IP_LOGIC(
+int_id varchar(500),logic_link_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),z_equipment varchar(500),z_port varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create index if not exists idx_CE_LINK_IP_LOGIC2intId on CM_WARE_IP_BOARD(int_id);
+create index if not exists idx_CE_PORT_IP_PTP2intId on CE_PORT_IP_PTP(int_id);
+create index if not exists idx_CE_PORT_IP_FTP2intId on CE_PORT_IP_FTP(int_id);
+create index if not exists idx_CE_LINK_PHYSICS2intId on CE_LINK_PHYSICS(int_id);
+create index if not exists idx_CE_LINK_IP_LOGIC2intId on CE_LINK_IP_LOGIC(int_id);
 
 create or replace function to_number(anyelement) returns numeric as
 $$
