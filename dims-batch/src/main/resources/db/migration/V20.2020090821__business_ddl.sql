@@ -126,6 +126,108 @@ create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
 
+--承载网
+drop table if exists CM_DEVICE_IP;
+drop table if exists CM_WARE_IP_BOARD;
+drop table if exists CE_PORT_IP_PTP;
+drop table if exists CE_PORT_IP_FTP;
+drop table if exists CE_LINK_PHYSICS;
+drop table if exists CE_LINK_IP_LOGIC;
+
+create table CM_DEVICE_IP(
+int_id varchar(500),equipment_name varchar(500),equipment_model varchar(500),alisa_name varchar(500),ce_type varchar(500),rackpos_id varchar(500),network_element_type varchar(500),ipv4_management_address varchar(500),ipv6_management_address varchar(500),soft_version varchar(500),lifecycle_status varchar(500),cutin_date varchar(500),qualitor varchar(500),business_system varchar(500),equipment_type varchar(500),network_level varchar(500),pair_equipment_name varchar(500),rated_power varchar(500),cluster_attributes varchar(500),related_equiproom varchar(500),related_site varchar(500),assets_no varchar(500),manufacturer varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CM_WARE_IP_BOARD(
+int_id varchar(500),board_name varchar(500),board_type varchar(500),board_number varchar(500),master_board_number varchar(500),slot_no varchar(500),related_shelf varchar(500),equipment_id varchar(500),series_no varchar(500),manufacturer varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_PORT_IP_PTP(
+int_id varchar(500),physical_port_name varchar(500),port_number varchar(500),port_rate varchar(500),ipv4_address varchar(500),ipv6_address varchar(500),port_status varchar(500),port_type varchar(500),equipment_id varchar(500),line_type varchar(500),related_board varchar(500),province_id  varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_PORT_IP_FTP(
+int_id varchar(500),logical_port_name varchar(500),ipv4_address varchar(500),ipv6_address varchar(500),relation_port varchar(500),equipment_id varchar(500),related_vpn varchar(500),vlan_id varchar(500),city_id varchar(500),province_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_LINK_PHYSICS(
+int_id varchar(500),physical_link_name varchar(500),transmission_circuit_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),a_ip varchar(500),z_equipment varchar(500),z_port varchar(500),z_ip varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create table CE_LINK_IP_LOGIC(
+int_id varchar(500),logic_link_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),z_equipment varchar(500),z_port varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+);
+create index if not exists idx_CE_LINK_IP_LOGIC2intId on CM_WARE_IP_BOARD(int_id);
+create index if not exists idx_CE_PORT_IP_PTP2intId on CE_PORT_IP_PTP(int_id);
+create index if not exists idx_CE_PORT_IP_FTP2intId on CE_PORT_IP_FTP(int_id);
+create index if not exists idx_CE_LINK_PHYSICS2intId on CE_LINK_PHYSICS(int_id);
+create index if not exists idx_CE_LINK_IP_LOGIC2intId on CE_LINK_IP_LOGIC(int_id);
+
+--家客
+DROP TABLE IF EXISTS CM_HOME_CUST_BUSINESS;
+DROP TABLE IF EXISTS CE_BROADBAND_BUSINESS;
+DROP TABLE IF EXISTS CE_IMS_BUSINESS;
+DROP TABLE IF EXISTS CE_TV_BUSINESS;
+DROP TABLE IF EXISTS RM_AREA_RESIDENTIAL;
+DROP TABLE IF EXISTS RM_GRID;
+DROP TABLE IF EXISTS CUST_RELATION_RESOURCES;
+DROP TABLE IF EXISTS CM_DEVICE_ONU;
+DROP TABLE IF EXISTS CM_ONU_PORT;
+DROP TABLE IF EXISTS CM_DEVICE_OBD;
+DROP TABLE IF EXISTS CM_OBD_PORT;
+DROP TABLE IF EXISTS CE_DEVICE_DMT;
+DROP TABLE IF EXISTS CE_DEVICE_GF;
+DROP TABLE IF EXISTS CM_GF_PORT;
+CREATE TABLE CM_HOME_CUST_BUSINESS (int_id VARCHAR ( 500 ),cust_num VARCHAR ( 500 ),related_standard_address VARCHAR ( 500 ),device_id VARCHAR ( 500 ),port_id VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CE_BROADBAND_BUSINESS (
+int_id VARCHAR ( 500 ),broadband_inst_id VARCHAR ( 500 ),cust_num VARCHAR ( 500 ),enter_type VARCHAR ( 500 ),service_status VARCHAR ( 500 ),band_rate VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CE_IMS_BUSINESS (
+int_id VARCHAR ( 500 ),ims_inst_id VARCHAR ( 500 ),cust_num VARCHAR ( 500 ),service_status VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CE_TV_BUSINESS (
+int_id VARCHAR ( 500 ),tv_inst_id VARCHAR ( 500 ),cust_num VARCHAR ( 500 ),service_status VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE RM_AREA_RESIDENTIAL (
+int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),location_id VARCHAR ( 500 ),ATTRIBUTES VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),related_grid VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE RM_GRID (
+int_id VARCHAR ( 500 ),grid_code VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),related_area VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CUST_RELATION_RESOURCES (
+int_id VARCHAR ( 500 ),room_address_id VARCHAR ( 500 ),relation_device_id VARCHAR ( 500 ),enter_type VARCHAR ( 500 ),relation_device_free_num VARCHAR ( 500 ),residential_id VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CM_DEVICE_ONU (
+int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),loid_password VARCHAR ( 500 ),manufacturer VARCHAR ( 500 ),model VARCHAR ( 500 ),enter_type VARCHAR ( 500 ),relation_up_device_id VARCHAR ( 500 ),relation_up_device_port VARCHAR ( 500 ),port_num VARCHAR ( 500 ),install_box_id VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),maintainor VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CM_ONU_PORT (
+int_id VARCHAR ( 500 ),onu_id VARCHAR ( 500 ),port_num VARCHAR ( 500 ),port_status VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CM_DEVICE_OBD (
+int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),up_to_device VARCHAR ( 500 ),splitter_ratio VARCHAR ( 500 ),link_to_device VARCHAR ( 500 ),link_to_device_port VARCHAR ( 500 ),link_to_device_sub_port VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CM_OBD_PORT (
+int_id VARCHAR ( 500 ),port_no VARCHAR ( 500 ),port_status VARCHAR ( 500 ),related_device VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CE_DEVICE_DMT (
+int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CE_DEVICE_GF (
+int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),sub_device_type VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE TABLE CM_GF_PORT (
+int_id VARCHAR ( 500 ),port_no VARCHAR ( 500 ),port_status VARCHAR ( 500 ),related_device VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_CM_HOME_CUST_BUSINESS2intId ON CM_HOME_CUST_BUSINESS ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_BROADBAND_BUSINESS2intId ON CE_BROADBAND_BUSINESS ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_IMS_BUSINESS2intId ON CE_IMS_BUSINESS ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_TV_BUSINESS2intId ON CE_TV_BUSINESS ( int_id );
+CREATE INDEX IF NOT EXISTS idx_RM_AREA_RESIDENTIAL2intId ON RM_AREA_RESIDENTIAL ( int_id );
+CREATE INDEX IF NOT EXISTS idx_GRID2intId ON RM_GRID ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CUST_RELATION_RESOURCES2intId ON CUST_RELATION_RESOURCES ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CM_DEVICE_ONU2intId ON CM_DEVICE_ONU ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CM_ONU_PORT2intId ON CM_ONU_PORT ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CM_DEVICE_OBD2intId ON CM_DEVICE_OBD ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CM_OBD_PORT2intId ON CM_OBD_PORT ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_DMT2intId ON CE_DEVICE_DMT ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_GF2intId ON CE_DEVICE_GF ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CM_GF_PORT2intId ON CM_GF_PORT ( int_id );
 
 create or replace function to_number(anyelement) returns numeric as
 $$
