@@ -126,6 +126,893 @@ create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
 
+--空间ddl
+drop table if exists RM_AREA_SITE;
+drop table if exists RM_AREA_RESPOINT;
+drop table if exists RM_AREA_ROOM;
+drop table if exists RM_AREA_RACKPOS;
+CREATE TABLE RM_AREA_SITE (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	china_tower_station_code TEXT,
+	qualitor VARCHAR ( 500 ),
+	site_type VARCHAR ( 500 ),
+	address VARCHAR ( 500 ),
+	longitude VARCHAR ( 500 ),
+	latitude VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	releated_dc VARCHAR ( 500 ),
+	alias_name VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE RM_AREA_RESPOINT (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	longitude VARCHAR ( 500 ),
+	latitude VARCHAR ( 500 ),
+	address VARCHAR ( 500 ),
+	res_type VARCHAR ( 500 ),	
+	china_tower_station_code TEXT,
+	qualitor VARCHAR ( 500 ),
+	alias_name VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+    property_right VARCHAR ( 500 ),
+    property_unit VARCHAR ( 500 ),
+	dims_col_result TEXT,
+	dims_col_rtName TEXT 
+);
+CREATE TABLE RM_AREA_ROOM (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	china_tower_station_code TEXT,
+	related_site VARCHAR ( 500 ),
+	floor_num VARCHAR ( 500 ),
+	property_right VARCHAR ( 500 ),
+	property_unit VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	cutin_date VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	equiproom_type VARCHAR ( 500 ),
+	equiproom_level VARCHAR ( 500 ),
+	room_area VARCHAR ( 500 ),
+	china_tower_room_type VARCHAR ( 500 ),
+	shared_unit VARCHAR ( 500 ),
+	alias_name VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	dims_col_result TEXT,
+	dims_col_rtName TEXT 
+);
+CREATE TABLE RM_AREA_RACKPOS (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	serial VARCHAR ( 500 ),
+	equiproom_id VARCHAR ( 500 ),
+	row_id VARCHAR ( 500 ),
+	line_id VARCHAR ( 500 ),
+	using_status VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	dims_col_result TEXT,
+	dims_col_rtName TEXT 
+);
+create index if not exists idx_RM_AREA_SITE2intId on RM_AREA_SITE(int_id);
+create index if not exists idx_RM_AREA_ROOM2intId on RM_AREA_ROOM(int_id);
+create index if not exists idx_RM_AREA_ROOM2related_site on RM_AREA_ROOM(related_site);
+create index if not exists idx_RM_AREA_RESPOINT2intId on RM_AREA_RESPOINT(int_id);
+create index if not exists idx_RM_AREA_RACKPOS2intId on RM_AREA_RACKPOS(int_id);
+create index if not exists idx_RM_AREA_RACKPOS2equiproom_id on RM_AREA_RACKPOS(equiproom_id);
+
+--公共ddl
+drop table if exists CM_DEVICE_RACK;
+drop table if exists CE_WARE_DDM;
+drop table if exists CE_WARE_ODM;
+drop table if exists CM_PORT_DDF;
+drop table if exists CM_PORT_ODF;
+CREATE TABLE CM_DEVICE_RACK (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	rack_type VARCHAR ( 500 ),
+	related_type VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	related_rackposition VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	rack_unit_size VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+CREATE TABLE CE_WARE_DDM (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	row_num VARCHAR ( 500 ),
+	column_num VARCHAR ( 500 ),
+	related_reackpos VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+CREATE TABLE CE_WARE_ODM (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	shelf_id VARCHAR ( 500 ),
+	related_equipment_type VARCHAR ( 500 ),
+	related_device_id VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	row_num VARCHAR ( 500 ),
+	column_num VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+CREATE TABLE CM_PORT_DDF (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	row_column_num VARCHAR ( 500 ),
+	port_status VARCHAR ( 500 ),
+	related_ddm VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+CREATE TABLE CM_PORT_ODF (
+	int_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	row_column_num VARCHAR ( 500 ),
+	port_status VARCHAR ( 500 ),
+	related_odm VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+create index if not exists idx_CM_DEVICE_RACK2intId on CM_DEVICE_RACK(int_id);
+create index if not exists idx_CM_DEVICE_RACK2related_room on CM_DEVICE_RACK(related_room);
+create index if not exists idx_CM_DEVICE_RACK2related_rackposition on CM_DEVICE_RACK(related_rackposition);
+create index if not exists idx_CE_WARE_DDM2intId on CE_WARE_DDM(int_id);
+create index if not exists idx_CE_WARE_DDM2related_reackpos on CE_WARE_DDM(related_reackpos);
+create index if not exists idx_CE_WARE_ODM2intId on CE_WARE_ODM(int_id);
+create index if not exists idx_CE_WARE_ODM2related_device_id on CE_WARE_ODM(related_device_id);
+create index if not exists idx_CM_PORT_DDF2intId on CM_PORT_DDF(int_id);
+create index if not exists idx_CM_PORT_DDF2related_ddm on CM_PORT_DDF(related_ddm);
+create index if not exists idx_CM_PORT_ODF2intId on CM_PORT_ODF(int_id);
+create index if not exists idx_CM_PORT_ODF2related_odm on CM_PORT_ODF(related_odm);
+
+--动环ddl
+drop table if exists RM_SITE_PROPERTY;
+drop table if exists RM_ROOM_PROPERTY;
+drop table if exists CE_DEVICE_PE_TRANSFORM;
+drop table if exists CE_DECIVE_PE_TRANSFORM_DEVICE;
+drop table if exists CE_NET_PE_HIGH_DISTRIBUTION;
+drop table if exists CE_DEVICE_PE_HIGH_DISTRIBUTION;
+drop table if exists CE_NET_PE_HIGH_POWER;
+drop table if exists CE_DEVICE_PE_HIGH_POWER;
+drop table if exists CE_DEVICE_PE_HIGH_DC_DISTRIBUTION;
+drop table if exists CE_NET_PE_LOW_DISTRIBUTION;
+drop table if exists CE_DEVICE_PE_LOW_AC_DISTRIBUTION;
+drop table if exists CE_NET_PE_SWITCH_POWER;
+drop table if exists CE_DEVICE_PE_POWER_GENERATION;
+drop table if exists CE_NET_PE_OPEN_POWER;
+drop table if exists CE_DEVICE_PE_SWITCH_POWER;
+drop table if exists CE_DEVICE_PE_LOW_DC_DISTRIBUTION;
+drop table if exists CE_NET_PE_UPS;
+drop table if exists CE_DEVICE_PE_UPS;
+drop table if exists CE_DEVICE_PE_BATTERY;
+drop table if exists CE_DEVICE_PE_AIR;
+drop table if exists CE_DEVICE_PE_ENERY_SAVE;
+drop table if exists CE_DEVICE_PE_POWER_MONITOR;
+drop table if exists CE_DEVICE_PE_SMART_METER;
+drop table if exists CE_LINK_PE_IN;
+drop table if exists CE_LINK_PE_OUT;
+drop table if exists CE_DEVICE_PE_OTHER;
+
+
+CREATE TABLE RM_SITE_PROPERTY (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	power_site_level VARCHAR ( 500 ),
+	mains_backup_method VARCHAR ( 500 ),
+	power_is_substations VARCHAR ( 500 ),
+	mains_voltage_level VARCHAR ( 500 ),
+	mains_nature VARCHAR ( 500 ),
+	total_mains_number VARCHAR ( 500 ),
+	mains_capacity VARCHAR ( 500 ),
+	mains_configuration_level VARCHAR ( 500 ),
+	total_tank_number VARCHAR ( 500 ),
+	tatal_tank_volume VARCHAR ( 500 ),
+	property_unit VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE RM_ROOM_PROPERTY (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	power_room_type VARCHAR ( 500 ),
+	power_related_site_name VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_TRANSFORM (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	device_type VARCHAR ( 500 ),
+	device_subclass VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	device_code VARCHAR ( 500 ),
+	product_name VARCHAR ( 500 ),
+	vendor_id VARCHAR ( 500 ),
+	rated_power VARCHAR ( 500 ),
+	input_rated_voltage VARCHAR ( 500 ),
+	low_reted_current VARCHAR ( 500 ),
+	backup_method VARCHAR ( 500 ),
+	start_time VARCHAR ( 500 ),
+	estimated_retirement_time VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DECIVE_PE_TRANSFORM_DEVICE (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	device_type VARCHAR ( 500 ),
+	device_subclass VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	device_code VARCHAR ( 500 ),
+	product_name VARCHAR ( 500 ),
+	vendor_id VARCHAR ( 500 ),
+	rated_input_voltage VARCHAR ( 500 ),
+	rated_output_voltage VARCHAR ( 500 ),
+	output_type VARCHAR ( 500 ),
+	total_loading_modules_number VARCHAR ( 500 ),
+	total_match_modules_number VARCHAR ( 500 ),
+	single_module_output_current VARCHAR ( 500 ),
+	start_time VARCHAR ( 500 ),
+	estimated_retirement_time VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_HIGH_DISTRIBUTION (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	system_type VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	system_code VARCHAR ( 500 ),
+	system_rated_capacity VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_HIGH_DISTRIBUTION (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	device_type VARCHAR ( 500 ),
+	device_subclass VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	device_code VARCHAR ( 500 ),
+	product_name VARCHAR ( 500 ),
+	vendor_id VARCHAR ( 500 ),
+	related_system VARCHAR ( 500 ),
+	reted_capacity VARCHAR ( 500 ),
+	start_time VARCHAR ( 500 ),
+	estimated_retirement_time VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_HIGH_POWER (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	system_type VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	system_code VARCHAR ( 500 ),
+	system_rated_capacity VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_HIGH_POWER (
+	int_id VARCHAR ( 500 ),
+	province_id VARCHAR ( 500 ),
+	city_id VARCHAR ( 500 ),
+	county_id VARCHAR ( 500 ),
+	related_site VARCHAR ( 500 ),
+	related_room VARCHAR ( 500 ),
+	device_type VARCHAR ( 500 ),
+	device_subclass VARCHAR ( 500 ),
+	zh_label VARCHAR ( 500 ),
+	device_code VARCHAR ( 500 ),
+	product_name VARCHAR ( 500 ),
+	vendor_id VARCHAR ( 500 ),
+	related_system VARCHAR ( 500 ),
+	rated_output_voltage VARCHAR ( 500 ),
+	monitoring_module_model VARCHAR ( 500 ),
+	total_rack_loading_modules_number VARCHAR ( 500 ),
+	total_rack_match_modules_number VARCHAR ( 500 ),
+	signal_output_rated_capacity VARCHAR ( 500 ),
+	start_time VARCHAR ( 500 ),
+	estimated_retirement_time VARCHAR ( 500 ),
+	lifecycle_status VARCHAR ( 500 ),
+	maintainor VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_HIGH_DC_DISTRIBUTION (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	reted_capacity  VARCHAR ( 500 ),
+	total_input_port  VARCHAR ( 500 ),
+	total_onput_port  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_LOW_DISTRIBUTION (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	system_type  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	system_code  VARCHAR ( 500 ),
+	system_rated_capacity  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_LOW_AC_DISTRIBUTION (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	reted_capacity  VARCHAR ( 500 ),
+	total_input_port  VARCHAR ( 500 ),
+	total_output_port  VARCHAR ( 500 ),
+	device_configuration_spd_brand  VARCHAR ( 500 ),
+	spd_max_rate  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_SWITCH_POWER (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	system_type  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	system_code  VARCHAR ( 500 ),
+	system_rated_capacity  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_POWER_GENERATION (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	rated_power  VARCHAR ( 500 ),
+	rated_output_voltage  VARCHAR ( 500 ),
+	output_voltage_type  VARCHAR ( 500 ),
+	self_start_function  VARCHAR ( 500 ),
+	cooling_method  VARCHAR ( 500 ),
+	installation_method  VARCHAR ( 500 ),
+	backup_method  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_OPEN_POWER (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	system_type  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	system_code  VARCHAR ( 500 ),
+	system_rated_capacity  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_SWITCH_POWER (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	rated_output_voltage  VARCHAR ( 500 ),
+	monitoring_module_model  VARCHAR ( 500 ),
+	total_rack_loading_modules_number  VARCHAR ( 500 ),
+	total_rack_match_modules_number  VARCHAR ( 500 ),
+	signal_output_rated_capacity  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_LOW_DC_DISTRIBUTION (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	reted_capacity  VARCHAR ( 500 ),
+	total_input_port  VARCHAR ( 500 ),
+	total_onput_port  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_NET_PE_UPS (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	system_type  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	system_code  VARCHAR ( 500 ),
+	system_rated_capacity  VARCHAR ( 500 ),
+	work_method  VARCHAR ( 500 ),
+	bus_type  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_UPS (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	related_system  VARCHAR ( 500 ),
+	rated_capacity  VARCHAR ( 500 ),
+	rated_output_voltage  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_BATTERY (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	ralated_power_device  VARCHAR ( 500 ),
+	reted_capacity  VARCHAR ( 500 ),
+	cell_voltage_level  VARCHAR ( 500 ),
+	total_monomers_number  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_AIR (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	rated_cooling_capacity  VARCHAR ( 500 ),
+	rated_input_power  VARCHAR ( 500 ),
+	rated_operating_voltage  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_ENERY_SAVE (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	rated_cooling_capacity  VARCHAR ( 500 ),
+	rated_input_power  VARCHAR ( 500 ),
+	rated_operating_voltage  VARCHAR ( 500 ),
+	total_system_capacity  VARCHAR ( 500 ),
+	system_output_voltage  VARCHAR ( 500 ),
+	total_fan_number  VARCHAR ( 500 ),
+	fan_form  VARCHAR ( 500 ),
+	fan_brand  VARCHAR ( 500 ),
+	fan_rated_power  VARCHAR ( 500 ),
+	solar_modules_number  VARCHAR ( 500 ),
+	solar_modules_brand  VARCHAR ( 500 ),
+	solar_modules_rated_capacity  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_POWER_MONITOR (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_SMART_METER (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	meter_circuit_number  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_LINK_PE_IN (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	related_device_type  VARCHAR ( 500 ),
+	related_device  VARCHAR ( 500 ),
+	branch_type  VARCHAR ( 500 ),
+	branch_type_abbreviation  VARCHAR ( 500 ),
+	branch_number  VARCHAR ( 500 ),
+	branch_active_standby  VARCHAR ( 500 ),
+	branch_rated_capacity  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	branch_name  VARCHAR ( 500 ),
+	down_device_ralated_room  VARCHAR ( 500 ),
+	down_device_name  VARCHAR ( 500 ),
+	down_branch_name  VARCHAR ( 500 ),
+	down_device_type  VARCHAR ( 500 ),
+	down_branch_type  VARCHAR ( 500 ),
+	down_branch_type_abbreviation  VARCHAR ( 500 ),
+	down_branch_number  VARCHAR ( 500 ),
+	down_branch_rated_capacity  VARCHAR ( 500 ),
+	down_branch_active_standby  VARCHAR ( 500 ),
+	down_use_status  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_LINK_PE_OUT (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	res_type  VARCHAR ( 500 ),
+	related_device_type  VARCHAR ( 500 ),
+	related_device  VARCHAR ( 500 ),
+	branch_type  VARCHAR ( 500 ),
+	branch_type_abbreviation  VARCHAR ( 500 ),
+	branch_number  VARCHAR ( 500 ),
+	branch_active_standby  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	branch_name  VARCHAR ( 500 ),
+	down_device_ralated_room  VARCHAR ( 500 ),
+	down_device_type  VARCHAR ( 500 ),
+	branch_rated_capacity  VARCHAR ( 500 ),
+	down_device_name  VARCHAR ( 500 ),
+	major_type  VARCHAR ( 500 ),
+	down_device_related_rack  VARCHAR ( 500 ),
+	rack_switch_name  VARCHAR ( 500 ),
+	down_device_power  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+CREATE TABLE CE_DEVICE_PE_OTHER (
+	int_id  VARCHAR ( 500 ),
+	province_id  VARCHAR ( 500 ),
+	city_id  VARCHAR ( 500 ),
+	county_id  VARCHAR ( 500 ),
+	related_site  VARCHAR ( 500 ),
+	related_room  VARCHAR ( 500 ),
+	device_type  VARCHAR ( 500 ),
+	device_subclass  VARCHAR ( 500 ),
+	zh_label  VARCHAR ( 500 ),
+	device_code  VARCHAR ( 500 ),
+	product_name  VARCHAR ( 500 ),
+	vendor_id  VARCHAR ( 500 ),
+	start_time  VARCHAR ( 500 ),
+	estimated_retirement_time  VARCHAR ( 500 ),
+	lifecycle_status  VARCHAR ( 500 ),
+	maintainor  VARCHAR ( 500 ),
+	qualitor  VARCHAR ( 500 ),
+	rated_capacity  VARCHAR ( 500 ),
+	dims_col_result TEXT,
+    dims_col_rtName TEXT 
+);
+
+create index if not exists idx_RM_SITE_PROPERTY2intId on RM_SITE_PROPERTY(int_id);
+create index if not exists idx_RM_SITE_PROPERTY2zh_label on RM_SITE_PROPERTY(zh_label);
+create index if not exists idx_RM_ROOM_PROPERTY2intId on RM_ROOM_PROPERTY(int_id);
+create index if not exists idx_RM_ROOM_PROPERTY2zh_label on RM_ROOM_PROPERTY(zh_label);
+create index if not exists idx_RM_ROOM_PROPERTY2power_related_site_name on RM_ROOM_PROPERTY(power_related_site_name);
+create index if not exists idx_CE_DEVICE_PE_TRANSFORM2intId on CE_DEVICE_PE_TRANSFORM(int_id);
+create index if not exists idx_CE_DEVICE_PE_TRANSFORM2related_site on CE_DEVICE_PE_TRANSFORM(related_site);
+create index if not exists idx_CE_DEVICE_PE_TRANSFORM2related_room on CE_DEVICE_PE_TRANSFORM(related_room);
+create index if not exists idx_CE_DECIVE_PE_TRANSFORM_DEVICE2intId on CE_DECIVE_PE_TRANSFORM_DEVICE(int_id);
+create index if not exists idx_CE_DECIVE_PE_TRANSFORM_DEVICE2related_site on CE_DECIVE_PE_TRANSFORM_DEVICE(related_site);
+create index if not exists idx_CE_DECIVE_PE_TRANSFORM_DEVICE2related_room on CE_DECIVE_PE_TRANSFORM_DEVICE(related_room);
+create index if not exists idx_CE_NET_PE_HIGH_DISTRIBUTION2intId on CE_NET_PE_HIGH_DISTRIBUTION(int_id);
+create index if not exists idx_CE_NET_PE_HIGH_DISTRIBUTION2related_site on CE_NET_PE_HIGH_DISTRIBUTION(related_site);
+create index if not exists idx_CE_NET_PE_HIGH_DISTRIBUTION2related_room on CE_NET_PE_HIGH_DISTRIBUTION(related_room);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DISTRIBUTION2intId on CE_DEVICE_PE_HIGH_DISTRIBUTION(int_id);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DISTRIBUTION2related_site on CE_DEVICE_PE_HIGH_DISTRIBUTION(related_site);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DISTRIBUTION2related_room on CE_DEVICE_PE_HIGH_DISTRIBUTION(related_room);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DISTRIBUTION2related_system on CE_DEVICE_PE_HIGH_DISTRIBUTION(related_system);
+create index if not exists idx_CE_NET_PE_HIGH_POWER2intId on CE_NET_PE_HIGH_POWER(int_id);
+create index if not exists idx_CE_NET_PE_HIGH_POWER2related_site on CE_NET_PE_HIGH_POWER(related_site);
+create index if not exists idx_CE_NET_PE_HIGH_POWER2related_room on CE_NET_PE_HIGH_POWER(related_room);
+create index if not exists idx_CE_DEVICE_PE_HIGH_POWER2intId on CE_DEVICE_PE_HIGH_POWER(int_id);
+create index if not exists idx_CE_DEVICE_PE_HIGH_POWER2related_room on CE_DEVICE_PE_HIGH_POWER(related_room);
+create index if not exists idx_CE_DEVICE_PE_HIGH_POWER2related_site on CE_DEVICE_PE_HIGH_POWER(related_site);
+create index if not exists idx_CE_DEVICE_PE_HIGH_POWER2related_system on CE_DEVICE_PE_HIGH_POWER(related_system);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DC_DISTRIBUTION2intId on CE_DEVICE_PE_HIGH_DC_DISTRIBUTION(int_id);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DC_DISTRIBUTION2related_room on CE_DEVICE_PE_HIGH_DC_DISTRIBUTION(related_room);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DC_DISTRIBUTION2related_site on CE_DEVICE_PE_HIGH_DC_DISTRIBUTION(related_site);
+create index if not exists idx_CE_DEVICE_PE_HIGH_DC_DISTRIBUTION2related_system on CE_DEVICE_PE_HIGH_DC_DISTRIBUTION(related_system);
+create index if not exists idx_CE_NET_PE_LOW_DISTRIBUTION2intId on CE_NET_PE_LOW_DISTRIBUTION(int_id);
+create index if not exists idx_CE_NET_PE_LOW_DISTRIBUTION2related_room on CE_NET_PE_LOW_DISTRIBUTION(related_room);
+create index if not exists idx_CE_NET_PE_LOW_DISTRIBUTION2related_site on CE_NET_PE_LOW_DISTRIBUTION(related_site);
+create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2intId on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(int_id);
+create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_room on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_room);
+create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_site on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_site);
+create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
+create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
+create index if not exists idx_CE_NET_PE_SWITCH_POWER2intId on CE_NET_PE_SWITCH_POWER(int_id);
+create index if not exists idx_CE_NET_PE_SWITCH_POWER2related_room on CE_NET_PE_SWITCH_POWER(related_room);
+create index if not exists idx_CE_NET_PE_SWITCH_POWER2related_site on CE_NET_PE_SWITCH_POWER(related_site);
+create index if not exists idx_CE_DEVICE_PE_POWER_GENERATION2intId on CE_DEVICE_PE_POWER_GENERATION(int_id);
+create index if not exists idx_CE_DEVICE_PE_POWER_GENERATION2related_room on CE_DEVICE_PE_POWER_GENERATION(related_room);
+create index if not exists idx_CE_DEVICE_PE_POWER_GENERATION2related_site on CE_DEVICE_PE_POWER_GENERATION(related_site);
+create index if not exists idx_CE_DEVICE_PE_POWER_GENERATION2related_system on CE_DEVICE_PE_POWER_GENERATION(related_system);
+create index if not exists idx_CE_NET_PE_OPEN_POWER2intId on CE_NET_PE_OPEN_POWER(int_id);
+create index if not exists idx_CE_NET_PE_OPEN_POWER2related_room on CE_NET_PE_OPEN_POWER(related_room);
+create index if not exists idx_CE_NET_PE_OPEN_POWER2related_site on CE_NET_PE_OPEN_POWER(related_site);
+create index if not exists idx_CE_DEVICE_PE_SWITCH_POWER2intId on CE_DEVICE_PE_SWITCH_POWER(int_id);
+create index if not exists idx_CE_DEVICE_PE_SWITCH_POWER2related_room on CE_DEVICE_PE_SWITCH_POWER(related_room);
+create index if not exists idx_CE_DEVICE_PE_SWITCH_POWER2related_site on CE_DEVICE_PE_SWITCH_POWER(related_site);
+create index if not exists idx_CE_DEVICE_PE_SWITCH_POWER2related_system on CE_DEVICE_PE_SWITCH_POWER(related_system);
+create index if not exists idx_CE_DEVICE_PE_LOW_DC_DISTRIBUTION2intId on CE_DEVICE_PE_LOW_DC_DISTRIBUTION(int_id);
+create index if not exists idx_CE_DEVICE_PE_LOW_DC_DISTRIBUTION2related_room on CE_DEVICE_PE_LOW_DC_DISTRIBUTION(related_room);
+create index if not exists idx_CE_DEVICE_PE_LOW_DC_DISTRIBUTION2related_site on CE_DEVICE_PE_LOW_DC_DISTRIBUTION(related_site);
+create index if not exists idx_CE_DEVICE_PE_LOW_DC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_DC_DISTRIBUTION(related_system);
+create index if not exists idx_CE_NET_PE_UPS2intId on CE_NET_PE_UPS(int_id);
+create index if not exists idx_CE_NET_PE_UPS2related_room on CE_NET_PE_UPS(related_room);
+create index if not exists idx_CE_NET_PE_UPS2related_site on CE_NET_PE_UPS(related_site);
+create index if not exists idx_CE_DEVICE_PE_UPS2intId on CE_DEVICE_PE_UPS(int_id);
+create index if not exists idx_CE_DEVICE_PE_UPS2related_room on CE_DEVICE_PE_UPS(related_room);
+create index if not exists idx_CE_DEVICE_PE_UPS2related_site on CE_DEVICE_PE_UPS(related_site);
+create index if not exists idx_CE_DEVICE_PE_UPS2related_system on CE_DEVICE_PE_UPS(related_system);
+create index if not exists idx_CE_DEVICE_PE_BATTERY2intId on CE_DEVICE_PE_BATTERY(int_id);
+create index if not exists idx_CE_DEVICE_PE_BATTERY2related_room on CE_DEVICE_PE_BATTERY(related_room);
+create index if not exists idx_CE_DEVICE_PE_BATTERY2related_site on CE_DEVICE_PE_BATTERY(related_site);
+create index if not exists idx_CE_DEVICE_PE_BATTERY2ralated_power_device on CE_DEVICE_PE_BATTERY(ralated_power_device);
+create index if not exists idx_CE_DEVICE_PE_AIR2intId on CE_DEVICE_PE_AIR(int_id);
+create index if not exists idx_CE_DEVICE_PE_AIR2related_room on CE_DEVICE_PE_AIR(related_room);
+create index if not exists idx_CE_DEVICE_PE_AIR2related_site on CE_DEVICE_PE_AIR(related_site);
+create index if not exists idx_CE_DEVICE_PE_ENERY_SAVE2intId on CE_DEVICE_PE_ENERY_SAVE(int_id);
+create index if not exists idx_CE_DEVICE_PE_ENERY_SAVE2related_room on CE_DEVICE_PE_ENERY_SAVE(related_room);
+create index if not exists idx_CE_DEVICE_PE_ENERY_SAVE2related_site on CE_DEVICE_PE_ENERY_SAVE(related_site);
+create index if not exists idx_CE_DEVICE_PE_POWER_MONITOR2intId on CE_DEVICE_PE_POWER_MONITOR(int_id);
+create index if not exists idx_CE_DEVICE_PE_POWER_MONITOR2related_room on CE_DEVICE_PE_POWER_MONITOR(related_room);
+create index if not exists idx_CE_DEVICE_PE_POWER_MONITOR2related_site on CE_DEVICE_PE_POWER_MONITOR(related_site);
+create index if not exists idx_CE_DEVICE_PE_SMART_METER2intId on CE_DEVICE_PE_SMART_METER(int_id);
+create index if not exists idx_CE_DEVICE_PE_SMART_METER2related_room on CE_DEVICE_PE_SMART_METER(related_room);
+create index if not exists idx_CE_DEVICE_PE_SMART_METER2related_site on CE_DEVICE_PE_SMART_METER(related_site);
+create index if not exists idx_CE_LINK_PE_IN2intId on CE_LINK_PE_IN(int_id);
+create index if not exists idx_CE_LINK_PE_IN2related_room on CE_LINK_PE_IN(related_room);
+create index if not exists idx_CE_LINK_PE_IN2related_site on CE_LINK_PE_IN(related_site);
+create index if not exists idx_CE_LINK_PE_IN2related_device on CE_LINK_PE_IN(related_device);
+create index if not exists idx_CE_LINK_PE_IN2down_device_name on CE_LINK_PE_IN(down_device_name);
+create index if not exists idx_CE_LINK_PE_IN2down_device_ralated_room on CE_LINK_PE_IN(down_device_ralated_room);
+create index if not exists idx_CE_LINK_PE_OUT2intId on CE_LINK_PE_OUT(int_id);
+create index if not exists idx_CE_LINK_PE_OUT2related_room on CE_LINK_PE_OUT(related_room);
+create index if not exists idx_CE_LINK_PE_OUT2related_site on CE_LINK_PE_OUT(related_site);
+create index if not exists idx_CE_LINK_PE_OUT2related_device on CE_LINK_PE_OUT(related_device);
+create index if not exists idx_CE_LINK_PE_OUT2down_device_name on CE_LINK_PE_OUT(down_device_name);
+create index if not exists idx_CE_LINK_PE_OUT2down_device_ralated_room on CE_LINK_PE_OUT(down_device_ralated_room);
+create index if not exists idx_CE_LINK_PE_OUT2down_device_related_rack on CE_LINK_PE_OUT(down_device_related_rack);
+create index if not exists idx_CE_DEVICE_PE_OTHER2intId on CE_DEVICE_PE_OTHER(int_id);
+create index if not exists idx_CE_DEVICE_PE_OTHER2related_room on CE_DEVICE_PE_OTHER(related_room);
+create index if not exists idx_CE_DEVICE_PE_OTHER2related_site on CE_DEVICE_PE_OTHER(related_site);
+
 --承载网
 drop table if exists CM_DEVICE_IP;
 drop table if exists CM_WARE_IP_BOARD;
@@ -784,3 +1671,23 @@ begin
     return v_distance;
 end;
 $$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION "public"."isfloat"("txtstr" varchar)
+  RETURNS "pg_catalog"."bool" AS $BODY$
+BEGIN
+	RETURN txtStr ~ '^([0-9]+[.][0-9]*|[.][0-9]+)$' ;
+END ; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100
+  
+  CREATE OR REPLACE FUNCTION "public"."isnotfloat"("txtstr" varchar)
+  RETURNS "pg_catalog"."bool" AS $BODY$
+BEGIN
+	if txtStr ~ '^([0-9]+[.][0-9]*|[.][0-9]+)$' then
+     return false;
+	 else
+	   return true;
+   end if;
+END ; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100
