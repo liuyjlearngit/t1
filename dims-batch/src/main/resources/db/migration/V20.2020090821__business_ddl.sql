@@ -1672,22 +1672,22 @@ begin
 end;
 $$ language plpgsql;
 
-CREATE OR REPLACE FUNCTION "public"."isfloat"("txtstr" varchar)
-  RETURNS "pg_catalog"."bool" AS $BODY$
+CREATE OR REPLACE FUNCTION isfloat(txtstr varchar)
+  RETURNS boolean AS $$
 BEGIN
 	RETURN txtStr ~ '^([0-9]+[.][0-9]*|[.][0-9]+)$' ;
-END ; $BODY$
-  LANGUAGE plpgsql VOLATILE
-  COST 100
+END ;
+$$ language plpgsql
+COST 100;
   
-  CREATE OR REPLACE FUNCTION "public"."isnotfloat"("txtstr" varchar)
-  RETURNS "pg_catalog"."bool" AS $BODY$
+  CREATE OR REPLACE FUNCTION isnotfloat(txtstr varchar)
+  RETURNS boolean AS $$
 BEGIN
 	if txtStr ~ '^([0-9]+[.][0-9]*|[.][0-9]+)$' then
      return false;
 	 else
 	   return true;
    end if;
-END ; $BODY$
-  LANGUAGE plpgsql VOLATILE
-  COST 100
+END ;
+ $$ language plpgsql
+ COST 100;
