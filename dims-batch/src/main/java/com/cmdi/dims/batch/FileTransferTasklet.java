@@ -1,19 +1,13 @@
 package com.cmdi.dims.batch;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.cmdi.dims.domain.MetaService;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
+import com.cmdi.dims.sdk.model.FileLocationDto;
+import com.cmdi.dims.sdk.model.TaskConfigDto;
+import com.cmdi.dims.sdk.model.TaskItemFileDto;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.ArrayUtils;
@@ -22,18 +16,20 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.joda.time.DateTime;
 import org.springframework.util.Assert;
 
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-import com.cmdi.dims.sdk.model.FileLocationDto;
-import com.cmdi.dims.sdk.model.TaskConfigDto;
-import com.cmdi.dims.sdk.model.TaskItemFileDto;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 @Slf4j
 public class FileTransferTasklet extends AbstractDimsTasklet {
 
     @Setter
     private MetaService metaService;
-
+    public static final String regex1= "-R";
+    public static final String regex2 = ".*[0-9].*";
     //TODO process中的三个参数怎么传进来
     @Override
     public void process(String taskCode, String province, String speciality) throws Exception {
@@ -83,7 +79,15 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         if (ArrayUtils.isNotEmpty(files)) {
             for (FTPFile file : files) {
                 if (file.isFile()) {
-                    String baseName = FilenameUtils.getBaseName(file.getName());
+                    //String baseName = FilenameUtils.getBaseName(file.getName());
+                    String baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),".");
+                    if(baseName.matches(regex1)){
+                        //filer files which are retransmissions
+                        continue;
+                    }else if(baseName.matches(regex2)){
+                        //in case of split files
+                        baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),"-");
+                    }
                     String fileName = FilenameUtils.getName(file.getName());
                     if (config.getTables().containsKey(baseName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
@@ -159,7 +163,11 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
             Path csvFile = null;
             String extension = FilenameUtils.getExtension(taskItemFile.getName());
             if ("zip".equalsIgnoreCase(extension)) {
+                //!!!unsupport split files
                 BatchUtil.extractCsv(destPath);
+                csvFile = BatchUtil.csvFile(destPath.getParent().toFile(), taskItemFile.getName());
+            }  else if("gz".equalsIgnoreCase(extension)){
+                BatchUtil.unGzipFile(destPath);
                 csvFile = BatchUtil.csvFile(destPath.getParent().toFile(), taskItemFile.getName());
             } else if ("csv".equalsIgnoreCase(extension)) {
                 csvFile = destPath;

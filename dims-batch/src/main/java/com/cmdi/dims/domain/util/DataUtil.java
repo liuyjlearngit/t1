@@ -1,9 +1,9 @@
 package com.cmdi.dims.domain.util;
 
-import java.util.Objects;
-
 import com.cmdi.dims.sdk.model.AttributeType;
 import com.cmdi.dims.sdk.model.MetadataDto;
+
+import java.util.Objects;
 
 public class DataUtil {
 
@@ -51,6 +51,22 @@ public class DataUtil {
         insertStatement.append("DIMS_COL_RESULT, DIMS_COL_RTNAME FROM ")
                 .append(metadata.getEntityType().getExtensionTable())
                 .append(" WHERE DIMS_COL_RESULT IS NOT NULL");
+        if (metadata.getAttributeTypes().stream().anyMatch(at -> Objects.equals(at.getColumnName(), "INT_ID"))) {
+            insertStatement.append(" ORDER BY INT_ID");
+        }
+        insertStatement.append(" LIMIT :LIMIT OFFSET :OFFSET");
+        return insertStatement.toString();
+    }
+    public static String selectAllDataStatement(MetadataDto metadata) {
+        StringBuilder insertStatement = new StringBuilder();
+        insertStatement.append("SELECT ");
+        for (AttributeType attributeType : metadata.getAttributeTypes()) {
+            insertStatement.append(attributeType.getColumnName());
+            insertStatement.append(", ");
+        }
+        insertStatement.append("DIMS_COL_RESULT, DIMS_COL_RTNAME FROM ")
+                .append(metadata.getEntityType().getExtensionTable());
+               // .append(" WHERE DIMS_COL_RESULT IS NOT NULL");
         if (metadata.getAttributeTypes().stream().anyMatch(at -> Objects.equals(at.getColumnName(), "INT_ID"))) {
             insertStatement.append(" ORDER BY INT_ID");
         }

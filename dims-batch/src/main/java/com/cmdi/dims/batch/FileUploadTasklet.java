@@ -59,20 +59,21 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 MetadataDto metadataDto = metaService.loadMetadata(taskItemBusinessDto.getCode(), taskConfigDto.getTableSpecialityMappings().get(taskItemBusinessDto.getCode()));
                 if (Objects.equals(metadataDto.getEntityType().getSpecialityName(), speciality)) {
                     long count = dataService.countErrorData(metadataDto);
-                    if (count > 0) {
-                        try {
-                            File csvFile = exportDataToCsv(metadataDto, location, resultDir, count);
-                            File zipFile = compressCsvFileToZip(csvFile);
-                            log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩成功，原始CSV大小" + FileUtils.sizeOf(csvFile) + "压缩后ZIP大小" + FileUtils.sizeOf(zipFile));
-//                            uploadZipFileToFtp(zipFile, location, date);
-//                            log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据上传成功");
-                            zips.add(zipFile);
-                        } catch (Exception e) {
-                            log.error("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩失败：" + e.getMessage());
-                            throw e;
-                        }
+                    /*if (count > 0) {
+
                     } else {
                         log.warn("实体对象【" + taskItemBusinessDto.getName() + "】没有错误数据，将不会生成错误文件");
+                    }*/
+                    try {
+                        File csvFile = exportDataToCsv(metadataDto, location, resultDir, count);
+                        File zipFile = compressCsvFileToZip(csvFile);
+                        log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩成功，原始CSV大小" + FileUtils.sizeOf(csvFile) + "压缩后ZIP大小" + FileUtils.sizeOf(zipFile));
+//                            uploadZipFileToFtp(zipFile, location, date);
+//                            log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据上传成功");
+                        zips.add(zipFile);
+                    } catch (Exception e) {
+                        log.error("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩失败：" + e.getMessage());
+                        throw e;
                     }
                 } else {
                     log.warn("实体对象【" + taskItemBusinessDto.getName() + "】不是核查的专业对象，将不会生成错误文件");

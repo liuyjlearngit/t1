@@ -1,24 +1,10 @@
 package com.cmdi.dims.batch;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
+import com.cmdi.dims.sdk.model.AttributeType;
+import com.cmdi.dims.sdk.model.FileLocationDto;
+import com.cmdi.dims.sdk.model.MetadataDto;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.compress.archivers.ArchiveEntry;
@@ -33,10 +19,14 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.scope.context.StepContext;
+import java.util.zip.GZIPInputStream;
 
-import com.cmdi.dims.sdk.model.AttributeType;
-import com.cmdi.dims.sdk.model.FileLocationDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class BatchUtil {
 
@@ -45,7 +35,7 @@ public class BatchUtil {
     public static final String LOCKED_AT = "LOCKED_AT";
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
-    static final char DefaultDelimiter = 'Ж';
+    static final char DefaultDelimiter = '^';
 
     static String getProvince(JobExecution jobExecution) {
         return jobExecution.getJobParameters().getString(PROVINCE);
@@ -173,6 +163,7 @@ public class BatchUtil {
 
     static Path csvFile(File taskFolder, String sourceFileName) {
         String baseName = FilenameUtils.getBaseName(sourceFileName);
+        baseName = StringUtils.containsIgnoreCase(baseName,".csv")?StringUtils.substringBefore(baseName,"."):baseName;
         String targetFileName = baseName + ".csv";
 
         Path csvItemFile = Paths.get(taskFolder.getAbsolutePath(), targetFileName);
@@ -232,8 +223,34 @@ public class BatchUtil {
             throw new RuntimeException("压缩文件存在问题，请检查！", e);
         }
     }
+    //String sourceDir,String sourceFileName
+    static void unGzipFile(Path itemFile) {
+        String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(),".")+".csv";
+        try {
+            //建立gzip压缩文件输入流
+            InputStream inStream = Files.newInputStream(itemFile);
+            //建立gzip解压工作流
+            GZIPInputStream gZinStream = new GZIPInputStream(inStream);
+            //建立解压文件输出流
+            Path targetFile = Paths.get(itemFile.getParent().toString(), outFileName);
+            if (Files.exists(targetFile)) {
+                FileUtils.forceDelete(targetFile.toFile());
+            }
+            OutputStream outStream = Files.newOutputStream(targetFile);
 
-    static DefaultFtpSessionFactory createSessionFactory(FileLocationDto location) {
+            int num;
+            byte[] buf = new byte[1024];
+            while ((num = gZinStream.read(buf, 0, buf.length)) != -1) {
+                outStream.write(buf, 0, num);
+            }
+            gZinStream.close();
+            outStream.close();
+            inStream.close();
+        } catch (Exception ex) {
+            System.err.println(ex.toString());
+        }
+    }
+        static DefaultFtpSessionFactory createSessionFactory(FileLocationDto location) {
         DefaultFtpSessionFactory factory = new DefaultFtpSessionFactory();
         factory.setHost(StringUtils.isNotEmpty(location.getHost()) ? location.getHost() : "localhost");
         factory.setPort(null != location.getPort() ? location.getPort() : 21);
