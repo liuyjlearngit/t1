@@ -4152,1532 +4152,1192 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (908000445,908000207,4, '其他', 'admin', 'admin', null);
 
 --插入空间 dims_mm_dictionarytype
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000001, '空间', '站点类型', 'site_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000002, '空间', '位置点类型', 'res_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000003, '空间', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000004, '空间', '产权性质', 'property_right', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000005, '空间', '产权单位', 'property_unit', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000006, '空间', '机房类型', 'equiproom_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000007, '空间', '机房级别', 'equiproom_level', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000008, '空间', '铁塔机房产品分类', 'china_tower_room_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000009, '空间', '共享单位', 'shared_unit', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (902000010, '空间', '机架位置状态', 'using_status', 'admin', 'admin', null);
-
+insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
+(902000001, '空间', '站点类型', 'site_type', 'admin', 'admin', null),
+(902000002, '空间', '位置点类型', 'res_type', 'admin', 'admin', null),
+(902000003, '空间', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null),
+(902000004, '空间', '产权性质', 'property_right', 'admin', 'admin', null),
+(902000005, '空间', '产权单位', 'property_unit', 'admin', 'admin', null),
+(902000006, '空间', '机房类型', 'equiproom_type', 'admin', 'admin', null),
+(902000007, '空间', '机房级别', 'equiproom_level', 'admin', 'admin', null),
+(902000008, '空间', '铁塔机房产品分类', 'china_tower_room_type', 'admin', 'admin', null),
+(902000009, '空间', '共享单位', 'shared_unit', 'admin', 'admin', null),
+(902000010, '空间', '机架位置状态', 'using_status', 'admin', 'admin', null);
 --插入空间 dims_mm_dictionary
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000201, 902000001, 0, '核心站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000202, 902000001, 1, '骨干站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000203, 902000001, 2, '汇聚站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000204, 902000001, 3, '接入站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000205, 902000001, 4, '用户站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000206, 902000001, 5, '其他站点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000207, 902000001, 6, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000208, 902000002, 0, '无线位置点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000209, 902000002, 1, '传输位置点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902002010, 902000002, 2, '全业务位置点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902002011, 902000002, 3, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000212, 902000003, 0, '工程', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000213, 902000003, 1, '在网', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000214, 902000003, 2, '退网', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000215, 902000003, 3, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000216, 902000004, 0, '自建', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000217, 902000004, 1, '合建', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000218, 902000004, 2, '共建', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000219, 902000004, 3, '租用', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000220, 902000004, 4, '购买', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000221, 902000004, 5, '置换', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000222, 902000004, 6, '其它', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000223, 902000004, 7, '移动自有', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000224, 902000004, 8, '移交铁塔', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000225, 902000004, 9, '租用铁塔', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000226, 902000004, 10, '无', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000227, 902000004, 11, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000228, 902000005, 0, '中国移动', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000229, 902000005, 1, '中国联通', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000230, 902000005, 2, '中国电信', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000231, 902000005, 3, '中国铁通', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000232, 902000005, 4, '中国铁塔', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000233, 902000005, 5, '中国广电', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000234, 902000005, 6, '业主', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000235, 902000005, 7, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000236, 902000005, 8, '无', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000237, 902000005, 9, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000238, 902000006, 0, '核心机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000239, 902000006, 1, '无线机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000240, 902000006, 2, '数据机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000241, 902000006, 3, '传输机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000242, 902000006, 4, '动力机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000243, 902000006, 5, 'IDC机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000244, 902000006, 6, '用户机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000245, 902000006, 7, '其他机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000246, 902000006, 8, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000247, 902000007, 0, '核心（省际）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000248, 902000007, 1, '核心（省内）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000249, 902000007, 2, '核心（本地）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000250, 902000007, 3, '汇聚（骨干）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000251, 902000007, 4, '汇聚（普通汇聚）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000252, 902000007, 5, '汇聚（综合业务接入）', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000253, 902000007, 6, '接入', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000254, 902000007, 7, '用户', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000255, 902000007, 8, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000256, 902000008, 0, '移动自维机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000257, 902000008, 1, '砖混机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000258, 902000008, 2, '框架机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000259, 902000008, 3, '彩钢板机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000260, 902000008, 4, '一体化机柜', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000261, 902000008, 5, '租用机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000262, 902000008, 6, '其他机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000263, 902000008, 7, 'RRU拉远', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000264, 902000008, 8, '一体化机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000265, 902000008, 9, '无机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000266, 902000008, 10, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000267, 902000009, 0, '电信', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000268, 902000009, 1, '联通', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000269, 902000009, 2, '电信+联通', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000270, 902000009, 3, '无', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000271, 902000009, 4, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000272, 902000010, 0, '空闲', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000273, 902000010, 1, '预占', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000274, 902000010, 2, '占用', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (902000275, 902000010, 3, '其他', 'admin', 'admin', null);
+insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
+(902000201, 902000001, 0, '核心站点', 'admin', 'admin', null),
+(902000202, 902000001, 1, '骨干站点', 'admin', 'admin', null),
+(902000203, 902000001, 2, '汇聚站点', 'admin', 'admin', null),
+(902000204, 902000001, 3, '接入站点', 'admin', 'admin', null),
+(902000205, 902000001, 4, '用户站点', 'admin', 'admin', null),
+(902000206, 902000001, 5, '其他站点', 'admin', 'admin', null),
+(902000207, 902000001, 6, '其他', 'admin', 'admin', null),
+(902000208, 902000002, 0, '无线位置点', 'admin', 'admin', null),
+(902000209, 902000002, 1, '传输位置点', 'admin', 'admin', null),
+(902002010, 902000002, 2, '全业务位置点', 'admin', 'admin', null),
+(902002011, 902000002, 3, '其他', 'admin', 'admin', null),
+(902000212, 902000003, 0, '工程', 'admin', 'admin', null),
+(902000213, 902000003, 1, '在网', 'admin', 'admin', null),
+(902000214, 902000003, 2, '退网', 'admin', 'admin', null),
+(902000215, 902000003, 3, '其他', 'admin', 'admin', null),
+(902000216, 902000004, 0, '自建', 'admin', 'admin', null),
+(902000217, 902000004, 1, '合建', 'admin', 'admin', null),
+(902000218, 902000004, 2, '共建', 'admin', 'admin', null),
+(902000219, 902000004, 3, '租用', 'admin', 'admin', null),
+(902000220, 902000004, 4, '购买', 'admin', 'admin', null),
+(902000221, 902000004, 5, '置换', 'admin', 'admin', null),
+(902000222, 902000004, 6, '其它', 'admin', 'admin', null),
+(902000223, 902000004, 7, '移动自有', 'admin', 'admin', null),
+(902000224, 902000004, 8, '移交铁塔', 'admin', 'admin', null),
+(902000225, 902000004, 9, '租用铁塔', 'admin', 'admin', null),
+(902000226, 902000004, 10, '无', 'admin', 'admin', null),
+(902000227, 902000004, 11, '其他', 'admin', 'admin', null),
+(902000228, 902000005, 0, '中国移动', 'admin', 'admin', null),
+(902000229, 902000005, 1, '中国联通', 'admin', 'admin', null),
+(902000230, 902000005, 2, '中国电信', 'admin', 'admin', null),
+(902000231, 902000005, 3, '中国铁通', 'admin', 'admin', null),
+(902000232, 902000005, 4, '中国铁塔', 'admin', 'admin', null),
+(902000233, 902000005, 5, '中国广电', 'admin', 'admin', null),
+(902000234, 902000005, 6, '业主', 'admin', 'admin', null),
+(902000235, 902000005, 7, '其他', 'admin', 'admin', null),
+(902000236, 902000005, 8, '无', 'admin', 'admin', null),
+(902000237, 902000005, 9, '其他', 'admin', 'admin', null),
+(902000238, 902000006, 0, '核心机房', 'admin', 'admin', null),
+(902000239, 902000006, 1, '无线机房', 'admin', 'admin', null),
+(902000240, 902000006, 2, '数据机房', 'admin', 'admin', null),
+(902000241, 902000006, 3, '传输机房', 'admin', 'admin', null),
+(902000242, 902000006, 4, '动力机房', 'admin', 'admin', null),
+(902000243, 902000006, 5, 'IDC机房', 'admin', 'admin', null),
+(902000244, 902000006, 6, '用户机房', 'admin', 'admin', null),
+(902000245, 902000006, 7, '其他机房', 'admin', 'admin', null),
+(902000246, 902000006, 8, '其他', 'admin', 'admin', null),
+(902000247, 902000007, 0, '核心（省际）', 'admin', 'admin', null),
+(902000248, 902000007, 1, '核心（省内）', 'admin', 'admin', null),
+(902000249, 902000007, 2, '核心（本地）', 'admin', 'admin', null),
+(902000250, 902000007, 3, '汇聚（骨干）', 'admin', 'admin', null),
+(902000251, 902000007, 4, '汇聚（普通汇聚）', 'admin', 'admin', null),
+(902000252, 902000007, 5, '汇聚（综合业务接入）', 'admin', 'admin', null),
+(902000253, 902000007, 6, '接入', 'admin', 'admin', null),
+(902000254, 902000007, 7, '用户', 'admin', 'admin', null),
+(902000255, 902000007, 8, '其他', 'admin', 'admin', null),
+(902000256, 902000008, 0, '移动自维机房', 'admin', 'admin', null),
+(902000257, 902000008, 1, '砖混机房', 'admin', 'admin', null),
+(902000258, 902000008, 2, '框架机房', 'admin', 'admin', null),
+(902000259, 902000008, 3, '彩钢板机房', 'admin', 'admin', null),
+(902000260, 902000008, 4, '一体化机柜', 'admin', 'admin', null),
+(902000261, 902000008, 5, '租用机房', 'admin', 'admin', null),
+(902000262, 902000008, 6, '其他机房', 'admin', 'admin', null),
+(902000263, 902000008, 7, 'RRU拉远', 'admin', 'admin', null),
+(902000264, 902000008, 8, '一体化机房', 'admin', 'admin', null),
+(902000265, 902000008, 9, '无机房', 'admin', 'admin', null),
+(902000266, 902000008, 10, '其他', 'admin', 'admin', null),
+(902000267, 902000009, 0, '电信', 'admin', 'admin', null),
+(902000268, 902000009, 1, '联通', 'admin', 'admin', null),
+(902000269, 902000009, 2, '电信+联通', 'admin', 'admin', null),
+(902000270, 902000009, 3, '无', 'admin', 'admin', null),
+(902000271, 902000009, 4, '其他', 'admin', 'admin', null),
+(902000272, 902000010, 0, '空闲', 'admin', 'admin', null),
+(902000273, 902000010, 1, '预占', 'admin', 'admin', null),
+(902000274, 902000010, 2, '占用', 'admin', 'admin', null),
+(902000275, 902000010, 3, '其他', 'admin', 'admin', null);
 
 --插入公共 dims_mm_dictionarytype
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (900000001, '公共', '所属空间类型', 'related_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (900000002, '公共', '机架类型', 'rack_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (900000003, '公共', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (900000004, '公共', '所属设备类型', 'related_equipment_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (900000005, '公共', '端子状态', 'port_status', 'admin', 'admin', null);
-
+insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
+(900000001, '公共', '所属空间类型', 'related_type', 'admin', 'admin', null),
+(900000002, '公共', '机架类型', 'rack_type', 'admin', 'admin', null),
+(900000003, '公共', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null),
+(900000004, '公共', '所属设备类型', 'related_equipment_type', 'admin', 'admin', null),
+(900000005, '公共', '端子状态', 'port_status', 'admin', 'admin', null);
 --插入公共 dims_mm_dictionary
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000201, 900000001, 0, '机房', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000202, 900000001, 1, '资源点', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000203, 900000001, 2, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000204, 900000002, 0, '设备机架', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000205, 900000002, 1, 'DDF架', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000206, 900000002, 2, 'ODF架', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000207, 900000002, 3, 'IDC机架', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000208, 900000002, 4, '综合机架', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000209, 900000002, 5, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000210, 900000003, 0, '设计', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000211, 900000003, 1, '工程', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000212, 900000003, 2, '在网', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000213, 900000003, 3, '退网', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000214, 900000003, 4, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000215, 900000004, 0, '光交接箱', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000216, 900000004, 1, '光分纤箱', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000217, 900000004, 2, '光终端盒', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000218, 900000004, 3, '多媒体箱', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000219, 900000004, 4, 'ODF', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000220, 900000004, 5, 'IDF', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000221, 900000004, 6, '其他', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000222, 900000005, 0, '空闲', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000223, 900000005, 1, '预占', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000224, 900000005, 2, '占用', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000225, 900000005, 3, '预释放', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000226, 900000005, 4, '释放', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000227, 900000005, 5, '故障', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (900000228, 900000005, 6, '其他', 'admin', 'admin', null);
+insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
+(900000201, 900000001, 0, '机房', 'admin', 'admin', null),
+(900000202, 900000001, 1, '资源点', 'admin', 'admin', null),
+(900000203, 900000001, 2, '其他', 'admin', 'admin', null),
+(900000204, 900000002, 0, '设备机架', 'admin', 'admin', null),
+(900000205, 900000002, 1, 'DDF架', 'admin', 'admin', null),
+(900000206, 900000002, 2, 'ODF架', 'admin', 'admin', null),
+(900000207, 900000002, 3, 'IDC机架', 'admin', 'admin', null),
+(900000208, 900000002, 4, '综合机架', 'admin', 'admin', null),
+(900000209, 900000002, 5, '其他', 'admin', 'admin', null),
+(900000210, 900000003, 0, '设计', 'admin', 'admin', null),
+(900000211, 900000003, 1, '工程', 'admin', 'admin', null),
+(900000212, 900000003, 2, '在网', 'admin', 'admin', null),
+(900000213, 900000003, 3, '退网', 'admin', 'admin', null),
+(900000214, 900000003, 4, '其他', 'admin', 'admin', null),
+(900000215, 900000004, 0, '光交接箱', 'admin', 'admin', null),
+(900000216, 900000004, 1, '光分纤箱', 'admin', 'admin', null),
+(900000217, 900000004, 2, '光终端盒', 'admin', 'admin', null),
+(900000218, 900000004, 3, '多媒体箱', 'admin', 'admin', null),
+(900000219, 900000004, 4, 'ODF', 'admin', 'admin', null),
+(900000220, 900000004, 5, 'IDF', 'admin', 'admin', null),
+(900000221, 900000004, 6, '其他', 'admin', 'admin', null),
+(900000222, 900000005, 0, '空闲', 'admin', 'admin', null),
+(900000223, 900000005, 1, '预占', 'admin', 'admin', null),
+(900000224, 900000005, 2, '占用', 'admin', 'admin', null),
+(900000225, 900000005, 3, '预释放', 'admin', 'admin', null),
+(900000226, 900000005, 4, '释放', 'admin', 'admin', null),
+(900000227, 900000005, 5, '故障', 'admin', 'admin', null),
+(900000228, 900000005, 6, '其他', 'admin', 'admin', null);
 
 --插入动环 dims_mm_dictionarytype
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000001,'动环','额定工作电压（V）','ratedOperatingVoltage','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000002,'动环','机架单双面','faceSide','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000003,'动环','下游使用状态','useStatus','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000004,'动环','动环专业机房类型','powerRoomType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000005,'动环','下游分路类型缩写','downBranchTypeAbbreviation','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000006,'动环','设备厂家','vendorId','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000007,'动环','额定输入电压（V）','ratedInputVoltage','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000008,'动环','输出类型','outputType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000009,'动环','是否有烟感','isSmoke','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000010,'动环','机架属性','rackAttibute','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000011,'动环','是否有门禁','isAccessControl','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000012,'动环','市电电压等级','mainsVoltageLevel','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000013,'动环','专业类型','majorType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000014,'动环','是否有玻碰','isGlassTouch','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000015,'动环','市电性质','mainsNature','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000016,'动环','市电备份方式','mainsBackupMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000017,'动环','额定输出电压（V）','ratedOutputVoltage','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000018,'动环','市电是否来自不同变电站','powerIsSubstations','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000019,'动环','输入端口数（路）','totalInputPort','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000020,'动环','系统类型','systemType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000021,'动环','生产厂家','vender','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000022,'动环','所属设备类型/下游设备类型','linkDeviceType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000023,'动环','资源类型','resType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000024,'动环','母线类型','busType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000025,'动环','市电油机配置级别','mainsConfigurationLevel','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000026,'动环','设备型号','productName','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000027,'动环','运行方式','operationMode','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000028,'动环','工作方式','workMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000029,'动环','输出电压类型','outputVoltageType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000030,'动环','自启动功能','selfStartFunction','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000031,'动环','动环专业站点级别','powerSiteLevel','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000032,'动环','使用状态','lifecycleStatus','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000033,'动环','维护方式','maintainorMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000034,'动环','是否有红外','isInfrared','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000035,'动环','是否有水浸','isFlooding','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000036,'动环','设备类型','deviceType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000037,'动环','是否有温湿度','isTemperatureHumidity','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000038,'动环','设备使用状态','deviceUseStatus','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000039,'动环','单体电压等级（V）','cellVoltageLevel','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000040,'动环','输入额定电压（V）','inputRatedVoltage','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000041,'动环','下挂风机形式','fanForm','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000042,'动环','安装方式','installationMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000043,'动环','是否有摄像机','isCamera','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000044,'动环','机架类别','rackType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000045,'动环','产权单位','propertyUnit','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000046,'动环','产权性质','propertyRight','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000047,'动环','设备子类','deviceSubclass','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000048,'动环','分路类型缩写','branchTypeAbbreviation','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000049,'动环','备份方式','backupMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000050,'动环','下游分路类型','downBranchType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000051,'动环','分路主备','branchActiveStandby','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000052,'动环','冷却方式','coolingMethod','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000053,'动环','下游分路主备','downBranchActiveStandby','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000054,'动环','分路类型','branchType','admin','admin',null);
-
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO)
-values (907000055,'动环','删除标识','stateflag','admin','admin',null);
-
-
+insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
+(907000001,'动环','额定工作电压（V）','ratedOperatingVoltage','admin','admin',null),
+(907000002,'动环','机架单双面','faceSide','admin','admin',null),
+(907000003,'动环','下游使用状态','useStatus','admin','admin',null),
+(907000004,'动环','动环专业机房类型','powerRoomType','admin','admin',null),
+(907000005,'动环','下游分路类型缩写','downBranchTypeAbbreviation','admin','admin',null),
+(907000006,'动环','设备厂家','vendorId','admin','admin',null),
+(907000007,'动环','额定输入电压（V）','ratedInputVoltage','admin','admin',null),
+(907000008,'动环','输出类型','outputType','admin','admin',null),
+(907000009,'动环','是否有烟感','isSmoke','admin','admin',null),
+(907000010,'动环','机架属性','rackAttibute','admin','admin',null),
+(907000011,'动环','是否有门禁','isAccessControl','admin','admin',null),
+(907000012,'动环','市电电压等级','mainsVoltageLevel','admin','admin',null),
+(907000013,'动环','专业类型','majorType','admin','admin',null),
+(907000014,'动环','是否有玻碰','isGlassTouch','admin','admin',null),
+(907000015,'动环','市电性质','mainsNature','admin','admin',null),
+(907000016,'动环','市电备份方式','mainsBackupMethod','admin','admin',null),
+(907000017,'动环','额定输出电压（V）','ratedOutputVoltage','admin','admin',null),
+(907000018,'动环','市电是否来自不同变电站','powerIsSubstations','admin','admin',null),
+(907000019,'动环','输入端口数（路）','totalInputPort','admin','admin',null),
+(907000020,'动环','系统类型','systemType','admin','admin',null),
+(907000021,'动环','生产厂家','vender','admin','admin',null),
+(907000022,'动环','所属设备类型/下游设备类型','linkDeviceType','admin','admin',null),
+(907000023,'动环','资源类型','resType','admin','admin',null),
+(907000024,'动环','母线类型','busType','admin','admin',null),
+(907000025,'动环','市电油机配置级别','mainsConfigurationLevel','admin','admin',null),
+(907000026,'动环','设备型号','productName','admin','admin',null),
+(907000027,'动环','运行方式','operationMode','admin','admin',null),
+(907000028,'动环','工作方式','workMethod','admin','admin',null),
+(907000029,'动环','输出电压类型','outputVoltageType','admin','admin',null),
+(907000030,'动环','自启动功能','selfStartFunction','admin','admin',null),
+(907000031,'动环','动环专业站点级别','powerSiteLevel','admin','admin',null),
+(907000032,'动环','使用状态','lifecycleStatus','admin','admin',null),
+(907000033,'动环','维护方式','maintainorMethod','admin','admin',null),
+(907000034,'动环','是否有红外','isInfrared','admin','admin',null),
+(907000035,'动环','是否有水浸','isFlooding','admin','admin',null),
+(907000036,'动环','设备类型','deviceType','admin','admin',null),
+(907000037,'动环','是否有温湿度','isTemperatureHumidity','admin','admin',null),
+(907000038,'动环','设备使用状态','deviceUseStatus','admin','admin',null),
+(907000039,'动环','单体电压等级（V）','cellVoltageLevel','admin','admin',null),
+(907000040,'动环','输入额定电压（V）','inputRatedVoltage','admin','admin',null),
+(907000041,'动环','下挂风机形式','fanForm','admin','admin',null),
+(907000042,'动环','安装方式','installationMethod','admin','admin',null),
+(907000043,'动环','是否有摄像机','isCamera','admin','admin',null),
+(907000044,'动环','机架类别','rackType','admin','admin',null),
+(907000045,'动环','产权单位','propertyUnit','admin','admin',null),
+(907000046,'动环','产权性质','propertyRight','admin','admin',null),
+(907000047,'动环','设备子类','deviceSubclass','admin','admin',null),
+(907000048,'动环','分路类型缩写','branchTypeAbbreviation','admin','admin',null),
+(907000049,'动环','备份方式','backupMethod','admin','admin',null),
+(907000050,'动环','下游分路类型','downBranchType','admin','admin',null),
+(907000051,'动环','分路主备','branchActiveStandby','admin','admin',null),
+(907000052,'动环','冷却方式','coolingMethod','admin','admin',null),
+(907000053,'动环','下游分路主备','downBranchActiveStandby','admin','admin',null),
+(907000054,'动环','分路类型','branchType','admin','admin',null),
+(907000055,'动环','删除标识','stateflag','admin','admin',null);
 --插入动环 dims_mm_dictionary
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO)
-values (907000201,907000001,0,'380V','admin','admin',null);
-values (907000202,907000001,1,'220V','admin','admin',null);
-values (907000203,907000001,2,'-48V','admin','admin',null);
-values (907000204,907000001,3,'10000V','admin','admin',null);
-values (907000205,907000001,4,'其他','admin','admin',null);
-values (907000206,907000002,0,'单面','admin','admin',null);
-values (907000207,907000002,1,'双面','admin','admin',null);
-values (907000208,907000002,2,'其他','admin','admin',null);
-values (907000209,907000003,1,'空闲','admin','admin',null);
-values (907000210,907000003,0,'在用','admin','admin',null);
-values (907000211,907000003,2,'其他','admin','admin',null);
-values (907000212,907000004,4,'综合机房','admin','admin',null);
-values (907000213,907000004,2,'数据机房','admin','admin',null);
-values (907000214,907000004,1,'交换机房','admin','admin',null);
-values (907000215,907000004,0,'传输机房','admin','admin',null);
-values (907000216,907000004,7,'发电机房','admin','admin',null);
-values (907000217,907000004,6,'基站机房','admin','admin',null);
-values (907000218,907000004,5,'汇聚机房','admin','admin',null);
-values (907000219,907000004,3,'IDC机房','admin','admin',null);
-values (907000220,907000004,11,'高低压配电机房','admin','admin',null);
-values (907000221,907000004,10,'电力机房','admin','admin',null);
-values (907000222,907000004,9,'空调机房','admin','admin',null);
-values (907000223,907000004,8,'电池机房','admin','admin',null);
-values (907000224,907000004,12,'其他','admin','admin',null);
-values (907000225,907000005,0,'KIN','admin','admin',null);
-values (907000226,907000005,1,'RIN','admin','admin',null);
-values (907000227,907000005,2,'MIN','admin','admin',null);
-values (907000228,907000005,3,'TIN','admin','admin',null);
-values (907000229,907000005,4,'其他','admin','admin',null);
-values (907000230,907000006,118,'东方通信','admin','admin',null);
-values (907000231,907000006,147,'凯瑟琳','admin','admin',null);
-values (907000232,907000006,146,'捷士通','admin','admin',null);
-values (907000233,907000006,145,'邦讯技术','admin','admin',null);
-values (907000234,907000006,121,'成都广越','admin','admin',null);
-values (907000235,907000006,120,'天邑亚斯康','admin','admin',null);
-values (907000236,907000006,119,'北京阔步','admin','admin',null);
-values (907000237,907000006,117,'上海无线通信','admin','admin',null);
-values (907000238,907000006,116,'贝尔','admin','admin',null);
-values (907000239,907000006,115,'南京万全','admin','admin',null);
-values (907000240,907000006,114,'珠海横琴','admin','admin',null);
-values (907000241,907000006,113,'新大陆','admin','admin',null);
-values (907000242,907000006,112,'南京林城','admin','admin',null);
-values (907000243,907000006,111,'福建飞毛腿','admin','admin',null);
-values (907000244,907000006,110,'陕西志和','admin','admin',null);
-values (907000245,907000006,109,'西安天惠','admin','admin',null);
-values (907000246,907000006,108,'深圳中科典','admin','admin',null);
-values (907000247,907000006,107,'陕西顺通','admin','admin',null);
-values (907000248,907000006,106,'沈阳奥维','admin','admin',null);
-values (907000249,907000006,105,'惠州邮电工程','admin','admin',null);
-values (907000250,907000006,104,'西安大唐','admin','admin',null);
-values (907000251,907000006,103,'海马泰克','admin','admin',null);
-values (907000252,907000006,102,'银波达','admin','admin',null);
-values (907000253,907000006,101,'亿同合力','admin','admin',null);
-values (907000254,907000006,100,'西安冠日','admin','admin',null);
-values (907000255,907000006,99,'西安上通','admin','admin',null);
-values (907000256,907000006,98,'东方世纪','admin','admin',null);
-values (907000257,907000006,97,'西安澳通','admin','admin',null);
-values (907000258,907000006,96,'福建安邦','admin','admin',null);
-values (907000259,907000006,95,'陕西国人','admin','admin',null);
-values (907000260,907000006,94,'福建三元达','admin','admin',null);
-values (907000261,907000006,93,'上海成美','admin','admin',null);
-values (907000262,907000006,92,'天津塞乐','admin','admin',null);
-values (907000263,907000006,91,'福建泰克','admin','admin',null);
-values (907000264,907000006,90,'长春巨龙','admin','admin',null);
-values (907000265,907000006,89,'西安华盛','admin','admin',null);
-values (907000266,907000006,88,'深圳联波','admin','admin',null);
-values (907000267,907000006,87,'湖南神风','admin','admin',null);
-values (907000268,907000006,86,'福城','admin','admin',null);
-values (907000269,907000006,85,'湖南通力','admin','admin',null);
-values (907000270,907000006,84,'泰普电讯','admin','admin',null);
-values (907000271,907000006,83,'泛太公司','admin','admin',null);
-values (907000272,907000006,82,'福建邮科所','admin','admin',null);
-values (907000273,907000006,81,'深圳云海','admin','admin',null);
-values (907000274,907000006,80,'福建先创','admin','admin',null);
-values (907000275,907000006,79,'福建信立通','admin','admin',null);
-values (907000276,907000006,78,'深圳华脉','admin','admin',null);
-values (907000277,907000006,77,'浙江三维','admin','admin',null);
-values (907000278,907000006,76,'广州埃信','admin','admin',null);
-values (907000279,907000006,75,'上海罗顿','admin','admin',null);
-values (907000280,907000006,74,'阿尔贡','admin','admin',null);
-values (907000281,907000006,73,'杭州佳必信','admin','admin',null);
-values (907000282,907000006,72,'杭州信嘉诺','admin','admin',null);
-values (907000283,907000006,71,'香港CSL','admin','admin',null);
-values (907000284,907000006,70,'广州阿尔创','admin','admin',null);
-values (907000285,907000006,69,'珠海银邮','admin','admin',null);
-values (907000286,907000006,68,'双联通公司','admin','admin',null);
-values (907000287,907000006,67,'大唐电信','admin','admin',null);
-values (907000288,907000006,66,'北京威奥特','admin','admin',null);
-values (907000289,907000006,65,'东南瑞捷信','admin','admin',null);
-values (907000290,907000006,64,'佛山华志','admin','admin',null);
-values (907000291,907000006,63,'武汉虹信','admin','admin',null);
-values (907000292,907000006,62,'上海飞利','admin','admin',null);
-values (907000293,907000006,61,'上海欣民','admin','admin',null);
-values (907000294,907000006,60,'东方信联','admin','admin',null);
-values (907000295,907000006,59,'北京地杰','admin','admin',null);
-values (907000296,907000006,58,'深圳国人','admin','admin',null);
-values (907000297,907000006,57,'安徽中瑞','admin','admin',null);
-values (907000298,907000006,56,'基恒通信','admin','admin',null);
-values (907000299,907000006,55,'晖速','admin','admin',null);
-values (907000300,907000006,54,'中天','admin','admin',null);
-values (907000301,907000006,53,'亚信','admin','admin',null);
-values (907000302,907000006,52,'欣民','admin','admin',null);
-values (907000303,907000006,51,'西安华天','admin','admin',null);
-values (907000304,907000006,50,'西安海天','admin','admin',null);
-values (907000305,907000006,49,'通宇','admin','admin',null);
-values (907000306,907000006,48,'天韵','admin','admin',null);
-values (907000307,907000006,47,'宁波','admin','admin',null);
-values (907000308,907000006,46,'摩比','admin','admin',null);
-values (907000309,907000006,45,'美化天线','admin','admin',null);
-values (907000310,907000006,44,'罗森伯格','admin','admin',null);
-values (907000311,907000006,43,'凯仕琳','admin','admin',null);
-values (907000312,907000006,42,'捷仕通','admin','admin',null);
-values (907000313,907000006,41,'华天','admin','admin',null);
-values (907000314,907000006,40,'虹信','admin','admin',null);
-values (907000315,907000006,39,'亨鑫','admin','admin',null);
-values (907000316,907000006,38,'好来登','admin','admin',null);
-values (907000317,907000006,37,'国信','admin','admin',null);
-values (907000318,907000006,36,'广州杰赛','admin','admin',null);
-values (907000319,907000006,35,'广东通宇','admin','admin',null);
-values (907000320,907000006,34,'广东盛路','admin','admin',null);
-values (907000321,907000006,33,'广东桑瑞','admin','admin',null);
-values (907000322,907000006,32,'福建省光微电子科技有限公司','admin','admin',null);
-values (907000323,907000006,31,'电联','admin','admin',null);
-values (907000324,907000006,30,'奥维','admin','admin',null);
-values (907000325,907000006,29,'安弗施','admin','admin',null);
-values (907000326,907000006,28,'安德鲁','admin','admin',null);
-values (907000327,907000006,27,'京信通信','admin','admin',null);
-values (907000328,907000006,26,'中移物联网','admin','admin',null);
-values (907000329,907000006,25,'诺基亚','admin','admin',null);
-values (907000330,907000006,24,'飞烽','admin','admin',null);
-values (907000331,907000006,23,'博威','admin','admin',null);
-values (907000332,907000006,22,'京信','admin','admin',null);
-values (907000333,907000006,21,'三维','admin','admin',null);
-values (907000334,907000006,20,'三元达','admin','admin',null);
-values (907000335,907000006,19,'邦讯','admin','admin',null);
-values (907000336,907000006,18,'Juniper','admin','admin',null);
-values (907000337,907000006,17,'普天','admin','admin',null);
-values (907000338,907000006,16,'诺西','admin','admin',null);
-values (907000339,907000006,15,'新邮通','admin','admin',null);
-values (907000340,907000006,14,'大唐','admin','admin',null);
-values (907000341,907000006,13,'阿尔卡特','admin','admin',null);
-values (907000342,907000006,12,'爱立信','admin','admin',null);
-values (907000343,907000006,11,'思科','admin','admin',null);
-values (907000344,907000006,10,'北京中昱光通科技','admin','admin',null);
-values (907000345,907000006,9,'中兴皖通','admin','admin',null);
-values (907000346,907000006,8,'光迅科技','admin','admin',null);
-values (907000347,907000006,7,'比威','admin','admin',null);
-values (907000348,907000006,6,'光迅','admin','admin',null);
-values (907000349,907000006,5,'瑞斯康达','admin','admin',null);
-values (907000350,907000006,4,'格林威尔','admin','admin',null);
-values (907000351,907000006,3,'上海贝尔','admin','admin',null);
-values (907000352,907000006,2,'烽火','admin','admin',null);
-values (907000353,907000006,1,'中兴','admin','admin',null);
-values (907000354,907000006,0,'华为','admin','admin',null);
-values (907000355,907000006,144,'浙江卓信','admin','admin',null);
-values (907000356,907000006,143,'西瑞克斯','admin','admin',null);
-values (907000357,907000006,142,'鑫众通信','admin','admin',null);
-values (907000358,907000006,141,'北京索富三博','admin','admin',null);
-values (907000359,907000006,140,'北京兆维','admin','admin',null);
-values (907000360,907000006,139,'北京西伯尔','admin','admin',null);
-values (907000361,907000006,138,'润达丰','admin','admin',null);
-values (907000362,907000006,137,'镕灏通信','admin','admin',null);
-values (907000363,907000006,136,'上海东洲','admin','admin',null);
-values (907000364,907000006,135,'粤海电信','admin','admin',null);
-values (907000365,907000006,134,'桑瑞电讯','admin','admin',null);
-values (907000366,907000006,133,'深圳波导','admin','admin',null);
-values (907000367,907000006,132,'深圳科捷','admin','admin',null);
-values (907000368,907000006,131,'杭州东信','admin','admin',null);
-values (907000369,907000006,130,'未知厂家','admin','admin',null);
-values (907000370,907000006,129,'沈阳天机','admin','admin',null);
-values (907000371,907000006,128,'广州佳讯','admin','admin',null);
-values (907000372,907000006,127,'福建瑞科','admin','admin',null);
-values (907000373,907000006,126,'西湖电子','admin','admin',null);
-values (907000374,907000006,125,'深圳信诺','admin','admin',null);
-values (907000375,907000006,124,'浙江通普','admin','admin',null);
-values (907000376,907000006,123,'京高综合通信','admin','admin',null);
-values (907000377,907000006,122,'联通国脉','admin','admin',null);
-values (907000378,907000006,148,'其他','admin','admin',null);
-values (907000379,907000007,1,'-48V','admin','admin',null);
-values (907000380,907000007,0,'24V','admin','admin',null);
-values (907000381,907000007,2,'其他','admin','admin',null);
-values (907000382,907000008,0,'交流','admin','admin',null);
-values (907000383,907000008,1,'直流','admin','admin',null);
-values (907000384,907000008,2,'其他','admin','admin',null);
-values (907000385,907000009,0,'是','admin','admin',null);
-values (907000386,907000009,1,'否','admin','admin',null);
-values (907000387,907000009,2,'其他','admin','admin',null);
-values (907000388,907000010,0,'ODF','admin','admin',null);
-values (907000389,907000010,2,'DDF','admin','admin',null);
-values (907000390,907000010,1,'综合配线架 （IDF）','admin','admin',null);
-values (907000391,907000010,4,'设备机架','admin','admin',null);
-values (907000392,907000010,3,'IDC','admin','admin',null);
-values (907000393,907000010,5,'其他','admin','admin',null);
-values (907000394,907000011,1,'否','admin','admin',null);
-values (907000395,907000011,0,'是','admin','admin',null);
-values (907000396,907000011,2,'其他','admin','admin',null);
-values (907000397,907000012,4,'无市电','admin','admin',null);
-values (907000398,907000012,0,'10KV以上','admin','admin',null);
-values (907000399,907000012,1,'10KV','admin','admin',null);
-values (907000400,907000012,3,'220V','admin','admin',null);
-values (907000401,907000012,2,'380V','admin','admin',null);
-values (907000402,907000012,5,'其他','admin','admin',null);
-values (907000403,907000013,10,'VOLTE子专业','admin','admin',null);
-values (907000404,907000013,8,'短信子专业','admin','admin',null);
-values (907000405,907000013,0,'传输内线专业','admin','admin',null);
-values (907000406,907000013,1,'动环专业','admin','admin',null);
-values (907000407,907000013,7,'wlan专业','admin','admin',null);
-values (907000408,907000013,2,'家客专业','admin','admin',null);
-values (907000409,907000013,6,'集客专业','admin','admin',null);
-values (907000410,907000013,5,'物联网专业','admin','admin',null);
-values (907000411,907000013,4,'无线网专业','admin','admin',null);
-values (907000412,907000013,3,'承载网专业','admin','admin',null);
-values (907000413,907000013,16,'网络云专业','admin','admin',null);
-values (907000414,907000013,15,'5G核心网子专业','admin','admin',null);
-values (907000415,907000013,14,'HSS子专业','admin','admin',null);
-values (907000416,907000013,13,'分组域子专业','admin','admin',null);
-values (907000417,907000013,12,'电路域子专业','admin','admin',null);
-values (907000418,907000013,11,'IMS子专业','admin','admin',null);
-values (907000419,907000013,9,'智能网子专业','admin','admin',null);
-values (907000420,907000013,17,'其他','admin','admin',null);
-values (907000421,907000014,1,'否','admin','admin',null);
-values (907000422,907000014,0,'是','admin','admin',null);
-values (907000423,907000014,2,'其他','admin','admin',null);
-values (907000424,907000015,2,'风力发电','admin','admin',null);
-values (907000425,907000015,4,'风光互补','admin','admin',null);
-values (907000426,907000015,3,'太阳能发电','admin','admin',null);
-values (907000427,907000015,1,'市电直供','admin','admin',null);
-values (907000428,907000015,0,'市电转供','admin','admin',null);
-values (907000429,907000015,5,'用于电费分析','admin','admin',null);
-values (907000430,907000015,6,'其他','admin','admin',null);
-values (907000431,907000016,1,'1+1热备','admin','admin',null);
-values (907000432,907000016,0,'单路引入','admin','admin',null);
-values (907000433,907000016,2,'1+1冷备','admin','admin',null);
-values (907000434,907000016,3,'N+0','admin','admin',null);
-values (907000435,907000016,4,'N+1热备','admin','admin',null);
-values (907000436,907000016,5,'N+1冷备','admin','admin',null);
-values (907000437,907000016,6,'其他','admin','admin',null);
-values (907000438,907000017,3,'240V','admin','admin',null);
-values (907000439,907000017,1,'-48V','admin','admin',null);
-values (907000440,907000017,5,'360V','admin','admin',null);
-values (907000441,907000017,7,'10000V','admin','admin',null);
-values (907000442,907000017,6,'380V','admin','admin',null);
-values (907000443,907000017,0,'24V','admin','admin',null);
-values (907000444,907000017,4,'336V','admin','admin',null);
-values (907000445,907000017,2,'220V','admin','admin',null);
-values (907000446,907000017,8,'其他','admin','admin',null);
-values (907000447,907000018,0,'是','admin','admin',null);
-values (907000448,907000018,1,'否','admin','admin',null);
-values (907000449,907000018,2,'其他','admin','admin',null);
-values (907000450,907000019,1,'2','admin','admin',null);
-values (907000451,907000019,0,'1','admin','admin',null);
-values (907000452,907000019,2,'其他','admin','admin',null);
-values (907000453,907000020,5,'UPS系统','admin','admin',null);
-values (907000454,907000020,4,'开关电源系统','admin','admin',null);
-values (907000455,907000020,3,'发电系统','admin','admin',null);
-values (907000456,907000020,2,'低压配电系统','admin','admin',null);
-values (907000457,907000020,1,'高压直流系统','admin','admin',null);
-values (907000458,907000020,0,'高压配电系统','admin','admin',null);
-values (907000459,907000020,6,'其他','admin','admin',null);
-values (907000460,907000021,3,'上海贝尔','admin','admin',null);
-values (907000461,907000021,2,'烽火','admin','admin',null);
-values (907000462,907000021,1,'中兴','admin','admin',null);
-values (907000463,907000021,0,'华为','admin','admin',null);
-values (907000464,907000021,4,'其他','admin','admin',null);
-values (907000465,907000022,2,'高压配电','admin','admin',null);
-values (907000466,907000022,5,'低压交流配电','admin','admin',null);
-values (907000467,907000022,4,'高压直流配电','admin','admin',null);
-values (907000468,907000022,3,'高压直流电源','admin','admin',null);
-values (907000469,907000022,1,'变换设备','admin','admin',null);
-values (907000470,907000022,0,'变压器','admin','admin',null);
-values (907000471,907000022,15,'其他设备','admin','admin',null);
-values (907000472,907000022,14,'智能电表','admin','admin',null);
-values (907000473,907000022,13,'动环监控','admin','admin',null);
-values (907000474,907000022,12,'节能设备','admin','admin',null);
-values (907000475,907000022,11,'空调','admin','admin',null);
-values (907000476,907000022,10,'蓄电池','admin','admin',null);
-values (907000477,907000022,9,'UPS设备','admin','admin',null);
-values (907000478,907000022,8,'低压直流配电','admin','admin',null);
-values (907000479,907000022,7,'开关电源','admin','admin',null);
-values (907000480,907000022,6,'发电机组','admin','admin',null);
-values (907000481,907000022,16,'其他','admin','admin',null);
-values (907000482,907000023,10,'低压配电系统','admin','admin',null);
-values (907000483,907000023,12,'发电系统','admin','admin',null);
-values (907000484,907000023,13,'发电机组','admin','admin',null);
-values (907000485,907000023,14,'开关电源系统','admin','admin',null);
-values (907000486,907000023,15,'开关电源','admin','admin',null);
-values (907000487,907000023,16,'低压直流配电','admin','admin',null);
-values (907000488,907000023,17,'UPS系统','admin','admin',null);
-values (907000489,907000023,18,'UPS设备','admin','admin',null);
-values (907000490,907000023,3,'变压器','admin','admin',null);
-values (907000491,907000023,4,'变换设备','admin','admin',null);
-values (907000492,907000023,5,'高压配电系统','admin','admin',null);
-values (907000493,907000023,6,'高压配电','admin','admin',null);
-values (907000494,907000023,7,'高压直流系统','admin','admin',null);
-values (907000495,907000023,8,'高压直流电源','admin','admin',null);
-values (907000496,907000023,9,'高压直流配电','admin','admin',null);
-values (907000497,907000023,11,'低压交流配电','admin','admin',null);
-values (907000498,907000023,19,'蓄电池','admin','admin',null);
-values (907000499,907000023,20,'空调','admin','admin',null);
-values (907000500,907000023,21,'节能设备','admin','admin',null);
-values (907000501,907000023,22,'动环监控','admin','admin',null);
-values (907000502,907000023,23,'智能电表','admin','admin',null);
-values (907000503,907000023,24,'其他设备','admin','admin',null);
-values (907000504,907000023,25,'动环专业内输出分路','admin','admin',null);
-values (907000505,907000023,26,'跨专业输出分路','admin','admin',null);
-values (907000506,907000023,2,'机房动环属性','admin','admin',null);
-values (907000507,907000023,1,'位置点动环属性','admin','admin',null);
-values (907000508,907000023,27,'其他','admin','admin',null);
-values (907000509,907000024,0,'单母线','admin','admin',null);
-values (907000510,907000024,1,'双母线','admin','admin',null);
-values (907000511,907000024,2,'三母线','admin','admin',null);
-values (907000512,907000024,3,'其他','admin','admin',null);
-values (907000513,907000025,1,'1市电1油机','admin','admin',null);
-values (907000514,907000025,2,'2市电1油机','admin','admin',null);
-values (907000515,907000025,3,'1市电2油机','admin','admin',null);
-values (907000516,907000025,4,'2市电2油机','admin','admin',null);
-values (907000517,907000025,0,'1市电无油机','admin','admin',null);
-values (907000518,907000025,5,'其他','admin','admin',null);
-values (907000519,907000026,182,'KFR-120LW/S-J2values (2)','admin','admin',null);
-values (907000520,907000026,70,'CXD100','admin','admin',null);
-values (907000521,907000026,71,'CXD120E','admin','admin',null);
-values (907000522,907000026,72,'CXD130','admin','admin',null);
-values (907000523,907000026,73,'CXD45','admin','admin',null);
-values (907000524,907000026,74,'CXD60','admin','admin',null);
-values (907000525,907000026,75,'CXD95','admin','admin',null);
-values (907000526,907000026,76,'D180GAH','admin','admin',null);
-values (907000527,907000026,77,'D220GDAH','admin','admin',null);
-values (907000528,907000026,78,'D260GAH','admin','admin',null);
-values (907000529,907000026,79,'D280GAH','admin','admin',null);
-values (907000530,907000026,80,'D28GAVGH','admin','admin',null);
-values (907000531,907000026,81,'D28GAVH','admin','admin',null);
-values (907000532,907000026,82,'D360GAH','admin','admin',null);
-values (907000533,907000026,83,'EXD100AⅡ','admin','admin',null);
-values (907000534,907000026,84,'EXD30A2','admin','admin',null);
-values (907000535,907000026,85,'EXD60AII','admin','admin',null);
-values (907000536,907000026,86,'EXD70DA','admin','admin',null);
-values (907000537,907000026,87,'EXD70DW','admin','admin',null);
-values (907000538,907000026,88,'EXD80Ⅱ','admin','admin',null);
-values (907000539,907000026,89,'EXD80A','admin','admin',null);
-values (907000540,907000026,90,'EXD80AII','admin','admin',null);
-values (907000541,907000026,91,'EXD85A','admin','admin',null);
-values (907000542,907000026,92,'EXD90AⅡ','admin','admin',null);
-values (907000543,907000026,93,'EXD90AI','admin','admin',null);
-values (907000544,907000026,94,'EXU60AII','admin','admin',null);
-values (907000545,907000026,95,'U180GAGH','admin','admin',null);
-values (907000546,907000026,96,'U180GAVGH','admin','admin',null);
-values (907000547,907000026,97,'U240GAGH','admin','admin',null);
-values (907000548,907000026,98,'U240GAVGH','admin','admin',null);
-values (907000549,907000026,99,'U240GH','admin','admin',null);
-values (907000550,907000026,100,'U260GAGH','admin','admin',null);
-values (907000551,907000026,101,'U260GAVGH','admin','admin',null);
-values (907000552,907000026,102,'U28GAH','admin','admin',null);
-values (907000553,907000026,103,'U28GAVGH','admin','admin',null);
-values (907000554,907000026,104,'U360GAGH','admin','admin',null);
-values (907000555,907000026,105,'U37GAVGH','admin','admin',null);
-values (907000556,907000026,106,'U42GAVGH','admin','admin',null);
-values (907000557,907000026,107,'FVY125FPVL','admin','admin',null);
-values (907000558,907000026,108,'FVY71LQVLBvalues (KFR-75L)','admin','admin',null);
-values (907000559,907000026,109,'ASD351A','admin','admin',null);
-values (907000560,907000026,110,'ASD-482A','admin','admin',null);
-values (907000561,907000026,111,'ASD-602A','admin','admin',null);
-values (907000562,907000026,112,'ASD-692A','admin','admin',null);
-values (907000563,907000026,113,'ASD-692G','admin','admin',null);
-values (907000564,907000026,114,'ASD-702A','admin','admin',null);
-values (907000565,907000026,115,'CCD-271A','admin','admin',null);
-values (907000566,907000026,116,'CCD-451A','admin','admin',null);
-values (907000567,907000026,117,'CCD-702A','admin','admin',null);
-values (907000568,907000026,118,'CCU-352A','admin','admin',null);
-values (907000569,907000026,119,'CCU-451A','admin','admin',null);
-values (907000570,907000026,120,'CCU-542A','admin','admin',null);
-values (907000571,907000026,121,'CCU-802A','admin','admin',null);
-values (907000572,907000026,122,'CSD-271A','admin','admin',null);
-values (907000573,907000026,123,'CSD-602A','admin','admin',null);
-values (907000574,907000026,124,'CSU-271A','admin','admin',null);
-values (907000575,907000026,125,'CSU-542A','admin','admin',null);
-values (907000576,907000026,126,'CSU-602A','admin','admin',null);
-values (907000577,907000026,127,'MRD-662A','admin','admin',null);
-values (907000578,907000026,128,'CR25A','admin','admin',null);
-values (907000579,907000026,129,'HCF60KW','admin','admin',null);
-values (907000580,907000026,130,'KFR-120LW','admin','admin',null);
-values (907000581,907000026,131,'KFR-120LW/Evalues (1253L)V-N2 YC01','admin','admin',null);
-values (907000582,907000026,132,'KFR-60LW','admin','admin',null);
-values (907000583,907000026,133,'KFR-70LW','admin','admin',null);
-values (907000584,907000026,134,'KF-72LW/Evalues (7233L)R-N2 YC01','admin','admin',null);
-values (907000585,907000026,135,'KF-120Lvalues (1233L)V-N2YC01','admin','admin',null);
-values (907000586,907000026,136,'KF-120LW/Evalues (1233L)V-N2 YC01','admin','admin',null);
-values (907000587,907000026,137,'KF-120L/RA','admin','admin',null);
-values (907000588,907000026,138,'KF-120LW/S-JZvalues (E5)','admin','admin',null);
-values (907000589,907000026,139,'KF-120LW/SN-JZ1values (R2)','admin','admin',null);
-values (907000590,907000026,140,'KFR-120L/SD-JZvalues (E2)','admin','admin',null);
-values (907000591,907000026,141,'MDV-D140T2/N1','admin','admin',null);
-values (907000592,907000026,142,'CS-ME45D1E','admin','admin',null);
-values (907000593,907000026,143,'KFR-120LW/SDY-JAvalues (E5)','admin','admin',null);
-values (907000594,907000026,144,'KFR-72LW/08Tvalues (OYI)','admin','admin',null);
-values (907000595,907000026,145,'KF-71LW/values (SF)','admin','admin',null);
-values (907000596,907000026,146,'KFR-120LW','admin','admin',null);
-values (907000597,907000026,147,'KFR-32GW/Z2','admin','admin',null);
-values (907000598,907000026,148,'KFR-48LW','admin','admin',null);
-values (907000599,907000026,149,'RF/RF75WD','admin','admin',null);
-values (907000600,907000026,150,'RF/RFD12WEAR','admin','admin',null);
-values (907000601,907000026,151,'RF73WDT','admin','admin',null);
-values (907000602,907000026,152,'L83UD','admin','admin',null);
-values (907000603,907000026,153,'CMA2060U3E','admin','admin',null);
-values (907000604,907000026,154,'CMA2100U3E','admin','admin',null);
-values (907000605,907000026,155,'CMA2100D3E','admin','admin',null);
-values (907000606,907000026,156,'CMC0140D1E','admin','admin',null);
-values (907000607,907000026,157,'CMC0140U1E','admin','admin',null);
-values (907000608,907000026,158,'KFR-120LW','admin','admin',null);
-values (907000609,907000026,159,'KFR-125LW','admin','admin',null);
-values (907000610,907000026,160,'KFR-72LW','admin','admin',null);
-values (907000611,907000026,161,'KFR-75LW','admin','admin',null);
-values (907000612,907000026,162,'KFR-120L/01Tvalues (0F0)','admin','admin',null);
-values (907000613,907000026,163,'KT3F-120L/05Tvalues (F01)','admin','admin',null);
-values (907000614,907000026,164,'KT3F-120L/05T','admin','admin',null);
-values (907000615,907000026,165,'KT3F-120L/50Tvalues (F01)','admin','admin',null);
-values (907000616,907000026,166,'KT3F-120W/05Tvalues (F01)','admin','admin',null);
-values (907000617,907000026,167,'KT3F-50G/01T','admin','admin',null);
-values (907000618,907000026,168,'KT3F-72L/06Tvalues (C01)','admin','admin',null);
-values (907000619,907000026,169,'KT3F-72W/06Tvalues (C01)','admin','admin',null);
-values (907000620,907000026,170,'KT3FR-120L/O5values (G01)','admin','admin',null);
-values (907000621,907000026,171,'KT3FR-70L/03T','admin','admin',null);
-values (907000622,907000026,172,'KT3FR-72L/08Tvalues (0Y1)','admin','admin',null);
-values (907000623,907000026,173,'KTFR-120W/05Tvalues (F01)','admin','admin',null);
-values (907000624,907000026,174,'X-18LW/02T','admin','admin',null);
-values (907000625,907000026,175,'KF-120LW','admin','admin',null);
-values (907000626,907000026,176,'KFR-120LW','admin','admin',null);
-values (907000627,907000026,177,'KFR-70LW','admin','admin',null);
-values (907000628,907000026,178,'KFR-76LW','admin','admin',null);
-values (907000629,907000026,179,'KFR-72LW','admin','admin',null);
-values (907000630,907000026,180,'KF-120LW/HV8Svalues (5)','admin','admin',null);
-values (907000631,907000026,181,'KF-120LW/S-J2values (2)','admin','admin',null);
-values (907000632,907000026,183,'KFR-120LW','admin','admin',null);
-values (907000633,907000026,184,'KFR-120LW/5DY-JAvalues (5）','admin','admin',null);
-values (907000634,907000026,185,'KFR-70LW','admin','admin',null);
-values (907000635,907000026,186,'KFR-72LW','admin','admin',null);
-values (907000636,907000026,187,'KFR-75LW','admin','admin',null);
-values (907000637,907000026,188,'KFR-120LW/HV8Svalues (5)','admin','admin',null);
-values (907000638,907000026,189,'KFRd-72LW/JH1SNvalues (R2)','admin','admin',null);
-values (907000639,907000026,190,'KFR-120LW','admin','admin',null);
-values (907000640,907000026,191,'MEAU602BI','admin','admin',null);
-values (907000641,907000026,192,'MEAD1002E','admin','admin',null);
-values (907000642,907000026,193,'MEAD902M','admin','admin',null);
-values (907000643,907000026,194,'MEAU702M','admin','admin',null);
-values (907000644,907000026,195,'MES035C','admin','admin',null);
-values (907000645,907000026,196,'MEAU802','admin','admin',null);
-values (907000646,907000026,197,'9AU22Z','admin','admin',null);
-values (907000647,907000026,198,'9AU13','admin','admin',null);
-values (907000648,907000026,199,'KFR-35GW','admin','admin',null);
-values (907000649,907000026,200,'KFR-50GW','admin','admin',null);
-values (907000650,907000026,201,'KFR-50LW','admin','admin',null);
-values (907000651,907000026,202,'KFR-72LW','admin','admin',null);
-values (907000652,907000026,203,'KFR-120LW','admin','admin',null);
-values (907000653,907000026,204,'KFR-120L/SUTKD-N2values (P8)','admin','admin',null);
-values (907000654,907000026,205,'KFR-120L/SUTK-N2','admin','admin',null);
-values (907000655,907000026,206,'KFR-72L/TSUTK-N2','admin','admin',null);
-values (907000656,907000026,207,'KF-120L/STKvalues (02)values (B0)','admin','admin',null);
-values (907000657,907000026,208,'KF-120L/STK-2values (B0)','admin','admin',null);
-values (907000658,907000026,209,'KF-120L/SUKT-N2','admin','admin',null);
-values (907000659,907000026,210,'KF-120L/SUTK-N2values (P8)','admin','admin',null);
-values (907000660,907000026,211,'KF-120L/SUTK-N2','admin','admin',null);
-values (907000661,907000026,212,'KF-120LW/STKvalues (02)','admin','admin',null);
-values (907000662,907000026,213,'KF-120LW/STK-2','admin','admin',null);
-values (907000663,907000026,214,'KF-120LW/STK','admin','admin',null);
-values (907000664,907000026,215,'KF-120LW/SUTK-N2values (P8)','admin','admin',null);
-values (907000665,907000026,216,'KF-120LW/SUTK-N2','admin','admin',null);
-values (907000666,907000026,217,'KF-50G/TK-N3','admin','admin',null);
-values (907000667,907000026,218,'KF-50GW/TK-N3','admin','admin',null);
-values (907000668,907000026,219,'KFR-120LW/SUTK-N2','admin','admin',null);
-values (907000669,907000026,220,'KFR-50GW/TKI-N3','admin','admin',null);
-values (907000670,907000026,221,'KFR-50W/TKI-N3values (02)','admin','admin',null);
-values (907000671,907000026,222,'KFRD-125LW/Y8','admin','admin',null);
-values (907000672,907000026,223,'DME12MCP5','admin','admin',null);
-values (907000673,907000026,224,'KF-120LW','admin','admin',null);
-values (907000674,907000026,225,'KF-120LWvalues (E2)','admin','admin',null);
-values (907000675,907000026,226,'KF-120LWvalues (E5)','admin','admin',null);
-values (907000676,907000026,227,'KFR-72LW','admin','admin',null);
-values (907000677,907000026,228,'KFR-120LWvalues (E2)','admin','admin',null);
-values (907000678,907000026,229,'KFR-120LWvalues (E5)','admin','admin',null);
-values (907000679,907000026,230,'KFR-120LW/SD-JZvalues (E2)','admin','admin',null);
-values (907000680,907000026,231,'KFR-120LW/SDY-JAvalues (E5)','admin','admin',null);
-values (907000681,907000026,232,'KFR-120LW/SDN-JZ1values (R2)','admin','admin',null);
-values (907000682,907000026,233,'RF25WW/S-8ROT1','admin','admin',null);
-values (907000683,907000026,234,'KF-120LW/SN','admin','admin',null);
-values (907000684,907000026,235,'KF-120LW/SN-JZ1values (R2)','admin','admin',null);
-values (907000685,907000026,236,'KFR-120L/SD-JZ1values (R2)','admin','admin',null);
-values (907000686,907000026,237,'CM100AF','admin','admin',null);
-values (907000687,907000026,238,'CM50A/WF','admin','admin',null);
-values (907000688,907000026,239,'CM50AR','admin','admin',null);
-values (907000689,907000026,240,'CM60AD','admin','admin',null);
-values (907000690,907000026,241,'CM60AF','admin','admin',null);
-values (907000691,907000026,242,'CM60AR','admin','admin',null);
-values (907000692,907000026,243,'CM70A/WF','admin','admin',null);
-values (907000693,907000026,244,'CM70AF','admin','admin',null);
-values (907000694,907000026,245,'CM80A/WF','admin','admin',null);
-values (907000695,907000026,246,'CM80AF','admin','admin',null);
-values (907000696,907000026,247,'CM80AR','admin','admin',null);
-values (907000697,907000026,248,'MCD23ALS00','admin','admin',null);
-values (907000698,907000026,249,'P2040UAPMS0S','admin','admin',null);
-values (907000699,907000026,250,'P2055GARMS1R','admin','admin',null);
-values (907000700,907000026,251,'P2060FARMS1S','admin','admin',null);
-values (907000701,907000026,252,'P2070UARMS1R','admin','admin',null);
-values (907000702,907000026,253,'P3080FARMS1S','admin','admin',null);
-values (907000703,907000026,254,'P3090FARMS1R','admin','admin',null);
-values (907000704,907000026,255,'MEDD702','admin','admin',null);
-values (907000705,907000026,256,'MEFD802','admin','admin',null);
-values (907000706,907000026,257,'8AD08ZEBHAX','admin','admin',null);
-values (907000707,907000026,258,'8AU07ZEBHAX','admin','admin',null);
-values (907000708,907000026,259,'8AU08ZEBHAX','admin','admin',null);
-values (907000709,907000026,260,'8AU10ZEBHAX','admin','admin',null);
-values (907000710,907000026,261,'9AD16ZEBHAX','admin','admin',null);
-values (907000711,907000026,262,'9AD18ZEBHAX','admin','admin',null);
-values (907000712,907000026,263,'9AU12','admin','admin',null);
-values (907000713,907000026,264,'KFRD-120LW/6301','admin','admin',null);
-values (907000714,907000026,265,'LE13WG','admin','admin',null);
-values (907000715,907000026,266,'LF13WD','admin','admin',null);
-values (907000716,907000026,267,'LF75WD','admin','admin',null);
-values (907000717,907000026,268,'RF13WA','admin','admin',null);
-values (907000718,907000026,269,'RF13WD','admin','admin',null);
-values (907000719,907000026,270,'KT3F-120L/05Tvalues (F01)','admin','admin',null);
-values (907000720,907000026,271,'FDY250KMY1L','admin','admin',null);
-values (907000721,907000026,272,'FDY400KMY1L','admin','admin',null);
-values (907000722,907000026,273,'FXSP125MMVC','admin','admin',null);
-values (907000723,907000026,274,'FXYF125K','admin','admin',null);
-values (907000724,907000026,275,'FXYH100LVF','admin','admin',null);
-values (907000725,907000026,276,'KFR-125L','admin','admin',null);
-values (907000726,907000026,277,'KFR-125W','admin','admin',null);
-values (907000727,907000026,278,'KFR-75W','admin','admin',null);
-values (907000728,907000026,279,'R200KMY1L','admin','admin',null);
-values (907000729,907000026,280,'RCXYQ16MAY1','admin','admin',null);
-values (907000730,907000026,281,'RHXYQ12PY1','admin','admin',null);
-values (907000731,907000026,282,'RHXYQ14PY1','admin','admin',null);
-values (907000732,907000026,283,'RHXYQ16PY1','admin','admin',null);
-values (907000733,907000026,284,'RY71DQY3C','admin','admin',null);
-values (907000734,907000026,285,'RY71FPASY1L','admin','admin',null);
-values (907000735,907000026,286,'CH2300-D2S','admin','admin',null);
-values (907000736,907000026,287,'CH2300-D2','admin','admin',null);
-values (907000737,907000026,288,'EC23HDNC1D','admin','admin',null);
-values (907000738,907000026,289,'HC-JGKT-SW/1000M','admin','admin',null);
-values (907000739,907000026,290,'TC200-DO3','admin','admin',null);
-values (907000740,907000026,291,'PSH-3GK','admin','admin',null);
-values (907000741,907000026,292,'PSH-5GK','admin','admin',null);
-values (907000742,907000026,293,'PSH-3GJ','admin','admin',null);
-values (907000743,907000026,294,'PSH-5GJ','admin','admin',null);
-values (907000744,907000026,295,'PSH-5JJ','admin','admin',null);
-values (907000745,907000026,296,'PSH-6UKH','admin','admin',null);
-values (907000746,907000026,297,'PUH-5YKSA','admin','admin',null);
-values (907000747,907000026,298,'LF/LFC73WDT','admin','admin',null);
-values (907000748,907000026,299,'LF/LF13WD','admin','admin',null);
-values (907000749,907000026,300,'RF/RFC73WDT','admin','admin',null);
-values (907000750,907000026,301,'RF/RF13WD','admin','admin',null);
-values (907000751,907000026,302,'KFR-120LW','admin','admin',null);
-values (907000752,907000026,303,'KFRD-72L/DF1-2','admin','admin',null);
-values (907000753,907000026,304,'KFRD-120LW','admin','admin',null);
-values (907000754,907000026,305,'P1020VAPMS1R','admin','admin',null);
-values (907000755,907000026,306,'P1035GARMS1R','admin','admin',null);
-values (907000756,907000026,307,'P1040GC2MSIS','admin','admin',null);
-values (907000757,907000026,308,'P1050UA13FHM12E','admin','admin',null);
-values (907000758,907000026,309,'P2060DA','admin','admin',null);
-values (907000759,907000026,310,'P2060FA','admin','admin',null);
-values (907000760,907000026,311,'P2070DD','admin','admin',null);
-values (907000761,907000026,312,'P2080GC2MSIS','admin','admin',null);
-values (907000762,907000026,313,'P2090DA13FHM12E','admin','admin',null);
-values (907000763,907000026,314,'P2090DA13FHM12E1D000P1000','admin','admin',null);
-values (907000764,907000026,315,'P3070DD','admin','admin',null);
-values (907000765,907000026,316,'P3080FARMSIR','admin','admin',null);
-values (907000766,907000026,317,'P3090DG','admin','admin',null);
-values (907000767,907000026,318,'P3090FA','admin','admin',null);
-values (907000768,907000026,319,'P3120GC2MSIS','admin','admin',null);
-values (907000769,907000026,320,'DME12M01','admin','admin',null);
-values (907000770,907000026,321,'CSU542A','admin','admin',null);
-values (907000771,907000026,322,'CSU852A','admin','admin',null);
-values (907000772,907000026,323,'EXD30AII（风冷+冷冻水)','admin','admin',null);
-values (907000773,907000026,324,'EXD90DA（风冷+冷冻水)','admin','admin',null);
-values (907000774,907000026,325,'U260GAGH','admin','admin',null);
-values (907000775,907000026,326,'U280GAGH','admin','admin',null);
-values (907000776,907000026,327,'U360GAGH','admin','admin',null);
-values (907000777,907000026,328,'U420GAGH','admin','admin',null);
-values (907000778,907000026,329,' U280GAGH','admin','admin',null);
-values (907000779,907000026,330,'EXU50AI','admin','admin',null);
-values (907000780,907000026,331,' EXU100AI','admin','admin',null);
-values (907000781,907000026,332,' EXU60AI','admin','admin',null);
-values (907000782,907000026,333,'EXD100AI','admin','admin',null);
-values (907000783,907000026,334,'MRD662A','admin','admin',null);
-values (907000784,907000026,335,'CS-80B51RC','admin','admin',null);
-values (907000785,907000026,336,'CS-140B51RC','admin','admin',null);
-values (907000786,907000026,337,'KFR-62LW/B1','admin','admin',null);
-values (907000787,907000026,338,'KFR-120LW/57Y1','admin','admin',null);
-values (907000788,907000026,339,'EDU351K','admin','admin',null);
-values (907000789,907000026,340,'EDU401D','admin','admin',null);
-values (907000790,907000026,341,'EDA61U','admin','admin',null);
-values (907000791,907000026,342,'EDA71U','admin','admin',null);
-values (907000792,907000026,343,'EDA81U','admin','admin',null);
-values (907000793,907000026,344,'EDA91U','admin','admin',null);
-values (907000794,907000026,345,'EDU602U','admin','admin',null);
-values (907000795,907000026,346,'EDA141U','admin','admin',null);
-values (907000796,907000026,347,'SCA452U','admin','admin',null);
-values (907000797,907000026,348,'SCA301U','admin','admin',null);
-values (907000798,907000026,349,'SCA802U','admin','admin',null);
-values (907000799,907000026,350,'SCA802EU','admin','admin',null);
-values (907000800,907000026,351,'SCA702U','admin','admin',null);
-values (907000801,907000026,352,'24OA0001V10PH$2A6','admin','admin',null);
-values (907000802,907000026,353,'40UA0001V10PH$2A6','admin','admin',null);
-values (907000803,907000026,354,'55UA0001V10PH$2A6','admin','admin',null);
-values (907000804,907000026,355,'75UA0001V10PH$2A6','admin','admin',null);
-values (907000805,907000026,356,'D40values (M+S)-A','admin','admin',null);
-values (907000806,907000026,357,'UN151','admin','admin',null);
-values (907000807,907000026,358,'UN260','admin','admin',null);
-values (907000808,907000026,359,'TUAR1822','admin','admin',null);
-values (907000809,907000026,360,'KFR-50LW/DHZvalues (W1-H)+2','admin','admin',null);
-values (907000810,907000026,361,'RG4','admin','admin',null);
-values (907000811,907000026,362,'KFR-120Lvalues (1253L)U-SN5','admin','admin',null);
-values (907000812,907000026,1,'KFRd-71LW/KSvalues (TX)','admin','admin',null);
-values (907000813,907000026,2,'KFRd-120LW/CSvalues (TX)','admin','admin',null);
-values (907000814,907000026,3,'KFRD-12008W/SY-E1（数显）','admin','admin',null);
-values (907000815,907000026,4,'KFRd-72LW/CSvalues (TX)','admin','admin',null);
-values (907000816,907000026,5,'KF-50GW/Evalues (TX)','admin','admin',null);
-values (907000817,907000026,6,'KFRd-72LW/AL23S','admin','admin',null);
-values (907000818,907000026,7,'O DXA 80E2A4','admin','admin',null);
-values (907000819,907000026,8,'O DXA 80E2A5','admin','admin',null);
-values (907000820,907000026,9,'U DXA 80E2A4','admin','admin',null);
-values (907000821,907000026,10,'U DXA 90E2A4','admin','admin',null);
-values (907000822,907000026,11,'U DXA 100E2A4','admin','admin',null);
-values (907000823,907000026,12,'O DXA 50E2A4','admin','admin',null);
-values (907000824,907000026,13,'O DXA 60E2A4','admin','admin',null);
-values (907000825,907000026,14,'0.DXA 26EIAI','admin','admin',null);
-values (907000826,907000026,15,'CM30','admin','admin',null);
-values (907000827,907000026,16,'CM40','admin','admin',null);
-values (907000828,907000026,17,'CM50','admin','admin',null);
-values (907000829,907000026,18,'CM60','admin','admin',null);
-values (907000830,907000026,19,'CM70','admin','admin',null);
-values (907000831,907000026,20,'CM80','admin','admin',null);
-values (907000832,907000026,21,'CM100','admin','admin',null);
-values (907000833,907000026,22,'DME027E','admin','admin',null);
-values (907000834,907000026,23,'DME037E','admin','admin',null);
-values (907000835,907000026,24,'DME05','admin','admin',null);
-values (907000836,907000026,25,'DME07','admin','admin',null);
-values (907000837,907000026,26,'P3090U','admin','admin',null);
-values (907000838,907000026,27,'P2055U','admin','admin',null);
-values (907000839,907000026,28,'P3100U','admin','admin',null);
-values (907000840,907000026,29,'P2040U','admin','admin',null);
-values (907000841,907000026,30,'P2060U','admin','admin',null);
-values (907000842,907000026,31,'P3080U','admin','admin',null);
-values (907000843,907000026,32,'P2050U','admin','admin',null);
-values (907000844,907000026,33,'P2060UA13FHM12E1D000P1000','admin','admin',null);
-values (907000845,907000026,34,'SD100DA13RHS12E10000PA000','admin','admin',null);
-values (907000846,907000026,35,'SDC3100','admin','admin',null);
-values (907000847,907000026,36,'P2070U','admin','admin',null);
-values (907000848,907000026,37,'SDC2070','admin','admin',null);
-values (907000849,907000026,38,'P3080UA','admin','admin',null);
-values (907000850,907000026,39,'P2100','admin','admin',null);
-values (907000851,907000026,40,'P2080 DA','admin','admin',null);
-values (907000852,907000026,41,'P2080 UA','admin','admin',null);
-values (907000853,907000026,42,'SDC2060','admin','admin',null);
-values (907000854,907000026,43,'SD100 UA','admin','admin',null);
-values (907000855,907000026,44,'SD100 DA ','admin','admin',null);
-values (907000856,907000026,45,'P2100GC2MS1R','admin','admin',null);
-values (907000857,907000026,46,'P3110GC2MS1R','admin','admin',null);
-values (907000858,907000026,47,'P3120GC2MS1R','admin','admin',null);
-values (907000859,907000026,48,'P1050UA13FHM12E1D000P1000','admin','admin',null);
-values (907000860,907000026,49,'P2100UA13FHM12E1D000P1000','admin','admin',null);
-values (907000861,907000026,50,'P1030UA','admin','admin',null);
-values (907000862,907000026,51,'P1050DA','admin','admin',null);
-values (907000863,907000026,52,'P2060DA','admin','admin',null);
-values (907000864,907000026,53,'P2080DA','admin','admin',null);
-values (907000865,907000026,54,'DME12','admin','admin',null);
-values (907000866,907000026,55,'P2090DA13FHM12E1D000P1000','admin','admin',null);
-values (907000867,907000026,56,'P2100DA13FHM','admin','admin',null);
-values (907000868,907000026,57,'PEC-248FA','admin','admin',null);
-values (907000869,907000026,58,'PEC-253FA','admin','admin',null);
-values (907000870,907000026,59,'PEC-263FA','admin','admin',null);
-values (907000871,907000026,60,'PEC-270FA','admin','admin',null);
-values (907000872,907000026,61,'CW120B3','admin','admin',null);
-values (907000873,907000026,62,'CW85B2','admin','admin',null);
-values (907000874,907000026,63,'OPTIMA.U.             DXA100E2A5','admin','admin',null);
-values (907000875,907000026,64,'OPTIMA-HD.U.CW120B3','admin','admin',null);
-values (907000876,907000026,65,'OPTIMA-HD.U.CW85B2','admin','admin',null);
-values (907000877,907000026,66,'OPTIMA-HD.U.DXA100E2A5','admin','admin',null);
-values (907000878,907000026,67,'OPTIMA-HD.U.DXA90E2A5','admin','admin',null);
-values (907000879,907000026,68,'D240GAH','admin','admin',null);
-values (907000880,907000026,69,'CR25A','admin','admin',null);
-values (907000881,907000026,363,'其他','admin','admin',null);
-values (907000882,907000027,1,'冷备','admin','admin',null);
-values (907000883,907000027,4,'独立','admin','admin',null);
-values (907000884,907000027,3,'N+1','admin','admin',null);
-values (907000885,907000027,2,'1+1','admin','admin',null);
-values (907000886,907000027,0,'热备','admin','admin',null);
-values (907000887,907000027,5,'其他','admin','admin',null);
-values (907000888,907000028,3,'1+1冗余并机','admin','admin',null);
-values (907000889,907000028,0,'N+1（N>1）','admin','admin',null);
-values (907000890,907000028,2,'单机','admin','admin',null);
-values (907000891,907000028,1,'1+1主备','admin','admin',null);
-values (907000892,907000028,4,'其他','admin','admin',null);
-values (907000893,907000029,0,'交流','admin','admin',null);
-values (907000894,907000029,1,'直流','admin','admin',null);
-values (907000895,907000029,2,'其他','admin','admin',null);
-values (907000896,907000030,0,'是','admin','admin',null);
-values (907000897,907000030,1,'否','admin','admin',null);
-values (907000898,907000030,2,'其他','admin','admin',null);
-values (907000899,907000031,0,'数据中心','admin','admin',null);
-values (907000900,907000031,2,'传输节点','admin','admin',null);
-values (907000901,907000031,1,'通信机楼','admin','admin',null);
-values (907000902,907000031,3,'通信基站','admin','admin',null);
-values (907000903,907000031,4,'其他','admin','admin',null);
-values (907000904,907000032,27,'工程values (验收中)','admin','admin',null);
-values (907000905,907000032,28,'工程values (自检中)','admin','admin',null);
-values (907000906,907000032,29,'模型机','admin','admin',null);
-values (907000907,907000032,30,'拟新建','admin','admin',null);
-values (907000908,907000032,9,'报废','admin','admin',null);
-values (907000909,907000032,8,'空闲','admin','admin',null);
-values (907000910,907000032,31,'退网values (拟终止)','admin','admin',null);
-values (907000911,907000032,18,'入网未交维','admin','admin',null);
-values (907000912,907000032,7,'临时停用','admin','admin',null);
-values (907000913,907000032,6,'规划','admin','admin',null);
-values (907000914,907000032,5,'竣工','admin','admin',null);
-values (907000915,907000032,4,'维护','admin','admin',null);
-values (907000916,907000032,3,'退网','admin','admin',null);
-values (907000917,907000032,2,'在网','admin','admin',null);
-values (907000918,907000032,1,'工程','admin','admin',null);
-values (907000919,907000032,0,'设计','admin','admin',null);
-values (907000920,907000032,32,'退网values (退网挂起)','admin','admin',null);
-values (907000921,907000032,33,'退网values (退网中)','admin','admin',null);
-values (907000922,907000032,55,'应急','admin','admin',null);
-values (907000923,907000032,54,'备份','admin','admin',null);
-values (907000924,907000032,53,'验收中','admin','admin',null);
-values (907000925,907000032,52,'试运行','admin','admin',null);
-values (907000926,907000032,51,'草稿','admin','admin',null);
-values (907000927,907000032,50,'搬迁退网','admin','admin',null);
-values (907000928,907000032,49,'停用','admin','admin',null);
-values (907000929,907000032,48,'测试','admin','admin',null);
-values (907000930,907000032,47,'工程取消','admin','admin',null);
-values (907000931,907000032,46,'初验通过','admin','admin',null);
-values (907000932,907000032,45,'工程在建','admin','admin',null);
-values (907000933,907000032,44,'未确定','admin','admin',null);
-values (907000934,907000032,43,'立项','admin','admin',null);
-values (907000935,907000032,42,'补录','admin','admin',null);
-values (907000936,907000032,40,'施工在建','admin','admin',null);
-values (907000937,907000032,39,'验收','admin','admin',null);
-values (907000938,907000032,38,'静态','admin','admin',null);
-values (907000939,907000032,37,'在网values (在网运行)','admin','admin',null);
-values (907000940,907000032,36,'在网values (临时中断)','admin','admin',null);
-values (907000941,907000032,35,'在网values (假期网元)','admin','admin',null);
-values (907000942,907000032,34,'退网（塔维申请）','admin','admin',null);
-values (907000943,907000032,41,'待规划','admin','admin',null);
-values (907000944,907000032,17,'预占','admin','admin',null);
-values (907000945,907000032,16,'退网已拆除','admin','admin',null);
-values (907000946,907000032,15,'退网已下电','admin','admin',null);
-values (907000947,907000032,14,'退网未下电','admin','admin',null);
-values (907000948,907000032,13,'现网无业务','admin','admin',null);
-values (907000949,907000032,12,'现网有业务','admin','admin',null);
-values (907000950,907000032,11,'工程新建','admin','admin',null);
-values (907000951,907000032,10,'空载','admin','admin',null);
-values (907000952,907000032,19,'入网已交维','admin','admin',null);
-values (907000953,907000032,20,'备份网元','admin','admin',null);
-values (907000954,907000032,21,'工程values (草稿中)','admin','admin',null);
-values (907000955,907000032,22,'工程values (测试网元)','admin','admin',null);
-values (907000956,907000032,23,'工程values (工程新建)','admin','admin',null);
-values (907000957,907000032,24,'工程values (试运行)','admin','admin',null);
-values (907000958,907000032,25,'工程values (网优验收自检中)','admin','admin',null);
-values (907000959,907000032,26,'工程values (验收完毕)','admin','admin',null);
-values (907000960,907000032,56,'其他','admin','admin',null);
-values (907000961,907000033,2,'其它','admin','admin',null);
-values (907000962,907000033,0,'自维','admin','admin',null);
-values (907000963,907000033,1,'代维','admin','admin',null);
-values (907000964,907000033,3,'局维','admin','admin',null);
-values (907000965,907000033,4,'其他','admin','admin',null);
-values (907000966,907000034,0,'是','admin','admin',null);
-values (907000967,907000034,1,'否','admin','admin',null);
-values (907000968,907000034,2,'其他','admin','admin',null);
-values (907000969,907000035,1,'否','admin','admin',null);
-values (907000970,907000035,0,'是','admin','admin',null);
-values (907000971,907000035,2,'其他','admin','admin',null);
-values (907000972,907000036,3,'高压配电','admin','admin',null);
-values (907000973,907000036,4,'高压直流开关电源','admin','admin',null);
-values (907000974,907000036,5,'高压直流配电','admin','admin',null);
-values (907000975,907000036,6,'低压交流配电','admin','admin',null);
-values (907000976,907000036,7,'开关电源','admin','admin',null);
-values (907000977,907000036,8,'低压直流配电','admin','admin',null);
-values (907000978,907000036,9,'工频UPS','admin','admin',null);
-values (907000979,907000036,10,'一体化高频UPS','admin','admin',null);
-values (907000980,907000036,11,'模块化高频UPS','admin','admin',null);
-values (907000981,907000036,12,'铅酸电池','admin','admin',null);
-values (907000982,907000036,13,'锂电池','admin','admin',null);
-values (907000983,907000036,0,'变压器','admin','admin',null);
-values (907000984,907000036,1,'变换设备','admin','admin',null);
-values (907000985,907000036,2,'发电机组','admin','admin',null);
-values (907000986,907000036,24,'UPS设备','admin','admin',null);
-values (907000987,907000036,25,'智能电表','admin','admin',null);
-values (907000988,907000036,26,'中央空调末端','admin','admin',null);
-values (907000989,907000036,27,'中央空调主机','admin','admin',null);
-values (907000990,907000036,14,'机房专用空调','admin','admin',null);
-values (907000991,907000036,15,'普通空调','admin','admin',null);
-values (907000992,907000036,16,'嵌入式空调','admin','admin',null);
-values (907000993,907000036,17,'电池恒温箱','admin','admin',null);
-values (907000994,907000036,18,'智能通风换热','admin','admin',null);
-values (907000995,907000036,19,'风光设备','admin','admin',null);
-values (907000996,907000036,20,'动环监控','admin','admin',null);
-values (907000997,907000036,21,'交流智能电表','admin','admin',null);
-values (907000998,907000036,22,'直流智能电表','admin','admin',null);
-values (907000999,907000036,23,'其它设备','admin','admin',null);
-values (907001000,907000036,28,'其他','admin','admin',null);
-values (907001001,907000037,0,'是','admin','admin',null);
-values (907001002,907000037,1,'否','admin','admin',null);
-values (907001003,907000037,2,'其他','admin','admin',null);
-values (907001004,907000038,0,'在用','admin','admin',null);
-values (907001005,907000038,1,'空闲','admin','admin',null);
-values (907001006,907000038,2,'其他','admin','admin',null);
-values (907001007,907000039,0,'12V','admin','admin',null);
-values (907001008,907000039,1,'6V','admin','admin',null);
-values (907001009,907000039,2,'2V','admin','admin',null);
-values (907001010,907000039,3,'48V','admin','admin',null);
-values (907001011,907000039,4,'3.2V','admin','admin',null);
-values (907001012,907000039,5,'其他','admin','admin',null);
-values (907001013,907000040,0,'10KV以上','admin','admin',null);
-values (907001014,907000040,1,'10KV','admin','admin',null);
-values (907001015,907000040,2,'其他','admin','admin',null);
-values (907001016,907000041,0,'水平轴','admin','admin',null);
-values (907001017,907000041,1,'垂直轴','admin','admin',null);
-values (907001018,907000041,2,'无','admin','admin',null);
-values (907001019,907000041,3,'其他','admin','admin',null);
-values (907001020,907000042,3,'便携','admin','admin',null);
-values (907001021,907000042,1,'车载','admin','admin',null);
-values (907001022,907000042,0,'固定','admin','admin',null);
-values (907001023,907000042,2,'拖车','admin','admin',null);
-values (907001024,907000042,4,'其他','admin','admin',null);
-values (907001025,907000043,0,'是','admin','admin',null);
-values (907001026,907000043,1,'否','admin','admin',null);
-values (907001027,907000043,2,'其他','admin','admin',null);
-values (907001028,907000044,4,'CMNET ','admin','admin',null);
-values (907001029,907000044,5,'IP承载网 ','admin','admin',null);
-values (907001030,907000044,6,'动换','admin','admin',null);
-values (907001031,907000044,7,'综合机架','admin','admin',null);
-values (907001032,907000044,0,'传输','admin','admin',null);
-values (907001033,907000044,1,'无线 ','admin','admin',null);
-values (907001034,907000044,2,'交换 ','admin','admin',null);
-values (907001035,907000044,3,'IMS ','admin','admin',null);
-values (907001036,907000044,8,'其他 ','admin','admin',null);
-values (907001037,907000045,1,'中国移动','admin','admin',null);
-values (907001038,907000045,7,'其他','admin','admin',null);
-values (907001039,907000045,6,'业主','admin','admin',null);
-values (907001040,907000045,5,'中国广电','admin','admin',null);
-values (907001041,907000045,4,'中国铁通','admin','admin',null);
-values (907001042,907000045,0,'中国铁塔','admin','admin',null);
-values (907001043,907000045,3,'中国电信','admin','admin',null);
-values (907001044,907000045,2,'中国联通','admin','admin',null);
-values (907001045,907000046,1,'自有（合建）','admin','admin',null);
-values (907001046,907000046,3,'租用','admin','admin',null);
-values (907001047,907000046,4,'用户所有','admin','admin',null);
-values (907001048,907000046,2,'自有（购买）','admin','admin',null);
-values (907001049,907000046,0,'自有（自建）','admin','admin',null);
-values (907001050,907000046,5,'其他','admin','admin',null);
-values (907001051,907000047,24,'嵌入高压直流电源','admin','admin',null);
-values (907001052,907000047,107,'其他','admin','admin',null);
-values (907001053,907000047,106,'直流智能电表','admin','admin',null);
-values (907001054,907000047,105,'交流智能电表','admin','admin',null);
-values (907001055,907000047,104,'336V直流配电柜','admin','admin',null);
-values (907001056,907000047,103,'240V直流配电箱','admin','admin',null);
-values (907001057,907000047,102,'风光互补控制器','admin','admin',null);
-values (907001058,907000047,101,'太阳能控制器','admin','admin',null);
-values (907001059,907000047,100,'风力控制器','admin','admin',null);
-values (907001060,907000047,99,'智能换热系统','admin','admin',null);
-values (907001061,907000047,98,'智能通风系统','admin','admin',null);
-values (907001062,907000047,97,'电池恒温箱','admin','admin',null);
-values (907001063,907000047,96,'壁挂空调','admin','admin',null);
-values (907001064,907000047,95,'柜式空调','admin','admin',null);
-values (907001065,907000047,94,'横流冷却塔','admin','admin',null);
-values (907001066,907000047,93,'逆流冷却塔','admin','admin',null);
-values (907001067,907000047,92,'低压离心冷水机组','admin','admin',null);
-values (907001068,907000047,91,'高压离心冷水机组','admin','admin',null);
-values (907001069,907000047,90,'水冷螺杆冷水机组','admin','admin',null);
-values (907001070,907000047,89,'风冷螺杆冷水机组','admin','admin',null);
-values (907001071,907000047,88,'多联机中央空调','admin','admin',null);
-values (907001072,907000047,87,'嵌入式空调','admin','admin',null);
-values (907001073,907000047,86,'列间空调','admin','admin',null);
-values (907001074,907000047,85,'水冷后门','admin','admin',null);
-values (907001075,907000047,84,'水冷前门','admin','admin',null);
-values (907001076,907000047,83,'热管背板','admin','admin',null);
-values (907001077,907000047,82,'冷冻水专用空调','admin','admin',null);
-values (907001078,907000047,81,'模块化高频UPS','admin','admin',null);
-values (907001079,907000047,80,'一体化高频UPS','admin','admin',null);
-values (907001080,907000047,79,'工频UPS','admin','admin',null);
-values (907001081,907000047,78,'一体化电源柜','admin','admin',null);
-values (907001082,907000047,77,'移动发电机','admin','admin',null);
-values (907001083,907000047,76,'UPS输出配电箱','admin','admin',null);
-values (907001084,907000047,75,'UPS输出列头柜','admin','admin',null);
-values (907001085,907000047,74,'UPS输出配电柜','admin','admin',null);
-values (907001086,907000047,73,'高压直流输入柜','admin','admin',null);
-values (907001087,907000047,72,'蓄电池采集设备','admin','admin',null);
-values (907001088,907000047,71,'FSU','admin','admin',null);
-values (907001089,907000047,70,'LSC','admin','admin',null);
-values (907001090,907000047,69,'CSC','admin','admin',null);
-values (907001091,907000047,68,'双冷源专用空调','admin','admin',null);
-values (907001092,907000047,67,'水冷专用空调','admin','admin',null);
-values (907001093,907000047,66,'风冷专用空调','admin','admin',null);
-values (907001094,907000047,65,'操作电源电池','admin','admin',null);
-values (907001095,907000047,64,'发电机组电池','admin','admin',null);
-values (907001096,907000047,63,'高压直流开关电源','admin','admin',null);
-values (907001097,907000047,62,'UPS电池','admin','admin',null);
-values (907001098,907000047,61,'开关电源电池','admin','admin',null);
-values (907001099,907000047,60,'24V直流配电箱','admin','admin',null);
-values (907001100,907000047,59,'-48V直流配电箱','admin','admin',null);
-values (907001101,907000047,58,'-48V直流列头柜','admin','admin',null);
-values (907001102,907000047,57,'-48V直流配电柜','admin','admin',null);
-values (907001103,907000047,56,'嵌入开关电源','admin','admin',null);
-values (907001104,907000047,55,'壁挂开关电源','admin','admin',null);
-values (907001105,907000047,54,'组合开关电源','admin','admin',null);
-values (907001106,907000047,53,'分立开关电源','admin','admin',null);
-values (907001107,907000047,52,'燃料电池','admin','admin',null);
-values (907001108,907000047,51,'汽油发电机','admin','admin',null);
-values (907001109,907000047,50,'燃气轮发电机组','admin','admin',null);
-values (907001110,907000047,49,'柴油发电机组','admin','admin',null);
-values (907001111,907000047,48,'交流列头柜','admin','admin',null);
-values (907001112,907000047,47,'无源滤波设备','admin','admin',null);
-values (907001113,907000047,46,'有源滤波设备','admin','admin',null);
-values (907001114,907000047,45,'独立防雷箱','admin','admin',null);
-values (907001115,907000047,44,'市电交流配电箱','admin','admin',null);
-values (907001116,907000047,43,'UPS输出柜','admin','admin',null);
-values (907001117,907000047,42,'UPS输入柜','admin','admin',null);
-values (907001118,907000047,41,'开关电源输入柜','admin','admin',null);
-values (907001119,907000047,40,'低压交流配电柜','admin','admin',null);
-values (907001120,907000047,39,'低压楼层配电柜','admin','admin',null);
-values (907001121,907000047,38,'应急油机接入柜','admin','admin',null);
-values (907001122,907000047,37,'应急油机接入箱','admin','admin',null);
-values (907001123,907000047,36,'低压油机配电柜','admin','admin',null);
-values (907001124,907000047,35,'低压电容补偿柜','admin','admin',null);
-values (907001125,907000047,34,'低压ATS切换柜','admin','admin',null);
-values (907001126,907000047,33,'低压联络柜','admin','admin',null);
-values (907001127,907000047,32,'低压出线柜','admin','admin',null);
-values (907001128,907000047,31,'低压计量柜','admin','admin',null);
-values (907001129,907000047,30,'低压进线计量柜','admin','admin',null);
-values (907001130,907000047,29,'低压进线柜','admin','admin',null);
-values (907001131,907000047,28,'336V直流配电箱','admin','admin',null);
-values (907001132,907000047,27,'336V直流列头柜','admin','admin',null);
-values (907001133,907000047,26,'240V直流列头柜','admin','admin',null);
-values (907001134,907000047,25,'240V直流配电柜','admin','admin',null);
-values (907001135,907000047,23,'壁挂高压直流电源','admin','admin',null);
-values (907001136,907000047,22,'组合高压直流电源','admin','admin',null);
-values (907001137,907000047,21,'分立高压直流电源','admin','admin',null);
-values (907001138,907000047,20,'高压直流开关电源','admin','admin',null);
-values (907001139,907000047,19,'高压切换柜','admin','admin',null);
-values (907001140,907000047,18,'高压油机配电柜','admin','admin',null);
-values (907001141,907000047,17,'高压电容补偿柜','admin','admin',null);
-values (907001142,907000047,16,'操作电源','admin','admin',null);
-values (907001143,907000047,15,'高压出线柜','admin','admin',null);
-values (907001144,907000047,14,'高压母联柜','admin','admin',null);
-values (907001145,907000047,13,'高压压变柜','admin','admin',null);
-values (907001146,907000047,12,'高压升高柜','admin','admin',null);
-values (907001147,907000047,11,'高压隔离柜','admin','admin',null);
-values (907001148,907000047,10,'高压避雷器柜','admin','admin',null);
-values (907001149,907000047,9,'高压计量柜','admin','admin',null);
-values (907001150,907000047,8,'高压进线柜','admin','admin',null);
-values (907001151,907000047,7,'直流远供远端','admin','admin',null);
-values (907001152,907000047,6,'直流远供近端','admin','admin',null);
-values (907001153,907000047,5,'DC/DC设备','admin','admin',null);
-values (907001154,907000047,4,'逆变器','admin','admin',null);
-values (907001155,907000047,3,'调压器','admin','admin',null);
-values (907001156,907000047,2,'非晶合金变压器','admin','admin',null);
-values (907001157,907000047,1,'油浸变压器','admin','admin',null);
-values (907001158,907000047,0,'干式变压器','admin','admin',null);
-values (907001159,907000048,3,'TOUT','admin','admin',null);
-values (907001160,907000048,2,'MOUT','admin','admin',null);
-values (907001161,907000048,1,'ROUT','admin','admin',null);
-values (907001162,907000048,0,'KOUT','admin','admin',null);
-values (907001163,907000048,4,'其他','admin','admin',null);
-values (907001164,907000049,4,'N+1热备','admin','admin',null);
-values (907001165,907000049,5,'N+1冷备','admin','admin',null);
-values (907001166,907000049,6,'1+1主备','admin','admin',null);
-values (907001167,907000049,7,'N+1主备','admin','admin',null);
-values (907001168,907000049,0,'单台设备','admin','admin',null);
-values (907001169,907000049,1,'1+1热备','admin','admin',null);
-values (907001170,907000049,2,'1+1冷备','admin','admin',null);
-values (907001171,907000049,3,'N+0主用','admin','admin',null);
-values (907001172,907000049,8,'其他','admin','admin',null);
-values (907001173,907000050,2,'微型断路器','admin','admin',null);
-values (907001174,907000050,3,'刀闸开关','admin','admin',null);
-values (907001175,907000050,4,'熔断器','admin','admin',null);
-values (907001176,907000050,5,'母排','admin','admin',null);
-values (907001177,907000050,6,'设备','admin','admin',null);
-values (907001178,907000050,0,'框架断路器','admin','admin',null);
-values (907001179,907000050,1,'塑壳断路器','admin','admin',null);
-values (907001180,907000050,7,'其他','admin','admin',null);
-values (907001181,907000051,0,'主用','admin','admin',null);
-values (907001182,907000051,1,'备用','admin','admin',null);
-values (907001183,907000051,2,'其他','admin','admin',null);
-values (907001184,907000052,1,'水冷','admin','admin',null);
-values (907001185,907000052,0,'风冷','admin','admin',null);
-values (907001186,907000052,2,'其他','admin','admin',null);
-values (907001187,907000053,0,'主用','admin','admin',null);
-values (907001188,907000053,1,'备用','admin','admin',null);
-values (907001189,907000053,2,'其他','admin','admin',null);
-values (907001190,907000054,2,'微型断路器','admin','admin',null);
-values (907001191,907000054,3,'刀闸开关','admin','admin',null);
-values (907001192,907000054,4,'熔断器','admin','admin',null);
-values (907001193,907000054,5,'母排','admin','admin',null);
-values (907001194,907000054,6,'设备','admin','admin',null);
-values (907001195,907000054,1,'塑壳断路器','admin','admin',null);
-values (907001196,907000054,0,'框架断路器','admin','admin',null);
-values (907001197,907000054,7,'其他','admin','admin',null);
-values (907001198,907000055,1,'否','admin','admin',null);
-values (907001199,907000055,0,'是','admin','admin',null);
-values (907001200,907000055,2,'其他','admin','admin',null);
+insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
+(907000201,907000001,0,'380V','admin','admin',null),
+(907000202,907000001,1,'220V','admin','admin',null),
+(907000203,907000001,2,'-48V','admin','admin',null),
+(907000204,907000001,3,'10000V','admin','admin',null),
+(907000205,907000001,4,'其他','admin','admin',null),
+(907000206,907000002,0,'单面','admin','admin',null),
+(907000207,907000002,1,'双面','admin','admin',null),
+(907000208,907000002,2,'其他','admin','admin',null),
+(907000209,907000003,1,'空闲','admin','admin',null),
+(907000210,907000003,0,'在用','admin','admin',null),
+(907000211,907000003,2,'其他','admin','admin',null),
+(907000212,907000004,4,'综合机房','admin','admin',null),
+(907000213,907000004,2,'数据机房','admin','admin',null),
+(907000214,907000004,1,'交换机房','admin','admin',null),
+(907000215,907000004,0,'传输机房','admin','admin',null),
+(907000216,907000004,7,'发电机房','admin','admin',null),
+(907000217,907000004,6,'基站机房','admin','admin',null),
+(907000218,907000004,5,'汇聚机房','admin','admin',null),
+(907000219,907000004,3,'IDC机房','admin','admin',null),
+(907000220,907000004,11,'高低压配电机房','admin','admin',null),
+(907000221,907000004,10,'电力机房','admin','admin',null),
+(907000222,907000004,9,'空调机房','admin','admin',null),
+(907000223,907000004,8,'电池机房','admin','admin',null),
+(907000224,907000004,12,'其他','admin','admin',null),
+(907000225,907000005,0,'KIN','admin','admin',null),
+(907000226,907000005,1,'RIN','admin','admin',null),
+(907000227,907000005,2,'MIN','admin','admin',null),
+(907000228,907000005,3,'TIN','admin','admin',null),
+(907000229,907000005,4,'其他','admin','admin',null),
+(907000230,907000006,118,'东方通信','admin','admin',null),
+(907000231,907000006,147,'凯瑟琳','admin','admin',null),
+(907000232,907000006,146,'捷士通','admin','admin',null),
+(907000233,907000006,145,'邦讯技术','admin','admin',null),
+(907000234,907000006,121,'成都广越','admin','admin',null),
+(907000235,907000006,120,'天邑亚斯康','admin','admin',null),
+(907000236,907000006,119,'北京阔步','admin','admin',null),
+(907000237,907000006,117,'上海无线通信','admin','admin',null),
+(907000238,907000006,116,'贝尔','admin','admin',null),
+(907000239,907000006,115,'南京万全','admin','admin',null),
+(907000240,907000006,114,'珠海横琴','admin','admin',null),
+(907000241,907000006,113,'新大陆','admin','admin',null),
+(907000242,907000006,112,'南京林城','admin','admin',null),
+(907000243,907000006,111,'福建飞毛腿','admin','admin',null),
+(907000244,907000006,110,'陕西志和','admin','admin',null),
+(907000245,907000006,109,'西安天惠','admin','admin',null),
+(907000246,907000006,108,'深圳中科典','admin','admin',null),
+(907000247,907000006,107,'陕西顺通','admin','admin',null),
+(907000248,907000006,106,'沈阳奥维','admin','admin',null),
+(907000249,907000006,105,'惠州邮电工程','admin','admin',null),
+(907000250,907000006,104,'西安大唐','admin','admin',null),
+(907000251,907000006,103,'海马泰克','admin','admin',null),
+(907000252,907000006,102,'银波达','admin','admin',null),
+(907000253,907000006,101,'亿同合力','admin','admin',null),
+(907000254,907000006,100,'西安冠日','admin','admin',null),
+(907000255,907000006,99,'西安上通','admin','admin',null),
+(907000256,907000006,98,'东方世纪','admin','admin',null),
+(907000257,907000006,97,'西安澳通','admin','admin',null),
+(907000258,907000006,96,'福建安邦','admin','admin',null),
+(907000259,907000006,95,'陕西国人','admin','admin',null),
+(907000260,907000006,94,'福建三元达','admin','admin',null),
+(907000261,907000006,93,'上海成美','admin','admin',null),
+(907000262,907000006,92,'天津塞乐','admin','admin',null),
+(907000263,907000006,91,'福建泰克','admin','admin',null),
+(907000264,907000006,90,'长春巨龙','admin','admin',null),
+(907000265,907000006,89,'西安华盛','admin','admin',null),
+(907000266,907000006,88,'深圳联波','admin','admin',null),
+(907000267,907000006,87,'湖南神风','admin','admin',null),
+(907000268,907000006,86,'福城','admin','admin',null),
+(907000269,907000006,85,'湖南通力','admin','admin',null),
+(907000270,907000006,84,'泰普电讯','admin','admin',null),
+(907000271,907000006,83,'泛太公司','admin','admin',null),
+(907000272,907000006,82,'福建邮科所','admin','admin',null),
+(907000273,907000006,81,'深圳云海','admin','admin',null),
+(907000274,907000006,80,'福建先创','admin','admin',null),
+(907000275,907000006,79,'福建信立通','admin','admin',null),
+(907000276,907000006,78,'深圳华脉','admin','admin',null),
+(907000277,907000006,77,'浙江三维','admin','admin',null),
+(907000278,907000006,76,'广州埃信','admin','admin',null),
+(907000279,907000006,75,'上海罗顿','admin','admin',null),
+(907000280,907000006,74,'阿尔贡','admin','admin',null),
+(907000281,907000006,73,'杭州佳必信','admin','admin',null),
+(907000282,907000006,72,'杭州信嘉诺','admin','admin',null),
+(907000283,907000006,71,'香港CSL','admin','admin',null),
+(907000284,907000006,70,'广州阿尔创','admin','admin',null),
+(907000285,907000006,69,'珠海银邮','admin','admin',null),
+(907000286,907000006,68,'双联通公司','admin','admin',null),
+(907000287,907000006,67,'大唐电信','admin','admin',null),
+(907000288,907000006,66,'北京威奥特','admin','admin',null),
+(907000289,907000006,65,'东南瑞捷信','admin','admin',null),
+(907000290,907000006,64,'佛山华志','admin','admin',null),
+(907000291,907000006,63,'武汉虹信','admin','admin',null),
+(907000292,907000006,62,'上海飞利','admin','admin',null),
+(907000293,907000006,61,'上海欣民','admin','admin',null),
+(907000294,907000006,60,'东方信联','admin','admin',null),
+(907000295,907000006,59,'北京地杰','admin','admin',null),
+(907000296,907000006,58,'深圳国人','admin','admin',null),
+(907000297,907000006,57,'安徽中瑞','admin','admin',null),
+(907000298,907000006,56,'基恒通信','admin','admin',null),
+(907000299,907000006,55,'晖速','admin','admin',null),
+(907000300,907000006,54,'中天','admin','admin',null),
+(907000301,907000006,53,'亚信','admin','admin',null),
+(907000302,907000006,52,'欣民','admin','admin',null),
+(907000303,907000006,51,'西安华天','admin','admin',null),
+(907000304,907000006,50,'西安海天','admin','admin',null),
+(907000305,907000006,49,'通宇','admin','admin',null),
+(907000306,907000006,48,'天韵','admin','admin',null),
+(907000307,907000006,47,'宁波','admin','admin',null),
+(907000308,907000006,46,'摩比','admin','admin',null),
+(907000309,907000006,45,'美化天线','admin','admin',null),
+(907000310,907000006,44,'罗森伯格','admin','admin',null),
+(907000311,907000006,43,'凯仕琳','admin','admin',null),
+(907000312,907000006,42,'捷仕通','admin','admin',null),
+(907000313,907000006,41,'华天','admin','admin',null),
+(907000314,907000006,40,'虹信','admin','admin',null),
+(907000315,907000006,39,'亨鑫','admin','admin',null),
+(907000316,907000006,38,'好来登','admin','admin',null),
+(907000317,907000006,37,'国信','admin','admin',null),
+(907000318,907000006,36,'广州杰赛','admin','admin',null),
+(907000319,907000006,35,'广东通宇','admin','admin',null),
+(907000320,907000006,34,'广东盛路','admin','admin',null),
+(907000321,907000006,33,'广东桑瑞','admin','admin',null),
+(907000322,907000006,32,'福建省光微电子科技有限公司','admin','admin',null),
+(907000323,907000006,31,'电联','admin','admin',null),
+(907000324,907000006,30,'奥维','admin','admin',null),
+(907000325,907000006,29,'安弗施','admin','admin',null),
+(907000326,907000006,28,'安德鲁','admin','admin',null),
+(907000327,907000006,27,'京信通信','admin','admin',null),
+(907000328,907000006,26,'中移物联网','admin','admin',null),
+(907000329,907000006,25,'诺基亚','admin','admin',null),
+(907000330,907000006,24,'飞烽','admin','admin',null),
+(907000331,907000006,23,'博威','admin','admin',null),
+(907000332,907000006,22,'京信','admin','admin',null),
+(907000333,907000006,21,'三维','admin','admin',null),
+(907000334,907000006,20,'三元达','admin','admin',null),
+(907000335,907000006,19,'邦讯','admin','admin',null),
+(907000336,907000006,18,'Juniper','admin','admin',null),
+(907000337,907000006,17,'普天','admin','admin',null),
+(907000338,907000006,16,'诺西','admin','admin',null),
+(907000339,907000006,15,'新邮通','admin','admin',null),
+(907000340,907000006,14,'大唐','admin','admin',null),
+(907000341,907000006,13,'阿尔卡特','admin','admin',null),
+(907000342,907000006,12,'爱立信','admin','admin',null),
+(907000343,907000006,11,'思科','admin','admin',null),
+(907000344,907000006,10,'北京中昱光通科技','admin','admin',null),
+(907000345,907000006,9,'中兴皖通','admin','admin',null),
+(907000346,907000006,8,'光迅科技','admin','admin',null),
+(907000347,907000006,7,'比威','admin','admin',null),
+(907000348,907000006,6,'光迅','admin','admin',null),
+(907000349,907000006,5,'瑞斯康达','admin','admin',null),
+(907000350,907000006,4,'格林威尔','admin','admin',null),
+(907000351,907000006,3,'上海贝尔','admin','admin',null),
+(907000352,907000006,2,'烽火','admin','admin',null),
+(907000353,907000006,1,'中兴','admin','admin',null),
+(907000354,907000006,0,'华为','admin','admin',null),
+(907000355,907000006,144,'浙江卓信','admin','admin',null),
+(907000356,907000006,143,'西瑞克斯','admin','admin',null),
+(907000357,907000006,142,'鑫众通信','admin','admin',null),
+(907000358,907000006,141,'北京索富三博','admin','admin',null),
+(907000359,907000006,140,'北京兆维','admin','admin',null),
+(907000360,907000006,139,'北京西伯尔','admin','admin',null),
+(907000361,907000006,138,'润达丰','admin','admin',null),
+(907000362,907000006,137,'镕灏通信','admin','admin',null),
+(907000363,907000006,136,'上海东洲','admin','admin',null),
+(907000364,907000006,135,'粤海电信','admin','admin',null),
+(907000365,907000006,134,'桑瑞电讯','admin','admin',null),
+(907000366,907000006,133,'深圳波导','admin','admin',null),
+(907000367,907000006,132,'深圳科捷','admin','admin',null),
+(907000368,907000006,131,'杭州东信','admin','admin',null),
+(907000369,907000006,130,'未知厂家','admin','admin',null),
+(907000370,907000006,129,'沈阳天机','admin','admin',null),
+(907000371,907000006,128,'广州佳讯','admin','admin',null),
+(907000372,907000006,127,'福建瑞科','admin','admin',null),
+(907000373,907000006,126,'西湖电子','admin','admin',null),
+(907000374,907000006,125,'深圳信诺','admin','admin',null),
+(907000375,907000006,124,'浙江通普','admin','admin',null),
+(907000376,907000006,123,'京高综合通信','admin','admin',null),
+(907000377,907000006,122,'联通国脉','admin','admin',null),
+(907000378,907000006,148,'其他','admin','admin',null),
+(907000379,907000007,1,'-48V','admin','admin',null),
+(907000380,907000007,0,'24V','admin','admin',null),
+(907000381,907000007,2,'其他','admin','admin',null),
+(907000382,907000008,0,'交流','admin','admin',null),
+(907000383,907000008,1,'直流','admin','admin',null),
+(907000384,907000008,2,'其他','admin','admin',null),
+(907000385,907000009,0,'是','admin','admin',null),
+(907000386,907000009,1,'否','admin','admin',null),
+(907000387,907000009,2,'其他','admin','admin',null),
+(907000388,907000010,0,'ODF','admin','admin',null),
+(907000389,907000010,2,'DDF','admin','admin',null),
+(907000390,907000010,1,'综合配线架 （IDF）','admin','admin',null),
+(907000391,907000010,4,'设备机架','admin','admin',null),
+(907000392,907000010,3,'IDC','admin','admin',null),
+(907000393,907000010,5,'其他','admin','admin',null),
+(907000394,907000011,1,'否','admin','admin',null),
+(907000395,907000011,0,'是','admin','admin',null),
+(907000396,907000011,2,'其他','admin','admin',null),
+(907000397,907000012,4,'无市电','admin','admin',null),
+(907000398,907000012,0,'10KV以上','admin','admin',null),
+(907000399,907000012,1,'10KV','admin','admin',null),
+(907000400,907000012,3,'220V','admin','admin',null),
+(907000401,907000012,2,'380V','admin','admin',null),
+(907000402,907000012,5,'其他','admin','admin',null),
+(907000403,907000013,10,'VOLTE子专业','admin','admin',null),
+(907000404,907000013,8,'短信子专业','admin','admin',null),
+(907000405,907000013,0,'传输内线专业','admin','admin',null),
+(907000406,907000013,1,'动环专业','admin','admin',null),
+(907000407,907000013,7,'wlan专业','admin','admin',null),
+(907000408,907000013,2,'家客专业','admin','admin',null),
+(907000409,907000013,6,'集客专业','admin','admin',null),
+(907000410,907000013,5,'物联网专业','admin','admin',null),
+(907000411,907000013,4,'无线网专业','admin','admin',null),
+(907000412,907000013,3,'承载网专业','admin','admin',null),
+(907000413,907000013,16,'网络云专业','admin','admin',null),
+(907000414,907000013,15,'5G核心网子专业','admin','admin',null),
+(907000415,907000013,14,'HSS子专业','admin','admin',null),
+(907000416,907000013,13,'分组域子专业','admin','admin',null),
+(907000417,907000013,12,'电路域子专业','admin','admin',null),
+(907000418,907000013,11,'IMS子专业','admin','admin',null),
+(907000419,907000013,9,'智能网子专业','admin','admin',null),
+(907000420,907000013,17,'其他','admin','admin',null),
+(907000421,907000014,1,'否','admin','admin',null),
+(907000422,907000014,0,'是','admin','admin',null),
+(907000423,907000014,2,'其他','admin','admin',null),
+(907000424,907000015,2,'风力发电','admin','admin',null),
+(907000425,907000015,4,'风光互补','admin','admin',null),
+(907000426,907000015,3,'太阳能发电','admin','admin',null),
+(907000427,907000015,1,'市电直供','admin','admin',null),
+(907000428,907000015,0,'市电转供','admin','admin',null),
+(907000429,907000015,5,'用于电费分析','admin','admin',null),
+(907000430,907000015,6,'其他','admin','admin',null),
+(907000431,907000016,1,'1+1热备','admin','admin',null),
+(907000432,907000016,0,'单路引入','admin','admin',null),
+(907000433,907000016,2,'1+1冷备','admin','admin',null),
+(907000434,907000016,3,'N+0','admin','admin',null),
+(907000435,907000016,4,'N+1热备','admin','admin',null),
+(907000436,907000016,5,'N+1冷备','admin','admin',null),
+(907000437,907000016,6,'其他','admin','admin',null),
+(907000438,907000017,3,'240V','admin','admin',null),
+(907000439,907000017,1,'-48V','admin','admin',null),
+(907000440,907000017,5,'360V','admin','admin',null),
+(907000441,907000017,7,'10000V','admin','admin',null),
+(907000442,907000017,6,'380V','admin','admin',null),
+(907000443,907000017,0,'24V','admin','admin',null),
+(907000444,907000017,4,'336V','admin','admin',null),
+(907000445,907000017,2,'220V','admin','admin',null),
+(907000446,907000017,8,'其他','admin','admin',null),
+(907000447,907000018,0,'是','admin','admin',null),
+(907000448,907000018,1,'否','admin','admin',null),
+(907000449,907000018,2,'其他','admin','admin',null),
+(907000450,907000019,1,'2','admin','admin',null),
+(907000451,907000019,0,'1','admin','admin',null),
+(907000452,907000019,2,'其他','admin','admin',null),
+(907000453,907000020,5,'UPS系统','admin','admin',null),
+(907000454,907000020,4,'开关电源系统','admin','admin',null),
+(907000455,907000020,3,'发电系统','admin','admin',null),
+(907000456,907000020,2,'低压配电系统','admin','admin',null),
+(907000457,907000020,1,'高压直流系统','admin','admin',null),
+(907000458,907000020,0,'高压配电系统','admin','admin',null),
+(907000459,907000020,6,'其他','admin','admin',null),
+(907000460,907000021,3,'上海贝尔','admin','admin',null),
+(907000461,907000021,2,'烽火','admin','admin',null),
+(907000462,907000021,1,'中兴','admin','admin',null),
+(907000463,907000021,0,'华为','admin','admin',null),
+(907000464,907000021,4,'其他','admin','admin',null),
+(907000465,907000022,2,'高压配电','admin','admin',null),
+(907000466,907000022,5,'低压交流配电','admin','admin',null),
+(907000467,907000022,4,'高压直流配电','admin','admin',null),
+(907000468,907000022,3,'高压直流电源','admin','admin',null),
+(907000469,907000022,1,'变换设备','admin','admin',null),
+(907000470,907000022,0,'变压器','admin','admin',null),
+(907000471,907000022,15,'其他设备','admin','admin',null),
+(907000472,907000022,14,'智能电表','admin','admin',null),
+(907000473,907000022,13,'动环监控','admin','admin',null),
+(907000474,907000022,12,'节能设备','admin','admin',null),
+(907000475,907000022,11,'空调','admin','admin',null),
+(907000476,907000022,10,'蓄电池','admin','admin',null),
+(907000477,907000022,9,'UPS设备','admin','admin',null),
+(907000478,907000022,8,'低压直流配电','admin','admin',null),
+(907000479,907000022,7,'开关电源','admin','admin',null),
+(907000480,907000022,6,'发电机组','admin','admin',null),
+(907000481,907000022,16,'其他','admin','admin',null),
+(907000482,907000023,10,'低压配电系统','admin','admin',null),
+(907000483,907000023,12,'发电系统','admin','admin',null),
+(907000484,907000023,13,'发电机组','admin','admin',null),
+(907000485,907000023,14,'开关电源系统','admin','admin',null),
+(907000486,907000023,15,'开关电源','admin','admin',null),
+(907000487,907000023,16,'低压直流配电','admin','admin',null),
+(907000488,907000023,17,'UPS系统','admin','admin',null),
+(907000489,907000023,18,'UPS设备','admin','admin',null),
+(907000490,907000023,3,'变压器','admin','admin',null),
+(907000491,907000023,4,'变换设备','admin','admin',null),
+(907000492,907000023,5,'高压配电系统','admin','admin',null),
+(907000493,907000023,6,'高压配电','admin','admin',null),
+(907000494,907000023,7,'高压直流系统','admin','admin',null),
+(907000495,907000023,8,'高压直流电源','admin','admin',null),
+(907000496,907000023,9,'高压直流配电','admin','admin',null),
+(907000497,907000023,11,'低压交流配电','admin','admin',null),
+(907000498,907000023,19,'蓄电池','admin','admin',null),
+(907000499,907000023,20,'空调','admin','admin',null),
+(907000500,907000023,21,'节能设备','admin','admin',null),
+(907000501,907000023,22,'动环监控','admin','admin',null),
+(907000502,907000023,23,'智能电表','admin','admin',null),
+(907000503,907000023,24,'其他设备','admin','admin',null),
+(907000504,907000023,25,'动环专业内输出分路','admin','admin',null),
+(907000505,907000023,26,'跨专业输出分路','admin','admin',null),
+(907000506,907000023,2,'机房动环属性','admin','admin',null),
+(907000507,907000023,1,'位置点动环属性','admin','admin',null),
+(907000508,907000023,27,'其他','admin','admin',null),
+(907000509,907000024,0,'单母线','admin','admin',null),
+(907000510,907000024,1,'双母线','admin','admin',null),
+(907000511,907000024,2,'三母线','admin','admin',null),
+(907000512,907000024,3,'其他','admin','admin',null),
+(907000513,907000025,1,'1市电1油机','admin','admin',null),
+(907000514,907000025,2,'2市电1油机','admin','admin',null),
+(907000515,907000025,3,'1市电2油机','admin','admin',null),
+(907000516,907000025,4,'2市电2油机','admin','admin',null),
+(907000517,907000025,0,'1市电无油机','admin','admin',null),
+(907000518,907000025,5,'其他','admin','admin',null),
+(907000519,907000026,182,'KFR-120LW/S-J2(2)','admin','admin',null),
+(907000520,907000026,70,'CXD100','admin','admin',null),
+(907000521,907000026,71,'CXD120E','admin','admin',null),
+(907000522,907000026,72,'CXD130','admin','admin',null),
+(907000523,907000026,73,'CXD45','admin','admin',null),
+(907000524,907000026,74,'CXD60','admin','admin',null),
+(907000525,907000026,75,'CXD95','admin','admin',null),
+(907000526,907000026,76,'D180GAH','admin','admin',null),
+(907000527,907000026,77,'D220GDAH','admin','admin',null),
+(907000528,907000026,78,'D260GAH','admin','admin',null),
+(907000529,907000026,79,'D280GAH','admin','admin',null),
+(907000530,907000026,80,'D28GAVGH','admin','admin',null),
+(907000531,907000026,81,'D28GAVH','admin','admin',null),
+(907000532,907000026,82,'D360GAH','admin','admin',null),
+(907000533,907000026,83,'EXD100AⅡ','admin','admin',null),
+(907000534,907000026,84,'EXD30A2','admin','admin',null),
+(907000535,907000026,85,'EXD60AII','admin','admin',null),
+(907000536,907000026,86,'EXD70DA','admin','admin',null),
+(907000537,907000026,87,'EXD70DW','admin','admin',null),
+(907000538,907000026,88,'EXD80Ⅱ','admin','admin',null),
+(907000539,907000026,89,'EXD80A','admin','admin',null),
+(907000540,907000026,90,'EXD80AII','admin','admin',null),
+(907000541,907000026,91,'EXD85A','admin','admin',null),
+(907000542,907000026,92,'EXD90AⅡ','admin','admin',null),
+(907000543,907000026,93,'EXD90AI','admin','admin',null),
+(907000544,907000026,94,'EXU60AII','admin','admin',null),
+(907000545,907000026,95,'U180GAGH','admin','admin',null),
+(907000546,907000026,96,'U180GAVGH','admin','admin',null),
+(907000547,907000026,97,'U240GAGH','admin','admin',null),
+(907000548,907000026,98,'U240GAVGH','admin','admin',null),
+(907000549,907000026,99,'U240GH','admin','admin',null),
+(907000550,907000026,100,'U260GAGH','admin','admin',null),
+(907000551,907000026,101,'U260GAVGH','admin','admin',null),
+(907000552,907000026,102,'U28GAH','admin','admin',null),
+(907000553,907000026,103,'U28GAVGH','admin','admin',null),
+(907000554,907000026,104,'U360GAGH','admin','admin',null),
+(907000555,907000026,105,'U37GAVGH','admin','admin',null),
+(907000556,907000026,106,'U42GAVGH','admin','admin',null),
+(907000557,907000026,107,'FVY125FPVL','admin','admin',null),
+(907000558,907000026,108,'FVY71LQVLB(KFR-75L)','admin','admin',null),
+(907000559,907000026,109,'ASD351A','admin','admin',null),
+(907000560,907000026,110,'ASD-482A','admin','admin',null),
+(907000561,907000026,111,'ASD-602A','admin','admin',null),
+(907000562,907000026,112,'ASD-692A','admin','admin',null),
+(907000563,907000026,113,'ASD-692G','admin','admin',null),
+(907000564,907000026,114,'ASD-702A','admin','admin',null),
+(907000565,907000026,115,'CCD-271A','admin','admin',null),
+(907000566,907000026,116,'CCD-451A','admin','admin',null),
+(907000567,907000026,117,'CCD-702A','admin','admin',null),
+(907000568,907000026,118,'CCU-352A','admin','admin',null),
+(907000569,907000026,119,'CCU-451A','admin','admin',null),
+(907000570,907000026,120,'CCU-542A','admin','admin',null),
+(907000571,907000026,121,'CCU-802A','admin','admin',null),
+(907000572,907000026,122,'CSD-271A','admin','admin',null),
+(907000573,907000026,123,'CSD-602A','admin','admin',null),
+(907000574,907000026,124,'CSU-271A','admin','admin',null),
+(907000575,907000026,125,'CSU-542A','admin','admin',null),
+(907000576,907000026,126,'CSU-602A','admin','admin',null),
+(907000577,907000026,127,'MRD-662A','admin','admin',null),
+(907000578,907000026,128,'CR25A','admin','admin',null),
+(907000579,907000026,129,'HCF60KW','admin','admin',null),
+(907000580,907000026,130,'KFR-120LW','admin','admin',null),
+(907000581,907000026,131,'KFR-120LW/E(1253L)V-N2 YC01','admin','admin',null),
+(907000582,907000026,132,'KFR-60LW','admin','admin',null),
+(907000583,907000026,133,'KFR-70LW','admin','admin',null),
+(907000584,907000026,134,'KF-72LW/E(7233L)R-N2 YC01','admin','admin',null),
+(907000585,907000026,135,'KF-120L(1233L)V-N2YC01','admin','admin',null),
+(907000586,907000026,136,'KF-120LW/E(1233L)V-N2 YC01','admin','admin',null),
+(907000587,907000026,137,'KF-120L/RA','admin','admin',null),
+(907000588,907000026,138,'KF-120LW/S-JZ(E5)','admin','admin',null),
+(907000589,907000026,139,'KF-120LW/SN-JZ1(R2)','admin','admin',null),
+(907000590,907000026,140,'KFR-120L/SD-JZ(E2)','admin','admin',null),
+(907000591,907000026,141,'MDV-D140T2/N1','admin','admin',null),
+(907000592,907000026,142,'CS-ME45D1E','admin','admin',null),
+(907000593,907000026,143,'KFR-120LW/SDY-JA(E5)','admin','admin',null),
+(907000594,907000026,144,'KFR-72LW/08T(OYI)','admin','admin',null),
+(907000595,907000026,145,'KF-71LW/(SF)','admin','admin',null),
+(907000596,907000026,146,'KFR-120LW','admin','admin',null),
+(907000597,907000026,147,'KFR-32GW/Z2','admin','admin',null),
+(907000598,907000026,148,'KFR-48LW','admin','admin',null),
+(907000599,907000026,149,'RF/RF75WD','admin','admin',null),
+(907000600,907000026,150,'RF/RFD12WEAR','admin','admin',null),
+(907000601,907000026,151,'RF73WDT','admin','admin',null),
+(907000602,907000026,152,'L83UD','admin','admin',null),
+(907000603,907000026,153,'CMA2060U3E','admin','admin',null),
+(907000604,907000026,154,'CMA2100U3E','admin','admin',null),
+(907000605,907000026,155,'CMA2100D3E','admin','admin',null),
+(907000606,907000026,156,'CMC0140D1E','admin','admin',null),
+(907000607,907000026,157,'CMC0140U1E','admin','admin',null),
+(907000608,907000026,158,'KFR-120LW','admin','admin',null),
+(907000609,907000026,159,'KFR-125LW','admin','admin',null),
+(907000610,907000026,160,'KFR-72LW','admin','admin',null),
+(907000611,907000026,161,'KFR-75LW','admin','admin',null),
+(907000612,907000026,162,'KFR-120L/01T(0F0)','admin','admin',null),
+(907000613,907000026,163,'KT3F-120L/05T(F01)','admin','admin',null),
+(907000614,907000026,164,'KT3F-120L/05T','admin','admin',null),
+(907000615,907000026,165,'KT3F-120L/50T(F01)','admin','admin',null),
+(907000616,907000026,166,'KT3F-120W/05T(F01)','admin','admin',null),
+(907000617,907000026,167,'KT3F-50G/01T','admin','admin',null),
+(907000618,907000026,168,'KT3F-72L/06T(C01)','admin','admin',null),
+(907000619,907000026,169,'KT3F-72W/06T(C01)','admin','admin',null),
+(907000620,907000026,170,'KT3FR-120L/O5(G01)','admin','admin',null),
+(907000621,907000026,171,'KT3FR-70L/03T','admin','admin',null),
+(907000622,907000026,172,'KT3FR-72L/08T(0Y1)','admin','admin',null),
+(907000623,907000026,173,'KTFR-120W/05T(F01)','admin','admin',null),
+(907000624,907000026,174,'X-18LW/02T','admin','admin',null),
+(907000625,907000026,175,'KF-120LW','admin','admin',null),
+(907000626,907000026,176,'KFR-120LW','admin','admin',null),
+(907000627,907000026,177,'KFR-70LW','admin','admin',null),
+(907000628,907000026,178,'KFR-76LW','admin','admin',null),
+(907000629,907000026,179,'KFR-72LW','admin','admin',null),
+(907000630,907000026,180,'KF-120LW/HV8S(5)','admin','admin',null),
+(907000631,907000026,181,'KF-120LW/S-J2(2)','admin','admin',null),
+(907000632,907000026,183,'KFR-120LW','admin','admin',null),
+(907000633,907000026,184,'KFR-120LW/5DY-JA(5）','admin','admin',null),
+(907000634,907000026,185,'KFR-70LW','admin','admin',null),
+(907000635,907000026,186,'KFR-72LW','admin','admin',null),
+(907000636,907000026,187,'KFR-75LW','admin','admin',null),
+(907000637,907000026,188,'KFR-120LW/HV8S(5)','admin','admin',null),
+(907000638,907000026,189,'KFRd-72LW/JH1SN(R2)','admin','admin',null),
+(907000639,907000026,190,'KFR-120LW','admin','admin',null),
+(907000640,907000026,191,'MEAU602BI','admin','admin',null),
+(907000641,907000026,192,'MEAD1002E','admin','admin',null),
+(907000642,907000026,193,'MEAD902M','admin','admin',null),
+(907000643,907000026,194,'MEAU702M','admin','admin',null),
+(907000644,907000026,195,'MES035C','admin','admin',null),
+(907000645,907000026,196,'MEAU802','admin','admin',null),
+(907000646,907000026,197,'9AU22Z','admin','admin',null),
+(907000647,907000026,198,'9AU13','admin','admin',null),
+(907000648,907000026,199,'KFR-35GW','admin','admin',null),
+(907000649,907000026,200,'KFR-50GW','admin','admin',null),
+(907000650,907000026,201,'KFR-50LW','admin','admin',null),
+(907000651,907000026,202,'KFR-72LW','admin','admin',null),
+(907000652,907000026,203,'KFR-120LW','admin','admin',null),
+(907000653,907000026,204,'KFR-120L/SUTKD-N2(P8)','admin','admin',null),
+(907000654,907000026,205,'KFR-120L/SUTK-N2','admin','admin',null),
+(907000655,907000026,206,'KFR-72L/TSUTK-N2','admin','admin',null),
+(907000656,907000026,207,'KF-120L/STK(02)(B0)','admin','admin',null),
+(907000657,907000026,208,'KF-120L/STK-2(B0)','admin','admin',null),
+(907000658,907000026,209,'KF-120L/SUKT-N2','admin','admin',null),
+(907000659,907000026,210,'KF-120L/SUTK-N2(P8)','admin','admin',null),
+(907000660,907000026,211,'KF-120L/SUTK-N2','admin','admin',null),
+(907000661,907000026,212,'KF-120LW/STK(02)','admin','admin',null),
+(907000662,907000026,213,'KF-120LW/STK-2','admin','admin',null),
+(907000663,907000026,214,'KF-120LW/STK','admin','admin',null),
+(907000664,907000026,215,'KF-120LW/SUTK-N2(P8)','admin','admin',null),
+(907000665,907000026,216,'KF-120LW/SUTK-N2','admin','admin',null),
+(907000666,907000026,217,'KF-50G/TK-N3','admin','admin',null),
+(907000667,907000026,218,'KF-50GW/TK-N3','admin','admin',null),
+(907000668,907000026,219,'KFR-120LW/SUTK-N2','admin','admin',null),
+(907000669,907000026,220,'KFR-50GW/TKI-N3','admin','admin',null),
+(907000670,907000026,221,'KFR-50W/TKI-N3(02)','admin','admin',null),
+(907000671,907000026,222,'KFRD-125LW/Y8','admin','admin',null),
+(907000672,907000026,223,'DME12MCP5','admin','admin',null),
+(907000673,907000026,224,'KF-120LW','admin','admin',null),
+(907000674,907000026,225,'KF-120LW(E2)','admin','admin',null),
+(907000675,907000026,226,'KF-120LW(E5)','admin','admin',null),
+(907000676,907000026,227,'KFR-72LW','admin','admin',null),
+(907000677,907000026,228,'KFR-120LW(E2)','admin','admin',null),
+(907000678,907000026,229,'KFR-120LW(E5)','admin','admin',null),
+(907000679,907000026,230,'KFR-120LW/SD-JZ(E2)','admin','admin',null),
+(907000680,907000026,231,'KFR-120LW/SDY-JA(E5)','admin','admin',null),
+(907000681,907000026,232,'KFR-120LW/SDN-JZ1(R2)','admin','admin',null),
+(907000682,907000026,233,'RF25WW/S-8ROT1','admin','admin',null),
+(907000683,907000026,234,'KF-120LW/SN','admin','admin',null),
+(907000684,907000026,235,'KF-120LW/SN-JZ1(R2)','admin','admin',null),
+(907000685,907000026,236,'KFR-120L/SD-JZ1(R2)','admin','admin',null),
+(907000686,907000026,237,'CM100AF','admin','admin',null),
+(907000687,907000026,238,'CM50A/WF','admin','admin',null),
+(907000688,907000026,239,'CM50AR','admin','admin',null),
+(907000689,907000026,240,'CM60AD','admin','admin',null),
+(907000690,907000026,241,'CM60AF','admin','admin',null),
+(907000691,907000026,242,'CM60AR','admin','admin',null),
+(907000692,907000026,243,'CM70A/WF','admin','admin',null),
+(907000693,907000026,244,'CM70AF','admin','admin',null),
+(907000694,907000026,245,'CM80A/WF','admin','admin',null),
+(907000695,907000026,246,'CM80AF','admin','admin',null),
+(907000696,907000026,247,'CM80AR','admin','admin',null),
+(907000697,907000026,248,'MCD23ALS00','admin','admin',null),
+(907000698,907000026,249,'P2040UAPMS0S','admin','admin',null),
+(907000699,907000026,250,'P2055GARMS1R','admin','admin',null),
+(907000700,907000026,251,'P2060FARMS1S','admin','admin',null),
+(907000701,907000026,252,'P2070UARMS1R','admin','admin',null),
+(907000702,907000026,253,'P3080FARMS1S','admin','admin',null),
+(907000703,907000026,254,'P3090FARMS1R','admin','admin',null),
+(907000704,907000026,255,'MEDD702','admin','admin',null),
+(907000705,907000026,256,'MEFD802','admin','admin',null),
+(907000706,907000026,257,'8AD08ZEBHAX','admin','admin',null),
+(907000707,907000026,258,'8AU07ZEBHAX','admin','admin',null),
+(907000708,907000026,259,'8AU08ZEBHAX','admin','admin',null),
+(907000709,907000026,260,'8AU10ZEBHAX','admin','admin',null),
+(907000710,907000026,261,'9AD16ZEBHAX','admin','admin',null),
+(907000711,907000026,262,'9AD18ZEBHAX','admin','admin',null),
+(907000712,907000026,263,'9AU12','admin','admin',null),
+(907000713,907000026,264,'KFRD-120LW/6301','admin','admin',null),
+(907000714,907000026,265,'LE13WG','admin','admin',null),
+(907000715,907000026,266,'LF13WD','admin','admin',null),
+(907000716,907000026,267,'LF75WD','admin','admin',null),
+(907000717,907000026,268,'RF13WA','admin','admin',null),
+(907000718,907000026,269,'RF13WD','admin','admin',null),
+(907000719,907000026,270,'KT3F-120L/05T(F01)','admin','admin',null),
+(907000720,907000026,271,'FDY250KMY1L','admin','admin',null),
+(907000721,907000026,272,'FDY400KMY1L','admin','admin',null),
+(907000722,907000026,273,'FXSP125MMVC','admin','admin',null),
+(907000723,907000026,274,'FXYF125K','admin','admin',null),
+(907000724,907000026,275,'FXYH100LVF','admin','admin',null),
+(907000725,907000026,276,'KFR-125L','admin','admin',null),
+(907000726,907000026,277,'KFR-125W','admin','admin',null),
+(907000727,907000026,278,'KFR-75W','admin','admin',null),
+(907000728,907000026,279,'R200KMY1L','admin','admin',null),
+(907000729,907000026,280,'RCXYQ16MAY1','admin','admin',null),
+(907000730,907000026,281,'RHXYQ12PY1','admin','admin',null),
+(907000731,907000026,282,'RHXYQ14PY1','admin','admin',null),
+(907000732,907000026,283,'RHXYQ16PY1','admin','admin',null),
+(907000733,907000026,284,'RY71DQY3C','admin','admin',null),
+(907000734,907000026,285,'RY71FPASY1L','admin','admin',null),
+(907000735,907000026,286,'CH2300-D2S','admin','admin',null),
+(907000736,907000026,287,'CH2300-D2','admin','admin',null),
+(907000737,907000026,288,'EC23HDNC1D','admin','admin',null),
+(907000738,907000026,289,'HC-JGKT-SW/1000M','admin','admin',null),
+(907000739,907000026,290,'TC200-DO3','admin','admin',null),
+(907000740,907000026,291,'PSH-3GK','admin','admin',null),
+(907000741,907000026,292,'PSH-5GK','admin','admin',null),
+(907000742,907000026,293,'PSH-3GJ','admin','admin',null),
+(907000743,907000026,294,'PSH-5GJ','admin','admin',null),
+(907000744,907000026,295,'PSH-5JJ','admin','admin',null),
+(907000745,907000026,296,'PSH-6UKH','admin','admin',null),
+(907000746,907000026,297,'PUH-5YKSA','admin','admin',null),
+(907000747,907000026,298,'LF/LFC73WDT','admin','admin',null),
+(907000748,907000026,299,'LF/LF13WD','admin','admin',null),
+(907000749,907000026,300,'RF/RFC73WDT','admin','admin',null),
+(907000750,907000026,301,'RF/RF13WD','admin','admin',null),
+(907000751,907000026,302,'KFR-120LW','admin','admin',null),
+(907000752,907000026,303,'KFRD-72L/DF1-2','admin','admin',null),
+(907000753,907000026,304,'KFRD-120LW','admin','admin',null),
+(907000754,907000026,305,'P1020VAPMS1R','admin','admin',null),
+(907000755,907000026,306,'P1035GARMS1R','admin','admin',null),
+(907000756,907000026,307,'P1040GC2MSIS','admin','admin',null),
+(907000757,907000026,308,'P1050UA13FHM12E','admin','admin',null),
+(907000758,907000026,309,'P2060DA','admin','admin',null),
+(907000759,907000026,310,'P2060FA','admin','admin',null),
+(907000760,907000026,311,'P2070DD','admin','admin',null),
+(907000761,907000026,312,'P2080GC2MSIS','admin','admin',null),
+(907000762,907000026,313,'P2090DA13FHM12E','admin','admin',null),
+(907000763,907000026,314,'P2090DA13FHM12E1D000P1000','admin','admin',null),
+(907000764,907000026,315,'P3070DD','admin','admin',null),
+(907000765,907000026,316,'P3080FARMSIR','admin','admin',null),
+(907000766,907000026,317,'P3090DG','admin','admin',null),
+(907000767,907000026,318,'P3090FA','admin','admin',null),
+(907000768,907000026,319,'P3120GC2MSIS','admin','admin',null),
+(907000769,907000026,320,'DME12M01','admin','admin',null),
+(907000770,907000026,321,'CSU542A','admin','admin',null),
+(907000771,907000026,322,'CSU852A','admin','admin',null),
+(907000772,907000026,323,'EXD30AII（风冷+冷冻水)','admin','admin',null),
+(907000773,907000026,324,'EXD90DA（风冷+冷冻水)','admin','admin',null),
+(907000774,907000026,325,'U260GAGH','admin','admin',null),
+(907000775,907000026,326,'U280GAGH','admin','admin',null),
+(907000776,907000026,327,'U360GAGH','admin','admin',null),
+(907000777,907000026,328,'U420GAGH','admin','admin',null),
+(907000778,907000026,329,'U280GAGH','admin','admin',null),
+(907000779,907000026,330,'EXU50AI','admin','admin',null),
+(907000780,907000026,331,'EXU100AI','admin','admin',null),
+(907000781,907000026,332,'EXU60AI','admin','admin',null),
+(907000782,907000026,333,'EXD100AI','admin','admin',null),
+(907000783,907000026,334,'MRD662A','admin','admin',null),
+(907000784,907000026,335,'CS-80B51RC','admin','admin',null),
+(907000785,907000026,336,'CS-140B51RC','admin','admin',null),
+(907000786,907000026,337,'KFR-62LW/B1','admin','admin',null),
+(907000787,907000026,338,'KFR-120LW/57Y1','admin','admin',null),
+(907000788,907000026,339,'EDU351K','admin','admin',null),
+(907000789,907000026,340,'EDU401D','admin','admin',null),
+(907000790,907000026,341,'EDA61U','admin','admin',null),
+(907000791,907000026,342,'EDA71U','admin','admin',null),
+(907000792,907000026,343,'EDA81U','admin','admin',null),
+(907000793,907000026,344,'EDA91U','admin','admin',null),
+(907000794,907000026,345,'EDU602U','admin','admin',null),
+(907000795,907000026,346,'EDA141U','admin','admin',null),
+(907000796,907000026,347,'SCA452U','admin','admin',null),
+(907000797,907000026,348,'SCA301U','admin','admin',null),
+(907000798,907000026,349,'SCA802U','admin','admin',null),
+(907000799,907000026,350,'SCA802EU','admin','admin',null),
+(907000800,907000026,351,'SCA702U','admin','admin',null),
+(907000801,907000026,352,'24OA0001V10PH$2A6','admin','admin',null),
+(907000802,907000026,353,'40UA0001V10PH$2A6','admin','admin',null),
+(907000803,907000026,354,'55UA0001V10PH$2A6','admin','admin',null),
+(907000804,907000026,355,'75UA0001V10PH$2A6','admin','admin',null),
+(907000805,907000026,356,'D40(M+S)-A','admin','admin',null),
+(907000806,907000026,357,'UN151','admin','admin',null),
+(907000807,907000026,358,'UN260','admin','admin',null),
+(907000808,907000026,359,'TUAR1822','admin','admin',null),
+(907000809,907000026,360,'KFR-50LW/DHZ(W1-H)+2','admin','admin',null),
+(907000810,907000026,361,'RG4','admin','admin',null),
+(907000811,907000026,362,'KFR-120L(1253L)U-SN5','admin','admin',null),
+(907000812,907000026,1,'KFRd-71LW/KS(TX)','admin','admin',null),
+(907000813,907000026,2,'KFRd-120LW/CS(TX)','admin','admin',null),
+(907000814,907000026,3,'KFRD-12008W/SY-E1（数显）','admin','admin',null),
+(907000815,907000026,4,'KFRd-72LW/CS(TX)','admin','admin',null),
+(907000816,907000026,5,'KF-50GW/E(TX)','admin','admin',null),
+(907000817,907000026,6,'KFRd-72LW/AL23S','admin','admin',null),
+(907000818,907000026,7,'O DXA 80E2A4','admin','admin',null),
+(907000819,907000026,8,'O DXA 80E2A5','admin','admin',null),
+(907000820,907000026,9,'U DXA 80E2A4','admin','admin',null),
+(907000821,907000026,10,'U DXA 90E2A4','admin','admin',null),
+(907000822,907000026,11,'U DXA 100E2A4','admin','admin',null),
+(907000823,907000026,12,'O DXA 50E2A4','admin','admin',null),
+(907000824,907000026,13,'O DXA 60E2A4','admin','admin',null),
+(907000825,907000026,14,'0.DXA 26EIAI','admin','admin',null),
+(907000826,907000026,15,'CM30','admin','admin',null),
+(907000827,907000026,16,'CM40','admin','admin',null),
+(907000828,907000026,17,'CM50','admin','admin',null),
+(907000829,907000026,18,'CM60','admin','admin',null),
+(907000830,907000026,19,'CM70','admin','admin',null),
+(907000831,907000026,20,'CM80','admin','admin',null),
+(907000832,907000026,21,'CM100','admin','admin',null),
+(907000833,907000026,22,'DME027E','admin','admin',null),
+(907000834,907000026,23,'DME037E','admin','admin',null),
+(907000835,907000026,24,'DME05','admin','admin',null),
+(907000836,907000026,25,'DME07','admin','admin',null),
+(907000837,907000026,26,'P3090U','admin','admin',null),
+(907000838,907000026,27,'P2055U','admin','admin',null),
+(907000839,907000026,28,'P3100U','admin','admin',null),
+(907000840,907000026,29,'P2040U','admin','admin',null),
+(907000841,907000026,30,'P2060U','admin','admin',null),
+(907000842,907000026,31,'P3080U','admin','admin',null),
+(907000843,907000026,32,'P2050U','admin','admin',null),
+(907000844,907000026,33,'P2060UA13FHM12E1D000P1000','admin','admin',null),
+(907000845,907000026,34,'SD100DA13RHS12E10000PA000','admin','admin',null),
+(907000846,907000026,35,'SDC3100','admin','admin',null),
+(907000847,907000026,36,'P2070U','admin','admin',null),
+(907000848,907000026,37,'SDC2070','admin','admin',null),
+(907000849,907000026,38,'P3080UA','admin','admin',null),
+(907000850,907000026,39,'P2100','admin','admin',null),
+(907000851,907000026,40,'P2080 DA','admin','admin',null),
+(907000852,907000026,41,'P2080 UA','admin','admin',null),
+(907000853,907000026,42,'SDC2060','admin','admin',null),
+(907000854,907000026,43,'SD100 UA','admin','admin',null),
+(907000855,907000026,44,'SD100 DA ','admin','admin',null),
+(907000856,907000026,45,'P2100GC2MS1R','admin','admin',null),
+(907000857,907000026,46,'P3110GC2MS1R','admin','admin',null),
+(907000858,907000026,47,'P3120GC2MS1R','admin','admin',null),
+(907000859,907000026,48,'P1050UA13FHM12E1D000P1000','admin','admin',null),
+(907000860,907000026,49,'P2100UA13FHM12E1D000P1000','admin','admin',null),
+(907000861,907000026,50,'P1030UA','admin','admin',null),
+(907000862,907000026,51,'P1050DA','admin','admin',null),
+(907000863,907000026,52,'P2060DA','admin','admin',null),
+(907000864,907000026,53,'P2080DA','admin','admin',null),
+(907000865,907000026,54,'DME12','admin','admin',null),
+(907000866,907000026,55,'P2090DA13FHM12E1D000P1000','admin','admin',null),
+(907000867,907000026,56,'P2100DA13FHM','admin','admin',null),
+(907000868,907000026,57,'PEC-248FA','admin','admin',null),
+(907000869,907000026,58,'PEC-253FA','admin','admin',null),
+(907000870,907000026,59,'PEC-263FA','admin','admin',null),
+(907000871,907000026,60,'PEC-270FA','admin','admin',null),
+(907000872,907000026,61,'CW120B3','admin','admin',null),
+(907000873,907000026,62,'CW85B2','admin','admin',null),
+(907000874,907000026,63,'OPTIMA.U.             DXA100E2A5','admin','admin',null),
+(907000875,907000026,64,'OPTIMA-HD.U.CW120B3','admin','admin',null),
+(907000876,907000026,65,'OPTIMA-HD.U.CW85B2','admin','admin',null),
+(907000877,907000026,66,'OPTIMA-HD.U.DXA100E2A5','admin','admin',null),
+(907000878,907000026,67,'OPTIMA-HD.U.DXA90E2A5','admin','admin',null),
+(907000879,907000026,68,'D240GAH','admin','admin',null),
+(907000880,907000026,69,'CR25A','admin','admin',null),
+(907000881,907000026,363,'其他','admin','admin',null),
+(907000882,907000027,1,'冷备','admin','admin',null),
+(907000883,907000027,4,'独立','admin','admin',null),
+(907000884,907000027,3,'N+1','admin','admin',null),
+(907000885,907000027,2,'1+1','admin','admin',null),
+(907000886,907000027,0,'热备','admin','admin',null),
+(907000887,907000027,5,'其他','admin','admin',null),
+(907000888,907000028,3,'1+1冗余并机','admin','admin',null),
+(907000889,907000028,0,'N+1（N>1）','admin','admin',null),
+(907000890,907000028,2,'单机','admin','admin',null),
+(907000891,907000028,1,'1+1主备','admin','admin',null),
+(907000892,907000028,4,'其他','admin','admin',null),
+(907000893,907000029,0,'交流','admin','admin',null),
+(907000894,907000029,1,'直流','admin','admin',null),
+(907000895,907000029,2,'其他','admin','admin',null),
+(907000896,907000030,0,'是','admin','admin',null),
+(907000897,907000030,1,'否','admin','admin',null),
+(907000898,907000030,2,'其他','admin','admin',null),
+(907000899,907000031,0,'数据中心','admin','admin',null),
+(907000900,907000031,2,'传输节点','admin','admin',null),
+(907000901,907000031,1,'通信机楼','admin','admin',null),
+(907000902,907000031,3,'通信基站','admin','admin',null),
+(907000903,907000031,4,'其他','admin','admin',null),
+(907000904,907000032,27,'工程(验收中)','admin','admin',null),
+(907000905,907000032,28,'工程(自检中)','admin','admin',null),
+(907000906,907000032,29,'模型机','admin','admin',null),
+(907000907,907000032,30,'拟新建','admin','admin',null),
+(907000908,907000032,9,'报废','admin','admin',null),
+(907000909,907000032,8,'空闲','admin','admin',null),
+(907000910,907000032,31,'退网(拟终止)','admin','admin',null),
+(907000911,907000032,18,'入网未交维','admin','admin',null),
+(907000912,907000032,7,'临时停用','admin','admin',null),
+(907000913,907000032,6,'规划','admin','admin',null),
+(907000914,907000032,5,'竣工','admin','admin',null),
+(907000915,907000032,4,'维护','admin','admin',null),
+(907000916,907000032,3,'退网','admin','admin',null),
+(907000917,907000032,2,'在网','admin','admin',null),
+(907000918,907000032,1,'工程','admin','admin',null),
+(907000919,907000032,0,'设计','admin','admin',null),
+(907000920,907000032,32,'退网(退网挂起)','admin','admin',null),
+(907000921,907000032,33,'退网(退网中)','admin','admin',null),
+(907000922,907000032,55,'应急','admin','admin',null),
+(907000923,907000032,54,'备份','admin','admin',null),
+(907000924,907000032,53,'验收中','admin','admin',null),
+(907000925,907000032,52,'试运行','admin','admin',null),
+(907000926,907000032,51,'草稿','admin','admin',null),
+(907000927,907000032,50,'搬迁退网','admin','admin',null),
+(907000928,907000032,49,'停用','admin','admin',null),
+(907000929,907000032,48,'测试','admin','admin',null),
+(907000930,907000032,47,'工程取消','admin','admin',null),
+(907000931,907000032,46,'初验通过','admin','admin',null),
+(907000932,907000032,45,'工程在建','admin','admin',null),
+(907000933,907000032,44,'未确定','admin','admin',null),
+(907000934,907000032,43,'立项','admin','admin',null),
+(907000935,907000032,42,'补录','admin','admin',null),
+(907000936,907000032,40,'施工在建','admin','admin',null),
+(907000937,907000032,39,'验收','admin','admin',null),
+(907000938,907000032,38,'静态','admin','admin',null),
+(907000939,907000032,37,'在网(在网运行)','admin','admin',null),
+(907000940,907000032,36,'在网(临时中断)','admin','admin',null),
+(907000941,907000032,35,'在网(假期网元)','admin','admin',null),
+(907000942,907000032,34,'退网（塔维申请）','admin','admin',null),
+(907000943,907000032,41,'待规划','admin','admin',null),
+(907000944,907000032,17,'预占','admin','admin',null),
+(907000945,907000032,16,'退网已拆除','admin','admin',null),
+(907000946,907000032,15,'退网已下电','admin','admin',null),
+(907000947,907000032,14,'退网未下电','admin','admin',null),
+(907000948,907000032,13,'现网无业务','admin','admin',null),
+(907000949,907000032,12,'现网有业务','admin','admin',null),
+(907000950,907000032,11,'工程新建','admin','admin',null),
+(907000951,907000032,10,'空载','admin','admin',null),
+(907000952,907000032,19,'入网已交维','admin','admin',null),
+(907000953,907000032,20,'备份网元','admin','admin',null),
+(907000954,907000032,21,'工程(草稿中)','admin','admin',null),
+(907000955,907000032,22,'工程(测试网元)','admin','admin',null),
+(907000956,907000032,23,'工程(工程新建)','admin','admin',null),
+(907000957,907000032,24,'工程(试运行)','admin','admin',null),
+(907000958,907000032,25,'工程(网优验收自检中)','admin','admin',null),
+(907000959,907000032,26,'工程(验收完毕)','admin','admin',null),
+(907000960,907000032,56,'其他','admin','admin',null),
+(907000961,907000033,2,'其它','admin','admin',null),
+(907000962,907000033,0,'自维','admin','admin',null),
+(907000963,907000033,1,'代维','admin','admin',null),
+(907000964,907000033,3,'局维','admin','admin',null),
+(907000965,907000033,4,'其他','admin','admin',null),
+(907000966,907000034,0,'是','admin','admin',null),
+(907000967,907000034,1,'否','admin','admin',null),
+(907000968,907000034,2,'其他','admin','admin',null),
+(907000969,907000035,1,'否','admin','admin',null),
+(907000970,907000035,0,'是','admin','admin',null),
+(907000971,907000035,2,'其他','admin','admin',null),
+(907000972,907000036,3,'高压配电','admin','admin',null),
+(907000973,907000036,4,'高压直流开关电源','admin','admin',null),
+(907000974,907000036,5,'高压直流配电','admin','admin',null),
+(907000975,907000036,6,'低压交流配电','admin','admin',null),
+(907000976,907000036,7,'开关电源','admin','admin',null),
+(907000977,907000036,8,'低压直流配电','admin','admin',null),
+(907000978,907000036,9,'工频UPS','admin','admin',null),
+(907000979,907000036,10,'一体化高频UPS','admin','admin',null),
+(907000980,907000036,11,'模块化高频UPS','admin','admin',null),
+(907000981,907000036,12,'铅酸电池','admin','admin',null),
+(907000982,907000036,13,'锂电池','admin','admin',null),
+(907000983,907000036,0,'变压器','admin','admin',null),
+(907000984,907000036,1,'变换设备','admin','admin',null),
+(907000985,907000036,2,'发电机组','admin','admin',null),
+(907000986,907000036,24,'UPS设备','admin','admin',null),
+(907000987,907000036,25,'智能电表','admin','admin',null),
+(907000988,907000036,26,'中央空调末端','admin','admin',null),
+(907000989,907000036,27,'中央空调主机','admin','admin',null),
+(907000990,907000036,14,'机房专用空调','admin','admin',null),
+(907000991,907000036,15,'普通空调','admin','admin',null),
+(907000992,907000036,16,'嵌入式空调','admin','admin',null),
+(907000993,907000036,17,'电池恒温箱','admin','admin',null),
+(907000994,907000036,18,'智能通风换热','admin','admin',null),
+(907000995,907000036,19,'风光设备','admin','admin',null),
+(907000996,907000036,20,'动环监控','admin','admin',null),
+(907000997,907000036,21,'交流智能电表','admin','admin',null),
+(907000998,907000036,22,'直流智能电表','admin','admin',null),
+(907000999,907000036,23,'其它设备','admin','admin',null),
+(907001000,907000036,28,'其他','admin','admin',null),
+(907001001,907000037,0,'是','admin','admin',null),
+(907001002,907000037,1,'否','admin','admin',null),
+(907001003,907000037,2,'其他','admin','admin',null),
+(907001004,907000038,0,'在用','admin','admin',null),
+(907001005,907000038,1,'空闲','admin','admin',null),
+(907001006,907000038,2,'其他','admin','admin',null),
+(907001007,907000039,0,'12V','admin','admin',null),
+(907001008,907000039,1,'6V','admin','admin',null),
+(907001009,907000039,2,'2V','admin','admin',null),
+(907001010,907000039,3,'48V','admin','admin',null),
+(907001011,907000039,4,'3.2V','admin','admin',null),
+(907001012,907000039,5,'其他','admin','admin',null),
+(907001013,907000040,0,'10KV以上','admin','admin',null),
+(907001014,907000040,1,'10KV','admin','admin',null),
+(907001015,907000040,2,'其他','admin','admin',null),
+(907001016,907000041,0,'水平轴','admin','admin',null),
+(907001017,907000041,1,'垂直轴','admin','admin',null),
+(907001018,907000041,2,'无','admin','admin',null),
+(907001019,907000041,3,'其他','admin','admin',null),
+(907001020,907000042,3,'便携','admin','admin',null),
+(907001021,907000042,1,'车载','admin','admin',null),
+(907001022,907000042,0,'固定','admin','admin',null),
+(907001023,907000042,2,'拖车','admin','admin',null),
+(907001024,907000042,4,'其他','admin','admin',null),
+(907001025,907000043,0,'是','admin','admin',null),
+(907001026,907000043,1,'否','admin','admin',null),
+(907001027,907000043,2,'其他','admin','admin',null),
+(907001028,907000044,4,'CMNET ','admin','admin',null),
+(907001029,907000044,5,'IP承载网 ','admin','admin',null),
+(907001030,907000044,6,'动换','admin','admin',null),
+(907001031,907000044,7,'综合机架','admin','admin',null),
+(907001032,907000044,0,'传输','admin','admin',null),
+(907001033,907000044,1,'无线 ','admin','admin',null),
+(907001034,907000044,2,'交换 ','admin','admin',null),
+(907001035,907000044,3,'IMS ','admin','admin',null),
+(907001036,907000044,8,'其他 ','admin','admin',null),
+(907001037,907000045,1,'中国移动','admin','admin',null),
+(907001038,907000045,7,'其他','admin','admin',null),
+(907001039,907000045,6,'业主','admin','admin',null),
+(907001040,907000045,5,'中国广电','admin','admin',null),
+(907001041,907000045,4,'中国铁通','admin','admin',null),
+(907001042,907000045,0,'中国铁塔','admin','admin',null),
+(907001043,907000045,3,'中国电信','admin','admin',null),
+(907001044,907000045,2,'中国联通','admin','admin',null),
+(907001045,907000046,1,'自有（合建）','admin','admin',null),
+(907001046,907000046,3,'租用','admin','admin',null),
+(907001047,907000046,4,'用户所有','admin','admin',null),
+(907001048,907000046,2,'自有（购买）','admin','admin',null),
+(907001049,907000046,0,'自有（自建）','admin','admin',null),
+(907001050,907000046,5,'其他','admin','admin',null),
+(907001051,907000047,24,'嵌入高压直流电源','admin','admin',null),
+(907001052,907000047,107,'其他','admin','admin',null),
+(907001053,907000047,106,'直流智能电表','admin','admin',null),
+(907001054,907000047,105,'交流智能电表','admin','admin',null),
+(907001055,907000047,104,'336V直流配电柜','admin','admin',null),
+(907001056,907000047,103,'240V直流配电箱','admin','admin',null),
+(907001057,907000047,102,'风光互补控制器','admin','admin',null),
+(907001058,907000047,101,'太阳能控制器','admin','admin',null),
+(907001059,907000047,100,'风力控制器','admin','admin',null),
+(907001060,907000047,99,'智能换热系统','admin','admin',null),
+(907001061,907000047,98,'智能通风系统','admin','admin',null),
+(907001062,907000047,97,'电池恒温箱','admin','admin',null),
+(907001063,907000047,96,'壁挂空调','admin','admin',null),
+(907001064,907000047,95,'柜式空调','admin','admin',null),
+(907001065,907000047,94,'横流冷却塔','admin','admin',null),
+(907001066,907000047,93,'逆流冷却塔','admin','admin',null),
+(907001067,907000047,92,'低压离心冷水机组','admin','admin',null),
+(907001068,907000047,91,'高压离心冷水机组','admin','admin',null),
+(907001069,907000047,90,'水冷螺杆冷水机组','admin','admin',null),
+(907001070,907000047,89,'风冷螺杆冷水机组','admin','admin',null),
+(907001071,907000047,88,'多联机中央空调','admin','admin',null),
+(907001072,907000047,87,'嵌入式空调','admin','admin',null),
+(907001073,907000047,86,'列间空调','admin','admin',null),
+(907001074,907000047,85,'水冷后门','admin','admin',null),
+(907001075,907000047,84,'水冷前门','admin','admin',null),
+(907001076,907000047,83,'热管背板','admin','admin',null),
+(907001077,907000047,82,'冷冻水专用空调','admin','admin',null),
+(907001078,907000047,81,'模块化高频UPS','admin','admin',null),
+(907001079,907000047,80,'一体化高频UPS','admin','admin',null),
+(907001080,907000047,79,'工频UPS','admin','admin',null),
+(907001081,907000047,78,'一体化电源柜','admin','admin',null),
+(907001082,907000047,77,'移动发电机','admin','admin',null),
+(907001083,907000047,76,'UPS输出配电箱','admin','admin',null),
+(907001084,907000047,75,'UPS输出列头柜','admin','admin',null),
+(907001085,907000047,74,'UPS输出配电柜','admin','admin',null),
+(907001086,907000047,73,'高压直流输入柜','admin','admin',null),
+(907001087,907000047,72,'蓄电池采集设备','admin','admin',null),
+(907001088,907000047,71,'FSU','admin','admin',null),
+(907001089,907000047,70,'LSC','admin','admin',null),
+(907001090,907000047,69,'CSC','admin','admin',null),
+(907001091,907000047,68,'双冷源专用空调','admin','admin',null),
+(907001092,907000047,67,'水冷专用空调','admin','admin',null),
+(907001093,907000047,66,'风冷专用空调','admin','admin',null),
+(907001094,907000047,65,'操作电源电池','admin','admin',null),
+(907001095,907000047,64,'发电机组电池','admin','admin',null),
+(907001096,907000047,63,'高压直流开关电源','admin','admin',null),
+(907001097,907000047,62,'UPS电池','admin','admin',null),
+(907001098,907000047,61,'开关电源电池','admin','admin',null),
+(907001099,907000047,60,'24V直流配电箱','admin','admin',null),
+(907001100,907000047,59,'-48V直流配电箱','admin','admin',null),
+(907001101,907000047,58,'-48V直流列头柜','admin','admin',null),
+(907001102,907000047,57,'-48V直流配电柜','admin','admin',null),
+(907001103,907000047,56,'嵌入开关电源','admin','admin',null),
+(907001104,907000047,55,'壁挂开关电源','admin','admin',null),
+(907001105,907000047,54,'组合开关电源','admin','admin',null),
+(907001106,907000047,53,'分立开关电源','admin','admin',null),
+(907001107,907000047,52,'燃料电池','admin','admin',null),
+(907001108,907000047,51,'汽油发电机','admin','admin',null),
+(907001109,907000047,50,'燃气轮发电机组','admin','admin',null),
+(907001110,907000047,49,'柴油发电机组','admin','admin',null),
+(907001111,907000047,48,'交流列头柜','admin','admin',null),
+(907001112,907000047,47,'无源滤波设备','admin','admin',null),
+(907001113,907000047,46,'有源滤波设备','admin','admin',null),
+(907001114,907000047,45,'独立防雷箱','admin','admin',null),
+(907001115,907000047,44,'市电交流配电箱','admin','admin',null),
+(907001116,907000047,43,'UPS输出柜','admin','admin',null),
+(907001117,907000047,42,'UPS输入柜','admin','admin',null),
+(907001118,907000047,41,'开关电源输入柜','admin','admin',null),
+(907001119,907000047,40,'低压交流配电柜','admin','admin',null),
+(907001120,907000047,39,'低压楼层配电柜','admin','admin',null),
+(907001121,907000047,38,'应急油机接入柜','admin','admin',null),
+(907001122,907000047,37,'应急油机接入箱','admin','admin',null),
+(907001123,907000047,36,'低压油机配电柜','admin','admin',null),
+(907001124,907000047,35,'低压电容补偿柜','admin','admin',null),
+(907001125,907000047,34,'低压ATS切换柜','admin','admin',null),
+(907001126,907000047,33,'低压联络柜','admin','admin',null),
+(907001127,907000047,32,'低压出线柜','admin','admin',null),
+(907001128,907000047,31,'低压计量柜','admin','admin',null),
+(907001129,907000047,30,'低压进线计量柜','admin','admin',null),
+(907001130,907000047,29,'低压进线柜','admin','admin',null),
+(907001131,907000047,28,'336V直流配电箱','admin','admin',null),
+(907001132,907000047,27,'336V直流列头柜','admin','admin',null),
+(907001133,907000047,26,'240V直流列头柜','admin','admin',null),
+(907001134,907000047,25,'240V直流配电柜','admin','admin',null),
+(907001135,907000047,23,'壁挂高压直流电源','admin','admin',null),
+(907001136,907000047,22,'组合高压直流电源','admin','admin',null),
+(907001137,907000047,21,'分立高压直流电源','admin','admin',null),
+(907001138,907000047,20,'高压直流开关电源','admin','admin',null),
+(907001139,907000047,19,'高压切换柜','admin','admin',null),
+(907001140,907000047,18,'高压油机配电柜','admin','admin',null),
+(907001141,907000047,17,'高压电容补偿柜','admin','admin',null),
+(907001142,907000047,16,'操作电源','admin','admin',null),
+(907001143,907000047,15,'高压出线柜','admin','admin',null),
+(907001144,907000047,14,'高压母联柜','admin','admin',null),
+(907001145,907000047,13,'高压压变柜','admin','admin',null),
+(907001146,907000047,12,'高压升高柜','admin','admin',null),
+(907001147,907000047,11,'高压隔离柜','admin','admin',null),
+(907001148,907000047,10,'高压避雷器柜','admin','admin',null),
+(907001149,907000047,9,'高压计量柜','admin','admin',null),
+(907001150,907000047,8,'高压进线柜','admin','admin',null),
+(907001151,907000047,7,'直流远供远端','admin','admin',null),
+(907001152,907000047,6,'直流远供近端','admin','admin',null),
+(907001153,907000047,5,'DC/DC设备','admin','admin',null),
+(907001154,907000047,4,'逆变器','admin','admin',null),
+(907001155,907000047,3,'调压器','admin','admin',null),
+(907001156,907000047,2,'非晶合金变压器','admin','admin',null),
+(907001157,907000047,1,'油浸变压器','admin','admin',null),
+(907001158,907000047,0,'干式变压器','admin','admin',null),
+(907001159,907000048,3,'TOUT','admin','admin',null),
+(907001160,907000048,2,'MOUT','admin','admin',null),
+(907001161,907000048,1,'ROUT','admin','admin',null),
+(907001162,907000048,0,'KOUT','admin','admin',null),
+(907001163,907000048,4,'其他','admin','admin',null),
+(907001164,907000049,4,'N+1热备','admin','admin',null),
+(907001165,907000049,5,'N+1冷备','admin','admin',null),
+(907001166,907000049,6,'1+1主备','admin','admin',null),
+(907001167,907000049,7,'N+1主备','admin','admin',null),
+(907001168,907000049,0,'单台设备','admin','admin',null),
+(907001169,907000049,1,'1+1热备','admin','admin',null),
+(907001170,907000049,2,'1+1冷备','admin','admin',null),
+(907001171,907000049,3,'N+0主用','admin','admin',null),
+(907001172,907000049,8,'其他','admin','admin',null),
+(907001173,907000050,2,'微型断路器','admin','admin',null),
+(907001174,907000050,3,'刀闸开关','admin','admin',null),
+(907001175,907000050,4,'熔断器','admin','admin',null),
+(907001176,907000050,5,'母排','admin','admin',null),
+(907001177,907000050,6,'设备','admin','admin',null),
+(907001178,907000050,0,'框架断路器','admin','admin',null),
+(907001179,907000050,1,'塑壳断路器','admin','admin',null),
+(907001180,907000050,7,'其他','admin','admin',null),
+(907001181,907000051,0,'主用','admin','admin',null),
+(907001182,907000051,1,'备用','admin','admin',null),
+(907001183,907000051,2,'其他','admin','admin',null),
+(907001184,907000052,1,'水冷','admin','admin',null),
+(907001185,907000052,0,'风冷','admin','admin',null),
+(907001186,907000052,2,'其他','admin','admin',null),
+(907001187,907000053,0,'主用','admin','admin',null),
+(907001188,907000053,1,'备用','admin','admin',null),
+(907001189,907000053,2,'其他','admin','admin',null),
+(907001190,907000054,2,'微型断路器','admin','admin',null),
+(907001191,907000054,3,'刀闸开关','admin','admin',null),
+(907001192,907000054,4,'熔断器','admin','admin',null),
+(907001193,907000054,5,'母排','admin','admin',null),
+(907001194,907000054,6,'设备','admin','admin',null),
+(907001195,907000054,1,'塑壳断路器','admin','admin',null),
+(907001196,907000054,0,'框架断路器','admin','admin',null),
+(907001197,907000054,7,'其他','admin','admin',null),
+(907001198,907000055,1,'否','admin','admin',null),
+(907001199,907000055,0,'是','admin','admin',null),
+(907001200,907000055,2,'其他','admin','admin',null);
 
 --entitytype：无线
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
@@ -6319,1914 +5979,684 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (908000721, '所属区县', 'county_id', 908000014, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
 --插入空间 dims_mm_entitytype
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (902001001, '站点', 'RM_AREA_SITE', '空间', null, 'RM_AREA_SITE', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (902001002, '位置点（资源点）', 'RM_AREA_RESPOINT', '空间', null, 'RM_AREA_RESPOINT', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (902001003, '机房', 'RM_AREA_ROOM', '空间', null, 'RM_AREA_ROOM', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (902001004, '机架位置', 'RM_AREA_RACKPOS', '空间', null, 'RM_AREA_RACKPOS', null, null, 'admin', 'admin', null);
-
-
+insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
+(902001001, '站点', 'RM_AREA_SITE', '空间', null, 'RM_AREA_SITE', null, null, 'admin', 'admin', null),
+(902001002, '位置点（资源点）', 'RM_AREA_RESPOINT', '空间', null, 'RM_AREA_RESPOINT', null, null, 'admin', 'admin', null),
+(902001003, '机房', 'RM_AREA_ROOM', '空间', null, 'RM_AREA_ROOM', null, null, 'admin', 'admin', null),
+(902001004, '机架位置', 'RM_AREA_RACKPOS', '空间', null, 'RM_AREA_RACKPOS', null, null, 'admin', 'admin', null);
 --插入空间 dims_mm_attributetype
 --RM_AREA_SITE
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001301, '资源标识', 'int_id', 902001001, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001302, '站点名称', 'zh_label', 902001001, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001303, '所属铁塔公司站址编码', 'china_tower_station_code', 902001001, 'CHINA_TOWER_STATION_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001304, '数据质量责任人（移动）', 'qualitor', 902001001, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001305, '站点类别', 'site_type', 902001001, 'SITE_TYPE', 'string', 902000001, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001306, '详细地址', 'address', 902001001, 'ADDRESS', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001307, '经度', 'longitude', 902001001, 'LONGITUDE', 'double', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001308, '纬度', 'latitude', 902001001, 'LATITUDE', 'double', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001309, '所属省份', 'province_id', 902001001, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001310, '所属地市', 'city_id', 902001001, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001311, '所属区县', 'county_id', 902001001, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001312, '所属数据中心', 'related_dc', 902001001, 'RELATED_DC', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001313, '别名', 'alias_name', 902001001, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null);
-
+insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
+(902001301, '资源标识', 'int_id', 902001001, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(902001302, '站点名称', 'zh_label', 902001001, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(902001303, '所属铁塔公司站址编码', 'china_tower_station_code', 902001001, 'CHINA_TOWER_STATION_CODE', 'string', null, 'admin', 'admin', null),
+(902001304, '数据质量责任人（移动）', 'qualitor', 902001001, 'QUALITOR', 'string', null, 'admin', 'admin', null),
+(902001305, '站点类别', 'site_type', 902001001, 'SITE_TYPE', 'string', 902000001, 'admin', 'admin', null),
+(902001306, '详细地址', 'address', 902001001, 'ADDRESS', 'string', null, 'admin', 'admin', null),
+(902001307, '经度', 'longitude', 902001001, 'LONGITUDE', 'double', null, 'admin', 'admin', null),
+(902001308, '纬度', 'latitude', 902001001, 'LATITUDE', 'double', null, 'admin', 'admin', null),
+(902001309, '所属省份', 'province_id', 902001001, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(902001310, '所属地市', 'city_id', 902001001, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(902001311, '所属区县', 'county_id', 902001001, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(902001312, '所属数据中心', 'related_dc', 902001001, 'RELATED_DC', 'string', null, 'admin', 'admin', null),
+(902001313, '别名', 'alias_name', 902001001, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null),
 --RM_AREA_RESPOINT
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001314, '资源标识', 'int_id', 902001002, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001315, '位置点名称', 'zh_label', 902001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001316, '经度', 'longitude', 902001002, 'LONGITUDE', 'double', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001317, '纬度', 'latitude', 902001002, 'LATITUDE', 'double', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001318, '详细地址', 'address', 902001002, 'ADDRESS', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001319, '位置点类型', 'res_type', 902001002, 'RES_TYPE', 'string', 902000002, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001320, '所属铁塔公司站址编码', 'china_tower_address_code', 902001002, 'CHINA_TOWER_ADDRESS_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001321, '数据质量责任人（移动）', 'qualitor', 902001002, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001322, '别名', 'alias_name', 902001002, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001323, '所属省份', 'province_id', 902001002, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001324, '所属地市', 'city_id', 902001002, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001325, '所属区县', 'county_id', 902001002, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001326, '产权性质', 'property_right', 902001002, 'PROPERTY_RIGHT', 'string', 902000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001327, '产权单位', 'property_unit', 902001002, 'PROPERTY_UNIT', 'string', 902000005, 'admin', 'admin', null);
-
+(902001314, '资源标识', 'int_id', 902001002, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(902001315, '位置点名称', 'zh_label', 902001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(902001316, '经度', 'longitude', 902001002, 'LONGITUDE', 'double', null, 'admin', 'admin', null),
+(902001317, '纬度', 'latitude', 902001002, 'LATITUDE', 'double', null, 'admin', 'admin', null),
+(902001318, '详细地址', 'address', 902001002, 'ADDRESS', 'string', null, 'admin', 'admin', null),
+(902001319, '位置点类型', 'res_type', 902001002, 'RES_TYPE', 'string', 902000002, 'admin', 'admin', null),
+(902001320, '所属铁塔公司站址编码', 'china_tower_address_code', 902001002, 'CHINA_TOWER_ADDRESS_CODE', 'string', null, 'admin', 'admin', null),
+(902001321, '数据质量责任人（移动）', 'qualitor', 902001002, 'QUALITOR', 'string', null, 'admin', 'admin', null),
+(902001322, '别名', 'alias_name', 902001002, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null),
+(902001323, '所属省份', 'province_id', 902001002, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(902001324, '所属地市', 'city_id', 902001002, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(902001325, '所属区县', 'county_id', 902001002, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(902001326, '产权性质', 'property_right', 902001002, 'PROPERTY_RIGHT', 'string', 902000004, 'admin', 'admin', null),
+(902001327, '产权单位', 'property_unit', 902001002, 'PROPERTY_UNIT', 'string', 902000005, 'admin', 'admin', null),
 --RM_AREA_ROOM
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001328, '资源标识', 'int_id', 902001003, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001329, '机房名称', 'zh_label', 902001003, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001330, '所属铁塔公司机房编码', 'china_tower_station_code', 902001003, 'CHINA_TOWER_STATION_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001331, '所属站点', 'related_site', 902001003, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001332, '所在楼层', 'floor_num', 902001003, 'FLOOR_NUM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001333, '产权性质', 'property_right', 902001003, 'PROPERTY_RIGHT', 'string', 902000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001334, '产权单位', 'property_unit', 902001003, 'PROPERTY_UNIT', 'string', 902000005, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001335, '生命周期状态', 'lifecycle_status', 902001003, 'LIFECYCLE_STATUS', 'string', 902000003, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001336, '入网时间', 'cutin_date', 902001003, 'CUTIN_DATE', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001337, '数据质量责任人（移动）', 'qualitor', 902001003, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001338, '机房类型', 'equiproom_type', 902001003, 'EQUIPROOM_TYPE', 'string', 902000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001339, '机房级别', 'equiproom_level', 902001003, 'EQUIPROOM_LEVEL', 'string', 902000007, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001340, '机房面积（平方米）', 'room_area', 902001003, 'ROOM_AREA', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001341, '铁塔机房产品分类', 'china_tower_room_type', 902001003, 'CHINA_TOWER_ROOM_TYPE', 'string', 902000008, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001342, '共享单位', 'shared_unit', 902001003, 'SHARED_UNIT', 'string', 902000009, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001343, '别名', 'alias_name', 902001003, 'alias_name', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001344, '所属省份', 'province_id', 902001003, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001345, '所属地市', 'city_id', 902001003, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001346, '所属区县', 'county_id', 902001003, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
+(902001328, '资源标识', 'int_id', 902001003, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(902001329, '机房名称', 'zh_label', 902001003, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(902001330, '所属铁塔公司机房编码', 'china_tower_station_code', 902001003, 'CHINA_TOWER_STATION_CODE', 'string', null, 'admin', 'admin', null),
+(902001331, '所属站点', 'related_site', 902001003, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(902001332, '所在楼层', 'floor_num', 902001003, 'FLOOR_NUM', 'string', null, 'admin', 'admin', null),
+(902001333, '产权性质', 'property_right', 902001003, 'PROPERTY_RIGHT', 'string', 902000004, 'admin', 'admin', null),
+(902001334, '产权单位', 'property_unit', 902001003, 'PROPERTY_UNIT', 'string', 902000005, 'admin', 'admin', null),
+(902001335, '生命周期状态', 'lifecycle_status', 902001003, 'LIFECYCLE_STATUS', 'string', 902000003, 'admin', 'admin', null),
+(902001336, '入网时间', 'cutin_date', 902001003, 'CUTIN_DATE', 'date', null, 'admin', 'admin', null),
+(902001337, '数据质量责任人（移动）', 'qualitor', 902001003, 'QUALITOR', 'string', null, 'admin', 'admin', null),
+(902001338, '机房类型', 'equiproom_type', 902001003, 'EQUIPROOM_TYPE', 'string', 902000006, 'admin', 'admin', null),
+(902001339, '机房级别', 'equiproom_level', 902001003, 'EQUIPROOM_LEVEL', 'string', 902000007, 'admin', 'admin', null),
+(902001340, '机房面积（平方米）', 'room_area', 902001003, 'ROOM_AREA', 'integer', null, 'admin', 'admin', null),
+(902001341, '铁塔机房产品分类', 'china_tower_room_type', 902001003, 'CHINA_TOWER_ROOM_TYPE', 'string', 902000008, 'admin', 'admin', null),
+(902001342, '共享单位', 'shared_unit', 902001003, 'SHARED_UNIT', 'string', 902000009, 'admin', 'admin', null),
+(902001343, '别名', 'alias_name', 902001003, 'alias_name', 'string', null, 'admin', 'admin', null),
+(902001344, '所属省份', 'province_id', 902001003, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(902001345, '所属地市', 'city_id', 902001003, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(902001346, '所属区县', 'county_id', 902001003, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --RM_AREA_RACKPOS
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001347, '资源标识', 'int_id', 902001004, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001348, '名称', 'zh_label', 902001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001349, '机架位置编号', 'serial', 902001004, 'SERIAL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001350, '所属机房', 'equiproom_id', 902001004, 'EQUIPROOM_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001351, '所在行', 'row_id', 902001004, 'ROW_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001352, '所在列', 'line_id', 902001004, 'LINE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001353, '机架位置状态', 'using_status', 902001004, 'using_status', 'string', 902000010, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001354, '所属省份', 'province_id', 902001004, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001355, '所属地市', 'city_id', 902001004, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (902001356, '所属区县', 'county_id', 902001004, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
+(902001347, '资源标识', 'int_id', 902001004, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(902001348, '名称', 'zh_label', 902001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(902001349, '机架位置编号', 'serial', 902001004, 'SERIAL', 'string', null, 'admin', 'admin', null),
+(902001350, '所属机房', 'equiproom_id', 902001004, 'EQUIPROOM_ID', 'string', null, 'admin', 'admin', null),
+(902001351, '所在行', 'row_id', 902001004, 'ROW_ID', 'string', null, 'admin', 'admin', null),
+(902001352, '所在列', 'line_id', 902001004, 'LINE_ID', 'string', null, 'admin', 'admin', null),
+(902001353, '机架位置状态', 'using_status', 902001004, 'using_status', 'string', 902000010, 'admin', 'admin', null),
+(902001354, '所属省份', 'province_id', 902001004, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(902001355, '所属地市', 'city_id', 902001004, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(902001356, '所属区县', 'county_id', 902001004, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
 --插入公共 dims_mm_entitytype
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (900001001, '机架', 'CM_DEVICE_RACK', '公共', null, 'CM_DEVICE_RACK', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (900001002, 'DDM模块', 'CE_WARE_DDM', '公共', null, 'CE_WARE_DDM', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (900001003, 'ODM模块', 'CE_WARE_ODM', '公共', null, 'CE_WARE_ODM', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (900001004, 'DDF端子', 'CM_PORT_DDF', '公共', null, 'CM_PORT_DDF', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (900001005, 'ODF端子', 'CM_PORT_ODF', '公共', null, 'CM_PORT_ODF', null, null, 'admin', 'admin', null);
-
-
+insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
+(900001001, '机架', 'CM_DEVICE_RACK', '公共', null, 'CM_DEVICE_RACK', null, null, 'admin', 'admin', null),
+(900001002, 'DDM模块', 'CE_WARE_DDM', '公共', null, 'CE_WARE_DDM', null, null, 'admin', 'admin', null),
+(900001003, 'ODM模块', 'CE_WARE_ODM', '公共', null, 'CE_WARE_ODM', null, null, 'admin', 'admin', null),
+(900001004, 'DDF端子', 'CM_PORT_DDF', '公共', null, 'CM_PORT_DDF', null, null, 'admin', 'admin', null),
+(900001005, 'ODF端子', 'CM_PORT_ODF', '公共', null, 'CM_PORT_ODF', null, null, 'admin', 'admin', null);
 --插入公共 dims_mm_attributetype
 --CM_DEVICE_RACK
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001301, '资源标识', 'int_id', 900001001, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001302, '机架名称', 'zh_label', 900001001, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001303, '机架类型', 'rack_type', 900001001, 'RACK_TYPE', 'string', 900000002, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001304, '所属空间类型', 'related_type', 900001001, 'RELATED_TYPE', 'string', 900000001, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001305, '所属机房/资源点', 'related_room', 900001001, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001306, '所属装机位置', 'related_rackposition', 900001001, 'RELATED_RACKPOSITION', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001307, '生命周期状态', 'lifecycle_status', 900001001, 'LIFECYCLE_STATUS', 'string', 900000003, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001308, 'U位数量', 'rack_unit_size', 900001001, 'RACK_UNIT_SIZE', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001309, '所属省份', 'province_id', 900001001, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001310, '所属地市', 'city_id', 900001001, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001311, '所属区县', 'county_id', 900001001, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
+insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
+(900001301, '资源标识', 'int_id', 900001001, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(900001302, '机架名称', 'zh_label', 900001001, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(900001303, '机架类型', 'rack_type', 900001001, 'RACK_TYPE', 'string', 900000002, 'admin', 'admin', null),
+(900001304, '所属空间类型', 'related_type', 900001001, 'RELATED_TYPE', 'string', 900000001, 'admin', 'admin', null),
+(900001305, '所属机房/资源点', 'related_room', 900001001, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(900001306, '所属装机位置', 'related_rackposition', 900001001, 'RELATED_RACKPOSITION', 'string', null, 'admin', 'admin', null),
+(900001307, '生命周期状态', 'lifecycle_status', 900001001, 'LIFECYCLE_STATUS', 'string', 900000003, 'admin', 'admin', null),
+(900001308, 'U位数量', 'rack_unit_size', 900001001, 'RACK_UNIT_SIZE', 'integer', null, 'admin', 'admin', null),
+(900001309, '所属省份', 'province_id', 900001001, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(900001310, '所属地市', 'city_id', 900001001, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(900001311, '所属区县', 'county_id', 900001001, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --CE_WARE_DDM
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001312, '资源标识', 'int_id', 900001002, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001313, 'DDM模块名称', 'zh_label', 900001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001314, '端子行数', 'row_num', 900001002, 'row_num', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001315, '端子列数', 'column_num', 900001002, 'COLUMN_NUM', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001316, '所属机架', 'related_reackpos', 900001002, 'RELATED_REACKPOS', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001317, '数据质量责任人（移动）', 'qualitor', 900001002, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001318, '一线数据维护人（代维/一线）', 'maintainor', 900001002, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
+(900001312, '资源标识', 'int_id', 900001002, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(900001313, 'DDM模块名称', 'zh_label', 900001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(900001314, '端子行数', 'row_num', 900001002, 'row_num', 'integer', null, 'admin', 'admin', null),
+(900001315, '端子列数', 'column_num', 900001002, 'COLUMN_NUM', 'integer', null, 'admin', 'admin', null),
+(900001316, '所属机架', 'related_reackpos', 900001002, 'RELATED_REACKPOS', 'string', null, 'admin', 'admin', null),
+(900001317, '数据质量责任人（移动）', 'qualitor', 900001002, 'QUALITOR', 'string', null, 'admin', 'admin', null),
+(900001318, '一线数据维护人（代维/一线）', 'maintainor', 900001002, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
 --CE_WARE_ODM
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001319, '资源标识', 'int_id', 900001003, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001320, 'ODM模块名称', 'zh_label', 900001003, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001321, '框号', 'shelf_id', 900001003, 'SHELF_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001322, '所属设备类型', 'related_equipment_type', 900001003, 'RELATED_EQUIPMENT_TYPE', 'string', 900000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001323, '所属设备', 'related_device_id', 900001003, 'RELATED_DEVICE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001324, '数据质量责任人（移动）', 'qualitor', 900001003, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001325, '一线数据维护人（代维/一线）', 'maintainor', 900001003, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001326, '端子行数', 'row_num', 900001003, 'ROW_NUM', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001327, '端子列数', 'column_num', 900001003, 'COLUMN_NUM', 'integer', null, 'admin', 'admin', null);
-
+(900001319, '资源标识', 'int_id', 900001003, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(900001320, 'ODM模块名称', 'zh_label', 900001003, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(900001321, '框号', 'shelf_id', 900001003, 'SHELF_ID', 'string', null, 'admin', 'admin', null),
+(900001322, '所属设备类型', 'related_equipment_type', 900001003, 'RELATED_EQUIPMENT_TYPE', 'string', 900000004, 'admin', 'admin', null),
+(900001323, '所属设备', 'related_device_id', 900001003, 'RELATED_DEVICE_ID', 'string', null, 'admin', 'admin', null),
+(900001324, '数据质量责任人（移动）', 'qualitor', 900001003, 'QUALITOR', 'string', null, 'admin', 'admin', null),
+(900001325, '一线数据维护人（代维/一线）', 'maintainor', 900001003, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(900001326, '端子行数', 'row_num', 900001003, 'ROW_NUM', 'integer', null, 'admin', 'admin', null),
+(900001327, '端子列数', 'column_num', 900001003, 'COLUMN_NUM', 'integer', null, 'admin', 'admin', null),
 --CM_PORT_DDF
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001328, '资源标识', 'int_id', 900001004, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001329, 'DDF端子名称', 'zh_label', 900001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001330, '端子位置', 'row_column_num', 900001004, 'ROW_COLUMN_NUM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001331, '端子状态', 'port_status', 900001004, 'PORT_STATUS', 'string', 900000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001332, '所属DDM模块', 'related_ddm', 900001004, 'RELATED_DDM', 'string', null, 'admin', 'admin', null);
-
+(900001328, '资源标识', 'int_id', 900001004, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(900001329, 'DDF端子名称', 'zh_label', 900001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(900001330, '端子位置', 'row_column_num', 900001004, 'ROW_COLUMN_NUM', 'string', null, 'admin', 'admin', null),
+(900001331, '端子状态', 'port_status', 900001004, 'PORT_STATUS', 'string', 900000004, 'admin', 'admin', null),
+(900001332, '所属DDM模块', 'related_ddm', 900001004, 'RELATED_DDM', 'string', null, 'admin', 'admin', null),
 --CM_PORT_ODF
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001333, '资源标识', 'int_id', 900001005, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001334, 'ODF端子名称', 'zh_label', 900001005, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001335, '端子位置', 'row_column_num', 900001005, 'ROW_COLUMN_NUM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001336, '端子状态', 'port_status', 900001005, 'PORT_STATUS', 'string', 900000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (900001337, '所属ODM模块', 'related_odm', 900001005, 'related_odm', 'string', null, 'admin', 'admin', null);
+(900001333, '资源标识', 'int_id', 900001005, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(900001334, 'ODF端子名称', 'zh_label', 900001005, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(900001335, '端子位置', 'row_column_num', 900001005, 'ROW_COLUMN_NUM', 'string', null, 'admin', 'admin', null),
+(900001336, '端子状态', 'port_status', 900001005, 'PORT_STATUS', 'string', 900000004, 'admin', 'admin', null),
+(900001337, '所属ODM模块', 'related_odm', 900001005, 'related_odm', 'string', null, 'admin', 'admin', null);
 
 --插入动环 dims_mm_entitytype
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001501, '位置点动环属性', 'RM_SITE_PROPERTY', '动环', null, 'RM_SITE_PROPERTY', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001502, '机房动环属性', 'RM_ROOM_PROPERTY', '动环', null, 'RM_ROOM_PROPERTY', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001503, '变压器', 'CE_DEVICE_PE_TRANSFORM', '动环', null, 'CE_DEVICE_PE_TRANSFORM', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001504, '变换设备', 'CE_DECIVE_PE_TRANSFORM_DEVICE', '动环', null, 'CE_DECIVE_PE_TRANSFORM_DEVICE', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001505, '高压配电系统', 'CE_NET_PE_HIGH_DISTRIBUTION', '动环', null, 'CE_NET_PE_HIGH_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001506, '高压配电', 'CE_DEVICE_PE_HIGH_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_HIGH_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001507, '高压直流电源系统', 'CE_NET_PE_HIGH_POWER', '动环', null, 'CE_NET_PE_HIGH_POWER', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001508, '高压直流电源', 'CE_DEVICE_PE_HIGH_POWER', '动环', null, 'CE_DEVICE_PE_HIGH_POWER', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001509, '高压直流配电', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001510, '低压配电系统', 'CE_NET_PE_LOW_DISTRIBUTION', '动环', null, 'CE_NET_PE_LOW_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001511, '低压交流配电', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001512, '发电系统', 'CE_NET_PE_SWITCH_POWER', '动环', null, 'CE_NET_PE_SWITCH_POWER', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001513, '发电机组', 'CE_DEVICE_PE_POWER_GENERATION', '动环', null, 'CE_DEVICE_PE_POWER_GENERATION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001514, '开关电源系统', 'CE_NET_PE_OPEN_POWER', '动环', null, 'CE_NET_PE_OPEN_POWER', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001515, '开关电源', 'CE_DEVICE_PE_SWITCH_POWER', '动环', null, 'CE_DEVICE_PE_SWITCH_POWER', null, null, 'admin', 'admin', null);
-	
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001516, '低压直流配电', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001517, 'UPS系统', 'CE_NET_PE_UPS', '动环', null, 'CE_NET_PE_UPS', null, null, 'admin', 'admin', null);	
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001518, 'UPS设备', 'CE_DEVICE_PE_UPS', '动环', null, 'CE_DEVICE_PE_UPS', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001519, '蓄电池', 'CE_DEVICE_PE_BATTERY', '动环', null, 'CE_DEVICE_PE_BATTERY', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001520, '空调', 'CE_DEVICE_PE_AIR', '动环', null, 'CE_DEVICE_PE_AIR', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001521, '节能设备', 'CE_DEVICE_PE_ENERY_SAVE', '动环', null, 'CE_DEVICE_PE_ENERY_SAVE', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001522, '动环监控', 'CE_DEVICE_PE_POWER_MONITOR', '动环', null, 'CE_DEVICE_PE_POWER_MONITOR', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001523, '智能电表', 'CE_DEVICE_PE_SMART_METER', '动环', null, 'CE_DEVICE_PE_SMART_METER', null, null, 'admin', 'admin', null);
-	
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001524, '动环专业内输出分路', 'CE_LINK_PE_IN', '动环', null, 'CE_LINK_PE_IN', null, null, 'admin', 'admin', null);	
-	
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001525, '跨专业输出分路', 'CE_LINK_PE_OUT', '动环', null, 'CE_LINK_PE_OUT', null, null, 'admin', 'admin', null);	
-	
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO)
-values (907001526, '其它设备', 'CE_DEVICE_PE_OTHER', '动环', null, 'CE_DEVICE_PE_OTHER', null, null, 'admin', 'admin', null);	
+insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
+(907001501, '位置点动环属性', 'RM_SITE_PROPERTY', '动环', null, 'RM_SITE_PROPERTY', null, null, 'admin', 'admin', null),
+(907001502, '机房动环属性', 'RM_ROOM_PROPERTY', '动环', null, 'RM_ROOM_PROPERTY', null, null, 'admin', 'admin', null),
+(907001503, '变压器', 'CE_DEVICE_PE_TRANSFORM', '动环', null, 'CE_DEVICE_PE_TRANSFORM', null, null, 'admin', 'admin', null),
+(907001504, '变换设备', 'CE_DECIVE_PE_TRANSFORM_DEVICE', '动环', null, 'CE_DECIVE_PE_TRANSFORM_DEVICE', null, null, 'admin', 'admin', null),
+(907001505, '高压配电系统', 'CE_NET_PE_HIGH_DISTRIBUTION', '动环', null, 'CE_NET_PE_HIGH_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001506, '高压配电', 'CE_DEVICE_PE_HIGH_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_HIGH_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001507, '高压直流电源系统', 'CE_NET_PE_HIGH_POWER', '动环', null, 'CE_NET_PE_HIGH_POWER', null, null, 'admin', 'admin', null),
+(907001508, '高压直流电源', 'CE_DEVICE_PE_HIGH_POWER', '动环', null, 'CE_DEVICE_PE_HIGH_POWER', null, null, 'admin', 'admin', null),
+(907001509, '高压直流配电', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001510, '低压配电系统', 'CE_NET_PE_LOW_DISTRIBUTION', '动环', null, 'CE_NET_PE_LOW_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001511, '低压交流配电', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001512, '发电系统', 'CE_NET_PE_SWITCH_POWER', '动环', null, 'CE_NET_PE_SWITCH_POWER', null, null, 'admin', 'admin', null),
+(907001513, '发电机组', 'CE_DEVICE_PE_POWER_GENERATION', '动环', null, 'CE_DEVICE_PE_POWER_GENERATION', null, null, 'admin', 'admin', null),
+(907001514, '开关电源系统', 'CE_NET_PE_OPEN_POWER', '动环', null, 'CE_NET_PE_OPEN_POWER', null, null, 'admin', 'admin', null),
+(907001515, '开关电源', 'CE_DEVICE_PE_SWITCH_POWER', '动环', null, 'CE_DEVICE_PE_SWITCH_POWER', null, null, 'admin', 'admin', null),
+(907001516, '低压直流配电', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION', '动环', null, 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION', null, null, 'admin', 'admin', null),
+(907001517, 'UPS系统', 'CE_NET_PE_UPS', '动环', null, 'CE_NET_PE_UPS', null, null, 'admin', 'admin', null),	
+(907001518, 'UPS设备', 'CE_DEVICE_PE_UPS', '动环', null, 'CE_DEVICE_PE_UPS', null, null, 'admin', 'admin', null),
+(907001519, '蓄电池', 'CE_DEVICE_PE_BATTERY', '动环', null, 'CE_DEVICE_PE_BATTERY', null, null, 'admin', 'admin', null),
+(907001520, '空调', 'CE_DEVICE_PE_AIR', '动环', null, 'CE_DEVICE_PE_AIR', null, null, 'admin', 'admin', null),
+(907001521, '节能设备', 'CE_DEVICE_PE_ENERY_SAVE', '动环', null, 'CE_DEVICE_PE_ENERY_SAVE', null, null, 'admin', 'admin', null),
+(907001522, '动环监控', 'CE_DEVICE_PE_POWER_MONITOR', '动环', null, 'CE_DEVICE_PE_POWER_MONITOR', null, null, 'admin', 'admin', null),
+(907001523, '智能电表', 'CE_DEVICE_PE_SMART_METER', '动环', null, 'CE_DEVICE_PE_SMART_METER', null, null, 'admin', 'admin', null),
+(907001524, '动环专业内输出分路', 'CE_LINK_PE_IN', '动环', null, 'CE_LINK_PE_IN', null, null, 'admin', 'admin', null),	
+(907001525, '跨专业输出分路', 'CE_LINK_PE_OUT', '动环', null, 'CE_LINK_PE_OUT', null, null, 'admin', 'admin', null),	
+(907001526, '其它设备', 'CE_DEVICE_PE_OTHER', '动环', null, 'CE_DEVICE_PE_OTHER', null, null, 'admin', 'admin', null);
 	
 	
 --插入动环 dims_mm_attributetype
 --RM_SITE_PROPERTY
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001801, '资源标识', 'int_id', 907001501, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001802, '所属省份', 'province_id', 907001501, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001803, '所属地市', 'city_id', 907001501, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001804, '所属区县', 'county_id', 907001501, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001805, '站点名称', 'zh_label', 907001501, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001806, '动环专业站点级别', 'power_site_level', 907001501, 'POWER_SITE_LEVEL', 'string', 907000031, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001807, '市电备份方式', 'mains_backup_method', 907001501, 'MAINS_BACKUP_METHOD', 'string', 907000016, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001808, '市电是否来自不同变电站', 'power_is_substations', 907001501, 'power_is_substations', 'string', 907000018, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001809, '市电电压等级', 'mains_voltage_level', 907001501, 'MAINS_VOLTAGE_LEVEL', 'string', 907000012, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001810, '市电性质', 'mains_nature', 907001501, 'MAINS_NATURE', 'string', 907000015, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001811, '市电总路数（路）', 'total_mains_number', 907001501, 'TOTAL_MAINS_NUMBER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001812, '市电容量（KVA）', 'mains_capacity', 907001501, 'MAINS_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001813, '市电油机配置级别', 'mains_configuration_level', 907001501, 'MAINS_CONFIGURATION_LEVEL', 'string', 907000025, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001814, '地下油罐总数量（个）', 'total_tank_number', 907001501, 'TOTAL_TANK_NUMBER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001815, '地下油罐总容积（m³）', 'tatal_tank_volume', 907001501, 'TATAL_TANK_VOLUME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001816, '产权单位', 'property_unit', 907001501, 'PROPERTY_UNIT', 'string', 907000045, 'admin', 'admin', null);
+insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
+(907001801, '资源标识', 'int_id', 907001501, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001802, '所属省份', 'province_id', 907001501, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001803, '所属地市', 'city_id', 907001501, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001804, '所属区县', 'county_id', 907001501, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001805, '站点名称', 'zh_label', 907001501, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001806, '动环专业站点级别', 'power_site_level', 907001501, 'POWER_SITE_LEVEL', 'string', 907000031, 'admin', 'admin', null),
+(907001807, '市电备份方式', 'mains_backup_method', 907001501, 'MAINS_BACKUP_METHOD', 'string', 907000016, 'admin', 'admin', null),
+(907001808, '市电是否来自不同变电站', 'power_is_substations', 907001501, 'power_is_substations', 'string', 907000018, 'admin', 'admin', null),
+(907001809, '市电电压等级', 'mains_voltage_level', 907001501, 'MAINS_VOLTAGE_LEVEL', 'string', 907000012, 'admin', 'admin', null),
+(907001810, '市电性质', 'mains_nature', 907001501, 'MAINS_NATURE', 'string', 907000015, 'admin', 'admin', null),
+(907001811, '市电总路数（路）', 'total_mains_number', 907001501, 'TOTAL_MAINS_NUMBER', 'string', null, 'admin', 'admin', null),
+(907001812, '市电容量（KVA）', 'mains_capacity', 907001501, 'MAINS_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001813, '市电油机配置级别', 'mains_configuration_level', 907001501, 'MAINS_CONFIGURATION_LEVEL', 'string', 907000025, 'admin', 'admin', null),
+(907001814, '地下油罐总数量（个）', 'total_tank_number', 907001501, 'TOTAL_TANK_NUMBER', 'string', null, 'admin', 'admin', null),
+(907001815, '地下油罐总容积（m³）', 'tatal_tank_volume', 907001501, 'TATAL_TANK_VOLUME', 'string', null, 'admin', 'admin', null),
+(907001816, '产权单位', 'property_unit', 907001501, 'PROPERTY_UNIT', 'string', 907000045, 'admin', 'admin', null),
 	
 --RM_ROOM_PROPERTY
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001817, '资源标识', 'int_id', 907001502, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001818, '所属省份', 'province_id', 907001502, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001819, '所属地市', 'city_id', 907001502, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001820, '所属区县', 'county_id', 907001502, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001821, '机房名称', 'zh_label', 907001502, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001822, '动环专业机房类型', 'power_room_type', 907001502, 'POWER_ROOM_TYPE', 'string', 907000004, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001823, '所属站点', 'power_related_site_name', 907001502, 'POWER_RELATED_SITE_NAME', 'string', null, 'admin', 'admin', null);	
+(907001817, '资源标识', 'int_id', 907001502, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001818, '所属省份', 'province_id', 907001502, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001819, '所属地市', 'city_id', 907001502, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001820, '所属区县', 'county_id', 907001502, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001821, '机房名称', 'zh_label', 907001502, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001822, '动环专业机房类型', 'power_room_type', 907001502, 'POWER_ROOM_TYPE', 'string', 907000004, 'admin', 'admin', null),
+(907001823, '所属站点', 'power_related_site_name', 907001502, 'POWER_RELATED_SITE_NAME', 'string', null, 'admin', 'admin', null),	
 	
 --CE_DEVICE_PE_TRANSFORM
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001824, '资源标识', 'int_id', 907001503, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001825, '所属省份', 'province_id', 907001503, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001826, '所属地市', 'city_id', 907001503, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001827, '所属区县', 'county_id', 907001503, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001828, '所属站点', 'related_site', 907001503, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001829, '所属机房', 'related_room', 907001503, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001830, '设备类型', 'device_type', 907001503, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001831, '设备子类', 'device_subclass', 907001503, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001832, '设备名称', 'zh_label', 907001503, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001833, '设备编码', 'device_code', 907001503, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001834, '设备型号', 'product_name', 907001503, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001835, '设备厂家', 'vendor_id', 907001503, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001836, '额定功率（KVA）', 'rated_power', 907001503, 'RATED_POWER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001837, '输入额定电压（V）', 'input_rated_voltage', 907001503, 'INPUT_RATED_VOLTAGE', 'string', 907000040, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001838, '低压额定电流', 'low_reted_current', 907001503, 'LOW_RETED_CURRENT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001839, '备份方式', 'backup_method', 907001503, 'BACKUP_METHOD', 'string', 907000049, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001840, '开始使用时间', 'start_time', 907001503, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001841, '预计报废时间', 'estimated_retirement_time', 907001503, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001842, '使用状态', 'lifecycle_status', 907001503, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001843, '维护责任人', 'maintainor', 907001503, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001844, '数据质量责任人（移动）', 'qualitor', 907001503, 'QUALITOR', 'string', null, 'admin', 'admin', null);
+(907001824, '资源标识', 'int_id', 907001503, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001825, '所属省份', 'province_id', 907001503, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001826, '所属地市', 'city_id', 907001503, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001827, '所属区县', 'county_id', 907001503, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001828, '所属站点', 'related_site', 907001503, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001829, '所属机房', 'related_room', 907001503, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001830, '设备类型', 'device_type', 907001503, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001831, '设备子类', 'device_subclass', 907001503, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null),
+(907001832, '设备名称', 'zh_label', 907001503, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001833, '设备编码', 'device_code', 907001503, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001834, '设备型号', 'product_name', 907001503, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001835, '设备厂家', 'vendor_id', 907001503, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001836, '额定功率（KVA）', 'rated_power', 907001503, 'RATED_POWER', 'integer', null, 'admin', 'admin', null),
+(907001837, '输入额定电压（V）', 'input_rated_voltage', 907001503, 'INPUT_RATED_VOLTAGE', 'string', 907000040, 'admin', 'admin', null),
+(907001838, '低压额定电流', 'low_reted_current', 907001503, 'LOW_RETED_CURRENT', 'integer', null, 'admin', 'admin', null),
+(907001839, '备份方式', 'backup_method', 907001503, 'BACKUP_METHOD', 'string', 907000049, 'admin', 'admin', null),
+(907001840, '开始使用时间', 'start_time', 907001503, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001841, '预计报废时间', 'estimated_retirement_time', 907001503, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001842, '使用状态', 'lifecycle_status', 907001503, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001843, '维护责任人', 'maintainor', 907001503, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001844, '数据质量责任人（移动）', 'qualitor', 907001503, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 	
 --CE_DECIVE_PE_TRANSFORM_DEVICE	
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001845, '资源标识', 'int_id', 907001504, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001846, '所属省份', 'province_id', 907001504, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001847, '所属地市', 'city_id', 907001504, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001848, '所属区县', 'county_id', 907001504, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001849, '所属站点', 'related_site', 907001504, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001850, '所属机房', 'related_room', 907001504, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001851, '设备类型', 'device_type', 907001504, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001852, '设备子类', 'device_subclass', 907001504, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001853, '设备名称', 'zh_label', 907001504, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001854, '设备编码', 'device_code', 907001504, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001855, '设备型号', 'product_name', 907001504, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001856, '设备厂家', 'vendor_id', 907001504, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001857, '额定输入电压（V）', 'rated_input_voltage', 907001504, 'RATED_INPUT_VOLTAGE', 'string', 907000007, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001858, '额定输出电压（V）', 'rated_output_voltage', 907001504, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001859, '输出类型', 'output_type', 907001504, 'OUTPUT_TYPE', 'string', 907000008, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001860, '可装变换模块总数（块）', 'total_loading_modules_number', 907001504, 'TOTAL_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001861, '实配变换模块总数（块）', 'total_match_modules_number', 907001504, 'TOTAL_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001862, '单个模块额定输出电流（A)', 'single_module_output_current', 907001504, 'SINGLE_MODULE_OUTPUT_CURRENT', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001863, '开始使用时间', 'start_time', 907001504, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001864, '预计报废时间', 'estimated_retirement_time', 907001504, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001865, '使用状态', 'lifecycle_status', 907001504, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001866, '维护责任人', 'maintainor', 907001504, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001867, '数据质量责任人（移动）', 'qualitor', 907001504, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
+(907001845, '资源标识', 'int_id', 907001504, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001846, '所属省份', 'province_id', 907001504, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001847, '所属地市', 'city_id', 907001504, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001848, '所属区县', 'county_id', 907001504, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001849, '所属站点', 'related_site', 907001504, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001850, '所属机房', 'related_room', 907001504, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001851, '设备类型', 'device_type', 907001504, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001852, '设备子类', 'device_subclass', 907001504, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null),
+(907001853, '设备名称', 'zh_label', 907001504, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001854, '设备编码', 'device_code', 907001504, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001855, '设备型号', 'product_name', 907001504, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001856, '设备厂家', 'vendor_id', 907001504, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001857, '额定输入电压（V）', 'rated_input_voltage', 907001504, 'RATED_INPUT_VOLTAGE', 'string', 907000007, 'admin', 'admin', null),
+(907001858, '额定输出电压（V）', 'rated_output_voltage', 907001504, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null),
+(907001859, '输出类型', 'output_type', 907001504, 'OUTPUT_TYPE', 'string', 907000008, 'admin', 'admin', null),
+(907001860, '可装变换模块总数（块）', 'total_loading_modules_number', 907001504, 'TOTAL_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907001861, '实配变换模块总数（块）', 'total_match_modules_number', 907001504, 'TOTAL_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907001862, '单个模块额定输出电流（A)', 'single_module_output_current', 907001504, 'SINGLE_MODULE_OUTPUT_CURRENT', 'string', null, 'admin', 'admin', null),
+(907001863, '开始使用时间', 'start_time', 907001504, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001864, '预计报废时间', 'estimated_retirement_time', 907001504, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001865, '使用状态', 'lifecycle_status', 907001504, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001866, '维护责任人', 'maintainor', 907001504, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001867, '数据质量责任人（移动）', 'qualitor', 907001504, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 	
 --CE_NET_PE_HIGH_DISTRIBUTION	
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001868, '资源标识', 'int_id', 907001505, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001869, '所属省份', 'province_id', 907001505, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001870, '所属地市', 'city_id', 907001505, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001871, '所属区县', 'county_id', 907001505, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001872, '所属站点', 'related_site', 907001505, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001873, '所属机房', 'related_room', 907001505, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001874, '系统类型', 'system_type', 907001505, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001875, '系统名称', 'zh_label', 907001505, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001876, '系统编码', 'system_code', 907001505, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001877, '系统额定容量(A)', 'system_rated_capacity', 907001505, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001878, '使用状态', 'lifecycle_status', 907001505, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001879, '数据质量责任人（移动）', 'qualitor', 907001505, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
+(907001868, '资源标识', 'int_id', 907001505, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001869, '所属省份', 'province_id', 907001505, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001870, '所属地市', 'city_id', 907001505, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001871, '所属区县', 'county_id', 907001505, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001872, '所属站点', 'related_site', 907001505, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001873, '所属机房', 'related_room', 907001505, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001874, '系统类型', 'system_type', 907001505, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907001875, '系统名称', 'zh_label', 907001505, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001876, '系统编码', 'system_code', 907001505, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907001877, '系统额定容量(A)', 'system_rated_capacity', 907001505, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001878, '使用状态', 'lifecycle_status', 907001505, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001879, '数据质量责任人（移动）', 'qualitor', 907001505, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 	
 --CE_DEVICE_PE_HIGH_DISTRIBUTION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001880, '资源标识', 'int_id', 907001506, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001881, '所属省份', 'province_id', 907001506, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001882, '所属地市', 'city_id', 907001506, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001883, '所属区县', 'county_id', 907001506, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001884, '所属站点', 'related_site', 907001506, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001885, '所属机房', 'related_room', 907001506, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001886, '设备类型', 'device_type', 907001506, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001887, '设备子类', 'device_subclass', 907001506, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001888, '设备名称', 'zh_label', 907001506, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001889, '设备编码', 'device_code', 907001506, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001890, '设备型号', 'product_name', 907001506, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001891, '设备厂家', 'vendor_id', 907001506, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001892, '所属系统', 'related_system', 907001506, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001893, '额定容量（A)', 'reted_capacity', 907001506, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001894, '开始使用时间', 'start_time', 907001506, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001895, '预计报废时间', 'estimated_retirement_time', 907001506, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001896, '使用状态', 'lifecycle_status', 907001506, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001897, '维护责任人', 'maintainor', 907001506, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001898, '数据质量责任人（移动）', 'qualitor', 907001506, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
+(907001880, '资源标识', 'int_id', 907001506, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001881, '所属省份', 'province_id', 907001506, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001882, '所属地市', 'city_id', 907001506, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001883, '所属区县', 'county_id', 907001506, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001884, '所属站点', 'related_site', 907001506, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001885, '所属机房', 'related_room', 907001506, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001886, '设备类型', 'device_type', 907001506, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001887, '设备子类', 'device_subclass', 907001506, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907001888, '设备名称', 'zh_label', 907001506, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001889, '设备编码', 'device_code', 907001506, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001890, '设备型号', 'product_name', 907001506, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001891, '设备厂家', 'vendor_id', 907001506, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001892, '所属系统', 'related_system', 907001506, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907001893, '额定容量（A)', 'reted_capacity', 907001506, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001894, '开始使用时间', 'start_time', 907001506, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001895, '预计报废时间', 'estimated_retirement_time', 907001506, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001896, '使用状态', 'lifecycle_status', 907001506, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001897, '维护责任人', 'maintainor', 907001506, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001898, '数据质量责任人（移动）', 'qualitor', 907001506, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 	
 --CE_NET_PE_HIGH_POWER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001899, '资源标识', 'int_id', 907001507, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001900, '所属省份', 'province_id', 907001507, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001901, '所属地市', 'city_id', 907001507, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001902, '所属区县', 'county_id', 907001507, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001903, '所属站点', 'related_site', 907001507, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001904, '所属机房', 'related_room', 907001507, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001905, '系统类型', 'system_type', 907001507, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001906, '系统名称', 'zh_label', 907001507, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001907, '系统编码', 'system_code', 907001507, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001908, '系统额定容量(A)', 'system_rated_capacity', 907001507, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001909, '使用状态', 'lifecycle_status', 907001507, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001910, '数据质量责任人（移动）', 'qualitor', 907001507, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001899, '资源标识', 'int_id', 907001507, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001900, '所属省份', 'province_id', 907001507, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001901, '所属地市', 'city_id', 907001507, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001902, '所属区县', 'county_id', 907001507, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001903, '所属站点', 'related_site', 907001507, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001904, '所属机房', 'related_room', 907001507, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001905, '系统类型', 'system_type', 907001507, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907001906, '系统名称', 'zh_label', 907001507, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001907, '系统编码', 'system_code', 907001507, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907001908, '系统额定容量(A)', 'system_rated_capacity', 907001507, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001909, '使用状态', 'lifecycle_status', 907001507, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001910, '数据质量责任人（移动）', 'qualitor', 907001507, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_HIGH_POWER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001911, '资源标识', 'int_id', 907001508, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001912, '所属省份', 'province_id', 907001508, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001913, '所属地市', 'city_id', 907001508, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001914, '所属区县', 'county_id', 907001508, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001915, '所属站点', 'related_site', 907001508, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001916, '所属机房', 'related_room', 907001508, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001917, '设备类型', 'device_type', 907001508, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001918, '设备子类', 'device_subclass', 907001508, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001919, '设备名称', 'zh_label', 907001508, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001920, '设备编码', 'device_code', 907001508, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001921, '设备型号', 'product_name', 907001508, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001922, '设备厂家', 'vendor_id', 907001508, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001923, '所属系统', 'related_system', 907001508, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001924, '额定输出电压（V）', 'rated_output_voltage', 907001508, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001925, '监控模块型号', 'monitoring_module_model', 907001508, 'MONITORING_MODULE_MODEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001926, '本机架可装整流模块总数（块）', 'total_rack_loading_modules_number', 907001508, 'TOTAL_RACK_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001927, '本机架实配整流模块总数（块）', 'total_rack_match_modules_number', 907001508, 'TOTAL_RACK_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001928, '单个整流模块额定输出容量（A）', 'signal_output_rated_capacity', 907001508, 'SIGNAL_OUTPUT_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001929, '开始使用时间', 'start_time', 907001508, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001930, '预计报废时间', 'estimated_retirement_time', 907001508, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001931, '使用状态', 'lifecycle_status', 907001508, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001932, '维护责任人', 'maintainor', 907001508, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001933, '数据质量责任人（移动）', 'qualitor', 907001508, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001911, '资源标识', 'int_id', 907001508, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001912, '所属省份', 'province_id', 907001508, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001913, '所属地市', 'city_id', 907001508, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001914, '所属区县', 'county_id', 907001508, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001915, '所属站点', 'related_site', 907001508, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001916, '所属机房', 'related_room', 907001508, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001917, '设备类型', 'device_type', 907001508, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001918, '设备子类', 'device_subclass', 907001508, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907001919, '设备名称', 'zh_label', 907001508, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001920, '设备编码', 'device_code', 907001508, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001921, '设备型号', 'product_name', 907001508, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001922, '设备厂家', 'vendor_id', 907001508, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001923, '所属系统', 'related_system', 907001508, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907001924, '额定输出电压（V）', 'rated_output_voltage', 907001508, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null),
+(907001925, '监控模块型号', 'monitoring_module_model', 907001508, 'MONITORING_MODULE_MODEL', 'string', null, 'admin', 'admin', null),
+(907001926, '本机架可装整流模块总数（块）', 'total_rack_loading_modules_number', 907001508, 'TOTAL_RACK_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907001927, '本机架实配整流模块总数（块）', 'total_rack_match_modules_number', 907001508, 'TOTAL_RACK_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907001928, '单个整流模块额定输出容量（A）', 'signal_output_rated_capacity', 907001508, 'SIGNAL_OUTPUT_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001929, '开始使用时间', 'start_time', 907001508, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001930, '预计报废时间', 'estimated_retirement_time', 907001508, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001931, '使用状态', 'lifecycle_status', 907001508, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001932, '维护责任人', 'maintainor', 907001508, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001933, '数据质量责任人（移动）', 'qualitor', 907001508, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_HIGH_DC_DISTRIBUTION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001934, '资源标识', 'int_id', 907001509, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001935, '所属省份', 'province_id', 907001509, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001936, '所属地市', 'city_id', 907001509, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001937, '所属区县', 'county_id', 907001509, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001938, '所属站点', 'related_site', 907001509, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001939, '所属机房', 'related_room', 907001509, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001940, '设备类型', 'device_type', 907001509, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001941, '设备子类', 'device_subclass', 907001509, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001942, '设备名称', 'zh_label', 907001509, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001943, '设备编码', 'device_code', 907001509, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001944, '设备型号', 'product_name', 907001509, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001945, '设备厂家', 'vendor_id', 907001509, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001946, '所属系统', 'related_system', 907001509, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001947, '额定容量（A）', 'reted_capacity', 907001509, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001948, '输人端口总数（路）', 'total_input_port', 907001509, 'TOTAL_INPUT_PORT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001949, '输出端口总数（路）', 'total_onput_port', 907001509, 'TOTAL_ONPUT_PORT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001950, '开始使用时间', 'start_time', 907001509, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001951, '预计报废时间', 'estimated_retirement_time', 907001509, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001952, '使用状态', 'lifecycle_status', 907001509, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001953, '维护责任人', 'maintainor', 907001509, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001954, '数据质量责任人（移动）', 'qualitor', 907001509, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001934, '资源标识', 'int_id', 907001509, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001935, '所属省份', 'province_id', 907001509, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001936, '所属地市', 'city_id', 907001509, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001937, '所属区县', 'county_id', 907001509, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001938, '所属站点', 'related_site', 907001509, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001939, '所属机房', 'related_room', 907001509, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001940, '设备类型', 'device_type', 907001509, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001941, '设备子类', 'device_subclass', 907001509, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907001942, '设备名称', 'zh_label', 907001509, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001943, '设备编码', 'device_code', 907001509, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001944, '设备型号', 'product_name', 907001509, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001945, '设备厂家', 'vendor_id', 907001509, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001946, '所属系统', 'related_system', 907001509, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907001947, '额定容量（A）', 'reted_capacity', 907001509, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001948, '输人端口总数（路）', 'total_input_port', 907001509, 'TOTAL_INPUT_PORT', 'integer', null, 'admin', 'admin', null),
+(907001949, '输出端口总数（路）', 'total_onput_port', 907001509, 'TOTAL_ONPUT_PORT', 'integer', null, 'admin', 'admin', null),
+(907001950, '开始使用时间', 'start_time', 907001509, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001951, '预计报废时间', 'estimated_retirement_time', 907001509, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001952, '使用状态', 'lifecycle_status', 907001509, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001953, '维护责任人', 'maintainor', 907001509, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001954, '数据质量责任人（移动）', 'qualitor', 907001509, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_NET_PE_LOW_DISTRIBUTION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001955, '资源标识', 'int_id', 907001510, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001956, '所属省份', 'province_id', 907001510, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001957, '所属地市', 'city_id', 907001510, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001958, '所属区县', 'county_id', 907001510, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001959, '所属站点', 'related_site', 907001510, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001960, '所属机房', 'related_room', 907001510, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001961, '系统类型', 'system_type', 907001510, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001962, '资源系统类型', 'res_type', 907001510, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001963, '系统名称', 'zh_label', 907001510, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001964, '系统编码', 'system_code', 907001510, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001965, '系统额定容量(A)', 'system_rated_capacity', 907001510, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001966, '使用状态', 'lifecycle_status', 907001510, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001967, '数据质量责任人（移动）', 'qualitor', 907001510, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001955, '资源标识', 'int_id', 907001510, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001956, '所属省份', 'province_id', 907001510, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001957, '所属地市', 'city_id', 907001510, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001958, '所属区县', 'county_id', 907001510, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001959, '所属站点', 'related_site', 907001510, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001960, '所属机房', 'related_room', 907001510, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001961, '系统类型', 'system_type', 907001510, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907001962, '资源系统类型', 'res_type', 907001510, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907001963, '系统名称', 'zh_label', 907001510, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001964, '系统编码', 'system_code', 907001510, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907001965, '系统额定容量(A)', 'system_rated_capacity', 907001510, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001966, '使用状态', 'lifecycle_status', 907001510, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001967, '数据质量责任人（移动）', 'qualitor', 907001510, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_LOW_AC_DISTRIBUTION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001968, '资源标识', 'int_id', 907001511, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001969, '所属省份', 'province_id', 907001511, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001970, '所属地市', 'city_id', 907001511, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001971, '所属区县', 'county_id', 907001511, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001972, '所属站点', 'related_site', 907001511, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001973, '所属机房', 'related_room', 907001511, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001974, '设备类型', 'device_type', 907001511, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001975, '设备子类', 'device_subclass', 907001511, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001976, '设备名称', 'zh_label', 907001511, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001977, '设备编码', 'device_code', 907001511, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001978, '设备型号', 'product_name', 907001511, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001979, '设备厂家', 'vendor_id', 907001511, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001980, '所属系统', 'related_system', 907001511, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001981, '额定容量(A)', 'reted_capacity', 907001511, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000019, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001983, '输出端口总数（路）', 'total_output_port', 907001511, 'TOTAL_OUTPUT_PORT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001984, '设备配置的SPD品牌', 'device_configuration_spd_brand', 907001511, 'DEVICE_CONFIGURATION_SPD_BRAND', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001985, 'SPD最大通流量（KA）', 'spd_max_rate', 907001511, 'SPD_MAX_RATE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001986, '开始使用时间', 'start_time', 907001511, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001987, '预计报废时间', 'estimated_retirement_time', 907001511, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001988, '使用状态', 'lifecycle_status', 907001511, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001989, '维护责任人', 'maintainor', 907001511, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001990, '数据质量责任人（移动）', 'qualitor', 907001511, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001968, '资源标识', 'int_id', 907001511, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001969, '所属省份', 'province_id', 907001511, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001970, '所属地市', 'city_id', 907001511, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001971, '所属区县', 'county_id', 907001511, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001972, '所属站点', 'related_site', 907001511, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001973, '所属机房', 'related_room', 907001511, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001974, '设备类型', 'device_type', 907001511, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907001975, '设备子类', 'device_subclass', 907001511, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907001976, '设备名称', 'zh_label', 907001511, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907001977, '设备编码', 'device_code', 907001511, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907001978, '设备型号', 'product_name', 907001511, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907001979, '设备厂家', 'vendor_id', 907001511, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907001980, '所属系统', 'related_system', 907001511, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907001981, '额定容量(A)', 'reted_capacity', 907001511, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000019, 'admin', 'admin', null),
+(907001983, '输出端口总数（路）', 'total_output_port', 907001511, 'TOTAL_OUTPUT_PORT', 'integer', null, 'admin', 'admin', null),
+(907001984, '设备配置的SPD品牌', 'device_configuration_spd_brand', 907001511, 'DEVICE_CONFIGURATION_SPD_BRAND', 'string', null, 'admin', 'admin', null),
+(907001985, 'SPD最大通流量（KA）', 'spd_max_rate', 907001511, 'SPD_MAX_RATE', 'string', null, 'admin', 'admin', null),
+(907001986, '开始使用时间', 'start_time', 907001511, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907001987, '预计报废时间', 'estimated_retirement_time', 907001511, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907001988, '使用状态', 'lifecycle_status', 907001511, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907001989, '维护责任人', 'maintainor', 907001511, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907001990, '数据质量责任人（移动）', 'qualitor', 907001511, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_NET_PE_SWITCH_POWER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001991, '资源标识', 'int_id', 907001512, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001992, '所属省份', 'province_id', 907001512, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001993, '所属地市', 'city_id', 907001512, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001994, '所属区县', 'county_id', 907001512, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001995, '所属站点', 'related_site', 907001512, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001996, '所属机房', 'related_room', 907001512, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001997, '系统类型', 'system_type', 907001512, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001998, '资源系统类型', 'res_type', 907001512, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907001999, '系统名称', 'zh_label', 907001512, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002000, '系统编码', 'system_code', 907001512, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002001, '系统额定容量(KW)', 'system_rated_capacity', 907001512, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002002, '使用状态', 'lifecycle_status', 907001512, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002003, '数据质量责任人（移动）', 'qualitor', 907001512, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907001991, '资源标识', 'int_id', 907001512, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907001992, '所属省份', 'province_id', 907001512, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907001993, '所属地市', 'city_id', 907001512, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907001994, '所属区县', 'county_id', 907001512, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907001995, '所属站点', 'related_site', 907001512, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907001996, '所属机房', 'related_room', 907001512, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907001997, '系统类型', 'system_type', 907001512, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907001998, '资源系统类型', 'res_type', 907001512, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907001999, '系统名称', 'zh_label', 907001512, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002000, '系统编码', 'system_code', 907001512, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907002001, '系统额定容量(KW)', 'system_rated_capacity', 907001512, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002002, '使用状态', 'lifecycle_status', 907001512, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002003, '数据质量责任人（移动）', 'qualitor', 907001512, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_POWER_GENERATION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002004, '资源标识', 'int_id', 907001513, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002005, '所属省份', 'province_id', 907001513, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002006, '所属地市', 'city_id', 907001513, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002007, '所属区县', 'county_id', 907001513, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002008, '所属站点', 'related_site', 907001513, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002009, '所属机房', 'related_room', 907001513, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002010, '设备类型', 'device_type', 907001513, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002011, '设备子类', 'device_subclass', 907001513, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002012, '设备名称', 'zh_label', 907001513, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002013, '设备编码', 'device_code', 907001513, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002014, '设备型号', 'product_name', 907001513, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002015, '设备厂家', 'vendor_id', 907001513, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002016, '额定功率（KW）', 'rated_power', 907001513, 'RATED_POWER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002017, '额定输出电压（V)', 'rated_output_voltage', 907001513, 'RATED_OUTPUT_VOLTAGE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002018, '输出电压类型', 'output_voltage_type', 907001513, 'OUTPUT_VOLTAGE_TYPE', 'string', 907000029, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002019, '自启动功能', 'self_start_function', 907001513, 'SELF_START_FUNCTION', 'string', 907000030, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002020, '冷却方式', 'cooling_method', 907001513, 'COOLING_METHOD', 'string', 907000052, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002021, '安装方式', 'installation_method', 907001513, 'INSTALLATION_METHOD', 'string', 907000042, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002022, '备份方式', 'backup_method', 907001513, 'BACKUP_METHOD', 'string', 907000049, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002023, '所属系统', 'related_system', 907001513, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002024, '开始使用时间', 'start_time', 907001513, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002025, '预计报废时间', 'estimated_retirement_time', 907001513, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002026, '使用状态', 'lifecycle_status', 907001513, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002027, '维护责任人', 'maintainor', 907001513, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002028, '数据质量责任人（移动）', 'qualitor', 907001513, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002004, '资源标识', 'int_id', 907001513, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002005, '所属省份', 'province_id', 907001513, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002006, '所属地市', 'city_id', 907001513, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002007, '所属区县', 'county_id', 907001513, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002008, '所属站点', 'related_site', 907001513, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002009, '所属机房', 'related_room', 907001513, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002010, '设备类型', 'device_type', 907001513, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002011, '设备子类', 'device_subclass', 907001513, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002012, '设备名称', 'zh_label', 907001513, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002013, '设备编码', 'device_code', 907001513, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002014, '设备型号', 'product_name', 907001513, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002015, '设备厂家', 'vendor_id', 907001513, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002016, '额定功率（KW）', 'rated_power', 907001513, 'RATED_POWER', 'integer', null, 'admin', 'admin', null),
+(907002017, '额定输出电压（V)', 'rated_output_voltage', 907001513, 'RATED_OUTPUT_VOLTAGE', 'string', null, 'admin', 'admin', null),
+(907002018, '输出电压类型', 'output_voltage_type', 907001513, 'OUTPUT_VOLTAGE_TYPE', 'string', 907000029, 'admin', 'admin', null),
+(907002019, '自启动功能', 'self_start_function', 907001513, 'SELF_START_FUNCTION', 'string', 907000030, 'admin', 'admin', null),
+(907002020, '冷却方式', 'cooling_method', 907001513, 'COOLING_METHOD', 'string', 907000052, 'admin', 'admin', null),
+(907002021, '安装方式', 'installation_method', 907001513, 'INSTALLATION_METHOD', 'string', 907000042, 'admin', 'admin', null),
+(907002022, '备份方式', 'backup_method', 907001513, 'BACKUP_METHOD', 'string', 907000049, 'admin', 'admin', null),
+(907002023, '所属系统', 'related_system', 907001513, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907002024, '开始使用时间', 'start_time', 907001513, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002025, '预计报废时间', 'estimated_retirement_time', 907001513, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002026, '使用状态', 'lifecycle_status', 907001513, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002027, '维护责任人', 'maintainor', 907001513, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002028, '数据质量责任人（移动）', 'qualitor', 907001513, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_NET_PE_OPEN_POWER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002029, '资源标识', 'int_id', 907001514, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002030, '所属省份', 'province_id', 907001514, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002031, '所属地市', 'city_id', 907001514, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002032, '所属区县', 'county_id', 907001514, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002033, '所属站点', 'related_site', 907001514, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002034, '所属机房', 'related_room', 907001514, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002035, '系统类型', 'system_type', 907001514, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002036, '资源系统类型', 'res_type', 907001514, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002037, '系统名称', 'zh_label', 907001514, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002038, '系统编码', 'system_code', 907001514, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002039, '系统额定容量(A)', 'system_rated_capacity', 907001514, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002040, '使用状态', 'lifecycle_status', 907001514, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002041, '数据质量责任人（移动）', 'qualitor', 907001514, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002029, '资源标识', 'int_id', 907001514, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002030, '所属省份', 'province_id', 907001514, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002031, '所属地市', 'city_id', 907001514, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002032, '所属区县', 'county_id', 907001514, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002033, '所属站点', 'related_site', 907001514, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002034, '所属机房', 'related_room', 907001514, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002035, '系统类型', 'system_type', 907001514, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907002036, '资源系统类型', 'res_type', 907001514, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907002037, '系统名称', 'zh_label', 907001514, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002038, '系统编码', 'system_code', 907001514, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907002039, '系统额定容量(A)', 'system_rated_capacity', 907001514, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002040, '使用状态', 'lifecycle_status', 907001514, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002041, '数据质量责任人（移动）', 'qualitor', 907001514, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_SWITCH_POWER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002042, '资源标识', 'int_id', 907001515, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002043, '所属省份', 'province_id', 907001515, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002044, '所属地市', 'city_id', 907001515, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002045, '所属区县', 'county_id', 907001515, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002046, '所属站点', 'related_site', 907001515, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002047, '所属机房', 'related_room', 907001515, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002048, '设备类型', 'device_type', 907001515, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002049, '设备子类', 'device_subclass', 907001515, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002050, '设备名称', 'zh_label', 907001515, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002051, '设备编码', 'device_code', 907001515, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002052, '设备型号', 'product_name', 907001515, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002053, '设备厂家', 'vendor_id', 907001515, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002054, '所属系统', 'related_system', 907001515, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002055, '额定输出电压（V）', 'rated_output_voltage', 907001515, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002056, '监控模块型号', 'monitoring_module_model', 907001515, 'MONITORING_MODULE_MODEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002057, '本机架可装整流模块总数（块）', 'total_rack_loading_modules_number', 907001515, 'TOTAL_RACK_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002058, '本机架实配整流模块总数（块）', 'total_rack_match_modules_number', 907001515, 'TOTAL_RACK_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002059, '单个整流模块额定输出容量（A）', 'signal_output_rated_capacity', 907001515, 'SIGNAL_OUTPUT_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002060, '开始使用时间', 'start_time', 907001515, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002061, '预计报废时间', 'estimated_retirement_time', 907001515, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002062, '使用状态', 'lifecycle_status', 907001515, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002063, '维护责任人', 'maintainor', 907001515, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002064, '数据质量责任人（移动）', 'qualitor', 907001515, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002042, '资源标识', 'int_id', 907001515, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002043, '所属省份', 'province_id', 907001515, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002044, '所属地市', 'city_id', 907001515, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002045, '所属区县', 'county_id', 907001515, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002046, '所属站点', 'related_site', 907001515, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002047, '所属机房', 'related_room', 907001515, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002048, '设备类型', 'device_type', 907001515, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002049, '设备子类', 'device_subclass', 907001515, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002050, '设备名称', 'zh_label', 907001515, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002051, '设备编码', 'device_code', 907001515, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002052, '设备型号', 'product_name', 907001515, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002053, '设备厂家', 'vendor_id', 907001515, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002054, '所属系统', 'related_system', 907001515, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907002055, '额定输出电压（V）', 'rated_output_voltage', 907001515, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null),
+(907002056, '监控模块型号', 'monitoring_module_model', 907001515, 'MONITORING_MODULE_MODEL', 'string', null, 'admin', 'admin', null),
+(907002057, '本机架可装整流模块总数（块）', 'total_rack_loading_modules_number', 907001515, 'TOTAL_RACK_LOADING_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002058, '本机架实配整流模块总数（块）', 'total_rack_match_modules_number', 907001515, 'TOTAL_RACK_MATCH_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002059, '单个整流模块额定输出容量（A）', 'signal_output_rated_capacity', 907001515, 'SIGNAL_OUTPUT_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002060, '开始使用时间', 'start_time', 907001515, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002061, '预计报废时间', 'estimated_retirement_time', 907001515, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002062, '使用状态', 'lifecycle_status', 907001515, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002063, '维护责任人', 'maintainor', 907001515, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002064, '数据质量责任人（移动）', 'qualitor', 907001515, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_LOW_DC_DISTRIBUTION
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002065, '资源标识', 'int_id', 907001516, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002066, '所属省份', 'province_id', 907001516, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002067, '所属地市', 'city_id', 907001516, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002068, '所属区县', 'county_id', 907001516, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002069, '所属站点', 'related_site', 907001516, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002070, '所属机房', 'related_room', 907001516, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002071, '设备类型', 'device_type', 907001516, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002072, '设备子类', 'device_subclass', 907001516, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002073, '设备名称', 'zh_label', 907001516, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002074, '设备编码', 'device_code', 907001516, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002075, '设备型号', 'product_name', 907001516, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002076, '设备厂家', 'vendor_id', 907001516, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002077, '所属系统', 'related_system', 907001516, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002078, '额定容量（A）', 'reted_capacity', 907001516, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002079, '输人端口总数（路）', 'total_input_port', 907001516, 'TOTAL_INPUT_PORT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002080, '输出端口总数（路）', 'total_onput_port', 907001516, 'TOTAL_ONPUT_PORT', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002081, '开始使用时间', 'start_time', 907001516, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002082, '预计报废时间', 'estimated_retirement_time', 907001516, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002083, '使用状态', 'lifecycle_status', 907001516, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002084, '维护责任人', 'maintainor', 907001516, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002085, '数据质量责任人（移动）', 'qualitor', 907001516, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002065, '资源标识', 'int_id', 907001516, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002066, '所属省份', 'province_id', 907001516, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002067, '所属地市', 'city_id', 907001516, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002068, '所属区县', 'county_id', 907001516, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002069, '所属站点', 'related_site', 907001516, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002070, '所属机房', 'related_room', 907001516, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002071, '设备类型', 'device_type', 907001516, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002072, '设备子类', 'device_subclass', 907001516, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002073, '设备名称', 'zh_label', 907001516, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002074, '设备编码', 'device_code', 907001516, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002075, '设备型号', 'product_name', 907001516, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002076, '设备厂家', 'vendor_id', 907001516, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002077, '所属系统', 'related_system', 907001516, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907002078, '额定容量（A）', 'reted_capacity', 907001516, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002079, '输人端口总数（路）', 'total_input_port', 907001516, 'TOTAL_INPUT_PORT', 'integer', null, 'admin', 'admin', null),
+(907002080, '输出端口总数（路）', 'total_onput_port', 907001516, 'TOTAL_ONPUT_PORT', 'integer', null, 'admin', 'admin', null),
+(907002081, '开始使用时间', 'start_time', 907001516, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002082, '预计报废时间', 'estimated_retirement_time', 907001516, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002083, '使用状态', 'lifecycle_status', 907001516, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002084, '维护责任人', 'maintainor', 907001516, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002085, '数据质量责任人（移动）', 'qualitor', 907001516, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_NET_PE_UPS
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002086, '资源标识', 'int_id', 907001517, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002087, '所属省份', 'province_id', 907001517, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002088, '所属地市', 'city_id', 907001517, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002089, '所属区县', 'county_id', 907001517, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002090, '所属站点', 'related_site', 907001517, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002091, '所属机房', 'related_room', 907001517, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002092, '系统类型', 'system_type', 907001517, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002093, '资源系统类型', 'res_type', 907001517, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002094, '系统名称', 'zh_label', 907001517, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002095, '系统编码', 'system_code', 907001517, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002096, '系统额定容量(KVA)', 'system_rated_capacity', 907001517, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002097, '工作方式', 'work_method', 907001517, 'WORK_METHOD', 'string', 907000028, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002098, '母线类型', 'bus_type', 907001517, 'BUS_TYPE', 'string', 907000024, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002099, '使用状态', 'lifecycle_status', 907001517, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002100, '数据质量责任人（移动）', 'qualitor', 907001517, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002086, '资源标识', 'int_id', 907001517, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002087, '所属省份', 'province_id', 907001517, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002088, '所属地市', 'city_id', 907001517, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002089, '所属区县', 'county_id', 907001517, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002090, '所属站点', 'related_site', 907001517, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002091, '所属机房', 'related_room', 907001517, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002092, '系统类型', 'system_type', 907001517, 'SYSTEM_TYPE', 'string', 907000020, 'admin', 'admin', null),
+(907002093, '资源系统类型', 'res_type', 907001517, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907002094, '系统名称', 'zh_label', 907001517, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002095, '系统编码', 'system_code', 907001517, 'SYSTEM_CODE', 'string', null, 'admin', 'admin', null),
+(907002096, '系统额定容量(KVA)', 'system_rated_capacity', 907001517, 'SYSTEM_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002097, '工作方式', 'work_method', 907001517, 'WORK_METHOD', 'string', 907000028, 'admin', 'admin', null),
+(907002098, '母线类型', 'bus_type', 907001517, 'BUS_TYPE', 'string', 907000024, 'admin', 'admin', null),
+(907002099, '使用状态', 'lifecycle_status', 907001517, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002100, '数据质量责任人（移动）', 'qualitor', 907001517, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_UPS
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002101, '资源标识', 'int_id', 907001518, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002102, '所属省份', 'province_id', 907001518, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002103, '所属地市', 'city_id', 907001518, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002104, '所属区县', 'county_id', 907001518, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002105, '所属站点', 'related_site', 907001518, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002106, '所属机房', 'related_room', 907001518, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002107, '设备类型', 'device_type', 907001518, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002108, '设备子类', 'device_subclass', 907001518, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002109, '设备名称', 'zh_label', 907001518, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002110, '设备编码', 'device_code', 907001518, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002111, '设备型号', 'product_name', 907001518, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002112, '设备厂家', 'vendor_id', 907001518, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002113, '所属系统', 'related_system', 907001518, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002114, '额定容量（KVA）', 'rated_capacity', 907001518, 'RATED_CAPACITY', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002115, '额定输出电压（V）', 'rated_output_voltage', 907001518, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002116, '开始使用时间', 'start_time', 907001518, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002117, '预计报废时间', 'estimated_retirement_time', 907001518, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002118, '使用状态', 'lifecycle_status', 907001518, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002119, '维护责任人', 'maintainor', 907001518, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002120, '数据质量责任人（移动）', 'qualitor', 907001518, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
-
+(907002101, '资源标识', 'int_id', 907001518, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002102, '所属省份', 'province_id', 907001518, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002103, '所属地市', 'city_id', 907001518, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002104, '所属区县', 'county_id', 907001518, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002105, '所属站点', 'related_site', 907001518, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002106, '所属机房', 'related_room', 907001518, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002107, '设备类型', 'device_type', 907001518, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002108, '设备子类', 'device_subclass', 907001518, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002109, '设备名称', 'zh_label', 907001518, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002110, '设备编码', 'device_code', 907001518, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002111, '设备型号', 'product_name', 907001518, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002112, '设备厂家', 'vendor_id', 907001518, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002113, '所属系统', 'related_system', 907001518, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
+(907002114, '额定容量（KVA）', 'rated_capacity', 907001518, 'RATED_CAPACITY', 'integer', null, 'admin', 'admin', null),
+(907002115, '额定输出电压（V）', 'rated_output_voltage', 907001518, 'RATED_OUTPUT_VOLTAGE', 'string', 907000017, 'admin', 'admin', null),
+(907002116, '开始使用时间', 'start_time', 907001518, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002117, '预计报废时间', 'estimated_retirement_time', 907001518, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002118, '使用状态', 'lifecycle_status', 907001518, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002119, '维护责任人', 'maintainor', 907001518, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002120, '数据质量责任人（移动）', 'qualitor', 907001518, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 --CE_DEVICE_PE_BATTERY
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002121, '资源标识', 'int_id', 907001519, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002122, '所属省份', 'province_id', 907001519, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002123, '所属地市', 'city_id', 907001519, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002124, '所属区县', 'county_id', 907001519, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002125, '所属站点', 'related_site', 907001519, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002126, '所属机房', 'related_room', 907001519, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002127, '设备类型', 'device_type', 907001519, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002128, '设备子类', 'device_subclass', 907001519, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002129, '设备名称', 'zh_label', 907001519, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002130, '设备编码', 'device_code', 907001519, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002131, '设备型号', 'product_name', 907001519, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002132, '设备厂家', 'vendor_id', 907001519, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002133, '所属电源设备', 'ralated_power_device', 907001519, 'RALATED_POWER_DEVICE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002134, '额定容量（AH）', 'reted_capacity', 907001519, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002135, '单体电压等级（V）', 'cell_voltage_level', 907001519, 'CELL_VOLTAGE_LEVEL', 'string', 907000039, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002136, '组内单体总数（只）', 'total_monomers_number', 907001519, 'TOTAL_MONOMERS_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002137, '开始使用时间', 'start_time', 907001519, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002138, '预计报废时间', 'estimated_retirement_time', 907001519, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002139, '使用状态', 'lifecycle_status', 907001519, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002140, '维护责任人', 'maintainor', 907001519, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002141, '数据质量责任人（移动）', 'qualitor', 907001519, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
-
+(907002121, '资源标识', 'int_id', 907001519, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002122, '所属省份', 'province_id', 907001519, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002123, '所属地市', 'city_id', 907001519, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002124, '所属区县', 'county_id', 907001519, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002125, '所属站点', 'related_site', 907001519, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002126, '所属机房', 'related_room', 907001519, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002127, '设备类型', 'device_type', 907001519, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002128, '设备子类', 'device_subclass', 907001519, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002129, '设备名称', 'zh_label', 907001519, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002130, '设备编码', 'device_code', 907001519, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002131, '设备型号', 'product_name', 907001519, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002132, '设备厂家', 'vendor_id', 907001519, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002133, '所属电源设备', 'ralated_power_device', 907001519, 'RALATED_POWER_DEVICE', 'string', null, 'admin', 'admin', null),
+(907002134, '额定容量（AH）', 'reted_capacity', 907001519, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002135, '单体电压等级（V）', 'cell_voltage_level', 907001519, 'CELL_VOLTAGE_LEVEL', 'string', 907000039, 'admin', 'admin', null),
+(907002136, '组内单体总数（只）', 'total_monomers_number', 907001519, 'TOTAL_MONOMERS_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002137, '开始使用时间', 'start_time', 907001519, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002138, '预计报废时间', 'estimated_retirement_time', 907001519, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002139, '使用状态', 'lifecycle_status', 907001519, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002140, '维护责任人', 'maintainor', 907001519, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002141, '数据质量责任人（移动）', 'qualitor', 907001519, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 --CE_DEVICE_PE_AIR
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002142, '资源标识', 'int_id', 907001520, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002143, '所属省份', 'province_id', 907001520, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002144, '所属地市', 'city_id', 907001520, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002145, '所属区县', 'county_id', 907001520, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002146, '所属站点', 'related_site', 907001520, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002147, '所属机房', 'related_room', 907001520, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002148, '设备类型', 'device_type', 907001520, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002149, '设备子类', 'device_subclass', 907001520, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002150, '设备名称', 'zh_label', 907001520, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002151, '设备编码', 'device_code', 907001520, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002152, '设备型号', 'product_name', 907001520, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002153, '设备厂家', 'vendor_id', 907001520, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002154, '额定制冷量（KW）', 'rated_cooling_capacity', 907001520, 'RATED_COOLING_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002155, '额定输入功率（W）', 'rated_input_power', 907001520, 'RATED_INPUT_POWER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002156, '额定工作电压（V）', 'rated_operating_voltage', 907001520, 'RATED_OPERATING_VOLTAGE', 'string', 907000001, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002157, '开始使用时间', 'start_time', 907001520, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002158, '预计报废时间', 'estimated_retirement_time', 907001520, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002159, '使用状态', 'lifecycle_status', 907001520, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002160, '维护责任人', 'maintainor', 907001520, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002161, '数据质量责任人（移动）', 'qualitor', 907001520, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
-
+(907002142, '资源标识', 'int_id', 907001520, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002143, '所属省份', 'province_id', 907001520, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002144, '所属地市', 'city_id', 907001520, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002145, '所属区县', 'county_id', 907001520, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002146, '所属站点', 'related_site', 907001520, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002147, '所属机房', 'related_room', 907001520, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002148, '设备类型', 'device_type', 907001520, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002149, '设备子类', 'device_subclass', 907001520, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002150, '设备名称', 'zh_label', 907001520, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002151, '设备编码', 'device_code', 907001520, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002152, '设备型号', 'product_name', 907001520, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002153, '设备厂家', 'vendor_id', 907001520, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002154, '额定制冷量（KW）', 'rated_cooling_capacity', 907001520, 'RATED_COOLING_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002155, '额定输入功率（W）', 'rated_input_power', 907001520, 'RATED_INPUT_POWER', 'string', null, 'admin', 'admin', null),
+(907002156, '额定工作电压（V）', 'rated_operating_voltage', 907001520, 'RATED_OPERATING_VOLTAGE', 'string', 907000001, 'admin', 'admin', null),
+(907002157, '开始使用时间', 'start_time', 907001520, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002158, '预计报废时间', 'estimated_retirement_time', 907001520, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002159, '使用状态', 'lifecycle_status', 907001520, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002160, '维护责任人', 'maintainor', 907001520, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002161, '数据质量责任人（移动）', 'qualitor', 907001520, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 --CE_DEVICE_PE_ENERY_SAVE
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002162, '资源标识', 'int_id', 907001521, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002163, '所属省份', 'province_id', 907001521, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002164, '所属地市', 'city_id', 907001521, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002165, '所属区县', 'county_id', 907001521, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002166, '所属站点', 'related_site', 907001521, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002167, '所属机房', 'related_room', 907001521, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002168, '设备类型', 'device_type', 907001521, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002169, '设备子类', 'device_subclass', 907001521, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002170, '设备名称', 'zh_label', 907001521, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002171, '设备编码', 'device_code', 907001521, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002172, '设备型号', 'product_name', 907001521, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002173, '设备厂家', 'vendor_id', 907001521, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002174, '额定制冷量（KW）', 'rated_cooling_capacity', 907001521, 'RATED_COOLING_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002175, '输入额定功率（KW）', 'rated_input_power', 907001521, 'RATED_INPUT_POWER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002176, '额定工作电压（V）', 'rated_operating_voltage', 907001521, 'RATED_OPERATING_VOLTAGE', 'string', 907000001, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002177, '系统总容量（W）', 'total_system_capacity', 907001521, 'TOTAL_SYSTEM_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002178, '系统输出电压（V）', 'system_output_voltage', 907001521, 'SYSTEM_OUTPUT_VOLTAGE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002179, '下挂风机总数量（台）', 'total_fan_number', 907001521, 'TOTAL_FAN_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002180, '下挂风机形式', 'fan_form', 907001521, 'FAN_FORM', 'string', 907000041, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002181, '下挂风机品牌', 'fan_brand', 907001521, 'FAN_BRAND', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002182, '下挂风机额定功率（W）', 'fan_rated_power', 907001521, 'FAN_RATED_POWER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002183, '下挂太阳能组件数（组）', 'solar_modules_number', 907001521, 'SOLAR_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002184, '下挂太阳能组件品牌', 'solar_modules_brand', 907001521, 'SOLAR_MODULES_BRAND', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002185, '下挂太阳能组件额定容量（W）', 'solar_modules_rated_capacity', 907001521, 'SOLAR_MODULES_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002186, '开始使用时间', 'start_time', 907001521, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002187, '预计报废时间', 'estimated_retirement_time', 907001521, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002188, '使用状态', 'lifecycle_status', 907001521, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002189, '维护责任人', 'maintainor', 907001521, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002190, '数据质量责任人（移动）', 'qualitor', 907001521, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002162, '资源标识', 'int_id', 907001521, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002163, '所属省份', 'province_id', 907001521, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002164, '所属地市', 'city_id', 907001521, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002165, '所属区县', 'county_id', 907001521, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002166, '所属站点', 'related_site', 907001521, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002167, '所属机房', 'related_room', 907001521, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002168, '设备类型', 'device_type', 907001521, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002169, '设备子类', 'device_subclass', 907001521, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002170, '设备名称', 'zh_label', 907001521, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002171, '设备编码', 'device_code', 907001521, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002172, '设备型号', 'product_name', 907001521, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002173, '设备厂家', 'vendor_id', 907001521, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002174, '额定制冷量（KW）', 'rated_cooling_capacity', 907001521, 'RATED_COOLING_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002175, '输入额定功率（KW）', 'rated_input_power', 907001521, 'RATED_INPUT_POWER', 'string', null, 'admin', 'admin', null),
+(907002176, '额定工作电压（V）', 'rated_operating_voltage', 907001521, 'RATED_OPERATING_VOLTAGE', 'string', 907000001, 'admin', 'admin', null),
+(907002177, '系统总容量（W）', 'total_system_capacity', 907001521, 'TOTAL_SYSTEM_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002178, '系统输出电压（V）', 'system_output_voltage', 907001521, 'SYSTEM_OUTPUT_VOLTAGE', 'string', null, 'admin', 'admin', null),
+(907002179, '下挂风机总数量（台）', 'total_fan_number', 907001521, 'TOTAL_FAN_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002180, '下挂风机形式', 'fan_form', 907001521, 'FAN_FORM', 'string', 907000041, 'admin', 'admin', null),
+(907002181, '下挂风机品牌', 'fan_brand', 907001521, 'FAN_BRAND', 'string', null, 'admin', 'admin', null),
+(907002182, '下挂风机额定功率（W）', 'fan_rated_power', 907001521, 'FAN_RATED_POWER', 'string', null, 'admin', 'admin', null),
+(907002183, '下挂太阳能组件数（组）', 'solar_modules_number', 907001521, 'SOLAR_MODULES_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002184, '下挂太阳能组件品牌', 'solar_modules_brand', 907001521, 'SOLAR_MODULES_BRAND', 'string', null, 'admin', 'admin', null),
+(907002185, '下挂太阳能组件额定容量（W）', 'solar_modules_rated_capacity', 907001521, 'SOLAR_MODULES_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002186, '开始使用时间', 'start_time', 907001521, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002187, '预计报废时间', 'estimated_retirement_time', 907001521, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002188, '使用状态', 'lifecycle_status', 907001521, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002189, '维护责任人', 'maintainor', 907001521, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002190, '数据质量责任人（移动）', 'qualitor', 907001521, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_POWER_MONITOR
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002191, '资源标识', 'int_id', 907001522, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002192, '所属省份', 'province_id', 907001522, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002193, '所属地市', 'city_id', 907001522, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002194, '所属区县', 'county_id', 907001522, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002195, '所属站点', 'related_site', 907001522, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002196, '所属机房', 'related_room', 907001522, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002197, '设备类型', 'device_type', 907001522, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002198, '设备子类', 'device_subclass', 907001522, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002199, '设备名称', 'zh_label', 907001522, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002200, '设备编码', 'device_code', 907001522, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002201, '设备型号', 'product_name', 907001522, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002202, '设备厂家', 'vendor_id', 907001522, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002203, '开始使用时间', 'start_time', 907001522, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002204, '预计报废时间', 'estimated_retirement_time', 907001522, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002205, '使用状态', 'lifecycle_status', 907001522, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002206, '维护责任人', 'maintainor', 907001522, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002207, '数据质量责任人（移动）', 'qualitor', 907001522, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002191, '资源标识', 'int_id', 907001522, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002192, '所属省份', 'province_id', 907001522, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002193, '所属地市', 'city_id', 907001522, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002194, '所属区县', 'county_id', 907001522, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002195, '所属站点', 'related_site', 907001522, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002196, '所属机房', 'related_room', 907001522, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002197, '设备类型', 'device_type', 907001522, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002198, '设备子类', 'device_subclass', 907001522, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002199, '设备名称', 'zh_label', 907001522, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002200, '设备编码', 'device_code', 907001522, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002201, '设备型号', 'product_name', 907001522, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002202, '设备厂家', 'vendor_id', 907001522, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002203, '开始使用时间', 'start_time', 907001522, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002204, '预计报废时间', 'estimated_retirement_time', 907001522, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002205, '使用状态', 'lifecycle_status', 907001522, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002206, '维护责任人', 'maintainor', 907001522, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002207, '数据质量责任人（移动）', 'qualitor', 907001522, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_SMART_METER
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002208, '资源标识', 'int_id', 907001523, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002209, '所属省份', 'province_id', 907001523, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002210, '所属地市', 'city_id', 907001523, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002211, '所属区县', 'county_id', 907001523, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002212, '所属站点', 'related_site', 907001523, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002213, '所属机房', 'related_room', 907001523, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002214, '设备类型', 'device_type', 907001523, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002215, '设备子类', 'device_subclass', 907001523, 'device_subclass', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002216, '设备名称', 'zh_label', 907001523, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002217, '设备编码', 'device_code', 907001523, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002218, '设备型号', 'product_name', 907001523, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002219, '设备厂家', 'vendor_id', 907001523, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002220, '电表回路数（路）', 'meter_circuit_number', 907001523, 'METER_CIRCUIT_NUMBER', 'integer', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002221, '开始使用时间', 'start_time', 907001523, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002222, '预计报废时间', 'estimated_retirement_time', 907001523, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002223, '使用状态', 'lifecycle_status', 907001523, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002224, '维护责任人', 'maintainor', 907001523, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002225, '数据质量责任人（移动）', 'qualitor', 907001523, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002208, '资源标识', 'int_id', 907001523, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002209, '所属省份', 'province_id', 907001523, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002210, '所属地市', 'city_id', 907001523, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002211, '所属区县', 'county_id', 907001523, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002212, '所属站点', 'related_site', 907001523, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002213, '所属机房', 'related_room', 907001523, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002214, '设备类型', 'device_type', 907001523, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002215, '设备子类', 'device_subclass', 907001523, 'device_subclass', 'string', 907000047, 'admin', 'admin', null),
+(907002216, '设备名称', 'zh_label', 907001523, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002217, '设备编码', 'device_code', 907001523, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002218, '设备型号', 'product_name', 907001523, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002219, '设备厂家', 'vendor_id', 907001523, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002220, '电表回路数（路）', 'meter_circuit_number', 907001523, 'METER_CIRCUIT_NUMBER', 'integer', null, 'admin', 'admin', null),
+(907002221, '开始使用时间', 'start_time', 907001523, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002222, '预计报废时间', 'estimated_retirement_time', 907001523, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002223, '使用状态', 'lifecycle_status', 907001523, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002224, '维护责任人', 'maintainor', 907001523, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002225, '数据质量责任人（移动）', 'qualitor', 907001523, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_LINK_PE_IN
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002226, '资源标识', 'int_id', 907001524, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002227, '所属省份', 'province_id', 907001524, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002228, '所属地市', 'city_id', 907001524, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002229, '所属区县', 'county_id', 907001524, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002230, '所属站点', 'related_site', 907001524, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002231, '所属机房', 'related_room', 907001524, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002232, '资源分路类型', 'res_type', 907001524, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002233, '所属设备类型', 'related_device_type', 907001524, 'RELATED_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002234, '所属设备', 'related_device', 907001524, 'RELATED_DEVICE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002235, '分路类型', 'branch_type', 907001524, 'BRANCH_TYPE', 'string', 907000054, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002236, '分路类型缩写', 'branch_type_abbreviation', 907001524, 'BRANCH_TYPE_ABBREVIATION', 'string', 907000048, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002237, '分路顺序号', 'branch_number', 907001524, 'BRANCH_NUMBER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002238, '分路主备', 'branch_active_standby', 907001524, 'BRANCH_ACTIVE_STANDBY', 'string', 907000051, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002239, '分路器件额定容量（A）', 'branch_rated_capacity', 907001524, 'BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002240, '使用状态', 'lifecycle_status', 907001524, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002241, '分路名称', 'branch_name', 907001524, 'BRANCH_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002242, '下游设备所在机房', 'down_device_ralated_room', 907001524, 'DOWN_DEVICE_RALATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002243, '下游设备', 'down_device_name', 907001524, 'DOWN_DEVICE_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002244, '下游分路名称', 'down_branch_name', 907001524, 'DOWN_BRANCH_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002245, '下游设备类型', 'down_device_type', 907001524, 'DOWN_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002246, '下游分路类型', 'down_branch_type', 907001524, 'DOWN_BRANCH_TYPE', 'string', 907000050, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002247, '下游分路类型缩写', 'down_branch_type_abbreviation', 907001524, 'DOWN_BRANCH_TYPE_ABBREVIATION', 'string', 907000005, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002248, '下游分路顺序号', 'down_branch_number', 907001524, 'down_branch_number', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002249, '下游分路器件额定容量（A）', 'down_branch_rated_capacity', 907001524, 'DOWN_BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002250, '下游分路主备', 'down_branch_active_standby', 907001524, 'DOWN_BRANCH_ACTIVE_STANDBY', 'string', 907000053, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002251, '下游使用状态', 'down_use_status', 907001524, 'DOWN_USE_STATUS', 'string', 907000003, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002252, '数据质量责任人（移动）', 'qualitor', 907001524, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002226, '资源标识', 'int_id', 907001524, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002227, '所属省份', 'province_id', 907001524, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002228, '所属地市', 'city_id', 907001524, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002229, '所属区县', 'county_id', 907001524, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002230, '所属站点', 'related_site', 907001524, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002231, '所属机房', 'related_room', 907001524, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002232, '资源分路类型', 'res_type', 907001524, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907002233, '所属设备类型', 'related_device_type', 907001524, 'RELATED_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null),
+(907002234, '所属设备', 'related_device', 907001524, 'RELATED_DEVICE', 'string', null, 'admin', 'admin', null),
+(907002235, '分路类型', 'branch_type', 907001524, 'BRANCH_TYPE', 'string', 907000054, 'admin', 'admin', null),
+(907002236, '分路类型缩写', 'branch_type_abbreviation', 907001524, 'BRANCH_TYPE_ABBREVIATION', 'string', 907000048, 'admin', 'admin', null),
+(907002237, '分路顺序号', 'branch_number', 907001524, 'BRANCH_NUMBER', 'string', null, 'admin', 'admin', null),
+(907002238, '分路主备', 'branch_active_standby', 907001524, 'BRANCH_ACTIVE_STANDBY', 'string', 907000051, 'admin', 'admin', null),
+(907002239, '分路器件额定容量（A）', 'branch_rated_capacity', 907001524, 'BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002240, '使用状态', 'lifecycle_status', 907001524, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002241, '分路名称', 'branch_name', 907001524, 'BRANCH_NAME', 'string', null, 'admin', 'admin', null),
+(907002242, '下游设备所在机房', 'down_device_ralated_room', 907001524, 'DOWN_DEVICE_RALATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002243, '下游设备', 'down_device_name', 907001524, 'DOWN_DEVICE_NAME', 'string', null, 'admin', 'admin', null),
+(907002244, '下游分路名称', 'down_branch_name', 907001524, 'DOWN_BRANCH_NAME', 'string', null, 'admin', 'admin', null),
+(907002245, '下游设备类型', 'down_device_type', 907001524, 'DOWN_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null),
+(907002246, '下游分路类型', 'down_branch_type', 907001524, 'DOWN_BRANCH_TYPE', 'string', 907000050, 'admin', 'admin', null),
+(907002247, '下游分路类型缩写', 'down_branch_type_abbreviation', 907001524, 'DOWN_BRANCH_TYPE_ABBREVIATION', 'string', 907000005, 'admin', 'admin', null),
+(907002248, '下游分路顺序号', 'down_branch_number', 907001524, 'down_branch_number', 'string', null, 'admin', 'admin', null),
+(907002249, '下游分路器件额定容量（A）', 'down_branch_rated_capacity', 907001524, 'DOWN_BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002250, '下游分路主备', 'down_branch_active_standby', 907001524, 'DOWN_BRANCH_ACTIVE_STANDBY', 'string', 907000053, 'admin', 'admin', null),
+(907002251, '下游使用状态', 'down_use_status', 907001524, 'DOWN_USE_STATUS', 'string', 907000003, 'admin', 'admin', null),
+(907002252, '数据质量责任人（移动）', 'qualitor', 907001524, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_LINK_PE_OUT
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002253, '资源标识', 'int_id', 907001525, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002254, '所属省份', 'province_id', 907001525, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002255, '所属地市', 'city_id', 907001525, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002256, '所属区县', 'county_id', 907001525, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002257, '所属站点', 'related_site', 907001525, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002258, '所属机房', 'related_room', 907001525, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002259, '资源分路类型', 'res_type', 907001525, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002260, '所属设备类型', 'related_device_type', 907001525, 'RELATED_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002261, '所属设备', 'related_device', 907001525, 'RELATED_DEVICE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002262, '分路类型', 'branch_type', 907001525, 'BRANCH_TYPE', 'string', 907000054, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002263, '分路类型缩写', 'branch_type_abbreviation', 907001525, 'BRANCH_TYPE_ABBREVIATION', 'string', 907000048, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002264, '分路顺序号', 'branch_number', 907001525, 'BRANCH_NUMBER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002265, '分路主备', 'branch_active_standby', 907001525, 'BRANCH_ACTIVE_STANDBY', 'string', 907000051, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002266, '使用状态', 'lifecycle_status', 907001525, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002267, '分路名称', 'branch_name', 907001525, 'BRANCH_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002268, '下游设备所在机房', 'down_device_ralated_room', 907001525, 'DOWN_DEVICE_RALATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002269, '下游设备类型', 'down_device_type', 907001525, 'DOWN_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002270, '分路器件额定容量（A）', 'branch_rated_capacity', 907001525, 'BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002271, '下游负载名称', 'down_device_name', 907001525, 'DOWN_DEVICE_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002272, '专业类型', 'major_type', 907001525, 'MAJOR_TYPE', 'string', 907000013, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002273, '下游设备所在机架位置', 'down_device_related_rack', 907001525, 'DOWN_DEVICE_RELATED_RACK', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002274, '机架内开关顺序号', 'rack_switch_name', 907001525, 'RACK_SWITCH_NAME', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002275, '下游负载名称加载功率', 'down_device_power', 907001525, 'DOWN_DEVICE_POWER', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002276, '数据质量责任人（移动）', 'qualitor', 907001525, 'QUALITOR', 'string', null, 'admin', 'admin', null);
-
+(907002253, '资源标识', 'int_id', 907001525, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002254, '所属省份', 'province_id', 907001525, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002255, '所属地市', 'city_id', 907001525, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002256, '所属区县', 'county_id', 907001525, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002257, '所属站点', 'related_site', 907001525, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002258, '所属机房', 'related_room', 907001525, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002259, '资源分路类型', 'res_type', 907001525, 'RES_TYPE', 'string', 907000023, 'admin', 'admin', null),
+(907002260, '所属设备类型', 'related_device_type', 907001525, 'RELATED_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null),
+(907002261, '所属设备', 'related_device', 907001525, 'RELATED_DEVICE', 'string', null, 'admin', 'admin', null),
+(907002262, '分路类型', 'branch_type', 907001525, 'BRANCH_TYPE', 'string', 907000054, 'admin', 'admin', null),
+(907002263, '分路类型缩写', 'branch_type_abbreviation', 907001525, 'BRANCH_TYPE_ABBREVIATION', 'string', 907000048, 'admin', 'admin', null),
+(907002264, '分路顺序号', 'branch_number', 907001525, 'BRANCH_NUMBER', 'string', null, 'admin', 'admin', null),
+(907002265, '分路主备', 'branch_active_standby', 907001525, 'BRANCH_ACTIVE_STANDBY', 'string', 907000051, 'admin', 'admin', null),
+(907002266, '使用状态', 'lifecycle_status', 907001525, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002267, '分路名称', 'branch_name', 907001525, 'BRANCH_NAME', 'string', null, 'admin', 'admin', null),
+(907002268, '下游设备所在机房', 'down_device_ralated_room', 907001525, 'DOWN_DEVICE_RALATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002269, '下游设备类型', 'down_device_type', 907001525, 'DOWN_DEVICE_TYPE', 'string', 907000022, 'admin', 'admin', null),
+(907002270, '分路器件额定容量（A）', 'branch_rated_capacity', 907001525, 'BRANCH_RATED_CAPACITY', 'string', null, 'admin', 'admin', null),
+(907002271, '下游负载名称', 'down_device_name', 907001525, 'DOWN_DEVICE_NAME', 'string', null, 'admin', 'admin', null),
+(907002272, '专业类型', 'major_type', 907001525, 'MAJOR_TYPE', 'string', 907000013, 'admin', 'admin', null),
+(907002273, '下游设备所在机架位置', 'down_device_related_rack', 907001525, 'DOWN_DEVICE_RELATED_RACK', 'string', null, 'admin', 'admin', null),
+(907002274, '机架内开关顺序号', 'rack_switch_name', 907001525, 'RACK_SWITCH_NAME', 'string', null, 'admin', 'admin', null),
+(907002275, '下游负载名称加载功率', 'down_device_power', 907001525, 'DOWN_DEVICE_POWER', 'string', null, 'admin', 'admin', null),
+(907002276, '数据质量责任人（移动）', 'qualitor', 907001525, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 --CE_DEVICE_PE_OTHER	
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002277, '资源标识', 'int_id', 907001526, 'INT_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002278, '所属省份', 'province_id', 907001526, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002279, '所属地市', 'city_id', 907001526, 'CITY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002280, '所属区县', 'county_id', 907001526, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002281, '所属站点', 'related_site', 907001526, 'RELATED_SITE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002282, '所属机房', 'related_room', 907001526, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002283, '设备类型', 'device_type', 907001526, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002284, '设备子类', 'device_subclass', 907001526, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002285, '设备名称', 'zh_label', 907001526, 'ZH_LABEL', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002286, '设备编码', 'device_code', 907001526, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002287, '设备型号', 'product_name', 907001526, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002288, '设备厂家', 'vendor_id', 907001526, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002289, '开始使用时间', 'start_time', 907001526, 'START_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002290, '预计报废时间', 'estimated_retirement_time', 907001526, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002291, '使用状态', 'lifecycle_status', 907001526, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002292, '维护责任人', 'maintainor', 907001526, 'MAINTAINOR', 'string', null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002293, '数据质量责任人（移动）', 'qualitor', 907001526, 'QUALITOR', 'string', null, 'admin', 'admin', null);	
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO)
-values (907002294, '额定容量', 'rated_capacity', 907001526, 'RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
+(907002277, '资源标识', 'int_id', 907001526, 'INT_ID', 'string', null, 'admin', 'admin', null),
+(907002278, '所属省份', 'province_id', 907001526, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(907002279, '所属地市', 'city_id', 907001526, 'CITY_ID', 'string', null, 'admin', 'admin', null),
+(907002280, '所属区县', 'county_id', 907001526, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(907002281, '所属站点', 'related_site', 907001526, 'RELATED_SITE', 'string', null, 'admin', 'admin', null),
+(907002282, '所属机房', 'related_room', 907001526, 'RELATED_ROOM', 'string', null, 'admin', 'admin', null),
+(907002283, '设备类型', 'device_type', 907001526, 'DEVICE_TYPE', 'string', 907000036, 'admin', 'admin', null),
+(907002284, '设备子类', 'device_subclass', 907001526, 'DEVICE_SUBCLASS', 'string', 907000047, 'admin', 'admin', null),
+(907002285, '设备名称', 'zh_label', 907001526, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
+(907002286, '设备编码', 'device_code', 907001526, 'DEVICE_CODE', 'string', null, 'admin', 'admin', null),
+(907002287, '设备型号', 'product_name', 907001526, 'PRODUCT_NAME', 'string', 907000026, 'admin', 'admin', null),
+(907002288, '设备厂家', 'vendor_id', 907001526, 'VENDOR_ID', 'string', 907000006, 'admin', 'admin', null),
+(907002289, '开始使用时间', 'start_time', 907001526, 'START_TIME', 'date', null, 'admin', 'admin', null),
+(907002290, '预计报废时间', 'estimated_retirement_time', 907001526, 'ESTIMATED_RETIREMENT_TIME', 'date', null, 'admin', 'admin', null),
+(907002291, '使用状态', 'lifecycle_status', 907001526, 'LIFECYCLE_STATUS', 'string', 907000032, 'admin', 'admin', null),
+(907002292, '维护责任人', 'maintainor', 907001526, 'MAINTAINOR', 'string', null, 'admin', 'admin', null),
+(907002293, '数据质量责任人（移动）', 'qualitor', 907001526, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
+(907002294, '额定容量', 'rated_capacity', 907001526, 'RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
 
 ---整体指标待定
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
@@ -9898,35 +8328,17 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (901002309,'OMC枚举值核查.设备厂家','OMC.vendor_id',901003148,901000602,1, null, null, 'admin', 'admin', null);
 
 --插入空间 dims_idx_index
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003990, '空间资源完整性指标', 'area10r01', 3990, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003991, '空间资源规范性指标', 'area10r02', 3991, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003992, '空间资源关联性指标', 'area10r03', 3992, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003993, '空间业务合规性指标', 'area10r04', 3993, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003994, '空间数据整体指标', 'area10r05', 3994, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003001, '站点必填完整性核查', 'area01r01', 3001, 902001001, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003002, '位置点必填完整性核查', 'area01r02', 3002, 902001002, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003003, '机房必填完整性核查', 'area01r03', 3003, 902001003, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003004, '机架位置必填完整性核查', 'area01r04', 3004, 902001004, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001004, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003005, '位置点条件必填完整性核查(所属铁塔公司机房编码)', 'area01r05', 3005, 902001002, '空间', 5, null, 
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(902003990, '空间资源完整性指标', 'area10r01-99001', 3990, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(902003991, '空间资源规范性指标', 'area10r02-99002', 3991, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(902003992, '空间资源关联性指标', 'area10r03-99003', 3992, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(902003993, '空间业务合规性指标', 'area10r04-99004', 3993, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(902003994, '空间数据整体指标', 'area10r05-99999', 3994, null, '空间', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(902003001, '站点必填完整性核查', 'area01r01', 3001, 902001001, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001001, 1, null),
+(902003002, '位置点必填完整性核查', 'area01r02', 3002, 902001002, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001002, 1, null),
+(902003003, '机房必填完整性核查', 'area01r03', 3003, 902001003, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001003, 1, null),
+(902003004, '机架位置必填完整性核查', 'area01r04', 3004, 902001004, '空间', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001004, 1, null),
+(902003005, '位置点条件必填完整性核查(所属铁塔公司机房编码)', 'area01r05', 3005, 902001002, '空间', 5, null, 
 'update RM_AREA_RESPOINT t1
                    set dims_col_result=(case when dims_col_result like ''%area01r05%'' then dims_col_result
                                              when dims_col_result is null then ''area01r05''
@@ -9936,10 +8348,8 @@ values (902003005, '位置点条件必填完整性核查(所属铁塔公司机�
                                              else dims_col_rtName||'',位置点条件必填完整性核查(所属铁塔公司机房编码)'' end)
                  where property_right = ''租用''
 				       and property_unit = ''中国铁塔''
-					   and china_tower_address_code is null', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003006, '机房条件必填完整性核查(所属铁塔公司机房编码)', 'area01r06', 3006, 902001003, '空间', 5, null, 
+					   and china_tower_address_code is null', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null),
+(902003006, '机房条件必填完整性核查(所属铁塔公司机房编码)', 'area01r06', 3006, 902001003, '空间', 5, null, 
 'update RM_AREA_ROOM t1
                    set dims_col_result=(case when dims_col_result like ''%area01r06%'' then dims_col_result
                                              when dims_col_result is null then ''area01r06''
@@ -9949,13 +8359,8 @@ values (902003006, '机房条件必填完整性核查(所属铁塔公司机房�
                                              else dims_col_rtName||'',机房条件必填完整性核查(所属铁塔公司机房编码)'' end)
                  where property_right = ''租用''
 				       and property_unit = ''中国铁塔''
-					   and china_tower_address_code is null', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null);
-
-
-
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003010, '站点经纬度规范性核查', 'area02r01', 3010, 902001001, '空间', 8, null, 
+					   and china_tower_address_code is null', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
+(902003010, '站点经纬度规范性核查', 'area02r01', 3010, 902001001, '空间', 8, null, 
 'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%area02r01%'' then dims_col_result
                                              when dims_col_result is null then ''area02r01''
@@ -9963,10 +8368,8 @@ values (902003010, '站点经纬度规范性核查', 'area02r01', 3010, 90200100
                        dims_col_rtName=(case when dims_col_rtName like ''%站点经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:站点经纬度规范性核查''
                                              else dims_col_rtName||'',站点经纬度规范性核查'' end)
-                 where isfloat(latitude) and isfloat(longitude) and (length(substring( latitude from ''\.(.*)''))<5 or length(substring( longitude from ''\.(.*)''))<5)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003011, '位置点经纬度规范性核查', 'area02r02', 3011, 902001002, '空间', 8, null,  
+                 where isfloat(latitude) and isfloat(longitude) and (length(substring( latitude from ''\.(.*)''))<5 or length(substring( longitude from ''\.(.*)''))<5)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null),
+(902003011, '位置点经纬度规范性核查', 'area02r02', 3011, 902001002, '空间', 8, null,  
 'update RM_AREA_RESPOINT t1
                    set dims_col_result=(case when dims_col_result like ''%area02r02%'' then dims_col_result
                                              when dims_col_result is null then ''area02r02''
@@ -9974,10 +8377,8 @@ values (902003011, '位置点经纬度规范性核查', 'area02r02', 3011, 90200
                        dims_col_rtName=(case when dims_col_rtName like ''%位置点经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:位置点经纬度规范性核查''
                                              else dims_col_rtName||'',位置点经纬度规范性核查'' end)
-                 where isfloat(latitude) and isfloat(longitude) and (length(substring( latitude from ''\.(.*)''))<5 or length(substring( longitude from ''\.(.*)''))<5)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003012, '站点数字型字段规范性核查', 'area02r03', 3012, 902001001, '空间', 8, null,
+                 where isfloat(latitude) and isfloat(longitude) and (length(substring( latitude from ''\.(.*)''))<5 or length(substring( longitude from ''\.(.*)''))<5)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null),
+(902003012, '站点数字型字段规范性核查', 'area02r03', 3012, 902001001, '空间', 8, null,
  'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%area02r03%'' then dims_col_result
                                              when dims_col_result is null then ''area02r03''
@@ -9985,10 +8386,8 @@ values (902003012, '站点数字型字段规范性核查', 'area02r03', 3012, 90
                        dims_col_rtName=(case when dims_col_rtName like ''%站点数字型字段规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:站点数字型字段规范性核查''
                                              else dims_col_rtName||'',站点数字型字段规范性核查'' end)
-                 where isnotfloat(latitude) or isnotfloat(longitude)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003013, '位置点数字型字段规范性核查', 'area02r04', 3013, 902001002, '空间', 8, null,  
+                 where isnotfloat(latitude) or isnotfloat(longitude)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null),
+(902003013, '位置点数字型字段规范性核查', 'area02r04', 3013, 902001002, '空间', 8, null,  
 'update RM_AREA_RESPOINT t1
                    set dims_col_result=(case when dims_col_result like ''%area02r04%'' then dims_col_result
                                              when dims_col_result is null then ''area02r04''
@@ -9996,40 +8395,18 @@ values (902003013, '位置点数字型字段规范性核查', 'area02r04', 3013,
                        dims_col_rtName=(case when dims_col_rtName like ''%位置点数字型字段规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:位置点数字型字段规范性核查''
                                              else dims_col_rtName||'',位置点数字型字段规范性核查'' end)
-                 where isnotfloat(latitude) or isnotfloat(longitude)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003014, '站点(站点类别)枚举值规范性核查', 'area02r05', 3014, 902001001, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003015, '位置点（资源点）(位置点类型)枚举值规范性核查', 'area02r06', 3015, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003016, '位置点（资源点）(产权性质)枚举值规范性核查', 'area02r07', 3016, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003017, '位置点（资源点）(产权单位)枚举值规范性核查', 'area02r08', 3017, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003018, '机房(产权性质)枚举值规范性核查', 'area02r09', 3018, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003019, '机房(产权单位)枚举值规范性核查', 'area02r10', 3019, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003020, '机房(生命周期状态)枚举值规范性核查', 'area02r11', 3020, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003021, '机房(机房类型)枚举值规范性核查', 'area02r12', 3021, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003022, '机房(机房级别)枚举值规范性核查', 'area02r13', 3022, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003023, '机架位置(机架位置状态)枚举值规范性核查', 'area02r14', 3023, 902001004, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001004, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003024, '机房(所属站点)关联型字段核查', 'area03r01', 3024, 902001003, '空间', 10, null,  
+                 where isnotfloat(latitude) or isnotfloat(longitude)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null),
+(902003014, '站点(站点类别)枚举值规范性核查', 'area02r05', 3014, 902001001, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, null),
+(902003015, '位置点（资源点）(位置点类型)枚举值规范性核查', 'area02r06', 3015, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null),
+(902003016, '位置点（资源点）(产权性质)枚举值规范性核查', 'area02r07', 3016, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null),
+(902003017, '位置点（资源点）(产权单位)枚举值规范性核查', 'area02r08', 3017, 902001002, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, null),
+(902003018, '机房(产权性质)枚举值规范性核查', 'area02r09', 3018, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null),
+(902003019, '机房(产权单位)枚举值规范性核查', 'area02r10', 3019, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null),
+(902003020, '机房(生命周期状态)枚举值规范性核查', 'area02r11', 3020, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null),
+(902003021, '机房(机房类型)枚举值规范性核查', 'area02r12', 3021, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null),
+(902003022, '机房(机房级别)枚举值规范性核查', 'area02r13', 3022, 902001003, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, null),
+(902003023, '机架位置(机架位置状态)枚举值规范性核查', 'area02r14', 3023, 902001004, '空间', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001004, 1, null),
+(902003024, '机房(所属站点)关联型字段核查', 'area03r01', 3024, 902001003, '空间', 10, null,  
 'update RM_AREA_ROOM t1
                    set dims_col_result=(case when dims_col_result like ''%area03r01%'' then dims_col_result
                                              when dims_col_result is null then ''area03r01''
@@ -10039,10 +8416,8 @@ values (902003024, '机房(所属站点)关联型字段核查', 'area03r01', 302
                                              else dims_col_rtName||'',机房(所属站点)关联型字段核查'' end)
                  where isNotNull(t1.related_site) and not exists(select 1
 															from RM_AREA_SITE t2
-														   where  t1.related_site = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003025, '机架位置(所属机房)关联型字段核查', 'area03r02', 3025, 902001004, '空间', 10, null,  
+														   where  t1.related_site = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
+(902003025, '机架位置(所属机房)关联型字段核查', 'area03r02', 3025, 902001004, '空间', 10, null,  
 'update RM_AREA_RACKPOS t1
                    set dims_col_result=(case when dims_col_result like ''%area03r02%'' then dims_col_result
                                              when dims_col_result is null then ''area03r02''
@@ -10052,11 +8427,9 @@ values (902003025, '机架位置(所属机房)关联型字段核查', 'area03r02
                                              else dims_col_rtName||'',机架位置(所属机房)关联型字段核查'' end)
                  where isNotNull(t1.equiproom_id) and not exists(select 1
 															from RM_AREA_ROOM t2
-														   where  t1.equiproom_id = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001004, 1, null);
-
+														   where  t1.equiproom_id = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001004, 1, null),
 --todo 902003026 902003027
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003026, '站点经纬度范围合规性核查', 'area04r01', 3026, 902001001, '空间', 10, null,  
+(902003026, '站点经纬度范围合规性核查', 'area04r01', 3026, 902001001, '空间', 10, null,  
 'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%area04r01%'' then dims_col_result
                                              when dims_col_result is null then ''area04r01''
@@ -10067,10 +8440,9 @@ values (902003026, '站点经纬度范围合规性核查', 'area04r01', 3026, 90
                  where not exists(select 1
                                 from RM_AREA_ROOM t2
                                where  t1.equiproom_id = t2.int_id
-                                      and t1.equiproom_id is not null)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null);
+                                      and t1.equiproom_id is not null)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null),
 									  
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003027, '位置点经纬度范围合规性核查', 'area04r02', 3027, 902001002, '空间', 10, null,  
+(902003027, '位置点经纬度范围合规性核查', 'area04r02', 3027, 902001002, '空间', 10, null,  
 'update RM_AREA_RESPOINT t1
                    set dims_col_result=(case when dims_col_result like ''%area04r02%'' then dims_col_result
                                              when dims_col_result is null then ''area04r02''
@@ -10081,10 +8453,9 @@ values (902003027, '位置点经纬度范围合规性核查', 'area04r02', 3027,
                  where not exists(select 1
                                 from RM_AREA_ROOM t2
                                where  t1.equiproom_id = t2.int_id
-                                      and t1.equiproom_id is not null)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null);
+                                      and t1.equiproom_id is not null)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null),
 									  
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003028, '站点合规性核查', 'area04r03', 3028, 902001001, '空间', 10, null,  
+(902003028, '站点合规性核查', 'area04r03', 3028, 902001001, '空间', 10, null,  
 'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%area04r03%'' then dims_col_result
                                              when dims_col_result is null then ''area04r03''
@@ -10094,10 +8465,9 @@ values (902003028, '站点合规性核查', 'area04r03', 3028, 902001001, '空�
                                              else dims_col_rtName||'',站点合规性核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 																from RM_AREA_ROOM t2
-															   where  t1.int_id = t2.related_site)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null);
+															   where  t1.int_id = t2.related_site)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, null),
 --todu
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003029, '机房合规性核查', 'area04r04', 3029, 902001003, '空间', 10, null,  
+(902003029, '机房合规性核查', 'area04r04', 3029, 902001003, '空间', 10, null,  
 'update RM_AREA_ROOM t1
                    set dims_col_result=(case when dims_col_result like ''%area04r04%'' then dims_col_result
                                              when dims_col_result is null then ''area04r04''
@@ -10114,10 +8484,9 @@ values (902003029, '机房合规性核查', 'area04r04', 3029, 902001003, '空�
 					                 from RM_AREA_RACKPOS t2
 									 where t1.int_id = t2.equiproom_id
 									       and (t1.equiproom_level like ''核心%''
-										        or t1.equiproom_level like ''汇聚%''))', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null);
+										        or t1.equiproom_level like ''汇聚%''))', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
 --todu
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (902003030, '位置点设备合规性核查', 'area04r05', 3030, 902001002, '空间', 10, null,  
+(902003030, '位置点设备合规性核查', 'area04r05', 3030, 902001002, '空间', 10, null,  
 'update RM_AREA_RESPOINT t1
                    set dims_col_result=(case when dims_col_result like ''%area04r05%'' then dims_col_result
                                              when dims_col_result is null then ''area04r05''
@@ -10128,305 +8497,114 @@ values (902003030, '位置点设备合规性核查', 'area04r05', 3030, 90200100
                  where isNotNull(t1.int_id) and not exists(select 1
 															from DEVICE t2
 														   where  t1.int_id = t2.related_postion/related_room)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, null);
-
-
-
 --插入空间 dims_idx_IndexCarrier
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004001, 902003990, 902003001, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004002, 902003990, 902003002, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004003, 902003990, 902003003, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004004, 902003990, 902003004, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004005, 902003990, 902003005, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004006, 902003990, 902003006, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004007, 902003991, 902003010, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004008, 902003991, 902003011, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004009, 902003991, 902003012, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004010, 902003991, 902003013, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004011, 902003991, 902003014, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004012, 902003991, 902003015, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004013, 902003991, 902003016, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004014, 902003991, 902003017, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004015, 902003991, 902003018, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004016, 902003991, 902003019, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004017, 902003991, 902003020, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004018, 902003991, 902003021, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004019, 902003991, 902003022, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004020, 902003991, 902003023, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004021, 902003992, 902003024, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004022, 902003992, 902003025, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004023, 902003993, 902003026, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004024, 902003993, 902003027, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004025, 902003993, 902003028, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004026, 902003993, 902003029, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004027, 902003993, 902003030, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004028, 902003994, 902003990, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004029, 902003994, 902003991, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004030, 902003994, 902003992, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (902004031, 902003994, 902003993, 'admin', 'admin', null);
-
-
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(902004001, 902003990, 902003001, 'admin', 'admin', null),
+(902004002, 902003990, 902003002, 'admin', 'admin', null),
+(902004003, 902003990, 902003003, 'admin', 'admin', null),
+(902004004, 902003990, 902003004, 'admin', 'admin', null),
+(902004005, 902003990, 902003005, 'admin', 'admin', null),
+(902004006, 902003990, 902003006, 'admin', 'admin', null),
+(902004007, 902003991, 902003010, 'admin', 'admin', null),
+(902004008, 902003991, 902003011, 'admin', 'admin', null),
+(902004009, 902003991, 902003012, 'admin', 'admin', null),
+(902004010, 902003991, 902003013, 'admin', 'admin', null),
+(902004011, 902003991, 902003014, 'admin', 'admin', null),
+(902004012, 902003991, 902003015, 'admin', 'admin', null),
+(902004013, 902003991, 902003016, 'admin', 'admin', null),
+(902004014, 902003991, 902003017, 'admin', 'admin', null),
+(902004015, 902003991, 902003018, 'admin', 'admin', null),
+(902004016, 902003991, 902003019, 'admin', 'admin', null),
+(902004017, 902003991, 902003020, 'admin', 'admin', null),
+(902004018, 902003991, 902003021, 'admin', 'admin', null),
+(902004019, 902003991, 902003022, 'admin', 'admin', null),
+(902004020, 902003991, 902003023, 'admin', 'admin', null),
+(902004021, 902003992, 902003024, 'admin', 'admin', null),
+(902004022, 902003992, 902003025, 'admin', 'admin', null),
+(902004023, 902003993, 902003026, 'admin', 'admin', null),
+(902004024, 902003993, 902003027, 'admin', 'admin', null),
+(902004025, 902003993, 902003028, 'admin', 'admin', null),
+(902004026, 902003993, 902003029, 'admin', 'admin', null),
+(902004027, 902003993, 902003030, 'admin', 'admin', null),
+(902004028, 902003994, 902003990, 'admin', 'admin', null),
+(902004029, 902003994, 902003991, 'admin', 'admin', null),
+(902004030, 902003994, 902003992, 'admin', 'admin', null),
+(902004031, 902003994, 902003993, 'admin', 'admin', null);
 --插入空间 dims_idx_rule
 --RM_AREA_SITE
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005501, '站点必填完整性核查.站点名称', 'RM_AREA_SITE.zh_label', 902003001, 902001302, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005502, '站点必填完整性核查.经度', 'RM_AREA_SITE.longitude', 902003001, 902001307, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005503, '站点必填完整性核查.纬度', 'RM_AREA_SITE.latitude', 902003001, 902001308, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005504, '站点必填完整性核查.数据质量责任人（移动）', 'RM_AREA_SITE.qualitor', 902003001, 902001304, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005505, '站点必填完整性核查.所属省份', 'RM_AREA_SITE.province_id', 902003001, 902001309, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005506, '站点必填完整性核查.所属地市', 'RM_AREA_SITE.city_id', 902003001, 902001310, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005507, '站点必填完整性核查.所属区县', 'RM_AREA_SITE.county_id', 902003001, 902001311, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005508, '站点必填完整性核查.站点类别', 'RM_AREA_SITE.site_type', 902003001, 902001305, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005509, '站点必填完整性核查.详细地址', 'RM_AREA_SITE.address', 902003001, 902001306, 2, null, null, 'admin', 'admin', null);
-
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+(902005501, '站点必填完整性核查.站点名称', 'RM_AREA_SITE.zh_label', 902003001, 902001302, 2, null, null, 'admin', 'admin', null),
+(902005502, '站点必填完整性核查.经度', 'RM_AREA_SITE.longitude', 902003001, 902001307, 2, null, null, 'admin', 'admin', null),
+(902005503, '站点必填完整性核查.纬度', 'RM_AREA_SITE.latitude', 902003001, 902001308, 2, null, null, 'admin', 'admin', null),
+(902005504, '站点必填完整性核查.数据质量责任人（移动）', 'RM_AREA_SITE.qualitor', 902003001, 902001304, 2, null, null, 'admin', 'admin', null),
+(902005505, '站点必填完整性核查.所属省份', 'RM_AREA_SITE.province_id', 902003001, 902001309, 2, null, null, 'admin', 'admin', null),
+(902005506, '站点必填完整性核查.所属地市', 'RM_AREA_SITE.city_id', 902003001, 902001310, 2, null, null, 'admin', 'admin', null),
+(902005507, '站点必填完整性核查.所属区县', 'RM_AREA_SITE.county_id', 902003001, 902001311, 2, null, null, 'admin', 'admin', null),
+(902005508, '站点必填完整性核查.站点类别', 'RM_AREA_SITE.site_type', 902003001, 902001305, 2, null, null, 'admin', 'admin', null),
+(902005509, '站点必填完整性核查.详细地址', 'RM_AREA_SITE.address', 902003001, 902001306, 2, null, null, 'admin', 'admin', null),
 --RM_AREA_RESPOINT
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005510, '位置点必填完整性核查.位置点名称', 'RM_AREA_RESPOINT.zh_label', 902003002, 902001315, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005511, '位置点必填完整性核查.位置点类型', 'RM_AREA_RESPOINT.res_type', 902003002, 902001319, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005512, '位置点必填完整性核查.经度', 'RM_AREA_RESPOINT.longitude', 902003002, 902001316, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005513, '位置点必填完整性核查.纬度', 'RM_AREA_RESPOINT.latitude', 902003002, 902001317, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005514, '位置点必填完整性核查.数据质量责任人（移动）', 'RM_AREA_RESPOINT.qualitor', 902003002, 902001321, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005515, '位置点必填完整性核查.详细地址', 'RM_AREA_RESPOINT.address', 902003002, 902001318, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005516, '位置点必填完整性核查.所属省份', 'RM_AREA_RESPOINT.province_id', 902003002, 902001323, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005517, '位置点必填完整性核查.所属地市', 'RM_AREA_RESPOINT.city_id', 902003002, 902001324, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005518, '位置点必填完整性核查.所属区县', 'RM_AREA_RESPOINT.county_id', 902003002, 902001325, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005519, '位置点必填完整性核查.产权性质', 'RM_AREA_RESPOINT.property_right', 902003002, 902001326, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005520, '位置点必填完整性核查.产权单位', 'RM_AREA_RESPOINT.property_unit', 902003002, 902001327, 2, null, null, 'admin', 'admin', null);
-
+(902005510, '位置点必填完整性核查.位置点名称', 'RM_AREA_RESPOINT.zh_label', 902003002, 902001315, 2, null, null, 'admin', 'admin', null),
+(902005511, '位置点必填完整性核查.位置点类型', 'RM_AREA_RESPOINT.res_type', 902003002, 902001319, 2, null, null, 'admin', 'admin', null),
+(902005512, '位置点必填完整性核查.经度', 'RM_AREA_RESPOINT.longitude', 902003002, 902001316, 2, null, null, 'admin', 'admin', null),
+(902005513, '位置点必填完整性核查.纬度', 'RM_AREA_RESPOINT.latitude', 902003002, 902001317, 2, null, null, 'admin', 'admin', null),
+(902005514, '位置点必填完整性核查.数据质量责任人（移动）', 'RM_AREA_RESPOINT.qualitor', 902003002, 902001321, 2, null, null, 'admin', 'admin', null),
+(902005515, '位置点必填完整性核查.详细地址', 'RM_AREA_RESPOINT.address', 902003002, 902001318, 2, null, null, 'admin', 'admin', null),
+(902005516, '位置点必填完整性核查.所属省份', 'RM_AREA_RESPOINT.province_id', 902003002, 902001323, 2, null, null, 'admin', 'admin', null),
+(902005517, '位置点必填完整性核查.所属地市', 'RM_AREA_RESPOINT.city_id', 902003002, 902001324, 2, null, null, 'admin', 'admin', null),
+(902005518, '位置点必填完整性核查.所属区县', 'RM_AREA_RESPOINT.county_id', 902003002, 902001325, 2, null, null, 'admin', 'admin', null),
+(902005519, '位置点必填完整性核查.产权性质', 'RM_AREA_RESPOINT.property_right', 902003002, 902001326, 2, null, null, 'admin', 'admin', null),
+(902005520, '位置点必填完整性核查.产权单位', 'RM_AREA_RESPOINT.property_unit', 902003002, 902001327, 2, null, null, 'admin', 'admin', null),
 --RM_AREA_ROOM
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005521, '机房必填完整性核查.机房名称', 'RM_AREA_ROOM.zh_label', 902003003, 902001329, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005522, '机房必填完整性核查.所在楼层', 'RM_AREA_ROOM.floor_num', 902003003, 902001332, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005523, '机房必填完整性核查.产权性质', 'RM_AREA_ROOM.property_right', 902003003, 902001333, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005524, '机房必填完整性核查.产权单位', 'RM_AREA_ROOM.property_unit', 902003003, 902001334, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005525, '机房必填完整性核查.生命周期状态', 'RM_AREA_ROOM.lifecycle_status', 902003003, 902001335, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005526, '机房必填完整性核查.入网时间', 'RM_AREA_ROOM.cutin_date', 902003003, 902001336, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005527, '机房必填完整性核查.所属站点', 'RM_AREA_ROOM.related_site', 902003003, 902001331, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005528, '机房必填完整性核查.机房类型', 'RM_AREA_ROOM.equiproom_type', 902003003, 902001338, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005529, '机房必填完整性核查.机房级别', 'RM_AREA_ROOM.equiproom_level', 902003003, 902001339, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005530, '机房必填完整性核查.数据质量责任人（移动）', 'RM_AREA_ROOM.qualitor', 902003003, 902001337, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005531, '机房必填完整性核查.所属省份', 'RM_AREA_ROOM.province_id', 902003003, 902001344, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005532, '机房必填完整性核查.所属地市', 'RM_AREA_ROOM.city_id', 902003003, 902001345, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005533, '机房必填完整性核查.所属区县', 'RM_AREA_ROOM.county_id', 902003003, 902001346, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005534, '机房必填完整性核查.机房面积（平方米）', 'RM_AREA_ROOM.room_area', 902003003, 902001340, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005535, '机房必填完整性核查.共享单位', 'RM_AREA_ROOM.shared_unit', 902003003, 902001342, 2, null, null, 'admin', 'admin', null);
-
+(902005521, '机房必填完整性核查.机房名称', 'RM_AREA_ROOM.zh_label', 902003003, 902001329, 2, null, null, 'admin', 'admin', null),
+(902005522, '机房必填完整性核查.所在楼层', 'RM_AREA_ROOM.floor_num', 902003003, 902001332, 2, null, null, 'admin', 'admin', null),
+(902005523, '机房必填完整性核查.产权性质', 'RM_AREA_ROOM.property_right', 902003003, 902001333, 2, null, null, 'admin', 'admin', null),
+(902005524, '机房必填完整性核查.产权单位', 'RM_AREA_ROOM.property_unit', 902003003, 902001334, 2, null, null, 'admin', 'admin', null),
+(902005525, '机房必填完整性核查.生命周期状态', 'RM_AREA_ROOM.lifecycle_status', 902003003, 902001335, 2, null, null, 'admin', 'admin', null),
+(902005526, '机房必填完整性核查.入网时间', 'RM_AREA_ROOM.cutin_date', 902003003, 902001336, 2, null, null, 'admin', 'admin', null),
+(902005527, '机房必填完整性核查.所属站点', 'RM_AREA_ROOM.related_site', 902003003, 902001331, 2, null, null, 'admin', 'admin', null),
+(902005528, '机房必填完整性核查.机房类型', 'RM_AREA_ROOM.equiproom_type', 902003003, 902001338, 2, null, null, 'admin', 'admin', null),
+(902005529, '机房必填完整性核查.机房级别', 'RM_AREA_ROOM.equiproom_level', 902003003, 902001339, 2, null, null, 'admin', 'admin', null),
+(902005530, '机房必填完整性核查.数据质量责任人（移动）', 'RM_AREA_ROOM.qualitor', 902003003, 902001337, 2, null, null, 'admin', 'admin', null),
+(902005531, '机房必填完整性核查.所属省份', 'RM_AREA_ROOM.province_id', 902003003, 902001344, 2, null, null, 'admin', 'admin', null),
+(902005532, '机房必填完整性核查.所属地市', 'RM_AREA_ROOM.city_id', 902003003, 902001345, 2, null, null, 'admin', 'admin', null),
+(902005533, '机房必填完整性核查.所属区县', 'RM_AREA_ROOM.county_id', 902003003, 902001346, 2, null, null, 'admin', 'admin', null),
+(902005534, '机房必填完整性核查.机房面积（平方米）', 'RM_AREA_ROOM.room_area', 902003003, 902001340, 2, null, null, 'admin', 'admin', null),
+(902005535, '机房必填完整性核查.共享单位', 'RM_AREA_ROOM.shared_unit', 902003003, 902001342, 2, null, null, 'admin', 'admin', null),
 --RM_AREA_RACKPOS
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005536, '机架位置必填完整性核查.机架位置编号', 'RM_AREA_RACKPOS.serial', 902003004, 902001349, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005537, '机架位置必填完整性核查.所属机房', 'RM_AREA_RACKPOS.equiproom_id', 902003004, 902001350, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005538, '机架位置必填完整性核查.所在行', 'RM_AREA_RACKPOS.row_id', 902003004, 902001351, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005539, '机架位置必填完整性核查.所在列', 'RM_AREA_RACKPOS.line_id', 902003004, 902001352, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005540, '机架位置必填完整性核查.机架位置状态', 'RM_AREA_RACKPOS.using_status', 902003004, 902001353, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005541, '机架位置必填完整性核查.名称', 'RM_AREA_RACKPOS.zh_label', 902003004, 902001348, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005542, '机架位置必填完整性核查.所属省份', 'RM_AREA_RACKPOS.province_id', 902003004, 902001354, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005543, '机架位置必填完整性核查.所属地市', 'RM_AREA_RACKPOS.city_id', 902003004, 902001355, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005544, '机架位置必填完整性核查.所属区县', 'RM_AREA_RACKPOS.county_id', 902003004, 902001356, 2, null, null, 'admin', 'admin', null);
-
+(902005536, '机架位置必填完整性核查.机架位置编号', 'RM_AREA_RACKPOS.serial', 902003004, 902001349, 2, null, null, 'admin', 'admin', null),
+(902005537, '机架位置必填完整性核查.所属机房', 'RM_AREA_RACKPOS.equiproom_id', 902003004, 902001350, 2, null, null, 'admin', 'admin', null),
+(902005538, '机架位置必填完整性核查.所在行', 'RM_AREA_RACKPOS.row_id', 902003004, 902001351, 2, null, null, 'admin', 'admin', null),
+(902005539, '机架位置必填完整性核查.所在列', 'RM_AREA_RACKPOS.line_id', 902003004, 902001352, 2, null, null, 'admin', 'admin', null),
+(902005540, '机架位置必填完整性核查.机架位置状态', 'RM_AREA_RACKPOS.using_status', 902003004, 902001353, 2, null, null, 'admin', 'admin', null),
+(902005541, '机架位置必填完整性核查.名称', 'RM_AREA_RACKPOS.zh_label', 902003004, 902001348, 2, null, null, 'admin', 'admin', null),
+(902005542, '机架位置必填完整性核查.所属省份', 'RM_AREA_RACKPOS.province_id', 902003004, 902001354, 2, null, null, 'admin', 'admin', null),
+(902005543, '机架位置必填完整性核查.所属地市', 'RM_AREA_RACKPOS.city_id', 902003004, 902001355, 2, null, null, 'admin', 'admin', null),
+(902005544, '机架位置必填完整性核查.所属区县', 'RM_AREA_RACKPOS.county_id', 902003004, 902001356, 2, null, null, 'admin', 'admin', null),
 --字典值
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005545, '站点(站点类别)枚举值规范性核查', 'site_type', 902003014, 902001305, 1, null, '站点类别site_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005546, '位置点（资源点）(位置点类型)枚举值规范性核查', 'res_type', 902003015, 902001319, 1, null, '位置点类型res_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005547, '位置点（资源点）(产权性质)枚举值规范性核查', 'property_right', 902003016, 902001326, 1, null, '产权性质property_right', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005548, '位置点（资源点）(产权单位)枚举值规范性核查', 'property_unit', 902003017, 902001327, 1, null, '产权单位property_unit', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005549, '机房(产权性质)枚举值规范性核查', 'property_right', 902003018, 902001333, 1, null, '产权性质property_right', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005550, '机房(产权单位)枚举值规范性核查', 'property_unit', 902003019, 902001334, 1, null, '产权单位property_unit', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005551, '机房(生命周期状态)枚举值规范性核查', 'lifecycle_status', 902003020, 902001335, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005552, '机房(机房类型)枚举值规范性核查', 'equiproom_type', 902003021, 902001338, 1, null, '机房类型equiproom_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005553, '机房(机房级别)枚举值规范性核查', 'equiproom_level', 902003022, 902001339, 1, null, '机房级别equiproom_level', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (902005554, '机架位置(机架位置状态)枚举值规范性核查', 'using_status', 902003023, 902001353, 1, null, '机架位置状态using_status', 'admin', 'admin', null);
+(902005545, '站点(站点类别)枚举值规范性核查', 'site_type', 902003014, 902001305, 1, null, '站点类别site_type', 'admin', 'admin', null),
+(902005546, '位置点（资源点）(位置点类型)枚举值规范性核查', 'res_type', 902003015, 902001319, 1, null, '位置点类型res_type', 'admin', 'admin', null),
+(902005547, '位置点（资源点）(产权性质)枚举值规范性核查', 'property_right', 902003016, 902001326, 1, null, '产权性质property_right', 'admin', 'admin', null),
+(902005548, '位置点（资源点）(产权单位)枚举值规范性核查', 'property_unit', 902003017, 902001327, 1, null, '产权单位property_unit', 'admin', 'admin', null),
+(902005549, '机房(产权性质)枚举值规范性核查', 'property_right', 902003018, 902001333, 1, null, '产权性质property_right', 'admin', 'admin', null),
+(902005550, '机房(产权单位)枚举值规范性核查', 'property_unit', 902003019, 902001334, 1, null, '产权单位property_unit', 'admin', 'admin', null),
+(902005551, '机房(生命周期状态)枚举值规范性核查', 'lifecycle_status', 902003020, 902001335, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null),
+(902005552, '机房(机房类型)枚举值规范性核查', 'equiproom_type', 902003021, 902001338, 1, null, '机房类型equiproom_type', 'admin', 'admin', null),
+(902005553, '机房(机房级别)枚举值规范性核查', 'equiproom_level', 902003022, 902001339, 1, null, '机房级别equiproom_level', 'admin', 'admin', null),
+(902005554, '机架位置(机架位置状态)枚举值规范性核查', 'using_status', 902003023, 902001353, 1, null, '机架位置状态using_status', 'admin', 'admin', null);
 
 --插入公共 dims_idx_index
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003990, '公共资源完整性指标', 'common10r01', 3990, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003991, '公共资源规范性指标', 'common10r02', 3991, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003992, '公共资源关联性指标', 'common10r03', 3992, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003993, '公共业务合规性指标', 'common10r04', 3993, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003994, '公共数据整体指标', 'common10r05', 3994, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003001, '机架必填完整性核查', 'common01r01', 3001, 900001001, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003002, 'DDM模块必填完整性核查', 'common01r02', 3002, 900001002, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003003, 'ODM模块必填完整性核查', 'common01r03', 3003, 900001003, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003004, 'DDF端子必填完整性核查', 'common01r04', 3004, 900001004, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001004, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003005, 'ODF端子必填完整性核查', 'common01r05', 3005, 900001005, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001005, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003006, '机架条件必填完整性核查(所属装机位置)', 'common01r06', 3006, 900001001, '公共', 5, null, 
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(900003990, '公共资源完整性指标', 'common10r01-99001', 3990, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(900003991, '公共资源规范性指标', 'common10r02-99002', 3991, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(900003992, '公共资源关联性指标', 'common10r03-99003', 3992, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(900003993, '公共业务合规性指标', 'common10r04-99004', 3993, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(900003994, '公共数据整体指标', 'common10r05-99999', 3994, null, '公共', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(900003001, '机架必填完整性核查', 'common01r01', 3001, 900001001, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001001, 1, null),
+(900003002, 'DDM模块必填完整性核查', 'common01r02', 3002, 900001002, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001002, 1, null),
+(900003003, 'ODM模块必填完整性核查', 'common01r03', 3003, 900001003, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001003, 1, null),
+(900003004, 'DDF端子必填完整性核查', 'common01r04', 3004, 900001004, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001004, 1, null),
+(900003005, 'ODF端子必填完整性核查', 'common01r05', 3005, 900001005, '公共', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001005, 1, null),
+(900003006, '机架条件必填完整性核查(所属装机位置)', 'common01r06', 3006, 900001001, '公共', 5, null, 
 'update CM_DEVICE_RACK t1
                    set dims_col_result=(case when dims_col_result like ''%common01r06%'' then dims_col_result
                                              when dims_col_result is null then ''common01r06''
@@ -10437,28 +8615,14 @@ values (900003006, '机架条件必填完整性核查(所属装机位置)', 'com
                  where isNull(t1.related_rackposition) and exists(select 1
 																	from RM_AREA_ROOM t2
 																   where  t1.related_room = t2.int_id
-																		  and t2.equiproom_type = ''核心机房'')', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003007, '机架(机架类型)枚举值规范性核查', 'common02r01', 3007, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003008, '机架(所属空间类型)枚举值规范性核查', 'common02r02', 3008, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003009, '机架(生命周期状态)枚举值规范性核查', 'common02r03', 3009, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003010, 'ODM模块(所属设备类型)枚举值规范性核查', 'common02r04', 3010, 900001003, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003011, 'DDF端子(端子状态)枚举值规范性核查', 'common02r05', 3011, 900001004, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001004, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003012, 'ODF端子(端子状态)枚举值规范性核查', 'common02r06', 3012, 900001005, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001005, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003013, '机架(所属机房/资源点)关联型字段核查', 'common03r01', 3013, 900001001, '公共', 10, null,
+																		  and t2.equiproom_type = ''核心机房'')', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null),
+(900003007, '机架(机架类型)枚举值规范性核查', 'common02r01', 3007, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null),
+(900003008, '机架(所属空间类型)枚举值规范性核查', 'common02r02', 3008, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null),
+(900003009, '机架(生命周期状态)枚举值规范性核查', 'common02r03', 3009, 900001001, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, null),
+(900003010, 'ODM模块(所属设备类型)枚举值规范性核查', 'common02r04', 3010, 900001003, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001003, 1, null),
+(900003011, 'DDF端子(端子状态)枚举值规范性核查', 'common02r05', 3011, 900001004, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001004, 1, null),
+(900003012, 'ODF端子(端子状态)枚举值规范性核查', 'common02r06', 3012, 900001005, '公共', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001005, 1, null),
+(900003013, '机架(所属机房/资源点)关联型字段核查', 'common03r01', 3013, 900001001, '公共', 10, null,
 'update CM_DEVICE_RACK t1
                    set dims_col_result=(case when dims_col_result like ''%common03r01%'' then dims_col_result
                                              when dims_col_result is null then ''common03r01''
@@ -10469,9 +8633,8 @@ values (900003013, '机架(所属机房/资源点)关联型字段核查', 'commo
                  where isNotNull(t1.related_room) and not exists(select 1
 																   from RM_AREA_ROOM t2,RM_AREA_RESPOINT t3
 																   where  (t1.related_room = t2.int_id
-																		  or t1.related_room = t3.int_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null);
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003014, '机架(所属装机位置)关联型字段核查', 'common03r02', 3014, 900001001, '公共', 10, null,
+																		  or t1.related_room = t3.int_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null),
+(900003014, '机架(所属装机位置)关联型字段核查', 'common03r02', 3014, 900001001, '公共', 10, null,
 'update CM_DEVICE_RACK t1
                    set dims_col_result=(case when dims_col_result like ''%common03r02%'' then dims_col_result
                                              when dims_col_result is null then ''common03r02''
@@ -10481,10 +8644,8 @@ values (900003014, '机架(所属装机位置)关联型字段核查', 'common03r
                                              else dims_col_rtName||'',机架(所属装机位置)关联型字段核查'' end)
                  where isNotNull(t1.related_rackposition) and not exists(select 1
 																		from RM_AREA_RACKPOS t2
-																	    where  t1.related_rackposition = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003015, 'DDM模块(所属机架)关联型字段核查', 'common03r03', 3015, 900001002, '公共', 10, null,
+																	    where  t1.related_rackposition = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, null),
+(900003015, 'DDM模块(所属机架)关联型字段核查', 'common03r03', 3015, 900001002, '公共', 10, null,
 'update CE_WARE_DDM t1
                    set dims_col_result=(case when dims_col_result like ''%common03r03%'' then dims_col_result
                                              when dims_col_result is null then ''common03r03''
@@ -10494,10 +8655,8 @@ values (900003015, 'DDM模块(所属机架)关联型字段核查', 'common03r03'
                                              else dims_col_rtName||'',DDM模块(所属机架)关联型字段核查'' end)
                  where isNotNull(t1.related_reackpos) and not exists(select 1
 																		from CM_DEVICE_RACK t2
-																	   where  t1.related_reackpos = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003016, 'ODM模块(所属设备)关联型字段核查', 'common03r04', 3016, 900001003, '公共', 10, null,
+																	   where  t1.related_reackpos = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null),
+(900003016, 'ODM模块(所属设备)关联型字段核查', 'common03r04', 3016, 900001003, '公共', 10, null,
 'update CE_WARE_ODM t1
                    set dims_col_result=(case when dims_col_result like ''%common03r04%'' then dims_col_result
                                              when dims_col_result is null then ''common03r04''
@@ -10509,10 +8668,8 @@ values (900003016, 'ODM模块(所属设备)关联型字段核查', 'common03r04'
 																	from CE_DEVICE_GJ t2,CE_DEVICE_GF t3,CE_DEVICE_GB t4
 																   where  t1.related_device_id = t2.int_id
 																		  or t1.related_device_id = t3.int_id
-																		  or t1.related_device_id = t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003017, 'DDF端子(所属DDM模块)关联型字段核查', 'common03r05', 3017, 900001004, '公共', 10, null,
+																		  or t1.related_device_id = t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null),
+(900003017, 'DDF端子(所属DDM模块)关联型字段核查', 'common03r05', 3017, 900001004, '公共', 10, null,
 'update CM_PORT_DDF t1
                    set dims_col_result=(case when dims_col_result like ''%common03r05%'' then dims_col_result
                                              when dims_col_result is null then ''common03r05''
@@ -10522,10 +8679,8 @@ values (900003017, 'DDF端子(所属DDM模块)关联型字段核查', 'common03r
                                              else dims_col_rtName||'',DDF端子(所属DDM模块)关联型字段核查'' end)
                  where isNotNull(t1.related_ddm) and not exists(select 1
 															from CE_WARE_DDM t2
-														   where  t1.related_ddm = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003018, 'ODF端子(所属ODM模块)关联型字段核查', 'common03r06', 3018, 900001005, '公共', 10, null,
+														   where  t1.related_ddm = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, null),
+(900003018, 'ODF端子(所属ODM模块)关联型字段核查', 'common03r06', 3018, 900001005, '公共', 10, null,
 'update CM_PORT_ODF t1
                    set dims_col_result=(case when dims_col_result like ''%common03r06%'' then dims_col_result
                                              when dims_col_result is null then ''common03r06''
@@ -10535,10 +8690,8 @@ values (900003018, 'ODF端子(所属ODM模块)关联型字段核查', 'common03r
                                              else dims_col_rtName||'',ODF端子(所属ODM模块)关联型字段核查'' end)
                  where isNotNull(t1.related_odm) and not exists(select 1
 																from CE_WARE_ODM t2
-															   where  (t1.related_odm = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003019, 'DDM模块在所有DDM端子DDM模块中无法查到', 'common04r01', 3019, 900001002, '公共', 10, null,
+															   where  (t1.related_odm = t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, null),
+(900003019, 'DDM模块在所有DDM端子DDM模块中无法查到', 'common04r01', 3019, 900001002, '公共', 10, null,
 'update CE_WARE_DDM t1
                    set dims_col_result=(case when dims_col_result like ''%common04r01%'' then dims_col_result
                                              when dims_col_result is null then ''common04r01''
@@ -10548,10 +8701,8 @@ values (900003019, 'DDM模块在所有DDM端子DDM模块中无法查到', 'commo
                                              else dims_col_rtName||'',DDM模块在所有DDM端子DDM模块中无法查到'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 																from CM_PORT_DDF t2
-															   where  (t2.related_ddm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null);								  
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (900003020, 'ODM模块在所有oDM端子ODM模块中无法查到', 'common04r02', 3020, 900001003, '公共', 10, null,
+															   where  (t2.related_ddm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null),								  
+(900003020, 'ODM模块在所有oDM端子ODM模块中无法查到', 'common04r02', 3020, 900001003, '公共', 10, null,
 'update CE_WARE_ODM t1
                    set dims_col_result=(case when dims_col_result like ''%common04r02%'' then dims_col_result
                                              when dims_col_result is null then ''common04r02''
@@ -10561,287 +8712,110 @@ values (900003020, 'ODM模块在所有oDM端子ODM模块中无法查到', 'commo
                                              else dims_col_rtName||'',ODM模块在所有oDM端子ODM模块中无法查到'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 															from CM_PORT_ODF t2
-														   where  (t2.related_odm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null);	
-
-
+														   where  (t2.related_odm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null);
 --插入公共 dims_idx_IndexCarrier
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004001, 900003990, 900003001, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004002, 900003990, 900003002, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004003, 900003990, 900003003, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004004, 900003990, 900003004, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004005, 900003990, 900003005, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004006, 900003990, 900003006, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004007, 900003991, 900003007, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004008, 900003991, 900003008, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004009, 900003991, 900003009, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004010, 900003991, 900003010, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004011, 900003991, 900003011, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004012, 900003991, 900003012, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004013, 900003992, 900003013, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004014, 900003992, 900003014, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004015, 900003992, 900003015, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004016, 900003992, 900003016, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004017, 900003992, 900003017, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004018, 900003992, 900003018, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004019, 900003993, 900003019, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004020, 900003993, 900003020, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004021, 900003994, 900003990, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004022, 900003994, 900003991, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004023, 900003994, 900003992, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (900004024, 900003994, 900003993, 'admin', 'admin', null);
-
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(900004001, 900003990, 900003001, 'admin', 'admin', null),
+(900004002, 900003990, 900003002, 'admin', 'admin', null),
+(900004003, 900003990, 900003003, 'admin', 'admin', null),
+(900004004, 900003990, 900003004, 'admin', 'admin', null),
+(900004005, 900003990, 900003005, 'admin', 'admin', null),
+(900004006, 900003990, 900003006, 'admin', 'admin', null),
+(900004007, 900003991, 900003007, 'admin', 'admin', null),
+(900004008, 900003991, 900003008, 'admin', 'admin', null),
+(900004009, 900003991, 900003009, 'admin', 'admin', null),
+(900004010, 900003991, 900003010, 'admin', 'admin', null),
+(900004011, 900003991, 900003011, 'admin', 'admin', null),
+(900004012, 900003991, 900003012, 'admin', 'admin', null),
+(900004013, 900003992, 900003013, 'admin', 'admin', null),
+(900004014, 900003992, 900003014, 'admin', 'admin', null),
+(900004015, 900003992, 900003015, 'admin', 'admin', null),
+(900004016, 900003992, 900003016, 'admin', 'admin', null),
+(900004017, 900003992, 900003017, 'admin', 'admin', null),
+(900004018, 900003992, 900003018, 'admin', 'admin', null),
+(900004019, 900003993, 900003019, 'admin', 'admin', null),
+(900004020, 900003993, 900003020, 'admin', 'admin', null),
+(900004021, 900003994, 900003990, 'admin', 'admin', null),
+(900004022, 900003994, 900003991, 'admin', 'admin', null),
+(900004023, 900003994, 900003992, 'admin', 'admin', null),
+(900004024, 900003994, 900003993, 'admin', 'admin', null);
 --插入公共 dims_idx_rule
 --机架必填完整性核查 CM_DEVICE_RACK
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005501, '机架必填完整性核查.机架名称', 'CM_DEVICE_RACK.zh_label', 900003001, 900001302, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005502, '机架必填完整性核查.机架类型', 'CM_DEVICE_RACK.rack_type', 900003001, 900001303, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005503, '机架必填完整性核查.所属空间类型', 'CM_DEVICE_RACK.related_type', 900003001, 900001304, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005504, '机架必填完整性核查.所属机房/资源点', 'CM_DEVICE_RACK.related_room', 900003001, 900001305, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005505, '机架必填完整性核查.生命周期状态', 'CM_DEVICE_RACK.lifecycle_status', 900003001, 900001307, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005506, '机架必填完整性核查.所属省份', 'CM_DEVICE_RACK.province_id', 900003001, 900001309, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005507, '机架必填完整性核查.所属地市', 'CM_DEVICE_RACK.city_id', 900003001, 900001310, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005508, '机架必填完整性核查.所属区县', 'CM_DEVICE_RACK.county_id', 900003001, 900001311, 2, null, null, 'admin', 'admin', null);
-
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+(900005501, '机架必填完整性核查.机架名称', 'CM_DEVICE_RACK.zh_label', 900003001, 900001302, 2, null, null, 'admin', 'admin', null),
+(900005502, '机架必填完整性核查.机架类型', 'CM_DEVICE_RACK.rack_type', 900003001, 900001303, 2, null, null, 'admin', 'admin', null),
+(900005503, '机架必填完整性核查.所属空间类型', 'CM_DEVICE_RACK.related_type', 900003001, 900001304, 2, null, null, 'admin', 'admin', null),
+(900005504, '机架必填完整性核查.所属机房/资源点', 'CM_DEVICE_RACK.related_room', 900003001, 900001305, 2, null, null, 'admin', 'admin', null),
+(900005505, '机架必填完整性核查.生命周期状态', 'CM_DEVICE_RACK.lifecycle_status', 900003001, 900001307, 2, null, null, 'admin', 'admin', null),
+(900005506, '机架必填完整性核查.所属省份', 'CM_DEVICE_RACK.province_id', 900003001, 900001309, 2, null, null, 'admin', 'admin', null),
+(900005507, '机架必填完整性核查.所属地市', 'CM_DEVICE_RACK.city_id', 900003001, 900001310, 2, null, null, 'admin', 'admin', null),
+(900005508, '机架必填完整性核查.所属区县', 'CM_DEVICE_RACK.county_id', 900003001, 900001311, 2, null, null, 'admin', 'admin', null),
 --DDM模块必填完整性核查 CE_WARE_DDM
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005509, 'DDM模块必填完整性核查.DDM模块名称', 'CE_WARE_DDM.zh_label', 900003002, 900001313, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005510, 'DDM模块必填完整性核查.端子行数', 'CE_WARE_DDM.row_num', 900003002, 900001314, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005511, 'DDM模块必填完整性核查.端子列数', 'CE_WARE_DDM.column_num', 900003002, 900001315, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005512, 'DDM模块必填完整性核查.所属机架', 'CE_WARE_DDM.related_reackpos', 900003002, 900001316, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005513, 'DDM模块必填完整性核查.数据质量责任人（移动）', 'CE_WARE_DDM.qualitor', 900003002, 900001317, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005514, 'DDM模块必填完整性核查.一线数据维护人（代维/一线）', 'CE_WARE_DDM.maintainor', 900003002, 900001318, 2, null, null, 'admin', 'admin', null);
-
+(900005509, 'DDM模块必填完整性核查.DDM模块名称', 'CE_WARE_DDM.zh_label', 900003002, 900001313, 2, null, null, 'admin', 'admin', null),
+(900005510, 'DDM模块必填完整性核查.端子行数', 'CE_WARE_DDM.row_num', 900003002, 900001314, 2, null, null, 'admin', 'admin', null),
+(900005511, 'DDM模块必填完整性核查.端子列数', 'CE_WARE_DDM.column_num', 900003002, 900001315, 2, null, null, 'admin', 'admin', null),
+(900005512, 'DDM模块必填完整性核查.所属机架', 'CE_WARE_DDM.related_reackpos', 900003002, 900001316, 2, null, null, 'admin', 'admin', null),
+(900005513, 'DDM模块必填完整性核查.数据质量责任人（移动）', 'CE_WARE_DDM.qualitor', 900003002, 900001317, 2, null, null, 'admin', 'admin', null),
+(900005514, 'DDM模块必填完整性核查.一线数据维护人（代维/一线）', 'CE_WARE_DDM.maintainor', 900003002, 900001318, 2, null, null, 'admin', 'admin', null),
 --ODM模块必填完整性核查 CE_WARE_ODM
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005515, 'ODM模块必填完整性核查.ODM模块名称', 'CE_WARE_ODM.zh_label', 900003003, 900001320, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005516, 'ODM模块必填完整性核查.所属设备类型', 'CE_WARE_ODM.related_equipment_type', 900003003, 900001322, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005517, 'ODM模块必填完整性核查.所属设备', 'CE_WARE_ODM.related_device_id', 900003003, 900001323, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005518, 'ODM模块必填完整性核查.数据质量责任人（移动）', 'CE_WARE_ODM.qualitor', 900003003, 900001324, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005519, 'ODM模块必填完整性核查.一线数据维护人（代维/一线）', 'CE_WARE_ODM.maintainor', 900003003, 900001325, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005520, 'ODM模块必填完整性核查.端子行数', 'CE_WARE_ODM.row_num', 900003003, 900001326, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005521, 'ODM模块必填完整性核查.端子列数', 'CE_WARE_ODM.column_num', 900003003, 900001327, 2, null, null, 'admin', 'admin', null);
-
+(900005515, 'ODM模块必填完整性核查.ODM模块名称', 'CE_WARE_ODM.zh_label', 900003003, 900001320, 2, null, null, 'admin', 'admin', null),
+(900005516, 'ODM模块必填完整性核查.所属设备类型', 'CE_WARE_ODM.related_equipment_type', 900003003, 900001322, 2, null, null, 'admin', 'admin', null),
+(900005517, 'ODM模块必填完整性核查.所属设备', 'CE_WARE_ODM.related_device_id', 900003003, 900001323, 2, null, null, 'admin', 'admin', null),
+(900005518, 'ODM模块必填完整性核查.数据质量责任人（移动）', 'CE_WARE_ODM.qualitor', 900003003, 900001324, 2, null, null, 'admin', 'admin', null),
+(900005519, 'ODM模块必填完整性核查.一线数据维护人（代维/一线）', 'CE_WARE_ODM.maintainor', 900003003, 900001325, 2, null, null, 'admin', 'admin', null),
+(900005520, 'ODM模块必填完整性核查.端子行数', 'CE_WARE_ODM.row_num', 900003003, 900001326, 2, null, null, 'admin', 'admin', null),
+(900005521, 'ODM模块必填完整性核查.端子列数', 'CE_WARE_ODM.column_num', 900003003, 900001327, 2, null, null, 'admin', 'admin', null),
 --DDF端子必填完整性核查 CM_PORT_DDF
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005522, 'DDF端子必填完整性核查.DDF端子名称', 'CM_PORT_DDF.zh_label', 900003004, 900001329, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005523, 'DDF端子必填完整性核查.端子位置', 'CM_PORT_DDF.row_column_num', 900003004, 900001330, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005524, 'DDF端子必填完整性核查.端子状态', 'CM_PORT_DDF.port_status', 900003004, 900001331, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005525, 'DDF端子必填完整性核查.所属DDM模块', 'CM_PORT_DDF.related_ddm', 900003004, 900001332, 2, null, null, 'admin', 'admin', null);
-
+(900005522, 'DDF端子必填完整性核查.DDF端子名称', 'CM_PORT_DDF.zh_label', 900003004, 900001329, 2, null, null, 'admin', 'admin', null),
+(900005523, 'DDF端子必填完整性核查.端子位置', 'CM_PORT_DDF.row_column_num', 900003004, 900001330, 2, null, null, 'admin', 'admin', null),
+(900005524, 'DDF端子必填完整性核查.端子状态', 'CM_PORT_DDF.port_status', 900003004, 900001331, 2, null, null, 'admin', 'admin', null),
+(900005525, 'DDF端子必填完整性核查.所属DDM模块', 'CM_PORT_DDF.related_ddm', 900003004, 900001332, 2, null, null, 'admin', 'admin', null),
 --ODF端子必填完整性核查 CM_PORT_ODF
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005526, 'ODF端子必填完整性核查.ODF端子名称', 'CM_PORT_ODF.zh_label', 900003005, 900001334, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005527, 'ODF端子必填完整性核查.端子位置', 'CM_PORT_ODF.row_column_num', 900003005, 900001335, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005528, 'ODF端子必填完整性核查.端子状态', 'CM_PORT_ODF.port_status', 900003005, 900001336, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005529, 'ODF端子必填完整性核查.所属ODM模块', 'CM_PORT_ODF.related_odm', 900003005, 900001337, 2, null, null, 'admin', 'admin', null);
-
+(900005526, 'ODF端子必填完整性核查.ODF端子名称', 'CM_PORT_ODF.zh_label', 900003005, 900001334, 2, null, null, 'admin', 'admin', null),
+(900005527, 'ODF端子必填完整性核查.端子位置', 'CM_PORT_ODF.row_column_num', 900003005, 900001335, 2, null, null, 'admin', 'admin', null),
+(900005528, 'ODF端子必填完整性核查.端子状态', 'CM_PORT_ODF.port_status', 900003005, 900001336, 2, null, null, 'admin', 'admin', null),
+(900005529, 'ODF端子必填完整性核查.所属ODM模块', 'CM_PORT_ODF.related_odm', 900003005, 900001337, 2, null, null, 'admin', 'admin', null),
 --枚举值
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005530, '机架(机架类型)枚举值规范性核查', 'rack_type', 900003007, 900001303, 1, null, '机架类型rack_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005531, '机架(所属空间类型)枚举值规范性核查', 'related_type', 900003008, 900001304, 1, null, '所属空间类型related_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005532, '机架(生命周期状态)枚举值规范性核查', 'lifecycle_status', 900003009, 900001307, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005533, 'ODM模块(所属设备类型)枚举值规范性核查', 'related_equipment_type', 900003010, 900001322, 1, null, 'ODM模块related_equipment_type', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005534, 'DDF端子(端子状态)枚举值规范性核查', 'port_status', 900003011, 900001331, 1, null, 'DDF端子port_status', 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (900005535, 'ODF端子(端子状态)枚举值规范性核查', 'port_status', 900003012, 900001336, 1, null, 'ODF端子port_status', 'admin', 'admin', null);
+(900005530, '机架(机架类型)枚举值规范性核查', 'rack_type', 900003007, 900001303, 1, null, '机架类型rack_type', 'admin', 'admin', null),
+(900005531, '机架(所属空间类型)枚举值规范性核查', 'related_type', 900003008, 900001304, 1, null, '所属空间类型related_type', 'admin', 'admin', null),
+(900005532, '机架(生命周期状态)枚举值规范性核查', 'lifecycle_status', 900003009, 900001307, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null),
+(900005533, 'ODM模块(所属设备类型)枚举值规范性核查', 'related_equipment_type', 900003010, 900001322, 1, null, 'ODM模块related_equipment_type', 'admin', 'admin', null),
+(900005534, 'DDF端子(端子状态)枚举值规范性核查', 'port_status', 900003011, 900001331, 1, null, 'DDF端子port_status', 'admin', 'admin', null),
+(900005535, 'ODF端子(端子状态)枚举值规范性核查', 'port_status', 900003012, 900001336, 1, null, 'ODF端子port_status', 'admin', 'admin', null);
 
 --插入动环 dims_idx_index
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907004490, '动环资源完整性指标', 'pe10or01', 4490, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907004491, '动环资源规范性指标', 'pe10or02', 4491, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907004492, '动环资源关联性指标', 'pe10or03', 4492, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907004493, '动环数据整体指标', 'pe10or04', 4493, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003501, '变压器必填完整性核查', 'pe01or01', 3501, 907001503, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003502, '变换设备必填完整性核查', 'pe01or02', 3502, 907001504, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003503, '高压配电必填完整性核查', 'pe01or03', 3503, 907001506, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003504, '高压直流电源必填完整性核查', 'pe01or04', 3504, 907001508, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003505, '高压直流配电必填完整性核查', 'pe01or05', 3505, 907001509, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003506, '低压交流配电必填完整性核查', 'pe01or06', 3506, 907001511, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003507, '发电机组必填完整性核查', 'pe01or07', 3507, 907001513, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003508, '开关电源必填完整性核查', 'pe01or08', 3508, 907001515, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003509, '低压直流配电必填完整性核查', 'pe01or09', 3509, 907001516, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003510, 'UPS设备必填完整性核查', 'pe01or10', 3510, 907001518, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003511, '蓄电池必填完整性核查', 'pe01or11', 3511, 907001519, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003512, '空调必填完整性核查', 'pe01or12', 3512, 907001520, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003513, '节能设备必填完整性核查', 'pe01or13', 3513, 907001521, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003514, '动环监控必填完整性核查', 'pe01or14', 3514, 907001522, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003515, '智能电表必填完整性核查', 'pe01or15', 3515, 907001523, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003516, '其他设备必填完整性核查', 'pe01or16', 3516, 907001526, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003517, '高压配电系统必填完整性核查', 'pe01or17', 3517, 907001505, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001505, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003518, '高压直流电源系统必填完整性核查', 'pe01or18', 3518, 907001507, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001507, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003519, '低压配电系统必填完整性核查', 'pe01or19', 3519, 907001510, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001510, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003520, '发电系统必填完整性核查', 'pe01or20', 3520, 907001512, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001512, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003521, '开关电源系统必填完整性核查', 'pe01or21', 3521, 907001514, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001514, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003522, 'UPS系统必填完整性核查', 'pe01or22', 3522, 907001517, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003523, '动环专业内输出分路必填完整性核查', 'pe01or23', 3523, 907001524, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003524, '跨专业输出分路必填完整性核查', 'pe01or24', 3524, 907001525, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003525, '位置点动环属性必填完整性核查', 'pe01or25', 3525, 907001501, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003526, '机房动环属性必填完整性核查', 'pe01or26', 3526, 907001502, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001502, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003527, '风光设备必填完整性核查', 'pe01or27', 3527, 907001521, '动环', 5, null, 
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(907004490, '动环资源完整性指标', 'pe10or01-99001', 4490, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(907004491, '动环资源规范性指标', 'pe10or02-99002', 4491, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(907004492, '动环资源关联性指标', 'pe10or03-99003', 4492, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(907004493, '动环数据整体指标', 'pe10or04-99999', 4493, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(907003501, '变压器必填完整性核查', 'pe01or01', 3501, 907001503, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001503, 1, null),
+(907003502, '变换设备必填完整性核查', 'pe01or02', 3502, 907001504, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001504, 1, null),
+(907003503, '高压配电必填完整性核查', 'pe01or03', 3503, 907001506, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001506, 1, null),
+(907003504, '高压直流电源必填完整性核查', 'pe01or04', 3504, 907001508, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001508, 1, null),
+(907003505, '高压直流配电必填完整性核查', 'pe01or05', 3505, 907001509, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001509, 1, null),
+(907003506, '低压交流配电必填完整性核查', 'pe01or06', 3506, 907001511, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001511, 1, null),
+(907003507, '发电机组必填完整性核查', 'pe01or07', 3507, 907001513, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001513, 1, null),
+(907003508, '开关电源必填完整性核查', 'pe01or08', 3508, 907001515, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001515, 1, null),
+(907003509, '低压直流配电必填完整性核查', 'pe01or09', 3509, 907001516, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001516, 1, null),
+(907003510, 'UPS设备必填完整性核查', 'pe01or10', 3510, 907001518, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001518, 1, null),
+(907003511, '蓄电池必填完整性核查', 'pe01or11', 3511, 907001519, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001519, 1, null),
+(907003512, '空调必填完整性核查', 'pe01or12', 3512, 907001520, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001520, 1, null),
+(907003513, '节能设备必填完整性核查', 'pe01or13', 3513, 907001521, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001521, 1, null),
+(907003514, '动环监控必填完整性核查', 'pe01or14', 3514, 907001522, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001522, 1, null),
+(907003515, '智能电表必填完整性核查', 'pe01or15', 3515, 907001523, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001523, 1, null),
+(907003516, '其他设备必填完整性核查', 'pe01or16', 3516, 907001526, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001526, 1, null),
+(907003517, '高压配电系统必填完整性核查', 'pe01or17', 3517, 907001505, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001505, 1, null),
+(907003518, '高压直流电源系统必填完整性核查', 'pe01or18', 3518, 907001507, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001507, 1, null),
+(907003519, '低压配电系统必填完整性核查', 'pe01or19', 3519, 907001510, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001510, 1, null),
+(907003520, '发电系统必填完整性核查', 'pe01or20', 3520, 907001512, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001512, 1, null),
+(907003521, '开关电源系统必填完整性核查', 'pe01or21', 3521, 907001514, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001514, 1, null),
+(907003522, 'UPS系统必填完整性核查', 'pe01or22', 3522, 907001517, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001517, 1, null),
+(907003523, '动环专业内输出分路必填完整性核查', 'pe01or23', 3523, 907001524, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001524, 1, null),
+(907003524, '跨专业输出分路必填完整性核查', 'pe01or24', 3524, 907001525, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001525, 1, null),
+(907003525, '位置点动环属性必填完整性核查', 'pe01or25', 3525, 907001501, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001501, 1, null),
+(907003526, '机房动环属性必填完整性核查', 'pe01or26', 3526, 907001502, '动环', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001502, 1, null),
+(907003527, '风光设备必填完整性核查', 'pe01or27', 3527, 907001521, '动环', 5, null, 
 'update CE_DEVICE_PE_ENERY_SAVE 
                    set dims_col_result=(case when dims_col_result like ''%pe01or27%'' then dims_col_result
                                              when dims_col_result is null then ''pe01or27''
@@ -10859,10 +8833,9 @@ values (907003527, '风光设备必填完整性核查', 'pe01or27', 3527, 907001
 									       solar_modules_number is null or
 									       solar_modules_brand is null or
 									       solar_modules_rated_capacity is null
-                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001521, 1, null);
+                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001521, 1, null),
 									  
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003528, '动环专业内输出分路下游设备必填完整性核查', 'pe01or28', 3528, 907001524, '动环', 5, null, 
+(907003528, '动环专业内输出分路下游设备必填完整性核查', 'pe01or28', 3528, 907001524, '动环', 5, null, 
 'update CE_LINK_PE_IN 
                    set dims_col_result=(case when dims_col_result like ''%pe01or28%'' then dims_col_result
                                              when dims_col_result is null then ''pe01or28''
@@ -10872,10 +8845,8 @@ values (907003528, '动环专业内输出分路下游设备必填完整性核查
                                              else dims_col_rtName||'',动环专业内输出分路下游设备必填完整性核查'' end)
                  where down_use_status = ''在用''
 				                      and down_device_name is null
-                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003529, '跨专业输出分路必填下游负载完整性核查', 'pe01or29', 3529, 907001525, '动环', 5, null, 
+                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, null),
+(907003529, '跨专业输出分路必填下游负载完整性核查', 'pe01or29', 3529, 907001525, '动环', 5, null, 
 'update CE_LINK_PE_OUT 
                    set dims_col_result=(case when dims_col_result like ''%pe01or29%'' then dims_col_result
                                              when dims_col_result is null then ''pe01or29''
@@ -10885,425 +8856,149 @@ values (907003529, '跨专业输出分路必填下游负载完整性核查', 'pe
                                              else dims_col_rtName||'',跨专业输出分路必填下游负载完整性核查'' end)
                  where lifecycle_status = ''在用''
 				                      and down_device_name is null
-                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, null);
+                                      )', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, null),
 									  
 --枚举值
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003530, '变压器(设备类型)枚举值规范性核查', 'pe02or01', 3530, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003531, '变压器(设备子类)枚举值规范性核查', 'pe02or02', 3531, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003532, '变压器(设备型号)枚举值规范性核查', 'pe02or03', 3532, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003533, '变压器(设备厂家)枚举值规范性核查', 'pe02or04', 3533, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003534, '变压器(使用状态)枚举值规范性核查', 'pe02or05', 3534, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003535, '变压器(输入额定电压（V）)枚举值规范性核查', 'pe02or06', 3535, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003536, '变压器(备份方式)枚举值规范性核查', 'pe02or07', 3536, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003537, '变换设备(设备类型)枚举值规范性核查', 'pe02or08', 3537, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003538, '变换设备(设备子类)枚举值规范性核查', 'pe02or09', 3538, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003539, '变换设备(设备型号)枚举值规范性核查', 'pe02or10', 3539, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003540, '变换设备(设备厂家)枚举值规范性核查', 'pe02or11', 3540, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003541, '变换设备(使用状态)枚举值规范性核查', 'pe02or12', 3541, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003542, '变换设备(额定输入电压（V）)枚举值规范性核查', 'pe02or13', 3542, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003543, '变换设备(额定输出电压（V）)枚举值规范性核查', 'pe02or14', 3543, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003544, '变换设备(输出类型)枚举值规范性核查', 'pe02or15', 3544, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003545, '高压配电(设备类型)枚举值规范性核查', 'pe02or16', 3545, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003546, '高压配电(设备子类)枚举值规范性核查', 'pe02or17', 3546, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003547, '高压配电(设备型号)枚举值规范性核查', 'pe02or18', 3547, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003548, '高压配电(设备厂家)枚举值规范性核查', 'pe02or19', 3548, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003549, '高压配电(使用状态)枚举值规范性核查', 'pe02or20', 3549, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003550, '高压直流电源(设备类型)枚举值规范性核查', 'pe02or21', 3550, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003551, '高压直流电源(设备子类)枚举值规范性核查', 'pe02or22', 3551, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003552, '高压直流电源(设备型号)枚举值规范性核查', 'pe02or23', 3552, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003553, '高压直流电源(设备厂家)枚举值规范性核查', 'pe02or24', 3553, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003554, '高压直流电源(使用状态)枚举值规范性核查', 'pe02or25', 3554, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003555, '高压直流电源(额定输出电压（V）)枚举值规范性核查', 'pe02or26', 3555, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003556, '高压直流配电(设备类型)枚举值规范性核查', 'pe02or27', 3556, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003557, '高压直流配电(设备子类)枚举值规范性核查', 'pe02or28', 3557, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003558, '高压直流配电(设备型号)枚举值规范性核查', 'pe02or29', 3558, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003559, '高压直流配电(设备厂家)枚举值规范性核查', 'pe02or30', 3559, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003560, '高压直流配电(使用状态)枚举值规范性核查', 'pe02or31', 3560, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003561, '低压交流配电(设备类型)枚举值规范性核查', 'pe02or32', 3561, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003562, '低压交流配电(设备子类)枚举值规范性核查', 'pe02or33', 3562, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003563, '低压交流配电(设备型号)枚举值规范性核查', 'pe02or34', 3563, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003564, '低压交流配电(设备厂家)枚举值规范性核查', 'pe02or35', 3564, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003565, '低压交流配电(使用状态)枚举值规范性核查', 'pe02or36', 3565, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003566, '低压交流配电(输入端口数（路）)枚举值规范性核查', 'pe02or37', 3566, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003567, '发电机组(设备类型)枚举值规范性核查', 'pe02or38', 3567, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003568, '发电机组(设备子类)枚举值规范性核查', 'pe02or39', 3568, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003569, '发电机组(设备型号)枚举值规范性核查', 'pe02or40', 3569, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003570, '发电机组(设备厂家)枚举值规范性核查', 'pe02or41', 3570, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003571, '发电机组(使用状态)枚举值规范性核查', 'pe02or42', 3571, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003572, '发电机组(输出电压类型)枚举值规范性核查', 'pe02or43', 3572, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003573, '发电机组(自启动功能)枚举值规范性核查', 'pe02or44', 3573, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003574, '发电机组(冷却方式)枚举值规范性核查', 'pe02or45', 3574, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003575, '发电机组(安装方式)枚举值规范性核查', 'pe02or46', 3575, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003576, '发电机组(备份方式)枚举值规范性核查', 'pe02or47', 3576, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003577, '开关电源(设备类型)枚举值规范性核查', 'pe02or48', 3577, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003578, '开关电源(设备子类)枚举值规范性核查', 'pe02or49', 3578, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003579, '开关电源(设备型号)枚举值规范性核查', 'pe02or50', 3579, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003580, '开关电源(设备厂家)枚举值规范性核查', 'pe02or51', 3580, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003581, '开关电源(使用状态)枚举值规范性核查', 'pe02or52', 3581, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003582, '开关电源(额定输出电压（V）)枚举值规范性核查', 'pe02or53', 3582, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003583, '低压直流配(设备类型)枚举值规范性核查', 'pe02or54', 3583, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003584, '低压直流配(设备子类)枚举值规范性核查', 'pe02or55', 3584, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003585, '低压直流配(设备型号)枚举值规范性核查', 'pe02or56', 3585, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003586, '低压直流配(设备厂家)枚举值规范性核查', 'pe02or57', 3587, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003587, '低压直流配(使用状态)枚举值规范性核查', 'pe02or58', 3587, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003588, 'UPS(设备类型)枚举值规范性核查', 'pe02or59', 3588, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003589, 'UPS(设备子类)枚举值规范性核查', 'pe02or60', 3589, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003590, 'UPS(设备型号)枚举值规范性核查', 'pe02or61', 3590, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003591, 'UPS(设备厂家)枚举值规范性核查', 'pe02or62', 3591, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003592, 'UPS(使用状态)枚举值规范性核查', 'pe02or63', 3592, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003593, 'UPS(额定输出电压（V）)枚举值规范性核查', 'pe02or64', 3593, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003594, '蓄电池(设备类型)枚举值规范性核查', 'pe02or65', 3594, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003595, '蓄电池(设备子类)枚举值规范性核查', 'pe02or66', 3595, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003596, '蓄电池(设备型号)枚举值规范性核查', 'pe02or67', 3596, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003597, '蓄电池(设备厂家)枚举值规范性核查', 'pe02or68', 3597, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003598, '蓄电池(使用状态)枚举值规范性核查', 'pe02or69', 3598, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003599, '蓄电池(单体电压等级（V）)枚举值规范性核查', 'pe02or70', 3599, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003600, '空调(设备类型)枚举值规范性核查', 'pe02or71', 3600, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003601, '空调(设备子类)枚举值规范性核查', 'pe02or72', 3601, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003602, '空调(设备型号)枚举值规范性核查', 'pe02or73', 3602, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003603, '空调(设备厂家)枚举值规范性核查', 'pe02or74', 3603, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003604, '空调(使用状态)枚举值规范性核查', 'pe02or75', 3604, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003605, '空调(额定工作电压（V）)枚举值规范性核查', 'pe02or76', 3605, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003606, '节能设备(设备类型)枚举值规范性核查', 'pe02or77', 3606, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003607, '节能设备(设备子类)枚举值规范性核查', 'pe02or78', 3607, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003608, '节能设备(设备型号)枚举值规范性核查', 'pe02or79', 3608, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003609, '节能设备(设备厂家)枚举值规范性核查', 'pe02or80', 3609, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003610, '节能设备(使用状态)枚举值规范性核查', 'pe02or81', 3610, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003611, '节能设备(额定工作电压（V）)枚举值规范性核查', 'pe02or82', 3611, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003612, '节能设备(下挂风机形式)枚举值规范性核查', 'pe02or83', 3612, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003613, '动环监控(设备类型)枚举值规范性核查', 'pe02or84', 3613, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003614, '动环监控(设备子类)枚举值规范性核查', 'pe02or85', 3614, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003615, '动环监控(设备型号)枚举值规范性核查', 'pe02or86', 3615, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003616, '动环监控(设备厂家)枚举值规范性核查', 'pe02or87', 3616, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003617, '动环监控(使用状态)枚举值规范性核查', 'pe02or88', 3617, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003618, '智能电表(设备类型)枚举值规范性核查', 'pe02or89', 3618, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003619, '智能电表(设备子类)枚举值规范性核查', 'pe02or90', 3619, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003620, '智能电表(设备型号)枚举值规范性核查', 'pe02or91', 3620, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003621, '智能电表(设备厂家)枚举值规范性核查', 'pe02or92', 3621, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003622, '智能电表(使用状态)枚举值规范性核查', 'pe02or93', 3622, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003623, '其他设备(设备类型)枚举值规范性核查', 'pe02or94', 3623, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003624, '其他设备(设备子类)枚举值规范性核查', 'pe02or95', 3624, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003625, '其他设备(设备型号)枚举值规范性核查', 'pe02or96', 3625, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003626, '其他设备(设备厂家)枚举值规范性核查', 'pe02or97', 3626, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003627, '其他设备(使用状态)枚举值规范性核查', 'pe02or98', 3627, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003628, '高压配电系统枚(系统类型)枚举值规范性核查', 'pe02or99', 3628, 907001505, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001505, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003629, '高压配电系统枚(使用状态)枚举值规范性核查', 'pe02or100', 3629, 907001505, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001505, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003630, '高压直流电源系统(系统类型)枚举值规范性核查', 'pe02or101', 3630, 907001507, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001507, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003631, '高压直流电源系统(使用状态)枚举值规范性核查', 'pe02or102', 3631, 907001507, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001507, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003632, '低压配电系统(系统类型)枚举值规范性核查', 'pe02or103', 3632, 907001510, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001510, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003633, '低压配电系统(使用状态)枚举值规范性核查', 'pe02or104', 3633, 907001510, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001510, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003634, '发电系统(系统类型)枚举值规范性核查', 'pe02or105', 3634, 907001512, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001512, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003635, '发电系统(使用状态)枚举值规范性核查', 'pe02or106', 3635, 907001512, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001512, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003636, '开关电源系统(系统类型)枚举值规范性核查', 'pe02or107', 3636, 907001514, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001514, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003637, '开关电源系统(使用状态)枚举值规范性核查', 'pe02or108', 3637, 907001514, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001514, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003638, 'UPS系统(系统类型)枚举值规范性核查', 'pe02or109', 3638, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003639, 'UPS系统(使用状态)枚举值规范性核查', 'pe02or110', 3639, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003640, 'UPS系统(工作方式)枚举值规范性核查', 'pe02or111', 3640, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003641, 'UPS系统(母线类型)枚举值规范性核查', 'pe02or112', 3641, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003642, 'UPS系统(资源系统类型)枚举值规范性核查', 'pe02or113', 3642, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003643, '动环专业内输出分路(所属设备类型)枚举值规范性核查', 'pe02or114', 3643, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003644, '动环专业内输出分路(分路类型)枚举值规范性核查', 'pe02or115', 3644, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003645, '动环专业内输出分路(分路类型缩写)枚举值规范性核查', 'pe02or116', 3645, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003646, '动环专业内输出分路(分路主备)枚举值规范性核查', 'pe02or117', 3646, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003647, '动环专业内输出分路(使用状态)枚举值规范性核查', 'pe02or118', 3647, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003648, '动环专业内输出分路(下游设备类型)枚举值规范性核查', 'pe02or119', 3648, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003649, '动环专业内输出分路(下游分路类型)枚举值规范性核查', 'pe02or120', 3649, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003650, '动环专业内输出分路(下游分路类型缩写)枚举值规范性核查', 'pe02or121', 3650, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003651, '动环专业内输出分路(下游分路主备)枚举值规范性核查', 'pe02or122', 3651, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003652, '动环专业内输出分路(下游使用状态)枚举值规范性核查', 'pe02or123', 3652, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003653, '跨专业输出分路(所属设备类型)枚举值规范性核查', 'pe02or124', 3653, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003654, '跨专业输出分路(分路类型)枚举值规范性核查', 'pe02or125', 3654, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003655, '跨专业输出分路(分路类型缩写)枚举值规范性核查', 'pe02or126', 3655, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003656, '跨专业输出分路(分路主备)枚举值规范性核查', 'pe02or127', 3656, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003657, '跨专业输出分路(使用状态)枚举值规范性核查', 'pe02or128', 3657, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003658, '跨专业输出分路(下游设备类型)枚举值规范性核查', 'pe02or129', 3658, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003659, '跨专业输出分路(专业类型)枚举值规范性核查', 'pe02or130', 3659, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003660, '位置点动环属性(动环专业站点级别)枚举值规范性核查', 'pe02or131', 3660, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003661, '位置点动环属性(市电备份方式)枚举值规范性核查', 'pe02or132', 3661, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003662, '位置点动环属性(市电是否来自不同变电站)枚举值规范性核查', 'pe02or133', 3662, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003663, '位置点动环属性(市电电压等级)枚举值规范性核查', 'pe02or134', 3663, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003664, '位置点动环属性(市电性质)枚举值规范性核查', 'pe02or135', 3664, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003665, '位置点动环属性(市电油机配置级别)枚举值规范性核查', 'pe02or136', 3665, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003666, '位置点动环属性(产权单位)枚举值规范性核查', 'pe02or137', 3666, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003667, '机房动环属性(动环专业机房类型)枚举值规范性核查', 'pe02or138', 3667, 907001502, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) 
-values (907003668, '变压器关键字段唯一性核查', 'pe02or139',3668,907001503, '动环',11, null,
+(907003530, '变压器(设备类型)枚举值规范性核查', 'pe02or01', 3530, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003531, '变压器(设备子类)枚举值规范性核查', 'pe02or02', 3531, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003532, '变压器(设备型号)枚举值规范性核查', 'pe02or03', 3532, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003533, '变压器(设备厂家)枚举值规范性核查', 'pe02or04', 3533, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003534, '变压器(使用状态)枚举值规范性核查', 'pe02or05', 3534, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003535, '变压器(输入额定电压（V）)枚举值规范性核查', 'pe02or06', 3535, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003536, '变压器(备份方式)枚举值规范性核查', 'pe02or07', 3536, 907001503, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001503, 1, null),
+(907003537, '变换设备(设备类型)枚举值规范性核查', 'pe02or08', 3537, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003538, '变换设备(设备子类)枚举值规范性核查', 'pe02or09', 3538, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003539, '变换设备(设备型号)枚举值规范性核查', 'pe02or10', 3539, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003540, '变换设备(设备厂家)枚举值规范性核查', 'pe02or11', 3540, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003541, '变换设备(使用状态)枚举值规范性核查', 'pe02or12', 3541, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003542, '变换设备(额定输入电压（V）)枚举值规范性核查', 'pe02or13', 3542, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003543, '变换设备(额定输出电压（V）)枚举值规范性核查', 'pe02or14', 3543, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003544, '变换设备(输出类型)枚举值规范性核查', 'pe02or15', 3544, 907001504, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001504, 1, null),
+(907003545, '高压配电(设备类型)枚举值规范性核查', 'pe02or16', 3545, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null),
+(907003546, '高压配电(设备子类)枚举值规范性核查', 'pe02or17', 3546, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null),
+(907003547, '高压配电(设备型号)枚举值规范性核查', 'pe02or18', 3547, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null),
+(907003548, '高压配电(设备厂家)枚举值规范性核查', 'pe02or19', 3548, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null),
+(907003549, '高压配电(使用状态)枚举值规范性核查', 'pe02or20', 3549, 907001506, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001506, 1, null),
+(907003550, '高压直流电源(设备类型)枚举值规范性核查', 'pe02or21', 3550, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003551, '高压直流电源(设备子类)枚举值规范性核查', 'pe02or22', 3551, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003552, '高压直流电源(设备型号)枚举值规范性核查', 'pe02or23', 3552, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003553, '高压直流电源(设备厂家)枚举值规范性核查', 'pe02or24', 3553, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003554, '高压直流电源(使用状态)枚举值规范性核查', 'pe02or25', 3554, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003555, '高压直流电源(额定输出电压（V）)枚举值规范性核查', 'pe02or26', 3555, 907001508, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001508, 1, null),
+(907003556, '高压直流配电(设备类型)枚举值规范性核查', 'pe02or27', 3556, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null),
+(907003557, '高压直流配电(设备子类)枚举值规范性核查', 'pe02or28', 3557, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null),
+(907003558, '高压直流配电(设备型号)枚举值规范性核查', 'pe02or29', 3558, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null),
+(907003559, '高压直流配电(设备厂家)枚举值规范性核查', 'pe02or30', 3559, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null),
+(907003560, '高压直流配电(使用状态)枚举值规范性核查', 'pe02or31', 3560, 907001509, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001509, 1, null),
+(907003561, '低压交流配电(设备类型)枚举值规范性核查', 'pe02or32', 3561, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003562, '低压交流配电(设备子类)枚举值规范性核查', 'pe02or33', 3562, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003563, '低压交流配电(设备型号)枚举值规范性核查', 'pe02or34', 3563, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003564, '低压交流配电(设备厂家)枚举值规范性核查', 'pe02or35', 3564, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003565, '低压交流配电(使用状态)枚举值规范性核查', 'pe02or36', 3565, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003566, '低压交流配电(输入端口数（路）)枚举值规范性核查', 'pe02or37', 3566, 907001511, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001511, 1, null),
+(907003567, '发电机组(设备类型)枚举值规范性核查', 'pe02or38', 3567, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003568, '发电机组(设备子类)枚举值规范性核查', 'pe02or39', 3568, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003569, '发电机组(设备型号)枚举值规范性核查', 'pe02or40', 3569, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003570, '发电机组(设备厂家)枚举值规范性核查', 'pe02or41', 3570, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003571, '发电机组(使用状态)枚举值规范性核查', 'pe02or42', 3571, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003572, '发电机组(输出电压类型)枚举值规范性核查', 'pe02or43', 3572, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003573, '发电机组(自启动功能)枚举值规范性核查', 'pe02or44', 3573, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003574, '发电机组(冷却方式)枚举值规范性核查', 'pe02or45', 3574, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003575, '发电机组(安装方式)枚举值规范性核查', 'pe02or46', 3575, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003576, '发电机组(备份方式)枚举值规范性核查', 'pe02or47', 3576, 907001513, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001513, 1, null),
+(907003577, '开关电源(设备类型)枚举值规范性核查', 'pe02or48', 3577, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003578, '开关电源(设备子类)枚举值规范性核查', 'pe02or49', 3578, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003579, '开关电源(设备型号)枚举值规范性核查', 'pe02or50', 3579, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003580, '开关电源(设备厂家)枚举值规范性核查', 'pe02or51', 3580, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003581, '开关电源(使用状态)枚举值规范性核查', 'pe02or52', 3581, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003582, '开关电源(额定输出电压（V）)枚举值规范性核查', 'pe02or53', 3582, 907001515, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001515, 1, null),
+(907003583, '低压直流配(设备类型)枚举值规范性核查', 'pe02or54', 3583, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null),
+(907003584, '低压直流配(设备子类)枚举值规范性核查', 'pe02or55', 3584, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null),
+(907003585, '低压直流配(设备型号)枚举值规范性核查', 'pe02or56', 3585, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null),
+(907003586, '低压直流配(设备厂家)枚举值规范性核查', 'pe02or57', 3587, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null),
+(907003587, '低压直流配(使用状态)枚举值规范性核查', 'pe02or58', 3587, 907001516, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001516, 1, null),
+(907003588, 'UPS(设备类型)枚举值规范性核查', 'pe02or59', 3588, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003589, 'UPS(设备子类)枚举值规范性核查', 'pe02or60', 3589, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003590, 'UPS(设备型号)枚举值规范性核查', 'pe02or61', 3590, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003591, 'UPS(设备厂家)枚举值规范性核查', 'pe02or62', 3591, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003592, 'UPS(使用状态)枚举值规范性核查', 'pe02or63', 3592, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003593, 'UPS(额定输出电压（V）)枚举值规范性核查', 'pe02or64', 3593, 907001518, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001518, 1, null),
+(907003594, '蓄电池(设备类型)枚举值规范性核查', 'pe02or65', 3594, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003595, '蓄电池(设备子类)枚举值规范性核查', 'pe02or66', 3595, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003596, '蓄电池(设备型号)枚举值规范性核查', 'pe02or67', 3596, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003597, '蓄电池(设备厂家)枚举值规范性核查', 'pe02or68', 3597, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003598, '蓄电池(使用状态)枚举值规范性核查', 'pe02or69', 3598, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003599, '蓄电池(单体电压等级（V）)枚举值规范性核查', 'pe02or70', 3599, 907001519, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001519, 1, null),
+(907003600, '空调(设备类型)枚举值规范性核查', 'pe02or71', 3600, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003601, '空调(设备子类)枚举值规范性核查', 'pe02or72', 3601, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003602, '空调(设备型号)枚举值规范性核查', 'pe02or73', 3602, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003603, '空调(设备厂家)枚举值规范性核查', 'pe02or74', 3603, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003604, '空调(使用状态)枚举值规范性核查', 'pe02or75', 3604, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003605, '空调(额定工作电压（V）)枚举值规范性核查', 'pe02or76', 3605, 907001520, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001520, 1, null),
+(907003606, '节能设备(设备类型)枚举值规范性核查', 'pe02or77', 3606, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003607, '节能设备(设备子类)枚举值规范性核查', 'pe02or78', 3607, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003608, '节能设备(设备型号)枚举值规范性核查', 'pe02or79', 3608, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003609, '节能设备(设备厂家)枚举值规范性核查', 'pe02or80', 3609, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003610, '节能设备(使用状态)枚举值规范性核查', 'pe02or81', 3610, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003611, '节能设备(额定工作电压（V）)枚举值规范性核查', 'pe02or82', 3611, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003612, '节能设备(下挂风机形式)枚举值规范性核查', 'pe02or83', 3612, 907001521, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001521, 1, null),
+(907003613, '动环监控(设备类型)枚举值规范性核查', 'pe02or84', 3613, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null),
+(907003614, '动环监控(设备子类)枚举值规范性核查', 'pe02or85', 3614, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null),
+(907003615, '动环监控(设备型号)枚举值规范性核查', 'pe02or86', 3615, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null),
+(907003616, '动环监控(设备厂家)枚举值规范性核查', 'pe02or87', 3616, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null),
+(907003617, '动环监控(使用状态)枚举值规范性核查', 'pe02or88', 3617, 907001522, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001522, 1, null),
+(907003618, '智能电表(设备类型)枚举值规范性核查', 'pe02or89', 3618, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null),
+(907003619, '智能电表(设备子类)枚举值规范性核查', 'pe02or90', 3619, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null),
+(907003620, '智能电表(设备型号)枚举值规范性核查', 'pe02or91', 3620, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null),
+(907003621, '智能电表(设备厂家)枚举值规范性核查', 'pe02or92', 3621, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null),
+(907003622, '智能电表(使用状态)枚举值规范性核查', 'pe02or93', 3622, 907001523, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001523, 1, null),
+(907003623, '其他设备(设备类型)枚举值规范性核查', 'pe02or94', 3623, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null),
+(907003624, '其他设备(设备子类)枚举值规范性核查', 'pe02or95', 3624, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null),
+(907003625, '其他设备(设备型号)枚举值规范性核查', 'pe02or96', 3625, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null),
+(907003626, '其他设备(设备厂家)枚举值规范性核查', 'pe02or97', 3626, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null),
+(907003627, '其他设备(使用状态)枚举值规范性核查', 'pe02or98', 3627, 907001526, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001526, 1, null),
+(907003628, '高压配电系统枚(系统类型)枚举值规范性核查', 'pe02or99', 3628, 907001505, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001505, 1, null),
+(907003629, '高压配电系统枚(使用状态)枚举值规范性核查', 'pe02or100', 3629, 907001505, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001505, 1, null),
+(907003630, '高压直流电源系统(系统类型)枚举值规范性核查', 'pe02or101', 3630, 907001507, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001507, 1, null),
+(907003631, '高压直流电源系统(使用状态)枚举值规范性核查', 'pe02or102', 3631, 907001507, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001507, 1, null),
+(907003632, '低压配电系统(系统类型)枚举值规范性核查', 'pe02or103', 3632, 907001510, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001510, 1, null),
+(907003633, '低压配电系统(使用状态)枚举值规范性核查', 'pe02or104', 3633, 907001510, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001510, 1, null),
+(907003634, '发电系统(系统类型)枚举值规范性核查', 'pe02or105', 3634, 907001512, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001512, 1, null),
+(907003635, '发电系统(使用状态)枚举值规范性核查', 'pe02or106', 3635, 907001512, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001512, 1, null),
+(907003636, '开关电源系统(系统类型)枚举值规范性核查', 'pe02or107', 3636, 907001514, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001514, 1, null),
+(907003637, '开关电源系统(使用状态)枚举值规范性核查', 'pe02or108', 3637, 907001514, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001514, 1, null),
+(907003638, 'UPS系统(系统类型)枚举值规范性核查', 'pe02or109', 3638, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null),
+(907003639, 'UPS系统(使用状态)枚举值规范性核查', 'pe02or110', 3639, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null),
+(907003640, 'UPS系统(工作方式)枚举值规范性核查', 'pe02or111', 3640, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null),
+(907003641, 'UPS系统(母线类型)枚举值规范性核查', 'pe02or112', 3641, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null),
+(907003642, 'UPS系统(资源系统类型)枚举值规范性核查', 'pe02or113', 3642, 907001517, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, null),
+(907003643, '动环专业内输出分路(所属设备类型)枚举值规范性核查', 'pe02or114', 3643, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003644, '动环专业内输出分路(分路类型)枚举值规范性核查', 'pe02or115', 3644, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003645, '动环专业内输出分路(分路类型缩写)枚举值规范性核查', 'pe02or116', 3645, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003646, '动环专业内输出分路(分路主备)枚举值规范性核查', 'pe02or117', 3646, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003647, '动环专业内输出分路(使用状态)枚举值规范性核查', 'pe02or118', 3647, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003648, '动环专业内输出分路(下游设备类型)枚举值规范性核查', 'pe02or119', 3648, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003649, '动环专业内输出分路(下游分路类型)枚举值规范性核查', 'pe02or120', 3649, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003650, '动环专业内输出分路(下游分路类型缩写)枚举值规范性核查', 'pe02or121', 3650, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003651, '动环专业内输出分路(下游分路主备)枚举值规范性核查', 'pe02or122', 3651, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003652, '动环专业内输出分路(下游使用状态)枚举值规范性核查', 'pe02or123', 3652, 907001524, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, null),
+(907003653, '跨专业输出分路(所属设备类型)枚举值规范性核查', 'pe02or124', 3653, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003654, '跨专业输出分路(分路类型)枚举值规范性核查', 'pe02or125', 3654, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003655, '跨专业输出分路(分路类型缩写)枚举值规范性核查', 'pe02or126', 3655, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003656, '跨专业输出分路(分路主备)枚举值规范性核查', 'pe02or127', 3656, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003657, '跨专业输出分路(使用状态)枚举值规范性核查', 'pe02or128', 3657, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003658, '跨专业输出分路(下游设备类型)枚举值规范性核查', 'pe02or129', 3658, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003659, '跨专业输出分路(专业类型)枚举值规范性核查', 'pe02or130', 3659, 907001525, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, null),
+(907003660, '位置点动环属性(动环专业站点级别)枚举值规范性核查', 'pe02or131', 3660, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003661, '位置点动环属性(市电备份方式)枚举值规范性核查', 'pe02or132', 3661, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003662, '位置点动环属性(市电是否来自不同变电站)枚举值规范性核查', 'pe02or133', 3662, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003663, '位置点动环属性(市电电压等级)枚举值规范性核查', 'pe02or134', 3663, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003664, '位置点动环属性(市电性质)枚举值规范性核查', 'pe02or135', 3664, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003665, '位置点动环属性(市电油机配置级别)枚举值规范性核查', 'pe02or136', 3665, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003666, '位置点动环属性(产权单位)枚举值规范性核查', 'pe02or137', 3666, 907001501, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, null),
+(907003667, '机房动环属性(动环专业机房类型)枚举值规范性核查', 'pe02or138', 3667, 907001502, '动环', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, null),
+ 
+(907003668, '变压器关键字段唯一性核查', 'pe02or139',3668,907001503, '动环',11, null,
 'update CE_DEVICE_PE_TRANSFORM t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or139%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or139''
@@ -11315,10 +9010,9 @@ values (907003668, '变压器关键字段唯一性核查', 'pe02or139',3668,9070
                                 from CE_DEVICE_PE_TRANSFORM t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003669, '变换设备关键字段唯一性核查', 'pe02or140',3669,907001504, '动环',11, null,
+(907003669, '变换设备关键字段唯一性核查', 'pe02or140',3669,907001504, '动环',11, null,
 'update CE_DECIVE_PE_TRANSFORM_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or140%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or140''
@@ -11330,10 +9024,9 @@ values (907003669, '变换设备关键字段唯一性核查', 'pe02or140',3669,9
                                 from CE_DECIVE_PE_TRANSFORM_DEVICE t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003670, '高压配电关键字段唯一性核查', 'pe02or141',3670,907001506, '动环',11, null,
+(907003670, '高压配电关键字段唯一性核查', 'pe02or141',3670,907001506, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or141%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or141''
@@ -11345,10 +9038,9 @@ values (907003670, '高压配电关键字段唯一性核查', 'pe02or141',3670,9
                                 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003671, '高压直流电源关键字段唯一性核查', 'pe02or142',3671,907001508, '动环',11, null,
+(907003671, '高压直流电源关键字段唯一性核查', 'pe02or142',3671,907001508, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or142%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or142''
@@ -11360,10 +9052,8 @@ values (907003671, '高压直流电源关键字段唯一性核查', 'pe02or142',
                                 from CE_DEVICE_PE_HIGH_POWER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003672, '高压直流配电关键字段唯一性核查', 'pe02or143',3672,907001509, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null),
+(907003672, '高压直流配电关键字段唯一性核查', 'pe02or143',3672,907001509, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or143%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or143''
@@ -11375,10 +9065,9 @@ values (907003672, '高压直流配电关键字段唯一性核查', 'pe02or143',
                                 from CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003673, '低压交流配电关键字段唯一性核查', 'pe02or144',3673,907001511, '动环',11, null,
+(907003673, '低压交流配电关键字段唯一性核查', 'pe02or144',3673,907001511, '动环',11, null,
 'update CE_DEVICE_PE_LOW_AC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or144%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or144''
@@ -11390,10 +9079,9 @@ values (907003673, '低压交流配电关键字段唯一性核查', 'pe02or144',
                                 from CE_DEVICE_PE_LOW_AC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003674, '发电机组关键字段唯一性核查', 'pe02or145',3674,907001513, '动环',11, null,
+(907003674, '发电机组关键字段唯一性核查', 'pe02or145',3674,907001513, '动环',11, null,
 'update CE_DEVICE_PE_POWER_GENERATION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or145%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or145''
@@ -11405,10 +9093,9 @@ values (907003674, '发电机组关键字段唯一性核查', 'pe02or145',3674,9
                                 from CE_DEVICE_PE_POWER_GENERATION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003675, '开关电源关键字段唯一性核查', 'pe02or146',3675,907001515, '动环',11, null,
+(907003675, '开关电源关键字段唯一性核查', 'pe02or146',3675,907001515, '动环',11, null,
 'update CE_DEVICE_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or146%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or146''
@@ -11420,10 +9107,9 @@ values (907003675, '开关电源关键字段唯一性核查', 'pe02or146',3675,9
                                 from CE_DEVICE_PE_SWITCH_POWER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003676, '低压直流配电关键字段唯一性核查', 'pe02or147',3676,907001516, '动环',11, null,
+(907003676, '低压直流配电关键字段唯一性核查', 'pe02or147',3676,907001516, '动环',11, null,
 'update CE_DEVICE_PE_LOW_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or147%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or147''
@@ -11435,10 +9121,9 @@ values (907003676, '低压直流配电关键字段唯一性核查', 'pe02or147',
                                 from CE_DEVICE_PE_LOW_DC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003677, 'UPS关键字段唯一性核查设备', 'pe02or148',3677,907001518, '动环',11, null,
+(907003677, 'UPS关键字段唯一性核查设备', 'pe02or148',3677,907001518, '动环',11, null,
 'update CE_DEVICE_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or148%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or148''
@@ -11450,10 +9135,9 @@ values (907003677, 'UPS关键字段唯一性核查设备', 'pe02or148',3677,9070
                                 from CE_DEVICE_PE_UPS t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003678, '蓄电池关键字段唯一性核查', 'pe02or149',3678,907001519, '动环',11, null,
+(907003678, '蓄电池关键字段唯一性核查', 'pe02or149',3678,907001519, '动环',11, null,
 'update CE_DEVICE_PE_BATTERY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or149%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or149''
@@ -11465,10 +9149,9 @@ values (907003678, '蓄电池关键字段唯一性核查', 'pe02or149',3678,9070
                                 from CE_DEVICE_PE_BATTERY t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null);
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003679, '空调关键字段唯一性核查', 'pe02or150',3679,907001520, '动环',11, null,
+(907003679, '空调关键字段唯一性核查', 'pe02or150',3679,907001520, '动环',11, null,
 'update CE_DEVICE_PE_AIR t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or150%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or150''
@@ -11480,10 +9163,8 @@ values (907003679, '空调关键字段唯一性核查', 'pe02or150',3679,9070015
                                 from CE_DEVICE_PE_AIR t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003680, '节能设备关键字段唯一性核查', 'pe02or151',3680,907001521, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null),
+(907003680, '节能设备关键字段唯一性核查', 'pe02or151',3680,907001521, '动环',11, null,
 'update CE_DEVICE_PE_ENERY_SAVE t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or151%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or151''
@@ -11495,10 +9176,8 @@ values (907003680, '节能设备关键字段唯一性核查', 'pe02or151',3680,9
                                 from CE_DEVICE_PE_ENERY_SAVE t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003681, '动环监控关键字段唯一性核查', 'pe02or152',3681,907001522, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null),
+(907003681, '动环监控关键字段唯一性核查', 'pe02or152',3681,907001522, '动环',11, null,
 'update CE_DEVICE_PE_POWER_MONITOR t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or152%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or152''
@@ -11510,10 +9189,8 @@ values (907003681, '动环监控关键字段唯一性核查', 'pe02or152',3681,9
                                 from CE_DEVICE_PE_POWER_MONITOR t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003682, '智能电表关键字段唯一性核查', 'pe02or153',3682,907001523, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null),
+(907003682, '智能电表关键字段唯一性核查', 'pe02or153',3682,907001523, '动环',11, null,
 'update CE_DEVICE_PE_SMART_METER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or153%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or153''
@@ -11525,10 +9202,8 @@ values (907003682, '智能电表关键字段唯一性核查', 'pe02or153',3682,9
                                 from CE_DEVICE_PE_SMART_METER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003683, '其他设备关键字段唯一性核查', 'pe02or154',3683,907001526, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null),
+(907003683, '其他设备关键字段唯一性核查', 'pe02or154',3683,907001526, '动环',11, null,
 'update CE_DEVICE_PE_OTHER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or154%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or154''
@@ -11540,10 +9215,8 @@ values (907003683, '其他设备关键字段唯一性核查', 'pe02or154',3683,9
                                 from CE_DEVICE_PE_OTHER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003684, '高压配电系统关键字段唯一性核查', 'pe02or155',3684,907001505, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.device_code=t1.device_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null),
+(907003684, '高压配电系统关键字段唯一性核查', 'pe02or155',3684,907001505, '动环',11, null,
 'update CE_NET_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or155%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or155''
@@ -11555,10 +9228,8 @@ values (907003684, '高压配电系统关键字段唯一性核查', 'pe02or155',
                                 from CE_NET_PE_HIGH_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003685, '高压直流电源系统关键字段唯一性核查', 'pe02or156',3685,907001507, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null),	
+(907003685, '高压直流电源系统关键字段唯一性核查', 'pe02or156',3685,907001507, '动环',11, null,
 'update CE_NET_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or156%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or156''
@@ -11570,10 +9241,8 @@ values (907003685, '高压直流电源系统关键字段唯一性核查', 'pe02o
                                 from CE_NET_PE_HIGH_POWER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003686, '低压配电系统关键字段唯一性核查', 'pe02or157',3686,907001510, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null),
+(907003686, '低压配电系统关键字段唯一性核查', 'pe02or157',3686,907001510, '动环',11, null,
 'update CE_NET_PE_LOW_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or157%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or157''
@@ -11585,10 +9254,8 @@ values (907003686, '低压配电系统关键字段唯一性核查', 'pe02or157',
                                 from CE_NET_PE_LOW_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003687, '发电系统关键字段唯一性核查', 'pe02or158',3687,907001512, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null),
+(907003687, '发电系统关键字段唯一性核查', 'pe02or158',3687,907001512, '动环',11, null,
 'update CE_NET_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or158%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or158''
@@ -11600,10 +9267,8 @@ values (907003687, '发电系统关键字段唯一性核查', 'pe02or158',3687,9
                                 from CE_NET_PE_SWITCH_POWER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003688, '开关电源系统关键字段唯一性核查', 'pe02or159',3688,907001514, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null),
+(907003688, '开关电源系统关键字段唯一性核查', 'pe02or159',3688,907001514, '动环',11, null,
 'update CE_NET_PE_OPEN_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or159%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or159''
@@ -11615,10 +9280,8 @@ values (907003688, '开关电源系统关键字段唯一性核查', 'pe02or159',
                                 from CE_NET_PE_OPEN_POWER t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003689, 'UPS系统关键字段唯一性核查', 'pe02or160',3689,907001517, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null),
+(907003689, 'UPS系统关键字段唯一性核查', 'pe02or160',3689,907001517, '动环',11, null,
 'update CE_NET_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or160%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or160''
@@ -11630,10 +9293,8 @@ values (907003689, 'UPS系统关键字段唯一性核查', 'pe02or160',3689,9070
                                 from CE_NET_PE_UPS t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003690, '动环专业内输出分路关键字段唯一性核查', 'pe02or161',3690,907001524, '动环',11, null,
+                                 and (t2.zh_label=t1.zh_label or t2.system_code=t1.system_code))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null),
+(907003690, '动环专业内输出分路关键字段唯一性核查', 'pe02or161',3690,907001524, '动环',11, null,
 'update CE_LINK_PE_IN t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or161%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or161''
@@ -11645,10 +9306,8 @@ values (907003690, '动环专业内输出分路关键字段唯一性核查', 'pe
                                 from CE_LINK_PE_IN t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and t2.branch_name=t1.branch_name )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003691, '跨专业输出分路关键字段唯一性核查', 'pe02or162',3691,907001525, '动环',11, null,
+                                 and t2.branch_name=t1.branch_name )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null),	
+(907003691, '跨专业输出分路关键字段唯一性核查', 'pe02or162',3691,907001525, '动环',11, null,
 'update CE_LINK_PE_OUT t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or162%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or162''
@@ -11660,10 +9319,8 @@ values (907003691, '跨专业输出分路关键字段唯一性核查', 'pe02or16
                                 from CE_LINK_PE_OUT t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and t2.branch_name=t1.branch_name )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003692, '位置点动环属性关键字段唯一性核查', 'pe02or163',3692,907001501, '动环',11, null,
+                                 and t2.branch_name=t1.branch_name )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,1, null),
+(907003692, '位置点动环属性关键字段唯一性核查', 'pe02or163',3692,907001501, '动环',11, null,
 'update RM_SITE_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or163%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or163''
@@ -11674,10 +9331,8 @@ values (907003692, '位置点动环属性关键字段唯一性核查', 'pe02or16
                  where exists(select 1
                                 from RM_SITE_PROPERTY t2
                                  where t2.ctid <> t1.ctid
-								 and t2.zh_label = t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003693, '机房动环属性关键字段唯一性核查', 'pe02or164',3693,907001502, '动环',11, null,
+								 and t2.zh_label = t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,1, null),	
+(907003693, '机房动环属性关键字段唯一性核查', 'pe02or164',3693,907001502, '动环',11, null,
 'update RM_ROOM_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or164%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or164''
@@ -11689,10 +9344,8 @@ values (907003693, '机房动环属性关键字段唯一性核查', 'pe02or164',
                                 from RM_ROOM_PROPERTY t2
                                  where t2.ctid <> t1.ctid
 								 and t2.related_site = t1.related_site        
-                                 and t2.zh_label=t1.zh_label )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003694, '位置点动环属性主键唯一性核查', 'pe02or165',3694,907001501, '动环',11, null,
+                                 and t2.zh_label=t1.zh_label )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,1, null),	
+(907003694, '位置点动环属性主键唯一性核查', 'pe02or165',3694,907001501, '动环',11, null,
 'update RM_SITE_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or165%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or165''
@@ -11703,10 +9356,8 @@ values (907003694, '位置点动环属性主键唯一性核查', 'pe02or165',369
                  where exists(select 1
                                 from RM_SITE_PROPERTY t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003695, '机房动环属性主键唯一性核查', 'pe02or166',3695,907001502, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,1, null),
+(907003695, '机房动环属性主键唯一性核查', 'pe02or166',3695,907001502, '动环',11, null,
 'update RM_ROOM_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or166%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or166''
@@ -11717,10 +9368,9 @@ values (907003695, '机房动环属性主键唯一性核查', 'pe02or166',3695,9
                  where exists(select 1
                                 from RM_ROOM_PROPERTY t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003696, '变压器主键唯一性核查', 'pe02or167',3696,907001503, '动环',11, null,
+(907003696, '变压器主键唯一性核查', 'pe02or167',3696,907001503, '动环',11, null,
 'update CE_DEVICE_PE_TRANSFORM t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or167%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or167''
@@ -11731,10 +9381,9 @@ values (907003696, '变压器主键唯一性核查', 'pe02or167',3696,907001503,
                  where exists(select 1
                                 from CE_DEVICE_PE_TRANSFORM t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003697, '变换设备主键唯一性核查', 'pe02or168',3697,907001504, '动环',11, null,
+(907003697, '变换设备主键唯一性核查', 'pe02or168',3697,907001504, '动环',11, null,
 'update CE_DECIVE_PE_TRANSFORM_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or168%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or168''
@@ -11745,10 +9394,9 @@ values (907003697, '变换设备主键唯一性核查', 'pe02or168',3697,9070015
                  where exists(select 1
                                 from CE_DECIVE_PE_TRANSFORM_DEVICE t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003698, '高压配电系统主键唯一性核查', 'pe02or169',3698,907001505, '动环',11, null,
+(907003698, '高压配电系统主键唯一性核查', 'pe02or169',3698,907001505, '动环',11, null,
 'update CE_NET_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or169%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or169''
@@ -11759,10 +9407,8 @@ values (907003698, '高压配电系统主键唯一性核查', 'pe02or169',3698,9
                  where exists(select 1
                                 from CE_NET_PE_HIGH_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003699, '高压配电主键唯一性核查', 'pe02or170',3699,907001506, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null),
+(907003699, '高压配电主键唯一性核查', 'pe02or170',3699,907001506, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or170%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or170''
@@ -11773,10 +9419,9 @@ values (907003699, '高压配电主键唯一性核查', 'pe02or170',3699,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003700, '高压直流电源系统主键唯一性核查', 'pe02or171',3700,907001507, '动环',11, null,
+(907003700, '高压直流电源系统主键唯一性核查', 'pe02or171',3700,907001507, '动环',11, null,
 'update CE_NET_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or171%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or171''
@@ -11787,10 +9432,9 @@ values (907003700, '高压直流电源系统主键唯一性核查', 'pe02or171',
                  where exists(select 1
                                 from CE_NET_PE_HIGH_POWER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003701, '高压直流电源主键唯一性核查', 'pe02or172',3701,907001508, '动环',11, null,
+(907003701, '高压直流电源主键唯一性核查', 'pe02or172',3701,907001508, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or172%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or172''
@@ -11801,10 +9445,8 @@ values (907003701, '高压直流电源主键唯一性核查', 'pe02or172',3701,9
                  where exists(select 1
                                 from CE_DEVICE_PE_HIGH_POWER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003702, '高压直流配电主键唯一性核查', 'pe02or173',3702,907001509, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null),
+(907003702, '高压直流配电主键唯一性核查', 'pe02or173',3702,907001509, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or173%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or173''
@@ -11815,10 +9457,8 @@ values (907003702, '高压直流配电主键唯一性核查', 'pe02or173',3702,9
                  where exists(select 1
                                 from CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003703, '低压配电系统主键唯一性核查', 'pe02or174',3703,907001510, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null),
+(907003703, '低压配电系统主键唯一性核查', 'pe02or174',3703,907001510, '动环',11, null,
 'update CE_NET_PE_LOW_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or174%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or174''
@@ -11829,10 +9469,8 @@ values (907003703, '低压配电系统主键唯一性核查', 'pe02or174',3703,9
                  where exists(select 1
                                 from CE_NET_PE_LOW_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003704, '低压交流配电主键唯一性核查', 'pe02or175',3704,907001511, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null),
+(907003704, '低压交流配电主键唯一性核查', 'pe02or175',3704,907001511, '动环',11, null,
 'update CE_DEVICE_PE_LOW_AC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or175%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or175''
@@ -11843,10 +9481,8 @@ values (907003704, '低压交流配电主键唯一性核查', 'pe02or175',3704,9
                  where exists(select 1
                                 from CE_DEVICE_PE_LOW_AC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003705, '发电系统主键唯一性核查', 'pe02or176',3705,907001512, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null),
+(907003705, '发电系统主键唯一性核查', 'pe02or176',3705,907001512, '动环',11, null,
 'update CE_NET_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or176%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or176''
@@ -11857,10 +9493,8 @@ values (907003705, '发电系统主键唯一性核查', 'pe02or176',3705,9070015
                  where exists(select 1
                                 from CE_NET_PE_SWITCH_POWER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003706, '发电机组主键唯一性核查', 'pe02or177',3706,907001513, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null),
+(907003706, '发电机组主键唯一性核查', 'pe02or177',3706,907001513, '动环',11, null,
 'update CE_DEVICE_PE_POWER_GENERATION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or177%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or177''
@@ -11871,10 +9505,8 @@ values (907003706, '发电机组主键唯一性核查', 'pe02or177',3706,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_POWER_GENERATION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003707, '开关电源系统主键唯一性核查', 'pe02or178',3707,907001514, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null),
+(907003707, '开关电源系统主键唯一性核查', 'pe02or178',3707,907001514, '动环',11, null,
 'update CE_NET_PE_OPEN_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or178%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or178''
@@ -11885,10 +9517,9 @@ values (907003707, '开关电源系统主键唯一性核查', 'pe02or178',3707,9
                  where exists(select 1
                                 from CE_NET_PE_OPEN_POWER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null);
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null),
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003708, '开关电源主键唯一性核查', 'pe02or179',3708,907001515, '动环',11, null,
+(907003708, '开关电源主键唯一性核查', 'pe02or179',3708,907001515, '动环',11, null,
 'update CE_DEVICE_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or179%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or179''
@@ -11899,10 +9530,9 @@ values (907003708, '开关电源主键唯一性核查', 'pe02or179',3708,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_SWITCH_POWER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null);								 
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null),								 
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003709, '低压直流配电主键唯一性核查', 'pe02or180',3709,907001516, '动环',11, null,
+(907003709, '低压直流配电主键唯一性核查', 'pe02or180',3709,907001516, '动环',11, null,
 'update CE_DEVICE_PE_LOW_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or180%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or180''
@@ -11913,10 +9543,9 @@ values (907003709, '低压直流配电主键唯一性核查', 'pe02or180',3709,9
                  where exists(select 1
                                 from CE_DEVICE_PE_LOW_DC_DISTRIBUTION t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null);									 
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null),									 
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003710, 'UPS系统主键唯一性核查', 'pe02or181',3710,907001517, '动环',11, null,
+(907003710, 'UPS系统主键唯一性核查', 'pe02or181',3710,907001517, '动环',11, null,
 'update CE_NET_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or181%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or181''
@@ -11927,10 +9556,8 @@ values (907003710, 'UPS系统主键唯一性核查', 'pe02or181',3710,907001517,
                  where exists(select 1
                                 from CE_NET_PE_UPS t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003711, 'UPS设备主键唯一性核查', 'pe02or182',3711,907001518, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null),	
+(907003711, 'UPS设备主键唯一性核查', 'pe02or182',3711,907001518, '动环',11, null,
 'update CE_DEVICE_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or182%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or182''
@@ -11941,10 +9568,9 @@ values (907003711, 'UPS设备主键唯一性核查', 'pe02or182',3711,907001518,
                  where exists(select 1
                                 from CE_DEVICE_PE_UPS t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null);	
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null),	
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003712, '蓄电池主键唯一性核查', 'pe02or183',3712,907001519, '动环',11, null,
+(907003712, '蓄电池主键唯一性核查', 'pe02or183',3712,907001519, '动环',11, null,
 'update CE_DEVICE_PE_BATTERY t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or183%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or183''
@@ -11955,10 +9581,9 @@ values (907003712, '蓄电池主键唯一性核查', 'pe02or183',3712,907001519,
                  where exists(select 1
                                 from CE_DEVICE_PE_BATTERY t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null);									 
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null),									 
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003713, '空调主键唯一性核查', 'pe02or184',3713,907001520, '动环',11, null,
+(907003713, '空调主键唯一性核查', 'pe02or184',3713,907001520, '动环',11, null,
 'update CE_DEVICE_PE_AIR t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or184%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or184''
@@ -11969,10 +9594,9 @@ values (907003713, '空调主键唯一性核查', 'pe02or184',3713,907001520, '�
                  where exists(select 1
                                 from CE_DEVICE_PE_AIR t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null);								 
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null),								 
 								 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003714, '节能设备主键唯一性核查', 'pe02or185',3714,907001521, '动环',11, null,
+(907003714, '节能设备主键唯一性核查', 'pe02or185',3714,907001521, '动环',11, null,
 'update CE_DEVICE_PE_ENERY_SAVE t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or185%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or185''
@@ -11983,10 +9607,8 @@ values (907003714, '节能设备主键唯一性核查', 'pe02or185',3714,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_ENERY_SAVE t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003715, '动环监控主键唯一性核查', 'pe02or186',3715,907001522, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null),
+(907003715, '动环监控主键唯一性核查', 'pe02or186',3715,907001522, '动环',11, null,
 'update CE_DEVICE_PE_POWER_MONITOR t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or186%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or186''
@@ -11997,10 +9619,8 @@ values (907003715, '动环监控主键唯一性核查', 'pe02or186',3715,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_POWER_MONITOR t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003716, '智能电表主键唯一性核查', 'pe02or187',3716,907001523, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null),
+(907003716, '智能电表主键唯一性核查', 'pe02or187',3716,907001523, '动环',11, null,
 'update CE_DEVICE_PE_SMART_METER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or187%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or187''
@@ -12011,10 +9631,8 @@ values (907003716, '智能电表主键唯一性核查', 'pe02or187',3716,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_SMART_METER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003717, '动环专业内输出分路主键唯一性核查', 'pe02or188',3717,907001524, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null),
+(907003717, '动环专业内输出分路主键唯一性核查', 'pe02or188',3717,907001524, '动环',11, null,
 'update CE_LINK_PE_IN t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or188%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or188''
@@ -12025,10 +9643,8 @@ values (907003717, '动环专业内输出分路主键唯一性核查', 'pe02or18
                  where exists(select 1
                                 from CE_LINK_PE_IN t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003718, '跨专业输出分路主键唯一性核查', 'pe02or189',3718,907001525, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null),
+(907003718, '跨专业输出分路主键唯一性核查', 'pe02or189',3718,907001525, '动环',11, null,
 'update CE_LINK_PE_OUT t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or189%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or189''
@@ -12039,10 +9655,8 @@ values (907003718, '跨专业输出分路主键唯一性核查', 'pe02or189',371
                  where exists(select 1
                                 from CE_LINK_PE_OUT t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003719, '其它设备主键唯一性核查', 'pe02or190',3719,907001526, '动环',11, null,
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,1, null),
+(907003719, '其它设备主键唯一性核查', 'pe02or190',3719,907001526, '动环',11, null,
 'update CE_DEVICE_PE_OTHER t1
                    set dims_col_result=(case when dims_col_result like ''%pe02or190%'' then dims_col_result
                                              when dims_col_result is null then ''pe02or190''
@@ -12053,11 +9667,9 @@ values (907003719, '其它设备主键唯一性核查', 'pe02or190',3719,9070015
                  where exists(select 1
                                 from CE_DEVICE_PE_OTHER t2
                                  where t2.ctid <> t1.ctid
-								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null);	
-
+								 and t2.int_id = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null),	
 --关联性	
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003720, '变压器关联型字段核查', 'pe03or01',3720,907001503, '动环',11, null,
+(907003720, '变压器关联型字段核查', 'pe03or01',3720,907001503, '动环',11, null,
 'update CE_DEVICE_PE_TRANSFORM t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or01%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or01''
@@ -12066,10 +9678,8 @@ values (907003720, '变压器关联型字段核查', 'pe03or01',3720,907001503, 
                                              when dims_col_rtName is null then ''不满足规范:变压器关联型字段核查''
                                              else dims_col_rtName||'',变压器关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003721, '变换设备关联型字段核查', 'pe03or02',3721,907001504, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,1, null),
+(907003721, '变换设备关联型字段核查', 'pe03or02',3721,907001504, '动环',11, null,
 'update CE_DECIVE_PE_TRANSFORM_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or02%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or02''
@@ -12078,10 +9688,8 @@ values (907003721, '变换设备关联型字段核查', 'pe03or02',3721,90700150
                                              when dims_col_rtName is null then ''不满足规范:变换设备关联型字段核查''
                                              else dims_col_rtName||'',变换设备关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003722, '高压配电关联型字段核查', 'pe03or03',3722,907001506, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,1, null),
+(907003722, '高压配电关联型字段核查', 'pe03or03',3722,907001506, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or03%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or03''
@@ -12091,10 +9699,8 @@ values (907003722, '高压配电关联型字段核查', 'pe03or03',3722,90700150
                                              else dims_col_rtName||'',高压配电关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_DISTRIBUTION t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003723, '高压直流电源关联型字段核查', 'pe03or04',3723,907001508, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_DISTRIBUTION t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,1, null),
+(907003723, '高压直流电源关联型字段核查', 'pe03or04',3723,907001508, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or04%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or04''
@@ -12104,10 +9710,8 @@ values (907003723, '高压直流电源关联型字段核查', 'pe03or04',3723,90
                                              else dims_col_rtName||'',高压直流电源关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003724, '高压直流配电关联型字段核查', 'pe03or05',3724,907001509, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,1, null),
+(907003724, '高压直流配电关联型字段核查', 'pe03or05',3724,907001509, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or05%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or05''
@@ -12117,10 +9721,8 @@ values (907003724, '高压直流配电关联型字段核查', 'pe03or05',3724,90
                                              else dims_col_rtName||'',高压直流配电关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003725, '低压交流配电关联型字段核查', 'pe03or06',3725,907001511, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,1, null),
+(907003725, '低压交流配电关联型字段核查', 'pe03or06',3725,907001511, '动环',11, null,
 'update CE_DEVICE_PE_LOW_AC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or06%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or06''
@@ -12130,10 +9732,8 @@ values (907003725, '低压交流配电关联型字段核查', 'pe03or06',3725,90
                                              else dims_col_rtName||'',低压交流配电关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_LOW_DISTRIBUTION t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003726, '发电机组关联型字段核查', 'pe03or07',3726,907001513, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_LOW_DISTRIBUTION t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,1, null),
+(907003726, '发电机组关联型字段核查', 'pe03or07',3726,907001513, '动环',11, null,
 'update CE_DEVICE_PE_POWER_GENERATION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or07%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or07''
@@ -12143,10 +9743,8 @@ values (907003726, '发电机组关联型字段核查', 'pe03or07',3726,90700151
                                              else dims_col_rtName||'',发电机组关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_SWITCH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003727, '开关电源关联型字段核查', 'pe03or08',3727,907001515, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_SWITCH_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001513,1, null),
+(907003727, '开关电源关联型字段核查', 'pe03or08',3727,907001515, '动环',11, null,
 'update CE_DEVICE_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or08%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or08''
@@ -12156,10 +9754,8 @@ values (907003727, '开关电源关联型字段核查', 'pe03or08',3727,90700151
                                              else dims_col_rtName||'',开关电源关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003728, '低压直流配电关联型字段核查', 'pe03or09',3728,907001516, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,1, null),
+(907003728, '低压直流配电关联型字段核查', 'pe03or09',3728,907001516, '动环',11, null,
 'update CE_DEVICE_PE_LOW_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or09%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or09''
@@ -12169,10 +9765,8 @@ values (907003728, '低压直流配电关联型字段核查', 'pe03or09',3728,90
                                              else dims_col_rtName||'',低压直流配电关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003729, 'UPS关联型字段核查设备', 'pe03or10',3729,907001518, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,1, null),
+(907003729, 'UPS关联型字段核查设备', 'pe03or10',3729,907001518, '动环',11, null,
 'update CE_DEVICE_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or10%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or10''
@@ -12182,10 +9776,8 @@ values (907003729, 'UPS关联型字段核查设备', 'pe03or10',3729,907001518, 
                                              else dims_col_rtName||'',UPS关联型字段核查设备'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
-				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_UPS t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003730, '蓄电池关联型字段核查', 'pe03or11',3730,907001519, '动环',11, null,
+				    or (isNotNull(t1.related_system) and not exists(select 1 from CE_NET_PE_UPS t2 where t2.int_id = t1.related_system))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,1, null),
+(907003730, '蓄电池关联型字段核查', 'pe03or11',3730,907001519, '动环',11, null,
 'update CE_DEVICE_PE_BATTERY t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or11%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or11''
@@ -12196,10 +9788,8 @@ values (907003730, '蓄电池关联型字段核查', 'pe03or11',3730,907001519, 
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
 				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))
 				    or (isNotNull(t1.ralated_power_device) and not exists(select 1 from CE_NET_PE_UPS t2,CE_DEVICE_PE_SWITCH_POWER t3,CE_DEVICE_PE_POWER_GENERATION t4,CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t5,CE_DEVICE_PE_HIGH_DISTRIBUTION t6
-					where t2.int_id = t1.ralated_power_device or t3.int_id = t1.ralated_power_device or t4.int_id = t1.ralated_power_device or t5.int_id = t1.ralated_power_device or t6.int_id = t1.ralated_power_device or))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003731, '空调关联型字段核查', 'pe03or12',3731,907001520, '动环',11, null,
+					where t2.int_id = t1.ralated_power_device or t3.int_id = t1.ralated_power_device or t4.int_id = t1.ralated_power_device or t5.int_id = t1.ralated_power_device or t6.int_id = t1.ralated_power_device or))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001519,1, null),
+(907003731, '空调关联型字段核查', 'pe03or12',3731,907001520, '动环',11, null,
 'update CE_DEVICE_PE_AIR t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or12%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or12''
@@ -12208,10 +9798,8 @@ values (907003731, '空调关联型字段核查', 'pe03or12',3731,907001520, '�
                                              when dims_col_rtName is null then ''不满足规范:空调关联型字段核查''
                                              else dims_col_rtName||'',空调关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003732, '节能设备关联型字段核查', 'pe03or13',3732,907001521, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,1, null),
+(907003732, '节能设备关联型字段核查', 'pe03or13',3732,907001521, '动环',11, null,
 'update CE_DEVICE_PE_ENERY_SAVE t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or13%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or13''
@@ -12220,10 +9808,8 @@ values (907003732, '节能设备关联型字段核查', 'pe03or13',3732,90700152
                                              when dims_col_rtName is null then ''不满足规范:节能设备关联型字段核查''
                                              else dims_col_rtName||'',节能设备关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003733, '动环监控关联型字段核查', 'pe03or14',3733,907001522, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001521,1, null),
+(907003733, '动环监控关联型字段核查', 'pe03or14',3733,907001522, '动环',11, null,
 'update CE_DEVICE_PE_POWER_MONITOR t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or14%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or14''
@@ -12232,10 +9818,8 @@ values (907003733, '动环监控关联型字段核查', 'pe03or14',3733,90700152
                                              when dims_col_rtName is null then ''不满足规范:动环监控关联型字段核查''
                                              else dims_col_rtName||'',动环监控关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003734, '智能电表关联型字段核查', 'pe03or15',3734,907001523, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001522,1, null),
+(907003734, '智能电表关联型字段核查', 'pe03or15',3734,907001523, '动环',11, null,
 'update CE_DEVICE_PE_SMART_METER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or15%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or15''
@@ -12244,10 +9828,9 @@ values (907003734, '智能电表关联型字段核查', 'pe03or15',3734,90700152
                                              when dims_col_rtName is null then ''不满足规范:智能电表关联型字段核查''
                                              else dims_col_rtName||'',智能电表关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null);
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001523,1, null),
 					
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003735, '其他设备关联型字段核查', 'pe03or16',3735,907001526, '动环',11, null,
+(907003735, '其他设备关联型字段核查', 'pe03or16',3735,907001526, '动环',11, null,
 'update CE_DEVICE_PE_OTHER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or16%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or16''
@@ -12256,10 +9839,8 @@ values (907003735, '其他设备关联型字段核查', 'pe03or16',3735,90700152
                                              when dims_col_rtName is null then ''不满足规范:其他设备关联型字段核查''
                                              else dims_col_rtName||'',其他设备关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003736, '高压配电系统关联型字段核查', 'pe03or17',3736,907001505, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001526,1, null),
+(907003736, '高压配电系统关联型字段核查', 'pe03or17',3736,907001505, '动环',11, null,
 'update CE_NET_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or17%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or17''
@@ -12268,10 +9849,8 @@ values (907003736, '高压配电系统关联型字段核查', 'pe03or17',3736,90
                                              when dims_col_rtName is null then ''不满足规范:高压配电系统关联型字段核查''
                                              else dims_col_rtName||'',高压配电系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003737, '高压直流电源系统关联型字段核查', 'pe03or18',3737,907001507, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001505,1, null),
+(907003737, '高压直流电源系统关联型字段核查', 'pe03or18',3737,907001507, '动环',11, null,
 'update CE_NET_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or18%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or18''
@@ -12280,10 +9859,8 @@ values (907003737, '高压直流电源系统关联型字段核查', 'pe03or18',3
                                              when dims_col_rtName is null then ''不满足规范:高压直流电源系统关联型字段核查''
                                              else dims_col_rtName||'',高压直流电源系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003738, '低压配电系统关联型字段核查', 'pe03or19',3738,907001510, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001507,1, null),
+(907003738, '低压配电系统关联型字段核查', 'pe03or19',3738,907001510, '动环',11, null,
 'update CE_NET_PE_LOW_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or19%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or19''
@@ -12292,10 +9869,8 @@ values (907003738, '低压配电系统关联型字段核查', 'pe03or19',3738,90
                                              when dims_col_rtName is null then ''不满足规范:低压配电系统关联型字段核查''
                                              else dims_col_rtName||'',低压配电系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003739, '发电系统关联型字段核查', 'pe03or20',3739,907001512, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001510,1, null),
+(907003739, '发电系统关联型字段核查', 'pe03or20',3739,907001512, '动环',11, null,
 'update CE_NET_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or20%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or20''
@@ -12304,10 +9879,8 @@ values (907003739, '发电系统关联型字段核查', 'pe03or20',3739,90700151
                                              when dims_col_rtName is null then ''不满足规范:发电系统关联型字段核查''
                                              else dims_col_rtName||'',发电系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003740, '开关电源系统关联型字段核查', 'pe03or21',3740,907001514, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001512,1, null),
+(907003740, '开关电源系统关联型字段核查', 'pe03or21',3740,907001514, '动环',11, null,
 'update CE_NET_PE_OPEN_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or21%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or21''
@@ -12316,10 +9889,9 @@ values (907003740, '开关电源系统关联型字段核查', 'pe03or21',3740,90
                                              when dims_col_rtName is null then ''不满足规范:开关电源系统关联型字段核查''
                                              else dims_col_rtName||'',开关电源系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null);
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001514,1, null),
 					
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003741, 'UPS系统关联型字段核查', 'pe03or22',3741,907001517, '动环',11, null,
+(907003741, 'UPS系统关联型字段核查', 'pe03or22',3741,907001517, '动环',11, null,
 'update CE_NET_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or22%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or22''
@@ -12328,10 +9900,8 @@ values (907003741, 'UPS系统关联型字段核查', 'pe03or22',3741,907001517, 
                                              when dims_col_rtName is null then ''不满足规范:UPS系统关联型字段核查''
                                              else dims_col_rtName||'',UPS系统关联型字段核查'' end)
                  where (isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)) 
-				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003742, '动环专业内输出分路关联型字段核查', 'pe03or23',3742,907001524, '动环',11, null,
+				    or (isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001517,1, null),	
+(907003742, '动环专业内输出分路关联型字段核查', 'pe03or23',3742,907001524, '动环',11, null,
 'update CE_LINK_PE_IN t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or23%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or23''
@@ -12353,10 +9923,9 @@ values (907003742, '动环专业内输出分路关联型字段核查', 'pe03or23
 					or t3.int_id = t1.down_device_name or t4.int_id = t1.down_device_name or t5.int_id = t1.down_device_name or t6.int_id = t1.down_device_name or t7.int_id = t1.down_device_name or t8.int_id = t1.down_device_name 
 					or t9.int_id = t1.down_device_name or t10.int_id = t1.down_device_name or t11.int_id = t1.down_device_name or t12.int_id = t1.down_device_name or t13.int_id = t1.down_device_name or t14.int_id = t1.down_device_name
 					or t15.int_id = t1.down_device_name or t16.int_id = t1.down_device_name or t17.int_id = t1.down_device_name)) 
-					or (isNotNull(t1.down_device_ralated_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.down_device_ralated_room))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null);	
+					or (isNotNull(t1.down_device_ralated_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.down_device_ralated_room))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001524,1, null),	
 --todo 907003743
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003743, '跨专业输出分路关联型字段核查', 'pe03or24',3743,907001525, '动环',11, null,
+(907003743, '跨专业输出分路关联型字段核查', 'pe03or24',3743,907001525, '动环',11, null,
 'update CE_LINK_PE_OUT t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or24%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or24''
@@ -12379,10 +9948,8 @@ values (907003743, '跨专业输出分路关联型字段核查', 'pe03or24',3743
 					or t9.int_id = t1.down_device_name or t10.int_id = t1.down_device_name or t11.int_id = t1.down_device_name or t12.int_id = t1.down_device_name or t13.int_id = t1.down_device_name or t14.int_id = t1.down_device_name
 					or t15.int_id = t1.down_device_name or t16.int_id = t1.down_device_name or t17.int_id = t1.down_device_name)) 
 					or (isNotNull(t1.down_device_ralated_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.down_device_ralated_room))
-					or (isNotNull(t1.down_device_related_rack) and not exists(select 1 from RM_AREA_RACKPOS t2 where t2.int_id = t1.down_device_related_rack))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,2, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003744, '位置点动环属性关联型字段核查', 'pe03or25',3744,907001501, '动环',11, null,
+					or (isNotNull(t1.down_device_related_rack) and not exists(select 1 from RM_AREA_RACKPOS t2 where t2.int_id = t1.down_device_related_rack))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001525,2, null),	
+(907003744, '位置点动环属性关联型字段核查', 'pe03or25',3744,907001501, '动环',11, null,
 'update RM_SITE_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or25%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or25''
@@ -12390,10 +9957,8 @@ values (907003744, '位置点动环属性关联型字段核查', 'pe03or25',3744
                        dims_col_rtName=(case when dims_col_rtName like ''%位置点动环属性关联型字段核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:位置点动环属性关联型字段核查''
                                              else dims_col_rtName||'',位置点动环属性关联型字段核查'' end)
-                 where (isNotNull(t1.zh_label) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.zh_label))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,2, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003745, '机房动环属性关联型字段核查', 'pe03or26',3745,907001502, '动环',11, null,
+                 where (isNotNull(t1.zh_label) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.zh_label))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001501,2, null),	
+(907003745, '机房动环属性关联型字段核查', 'pe03or26',3745,907001502, '动环',11, null,
 'update RM_ROOM_PROPERTY t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or26%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or26''
@@ -12402,10 +9967,8 @@ values (907003745, '机房动环属性关联型字段核查', 'pe03or26',3745,90
                                              when dims_col_rtName is null then ''不满足规范:机房动环属性关联型字段核查''
                                              else dims_col_rtName||'',机房动环属性关联型字段核查'' end)
                  where (isNotNull(t1.power_related_site_name) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.power_related_site_name))
-				    or (isNotNull(t1.zh_label) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.zh_label))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,2, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003746, '孤立设备（变压器）核查', 'pe03or27',3746,907001503, '动环',11, null,
+				    or (isNotNull(t1.zh_label) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.zh_label))',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001502,2, null),	
+(907003746, '孤立设备（变压器）核查', 'pe03or27',3746,907001503, '动环',11, null,
 'update CE_DEVICE_PE_TRANSFORM t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or27%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or27''
@@ -12414,10 +9977,9 @@ values (907003746, '孤立设备（变压器）核查', 'pe03or27',3746,90700150
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（变压器）核查''
                                              else dims_col_rtName||'',孤立设备（变压器）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,2, null);
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001503,2, null),
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003747, '孤立设备（变换设备）核查', 'pe03or28',3747,907001504, '动环',11, null,
+(907003747, '孤立设备（变换设备）核查', 'pe03or28',3747,907001504, '动环',11, null,
 'update CE_DECIVE_PE_TRANSFORM_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or28%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or28''
@@ -12426,10 +9988,9 @@ values (907003747, '孤立设备（变换设备）核查', 'pe03or28',3747,90700
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（变换设备）核查''
                                              else dims_col_rtName||'',孤立设备（变换设备）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,2, null);
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001504,2, null),
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003748, '孤立设备（高压配电）核查', 'pe03or29',3748,907001506, '动环',11, null,
+(907003748, '孤立设备（高压配电）核查', 'pe03or29',3748,907001506, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or29%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or29''
@@ -12438,10 +9999,9 @@ values (907003748, '孤立设备（高压配电）核查', 'pe03or29',3748,90700
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（高压配电）核查''
                                              else dims_col_rtName||'',孤立设备（高压配电）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,2, null);
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001506,2, null),
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003749, '孤立设备（高压直流电源）核查', 'pe03or30',3749,907001508, '动环',11, null,
+(907003749, '孤立设备（高压直流电源）核查', 'pe03or30',3749,907001508, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or30%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or30''
@@ -12450,10 +10010,9 @@ values (907003749, '孤立设备（高压直流电源）核查', 'pe03or30',3749
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（高压直流电源）核查''
                                              else dims_col_rtName||'',孤立设备（高压直流电源）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,2, null);
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001508,2, null),
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003750, '孤立设备（高压直流配电）核查', 'pe03or31',3750,907001509, '动环',11, null,
+(907003750, '孤立设备（高压直流配电）核查', 'pe03or31',3750,907001509, '动环',11, null,
 'update CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or31%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or31''
@@ -12462,10 +10021,8 @@ values (907003750, '孤立设备（高压直流配电）核查', 'pe03or31',3750
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（高压直流配电）核查''
                                              else dims_col_rtName||'',孤立设备（高压直流配电）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,2, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003751, '孤立设备（低压交流配电）核查', 'pe03or32',3751,907001511, '动环',11, null,
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001509,2, null),
+(907003751, '孤立设备（低压交流配电）核查', 'pe03or32',3751,907001511, '动环',11, null,
 'update CE_DEVICE_PE_LOW_AC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or32%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or32''
@@ -12474,10 +10031,8 @@ values (907003751, '孤立设备（低压交流配电）核查', 'pe03or32',3751
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（低压交流配电）核查''
                                              else dims_col_rtName||'',孤立设备（低压交流配电）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,2, null);
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003752, '孤立设备（开关电源）核查', 'pe03or33',3752,907001515, '动环',11, null,
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001511,2, null),
+(907003752, '孤立设备（开关电源）核查', 'pe03or33',3752,907001515, '动环',11, null,
 'update CE_DEVICE_PE_SWITCH_POWER t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or33%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or33''
@@ -12486,10 +10041,9 @@ values (907003752, '孤立设备（开关电源）核查', 'pe03or33',3752,90700
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（开关电源）核查''
                                              else dims_col_rtName||'',孤立设备（开关电源）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,2, null);
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001515,2, null),
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003753, '孤立设备（低压直流配电）核查', 'pe03or34',3753,907001516, '动环',11, null,
+(907003753, '孤立设备（低压直流配电）核查', 'pe03or34',3753,907001516, '动环',11, null,
 'update CE_DEVICE_PE_LOW_DC_DISTRIBUTION t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or34%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or34''
@@ -12498,10 +10052,9 @@ values (907003753, '孤立设备（低压直流配电）核查', 'pe03or34',3753
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（低压直流配电）核查''
                                              else dims_col_rtName||'',孤立设备（低压直流配电）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,2, null);				 
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001516,2, null),				 
 				 
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003754, '孤立设备（UPS设备）核查', 'pe03or35',3754,907001518, '动环',11, null,
+(907003754, '孤立设备（UPS设备）核查', 'pe03or35',3754,907001518, '动环',11, null,
 'update CE_DEVICE_PE_UPS t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or35%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or35''
@@ -12510,10 +10063,8 @@ values (907003754, '孤立设备（UPS设备）核查', 'pe03or35',3754,90700151
                                              when dims_col_rtName is null then ''不满足规范:孤立设备（UPS设备）核查''
                                              else dims_col_rtName||'',孤立设备（UPS设备）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
-				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,2, null);	
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO)
-values (907003755, '孤立设备（空调）核查', 'pe03or36',3755,907001520, '动环',11, null,
+				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001518,2, null),	
+(907003755, '孤立设备（空调）核查', 'pe03or36',3755,907001520, '动环',11, null,
 'update CE_DEVICE_PE_AIR t1
                    set dims_col_result=(case when dims_col_result like ''%pe03or36%'' then dims_col_result
                                              when dims_col_result is null then ''pe03or36''
@@ -12523,2271 +10074,778 @@ values (907003755, '孤立设备（空调）核查', 'pe03or36',3755,907001520, 
                                              else dims_col_rtName||'',孤立设备（空调）核查'' end)
                  where isNotNull(t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.related_device = t1.int_id) and not exists(select 1 from CE_LINK_PE_IN t2 where t2.down_device_name = t1.int_id)
 				 and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.related_device = t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',907001520,2, null);
-							 
-								 
+							 						 
 --插入动环 dims_idx_IndexCarrier
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004501, 907004490, 907003501, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004502, 907004490, 907003502, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004503, 907004490, 907003503, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004504, 907004490, 907003504, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004505, 907004490, 907003505, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004506, 907004490, 907003506, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004507, 907004490, 907003507, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004508, 907004490, 907003508, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004509, 907004490, 907003509, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004510, 907004490, 907003510, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004511, 907004490, 907003511, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004512, 907004490, 907003512, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004513, 907004490, 907003513, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004514, 907004490, 907003514, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004515, 907004490, 907003515, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004516, 907004490, 907003516, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004517, 907004490, 907003517, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004518, 907004490, 907003518, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004519, 907004490, 907003519, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004520, 907004490, 907003520, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004521, 907004490, 907003521, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004522, 907004490, 907003522, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004523, 907004490, 907003523, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004524, 907004490, 907003524, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004525, 907004490, 907003525, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004526, 907004490, 907003526, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004527, 907004490, 907003527, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004528, 907004490, 907003528, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004529, 907004490, 907003529, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004530, 907004491, 907003530, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004531, 907004491, 907003531, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004532, 907004491, 907003532, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004533, 907004491, 907003533, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004534, 907004491, 907003534, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004535, 907004491, 907003535, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004536, 907004491, 907003536, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004537, 907004491, 907003537, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004538, 907004491, 907003538, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004539, 907004491, 907003539, 'admin', 'admin', null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004540,907004491,907003540,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004541,907004491,907003541,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004542,907004491,907003542,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004543,907004491,907003543,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004544,907004491,907003544,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004545,907004491,907003545,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004546,907004491,907003546,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004547,907004491,907003547,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004548,907004491,907003548,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004549,907004491,907003549,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004550,907004491,907003550,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004551,907004491,907003551,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004552,907004491,907003552,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004553,907004491,907003553,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004554,907004491,907003554,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004555,907004491,907003555,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004556,907004491,907003556,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004557,907004491,907003557,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004558,907004491,907003558,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004559,907004491,907003559,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004560,907004491,907003560,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004561,907004491,907003561,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004562,907004491,907003562,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004563,907004491,907003563,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004564,907004491,907003564,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004565,907004491,907003565,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004566,907004491,907003566,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004567,907004491,907003567,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004568,907004491,907003568,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004569,907004491,907003569,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004570,907004491,907003570,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004571,907004491,907003571,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004572,907004491,907003572,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004573,907004491,907003573,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004574,907004491,907003574,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004575,907004491,907003575,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004576,907004491,907003576,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004577,907004491,907003577,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004578,907004491,907003578,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004579,907004491,907003579,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004580,907004491,907003580,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004581,907004491,907003581,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004582,907004491,907003582,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004583,907004491,907003583,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004584,907004491,907003584,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004585,907004491,907003585,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004586,907004491,907003586,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004587,907004491,907003587,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004588,907004491,907003588,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004589,907004491,907003589,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004590,907004491,907003590,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004591,907004491,907003591,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004592,907004491,907003592,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004593,907004491,907003593,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004594,907004491,907003594,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004595,907004491,907003595,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004596,907004491,907003596,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004597,907004491,907003597,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004598,907004491,907003598,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004599,907004491,907003599,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004600,907004491,907003600,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004601,907004491,907003601,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004602,907004491,907003602,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004603,907004491,907003603,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004604,907004491,907003604,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004605,907004491,907003605,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004606,907004491,907003606,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004607,907004491,907003607,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004608,907004491,907003608,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004609,907004491,907003609,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004610,907004491,907003610,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004611,907004491,907003611,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004612,907004491,907003612,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004613,907004491,907003613,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004614,907004491,907003614,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004615,907004491,907003615,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004616,907004491,907003616,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004617,907004491,907003617,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004618,907004491,907003618,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004619,907004491,907003619,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004620,907004491,907003620,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004621,907004491,907003621,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004622,907004491,907003622,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004623,907004491,907003623,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004624,907004491,907003624,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004625,907004491,907003625,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004626,907004491,907003626,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004627,907004491,907003627,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004628,907004491,907003628,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004629,907004491,907003629,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004630,907004491,907003630,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004631,907004491,907003631,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004632,907004491,907003632,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004633,907004491,907003633,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004634,907004491,907003634,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004635,907004491,907003635,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004636,907004491,907003636,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004637,907004491,907003637,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004638,907004491,907003638,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004639,907004491,907003639,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004640,907004491,907003640,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004641,907004491,907003641,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004642,907004491,907003642,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004643,907004491,907003643,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004644,907004491,907003644,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004645,907004491,907003645,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004646,907004491,907003646,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004647,907004491,907003647,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004648,907004491,907003648,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004649,907004491,907003649,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004650,907004491,907003650,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004651,907004491,907003651,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004652,907004491,907003652,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004653,907004491,907003653,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004654,907004491,907003654,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004655,907004491,907003655,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004656,907004491,907003656,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004657,907004491,907003657,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004658,907004491,907003658,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004659,907004491,907003659,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004660,907004491,907003660,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004661,907004491,907003661,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004662,907004491,907003662,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004663,907004491,907003663,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004664,907004491,907003664,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004665,907004491,907003665,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004666,907004491,907003666,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004667,907004491,907003667,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004668,907004491,907003668,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004669,907004491,907003669,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004670,907004491,907003670,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004671,907004491,907003671,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004672,907004491,907003672,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004673,907004491,907003673,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004674,907004491,907003674,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004675,907004491,907003675,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004676,907004491,907003676,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004677,907004491,907003677,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004678,907004491,907003678,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004679,907004491,907003679,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004680,907004491,907003680,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004681,907004491,907003681,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004682,907004491,907003682,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004683,907004491,907003683,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004684,907004491,907003684,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004685,907004491,907003685,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004686,907004491,907003686,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004687,907004491,907003687,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004688,907004491,907003688,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004689,907004491,907003689,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004690,907004491,907003690,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004691,907004491,907003691,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004692,907004491,907003692,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004693,907004491,907003693,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004694,907004491,907003694,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004695,907004491,907003695,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004696,907004491,907003696,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004697,907004491,907003697,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004698,907004491,907003698,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004699,907004491,907003699,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004700,907004491,907003700,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004701,907004491,907003701,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004702,907004491,907003702,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004703,907004491,907003703,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004704,907004491,907003704,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004705,907004491,907003705,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004706,907004491,907003706,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004707,907004491,907003707,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004708,907004491,907003708,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004709,907004491,907003709,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004710,907004491,907003710,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004711,907004491,907003711,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004712,907004491,907003712,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004713,907004491,907003713,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004714,907004491,907003714,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004715,907004491,907003715,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004716,907004491,907003716,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004717,907004491,907003717,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004718,907004491,907003718,'admin','admin',null);
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
-values (907004719,907004491,907003719,'admin','admin',null);
-
-
-
-
-
-
-
-
-
-
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values 
+(907004501, 907004490, 907003501, 'admin', 'admin', null),
+(907004502, 907004490, 907003502, 'admin', 'admin', null),
+(907004503, 907004490, 907003503, 'admin', 'admin', null),
+(907004504, 907004490, 907003504, 'admin', 'admin', null),
+(907004505, 907004490, 907003505, 'admin', 'admin', null),
+(907004506, 907004490, 907003506, 'admin', 'admin', null),
+(907004507, 907004490, 907003507, 'admin', 'admin', null),
+(907004508, 907004490, 907003508, 'admin', 'admin', null),
+(907004509, 907004490, 907003509, 'admin', 'admin', null),
+(907004510, 907004490, 907003510, 'admin', 'admin', null),
+(907004511, 907004490, 907003511, 'admin', 'admin', null),
+(907004512, 907004490, 907003512, 'admin', 'admin', null),
+(907004513, 907004490, 907003513, 'admin', 'admin', null),
+(907004514, 907004490, 907003514, 'admin', 'admin', null),
+(907004515, 907004490, 907003515, 'admin', 'admin', null),
+(907004516, 907004490, 907003516, 'admin', 'admin', null),
+(907004517, 907004490, 907003517, 'admin', 'admin', null),
+(907004518, 907004490, 907003518, 'admin', 'admin', null),
+(907004519, 907004490, 907003519, 'admin', 'admin', null),
+(907004520, 907004490, 907003520, 'admin', 'admin', null),
+(907004521, 907004490, 907003521, 'admin', 'admin', null),
+(907004522, 907004490, 907003522, 'admin', 'admin', null),
+(907004523, 907004490, 907003523, 'admin', 'admin', null),
+(907004524, 907004490, 907003524, 'admin', 'admin', null),
+(907004525, 907004490, 907003525, 'admin', 'admin', null),
+(907004526, 907004490, 907003526, 'admin', 'admin', null),
+(907004527, 907004490, 907003527, 'admin', 'admin', null),
+(907004528, 907004490, 907003528, 'admin', 'admin', null),
+(907004529, 907004490, 907003529, 'admin', 'admin', null),
+(907004530, 907004491, 907003530, 'admin', 'admin', null),
+(907004531, 907004491, 907003531, 'admin', 'admin', null),
+(907004532, 907004491, 907003532, 'admin', 'admin', null),
+(907004533, 907004491, 907003533, 'admin', 'admin', null),
+(907004534, 907004491, 907003534, 'admin', 'admin', null),
+(907004535, 907004491, 907003535, 'admin', 'admin', null),
+(907004536, 907004491, 907003536, 'admin', 'admin', null),
+(907004537, 907004491, 907003537, 'admin', 'admin', null),
+(907004538, 907004491, 907003538, 'admin', 'admin', null),
+(907004539, 907004491, 907003539, 'admin', 'admin', null),
+(907004540,907004491,907003540,'admin','admin',null),
+(907004541,907004491,907003541,'admin','admin',null),
+(907004542,907004491,907003542,'admin','admin',null),
+(907004543,907004491,907003543,'admin','admin',null),
+(907004544,907004491,907003544,'admin','admin',null),
+(907004545,907004491,907003545,'admin','admin',null),
+(907004546,907004491,907003546,'admin','admin',null),
+(907004547,907004491,907003547,'admin','admin',null),
+(907004548,907004491,907003548,'admin','admin',null),
+(907004549,907004491,907003549,'admin','admin',null),
+(907004550,907004491,907003550,'admin','admin',null),
+(907004551,907004491,907003551,'admin','admin',null),
+(907004552,907004491,907003552,'admin','admin',null),
+(907004553,907004491,907003553,'admin','admin',null),
+(907004554,907004491,907003554,'admin','admin',null),
+(907004555,907004491,907003555,'admin','admin',null),
+(907004556,907004491,907003556,'admin','admin',null),
+(907004557,907004491,907003557,'admin','admin',null),
+(907004558,907004491,907003558,'admin','admin',null),
+(907004559,907004491,907003559,'admin','admin',null),
+(907004560,907004491,907003560,'admin','admin',null),
+(907004561,907004491,907003561,'admin','admin',null),
+(907004562,907004491,907003562,'admin','admin',null),
+(907004563,907004491,907003563,'admin','admin',null),
+(907004564,907004491,907003564,'admin','admin',null),
+(907004565,907004491,907003565,'admin','admin',null),
+(907004566,907004491,907003566,'admin','admin',null),
+(907004567,907004491,907003567,'admin','admin',null),
+(907004568,907004491,907003568,'admin','admin',null),
+(907004569,907004491,907003569,'admin','admin',null),
+(907004570,907004491,907003570,'admin','admin',null),
+(907004571,907004491,907003571,'admin','admin',null),
+(907004572,907004491,907003572,'admin','admin',null),
+(907004573,907004491,907003573,'admin','admin',null),
+(907004574,907004491,907003574,'admin','admin',null),
+(907004575,907004491,907003575,'admin','admin',null),
+(907004576,907004491,907003576,'admin','admin',null),
+(907004577,907004491,907003577,'admin','admin',null),
+(907004578,907004491,907003578,'admin','admin',null),
+(907004579,907004491,907003579,'admin','admin',null),
+(907004580,907004491,907003580,'admin','admin',null),
+(907004581,907004491,907003581,'admin','admin',null),
+(907004582,907004491,907003582,'admin','admin',null),
+(907004583,907004491,907003583,'admin','admin',null),
+(907004584,907004491,907003584,'admin','admin',null),
+(907004585,907004491,907003585,'admin','admin',null),
+(907004586,907004491,907003586,'admin','admin',null),
+(907004587,907004491,907003587,'admin','admin',null),
+(907004588,907004491,907003588,'admin','admin',null),
+(907004589,907004491,907003589,'admin','admin',null),
+(907004590,907004491,907003590,'admin','admin',null),
+(907004591,907004491,907003591,'admin','admin',null),
+(907004592,907004491,907003592,'admin','admin',null),
+(907004593,907004491,907003593,'admin','admin',null),
+(907004594,907004491,907003594,'admin','admin',null),
+(907004595,907004491,907003595,'admin','admin',null),
+(907004596,907004491,907003596,'admin','admin',null),
+(907004597,907004491,907003597,'admin','admin',null),
+(907004598,907004491,907003598,'admin','admin',null),
+(907004599,907004491,907003599,'admin','admin',null),
+(907004600,907004491,907003600,'admin','admin',null),
+(907004601,907004491,907003601,'admin','admin',null),
+(907004602,907004491,907003602,'admin','admin',null),
+(907004603,907004491,907003603,'admin','admin',null),
+(907004604,907004491,907003604,'admin','admin',null),
+(907004605,907004491,907003605,'admin','admin',null),
+(907004606,907004491,907003606,'admin','admin',null),
+(907004607,907004491,907003607,'admin','admin',null),
+(907004608,907004491,907003608,'admin','admin',null),
+(907004609,907004491,907003609,'admin','admin',null),
+(907004610,907004491,907003610,'admin','admin',null),
+(907004611,907004491,907003611,'admin','admin',null),
+(907004612,907004491,907003612,'admin','admin',null),
+(907004613,907004491,907003613,'admin','admin',null),
+(907004614,907004491,907003614,'admin','admin',null),
+(907004615,907004491,907003615,'admin','admin',null),
+(907004616,907004491,907003616,'admin','admin',null),
+(907004617,907004491,907003617,'admin','admin',null),
+(907004618,907004491,907003618,'admin','admin',null),
+(907004619,907004491,907003619,'admin','admin',null),
+(907004620,907004491,907003620,'admin','admin',null),
+(907004621,907004491,907003621,'admin','admin',null),
+(907004622,907004491,907003622,'admin','admin',null),
+(907004623,907004491,907003623,'admin','admin',null),
+(907004624,907004491,907003624,'admin','admin',null),
+(907004625,907004491,907003625,'admin','admin',null),
+(907004626,907004491,907003626,'admin','admin',null),
+(907004627,907004491,907003627,'admin','admin',null),
+(907004628,907004491,907003628,'admin','admin',null),
+(907004629,907004491,907003629,'admin','admin',null),
+(907004630,907004491,907003630,'admin','admin',null),
+(907004631,907004491,907003631,'admin','admin',null),
+(907004632,907004491,907003632,'admin','admin',null),
+(907004633,907004491,907003633,'admin','admin',null),
+(907004634,907004491,907003634,'admin','admin',null),
+(907004635,907004491,907003635,'admin','admin',null),
+(907004636,907004491,907003636,'admin','admin',null),
+(907004637,907004491,907003637,'admin','admin',null),
+(907004638,907004491,907003638,'admin','admin',null),
+(907004639,907004491,907003639,'admin','admin',null),
+(907004640,907004491,907003640,'admin','admin',null),
+(907004641,907004491,907003641,'admin','admin',null),
+(907004642,907004491,907003642,'admin','admin',null),
+(907004643,907004491,907003643,'admin','admin',null),
+(907004644,907004491,907003644,'admin','admin',null),
+(907004645,907004491,907003645,'admin','admin',null),
+(907004646,907004491,907003646,'admin','admin',null),
+(907004647,907004491,907003647,'admin','admin',null),
+(907004648,907004491,907003648,'admin','admin',null),
+(907004649,907004491,907003649,'admin','admin',null),
+(907004650,907004491,907003650,'admin','admin',null),
+(907004651,907004491,907003651,'admin','admin',null),
+(907004652,907004491,907003652,'admin','admin',null),
+(907004653,907004491,907003653,'admin','admin',null),
+(907004654,907004491,907003654,'admin','admin',null),
+(907004655,907004491,907003655,'admin','admin',null),
+(907004656,907004491,907003656,'admin','admin',null),
+(907004657,907004491,907003657,'admin','admin',null),
+(907004658,907004491,907003658,'admin','admin',null),
+(907004659,907004491,907003659,'admin','admin',null),
+(907004660,907004491,907003660,'admin','admin',null),
+(907004661,907004491,907003661,'admin','admin',null),
+(907004662,907004491,907003662,'admin','admin',null),
+(907004663,907004491,907003663,'admin','admin',null),
+(907004664,907004491,907003664,'admin','admin',null),
+(907004665,907004491,907003665,'admin','admin',null),
+(907004666,907004491,907003666,'admin','admin',null),
+(907004667,907004491,907003667,'admin','admin',null),
+(907004668,907004491,907003668,'admin','admin',null),
+(907004669,907004491,907003669,'admin','admin',null),
+(907004670,907004491,907003670,'admin','admin',null),
+(907004671,907004491,907003671,'admin','admin',null),
+(907004672,907004491,907003672,'admin','admin',null),
+(907004673,907004491,907003673,'admin','admin',null),
+(907004674,907004491,907003674,'admin','admin',null),
+(907004675,907004491,907003675,'admin','admin',null),
+(907004676,907004491,907003676,'admin','admin',null),
+(907004677,907004491,907003677,'admin','admin',null),
+(907004678,907004491,907003678,'admin','admin',null),
+(907004679,907004491,907003679,'admin','admin',null),
+(907004680,907004491,907003680,'admin','admin',null),
+(907004681,907004491,907003681,'admin','admin',null),
+(907004682,907004491,907003682,'admin','admin',null),
+(907004683,907004491,907003683,'admin','admin',null),
+(907004684,907004491,907003684,'admin','admin',null),
+(907004685,907004491,907003685,'admin','admin',null),
+(907004686,907004491,907003686,'admin','admin',null),
+(907004687,907004491,907003687,'admin','admin',null),
+(907004688,907004491,907003688,'admin','admin',null),
+(907004689,907004491,907003689,'admin','admin',null),
+(907004690,907004491,907003690,'admin','admin',null),
+(907004691,907004491,907003691,'admin','admin',null),
+(907004692,907004491,907003692,'admin','admin',null),
+(907004693,907004491,907003693,'admin','admin',null),
+(907004694,907004491,907003694,'admin','admin',null),
+(907004695,907004491,907003695,'admin','admin',null),
+(907004696,907004491,907003696,'admin','admin',null),
+(907004697,907004491,907003697,'admin','admin',null),
+(907004698,907004491,907003698,'admin','admin',null),
+(907004699,907004491,907003699,'admin','admin',null),
+(907004700,907004491,907003700,'admin','admin',null),
+(907004701,907004491,907003701,'admin','admin',null),
+(907004702,907004491,907003702,'admin','admin',null),
+(907004703,907004491,907003703,'admin','admin',null),
+(907004704,907004491,907003704,'admin','admin',null),
+(907004705,907004491,907003705,'admin','admin',null),
+(907004706,907004491,907003706,'admin','admin',null),
+(907004707,907004491,907003707,'admin','admin',null),
+(907004708,907004491,907003708,'admin','admin',null),
+(907004709,907004491,907003709,'admin','admin',null),
+(907004710,907004491,907003710,'admin','admin',null),
+(907004711,907004491,907003711,'admin','admin',null),
+(907004712,907004491,907003712,'admin','admin',null),
+(907004713,907004491,907003713,'admin','admin',null),
+(907004714,907004491,907003714,'admin','admin',null),
+(907004715,907004491,907003715,'admin','admin',null),
+(907004716,907004491,907003716,'admin','admin',null),
+(907004717,907004491,907003717,'admin','admin',null),
+(907004718,907004491,907003718,'admin','admin',null),
+(907004719,907004491,907003719,'admin','admin',null);
 --插入动环 dims_idx_rule
 --变压器必填完整性核查 CE_DEVICE_PE_TRANSFORM
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006001, '变压器必填完整性核查.资源标识', 'CE_DEVICE_PE_TRANSFORM.int_id', 907003501, 907001824, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006002, '变压器必填完整性核查.所属站点', 'CE_DEVICE_PE_TRANSFORM.related_site', 907003501, 907001828, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006003, '变压器必填完整性核查.所属机房', 'CE_DEVICE_PE_TRANSFORM.related_room', 907003501, 907001829, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006004, '变压器必填完整性核查.设备类型', 'CE_DEVICE_PE_TRANSFORM.device_type', 907003501, 907001830, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006005, '变压器必填完整性核查.设备子类', 'CE_DEVICE_PE_TRANSFORM.device_subclass', 907003501, 907001831, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006006, '变压器必填完整性核查.设备名称', 'CE_DEVICE_PE_TRANSFORM.zh_label', 907003501, 907001832, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006007, '变压器必填完整性核查.设备编码', 'CE_DEVICE_PE_TRANSFORM.device_code', 907003501, 907001833, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006008, '变压器必填完整性核查.设备型号', 'CE_DEVICE_PE_TRANSFORM.product_name', 907003501, 907001834, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006009, '变压器必填完整性核查.设备厂家', 'CE_DEVICE_PE_TRANSFORM.vendor_id', 907003501, 907001835, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006010, '变压器必填完整性核查.开始使用时间', 'CE_DEVICE_PE_TRANSFORM.start_time', 907003501, 907001840, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006011, '变压器必填完整性核查.预计报废时间', 'CE_DEVICE_PE_TRANSFORM.estimated_retirement_time', 907003501, 907001841, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006012, '变压器必填完整性核查.使用状态', 'CE_DEVICE_PE_TRANSFORM.lifecycle_status', 907003501, 907001842, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006013, '变压器必填完整性核查.维护责任人', 'CE_DEVICE_PE_TRANSFORM.maintainor', 907003501, 907001843, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006014, '变压器必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_TRANSFORM.qualitor', 907003501, 907001844, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006015, '变压器必填完整性核查.额定功率（KVA）', 'CE_DEVICE_PE_TRANSFORM.rated_power', 907003501, 907001836, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006016, '变压器必填完整性核查.输入额定电压（V）', 'CE_DEVICE_PE_TRANSFORM.input_rated_voltage', 907003501, 907001837, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006017, '变压器必填完整性核查.低压额定电流', 'CE_DEVICE_PE_TRANSFORM.low_reted_current', 907003501, 907001838, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006018, '变压器必填完整性核查.备份方式', 'CE_DEVICE_PE_TRANSFORM.backup_method', 907003501, 907001839, 2, null, null, 'admin', 'admin', null);
-
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+(907006001, '变压器必填完整性核查.资源标识', 'CE_DEVICE_PE_TRANSFORM.int_id', 907003501, 907001824, 2, null, null, 'admin', 'admin', null),
+(907006002, '变压器必填完整性核查.所属站点', 'CE_DEVICE_PE_TRANSFORM.related_site', 907003501, 907001828, 2, null, null, 'admin', 'admin', null),
+(907006003, '变压器必填完整性核查.所属机房', 'CE_DEVICE_PE_TRANSFORM.related_room', 907003501, 907001829, 2, null, null, 'admin', 'admin', null),
+(907006004, '变压器必填完整性核查.设备类型', 'CE_DEVICE_PE_TRANSFORM.device_type', 907003501, 907001830, 2, null, null, 'admin', 'admin', null),
+(907006005, '变压器必填完整性核查.设备子类', 'CE_DEVICE_PE_TRANSFORM.device_subclass', 907003501, 907001831, 2, null, null, 'admin', 'admin', null),
+(907006006, '变压器必填完整性核查.设备名称', 'CE_DEVICE_PE_TRANSFORM.zh_label', 907003501, 907001832, 2, null, null, 'admin', 'admin', null),
+(907006007, '变压器必填完整性核查.设备编码', 'CE_DEVICE_PE_TRANSFORM.device_code', 907003501, 907001833, 2, null, null, 'admin', 'admin', null),
+(907006008, '变压器必填完整性核查.设备型号', 'CE_DEVICE_PE_TRANSFORM.product_name', 907003501, 907001834, 2, null, null, 'admin', 'admin', null),
+(907006009, '变压器必填完整性核查.设备厂家', 'CE_DEVICE_PE_TRANSFORM.vendor_id', 907003501, 907001835, 2, null, null, 'admin', 'admin', null),
+(907006010, '变压器必填完整性核查.开始使用时间', 'CE_DEVICE_PE_TRANSFORM.start_time', 907003501, 907001840, 2, null, null, 'admin', 'admin', null),
+(907006011, '变压器必填完整性核查.预计报废时间', 'CE_DEVICE_PE_TRANSFORM.estimated_retirement_time', 907003501, 907001841, 2, null, null, 'admin', 'admin', null),
+(907006012, '变压器必填完整性核查.使用状态', 'CE_DEVICE_PE_TRANSFORM.lifecycle_status', 907003501, 907001842, 2, null, null, 'admin', 'admin', null),
+(907006013, '变压器必填完整性核查.维护责任人', 'CE_DEVICE_PE_TRANSFORM.maintainor', 907003501, 907001843, 2, null, null, 'admin', 'admin', null),
+(907006014, '变压器必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_TRANSFORM.qualitor', 907003501, 907001844, 2, null, null, 'admin', 'admin', null),
+(907006015, '变压器必填完整性核查.额定功率（KVA）', 'CE_DEVICE_PE_TRANSFORM.rated_power', 907003501, 907001836, 2, null, null, 'admin', 'admin', null),
+(907006016, '变压器必填完整性核查.输入额定电压（V）', 'CE_DEVICE_PE_TRANSFORM.input_rated_voltage', 907003501, 907001837, 2, null, null, 'admin', 'admin', null),
+(907006017, '变压器必填完整性核查.低压额定电流', 'CE_DEVICE_PE_TRANSFORM.low_reted_current', 907003501, 907001838, 2, null, null, 'admin', 'admin', null),
+(907006018, '变压器必填完整性核查.备份方式', 'CE_DEVICE_PE_TRANSFORM.backup_method', 907003501, 907001839, 2, null, null, 'admin', 'admin', null),
 --变换设备必填完整性核查 CE_DECIVE_PE_TRANSFORM_DEVICE
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006019, '变换设备必填完整性核查.资源标识', 'CE_DECIVE_PE_TRANSFORM_DEVICE.int_id', 907003502, 907001845, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006020, '变换设备必填完整性核查.所属站点', 'CE_DECIVE_PE_TRANSFORM_DEVICE.related_site', 907003502, 907001849, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006021, '变换设备必填完整性核查.所属机房', 'CE_DECIVE_PE_TRANSFORM_DEVICE.related_room', 907003502, 907001850, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006022, '变换设备必填完整性核查.设备类型', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_type', 907003502, 907001851, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006023, '变换设备必填完整性核查.设备子类', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_subclass', 907003502, 907001852, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006024, '变换设备必填完整性核查.设备名称', 'CE_DECIVE_PE_TRANSFORM_DEVICE.zh_label', 907003502, 907001853, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006025, '变换设备必填完整性核查.设备编码', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_code', 907003502, 907001854, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006026, '变换设备必填完整性核查.设备型号', 'CE_DECIVE_PE_TRANSFORM_DEVICE.product_name', 907003502, 907001855, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006027, '变换设备必填完整性核查.设备厂家', 'CE_DECIVE_PE_TRANSFORM_DEVICE.vendor_id', 907003502, 907001856, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006028, '变换设备必填完整性核查.开始使用时间', 'CE_DECIVE_PE_TRANSFORM_DEVICE.start_time', 907003502, 907001863, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006029, '变换设备必填完整性核查.预计报废时间', 'CE_DECIVE_PE_TRANSFORM_DEVICE.estimated_retirement_time', 907003502, 907001864, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006030, '变换设备必填完整性核查.使用状态', 'CE_DECIVE_PE_TRANSFORM_DEVICE.lifecycle_status', 907003502, 907001865, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006031, '变换设备必填完整性核查.维护责任人', 'CE_DECIVE_PE_TRANSFORM_DEVICE.maintainor', 907003502, 907001866, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006032, '变换设备必填完整性核查.数据质量责任人（移动）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.qualitor', 907003502, 907001867, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006033, '变换设备必填完整性核查.额定输入电压（V）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_input_voltage', 907003502, 907001857, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006034, '变换设备必填完整性核查.额定输出电压（V）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_output_voltage', 907003502, 907001858, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006035, '变换设备必填完整性核查.输出类型', 'CE_DECIVE_PE_TRANSFORM_DEVICE.output_type', 907003502, 907001859, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006036, '变换设备必填完整性核查.可装变换模块总数（块）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.total_loading_modules_number', 907003502, 907001860, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006037, '变换设备必填完整性核查.实配变换模块总数（块）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.total_match_modules_number', 907003502, 907001861, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006038, '变换设备必填完整性核查.单个模块额定输出电流（A)', 'CE_DECIVE_PE_TRANSFORM_DEVICE.single_module_output_current', 907003502, 907001862, 2, null, null, 'admin', 'admin', null);
-
+(907006019, '变换设备必填完整性核查.资源标识', 'CE_DECIVE_PE_TRANSFORM_DEVICE.int_id', 907003502, 907001845, 2, null, null, 'admin', 'admin', null),
+(907006020, '变换设备必填完整性核查.所属站点', 'CE_DECIVE_PE_TRANSFORM_DEVICE.related_site', 907003502, 907001849, 2, null, null, 'admin', 'admin', null),
+(907006021, '变换设备必填完整性核查.所属机房', 'CE_DECIVE_PE_TRANSFORM_DEVICE.related_room', 907003502, 907001850, 2, null, null, 'admin', 'admin', null),
+(907006022, '变换设备必填完整性核查.设备类型', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_type', 907003502, 907001851, 2, null, null, 'admin', 'admin', null),
+(907006023, '变换设备必填完整性核查.设备子类', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_subclass', 907003502, 907001852, 2, null, null, 'admin', 'admin', null),
+(907006024, '变换设备必填完整性核查.设备名称', 'CE_DECIVE_PE_TRANSFORM_DEVICE.zh_label', 907003502, 907001853, 2, null, null, 'admin', 'admin', null),
+(907006025, '变换设备必填完整性核查.设备编码', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_code', 907003502, 907001854, 2, null, null, 'admin', 'admin', null),
+(907006026, '变换设备必填完整性核查.设备型号', 'CE_DECIVE_PE_TRANSFORM_DEVICE.product_name', 907003502, 907001855, 2, null, null, 'admin', 'admin', null),
+(907006027, '变换设备必填完整性核查.设备厂家', 'CE_DECIVE_PE_TRANSFORM_DEVICE.vendor_id', 907003502, 907001856, 2, null, null, 'admin', 'admin', null),
+(907006028, '变换设备必填完整性核查.开始使用时间', 'CE_DECIVE_PE_TRANSFORM_DEVICE.start_time', 907003502, 907001863, 2, null, null, 'admin', 'admin', null),
+(907006029, '变换设备必填完整性核查.预计报废时间', 'CE_DECIVE_PE_TRANSFORM_DEVICE.estimated_retirement_time', 907003502, 907001864, 2, null, null, 'admin', 'admin', null),
+(907006030, '变换设备必填完整性核查.使用状态', 'CE_DECIVE_PE_TRANSFORM_DEVICE.lifecycle_status', 907003502, 907001865, 2, null, null, 'admin', 'admin', null),
+(907006031, '变换设备必填完整性核查.维护责任人', 'CE_DECIVE_PE_TRANSFORM_DEVICE.maintainor', 907003502, 907001866, 2, null, null, 'admin', 'admin', null),
+(907006032, '变换设备必填完整性核查.数据质量责任人（移动）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.qualitor', 907003502, 907001867, 2, null, null, 'admin', 'admin', null),
+(907006033, '变换设备必填完整性核查.额定输入电压（V）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_input_voltage', 907003502, 907001857, 2, null, null, 'admin', 'admin', null),
+(907006034, '变换设备必填完整性核查.额定输出电压（V）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_output_voltage', 907003502, 907001858, 2, null, null, 'admin', 'admin', null),
+(907006035, '变换设备必填完整性核查.输出类型', 'CE_DECIVE_PE_TRANSFORM_DEVICE.output_type', 907003502, 907001859, 2, null, null, 'admin', 'admin', null),
+(907006036, '变换设备必填完整性核查.可装变换模块总数（块）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.total_loading_modules_number', 907003502, 907001860, 2, null, null, 'admin', 'admin', null),
+(907006037, '变换设备必填完整性核查.实配变换模块总数（块）', 'CE_DECIVE_PE_TRANSFORM_DEVICE.total_match_modules_number', 907003502, 907001861, 2, null, null, 'admin', 'admin', null),
+(907006038, '变换设备必填完整性核查.单个模块额定输出电流（A)', 'CE_DECIVE_PE_TRANSFORM_DEVICE.single_module_output_current', 907003502, 907001862, 2, null, null, 'admin', 'admin', null),
 --高压配电必填完整性核查 CE_DEVICE_PE_HIGH_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006039, '高压配电必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.int_id', 907003503, 907001880, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006040, '高压配电必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_site', 907003503, 907001884, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006041, '高压配电必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_room', 907003503, 907001885, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006042, '高压配电必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_type', 907003503, 907001886, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006043, '高压配电必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_subclass', 907003503, 907001887, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006044, '高压配电必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.zh_label', 907003503, 907001888, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006045, '高压配电必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_code', 907003503, 907001889, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006046, '高压配电必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.product_name', 907003503, 907001890, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006047, '高压配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.vendor_id', 907003503, 907001891, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006048, '高压配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.start_time', 907003503, 907001894, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006049, '高压配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.estimated_retirement_time', 907003503, 907001895, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006050, '高压配电必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003503, 907001896, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006051, '高压配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.maintainor', 907003503, 907001897, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006052, '高压配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.qualitor', 907003503, 907001898, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006053, '高压配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.reted_capacity', 907003503, 907001893, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006054, '高压配电必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_system', 907003503, 907001892, 2, null, null, 'admin', 'admin', null);
-
+(907006039, '高压配电必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.int_id', 907003503, 907001880, 2, null, null, 'admin', 'admin', null),
+(907006040, '高压配电必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_site', 907003503, 907001884, 2, null, null, 'admin', 'admin', null),
+(907006041, '高压配电必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_room', 907003503, 907001885, 2, null, null, 'admin', 'admin', null),
+(907006042, '高压配电必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_type', 907003503, 907001886, 2, null, null, 'admin', 'admin', null),
+(907006043, '高压配电必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_subclass', 907003503, 907001887, 2, null, null, 'admin', 'admin', null),	   
+(907006044, '高压配电必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.zh_label', 907003503, 907001888, 2, null, null, 'admin', 'admin', null),	   
+(907006045, '高压配电必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_code', 907003503, 907001889, 2, null, null, 'admin', 'admin', null),	   
+(907006046, '高压配电必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.product_name', 907003503, 907001890, 2, null, null, 'admin', 'admin', null),	   
+(907006047, '高压配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.vendor_id', 907003503, 907001891, 2, null, null, 'admin', 'admin', null),	   
+(907006048, '高压配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.start_time', 907003503, 907001894, 2, null, null, 'admin', 'admin', null),	   
+(907006049, '高压配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.estimated_retirement_time', 907003503, 907001895, 2, null, null, 'admin', 'admin', null),
+(907006050, '高压配电必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003503, 907001896, 2, null, null, 'admin', 'admin', null),   
+(907006051, '高压配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.maintainor', 907003503, 907001897, 2, null, null, 'admin', 'admin', null),	   
+(907006052, '高压配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.qualitor', 907003503, 907001898, 2, null, null, 'admin', 'admin', null),	  
+(907006053, '高压配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.reted_capacity', 907003503, 907001893, 2, null, null, 'admin', 'admin', null),	  
+(907006054, '高压配电必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.related_system', 907003503, 907001892, 2, null, null, 'admin', 'admin', null),
 --高压直流电源必填完整性核查 CE_DEVICE_PE_HIGH_POWER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006055, '高压直流电源必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_POWER.int_id', 907003504, 907001911, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006056, '高压直流电源必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_POWER.related_site', 907003504, 907001915, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006057, '高压直流电源必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_POWER.related_room', 907003504, 907001916, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006058, '高压直流电源必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_POWER.device_type', 907003504, 907001917, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006059, '高压直流电源必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_POWER.device_subclass', 907003504, 907001918, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006060, '高压直流电源必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_POWER.zh_label', 907003504, 907001919, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006061, '高压直流电源必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_POWER.device_code', 907003504, 907001920, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006062, '高压直流电源必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_POWER.product_name', 907003504, 907001921, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006063, '高压直流电源必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_POWER.vendor_id', 907003504, 907001922, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006064, '高压直流电源必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_POWER.start_time', 907003504, 907001929, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006065, '高压直流电源必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_POWER.estimated_retirement_time', 907003504, 907001930, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006066, '高压直流电源必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_POWER.lifecycle_status', 907003504, 907001931, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006067, '高压直流电源必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_POWER.maintainor', 907003504, 907001932, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006068, '高压直流电源必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_POWER.qualitor', 907003504, 907001933, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006069, '高压直流电源必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_HIGH_POWER.rated_output_voltage', 907003504, 907001924, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006070, '高压直流电源必填完整性核查.监控模块型号', 'CE_DEVICE_PE_HIGH_POWER.monitoring_module_model', 907003504, 907001925, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006071, '高压直流电源必填完整性核查.本机架可装整流模块总数（块）', 'CE_DEVICE_PE_HIGH_POWER.total_rack_loading_modules_number', 907003504, 907001926, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006072, '高压直流电源必填完整性核查.本机架实配整流模块总数（块）', 'CE_DEVICE_PE_HIGH_POWER.total_rack_match_modules_number', 907003504, 907001927, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006073, '高压直流电源必填完整性核查.单个整流模块额定输出容量（A）', 'CE_DEVICE_PE_HIGH_POWER.signal_output_rated_capacity', 907003504, 907001928, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006074, '高压直流电源必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_POWER.related_system', 907003504, 907001923, 2, null, null, 'admin', 'admin', null);
-
+(907006055, '高压直流电源必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_POWER.int_id', 907003504, 907001911, 2, null, null, 'admin', 'admin', null),
+(907006056, '高压直流电源必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_POWER.related_site', 907003504, 907001915, 2, null, null, 'admin', 'admin', null),
+(907006057, '高压直流电源必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_POWER.related_room', 907003504, 907001916, 2, null, null, 'admin', 'admin', null),
+(907006058, '高压直流电源必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_POWER.device_type', 907003504, 907001917, 2, null, null, 'admin', 'admin', null),
+(907006059, '高压直流电源必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_POWER.device_subclass', 907003504, 907001918, 2, null, null, 'admin', 'admin', null),	   
+(907006060, '高压直流电源必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_POWER.zh_label', 907003504, 907001919, 2, null, null, 'admin', 'admin', null),	   
+(907006061, '高压直流电源必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_POWER.device_code', 907003504, 907001920, 2, null, null, 'admin', 'admin', null),   
+(907006062, '高压直流电源必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_POWER.product_name', 907003504, 907001921, 2, null, null, 'admin', 'admin', null),   
+(907006063, '高压直流电源必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_POWER.vendor_id', 907003504, 907001922, 2, null, null, 'admin', 'admin', null),	   
+(907006064, '高压直流电源必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_POWER.start_time', 907003504, 907001929, 2, null, null, 'admin', 'admin', null),	   
+(907006065, '高压直流电源必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_POWER.estimated_retirement_time', 907003504, 907001930, 2, null, null, 'admin', 'admin', null),
+(907006066, '高压直流电源必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_POWER.lifecycle_status', 907003504, 907001931, 2, null, null, 'admin', 'admin', null),   
+(907006067, '高压直流电源必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_POWER.maintainor', 907003504, 907001932, 2, null, null, 'admin', 'admin', null),   
+(907006068, '高压直流电源必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_POWER.qualitor', 907003504, 907001933, 2, null, null, 'admin', 'admin', null),  
+(907006069, '高压直流电源必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_HIGH_POWER.rated_output_voltage', 907003504, 907001924, 2, null, null, 'admin', 'admin', null), 
+(907006070, '高压直流电源必填完整性核查.监控模块型号', 'CE_DEVICE_PE_HIGH_POWER.monitoring_module_model', 907003504, 907001925, 2, null, null, 'admin', 'admin', null),  
+(907006071, '高压直流电源必填完整性核查.本机架可装整流模块总数（块）', 'CE_DEVICE_PE_HIGH_POWER.total_rack_loading_modules_number', 907003504, 907001926, 2, null, null, 'admin', 'admin', null),
+(907006072, '高压直流电源必填完整性核查.本机架实配整流模块总数（块）', 'CE_DEVICE_PE_HIGH_POWER.total_rack_match_modules_number', 907003504, 907001927, 2, null, null, 'admin', 'admin', null),
+(907006073, '高压直流电源必填完整性核查.单个整流模块额定输出容量（A）', 'CE_DEVICE_PE_HIGH_POWER.signal_output_rated_capacity', 907003504, 907001928, 2, null, null, 'admin', 'admin', null),
+(907006074, '高压直流电源必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_POWER.related_system', 907003504, 907001923, 2, null, null, 'admin', 'admin', null),
 --高压直流配电必填完整性核查 CE_DEVICE_PE_HIGH_DC_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006075, '高压直流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.int_id', 907003505, 907001934, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006076, '高压直流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_site', 907003505, 907001938, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006077, '高压直流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_room', 907003505, 907001939, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006078, '高压直流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_type', 907003505, 907001940, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006079, '高压直流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_subclass', 907003505, 907001941, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006080, '高压直流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.zh_label', 907003505, 907001942, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006081, '高压直流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_code', 907003505, 907001943, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006082, '高压直流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.product_name', 907003505, 907001944, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006083, '高压直流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.vendor_id', 907003505, 907001945, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006084, '高压直流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.start_time', 907003505, 907001950, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006085, '高压直流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.estimated_retirement_time', 907003505, 907001951, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006086, '高压直流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.lifecycle_status', 907003505, 907001952, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006087, '高压直流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.maintainor', 907003505, 907001953, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006088, '高压直流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.qualitor', 907003505, 907001954, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006089, '高压直流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.reted_capacity', 907003505, 907001947, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006090, '高压直流配电必填完整性核查.输入端口总数（路）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.total_input_port', 907003505, 907001948, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006091, '高压直流配电必填完整性核查.输出端口总数（路）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.total_onput_port', 907003505, 907001949, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006092, '高压直流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_system', 907003505, 907001946, 2, null, null, 'admin', 'admin', null);
-
+(907006075, '高压直流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.int_id', 907003505, 907001934, 2, null, null, 'admin', 'admin', null),
+(907006076, '高压直流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_site', 907003505, 907001938, 2, null, null, 'admin', 'admin', null),
+(907006077, '高压直流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_room', 907003505, 907001939, 2, null, null, 'admin', 'admin', null),
+(907006078, '高压直流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_type', 907003505, 907001940, 2, null, null, 'admin', 'admin', null),
+(907006079, '高压直流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_subclass', 907003505, 907001941, 2, null, null, 'admin', 'admin', null),	   
+(907006080, '高压直流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.zh_label', 907003505, 907001942, 2, null, null, 'admin', 'admin', null),   
+(907006081, '高压直流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_code', 907003505, 907001943, 2, null, null, 'admin', 'admin', null),   
+(907006082, '高压直流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.product_name', 907003505, 907001944, 2, null, null, 'admin', 'admin', null),   
+(907006083, '高压直流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.vendor_id', 907003505, 907001945, 2, null, null, 'admin', 'admin', null),	   
+(907006084, '高压直流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.start_time', 907003505, 907001950, 2, null, null, 'admin', 'admin', null),	   
+(907006085, '高压直流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.estimated_retirement_time', 907003505, 907001951, 2, null, null, 'admin', 'admin', null),
+(907006086, '高压直流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.lifecycle_status', 907003505, 907001952, 2, null, null, 'admin', 'admin', null),	   
+(907006087, '高压直流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.maintainor', 907003505, 907001953, 2, null, null, 'admin', 'admin', null),	   
+(907006088, '高压直流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.qualitor', 907003505, 907001954, 2, null, null, 'admin', 'admin', null),  
+(907006089, '高压直流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.reted_capacity', 907003505, 907001947, 2, null, null, 'admin', 'admin', null),		  
+(907006090, '高压直流配电必填完整性核查.输入端口总数（路）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.total_input_port', 907003505, 907001948, 2, null, null, 'admin', 'admin', null),
+(907006091, '高压直流配电必填完整性核查.输出端口总数（路）', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.total_onput_port', 907003505, 907001949, 2, null, null, 'admin', 'admin', null),
+(907006092, '高压直流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.related_system', 907003505, 907001946, 2, null, null, 'admin', 'admin', null),
 --低压交流配电必填完整性核查 CE_DEVICE_PE_LOW_AC_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006093, '低压交流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.int_id', 907003506, 907001968, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006094, '低压交流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_site', 907003506, 907001972, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006095, '低压交流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_room', 907003506, 907001973, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006096, '低压交流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_type', 907003506, 907001974, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006097, '低压交流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_subclass', 907003506, 907001975, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006098, '低压交流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.zh_label', 907003506, 907001976, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006099, '低压交流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_code', 907003506, 907001977, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006100, '低压交流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.product_name', 907003506, 907001978, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006101, '低压交流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.vendor_id', 907003506, 907001979, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006102, '低压交流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.start_time', 907003506, 907001986, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006103, '低压交流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.estimated_retirement_time', 907003506, 907001987, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006104, '低压交流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.lifecycle_status', 907003506, 907001988, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006105, '低压交流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.maintainor', 907003506, 907001989, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006106, '低压交流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.qualitor', 907003506, 907001990, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006107, '低压交流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.reted_capacity', 907003506, 907001981, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006108, '低压交流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_system', 907003506, 907001980, 2, null, null, 'admin', 'admin', null);
-
+(907006093, '低压交流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.int_id', 907003506, 907001968, 2, null, null, 'admin', 'admin', null),
+(907006094, '低压交流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_site', 907003506, 907001972, 2, null, null, 'admin', 'admin', null),
+(907006095, '低压交流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_room', 907003506, 907001973, 2, null, null, 'admin', 'admin', null),
+(907006096, '低压交流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_type', 907003506, 907001974, 2, null, null, 'admin', 'admin', null),
+(907006097, '低压交流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_subclass', 907003506, 907001975, 2, null, null, 'admin', 'admin', null),		   
+(907006098, '低压交流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.zh_label', 907003506, 907001976, 2, null, null, 'admin', 'admin', null),		   
+(907006099, '低压交流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_code', 907003506, 907001977, 2, null, null, 'admin', 'admin', null),		   
+(907006100, '低压交流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.product_name', 907003506, 907001978, 2, null, null, 'admin', 'admin', null),		   
+(907006101, '低压交流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.vendor_id', 907003506, 907001979, 2, null, null, 'admin', 'admin', null),		   
+(907006102, '低压交流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.start_time', 907003506, 907001986, 2, null, null, 'admin', 'admin', null),	   
+(907006103, '低压交流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.estimated_retirement_time', 907003506, 907001987, 2, null, null, 'admin', 'admin', null),
+(907006104, '低压交流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.lifecycle_status', 907003506, 907001988, 2, null, null, 'admin', 'admin', null),	   
+(907006105, '低压交流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.maintainor', 907003506, 907001989, 2, null, null, 'admin', 'admin', null),	   
+(907006106, '低压交流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.qualitor', 907003506, 907001990, 2, null, null, 'admin', 'admin', null),	  
+(907006107, '低压交流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.reted_capacity', 907003506, 907001981, 2, null, null, 'admin', 'admin', null),	  
+(907006108, '低压交流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.related_system', 907003506, 907001980, 2, null, null, 'admin', 'admin', null),
 --发电机组必填完整性核查 CE_DEVICE_PE_POWER_GENERATION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006109, '发电机组必填完整性核查.资源标识', 'CE_DEVICE_PE_POWER_GENERATION.int_id', 907003507, 907002004, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006110, '发电机组必填完整性核查.所属站点', 'CE_DEVICE_PE_POWER_GENERATION.related_site', 907003507, 907002008, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006111, '发电机组必填完整性核查.所属机房', 'CE_DEVICE_PE_POWER_GENERATION.related_room', 907003507, 907002009, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006112, '发电机组必填完整性核查.设备类型', 'CE_DEVICE_PE_POWER_GENERATION.device_type', 907003507, 907002010 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006113, '发电机组必填完整性核查.设备子类', 'CE_DEVICE_PE_POWER_GENERATION.device_subclass', 907003507, 907002011 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006114, '发电机组必填完整性核查.设备名称', 'CE_DEVICE_PE_POWER_GENERATION.zh_label', 907003507, 907002012 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006115, '发电机组必填完整性核查.设备编码', 'CE_DEVICE_PE_POWER_GENERATION.device_code', 907003507, 907002013 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006116, '发电机组必填完整性核查.设备型号', 'CE_DEVICE_PE_POWER_GENERATION.product_name', 907003507, 907002014 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006117, '发电机组必填完整性核查.设备厂家', 'CE_DEVICE_PE_POWER_GENERATION.vendor_id', 907003507, 907002015 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006118, '发电机组必填完整性核查.开始使用时间', 'CE_DEVICE_PE_POWER_GENERATION.start_time', 907003507, 907002024, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006119, '发电机组必填完整性核查.预计报废时间', 'CE_DEVICE_PE_POWER_GENERATION.estimated_retirement_time', 907003507, 907002025, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006120, '发电机组必填完整性核查.使用状态', 'CE_DEVICE_PE_POWER_GENERATION.lifecycle_status', 907003507, 907002026, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006121, '发电机组必填完整性核查.维护责任人', 'CE_DEVICE_PE_POWER_GENERATION.maintainor', 907003507, 907002027, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006122, '发电机组必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_POWER_GENERATION.qualitor', 907003507, 907002028, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006123, '发电机组必填完整性核查.额定功率（KW）', 'CE_DEVICE_PE_POWER_GENERATION.rated_power', 907003507, 907002016, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006124, '发电机组必填完整性核查.额定输出电压（V)', 'CE_DEVICE_PE_POWER_GENERATION.rated_output_voltage', 907003507, 907002017, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006125, '发电机组必填完整性核查.自启动功能', 'CE_DEVICE_PE_POWER_GENERATION.self_start_function', 907003507, 907002019, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006126, '发电机组必填完整性核查.输出电压类型', 'CE_DEVICE_PE_POWER_GENERATION.output_voltage_type', 907003507, 907002018, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006127, '发电机组必填完整性核查.冷却方式', 'CE_DEVICE_PE_POWER_GENERATION.cooling_method', 907003507, 907002020, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006128, '发电机组必填完整性核查.安装方式', 'CE_DEVICE_PE_POWER_GENERATION.installation_method', 907003507, 907002021, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006129, '发电机组必填完整性核查.备份方式', 'CE_DEVICE_PE_POWER_GENERATION.backup_method', 907003507, 907002022, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006130, '发电机组必填完整性核查.所属系统', 'CE_DEVICE_PE_POWER_GENERATION.related_system', 907003507, 907002023, 2, null, null, 'admin', 'admin', null);
-
+(907006109, '发电机组必填完整性核查.资源标识', 'CE_DEVICE_PE_POWER_GENERATION.int_id', 907003507, 907002004, 2, null, null, 'admin', 'admin', null),
+(907006110, '发电机组必填完整性核查.所属站点', 'CE_DEVICE_PE_POWER_GENERATION.related_site', 907003507, 907002008, 2, null, null, 'admin', 'admin', null),
+(907006111, '发电机组必填完整性核查.所属机房', 'CE_DEVICE_PE_POWER_GENERATION.related_room', 907003507, 907002009, 2, null, null, 'admin', 'admin', null),
+(907006112, '发电机组必填完整性核查.设备类型', 'CE_DEVICE_PE_POWER_GENERATION.device_type', 907003507, 907002010 , 2, null, null, 'admin', 'admin', null),
+(907006113, '发电机组必填完整性核查.设备子类', 'CE_DEVICE_PE_POWER_GENERATION.device_subclass', 907003507, 907002011 , 2, null, null, 'admin', 'admin', null),	   
+(907006114, '发电机组必填完整性核查.设备名称', 'CE_DEVICE_PE_POWER_GENERATION.zh_label', 907003507, 907002012 , 2, null, null, 'admin', 'admin', null),   
+(907006115, '发电机组必填完整性核查.设备编码', 'CE_DEVICE_PE_POWER_GENERATION.device_code', 907003507, 907002013 , 2, null, null, 'admin', 'admin', null),   
+(907006116, '发电机组必填完整性核查.设备型号', 'CE_DEVICE_PE_POWER_GENERATION.product_name', 907003507, 907002014 , 2, null, null, 'admin', 'admin', null),   
+(907006117, '发电机组必填完整性核查.设备厂家', 'CE_DEVICE_PE_POWER_GENERATION.vendor_id', 907003507, 907002015 , 2, null, null, 'admin', 'admin', null),	   
+(907006118, '发电机组必填完整性核查.开始使用时间', 'CE_DEVICE_PE_POWER_GENERATION.start_time', 907003507, 907002024, 2, null, null, 'admin', 'admin', null),   
+(907006119, '发电机组必填完整性核查.预计报废时间', 'CE_DEVICE_PE_POWER_GENERATION.estimated_retirement_time', 907003507, 907002025, 2, null, null, 'admin', 'admin', null),
+(907006120, '发电机组必填完整性核查.使用状态', 'CE_DEVICE_PE_POWER_GENERATION.lifecycle_status', 907003507, 907002026, 2, null, null, 'admin', 'admin', null),	   
+(907006121, '发电机组必填完整性核查.维护责任人', 'CE_DEVICE_PE_POWER_GENERATION.maintainor', 907003507, 907002027, 2, null, null, 'admin', 'admin', null),   
+(907006122, '发电机组必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_POWER_GENERATION.qualitor', 907003507, 907002028, 2, null, null, 'admin', 'admin', null),  
+(907006123, '发电机组必填完整性核查.额定功率（KW）', 'CE_DEVICE_PE_POWER_GENERATION.rated_power', 907003507, 907002016, 2, null, null, 'admin', 'admin', null),
+(907006124, '发电机组必填完整性核查.额定输出电压（V)', 'CE_DEVICE_PE_POWER_GENERATION.rated_output_voltage', 907003507, 907002017, 2, null, null, 'admin', 'admin', null),
+(907006125, '发电机组必填完整性核查.自启动功能', 'CE_DEVICE_PE_POWER_GENERATION.self_start_function', 907003507, 907002019, 2, null, null, 'admin', 'admin', null),
+(907006126, '发电机组必填完整性核查.输出电压类型', 'CE_DEVICE_PE_POWER_GENERATION.output_voltage_type', 907003507, 907002018, 2, null, null, 'admin', 'admin', null),
+(907006127, '发电机组必填完整性核查.冷却方式', 'CE_DEVICE_PE_POWER_GENERATION.cooling_method', 907003507, 907002020, 2, null, null, 'admin', 'admin', null),
+(907006128, '发电机组必填完整性核查.安装方式', 'CE_DEVICE_PE_POWER_GENERATION.installation_method', 907003507, 907002021, 2, null, null, 'admin', 'admin', null),
+(907006129, '发电机组必填完整性核查.备份方式', 'CE_DEVICE_PE_POWER_GENERATION.backup_method', 907003507, 907002022, 2, null, null, 'admin', 'admin', null),  
+(907006130, '发电机组必填完整性核查.所属系统', 'CE_DEVICE_PE_POWER_GENERATION.related_system', 907003507, 907002023, 2, null, null, 'admin', 'admin', null),
 --开关电源必填完整性核查 CE_DEVICE_PE_SWITCH_POWER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006131, '开关电源必填完整性核查.资源标识', 'CE_DEVICE_PE_SWITCH_POWER.int_id', 907003508, 907002042, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006132, '开关电源必填完整性核查.所属站点', 'CE_DEVICE_PE_SWITCH_POWER.related_site', 907003508, 907002046, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006133, '开关电源必填完整性核查.所属机房', 'CE_DEVICE_PE_SWITCH_POWER.related_room', 907003508, 907002047, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006134, '开关电源必填完整性核查.设备类型', 'CE_DEVICE_PE_SWITCH_POWER.device_type', 907003508, 907002048 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006135, '开关电源必填完整性核查.设备子类', 'CE_DEVICE_PE_SWITCH_POWER.device_subclass', 907003508, 907002049 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006136, '开关电源必填完整性核查.设备名称', 'CE_DEVICE_PE_SWITCH_POWER.zh_label', 907003508, 907002050 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006137, '开关电源必填完整性核查.设备编码', 'CE_DEVICE_PE_SWITCH_POWER.device_code', 907003508, 907002051 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006138, '开关电源必填完整性核查.设备型号', 'CE_DEVICE_PE_SWITCH_POWER.product_name', 907003508, 907002052 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006139, '开关电源必填完整性核查.设备厂家', 'CE_DEVICE_PE_SWITCH_POWER.vendor_id', 907003508, 907002053 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006140, '开关电源必填完整性核查.开始使用时间', 'CE_DEVICE_PE_SWITCH_POWER.start_time', 907003508, 907002060, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006141, '开关电源必填完整性核查.预计报废时间', 'CE_DEVICE_PE_SWITCH_POWER.estimated_retirement_time', 907003508, 907002061, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006142, '开关电源必填完整性核查.使用状态', 'CE_DEVICE_PE_SWITCH_POWER.lifecycle_status', 907003508, 907002062, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006143, '开关电源必填完整性核查.维护责任人', 'CE_DEVICE_PE_SWITCH_POWER.maintainor', 907003508, 907002063, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006144, '开关电源必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_SWITCH_POWER.qualitor', 907003508, 907002064, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006145, '开关电源必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_SWITCH_POWER.rated_output_voltage', 907003508, 907002055, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006146, '开关电源必填完整性核查.监控模块型号', 'CE_DEVICE_PE_SWITCH_POWER.monitoring_module_model', 907003508, 907002056, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006147, '开关电源必填完整性核查.本机架可装整流模块总数（块）', 'CE_DEVICE_PE_SWITCH_POWER.total_rack_loading_modules_number', 907003508, 907002057, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006148, '开关电源必填完整性核查.本机架实配整流模块总数（块）', 'CE_DEVICE_PE_SWITCH_POWER.total_rack_match_modules_number', 907003508, 907002058, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006149, '开关电源必填完整性核查.单个整流模块额定输出容量（A）', 'CE_DEVICE_PE_SWITCH_POWER.signal_output_rated_capacity', 907003508, 907002059, 2, null, null, 'admin', 'admin', null);
-
+(907006131, '开关电源必填完整性核查.资源标识', 'CE_DEVICE_PE_SWITCH_POWER.int_id', 907003508, 907002042, 2, null, null, 'admin', 'admin', null),
+(907006132, '开关电源必填完整性核查.所属站点', 'CE_DEVICE_PE_SWITCH_POWER.related_site', 907003508, 907002046, 2, null, null, 'admin', 'admin', null),
+(907006133, '开关电源必填完整性核查.所属机房', 'CE_DEVICE_PE_SWITCH_POWER.related_room', 907003508, 907002047, 2, null, null, 'admin', 'admin', null),
+(907006134, '开关电源必填完整性核查.设备类型', 'CE_DEVICE_PE_SWITCH_POWER.device_type', 907003508, 907002048 , 2, null, null, 'admin', 'admin', null),
+(907006135, '开关电源必填完整性核查.设备子类', 'CE_DEVICE_PE_SWITCH_POWER.device_subclass', 907003508, 907002049 , 2, null, null, 'admin', 'admin', null),   
+(907006136, '开关电源必填完整性核查.设备名称', 'CE_DEVICE_PE_SWITCH_POWER.zh_label', 907003508, 907002050 , 2, null, null, 'admin', 'admin', null),   
+(907006137, '开关电源必填完整性核查.设备编码', 'CE_DEVICE_PE_SWITCH_POWER.device_code', 907003508, 907002051 , 2, null, null, 'admin', 'admin', null),	   
+(907006138, '开关电源必填完整性核查.设备型号', 'CE_DEVICE_PE_SWITCH_POWER.product_name', 907003508, 907002052 , 2, null, null, 'admin', 'admin', null),	   
+(907006139, '开关电源必填完整性核查.设备厂家', 'CE_DEVICE_PE_SWITCH_POWER.vendor_id', 907003508, 907002053 , 2, null, null, 'admin', 'admin', null),	   
+(907006140, '开关电源必填完整性核查.开始使用时间', 'CE_DEVICE_PE_SWITCH_POWER.start_time', 907003508, 907002060, 2, null, null, 'admin', 'admin', null),  
+(907006141, '开关电源必填完整性核查.预计报废时间', 'CE_DEVICE_PE_SWITCH_POWER.estimated_retirement_time', 907003508, 907002061, 2, null, null, 'admin', 'admin', null),
+(907006142, '开关电源必填完整性核查.使用状态', 'CE_DEVICE_PE_SWITCH_POWER.lifecycle_status', 907003508, 907002062, 2, null, null, 'admin', 'admin', null),   
+(907006143, '开关电源必填完整性核查.维护责任人', 'CE_DEVICE_PE_SWITCH_POWER.maintainor', 907003508, 907002063, 2, null, null, 'admin', 'admin', null),   
+(907006144, '开关电源必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_SWITCH_POWER.qualitor', 907003508, 907002064, 2, null, null, 'admin', 'admin', null),	  
+(907006145, '开关电源必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_SWITCH_POWER.rated_output_voltage', 907003508, 907002055, 2, null, null, 'admin', 'admin', null),
+(907006146, '开关电源必填完整性核查.监控模块型号', 'CE_DEVICE_PE_SWITCH_POWER.monitoring_module_model', 907003508, 907002056, 2, null, null, 'admin', 'admin', null),
+(907006147, '开关电源必填完整性核查.本机架可装整流模块总数（块）', 'CE_DEVICE_PE_SWITCH_POWER.total_rack_loading_modules_number', 907003508, 907002057, 2, null, null, 'admin', 'admin', null),
+(907006148, '开关电源必填完整性核查.本机架实配整流模块总数（块）', 'CE_DEVICE_PE_SWITCH_POWER.total_rack_match_modules_number', 907003508, 907002058, 2, null, null, 'admin', 'admin', null),
+(907006149, '开关电源必填完整性核查.单个整流模块额定输出容量（A）', 'CE_DEVICE_PE_SWITCH_POWER.signal_output_rated_capacity', 907003508, 907002059, 2, null, null, 'admin', 'admin', null),
 --低压直流配电必填完整性核查 CE_DEVICE_PE_LOW_DC_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006150, '低压直流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.int_id', 907003509, 907002065, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006151, '低压直流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_site', 907003509, 907002069, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006152, '低压直流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_room', 907003509, 907002070, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006153, '低压直流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_type', 907003509, 907002071 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006154, '低压直流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_subclass', 907003509, 907002072 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006155, '低压直流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.zh_label', 907003509, 907002073 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006156, '低压直流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_code', 907003509, 907002074 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006157, '低压直流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.product_name', 907003509, 907002075 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006158, '低压直流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.vendor_id', 907003509, 907002076 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006159, '低压直流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.start_time', 907003509, 907002081, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006160, '低压直流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.estimated_retirement_time', 907003509, 907002082, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006161, '低压直流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.lifecycle_status', 907003509, 907002083, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006162, '低压直流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.maintainor', 907003509, 907002084, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006163, '低压直流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.qualitor', 907003509, 907002085, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006164, '低压直流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_system', 907003509, 907002077, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006165, '低压直流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.reted_capacity', 907003509, 907002078, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006166, '低压直流配电必填完整性核查.输人端口总数（路）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.total_input_port', 907003509, 907002079, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006167, '低压直流配电必填完整性核查.输出端口总数（路）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.total_onput_port', 907003509, 907002080, 2, null, null, 'admin', 'admin', null);
-
+(907006150, '低压直流配电必填完整性核查.资源标识', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.int_id', 907003509, 907002065, 2, null, null, 'admin', 'admin', null),
+(907006151, '低压直流配电必填完整性核查.所属站点', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_site', 907003509, 907002069, 2, null, null, 'admin', 'admin', null),
+(907006152, '低压直流配电必填完整性核查.所属机房', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_room', 907003509, 907002070, 2, null, null, 'admin', 'admin', null),
+(907006153, '低压直流配电必填完整性核查.设备类型', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_type', 907003509, 907002071 , 2, null, null, 'admin', 'admin', null),
+(907006154, '低压直流配电必填完整性核查.设备子类', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_subclass', 907003509, 907002072 , 2, null, null, 'admin', 'admin', null),   
+(907006155, '低压直流配电必填完整性核查.设备名称', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.zh_label', 907003509, 907002073 , 2, null, null, 'admin', 'admin', null),   
+(907006156, '低压直流配电必填完整性核查.设备编码', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_code', 907003509, 907002074 , 2, null, null, 'admin', 'admin', null),   
+(907006157, '低压直流配电必填完整性核查.设备型号', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.product_name', 907003509, 907002075 , 2, null, null, 'admin', 'admin', null),
+(907006158, '低压直流配电必填完整性核查.设备厂家', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.vendor_id', 907003509, 907002076 , 2, null, null, 'admin', 'admin', null),
+(907006159, '低压直流配电必填完整性核查.开始使用时间', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.start_time', 907003509, 907002081, 2, null, null, 'admin', 'admin', null),  
+(907006160, '低压直流配电必填完整性核查.预计报废时间', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.estimated_retirement_time', 907003509, 907002082, 2, null, null, 'admin', 'admin', null),
+(907006161, '低压直流配电必填完整性核查.使用状态', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.lifecycle_status', 907003509, 907002083, 2, null, null, 'admin', 'admin', null),
+(907006162, '低压直流配电必填完整性核查.维护责任人', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.maintainor', 907003509, 907002084, 2, null, null, 'admin', 'admin', null),  
+(907006163, '低压直流配电必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.qualitor', 907003509, 907002085, 2, null, null, 'admin', 'admin', null),  
+(907006164, '低压直流配电必填完整性核查.所属系统', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.related_system', 907003509, 907002077, 2, null, null, 'admin', 'admin', null),
+(907006165, '低压直流配电必填完整性核查.额定容量（A）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.reted_capacity', 907003509, 907002078, 2, null, null, 'admin', 'admin', null),
+(907006166, '低压直流配电必填完整性核查.输人端口总数（路）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.total_input_port', 907003509, 907002079, 2, null, null, 'admin', 'admin', null),
+(907006167, '低压直流配电必填完整性核查.输出端口总数（路）', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.total_onput_port', 907003509, 907002080, 2, null, null, 'admin', 'admin', null),
 --UPS设备必填完整性核查 CE_DEVICE_PE_UPS
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006168, 'UPS设备必填完整性核查.资源标识', 'CE_DEVICE_PE_UPS.int_id', 907003510, 907002101, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006169, 'UPS设备必填完整性核查.所属站点', 'CE_DEVICE_PE_UPS.related_site', 907003510, 907002105, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006170, 'UPS设备必填完整性核查.所属机房', 'CE_DEVICE_PE_UPS.related_room', 907003510, 907002106, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006171, 'UPS设备必填完整性核查.设备类型', 'CE_DEVICE_PE_UPS.device_type', 907003510, 907002107 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006172, 'UPS设备必填完整性核查.设备子类', 'CE_DEVICE_PE_UPS.device_subclass', 907003510, 907002108 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006173, 'UPS设备必填完整性核查.设备名称', 'CE_DEVICE_PE_UPS.zh_label', 907003510, 907002109 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006174, 'UPS设备必填完整性核查.设备编码', 'CE_DEVICE_PE_UPS.device_code', 907003510, 907002110 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006175, 'UPS设备必填完整性核查.设备型号', 'CE_DEVICE_PE_UPS.product_name', 907003510, 907002111 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006176, 'UPS设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_UPS.vendor_id', 907003510, 907002112 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006177, 'UPS设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_UPS.start_time', 907003510, 907002116, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006178, 'UPS设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_UPS.estimated_retirement_time', 907003510, 907002082, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006179, 'UPS设备必填完整性核查.使用状态', 'CE_DEVICE_PE_UPS.lifecycle_status', 907003510, 907002118, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006180, 'UPS设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_UPS.maintainor', 907003510, 907002119, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006181, 'UPS设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_UPS.qualitor', 907003510, 907002120, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006182, 'UPS设备必填完整性核查.所属系统', 'CE_DEVICE_PE_UPS.related_system', 907003510, 907002113, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006183, 'UPS设备必填完整性核查.额定容量（KVA）', 'CE_DEVICE_PE_UPS.rated_capacity', 907003510, 907002114, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006184, 'UPS设备必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_UPS.rated_output_voltage', 907003510, 907002115, 2, null, null, 'admin', 'admin', null);
-
+(907006168, 'UPS设备必填完整性核查.资源标识', 'CE_DEVICE_PE_UPS.int_id', 907003510, 907002101, 2, null, null, 'admin', 'admin', null),
+(907006169, 'UPS设备必填完整性核查.所属站点', 'CE_DEVICE_PE_UPS.related_site', 907003510, 907002105, 2, null, null, 'admin', 'admin', null),
+(907006170, 'UPS设备必填完整性核查.所属机房', 'CE_DEVICE_PE_UPS.related_room', 907003510, 907002106, 2, null, null, 'admin', 'admin', null),
+(907006171, 'UPS设备必填完整性核查.设备类型', 'CE_DEVICE_PE_UPS.device_type', 907003510, 907002107 , 2, null, null, 'admin', 'admin', null),
+(907006172, 'UPS设备必填完整性核查.设备子类', 'CE_DEVICE_PE_UPS.device_subclass', 907003510, 907002108 , 2, null, null, 'admin', 'admin', null),	   
+(907006173, 'UPS设备必填完整性核查.设备名称', 'CE_DEVICE_PE_UPS.zh_label', 907003510, 907002109 , 2, null, null, 'admin', 'admin', null),	   
+(907006174, 'UPS设备必填完整性核查.设备编码', 'CE_DEVICE_PE_UPS.device_code', 907003510, 907002110 , 2, null, null, 'admin', 'admin', null),	   
+(907006175, 'UPS设备必填完整性核查.设备型号', 'CE_DEVICE_PE_UPS.product_name', 907003510, 907002111 , 2, null, null, 'admin', 'admin', null),   
+(907006176, 'UPS设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_UPS.vendor_id', 907003510, 907002112 , 2, null, null, 'admin', 'admin', null),   
+(907006177, 'UPS设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_UPS.start_time', 907003510, 907002116, 2, null, null, 'admin', 'admin', null),	   
+(907006178, 'UPS设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_UPS.estimated_retirement_time', 907003510, 907002082, 2, null, null, 'admin', 'admin', null),
+(907006179, 'UPS设备必填完整性核查.使用状态', 'CE_DEVICE_PE_UPS.lifecycle_status', 907003510, 907002118, 2, null, null, 'admin', 'admin', null),   
+(907006180, 'UPS设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_UPS.maintainor', 907003510, 907002119, 2, null, null, 'admin', 'admin', null),   
+(907006181, 'UPS设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_UPS.qualitor', 907003510, 907002120, 2, null, null, 'admin', 'admin', null),  
+(907006182, 'UPS设备必填完整性核查.所属系统', 'CE_DEVICE_PE_UPS.related_system', 907003510, 907002113, 2, null, null, 'admin', 'admin', null),
+(907006183, 'UPS设备必填完整性核查.额定容量（KVA）', 'CE_DEVICE_PE_UPS.rated_capacity', 907003510, 907002114, 2, null, null, 'admin', 'admin', null),
+(907006184, 'UPS设备必填完整性核查.额定输出电压（V）', 'CE_DEVICE_PE_UPS.rated_output_voltage', 907003510, 907002115, 2, null, null, 'admin', 'admin', null),
 --蓄电池必填完整性核查 CE_DEVICE_PE_BATTERY
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006185, '蓄电池必填完整性核查.资源标识', 'CE_DEVICE_PE_BATTERY.int_id', 907003511, 907002121, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006186, '蓄电池必填完整性核查.所属站点', 'CE_DEVICE_PE_BATTERY.related_site', 907003511, 907002125, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006187, '蓄电池必填完整性核查.所属机房', 'CE_DEVICE_PE_BATTERY.related_room', 907003511, 907002126, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006188, '蓄电池必填完整性核查.设备类型', 'CE_DEVICE_PE_BATTERY.device_type', 907003511, 907002127 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006189, '蓄电池必填完整性核查.设备子类', 'CE_DEVICE_PE_BATTERY.device_subclass', 907003511, 907002128 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006190, '蓄电池必填完整性核查.设备名称', 'CE_DEVICE_PE_BATTERY.zh_label', 907003511, 907002129 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006191, '蓄电池必填完整性核查.设备编码', 'CE_DEVICE_PE_BATTERY.device_code', 907003511, 907002130 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006192, '蓄电池必填完整性核查.设备型号', 'CE_DEVICE_PE_BATTERY.product_name', 907003511, 907002131 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006193, '蓄电池必填完整性核查.设备厂家', 'CE_DEVICE_PE_BATTERY.vendor_id', 907003511, 907002132 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006194, '蓄电池必填完整性核查.开始使用时间', 'CE_DEVICE_PE_BATTERY.start_time', 907003511, 907002137, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006195, '蓄电池必填完整性核查.预计报废时间', 'CE_DEVICE_PE_BATTERY.estimated_retirement_time', 907003511, 907002138, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006196, '蓄电池必填完整性核查.使用状态', 'CE_DEVICE_PE_BATTERY.lifecycle_status', 907003511, 907002139, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006197, '蓄电池必填完整性核查.维护责任人', 'CE_DEVICE_PE_BATTERY.maintainor', 907003511, 907002140, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006198, '蓄电池必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_BATTERY.qualitor', 907003511, 907002141, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006199, '蓄电池必填完整性核查.所属电源设备', 'CE_DEVICE_PE_BATTERY.ralated_power_device', 907003511, 907002133, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006200, '蓄电池必填完整性核查.额定容量（AH）', 'CE_DEVICE_PE_BATTERY.reted_capacity', 907003511, 907002134, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006201, '蓄电池必填完整性核查.单体电压等级（V）', 'CE_DEVICE_PE_BATTERY.cell_voltage_level', 907003511, 907002135, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006202, '蓄电池必填完整性核查.组内单体总数（只）', 'CE_DEVICE_PE_BATTERY.total_monomers_number', 907003511, 907002136, 2, null, null, 'admin', 'admin', null);
-
+(907006185, '蓄电池必填完整性核查.资源标识', 'CE_DEVICE_PE_BATTERY.int_id', 907003511, 907002121, 2, null, null, 'admin', 'admin', null),
+(907006186, '蓄电池必填完整性核查.所属站点', 'CE_DEVICE_PE_BATTERY.related_site', 907003511, 907002125, 2, null, null, 'admin', 'admin', null),
+(907006187, '蓄电池必填完整性核查.所属机房', 'CE_DEVICE_PE_BATTERY.related_room', 907003511, 907002126, 2, null, null, 'admin', 'admin', null),
+(907006188, '蓄电池必填完整性核查.设备类型', 'CE_DEVICE_PE_BATTERY.device_type', 907003511, 907002127 , 2, null, null, 'admin', 'admin', null),
+(907006189, '蓄电池必填完整性核查.设备子类', 'CE_DEVICE_PE_BATTERY.device_subclass', 907003511, 907002128 , 2, null, null, 'admin', 'admin', null),   
+(907006190, '蓄电池必填完整性核查.设备名称', 'CE_DEVICE_PE_BATTERY.zh_label', 907003511, 907002129 , 2, null, null, 'admin', 'admin', null),   
+(907006191, '蓄电池必填完整性核查.设备编码', 'CE_DEVICE_PE_BATTERY.device_code', 907003511, 907002130 , 2, null, null, 'admin', 'admin', null),   
+(907006192, '蓄电池必填完整性核查.设备型号', 'CE_DEVICE_PE_BATTERY.product_name', 907003511, 907002131 , 2, null, null, 'admin', 'admin', null),	   
+(907006193, '蓄电池必填完整性核查.设备厂家', 'CE_DEVICE_PE_BATTERY.vendor_id', 907003511, 907002132 , 2, null, null, 'admin', 'admin', null),	   
+(907006194, '蓄电池必填完整性核查.开始使用时间', 'CE_DEVICE_PE_BATTERY.start_time', 907003511, 907002137, 2, null, null, 'admin', 'admin', null),   
+(907006195, '蓄电池必填完整性核查.预计报废时间', 'CE_DEVICE_PE_BATTERY.estimated_retirement_time', 907003511, 907002138, 2, null, null, 'admin', 'admin', null),
+(907006196, '蓄电池必填完整性核查.使用状态', 'CE_DEVICE_PE_BATTERY.lifecycle_status', 907003511, 907002139, 2, null, null, 'admin', 'admin', null),   
+(907006197, '蓄电池必填完整性核查.维护责任人', 'CE_DEVICE_PE_BATTERY.maintainor', 907003511, 907002140, 2, null, null, 'admin', 'admin', null),   
+(907006198, '蓄电池必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_BATTERY.qualitor', 907003511, 907002141, 2, null, null, 'admin', 'admin', null),  
+(907006199, '蓄电池必填完整性核查.所属电源设备', 'CE_DEVICE_PE_BATTERY.ralated_power_device', 907003511, 907002133, 2, null, null, 'admin', 'admin', null),
+(907006200, '蓄电池必填完整性核查.额定容量（AH）', 'CE_DEVICE_PE_BATTERY.reted_capacity', 907003511, 907002134, 2, null, null, 'admin', 'admin', null),
+(907006201, '蓄电池必填完整性核查.单体电压等级（V）', 'CE_DEVICE_PE_BATTERY.cell_voltage_level', 907003511, 907002135, 2, null, null, 'admin', 'admin', null),
+(907006202, '蓄电池必填完整性核查.组内单体总数（只）', 'CE_DEVICE_PE_BATTERY.total_monomers_number', 907003511, 907002136, 2, null, null, 'admin', 'admin', null),
 --空调必填完整性核查 CE_DEVICE_PE_AIR
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006203, '空调必填完整性核查.资源标识', 'CE_DEVICE_PE_AIR.int_id', 907003512, 907002142, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006204, '空调必填完整性核查.所属站点', 'CE_DEVICE_PE_AIR.related_site', 907003512, 907002146, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006205, '空调必填完整性核查.所属机房', 'CE_DEVICE_PE_AIR.related_room', 907003512, 907002147, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006206, '空调必填完整性核查.设备类型', 'CE_DEVICE_PE_AIR.device_type', 907003512, 907002148 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006207, '空调必填完整性核查.设备子类', 'CE_DEVICE_PE_AIR.device_subclass', 907003512, 907002149 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006208, '空调必填完整性核查.设备名称', 'CE_DEVICE_PE_AIR.zh_label', 907003512, 907002150 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006209, '空调必填完整性核查.设备编码', 'CE_DEVICE_PE_AIR.device_code', 907003512, 907002151 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006210, '空调必填完整性核查.设备型号', 'CE_DEVICE_PE_AIR.product_name', 907003512, 907002152 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006211, '空调必填完整性核查.设备厂家', 'CE_DEVICE_PE_AIR.vendor_id', 907003512, 907002153 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006212, '空调必填完整性核查.开始使用时间', 'CE_DEVICE_PE_AIR.start_time', 907003512, 907002157, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006213, '空调必填完整性核查.预计报废时间', 'CE_DEVICE_PE_AIR.estimated_retirement_time', 907003512, 907002158, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006214, '空调必填完整性核查.使用状态', 'CE_DEVICE_PE_AIR.lifecycle_status', 907003512, 907002159, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006215, '空调必填完整性核查.维护责任人', 'CE_DEVICE_PE_AIR.maintainor', 907003512, 907002160, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006216, '空调必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_AIR.qualitor', 907003512, 907002161, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006217, '空调必填完整性核查.额定制冷量（KW）', 'CE_DEVICE_PE_AIR.rated_cooling_capacity', 907003512, 907002154, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006218, '空调必填完整性核查.额定输入功率（W）', 'CE_DEVICE_PE_AIR.rated_input_power', 907003512, 907002155, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006219, '空调必填完整性核查.额定工作电压（V）', 'CE_DEVICE_PE_AIR.rated_operating_voltage', 907003512, 907002156, 2, null, null, 'admin', 'admin', null);
-
+(907006203, '空调必填完整性核查.资源标识', 'CE_DEVICE_PE_AIR.int_id', 907003512, 907002142, 2, null, null, 'admin', 'admin', null),
+(907006204, '空调必填完整性核查.所属站点', 'CE_DEVICE_PE_AIR.related_site', 907003512, 907002146, 2, null, null, 'admin', 'admin', null),
+(907006205, '空调必填完整性核查.所属机房', 'CE_DEVICE_PE_AIR.related_room', 907003512, 907002147, 2, null, null, 'admin', 'admin', null),
+(907006206, '空调必填完整性核查.设备类型', 'CE_DEVICE_PE_AIR.device_type', 907003512, 907002148 , 2, null, null, 'admin', 'admin', null),
+(907006207, '空调必填完整性核查.设备子类', 'CE_DEVICE_PE_AIR.device_subclass', 907003512, 907002149 , 2, null, null, 'admin', 'admin', null),   
+(907006208, '空调必填完整性核查.设备名称', 'CE_DEVICE_PE_AIR.zh_label', 907003512, 907002150 , 2, null, null, 'admin', 'admin', null),   
+(907006209, '空调必填完整性核查.设备编码', 'CE_DEVICE_PE_AIR.device_code', 907003512, 907002151 , 2, null, null, 'admin', 'admin', null),	   
+(907006210, '空调必填完整性核查.设备型号', 'CE_DEVICE_PE_AIR.product_name', 907003512, 907002152 , 2, null, null, 'admin', 'admin', null),   
+(907006211, '空调必填完整性核查.设备厂家', 'CE_DEVICE_PE_AIR.vendor_id', 907003512, 907002153 , 2, null, null, 'admin', 'admin', null),   
+(907006212, '空调必填完整性核查.开始使用时间', 'CE_DEVICE_PE_AIR.start_time', 907003512, 907002157, 2, null, null, 'admin', 'admin', null),   
+(907006213, '空调必填完整性核查.预计报废时间', 'CE_DEVICE_PE_AIR.estimated_retirement_time', 907003512, 907002158, 2, null, null, 'admin', 'admin', null),
+(907006214, '空调必填完整性核查.使用状态', 'CE_DEVICE_PE_AIR.lifecycle_status', 907003512, 907002159, 2, null, null, 'admin', 'admin', null),	   
+(907006215, '空调必填完整性核查.维护责任人', 'CE_DEVICE_PE_AIR.maintainor', 907003512, 907002160, 2, null, null, 'admin', 'admin', null), 
+(907006216, '空调必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_AIR.qualitor', 907003512, 907002161, 2, null, null, 'admin', 'admin', null),  
+(907006217, '空调必填完整性核查.额定制冷量（KW）', 'CE_DEVICE_PE_AIR.rated_cooling_capacity', 907003512, 907002154, 2, null, null, 'admin', 'admin', null),
+(907006218, '空调必填完整性核查.额定输入功率（W）', 'CE_DEVICE_PE_AIR.rated_input_power', 907003512, 907002155, 2, null, null, 'admin', 'admin', null),
+(907006219, '空调必填完整性核查.额定工作电压（V）', 'CE_DEVICE_PE_AIR.rated_operating_voltage', 907003512, 907002156, 2, null, null, 'admin', 'admin', null),
 --节能设备必填完整性核查 CE_DEVICE_PE_ENERY_SAVE
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006220, '节能设备必填完整性核查.资源标识', 'CE_DEVICE_PE_ENERY_SAVE.int_id', 907003513, 907002162, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006221, '节能设备必填完整性核查.所属站点', 'CE_DEVICE_PE_ENERY_SAVE.related_site', 907003513, 907002166, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006222, '节能设备必填完整性核查.所属机房', 'CE_DEVICE_PE_ENERY_SAVE.related_room', 907003513, 907002167, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006223, '节能设备必填完整性核查.设备类型', 'CE_DEVICE_PE_ENERY_SAVE.device_type', 907003513, 907002168 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006224, '节能设备必填完整性核查.设备子类', 'CE_DEVICE_PE_ENERY_SAVE.device_subclass', 907003513, 907002169 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006225, '节能设备必填完整性核查.设备名称', 'CE_DEVICE_PE_ENERY_SAVE.zh_label', 907003513, 907002170 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006226, '节能设备必填完整性核查.设备编码', 'CE_DEVICE_PE_ENERY_SAVE.device_code', 907003513, 907002171 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006227, '节能设备必填完整性核查.设备型号', 'CE_DEVICE_PE_ENERY_SAVE.product_name', 907003513, 907002172 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006228, '节能设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_ENERY_SAVE.vendor_id', 907003513, 907002173 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006229, '节能设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_ENERY_SAVE.start_time', 907003513, 907002186, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006230, '节能设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_ENERY_SAVE.estimated_retirement_time', 907003513, 907002187, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006231, '节能设备必填完整性核查.使用状态', 'CE_DEVICE_PE_ENERY_SAVE.lifecycle_status', 907003513, 907002188, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006232, '节能设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_ENERY_SAVE.maintainor', 907003513, 907002189, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006233, '节能设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_ENERY_SAVE.qualitor', 907003513, 907002190, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006234, '节能设备必填完整性核查.额定制冷量（KW）', 'CE_DEVICE_PE_ENERY_SAVE.rated_cooling_capacity', 907003513, 907002174, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006235, '节能设备必填完整性核查.额定输入功率（KW）', 'CE_DEVICE_PE_ENERY_SAVE.rated_input_power', 907003513, 907002175, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006236, '节能设备必填完整性核查.额定工作电压（V）', 'CE_DEVICE_PE_ENERY_SAVE.rated_operating_voltage', 907003513, 907002176, 2, null, null, 'admin', 'admin', null);
-
+(907006220, '节能设备必填完整性核查.资源标识', 'CE_DEVICE_PE_ENERY_SAVE.int_id', 907003513, 907002162, 2, null, null, 'admin', 'admin', null),
+(907006221, '节能设备必填完整性核查.所属站点', 'CE_DEVICE_PE_ENERY_SAVE.related_site', 907003513, 907002166, 2, null, null, 'admin', 'admin', null),
+(907006222, '节能设备必填完整性核查.所属机房', 'CE_DEVICE_PE_ENERY_SAVE.related_room', 907003513, 907002167, 2, null, null, 'admin', 'admin', null),
+(907006223, '节能设备必填完整性核查.设备类型', 'CE_DEVICE_PE_ENERY_SAVE.device_type', 907003513, 907002168 , 2, null, null, 'admin', 'admin', null),
+(907006224, '节能设备必填完整性核查.设备子类', 'CE_DEVICE_PE_ENERY_SAVE.device_subclass', 907003513, 907002169 , 2, null, null, 'admin', 'admin', null),	   
+(907006225, '节能设备必填完整性核查.设备名称', 'CE_DEVICE_PE_ENERY_SAVE.zh_label', 907003513, 907002170 , 2, null, null, 'admin', 'admin', null),	   
+(907006226, '节能设备必填完整性核查.设备编码', 'CE_DEVICE_PE_ENERY_SAVE.device_code', 907003513, 907002171 , 2, null, null, 'admin', 'admin', null),   
+(907006227, '节能设备必填完整性核查.设备型号', 'CE_DEVICE_PE_ENERY_SAVE.product_name', 907003513, 907002172 , 2, null, null, 'admin', 'admin', null),	   
+(907006228, '节能设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_ENERY_SAVE.vendor_id', 907003513, 907002173 , 2, null, null, 'admin', 'admin', null),   
+(907006229, '节能设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_ENERY_SAVE.start_time', 907003513, 907002186, 2, null, null, 'admin', 'admin', null),   
+(907006230, '节能设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_ENERY_SAVE.estimated_retirement_time', 907003513, 907002187, 2, null, null, 'admin', 'admin', null),
+(907006231, '节能设备必填完整性核查.使用状态', 'CE_DEVICE_PE_ENERY_SAVE.lifecycle_status', 907003513, 907002188, 2, null, null, 'admin', 'admin', null),	   
+(907006232, '节能设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_ENERY_SAVE.maintainor', 907003513, 907002189, 2, null, null, 'admin', 'admin', null),		   
+(907006233, '节能设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_ENERY_SAVE.qualitor', 907003513, 907002190, 2, null, null, 'admin', 'admin', null),
+(907006234, '节能设备必填完整性核查.额定制冷量（KW）', 'CE_DEVICE_PE_ENERY_SAVE.rated_cooling_capacity', 907003513, 907002174, 2, null, null, 'admin', 'admin', null),
+(907006235, '节能设备必填完整性核查.额定输入功率（KW）', 'CE_DEVICE_PE_ENERY_SAVE.rated_input_power', 907003513, 907002175, 2, null, null, 'admin', 'admin', null),
+(907006236, '节能设备必填完整性核查.额定工作电压（V）', 'CE_DEVICE_PE_ENERY_SAVE.rated_operating_voltage', 907003513, 907002176, 2, null, null, 'admin', 'admin', null),
 --动环监控必填完整性核查 CE_DEVICE_PE_POWER_MONITOR
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006237, '动环监控必填完整性核查.资源标识', 'CE_DEVICE_PE_POWER_MONITOR.int_id', 907003514, 907002191, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006238, '动环监控必填完整性核查.所属站点', 'CE_DEVICE_PE_POWER_MONITOR.related_site', 907003514, 907002195, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006239, '动环监控必填完整性核查.所属机房', 'CE_DEVICE_PE_POWER_MONITOR.related_room', 907003514, 907002196, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006240, '动环监控必填完整性核查.设备类型', 'CE_DEVICE_PE_POWER_MONITOR.device_type', 907003514, 907002197 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006241, '动环监控必填完整性核查.设备子类', 'CE_DEVICE_PE_POWER_MONITOR.device_subclass', 907003514, 907002198 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006242, '动环监控必填完整性核查.设备名称', 'CE_DEVICE_PE_POWER_MONITOR.zh_label', 907003514, 907002199 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006243, '动环监控必填完整性核查.设备编码', 'CE_DEVICE_PE_POWER_MONITOR.device_code', 907003514, 907002200 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006244, '动环监控必填完整性核查.设备型号', 'CE_DEVICE_PE_POWER_MONITOR.product_name', 907003514, 907002201 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006245, '动环监控必填完整性核查.设备厂家', 'CE_DEVICE_PE_POWER_MONITOR.vendor_id', 907003514, 907002202 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006246, '动环监控必填完整性核查.开始使用时间', 'CE_DEVICE_PE_POWER_MONITOR.start_time', 907003514, 907002203, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006247, '动环监控必填完整性核查.预计报废时间', 'CE_DEVICE_PE_POWER_MONITOR.estimated_retirement_time', 907003514, 907002204, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006248, '动环监控必填完整性核查.使用状态', 'CE_DEVICE_PE_POWER_MONITOR.lifecycle_status', 907003514, 907002205, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006249, '动环监控必填完整性核查.维护责任人', 'CE_DEVICE_PE_POWER_MONITOR.maintainor', 907003514, 907002206, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006250, '动环监控必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_POWER_MONITOR.qualitor', 907003514, 907002207, 2, null, null, 'admin', 'admin', null);
-
+(907006237, '动环监控必填完整性核查.资源标识', 'CE_DEVICE_PE_POWER_MONITOR.int_id', 907003514, 907002191, 2, null, null, 'admin', 'admin', null),
+(907006238, '动环监控必填完整性核查.所属站点', 'CE_DEVICE_PE_POWER_MONITOR.related_site', 907003514, 907002195, 2, null, null, 'admin', 'admin', null),
+(907006239, '动环监控必填完整性核查.所属机房', 'CE_DEVICE_PE_POWER_MONITOR.related_room', 907003514, 907002196, 2, null, null, 'admin', 'admin', null),
+(907006240, '动环监控必填完整性核查.设备类型', 'CE_DEVICE_PE_POWER_MONITOR.device_type', 907003514, 907002197 , 2, null, null, 'admin', 'admin', null),
+(907006241, '动环监控必填完整性核查.设备子类', 'CE_DEVICE_PE_POWER_MONITOR.device_subclass', 907003514, 907002198 , 2, null, null, 'admin', 'admin', null),  
+(907006242, '动环监控必填完整性核查.设备名称', 'CE_DEVICE_PE_POWER_MONITOR.zh_label', 907003514, 907002199 , 2, null, null, 'admin', 'admin', null),
+(907006243, '动环监控必填完整性核查.设备编码', 'CE_DEVICE_PE_POWER_MONITOR.device_code', 907003514, 907002200 , 2, null, null, 'admin', 'admin', null),
+(907006244, '动环监控必填完整性核查.设备型号', 'CE_DEVICE_PE_POWER_MONITOR.product_name', 907003514, 907002201 , 2, null, null, 'admin', 'admin', null),
+(907006245, '动环监控必填完整性核查.设备厂家', 'CE_DEVICE_PE_POWER_MONITOR.vendor_id', 907003514, 907002202 , 2, null, null, 'admin', 'admin', null),
+(907006246, '动环监控必填完整性核查.开始使用时间', 'CE_DEVICE_PE_POWER_MONITOR.start_time', 907003514, 907002203, 2, null, null, 'admin', 'admin', null),
+(907006247, '动环监控必填完整性核查.预计报废时间', 'CE_DEVICE_PE_POWER_MONITOR.estimated_retirement_time', 907003514, 907002204, 2, null, null, 'admin', 'admin', null),
+(907006248, '动环监控必填完整性核查.使用状态', 'CE_DEVICE_PE_POWER_MONITOR.lifecycle_status', 907003514, 907002205, 2, null, null, 'admin', 'admin', null),
+(907006249, '动环监控必填完整性核查.维护责任人', 'CE_DEVICE_PE_POWER_MONITOR.maintainor', 907003514, 907002206, 2, null, null, 'admin', 'admin', null),
+(907006250, '动环监控必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_POWER_MONITOR.qualitor', 907003514, 907002207, 2, null, null, 'admin', 'admin', null),
 --智能电表必填完整性核查 CE_DEVICE_PE_SMART_METER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006251, '智能电表必填完整性核查.资源标识', 'CE_DEVICE_PE_SMART_METER.int_id', 907003515, 907002208, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006252, '智能电表必填完整性核查.所属站点', 'CE_DEVICE_PE_SMART_METER.related_site', 907003515, 907002212, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006253, '智能电表必填完整性核查.所属机房', 'CE_DEVICE_PE_SMART_METER.related_room', 907003515, 907002213, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006254, '智能电表必填完整性核查.设备类型', 'CE_DEVICE_PE_SMART_METER.device_type', 907003515, 907002214 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006255, '智能电表必填完整性核查.设备子类', 'CE_DEVICE_PE_SMART_METER.device_subclass', 907003515, 907002215 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006256, '智能电表必填完整性核查.设备名称', 'CE_DEVICE_PE_SMART_METER.zh_label', 907003515, 907002216 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006257, '智能电表必填完整性核查.设备编码', 'CE_DEVICE_PE_SMART_METER.device_code', 907003515, 907002217 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006258, '智能电表必填完整性核查.设备型号', 'CE_DEVICE_PE_SMART_METER.product_name', 907003515, 907002218 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006259, '智能电表必填完整性核查.设备厂家', 'CE_DEVICE_PE_SMART_METER.vendor_id', 907003515, 907002219 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006260, '智能电表必填完整性核查.开始使用时间', 'CE_DEVICE_PE_SMART_METER.start_time', 907003515, 907002221, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006261, '智能电表必填完整性核查.预计报废时间', 'CE_DEVICE_PE_SMART_METER.estimated_retirement_time', 907003515, 907002222, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006262, '智能电表必填完整性核查.使用状态', 'CE_DEVICE_PE_SMART_METER.lifecycle_status', 907003515, 907002223, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006263, '智能电表必填完整性核查.维护责任人', 'CE_DEVICE_PE_SMART_METER.maintainor', 907003515, 907002224, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006264, '智能电表必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_SMART_METER.qualitor', 907003515, 907002225, 2, null, null, 'admin', 'admin', null);
-			  
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006265, '智能电表必填完整性核查.电表回路数（路）', 'CE_DEVICE_PE_SMART_METER.meter_circuit_number', 907003515, 907002220, 2, null, null, 'admin', 'admin', null);
-
+(907006251, '智能电表必填完整性核查.资源标识', 'CE_DEVICE_PE_SMART_METER.int_id', 907003515, 907002208, 2, null, null, 'admin', 'admin', null),
+(907006252, '智能电表必填完整性核查.所属站点', 'CE_DEVICE_PE_SMART_METER.related_site', 907003515, 907002212, 2, null, null, 'admin', 'admin', null),
+(907006253, '智能电表必填完整性核查.所属机房', 'CE_DEVICE_PE_SMART_METER.related_room', 907003515, 907002213, 2, null, null, 'admin', 'admin', null),
+(907006254, '智能电表必填完整性核查.设备类型', 'CE_DEVICE_PE_SMART_METER.device_type', 907003515, 907002214 , 2, null, null, 'admin', 'admin', null),
+(907006255, '智能电表必填完整性核查.设备子类', 'CE_DEVICE_PE_SMART_METER.device_subclass', 907003515, 907002215 , 2, null, null, 'admin', 'admin', null), 
+(907006256, '智能电表必填完整性核查.设备名称', 'CE_DEVICE_PE_SMART_METER.zh_label', 907003515, 907002216 , 2, null, null, 'admin', 'admin', null), 
+(907006257, '智能电表必填完整性核查.设备编码', 'CE_DEVICE_PE_SMART_METER.device_code', 907003515, 907002217 , 2, null, null, 'admin', 'admin', null),
+(907006258, '智能电表必填完整性核查.设备型号', 'CE_DEVICE_PE_SMART_METER.product_name', 907003515, 907002218 , 2, null, null, 'admin', 'admin', null),
+(907006259, '智能电表必填完整性核查.设备厂家', 'CE_DEVICE_PE_SMART_METER.vendor_id', 907003515, 907002219 , 2, null, null, 'admin', 'admin', null),
+(907006260, '智能电表必填完整性核查.开始使用时间', 'CE_DEVICE_PE_SMART_METER.start_time', 907003515, 907002221, 2, null, null, 'admin', 'admin', null),
+(907006261, '智能电表必填完整性核查.预计报废时间', 'CE_DEVICE_PE_SMART_METER.estimated_retirement_time', 907003515, 907002222, 2, null, null, 'admin', 'admin', null),
+(907006262, '智能电表必填完整性核查.使用状态', 'CE_DEVICE_PE_SMART_METER.lifecycle_status', 907003515, 907002223, 2, null, null, 'admin', 'admin', null),
+(907006263, '智能电表必填完整性核查.维护责任人', 'CE_DEVICE_PE_SMART_METER.maintainor', 907003515, 907002224, 2, null, null, 'admin', 'admin', null),
+(907006264, '智能电表必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_SMART_METER.qualitor', 907003515, 907002225, 2, null, null, 'admin', 'admin', null),
+(907006265, '智能电表必填完整性核查.电表回路数（路）', 'CE_DEVICE_PE_SMART_METER.meter_circuit_number', 907003515, 907002220, 2, null, null, 'admin', 'admin', null),
 --其他设备必填完整性核查 CE_DEVICE_PE_OTHER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006266, '其他设备必填完整性核查.资源标识', 'CE_DEVICE_PE_OTHER.int_id', 907003516, 907002277, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006267, '其他设备必填完整性核查.所属站点', 'CE_DEVICE_PE_OTHER.related_site', 907003516, 907002281, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006268, '其他设备必填完整性核查.所属机房', 'CE_DEVICE_PE_OTHER.related_room', 907003516, 907002282, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006269, '其他设备必填完整性核查.设备类型', 'CE_DEVICE_PE_OTHER.device_type', 907003516, 907002283 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006270, '其他设备必填完整性核查.设备子类', 'CE_DEVICE_PE_OTHER.device_subclass', 907003516, 907002284 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006271, '其他设备必填完整性核查.设备名称', 'CE_DEVICE_PE_OTHER.zh_label', 907003516, 907002285 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006272, '其他设备必填完整性核查.设备编码', 'CE_DEVICE_PE_OTHER.device_code', 907003516, 907002286 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006273, '其他设备必填完整性核查.设备型号', 'CE_DEVICE_PE_OTHER.product_name', 907003516, 907002287 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006274, '其他设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_OTHER.vendor_id', 907003516, 907002288 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006275, '其他设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_OTHER.start_time', 907003516, 907002289, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006276, '其他设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_OTHER.estimated_retirement_time', 907003516, 907002290, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006277, '其他设备必填完整性核查.使用状态', 'CE_DEVICE_PE_OTHER.lifecycle_status', 907003516, 907002291, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006278, '其他设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_OTHER.maintainor', 907003516, 907002292, 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006279, '其他设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_OTHER.qualitor', 907003516, 907002293, 2, null, null, 'admin', 'admin', null);
-
+(907006266, '其他设备必填完整性核查.资源标识', 'CE_DEVICE_PE_OTHER.int_id', 907003516, 907002277, 2, null, null, 'admin', 'admin', null),
+(907006267, '其他设备必填完整性核查.所属站点', 'CE_DEVICE_PE_OTHER.related_site', 907003516, 907002281, 2, null, null, 'admin', 'admin', null),
+(907006268, '其他设备必填完整性核查.所属机房', 'CE_DEVICE_PE_OTHER.related_room', 907003516, 907002282, 2, null, null, 'admin', 'admin', null),
+(907006269, '其他设备必填完整性核查.设备类型', 'CE_DEVICE_PE_OTHER.device_type', 907003516, 907002283 , 2, null, null, 'admin', 'admin', null),
+(907006270, '其他设备必填完整性核查.设备子类', 'CE_DEVICE_PE_OTHER.device_subclass', 907003516, 907002284 , 2, null, null, 'admin', 'admin', null),
+(907006271, '其他设备必填完整性核查.设备名称', 'CE_DEVICE_PE_OTHER.zh_label', 907003516, 907002285 , 2, null, null, 'admin', 'admin', null),
+(907006272, '其他设备必填完整性核查.设备编码', 'CE_DEVICE_PE_OTHER.device_code', 907003516, 907002286 , 2, null, null, 'admin', 'admin', null),
+(907006273, '其他设备必填完整性核查.设备型号', 'CE_DEVICE_PE_OTHER.product_name', 907003516, 907002287 , 2, null, null, 'admin', 'admin', null),
+(907006274, '其他设备必填完整性核查.设备厂家', 'CE_DEVICE_PE_OTHER.vendor_id', 907003516, 907002288 , 2, null, null, 'admin', 'admin', null), 
+(907006275, '其他设备必填完整性核查.开始使用时间', 'CE_DEVICE_PE_OTHER.start_time', 907003516, 907002289, 2, null, null, 'admin', 'admin', null),
+(907006276, '其他设备必填完整性核查.预计报废时间', 'CE_DEVICE_PE_OTHER.estimated_retirement_time', 907003516, 907002290, 2, null, null, 'admin', 'admin', null),
+(907006277, '其他设备必填完整性核查.使用状态', 'CE_DEVICE_PE_OTHER.lifecycle_status', 907003516, 907002291, 2, null, null, 'admin', 'admin', null), 
+(907006278, '其他设备必填完整性核查.维护责任人', 'CE_DEVICE_PE_OTHER.maintainor', 907003516, 907002292, 2, null, null, 'admin', 'admin', null), 
+(907006279, '其他设备必填完整性核查.数据质量责任人（移动）', 'CE_DEVICE_PE_OTHER.qualitor', 907003516, 907002293, 2, null, null, 'admin', 'admin', null),
 --高压配电系统必填完整性核查 CE_NET_PE_HIGH_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006280, '高压配电系统必填完整性核查.资源标识', 'CE_NET_PE_HIGH_DISTRIBUTION.int_id', 907003517, 907001868, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006281, '高压配电系统必填完整性核查.所属站点', 'CE_NET_PE_HIGH_DISTRIBUTION.related_site', 907003517, 907001872, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006282, '高压配电系统必填完整性核查.所属机房', 'CE_NET_PE_HIGH_DISTRIBUTION.related_room', 907003517, 907001873, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006283, '高压配电系统必填完整性核查.系统类型', 'CE_NET_PE_HIGH_DISTRIBUTION.system_type', 907003517, 907001874 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006284, '高压配电系统必填完整性核查.系统名称', 'CE_NET_PE_HIGH_DISTRIBUTION.zh_label', 907003517, 907001875 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006285, '高压配电系统必填完整性核查.系统编码', 'CE_NET_PE_HIGH_DISTRIBUTION.system_code', 907003517, 907001876 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006286, '高压配电系统必填完整性核查.使用状态', 'CE_NET_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003517, 907001878, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006287, '高压配电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_HIGH_DISTRIBUTION.qualitor', 907003517, 907001879, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006288, '高压配电系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_HIGH_DISTRIBUTION.system_rated_capacity', 907003517, 907001877 , 2, null, null, 'admin', 'admin', null);
-
+(907006280, '高压配电系统必填完整性核查.资源标识', 'CE_NET_PE_HIGH_DISTRIBUTION.int_id', 907003517, 907001868, 2, null, null, 'admin', 'admin', null),
+(907006281, '高压配电系统必填完整性核查.所属站点', 'CE_NET_PE_HIGH_DISTRIBUTION.related_site', 907003517, 907001872, 2, null, null, 'admin', 'admin', null),
+(907006282, '高压配电系统必填完整性核查.所属机房', 'CE_NET_PE_HIGH_DISTRIBUTION.related_room', 907003517, 907001873, 2, null, null, 'admin', 'admin', null),
+(907006283, '高压配电系统必填完整性核查.系统类型', 'CE_NET_PE_HIGH_DISTRIBUTION.system_type', 907003517, 907001874 , 2, null, null, 'admin', 'admin', null),
+(907006284, '高压配电系统必填完整性核查.系统名称', 'CE_NET_PE_HIGH_DISTRIBUTION.zh_label', 907003517, 907001875 , 2, null, null, 'admin', 'admin', null),
+(907006285, '高压配电系统必填完整性核查.系统编码', 'CE_NET_PE_HIGH_DISTRIBUTION.system_code', 907003517, 907001876 , 2, null, null, 'admin', 'admin', null),		   		   
+(907006286, '高压配电系统必填完整性核查.使用状态', 'CE_NET_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003517, 907001878, 2, null, null, 'admin', 'admin', null),	   
+(907006287, '高压配电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_HIGH_DISTRIBUTION.qualitor', 907003517, 907001879, 2, null, null, 'admin', 'admin', null),
+(907006288, '高压配电系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_HIGH_DISTRIBUTION.system_rated_capacity', 907003517, 907001877 , 2, null, null, 'admin', 'admin', null),
 --高压直流电源系统必填完整性核查 CE_NET_PE_HIGH_POWER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006289, '高压直流电源系统必填完整性核查.资源标识', 'CE_NET_PE_HIGH_POWER.int_id', 907003518, 907001899, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006290, '高压直流电源系统必填完整性核查.所属站点', 'CE_NET_PE_HIGH_POWER.related_site', 907003518, 907001903, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006291, '高压直流电源系统必填完整性核查.所属机房', 'CE_NET_PE_HIGH_POWER.related_room', 907003518, 907001904, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006292, '高压直流电源系统必填完整性核查.系统类型', 'CE_NET_PE_HIGH_POWER.system_type', 907003518, 907001905 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006293, '高压直流电源系统必填完整性核查.系统名称', 'CE_NET_PE_HIGH_POWER.zh_label', 907003518, 907001906 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006294, '高压直流电源系统必填完整性核查.系统编码', 'CE_NET_PE_HIGH_POWER.system_code', 907003518, 907001907 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006295, '高压直流电源系统必填完整性核查.使用状态', 'CE_NET_PE_HIGH_POWER.lifecycle_status', 907003518, 907001909, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006296, '高压直流电源系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_HIGH_POWER.qualitor', 907003518, 907001910, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006297, '高压直流电源系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_HIGH_POWER.system_rated_capacity', 907003518, 907001908 , 2, null, null, 'admin', 'admin', null);
-
+(907006289, '高压直流电源系统必填完整性核查.资源标识', 'CE_NET_PE_HIGH_POWER.int_id', 907003518, 907001899, 2, null, null, 'admin', 'admin', null),
+(907006290, '高压直流电源系统必填完整性核查.所属站点', 'CE_NET_PE_HIGH_POWER.related_site', 907003518, 907001903, 2, null, null, 'admin', 'admin', null),
+(907006291, '高压直流电源系统必填完整性核查.所属机房', 'CE_NET_PE_HIGH_POWER.related_room', 907003518, 907001904, 2, null, null, 'admin', 'admin', null),
+(907006292, '高压直流电源系统必填完整性核查.系统类型', 'CE_NET_PE_HIGH_POWER.system_type', 907003518, 907001905 , 2, null, null, 'admin', 'admin', null),
+(907006293, '高压直流电源系统必填完整性核查.系统名称', 'CE_NET_PE_HIGH_POWER.zh_label', 907003518, 907001906 , 2, null, null, 'admin', 'admin', null),
+(907006294, '高压直流电源系统必填完整性核查.系统编码', 'CE_NET_PE_HIGH_POWER.system_code', 907003518, 907001907 , 2, null, null, 'admin', 'admin', null), 		   		   
+(907006295, '高压直流电源系统必填完整性核查.使用状态', 'CE_NET_PE_HIGH_POWER.lifecycle_status', 907003518, 907001909, 2, null, null, 'admin', 'admin', null), 		   
+(907006296, '高压直流电源系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_HIGH_POWER.qualitor', 907003518, 907001910, 2, null, null, 'admin', 'admin', null),
+(907006297, '高压直流电源系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_HIGH_POWER.system_rated_capacity', 907003518, 907001908 , 2, null, null, 'admin', 'admin', null),
 --低压配电系统必填完整性核查 CE_NET_PE_LOW_DISTRIBUTION
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006298, '低压配电系统必填完整性核查.资源标识', 'CE_NET_PE_LOW_DISTRIBUTION.int_id', 907003519, 907001955, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006299, '低压配电系统必填完整性核查.所属站点', 'CE_NET_PE_LOW_DISTRIBUTION.related_site', 907003519, 907001959, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006300, '低压配电系统必填完整性核查.所属机房', 'CE_NET_PE_LOW_DISTRIBUTION.related_room', 907003519, 907001960, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006301, '低压配电系统必填完整性核查.系统类型', 'CE_NET_PE_LOW_DISTRIBUTION.system_type', 907003519, 907001961 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006302, '低压配电系统必填完整性核查.系统名称', 'CE_NET_PE_LOW_DISTRIBUTION.zh_label', 907003519, 907001963 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006303, '低压配电系统必填完整性核查.系统编码', 'CE_NET_PE_LOW_DISTRIBUTION.system_code', 907003519, 907001964 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006304, '低压配电系统必填完整性核查.使用状态', 'CE_NET_PE_LOW_DISTRIBUTION.lifecycle_status', 907003519, 907001966, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006305, '低压配电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_LOW_DISTRIBUTION.qualitor', 907003519, 907001967, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006306, '低压配电系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_LOW_DISTRIBUTION.system_rated_capacity', 907003519, 907001965 , 2, null, null, 'admin', 'admin', null);
-
+(907006298, '低压配电系统必填完整性核查.资源标识', 'CE_NET_PE_LOW_DISTRIBUTION.int_id', 907003519, 907001955, 2, null, null, 'admin', 'admin', null),
+(907006299, '低压配电系统必填完整性核查.所属站点', 'CE_NET_PE_LOW_DISTRIBUTION.related_site', 907003519, 907001959, 2, null, null, 'admin', 'admin', null),
+(907006300, '低压配电系统必填完整性核查.所属机房', 'CE_NET_PE_LOW_DISTRIBUTION.related_room', 907003519, 907001960, 2, null, null, 'admin', 'admin', null),
+(907006301, '低压配电系统必填完整性核查.系统类型', 'CE_NET_PE_LOW_DISTRIBUTION.system_type', 907003519, 907001961 , 2, null, null, 'admin', 'admin', null),
+(907006302, '低压配电系统必填完整性核查.系统名称', 'CE_NET_PE_LOW_DISTRIBUTION.zh_label', 907003519, 907001963 , 2, null, null, 'admin', 'admin', null),
+(907006303, '低压配电系统必填完整性核查.系统编码', 'CE_NET_PE_LOW_DISTRIBUTION.system_code', 907003519, 907001964 , 2, null, null, 'admin', 'admin', null),	   		   
+(907006304, '低压配电系统必填完整性核查.使用状态', 'CE_NET_PE_LOW_DISTRIBUTION.lifecycle_status', 907003519, 907001966, 2, null, null, 'admin', 'admin', null),		   
+(907006305, '低压配电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_LOW_DISTRIBUTION.qualitor', 907003519, 907001967, 2, null, null, 'admin', 'admin', null),
+(907006306, '低压配电系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_LOW_DISTRIBUTION.system_rated_capacity', 907003519, 907001965 , 2, null, null, 'admin', 'admin', null),
 --发电系统必填完整性核查 CE_NET_PE_SWITCH_POWER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006307, '发电系统必填完整性核查.资源标识', 'CE_NET_PE_SWITCH_POWER.int_id', 907003520, 907001991, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006308, '发电系统必填完整性核查.所属站点', 'CE_NET_PE_SWITCH_POWER.related_site', 907003520, 907001995, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006309, '发电系统必填完整性核查.所属机房', 'CE_NET_PE_SWITCH_POWER.related_room', 907003520, 907001996, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006310, '发电系统必填完整性核查.系统类型', 'CE_NET_PE_SWITCH_POWER.system_type', 907003520, 907001997 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006311, '发电系统必填完整性核查.系统名称', 'CE_NET_PE_SWITCH_POWER.zh_label', 907003520, 907001999 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006312, '发电系统必填完整性核查.系统编码', 'CE_NET_PE_SWITCH_POWER.system_code', 907003520, 907002000 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006313, '发电系统必填完整性核查.使用状态', 'CE_NET_PE_SWITCH_POWER.lifecycle_status', 907003520, 907002002, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006314, '发电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_SWITCH_POWER.qualitor', 907003520, 907002003, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006315, '发电系统必填完整性核查.系统额定容量(KW)', 'CE_NET_PE_SWITCH_POWER.system_rated_capacity', 907003520, 907002001 , 2, null, null, 'admin', 'admin', null);
-
+(907006307, '发电系统必填完整性核查.资源标识', 'CE_NET_PE_SWITCH_POWER.int_id', 907003520, 907001991, 2, null, null, 'admin', 'admin', null),
+(907006308, '发电系统必填完整性核查.所属站点', 'CE_NET_PE_SWITCH_POWER.related_site', 907003520, 907001995, 2, null, null, 'admin', 'admin', null),
+(907006309, '发电系统必填完整性核查.所属机房', 'CE_NET_PE_SWITCH_POWER.related_room', 907003520, 907001996, 2, null, null, 'admin', 'admin', null),
+(907006310, '发电系统必填完整性核查.系统类型', 'CE_NET_PE_SWITCH_POWER.system_type', 907003520, 907001997 , 2, null, null, 'admin', 'admin', null),
+(907006311, '发电系统必填完整性核查.系统名称', 'CE_NET_PE_SWITCH_POWER.zh_label', 907003520, 907001999 , 2, null, null, 'admin', 'admin', null), 
+(907006312, '发电系统必填完整性核查.系统编码', 'CE_NET_PE_SWITCH_POWER.system_code', 907003520, 907002000 , 2, null, null, 'admin', 'admin', null),	   		   
+(907006313, '发电系统必填完整性核查.使用状态', 'CE_NET_PE_SWITCH_POWER.lifecycle_status', 907003520, 907002002, 2, null, null, 'admin', 'admin', null),	   
+(907006314, '发电系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_SWITCH_POWER.qualitor', 907003520, 907002003, 2, null, null, 'admin', 'admin', null),
+(907006315, '发电系统必填完整性核查.系统额定容量(KW)', 'CE_NET_PE_SWITCH_POWER.system_rated_capacity', 907003520, 907002001 , 2, null, null, 'admin', 'admin', null),
 --开关电源系统必填完整性核查 CE_NET_PE_OPEN_POWER
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006316, '开关电源系统必填完整性核查.资源标识', 'CE_NET_PE_OPEN_POWER.int_id', 907003521, 907002029, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006317, '开关电源系统必填完整性核查.所属站点', 'CE_NET_PE_OPEN_POWER.related_site', 907003521, 907002033, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006318, '开关电源系统必填完整性核查.所属机房', 'CE_NET_PE_OPEN_POWER.related_room', 907003521, 907002034, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006319, '开关电源系统必填完整性核查.系统类型', 'CE_NET_PE_OPEN_POWER.system_type', 907003521, 907002035 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006320, '开关电源系统必填完整性核查.系统名称', 'CE_NET_PE_OPEN_POWER.zh_label', 907003521, 907002037 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006321, '开关电源系统必填完整性核查.系统编码', 'CE_NET_PE_OPEN_POWER.system_code', 907003521, 907002038 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006322, '开关电源系统必填完整性核查.使用状态', 'CE_NET_PE_OPEN_POWER.lifecycle_status', 907003521, 907002040, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006323, '开关电源系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_OPEN_POWER.qualitor', 907003521, 907002041, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006324, '开关电源系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_OPEN_POWER.system_rated_capacity', 907003521, 907002039 , 2, null, null, 'admin', 'admin', null);
-
+(907006316, '开关电源系统必填完整性核查.资源标识', 'CE_NET_PE_OPEN_POWER.int_id', 907003521, 907002029, 2, null, null, 'admin', 'admin', null),
+(907006317, '开关电源系统必填完整性核查.所属站点', 'CE_NET_PE_OPEN_POWER.related_site', 907003521, 907002033, 2, null, null, 'admin', 'admin', null),
+(907006318, '开关电源系统必填完整性核查.所属机房', 'CE_NET_PE_OPEN_POWER.related_room', 907003521, 907002034, 2, null, null, 'admin', 'admin', null),
+(907006319, '开关电源系统必填完整性核查.系统类型', 'CE_NET_PE_OPEN_POWER.system_type', 907003521, 907002035 , 2, null, null, 'admin', 'admin', null),
+(907006320, '开关电源系统必填完整性核查.系统名称', 'CE_NET_PE_OPEN_POWER.zh_label', 907003521, 907002037 , 2, null, null, 'admin', 'admin', null), 
+(907006321, '开关电源系统必填完整性核查.系统编码', 'CE_NET_PE_OPEN_POWER.system_code', 907003521, 907002038 , 2, null, null, 'admin', 'admin', null), 		   		   
+(907006322, '开关电源系统必填完整性核查.使用状态', 'CE_NET_PE_OPEN_POWER.lifecycle_status', 907003521, 907002040, 2, null, null, 'admin', 'admin', null), 		   
+(907006323, '开关电源系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_OPEN_POWER.qualitor', 907003521, 907002041, 2, null, null, 'admin', 'admin', null),
+(907006324, '开关电源系统必填完整性核查.系统额定容量(A)', 'CE_NET_PE_OPEN_POWER.system_rated_capacity', 907003521, 907002039 , 2, null, null, 'admin', 'admin', null),
 --UPS系统必填完整性核查 CE_NET_PE_UPS
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006325, 'UPS系统必填完整性核查.资源标识', 'CE_NET_PE_UPS.int_id', 907003522, 907002086, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006326, 'UPS系统必填完整性核查.所属站点', 'CE_NET_PE_UPS.related_site', 907003522, 907002090, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006327, 'UPS系统必填完整性核查.所属机房', 'CE_NET_PE_UPS.related_room', 907003522, 907002091, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006328, 'UPS系统必填完整性核查.系统类型', 'CE_NET_PE_UPS.system_type', 907003522, 907002092 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006329, 'UPS系统必填完整性核查.系统名称', 'CE_NET_PE_UPS.zh_label', 907003522, 907002094 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006330, 'UPS系统必填完整性核查.系统编码', 'CE_NET_PE_UPS.system_code', 907003522, 907002095 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006331, 'UPS系统必填完整性核查.使用状态', 'CE_NET_PE_UPS.lifecycle_status', 907003522, 907002099, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006332, 'UPS系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_UPS.qualitor', 907003522, 907002100, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006333, 'UPS系统必填完整性核查.系统额定容量(KVA)', 'CE_NET_PE_UPS.system_rated_capacity', 907003522, 907002096 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006334, 'UPS系统必填完整性核查.工作方式', 'CE_NET_PE_UPS.work_method', 907003522, 907002097 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006335, 'UPS系统必填完整性核查.母线类型', 'CE_NET_PE_UPS.bus_type', 907003522, 907002098 , 2, null, null, 'admin', 'admin', null);
-
+(907006325, 'UPS系统必填完整性核查.资源标识', 'CE_NET_PE_UPS.int_id', 907003522, 907002086, 2, null, null, 'admin', 'admin', null),
+(907006326, 'UPS系统必填完整性核查.所属站点', 'CE_NET_PE_UPS.related_site', 907003522, 907002090, 2, null, null, 'admin', 'admin', null),
+(907006327, 'UPS系统必填完整性核查.所属机房', 'CE_NET_PE_UPS.related_room', 907003522, 907002091, 2, null, null, 'admin', 'admin', null),
+(907006328, 'UPS系统必填完整性核查.系统类型', 'CE_NET_PE_UPS.system_type', 907003522, 907002092 , 2, null, null, 'admin', 'admin', null),
+(907006329, 'UPS系统必填完整性核查.系统名称', 'CE_NET_PE_UPS.zh_label', 907003522, 907002094 , 2, null, null, 'admin', 'admin', null), 
+(907006330, 'UPS系统必填完整性核查.系统编码', 'CE_NET_PE_UPS.system_code', 907003522, 907002095 , 2, null, null, 'admin', 'admin', null),  		   		   
+(907006331, 'UPS系统必填完整性核查.使用状态', 'CE_NET_PE_UPS.lifecycle_status', 907003522, 907002099, 2, null, null, 'admin', 'admin', null),		   
+(907006332, 'UPS系统必填完整性核查.数据质量责任人（移动）', 'CE_NET_PE_UPS.qualitor', 907003522, 907002100, 2, null, null, 'admin', 'admin', null),
+(907006333, 'UPS系统必填完整性核查.系统额定容量(KVA)', 'CE_NET_PE_UPS.system_rated_capacity', 907003522, 907002096 , 2, null, null, 'admin', 'admin', null),
+(907006334, 'UPS系统必填完整性核查.工作方式', 'CE_NET_PE_UPS.work_method', 907003522, 907002097 , 2, null, null, 'admin', 'admin', null),
+(907006335, 'UPS系统必填完整性核查.母线类型', 'CE_NET_PE_UPS.bus_type', 907003522, 907002098 , 2, null, null, 'admin', 'admin', null),
 --动环专业内输出分路必填完整性核查 CE_LINK_PE_IN
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006336, '动环专业内输出分路必填完整性核查.资源标识', 'CE_LINK_PE_IN.int_id', 907003523, 907002226, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006337, '动环专业内输出分路必填完整性核查.所属站点', 'CE_LINK_PE_IN.related_site', 907003523, 907002230, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006338, '动环专业内输出分路必填完整性核查.所属机房', 'CE_LINK_PE_IN.related_room', 907003523, 907002231, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006339, '动环专业内输出分路必填完整性核查.所属设备类型', 'CE_LINK_PE_IN.related_device_type', 907003523, 907002233 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006340, '动环专业内输出分路必填完整性核查.所属设备', 'CE_LINK_PE_IN.related_device', 907003523, 907002234 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006341, '动环专业内输出分路必填完整性核查.分路类型', 'CE_LINK_PE_IN.branch_type', 907003523, 907002235 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006342, '动环专业内输出分路必填完整性核查.分路类型缩写', 'CE_LINK_PE_IN.branch_type_abbreviation', 907003523, 907002236, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006343, '动环专业内输出分路必填完整性核查.分路顺序号', 'CE_LINK_PE_IN.branch_number', 907003523, 907002237, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006344, '动环专业内输出分路必填完整性核查.分路主备', 'CE_LINK_PE_IN.branch_active_standby', 907003523, 907002238 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006345, '动环专业内输出分路必填完整性核查.使用状态', 'CE_LINK_PE_IN.lifecycle_status', 907003523, 907002240 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006346, '动环专业内输出分路必填完整性核查.分路名称', 'CE_LINK_PE_IN.branch_name', 907003523, 907002241 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006347, '动环专业内输出分路必填完整性核查.分路器件额定容量（A）', 'CE_LINK_PE_IN.branch_rated_capacity', 907003523, 907002239 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006348, '动环专业内输出分路必填完整性核查.下游分路名称', 'CE_LINK_PE_IN.down_branch_name', 907003523, 907002244 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006349, '动环专业内输出分路必填完整性核查.下游设备类型', 'CE_LINK_PE_IN.down_device_type', 907003523, 907002245, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006350, '动环专业内输出分路必填完整性核查.下游分路类型', 'CE_LINK_PE_IN.down_branch_type', 907003523, 907002246, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006351, '动环专业内输出分路必填完整性核查.下游分路类型缩写', 'CE_LINK_PE_IN.down_branch_type_abbreviation', 907003523, 907002247, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006352, '动环专业内输出分路必填完整性核查.下游分路顺序号', 'CE_LINK_PE_IN.down_branch_number', 907003523, 907002248 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006353, '动环专业内输出分路必填完整性核查.下游分路器件额定容量（A）', 'CE_LINK_PE_IN.down_branch_rated_capacity', 907003523, 907002249 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006354, '动环专业内输出分路必填完整性核查.下游分路主备', 'CE_LINK_PE_IN.down_branch_active_standby', 907003523, 907002250 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006355, '动环专业内输出分路必填完整性核查.下游使用状态', 'CE_LINK_PE_IN.down_use_status', 907003523, 907002251 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006356, '动环专业内输出分路必填完整性核查.数据质量责任人（移动）', 'CE_LINK_PE_IN.qualitor', 907003523, 907002252 , 2, null, null, 'admin', 'admin', null);
-
+(907006336, '动环专业内输出分路必填完整性核查.资源标识', 'CE_LINK_PE_IN.int_id', 907003523, 907002226, 2, null, null, 'admin', 'admin', null),
+(907006337, '动环专业内输出分路必填完整性核查.所属站点', 'CE_LINK_PE_IN.related_site', 907003523, 907002230, 2, null, null, 'admin', 'admin', null),
+(907006338, '动环专业内输出分路必填完整性核查.所属机房', 'CE_LINK_PE_IN.related_room', 907003523, 907002231, 2, null, null, 'admin', 'admin', null),
+(907006339, '动环专业内输出分路必填完整性核查.所属设备类型', 'CE_LINK_PE_IN.related_device_type', 907003523, 907002233 , 2, null, null, 'admin', 'admin', null),
+(907006340, '动环专业内输出分路必填完整性核查.所属设备', 'CE_LINK_PE_IN.related_device', 907003523, 907002234 , 2, null, null, 'admin', 'admin', null), 
+(907006341, '动环专业内输出分路必填完整性核查.分路类型', 'CE_LINK_PE_IN.branch_type', 907003523, 907002235 , 2, null, null, 'admin', 'admin', null),		   		   
+(907006342, '动环专业内输出分路必填完整性核查.分路类型缩写', 'CE_LINK_PE_IN.branch_type_abbreviation', 907003523, 907002236, 2, null, null, 'admin', 'admin', null),		   
+(907006343, '动环专业内输出分路必填完整性核查.分路顺序号', 'CE_LINK_PE_IN.branch_number', 907003523, 907002237, 2, null, null, 'admin', 'admin', null),
+(907006344, '动环专业内输出分路必填完整性核查.分路主备', 'CE_LINK_PE_IN.branch_active_standby', 907003523, 907002238 , 2, null, null, 'admin', 'admin', null),
+(907006345, '动环专业内输出分路必填完整性核查.使用状态', 'CE_LINK_PE_IN.lifecycle_status', 907003523, 907002240 , 2, null, null, 'admin', 'admin', null),
+(907006346, '动环专业内输出分路必填完整性核查.分路名称', 'CE_LINK_PE_IN.branch_name', 907003523, 907002241 , 2, null, null, 'admin', 'admin', null),
+(907006347, '动环专业内输出分路必填完整性核查.分路器件额定容量（A）', 'CE_LINK_PE_IN.branch_rated_capacity', 907003523, 907002239 , 2, null, null, 'admin', 'admin', null),
+(907006348, '动环专业内输出分路必填完整性核查.下游分路名称', 'CE_LINK_PE_IN.down_branch_name', 907003523, 907002244 , 2, null, null, 'admin', 'admin', null),
+(907006349, '动环专业内输出分路必填完整性核查.下游设备类型', 'CE_LINK_PE_IN.down_device_type', 907003523, 907002245, 2, null, null, 'admin', 'admin', null),
+(907006350, '动环专业内输出分路必填完整性核查.下游分路类型', 'CE_LINK_PE_IN.down_branch_type', 907003523, 907002246, 2, null, null, 'admin', 'admin', null),
+(907006351, '动环专业内输出分路必填完整性核查.下游分路类型缩写', 'CE_LINK_PE_IN.down_branch_type_abbreviation', 907003523, 907002247, 2, null, null, 'admin', 'admin', null),
+(907006352, '动环专业内输出分路必填完整性核查.下游分路顺序号', 'CE_LINK_PE_IN.down_branch_number', 907003523, 907002248 , 2, null, null, 'admin', 'admin', null),
+(907006353, '动环专业内输出分路必填完整性核查.下游分路器件额定容量（A）', 'CE_LINK_PE_IN.down_branch_rated_capacity', 907003523, 907002249 , 2, null, null, 'admin', 'admin', null),
+(907006354, '动环专业内输出分路必填完整性核查.下游分路主备', 'CE_LINK_PE_IN.down_branch_active_standby', 907003523, 907002250 , 2, null, null, 'admin', 'admin', null),
+(907006355, '动环专业内输出分路必填完整性核查.下游使用状态', 'CE_LINK_PE_IN.down_use_status', 907003523, 907002251 , 2, null, null, 'admin', 'admin', null),
+(907006356, '动环专业内输出分路必填完整性核查.数据质量责任人（移动）', 'CE_LINK_PE_IN.qualitor', 907003523, 907002252 , 2, null, null, 'admin', 'admin', null),
 --跨专业输出分路必填完整性核查 CE_LINK_PE_OUT
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006357, '跨专业输出分路必填完整性核查.资源标识', 'CE_LINK_PE_OUT.int_id', 907003524, 907002253, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006358, '跨专业输出分路必填完整性核查.所属站点', 'CE_LINK_PE_OUT.related_site', 907003524, 907002257, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006359, '跨专业输出分路必填完整性核查.所属机房', 'CE_LINK_PE_OUT.related_room', 907003524, 907002258, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006360, '跨专业输出分路必填完整性核查.所属设备类型', 'CE_LINK_PE_OUT.related_device_type', 907003524, 907002260 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006361, '跨专业输出分路必填完整性核查.所属设备', 'CE_LINK_PE_OUT.related_device', 907003524, 907002261 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006362, '跨专业输出分路必填完整性核查.分路类型', 'CE_LINK_PE_OUT.branch_type', 907003524, 907002262 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006363, '跨专业输出分路必填完整性核查.分路类型缩写', 'CE_LINK_PE_OUT.branch_type_abbreviation', 907003524, 907002263, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006364, '跨专业输出分路必填完整性核查.分路顺序号', 'CE_LINK_PE_OUT.branch_number', 907003524, 907002264, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006365, '跨专业输出分路必填完整性核查.分路主备', 'CE_LINK_PE_OUT.branch_active_standby', 907003524, 907002265 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006366, '跨专业输出分路必填完整性核查.使用状态', 'CE_LINK_PE_OUT.lifecycle_status', 907003524, 907002266 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006367, '跨专业输出分路必填完整性核查.分路名称', 'CE_LINK_PE_OUT.branch_name', 907003524, 907002267 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006368, '跨专业输出分路必填完整性核查.分路器件额定容量（A）', 'CE_LINK_PE_OUT.branch_rated_capacity', 907003524, 907002270 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006369, '跨专业输出分路必填完整性核查.下游设备类型', 'CE_LINK_PE_OUT.down_device_type', 907003524, 907002269 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006370, '跨专业输出分路必填完整性核查.专业类型', 'CE_LINK_PE_OUT.major_type', 907003524, 907002272, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006371, '跨专业输出分路必填完整性核查.下游设备所在机架位置', 'CE_LINK_PE_OUT.down_device_related_rack', 907003524, 907002273, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006372, '跨专业输出分路必填完整性核查.机架内开关顺序号', 'CE_LINK_PE_OUT.rack_switch_name', 907003524, 907002274, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006373, '跨专业输出分路必填完整性核查.下游负载名称加载功率', 'CE_LINK_PE_OUT.down_device_power', 907003524, 907002275 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006374, '跨专业输出分路必填完整性核查.数据质量责任人（移动）', 'CE_LINK_PE_OUT.qualitor', 907003524, 907002276 , 2, null, null, 'admin', 'admin', null);
-
+(907006357, '跨专业输出分路必填完整性核查.资源标识', 'CE_LINK_PE_OUT.int_id', 907003524, 907002253, 2, null, null, 'admin', 'admin', null),
+(907006358, '跨专业输出分路必填完整性核查.所属站点', 'CE_LINK_PE_OUT.related_site', 907003524, 907002257, 2, null, null, 'admin', 'admin', null),
+(907006359, '跨专业输出分路必填完整性核查.所属机房', 'CE_LINK_PE_OUT.related_room', 907003524, 907002258, 2, null, null, 'admin', 'admin', null),
+(907006360, '跨专业输出分路必填完整性核查.所属设备类型', 'CE_LINK_PE_OUT.related_device_type', 907003524, 907002260 , 2, null, null, 'admin', 'admin', null),
+(907006361, '跨专业输出分路必填完整性核查.所属设备', 'CE_LINK_PE_OUT.related_device', 907003524, 907002261 , 2, null, null, 'admin', 'admin', null),
+(907006362, '跨专业输出分路必填完整性核查.分路类型', 'CE_LINK_PE_OUT.branch_type', 907003524, 907002262 , 2, null, null, 'admin', 'admin', null),		   		   
+(907006363, '跨专业输出分路必填完整性核查.分路类型缩写', 'CE_LINK_PE_OUT.branch_type_abbreviation', 907003524, 907002263, 2, null, null, 'admin', 'admin', null),		   
+(907006364, '跨专业输出分路必填完整性核查.分路顺序号', 'CE_LINK_PE_OUT.branch_number', 907003524, 907002264, 2, null, null, 'admin', 'admin', null),
+(907006365, '跨专业输出分路必填完整性核查.分路主备', 'CE_LINK_PE_OUT.branch_active_standby', 907003524, 907002265 , 2, null, null, 'admin', 'admin', null),
+(907006366, '跨专业输出分路必填完整性核查.使用状态', 'CE_LINK_PE_OUT.lifecycle_status', 907003524, 907002266 , 2, null, null, 'admin', 'admin', null),
+(907006367, '跨专业输出分路必填完整性核查.分路名称', 'CE_LINK_PE_OUT.branch_name', 907003524, 907002267 , 2, null, null, 'admin', 'admin', null),
+(907006368, '跨专业输出分路必填完整性核查.分路器件额定容量（A）', 'CE_LINK_PE_OUT.branch_rated_capacity', 907003524, 907002270 , 2, null, null, 'admin', 'admin', null),
+(907006369, '跨专业输出分路必填完整性核查.下游设备类型', 'CE_LINK_PE_OUT.down_device_type', 907003524, 907002269 , 2, null, null, 'admin', 'admin', null),
+(907006370, '跨专业输出分路必填完整性核查.专业类型', 'CE_LINK_PE_OUT.major_type', 907003524, 907002272, 2, null, null, 'admin', 'admin', null),
+(907006371, '跨专业输出分路必填完整性核查.下游设备所在机架位置', 'CE_LINK_PE_OUT.down_device_related_rack', 907003524, 907002273, 2, null, null, 'admin', 'admin', null),
+(907006372, '跨专业输出分路必填完整性核查.机架内开关顺序号', 'CE_LINK_PE_OUT.rack_switch_name', 907003524, 907002274, 2, null, null, 'admin', 'admin', null),
+(907006373, '跨专业输出分路必填完整性核查.下游负载名称加载功率', 'CE_LINK_PE_OUT.down_device_power', 907003524, 907002275 , 2, null, null, 'admin', 'admin', null),
+(907006374, '跨专业输出分路必填完整性核查.数据质量责任人（移动）', 'CE_LINK_PE_OUT.qualitor', 907003524, 907002276 , 2, null, null, 'admin', 'admin', null),
 --位置点动环属性必填完整性核查 RM_SITE_PROPERTY
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006375, '位置点动环属性必填完整性核查.资源标识', 'RM_SITE_PROPERTY.int_id', 907003525, 907001801, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006376, '位置点动环属性必填完整性核查.站点名称', 'RM_SITE_PROPERTY.zh_label', 907003525, 907001805, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006377, '位置点动环属性必填完整性核查.动环专业站点级别', 'RM_SITE_PROPERTY.power_site_level', 907003525, 907001806, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006378, '位置点动环属性必填完整性核查.市电备份方式', 'RM_SITE_PROPERTY.mains_backup_method', 907003525, 907001807 , 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006379, '位置点动环属性必填完整性核查.市电是否来自不同变电站', 'RM_SITE_PROPERTY.power_is_substations', 907003525, 907001808 , 2, null, null, 'admin', 'admin', null);
-			   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006380, '位置点动环属性必填完整性核查.市电电压等级', 'RM_SITE_PROPERTY.mains_voltage_level', 907003525, 907001809 , 2, null, null, 'admin', 'admin', null);
-			   		   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006381, '位置点动环属性必填完整性核查.市电性质', 'RM_SITE_PROPERTY.mains_nature', 907003525, 907001810, 2, null, null, 'admin', 'admin', null);
-			   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006382, '位置点动环属性必填完整性核查.产权单位', 'RM_SITE_PROPERTY.property_unit', 907003525, 907001815, 2, null, null, 'admin', 'admin', null);
-
+(907006375, '位置点动环属性必填完整性核查.资源标识', 'RM_SITE_PROPERTY.int_id', 907003525, 907001801, 2, null, null, 'admin', 'admin', null),
+(907006376, '位置点动环属性必填完整性核查.站点名称', 'RM_SITE_PROPERTY.zh_label', 907003525, 907001805, 2, null, null, 'admin', 'admin', null),
+(907006377, '位置点动环属性必填完整性核查.动环专业站点级别', 'RM_SITE_PROPERTY.power_site_level', 907003525, 907001806, 2, null, null, 'admin', 'admin', null),
+(907006378, '位置点动环属性必填完整性核查.市电备份方式', 'RM_SITE_PROPERTY.mains_backup_method', 907003525, 907001807 , 2, null, null, 'admin', 'admin', null),
+(907006379, '位置点动环属性必填完整性核查.市电是否来自不同变电站', 'RM_SITE_PROPERTY.power_is_substations', 907003525, 907001808 , 2, null, null, 'admin', 'admin', null),   
+(907006380, '位置点动环属性必填完整性核查.市电电压等级', 'RM_SITE_PROPERTY.mains_voltage_level', 907003525, 907001809 , 2, null, null, 'admin', 'admin', null),   		   		   
+(907006381, '位置点动环属性必填完整性核查.市电性质', 'RM_SITE_PROPERTY.mains_nature', 907003525, 907001810, 2, null, null, 'admin', 'admin', null),   		   
+(907006382, '位置点动环属性必填完整性核查.产权单位', 'RM_SITE_PROPERTY.property_unit', 907003525, 907001815, 2, null, null, 'admin', 'admin', null),
 --机房动环属性必填完整性核查 RM_ROOM_PROPERTY
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006383, '机房动环属性必填完整性核查.资源标识', 'RM_ROOM_PROPERTY.int_id', 907003526, 907001817, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006384, '机房动环属性必填完整性核查.机房名称', 'RM_ROOM_PROPERTY.zh_label', 907003526, 907001821, 2, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006385, '机房动环属性必填完整性核查.动环专业机房类型', 'RM_ROOM_PROPERTY.power_room_type', 907003526, 907001822, 2, null, null, 'admin', 'admin', null);
-	   		   
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006386, '机房动环属性必填完整性核查.所属站点', 'RM_ROOM_PROPERTY.power_related_site_name', 907003526, 907001823, 2, null, null, 'admin', 'admin', null);
-
+(907006383, '机房动环属性必填完整性核查.资源标识', 'RM_ROOM_PROPERTY.int_id', 907003526, 907001817, 2, null, null, 'admin', 'admin', null),
+(907006384, '机房动环属性必填完整性核查.机房名称', 'RM_ROOM_PROPERTY.zh_label', 907003526, 907001821, 2, null, null, 'admin', 'admin', null),
+(907006385, '机房动环属性必填完整性核查.动环专业机房类型', 'RM_ROOM_PROPERTY.power_room_type', 907003526, 907001822, 2, null, null, 'admin', 'admin', null),  
+(907006386, '机房动环属性必填完整性核查.所属站点', 'RM_ROOM_PROPERTY.power_related_site_name', 907003526, 907001823, 2, null, null, 'admin', 'admin', null),
 --枚举值
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006387, '变压器(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.device_type', 907003530, 907001830, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006388, '变压器(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.device_subclass', 907003531, 907001831, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006389, '变压器(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.product_name', 907003532, 907001834, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006390, '变压器(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.vendor_id', 907003533, 907001835, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006391, '变压器(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.lifecycle_status', 907003534, 907001842, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006392, '变压器(输入额定电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.input_rated_voltage', 907003535, 907001837, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006393, '变压器(备份方式)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.backup_method', 907003536, 907001839, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006394, '变换设备(设备类型)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_type', 907003537, 907001851, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006395, '变换设备(设备子类)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_subclass', 907003538, 907001852, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006396, '变换设备(设备型号)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.product_name', 907003539, 907001855, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006397, '变换设备(设备厂家)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.vendor_id', 907003540, 907001856, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006398, '变换设备(使用状态)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.lifecycle_status', 907003541, 907001865, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006399, '变换设备(额定输入电压（V）)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_input_voltage', 907003542, 907001857, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006400, '变换设备(额定输出电压（V）)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_output_voltage', 907003543, 907001858, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006401, '变换设备(输出类型)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.output_type', 907003544, 907001859, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006402, '高压配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_type', 907003545, 907001886, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006403, '高压配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_subclass', 907003546, 907001887, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006404, '高压配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.product_name', 907003547, 907001890, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006405, '高压配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.vendor_id', 907003548, 907001891, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006406, '高压配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003549, 907001896, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006407, '高压直流电源(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.device_type', 907003550, 907001917, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006408, '高压直流电源(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.device_subclass', 907003551, 907001918, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006409, '高压直流电源(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.product_name', 907003552, 907001921, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006410, '高压直流电源(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.vendor_id', 907003553, 907001922, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006411, '高压直流电源(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.lifecycle_status', 907003554, 907001931, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006412, '高压直流电源(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.rated_output_voltage', 907003555, 907001924, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006413, '高压直流配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_type', 907003556, 907001940, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006414, '高压直流配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_subclass', 907003557, 907001941, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006415, '高压直流配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.product_name', 907003558, 907001944, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006416, '高压直流配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.vendor_id', 907003559, 907001945, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006417, '高压直流配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.lifecycle_status', 907003560, 907001952, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006418, '低压交流配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_type', 907003561, 907001974, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006419, '低压交流配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_subclass', 907003562, 907001975, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006420, '低压交流配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.product_name', 907003563, 907001978, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006421, '低压交流配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.vendor_id', 907003564, 907001979, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006422, '低压交流配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.lifecycle_status', 907003565, 907001988, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006423, '低压交流配电(输入端口数（路）)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.total_input_port', 907003566, 907001982, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006424, '发电机组(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.device_type', 907003567, 907002010, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006425, '发电机组(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.device_subclass', 907003568, 907002011, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006426, '发电机组(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.product_name', 907003569, 907002014, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006427, '发电机组(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.vendor_id', 907003570, 907002015, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006428, '发电机组(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.lifecycle_status', 907003571, 907002026, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006429, '发电机组(输出电压类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.output_voltage_type', 907003572, 907002018, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006430, '发电机组(自启动功能)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.self_start_function', 907003573, 907002019, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006431, '发电机组(冷却方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.cooling_method', 907003574, 907002020, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006432, '发电机组(安装方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.installation_method', 907003575, 907002021, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006433, '发电机组(备份方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.backup_method', 907003576, 907002022, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006434, '开关电源(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.device_type', 907003577, 907002048, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006435, '开关电源(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.device_subclass', 907003578, 907002049, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006436, '开关电源(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.product_name', 907003579, 907002052, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006437, '开关电源(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.vendor_id', 907003580, 907002053, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006438, '开关电源(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.lifecycle_status', 907003581, 907002062, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006439, '开关电源(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.rated_output_voltage', 907003582, 907002055, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006440, '低压直流配(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_type', 907003583, 907002071, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006441, '低压直流配(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_subclass', 907003584, 907002072, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006442, '低压直流配(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.product_name', 907003585, 907002075, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006443, '低压直流配(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.vendor_id', 907003586, 907002076, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006444, '低压直流配(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.lifecycle_status', 907003587, 907002083, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006445, 'UPS(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_UPS.device_type', 907003588, 907002107, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006446, 'UPS(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_UPS.device_subclass', 907003589, 907002108, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006447, 'UPS(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_UPS.product_name', 907003590, 907002111, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006448, 'UPS(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_UPS.vendor_id', 907003591, 907002112, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006449, 'UPS(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_UPS.lifecycle_status', 907003592, 907002118, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006450, 'UPS(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_UPS.rated_output_voltage', 907003593, 907002115, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006451, '蓄电池(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.device_type', 907003594, 907002127, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006452, '蓄电池(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.device_subclass', 907003595, 907002128, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006453, '蓄电池(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.product_name', 907003596, 907002131, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006454, '蓄电池(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.vendor_id', 907003597, 907002132, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006455, '蓄电池(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.lifecycle_status', 907003598, 907002139, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006456, '蓄电池(单体电压等级（V）)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.rated_output_voltage', 907003599, 907002135, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006457, '空调(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_AIR.device_type', 907003600, 907002148, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006458, '空调(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_AIR.device_subclass', 907003601, 907002149, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006459, '空调(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_AIR.product_name', 907003602, 907002152, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006460, '空调(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_AIR.vendor_id', 907003603, 907002153, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006461, '空调(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_AIR.lifecycle_status', 907003604, 907002159, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006462, '空调(额定工作电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_AIR.rated_operating_voltage', 907003605, 907002156, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006463, '节能设备(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.device_type', 907003606, 907002168, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006464, '节能设备(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.device_subclass', 907003607, 907002169, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006465, '节能设备(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.product_name', 907003608, 907002172, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006466, '节能设备(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.vendor_id', 907003609, 907002173, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006467, '节能设备(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.lifecycle_status', 907003610, 907002188, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006468, '节能设备(额定工作电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.rated_operating_voltage', 907003611, 907002176, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006469, '节能设备(下挂风机形式)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.fan_form', 907003612, 907002180, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006470, '动环监控(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.device_type', 907003613, 907002197, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006471, '动环监控(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.device_subclass', 907003614, 907002198, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006472, '动环监控(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.product_name', 907003615, 907002201, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006473, '动环监控(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.vendor_id', 907003616, 907002202, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006474, '动环监控(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.lifecycle_status', 907003617, 907002205, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006475, '智能电表(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.device_type', 907003618, 907002214, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006476, '智能电表(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.device_subclass', 907003619, 907002215, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006477, '智能电表(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.product_name', 907003620, 907002218, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006478, '智能电表(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.vendor_id', 907003621, 907002219, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006479, '智能电表(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.lifecycle_status', 907003622, 907002223, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006480, '其他设备(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.device_type', 907003623, 907002283, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006481, '其他设备(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.device_subclass', 907003624, 907002284, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006482, '其他设备(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.product_name', 907003625, 907002287, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006483, '其他设备(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.vendor_id', 907003626, 907002288, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006484, '其他设备(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.lifecycle_status', 907003627, 907002291, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006485, '高压配电系统枚(系统类型)枚举值规范性核查', 'CE_NET_PE_HIGH_DISTRIBUTION.system_type', 907003628, 907001874, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006486, '高压配电系统枚(使用状态)枚举值规范性核查', 'CE_NET_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003629, 907001878, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006487, '高压直流电源系统(系统类型)枚举值规范性核查', 'CE_NET_PE_HIGH_POWER.system_type', 907003630, 907001905, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006488, '高压直流电源系统(使用状态)枚举值规范性核查', 'CE_NET_PE_HIGH_POWER.lifecycle_status', 907003631, 907001909, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006489, '低压配电系统(系统类型)枚举值规范性核查', 'CE_NET_PE_LOW_DISTRIBUTION.system_type', 907003632, 907001961, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006490, '低压配电系统(使用状态)枚举值规范性核查', 'CE_NET_PE_LOW_DISTRIBUTION.lifecycle_status', 907003633, 907001966, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006491, '发电系统(系统类型)枚举值规范性核查', 'CE_NET_PE_SWITCH_POWER.system_type', 907003634, 907001997, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006492, '发电系统(使用状态)枚举值规范性核查', 'CE_NET_PE_SWITCH_POWER.lifecycle_status', 907003635, 907002002, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006493, '开关电源系统(系统类型)枚举值规范性核查', 'CE_NET_PE_OPEN_POWER.system_type', 907003636, 907002035, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006494, '开关电源系统(使用状态)枚举值规范性核查', 'CE_NET_PE_OPEN_POWER.lifecycle_status', 907003637, 907002040, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006495, 'UPS系统(系统类型)枚举值规范性核查', 'CE_NET_PE_UPS.system_type', 907003638, 907002092, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006496, 'UPS系统(使用状态)枚举值规范性核查', 'CE_NET_PE_UPS.lifecycle_status', 907003639, 907002099, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006497, 'UPS系统(工作方式)枚举值规范性核查', 'CE_NET_PE_UPS.work_method', 907003640, 907002097, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006498, 'UPS系统(母线类型)枚举值规范性核查', 'CE_NET_PE_UPS.bus_type', 907003641, 907002098, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006499, 'UPS系统(资源系统类型)枚举值规范性核查', 'CE_NET_PE_UPS.res_type', 907003642, 907002093, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006500, '动环专业内输出分路(所属设备类型)枚举值规范性核查', 'CE_LINK_PE_IN.related_device_type', 907003643, 907002233, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006501, '动环专业内输出分路(分路类型)枚举值规范性核查', 'CE_LINK_PE_IN.branch_type', 907003644, 907002235, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006502, '动环专业内输出分路(分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_IN.branch_type_abbreviation', 907003645, 907002236, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006503, '动环专业内输出分路(分路主备)枚举值规范性核查', 'CE_LINK_PE_IN.branch_active_standby', 907003646, 907002238, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006504, '动环专业内输出分路(使用状态)枚举值规范性核查', 'CE_LINK_PE_IN.lifecycle_status', 907003647, 907002240, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006505, '动环专业内输出分路(下游设备类型)枚举值规范性核查', 'CE_LINK_PE_IN.down_device_type', 907003648, 907002245, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006506, '动环专业内输出分路(下游分路类型)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_type', 907003649, 907002246, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006507, '动环专业内输出分路(下游分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_type_abbreviation', 907003650, 907002247, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006508, '动环专业内输出分路(下游分路主备)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_active_standby', 907003651, 907002250, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006509, '动环专业内输出分路(下游使用状态)枚举值规范性核查', 'CE_LINK_PE_IN.down_use_status', 907003652, 907002251, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006510, '跨专业输出分路(所属设备类型)枚举值规范性核查', 'CE_LINK_PE_OUT.related_device_type', 907003653, 907002260, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006511, '跨专业输出分路(分路类型)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_type', 907003654, 907002262, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006512, '跨专业输出分路(分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_type_abbreviation', 907003655, 907002263, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006513, '跨专业输出分路(分路主备)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_active_standby', 907003656, 907002265, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006514, '跨专业输出分路(使用状态)枚举值规范性核查', 'CE_LINK_PE_OUT.lifecycle_status', 907003657, 907002266, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006515, '跨专业输出分路(下游设备类型)枚举值规范性核查', 'CE_LINK_PE_OUT.down_device_type', 907003658, 907002269, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006516, '跨专业输出分路(专业类型)枚举值规范性核查', 'CE_LINK_PE_OUT.major_type', 907003659, 907002272, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006517, '位置点动环属性(动环专业站点级别)枚举值规范性核查', 'RM_SITE_PROPERTY.power_site_level', 907003660, 907001806, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006518, '位置点动环属性(市电备份方式)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_backup_method', 907003661, 907001807, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006519, '位置点动环属性(市电是否来自不同变电站)枚举值规范性核查', 'RM_SITE_PROPERTY.power_is_substations', 907003662, 907001808, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006520, '位置点动环属性(市电电压等级)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_voltage_level', 907003663, 907001809, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006521, '位置点动环属性(市电性质)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_nature', 907003664, 907001810, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006522, '位置点动环属性(市电油机配置级别)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_configuration_level', 907003665, 907001813, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006523, '位置点动环属性(产权单位)枚举值规范性核查', 'RM_SITE_PROPERTY.property_unit', 907003666, 907001815, 1, null, null, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO)
-values (907006524, '机房动环属性(动环专业机房类型)枚举值规范性核查', 'RM_ROOM_PROPERTY.power_room_type', 907003667, 907001822, 1, null, null, 'admin', 'admin', null);
+(907006387, '变压器(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.device_type', 907003530, 907001830, 1, null, null, 'admin', 'admin', null),
+(907006388, '变压器(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.device_subclass', 907003531, 907001831, 1, null, null, 'admin', 'admin', null),
+(907006389, '变压器(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.product_name', 907003532, 907001834, 1, null, null, 'admin', 'admin', null),
+(907006390, '变压器(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.vendor_id', 907003533, 907001835, 1, null, null, 'admin', 'admin', null),
+(907006391, '变压器(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.lifecycle_status', 907003534, 907001842, 1, null, null, 'admin', 'admin', null),
+(907006392, '变压器(输入额定电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.input_rated_voltage', 907003535, 907001837, 1, null, null, 'admin', 'admin', null),
+(907006393, '变压器(备份方式)枚举值规范性核查', 'CE_DEVICE_PE_TRANSFORM.backup_method', 907003536, 907001839, 1, null, null, 'admin', 'admin', null),
+(907006394, '变换设备(设备类型)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_type', 907003537, 907001851, 1, null, null, 'admin', 'admin', null),
+(907006395, '变换设备(设备子类)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.device_subclass', 907003538, 907001852, 1, null, null, 'admin', 'admin', null),
+(907006396, '变换设备(设备型号)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.product_name', 907003539, 907001855, 1, null, null, 'admin', 'admin', null),
+(907006397, '变换设备(设备厂家)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.vendor_id', 907003540, 907001856, 1, null, null, 'admin', 'admin', null),
+(907006398, '变换设备(使用状态)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.lifecycle_status', 907003541, 907001865, 1, null, null, 'admin', 'admin', null),
+(907006399, '变换设备(额定输入电压（V）)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_input_voltage', 907003542, 907001857, 1, null, null, 'admin', 'admin', null),
+(907006400, '变换设备(额定输出电压（V）)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.rated_output_voltage', 907003543, 907001858, 1, null, null, 'admin', 'admin', null),
+(907006401, '变换设备(输出类型)枚举值规范性核查', 'CE_DECIVE_PE_TRANSFORM_DEVICE.output_type', 907003544, 907001859, 1, null, null, 'admin', 'admin', null),
+(907006402, '高压配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_type', 907003545, 907001886, 1, null, null, 'admin', 'admin', null),
+(907006403, '高压配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.device_subclass', 907003546, 907001887, 1, null, null, 'admin', 'admin', null),
+(907006404, '高压配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.product_name', 907003547, 907001890, 1, null, null, 'admin', 'admin', null),
+(907006405, '高压配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.vendor_id', 907003548, 907001891, 1, null, null, 'admin', 'admin', null),
+(907006406, '高压配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003549, 907001896, 1, null, null, 'admin', 'admin', null),
+(907006407, '高压直流电源(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.device_type', 907003550, 907001917, 1, null, null, 'admin', 'admin', null),
+(907006408, '高压直流电源(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.device_subclass', 907003551, 907001918, 1, null, null, 'admin', 'admin', null),
+(907006409, '高压直流电源(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.product_name', 907003552, 907001921, 1, null, null, 'admin', 'admin', null),
+(907006410, '高压直流电源(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.vendor_id', 907003553, 907001922, 1, null, null, 'admin', 'admin', null),
+(907006411, '高压直流电源(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.lifecycle_status', 907003554, 907001931, 1, null, null, 'admin', 'admin', null),
+(907006412, '高压直流电源(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_POWER.rated_output_voltage', 907003555, 907001924, 1, null, null, 'admin', 'admin', null),
+(907006413, '高压直流配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_type', 907003556, 907001940, 1, null, null, 'admin', 'admin', null),
+(907006414, '高压直流配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.device_subclass', 907003557, 907001941, 1, null, null, 'admin', 'admin', null),
+(907006415, '高压直流配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.product_name', 907003558, 907001944, 1, null, null, 'admin', 'admin', null),
+(907006416, '高压直流配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.vendor_id', 907003559, 907001945, 1, null, null, 'admin', 'admin', null),
+(907006417, '高压直流配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_HIGH_DC_DISTRIBUTION.lifecycle_status', 907003560, 907001952, 1, null, null, 'admin', 'admin', null),
+(907006418, '低压交流配电(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_type', 907003561, 907001974, 1, null, null, 'admin', 'admin', null),
+(907006419, '低压交流配电(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.device_subclass', 907003562, 907001975, 1, null, null, 'admin', 'admin', null),
+(907006420, '低压交流配电(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.product_name', 907003563, 907001978, 1, null, null, 'admin', 'admin', null),
+(907006421, '低压交流配电(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.vendor_id', 907003564, 907001979, 1, null, null, 'admin', 'admin', null),
+(907006422, '低压交流配电(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.lifecycle_status', 907003565, 907001988, 1, null, null, 'admin', 'admin', null),
+(907006423, '低压交流配电(输入端口数（路）)枚举值规范性核查', 'CE_DEVICE_PE_LOW_AC_DISTRIBUTION.total_input_port', 907003566, 907001982, 1, null, null, 'admin', 'admin', null),
+(907006424, '发电机组(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.device_type', 907003567, 907002010, 1, null, null, 'admin', 'admin', null),
+(907006425, '发电机组(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.device_subclass', 907003568, 907002011, 1, null, null, 'admin', 'admin', null),
+(907006426, '发电机组(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.product_name', 907003569, 907002014, 1, null, null, 'admin', 'admin', null),
+(907006427, '发电机组(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.vendor_id', 907003570, 907002015, 1, null, null, 'admin', 'admin', null),
+(907006428, '发电机组(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.lifecycle_status', 907003571, 907002026, 1, null, null, 'admin', 'admin', null),
+(907006429, '发电机组(输出电压类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.output_voltage_type', 907003572, 907002018, 1, null, null, 'admin', 'admin', null),
+(907006430, '发电机组(自启动功能)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.self_start_function', 907003573, 907002019, 1, null, null, 'admin', 'admin', null),
+(907006431, '发电机组(冷却方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.cooling_method', 907003574, 907002020, 1, null, null, 'admin', 'admin', null),
+(907006432, '发电机组(安装方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.installation_method', 907003575, 907002021, 1, null, null, 'admin', 'admin', null),
+(907006433, '发电机组(备份方式)枚举值规范性核查', 'CE_DEVICE_PE_POWER_GENERATION.backup_method', 907003576, 907002022, 1, null, null, 'admin', 'admin', null),
+(907006434, '开关电源(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.device_type', 907003577, 907002048, 1, null, null, 'admin', 'admin', null),
+(907006435, '开关电源(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.device_subclass', 907003578, 907002049, 1, null, null, 'admin', 'admin', null),
+(907006436, '开关电源(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.product_name', 907003579, 907002052, 1, null, null, 'admin', 'admin', null),
+(907006437, '开关电源(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.vendor_id', 907003580, 907002053, 1, null, null, 'admin', 'admin', null),
+(907006438, '开关电源(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.lifecycle_status', 907003581, 907002062, 1, null, null, 'admin', 'admin', null),
+(907006439, '开关电源(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_SWITCH_POWER.rated_output_voltage', 907003582, 907002055, 1, null, null, 'admin', 'admin', null),
+(907006440, '低压直流配(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_type', 907003583, 907002071, 1, null, null, 'admin', 'admin', null),
+(907006441, '低压直流配(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.device_subclass', 907003584, 907002072, 1, null, null, 'admin', 'admin', null),
+(907006442, '低压直流配(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.product_name', 907003585, 907002075, 1, null, null, 'admin', 'admin', null),
+(907006443, '低压直流配(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.vendor_id', 907003586, 907002076, 1, null, null, 'admin', 'admin', null),
+(907006444, '低压直流配(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_LOW_DC_DISTRIBUTION.lifecycle_status', 907003587, 907002083, 1, null, null, 'admin', 'admin', null),
+(907006445, 'UPS(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_UPS.device_type', 907003588, 907002107, 1, null, null, 'admin', 'admin', null),
+(907006446, 'UPS(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_UPS.device_subclass', 907003589, 907002108, 1, null, null, 'admin', 'admin', null),
+(907006447, 'UPS(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_UPS.product_name', 907003590, 907002111, 1, null, null, 'admin', 'admin', null),
+(907006448, 'UPS(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_UPS.vendor_id', 907003591, 907002112, 1, null, null, 'admin', 'admin', null),
+(907006449, 'UPS(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_UPS.lifecycle_status', 907003592, 907002118, 1, null, null, 'admin', 'admin', null),
+(907006450, 'UPS(额定输出电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_UPS.rated_output_voltage', 907003593, 907002115, 1, null, null, 'admin', 'admin', null),
+(907006451, '蓄电池(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.device_type', 907003594, 907002127, 1, null, null, 'admin', 'admin', null),
+(907006452, '蓄电池(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.device_subclass', 907003595, 907002128, 1, null, null, 'admin', 'admin', null),
+(907006453, '蓄电池(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.product_name', 907003596, 907002131, 1, null, null, 'admin', 'admin', null),
+(907006454, '蓄电池(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.vendor_id', 907003597, 907002132, 1, null, null, 'admin', 'admin', null),
+(907006455, '蓄电池(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.lifecycle_status', 907003598, 907002139, 1, null, null, 'admin', 'admin', null),
+(907006456, '蓄电池(单体电压等级（V）)枚举值规范性核查', 'CE_DEVICE_PE_BATTERY.rated_output_voltage', 907003599, 907002135, 1, null, null, 'admin', 'admin', null),
+(907006457, '空调(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_AIR.device_type', 907003600, 907002148, 1, null, null, 'admin', 'admin', null),
+(907006458, '空调(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_AIR.device_subclass', 907003601, 907002149, 1, null, null, 'admin', 'admin', null),
+(907006459, '空调(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_AIR.product_name', 907003602, 907002152, 1, null, null, 'admin', 'admin', null),
+(907006460, '空调(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_AIR.vendor_id', 907003603, 907002153, 1, null, null, 'admin', 'admin', null),
+(907006461, '空调(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_AIR.lifecycle_status', 907003604, 907002159, 1, null, null, 'admin', 'admin', null),
+(907006462, '空调(额定工作电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_AIR.rated_operating_voltage', 907003605, 907002156, 1, null, null, 'admin', 'admin', null),
+(907006463, '节能设备(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.device_type', 907003606, 907002168, 1, null, null, 'admin', 'admin', null),
+(907006464, '节能设备(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.device_subclass', 907003607, 907002169, 1, null, null, 'admin', 'admin', null),
+(907006465, '节能设备(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.product_name', 907003608, 907002172, 1, null, null, 'admin', 'admin', null),
+(907006466, '节能设备(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.vendor_id', 907003609, 907002173, 1, null, null, 'admin', 'admin', null),
+(907006467, '节能设备(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.lifecycle_status', 907003610, 907002188, 1, null, null, 'admin', 'admin', null),
+(907006468, '节能设备(额定工作电压（V）)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.rated_operating_voltage', 907003611, 907002176, 1, null, null, 'admin', 'admin', null),
+(907006469, '节能设备(下挂风机形式)枚举值规范性核查', 'CE_DEVICE_PE_ENERY_SAVE.fan_form', 907003612, 907002180, 1, null, null, 'admin', 'admin', null),
+(907006470, '动环监控(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.device_type', 907003613, 907002197, 1, null, null, 'admin', 'admin', null),
+(907006471, '动环监控(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.device_subclass', 907003614, 907002198, 1, null, null, 'admin', 'admin', null),
+(907006472, '动环监控(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.product_name', 907003615, 907002201, 1, null, null, 'admin', 'admin', null),
+(907006473, '动环监控(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.vendor_id', 907003616, 907002202, 1, null, null, 'admin', 'admin', null),
+(907006474, '动环监控(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_POWER_MONITOR.lifecycle_status', 907003617, 907002205, 1, null, null, 'admin', 'admin', null),
+(907006475, '智能电表(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.device_type', 907003618, 907002214, 1, null, null, 'admin', 'admin', null),
+(907006476, '智能电表(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.device_subclass', 907003619, 907002215, 1, null, null, 'admin', 'admin', null),
+(907006477, '智能电表(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.product_name', 907003620, 907002218, 1, null, null, 'admin', 'admin', null),
+(907006478, '智能电表(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.vendor_id', 907003621, 907002219, 1, null, null, 'admin', 'admin', null),
+(907006479, '智能电表(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_SMART_METER.lifecycle_status', 907003622, 907002223, 1, null, null, 'admin', 'admin', null),
+(907006480, '其他设备(设备类型)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.device_type', 907003623, 907002283, 1, null, null, 'admin', 'admin', null),
+(907006481, '其他设备(设备子类)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.device_subclass', 907003624, 907002284, 1, null, null, 'admin', 'admin', null),
+(907006482, '其他设备(设备型号)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.product_name', 907003625, 907002287, 1, null, null, 'admin', 'admin', null),
+(907006483, '其他设备(设备厂家)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.vendor_id', 907003626, 907002288, 1, null, null, 'admin', 'admin', null),
+(907006484, '其他设备(使用状态)枚举值规范性核查', 'CE_DEVICE_PE_OTHER.lifecycle_status', 907003627, 907002291, 1, null, null, 'admin', 'admin', null),
+(907006485, '高压配电系统枚(系统类型)枚举值规范性核查', 'CE_NET_PE_HIGH_DISTRIBUTION.system_type', 907003628, 907001874, 1, null, null, 'admin', 'admin', null),
+(907006486, '高压配电系统枚(使用状态)枚举值规范性核查', 'CE_NET_PE_HIGH_DISTRIBUTION.lifecycle_status', 907003629, 907001878, 1, null, null, 'admin', 'admin', null),
+(907006487, '高压直流电源系统(系统类型)枚举值规范性核查', 'CE_NET_PE_HIGH_POWER.system_type', 907003630, 907001905, 1, null, null, 'admin', 'admin', null),
+(907006488, '高压直流电源系统(使用状态)枚举值规范性核查', 'CE_NET_PE_HIGH_POWER.lifecycle_status', 907003631, 907001909, 1, null, null, 'admin', 'admin', null),
+(907006489, '低压配电系统(系统类型)枚举值规范性核查', 'CE_NET_PE_LOW_DISTRIBUTION.system_type', 907003632, 907001961, 1, null, null, 'admin', 'admin', null),
+(907006490, '低压配电系统(使用状态)枚举值规范性核查', 'CE_NET_PE_LOW_DISTRIBUTION.lifecycle_status', 907003633, 907001966, 1, null, null, 'admin', 'admin', null),
+(907006491, '发电系统(系统类型)枚举值规范性核查', 'CE_NET_PE_SWITCH_POWER.system_type', 907003634, 907001997, 1, null, null, 'admin', 'admin', null),
+(907006492, '发电系统(使用状态)枚举值规范性核查', 'CE_NET_PE_SWITCH_POWER.lifecycle_status', 907003635, 907002002, 1, null, null, 'admin', 'admin', null),
+(907006493, '开关电源系统(系统类型)枚举值规范性核查', 'CE_NET_PE_OPEN_POWER.system_type', 907003636, 907002035, 1, null, null, 'admin', 'admin', null),
+(907006494, '开关电源系统(使用状态)枚举值规范性核查', 'CE_NET_PE_OPEN_POWER.lifecycle_status', 907003637, 907002040, 1, null, null, 'admin', 'admin', null),
+(907006495, 'UPS系统(系统类型)枚举值规范性核查', 'CE_NET_PE_UPS.system_type', 907003638, 907002092, 1, null, null, 'admin', 'admin', null),
+(907006496, 'UPS系统(使用状态)枚举值规范性核查', 'CE_NET_PE_UPS.lifecycle_status', 907003639, 907002099, 1, null, null, 'admin', 'admin', null),
+(907006497, 'UPS系统(工作方式)枚举值规范性核查', 'CE_NET_PE_UPS.work_method', 907003640, 907002097, 1, null, null, 'admin', 'admin', null),
+(907006498, 'UPS系统(母线类型)枚举值规范性核查', 'CE_NET_PE_UPS.bus_type', 907003641, 907002098, 1, null, null, 'admin', 'admin', null),
+(907006499, 'UPS系统(资源系统类型)枚举值规范性核查', 'CE_NET_PE_UPS.res_type', 907003642, 907002093, 1, null, null, 'admin', 'admin', null),
+(907006500, '动环专业内输出分路(所属设备类型)枚举值规范性核查', 'CE_LINK_PE_IN.related_device_type', 907003643, 907002233, 1, null, null, 'admin', 'admin', null),
+(907006501, '动环专业内输出分路(分路类型)枚举值规范性核查', 'CE_LINK_PE_IN.branch_type', 907003644, 907002235, 1, null, null, 'admin', 'admin', null),
+(907006502, '动环专业内输出分路(分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_IN.branch_type_abbreviation', 907003645, 907002236, 1, null, null, 'admin', 'admin', null),
+(907006503, '动环专业内输出分路(分路主备)枚举值规范性核查', 'CE_LINK_PE_IN.branch_active_standby', 907003646, 907002238, 1, null, null, 'admin', 'admin', null),
+(907006504, '动环专业内输出分路(使用状态)枚举值规范性核查', 'CE_LINK_PE_IN.lifecycle_status', 907003647, 907002240, 1, null, null, 'admin', 'admin', null),
+(907006505, '动环专业内输出分路(下游设备类型)枚举值规范性核查', 'CE_LINK_PE_IN.down_device_type', 907003648, 907002245, 1, null, null, 'admin', 'admin', null),
+(907006506, '动环专业内输出分路(下游分路类型)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_type', 907003649, 907002246, 1, null, null, 'admin', 'admin', null),
+(907006507, '动环专业内输出分路(下游分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_type_abbreviation', 907003650, 907002247, 1, null, null, 'admin', 'admin', null),
+(907006508, '动环专业内输出分路(下游分路主备)枚举值规范性核查', 'CE_LINK_PE_IN.down_branch_active_standby', 907003651, 907002250, 1, null, null, 'admin', 'admin', null),
+(907006509, '动环专业内输出分路(下游使用状态)枚举值规范性核查', 'CE_LINK_PE_IN.down_use_status', 907003652, 907002251, 1, null, null, 'admin', 'admin', null),
+(907006510, '跨专业输出分路(所属设备类型)枚举值规范性核查', 'CE_LINK_PE_OUT.related_device_type', 907003653, 907002260, 1, null, null, 'admin', 'admin', null),
+(907006511, '跨专业输出分路(分路类型)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_type', 907003654, 907002262, 1, null, null, 'admin', 'admin', null),
+(907006512, '跨专业输出分路(分路类型缩写)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_type_abbreviation', 907003655, 907002263, 1, null, null, 'admin', 'admin', null),
+(907006513, '跨专业输出分路(分路主备)枚举值规范性核查', 'CE_LINK_PE_OUT.branch_active_standby', 907003656, 907002265, 1, null, null, 'admin', 'admin', null),
+(907006514, '跨专业输出分路(使用状态)枚举值规范性核查', 'CE_LINK_PE_OUT.lifecycle_status', 907003657, 907002266, 1, null, null, 'admin', 'admin', null),
+(907006515, '跨专业输出分路(下游设备类型)枚举值规范性核查', 'CE_LINK_PE_OUT.down_device_type', 907003658, 907002269, 1, null, null, 'admin', 'admin', null),
+(907006516, '跨专业输出分路(专业类型)枚举值规范性核查', 'CE_LINK_PE_OUT.major_type', 907003659, 907002272, 1, null, null, 'admin', 'admin', null),
+(907006517, '位置点动环属性(动环专业站点级别)枚举值规范性核查', 'RM_SITE_PROPERTY.power_site_level', 907003660, 907001806, 1, null, null, 'admin', 'admin', null),
+(907006518, '位置点动环属性(市电备份方式)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_backup_method', 907003661, 907001807, 1, null, null, 'admin', 'admin', null),
+(907006519, '位置点动环属性(市电是否来自不同变电站)枚举值规范性核查', 'RM_SITE_PROPERTY.power_is_substations', 907003662, 907001808, 1, null, null, 'admin', 'admin', null),
+(907006520, '位置点动环属性(市电电压等级)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_voltage_level', 907003663, 907001809, 1, null, null, 'admin', 'admin', null),
+(907006521, '位置点动环属性(市电性质)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_nature', 907003664, 907001810, 1, null, null, 'admin', 'admin', null),
+(907006522, '位置点动环属性(市电油机配置级别)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_configuration_level', 907003665, 907001813, 1, null, null, 'admin', 'admin', null),
+(907006523, '位置点动环属性(产权单位)枚举值规范性核查', 'RM_SITE_PROPERTY.property_unit', 907003666, 907001815, 1, null, null, 'admin', 'admin', null),
+(907006524, '机房动环属性(动环专业机房类型)枚举值规范性核查', 'RM_ROOM_PROPERTY.power_room_type', 907003667, 907001822, 1, null, null, 'admin', 'admin', null);
