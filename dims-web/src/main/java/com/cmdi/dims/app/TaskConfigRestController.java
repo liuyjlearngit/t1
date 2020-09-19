@@ -1,43 +1,23 @@
 package com.cmdi.dims.app;
 
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
 import com.cmdi.dims.app.dto.DictDto;
 import com.cmdi.dims.app.dto.ResponseDto;
 import com.cmdi.dims.app.dto.TaskConfigDto;
-import com.cmdi.dims.common.util.DateFormatUtil;
-import com.cmdi.dims.common.util.ExcelUtil;
-import com.cmdi.dims.common.util.UrlUtil;
 import com.cmdi.dims.facade.TaskFacade;
 import com.cmdi.dims.meta.repostitory.EntityTypeRepository;
 import com.cmdi.dims.task.entity.AreaCodeConfig;
-import com.cmdi.dims.task.entity.FileValidation;
 import com.cmdi.dims.task.entity.TaskConfig;
 import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
-import com.cmdi.dims.task.repository.FileValidationRepository;
 import com.cmdi.dims.task.repository.TaskConfigRepository;
-import com.cmdi.dims.util.FileValidationExportUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +27,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.extern.slf4j.Slf4j;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -56,8 +42,6 @@ public class TaskConfigRestController {
 
     @Autowired
     private TaskConfigRepository taskConfigRepository;
-    @Autowired
-    private FileValidationRepository fileValidationRepository;
     @Autowired
     private EntityTypeRepository entityTypeRepository;
     @Autowired
@@ -180,32 +164,6 @@ public class TaskConfigRestController {
         return ResponseDto.success();
     }
 
-    @GetMapping(value = "/validationresult/export", produces = "application/vnd.ms-excel")
-    public ResponseEntity<byte[]> validationResult(
-            @RequestParam(value = "taskConfigIds") String taskConfigIds
-    ) {
-        byte[] result;
-        String filename;
-        try {
-            List<Long> ids = asLongList(taskConfigIds);
-            Assert.notEmpty(ids, "请选择要导出校验结果的配置");
-            List<TaskConfig> taskConfigs = taskConfigRepository.findAllById(ids);
-            List<FileValidation> fileValidations = fileValidationRepository.findByTaskConfigIdInOrderByTaskConfigId(ids);
-            Map<Long, List<FileValidation>> groupedByTaskConfigIds = fileValidations.stream().collect(Collectors.groupingBy(FileValidation::getTaskConfigId));
-            Workbook workbook = FileValidationExportUtil.export(taskConfigs, groupedByTaskConfigIds);
-            ByteArrayOutputStream os = new ByteArrayOutputStream();
-            workbook.write(os);
-            result = os.toByteArray();
-            filename = "校验结果-" + DateFormatUtil.toDatatimeNumberString(new Date()) + "." + ExcelUtil.XLSX;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            result = ("导出报错！" + e.getMessage()).getBytes();
-            filename = "导出错误.txt";
-        }
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + UrlUtil.urlEncode(filename) + "\"")
-                .body(result);
-    }
 
     private static List<Long> asLongList(String value) {
         String[] sections = StringUtils.split(value, ",");

@@ -23,8 +23,4 @@ public class TaskConfigDto {
     private String includeSpecialities;
 
     private List<FileLocationDto> locations;
-
-    private Map<String, String> tables;
-
-    private Map<String, String> tableSpecialityMappings;
 }
