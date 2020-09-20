@@ -1,15 +1,12 @@
 package com.cmdi.dims.index.repository;
 
-import java.util.List;
-
+import com.cmdi.dims.index.entity.Index;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-import com.cmdi.dims.index.entity.Index;
+import java.util.List;
 
 public interface IndexRepository extends JpaRepository<Index, Long>, JpaSpecificationExecutor<Index> {
-
-    List<Index> findByTypeAndEnableOrderByCode(Integer type, Boolean enable);
 
     List<Index> findBySpecialityNameAndEnable(String specialityName, Boolean enable);
 

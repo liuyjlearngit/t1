@@ -1,8 +1,14 @@
 package com.cmdi.dims.batch;
 
-import com.cmdi.dims.domain.MetaService;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.meta.dto.AttributeType;
+import com.cmdi.dims.domain.meta.dto.MetadataDto;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
+import com.cmdi.dims.sdk.model.FileLocationDto;
+import com.cmdi.dims.sdk.model.TaskConfigDto;
+import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -14,12 +20,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
 import org.springframework.util.Assert;
-import com.cmdi.dims.domain.DataService;
-import com.cmdi.dims.sdk.model.AttributeType;
-import com.cmdi.dims.sdk.model.FileLocationDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
-import com.cmdi.dims.sdk.model.TaskConfigDto;
-import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,14 +40,13 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
     @Setter
     private DataService dataService;
     @Setter
-    private MetaService metaService;
+    private ConfigService configService;
 
     @Override
     public void process(String taskCode, String province, String speciality) throws Exception {
         List<TaskItemBusinessDto> taskItemBusinesses = taskService.findTaskItemBusinessesByTaskCode(taskCode);
-        TaskConfigDto taskConfigDto = metaService.loadConfig(province, speciality);
         if (CollectionUtils.isNotEmpty(taskItemBusinesses)) {
-            TaskConfigDto taskConfig = metaService.loadConfig(province, speciality);
+            TaskConfigDto taskConfig = configService.loadConfig(province, speciality);
             FileLocationDto location = getFileLocationDto(taskConfig);
             File localTaskFolder = BatchUtil.getTaskFolder(taskCode, false);
             File resultDir = new File(localTaskFolder, "result");
@@ -56,7 +55,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             String date = datetime.toString("yyyyMMdd");
             List<File> zips = new ArrayList();
             for (TaskItemBusinessDto taskItemBusinessDto : taskItemBusinesses) {
-                MetadataDto metadataDto = metaService.loadMetadata(taskItemBusinessDto.getCode(), taskConfigDto.getTableSpecialityMappings().get(taskItemBusinessDto.getCode()));
+                MetadataDto metadataDto = dataService.loadMetadata(taskItemBusinessDto.getCode());
                 if (Objects.equals(metadataDto.getEntityType().getSpecialityName(), speciality)) {
                     long count = dataService.countErrorData(metadataDto);
                     /*if (count > 0) {

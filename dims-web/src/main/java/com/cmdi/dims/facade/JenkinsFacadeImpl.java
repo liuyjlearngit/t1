@@ -49,9 +49,6 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
     @Value("classpath:jenkins/batch-job-template.xml")
     private Resource jenkinsTemplate;
 
-    @Value("classpath:jenkins/batch-job-template-gx.xml")
-    private Resource jenkinsTemplateGx;
-
     @Autowired
     private AreaCodeConfigRepository areaCodeConfigRepository;
 
@@ -68,12 +65,7 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         String jobName = JOB_NAME + "-" + province + "-" + PinyinUtil.convert(areaCodeConfig.getName()) + "-" + PinyinUtil.convert(speciality);
         String tempateDatabase = "dims-" + province + "-" + PinyinUtil.convert(speciality).toLowerCase();
         String description = "省份：" + areaCodeConfig.getName() + ",专业：" + speciality + ",版本：V20191102";
-        String jobConfig;
-        if ("管线".equals(speciality)) {
-            jobConfig = IOUtils.toString(jenkinsTemplateGx.getInputStream(), "UTF-8");
-        } else {
-            jobConfig = IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
-        }
+        String jobConfig = IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
         jobConfig = StringUtils.replace(jobConfig, "#description#", description);
         jobConfig = StringUtils.replace(jobConfig, "#province#", province);
         jobConfig = StringUtils.replace(jobConfig, "#speciality#", speciality);

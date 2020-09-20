@@ -19,7 +19,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.cmdi.dims.domain.MetaService;
+import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.google.common.collect.Lists;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
@@ -34,7 +36,6 @@ import com.lmax.disruptor.dsl.ProducerType;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import com.cmdi.dims.domain.DataService;
-import com.cmdi.dims.sdk.model.MetadataDto;
 import com.cmdi.dims.sdk.model.TaskConfigDto;
 import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
 import com.cmdi.dims.sdk.model.TaskItemFileDto;
@@ -49,7 +50,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
     private static final int RING_BUFFER_SIZE = 64;
 
     @Setter
-    private MetaService metaService;
+    private ConfigService configService;
     @Setter
     private DataService dataService;
 
@@ -87,7 +88,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         if (BooleanUtils.isNotTrue(taskItemFile.isSuccess())) {
             return;
         }
-        MetadataDto metadata = metaService.loadMetadata(taskItemFile.getDestTable(), taskConfigDto.getTableSpecialityMappings().get(taskItemFile.getDestTable()));
+        MetadataDto metadata = dataService.loadMetadata(taskItemFile.getDestTable());
         long start = System.currentTimeMillis();
         boolean success = true;
         long totalRecord = 0L;
@@ -251,7 +252,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         for (TaskItemFileDto taskItemFile : taskItemFiles) {
             tables.add(taskItemFile.getDestTable());
             String errorMessage = null;
-            MetadataDto metadata = metaService.loadMetadata(taskItemFile.getDestTable(), taskConfigDto.getTableSpecialityMappings().get(taskItemFile.getDestTable()));
+            MetadataDto metadata = dataService.loadMetadata(taskItemFile.getDestTable());
             boolean success = false;
             try {
                 Path file = Paths.get(taskDirectory.getAbsolutePath(), taskItemFile.getSignature(), taskItemFile.getCsvFile());
@@ -277,7 +278,10 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 }
             }
         }
-        for (Map.Entry<String, String> table : taskConfigDto.getTables().entrySet()) {
+        String[] specialities = StringUtils.split(taskConfigDto.getIncludeSpecialities(), ",");
+        List<String> specialityList = ArrayUtils.isNotEmpty(specialities) ? Lists.newArrayList(specialities) : Lists.newArrayList(taskConfigDto.getSpeciality());
+        Map<String, String> specialityTables = dataService.loadTables(specialityList);
+        for (Map.Entry<String, String> table : specialityTables.entrySet()) {
             if (!tables.contains(table.getKey())) {
                 taskService.saveTaskItemBusiness(populate(table.getValue(), table.getKey(), null, taskCode, province, 0L, 0L, false, "没有找到对应的文件"));
             }
@@ -292,7 +296,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
 //        log.info("begin clean business data, prepare space for Task[taskCode=" + taskCode + "] ...");
 //        this.preCleanData();
 //        log.info("finish clean business data!");
-        TaskConfigDto taskConfigDto = metaService.loadConfig(province, speciality);
+        TaskConfigDto taskConfigDto = configService.loadConfig(province, speciality);
         List<TaskItemFileDto> taskItemFiles = taskService.findTaskItemFilesByTaskCode(taskCode);
         Assert.notEmpty(taskItemFiles, "task item files is empty !!!");
         successCounters.clear();

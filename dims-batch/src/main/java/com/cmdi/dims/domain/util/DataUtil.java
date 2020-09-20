@@ -1,7 +1,8 @@
 package com.cmdi.dims.domain.util;
 
-import com.cmdi.dims.sdk.model.AttributeType;
-import com.cmdi.dims.sdk.model.MetadataDto;
+
+import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.AttributeType;
 
 import java.util.Objects;
 

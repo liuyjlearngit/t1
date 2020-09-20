@@ -1,10 +1,10 @@
 package com.cmdi.dims.batch;
 
+import com.cmdi.dims.domain.meta.dto.AttributeType;
+import com.cmdi.dims.domain.meta.dto.MetadataDto;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
-import com.cmdi.dims.sdk.model.AttributeType;
 import com.cmdi.dims.sdk.model.FileLocationDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.compress.archivers.ArchiveEntry;

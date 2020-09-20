@@ -42,9 +42,6 @@
       <li>
         <a th:href="@{/indicator}" th:class="${#strings.contains(#request.requestURI,'indicator')} ? 'active' : ''"><i class="fa fa-tachometer" aria-hidden="true"></i> 数据指标</a>
       </li>
-      <li>
-        <a th:href="@{/attachment}" th:class="${#strings.contains(#request.requestURI,'attachment')} ? 'active' : ''"><i class="fa fa-briefcase" aria-hidden="true"></i> 数据附件</a>
-      </li>
     </ul>
   </div>
 </header>
