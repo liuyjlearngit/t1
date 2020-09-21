@@ -45,8 +45,4 @@ public class StatisticsResIndex implements RowMapper<StatisticsResIndex> {
         return index;
     }
 
-   /* private void setisEnable(boolean isEnable) {
-        this.isEnable=isEnable;
-    }*/
-
 }
