@@ -1691,3 +1691,65 @@ BEGIN
 END ;
  $$ language plpgsql
  COST 100;
+ 
+ CREATE OR REPLACE FUNCTION "public"."proc_checkonecoordinateindex"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
+  RETURNS "pg_catalog"."void" AS $BODY$
+declare 
+	 v_entitytypeId     integer;
+	 v_idxCode	        text;
+	 v_idxName          text;
+	 v_tableName        varchar(100);
+	 v_longitude_min    numeric(16,9);--经度低值
+   v_longitude_max    numeric(16,9);--经度高值
+   v_latitude_min     numeric(16,9);--纬度低值
+   v_latitude_max     numeric(16,9); --纬度高值
+	 curAttr            record;
+   v_sql              text;
+   v_amount   	      integer;
+	 v_errorAmount      integer := 0;
+
+	 
+begin 
+		select name,code,entitytype_id
+	   into v_idxName,v_idxCode,v_entitytypeId
+	   From dims_idx_index
+	  where id=p_indexId;
+
+	 select extensiontable
+	   into strict v_tableName
+	   from dims_mm_entitytype
+	  where id=v_entitytypeId;
+
+      
+   select longitude_min,longitude_max,latitude_min,latitude_max
+     into v_longitude_min,v_longitude_max,v_latitude_min,v_latitude_max
+     from dims_tm_coordinateConfig
+    where province=p_provincecode; 
+
+	 --总的行数 
+	 v_sql := 'select count(1) from '||v_tableName;
+   execute v_sql into v_amount;
+
+   --错误量
+   v_sql := 'update '||v_tableName ||' c
+			          set dims_col_result=(case when dims_col_result like ''%'||v_idxCode||'%'' then dims_col_result
+					                                when dims_col_result is null then '''||v_idxCode||'''
+							      						          else dims_col_result||'','||v_idxCode||''' end),
+									  dims_col_rtName=(case when dims_col_rtName like ''%'||v_idxName||'%'' then dims_col_rtName
+					                                when dims_col_rtName is null then ''不满足规范:'||v_idxName||'''
+									    					          else dims_col_rtName||'','||v_idxName||''' end)					           
+						  where isNull(longitude)
+						     or to_number(longitude) > '||v_longitude_max
+						 ||' or to_number(longitude) < '||v_longitude_min
+             ||' or isNull(latitude)
+						     or to_number(latitude) > '||v_latitude_max
+						 ||' or to_number(latitude) < '||v_latitude_min;
+	 execute v_sql;
+   get diagnostics v_errorAmount = row_count; 
+			   	 
+ --指标值统计
+	 perform proc_generateCommonIndexValue(p_provinceCode,p_taskCode,p_indexid,v_tableName);
+end;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
