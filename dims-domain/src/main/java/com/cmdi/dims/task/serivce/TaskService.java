@@ -1,12 +1,13 @@
 package com.cmdi.dims.task.serivce;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.cmdi.dims.task.TaskStatusEnum;
+import com.cmdi.dims.task.dto.ResStatisticsDto;
 import com.cmdi.dims.task.dto.TaskItemBusinessDto;
 import com.cmdi.dims.task.dto.TaskItemFileDto;
 import com.cmdi.dims.task.dto.TaskItemIndexDto;
+
+import java.io.IOException;
+import java.util.List;
 
 public interface TaskService {
 
@@ -29,4 +30,6 @@ public interface TaskService {
     void saveTaskItemBusiness(TaskItemBusinessDto taskItemBusinessDto);
 
     void saveTaskItemIndex(List<TaskItemIndexDto> taskItemIndexDtos);
+
+    void saveResStatistics(List<ResStatisticsDto> resStatisticsDtos);
 }

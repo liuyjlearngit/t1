@@ -3286,6 +3286,7 @@ insert into dims_tm_areaCodeConfig (CODE, NAME, REGIONTYPE, PROVINCECODE, PREFEC
 ('110105', '朝阳区', 3, '110000', '110000'),
 ('110108', '海淀区', 3, '110000', '110000'),
 ('120000', '天津市', 1, null, null),
+('120000', '天津市', 2, '120000', null),
 ('120114', '武清区', 3, '120000', '120000'),
 ('120119', '蓟州区', 3, '120000', '120000'),
 ('120118', '静海区', 3, '120000', '120000'),
@@ -3545,6 +3546,13 @@ insert into dims_tm_areaCodeConfig (CODE, NAME, REGIONTYPE, PROVINCECODE, PREFEC
 ('810112', '北区', 3, '810000', '810000'),
 ('810118', '元朗区', 3, '810000', '810000');
 
+CREATE OR REPLACE VIEW provice_view AS
+SELECT  code ,name FROM dims_tm_areacodeconfig WHERE regiontype=1;
+CREATE OR REPLACE VIEW city_view AS
+SELECT  code ,name FROM dims_tm_areacodeconfig WHERE regiontype=2;
+CREATE OR REPLACE VIEW country_view AS
+SELECT  code ,name FROM dims_tm_areacodeconfig WHERE regiontype=3;
+
 insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
 (901000200, '无线', '设备厂家', 'vendor_id', 'admin', 'admin', null),
 (901000201, '无线', '生命周期状态', 'lifecycle_status',  'admin', 'admin', null),
@@ -3746,8 +3754,8 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (901000569,901000221,8,'其他', 'admin', 'admin', null),
 (901000570,901000222,1,'电信', 'admin', 'admin', null),
 (901000571,901000222,2,'联通', 'admin', 'admin', null),
-(901000572,901000222,3,'电信+联通 ', 'admin', 'admin', null),
-(901000573,901000222,4,'无 ', 'admin', 'admin', null),
+(901000572,901000222,3,'电信+联通', 'admin', 'admin', null),
+(901000573,901000222,4,'无', 'admin', 'admin', null),
 (901000574,901000223,1,'移动自维铁塔', 'admin', 'admin', null),
 (901000575,901000223,2,'普通地面塔 ', 'admin', 'admin', null),
 (901000576,901000223,3,'景观塔', 'admin', 'admin', null),
@@ -6658,15 +6666,15 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (907002293, '数据质量责任人（移动）', 'qualitor', 907001526, 'QUALITOR', 'string', null, 'admin', 'admin', null),	
 (907002294, '额定容量', 'rated_capacity', 907001526, 'RATED_CAPACITY', 'string', null, 'admin', 'admin', null);
 
----整体指标待定
+---无线整体指标待定
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
 (901099001, '无线数据完整性指标', 'wireless-1-99001', 99001, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (901099002, '无线数据规范性指标', 'wireless-2-99002', 99002, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (901099003, '无线数据关联性指标', 'wireless-3-99003', 99003, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 --(901099004, '无线数据合规性指标', 'wireless-4-99004', 99004, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (901099999, '无线数据整体指标', 'wireless-5-99999', 99999, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
--- 901099001
---资源完整性核查
+
+---无线资源完整性核查
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
 (901003000,'BSC必填字段维护完整率核查','wireless-1-1',101,901000002, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000002,1, null),
 (901003001,'BTS必填字段维护完整率核查','wireless-1-2',102,901000003, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000003,1, null),
@@ -11055,3 +11063,931 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (907006522, '位置点动环属性(市电油机配置级别)枚举值规范性核查', 'RM_SITE_PROPERTY.mains_configuration_level', 907003665, 907001813, 1, null, null, 'admin', 'admin', null),
 (907006523, '位置点动环属性(产权单位)枚举值规范性核查', 'RM_SITE_PROPERTY.property_unit', 907003666, 907001815, 1, null, null, 'admin', 'admin', null),
 (907006524, '机房动环属性(动环专业机房类型)枚举值规范性核查', 'RM_ROOM_PROPERTY.power_room_type', 907003667, 907001822, 1, null, null, 'admin', 'admin', null);
+
+-- 承载网整体指标
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(905099001, '承载网数据完整性指标', 'bearer01r99001', 99001, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099002, '承载网数据规范性指标', 'bearer02r99002', 99002, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099003, '承载网数据关联性指标', 'bearer03r99003', 99003, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099999, '承载网数据整体指标', 'bearer05r99999', 99999, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+
+-- 承载网完整性核查
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(905003000,'CM_DEVICE_IP必填字段维护完整率核查','bearer01r03',101,905000500, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000500,1, null),
+(905003001,'CM_WARE_IP_BOARD必填字段维护完整率核查','bearer01r07',102,905000501, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000501,1, null),
+(905003002,'CE_PORT_IP_PTP必填字段维护完整率核查','bearer01r09',103,905000502, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000502,1, null),
+(905003003,'CE_PORT_IP_FTP必填字段维护完整率核查','bearer01r11',104,905000503, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000503,1, null),
+(905003004,'CE_LINK_PHYSICS必填字段维护完整率核查','bearer01r13',105,905000504, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000504,1, null),
+(905003005,'CE_LINK_IP_LOGIC必填字段维护完整率核查','bearer01r15',106,905000505, '承载网',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',905000505,1, null);
+
+
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+-- values (901000631, 'RRU必填字段完整性.网管中网元名称', 'WL_RRU.omc_name', 901000596, 901003010, 2, null, null, 'admin', 'admin', null),
+(905002001, 'CM_DEVICE_IP必填字段维护完整率核查.资源标识', 'CM_DEVICE_IP.int_id', 905003000, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002002, 'CM_DEVICE_IP必填字段维护完整率核查.设备名称', 'CM_DEVICE_IP.equipment_model', 905003000, 905000601, 2, null, null, 'admin', 'admin', null),
+(905002003, 'CM_DEVICE_IP必填字段维护完整率核查.设备型号', 'CM_DEVICE_IP.rackpos_id', 905003000, 905000602, 2, null, null, 'admin', 'admin', null),
+(905002004, 'CM_DEVICE_IP必填字段维护完整率核查.所属机架位置', 'CM_DEVICE_IP.ipv4_management_address', 905003000, 905000605, 2, null, null, 'admin', 'admin', null),
+(905002005, 'CM_DEVICE_IP必填字段维护完整率核查.IPv4管理地址', 'CM_DEVICE_IP.ipv6_management_address', 905003000, 905000607, 2, null, null, 'admin', 'admin', null),
+(905002006, 'CM_DEVICE_IP必填字段维护完整率核查.软件版本', 'CM_DEVICE_IP.soft_version', 905003000, 905000609, 2, null, null, 'admin', 'admin', null),
+(905002007, 'CM_DEVICE_IP必填字段维护完整率核查.生命周期状态', 'CM_DEVICE_IP.lifecycle_status', 905003000, 905000610, 2, null, null, 'admin', 'admin', null),
+(905002008, 'CM_DEVICE_IP必填字段维护完整率核查.入网时间', 'CM_DEVICE_IP.cutin_date', 905003000, 905000611, 2, null, null, 'admin', 'admin', null),
+(905002009, 'CM_DEVICE_IP必填字段维护完整率核查.数据质量责任人', 'CM_DEVICE_IP.qualitor', 905003000, 905000612, 2, null, null, 'admin', 'admin', null),
+-- CM_WARE_IP_BOARD完整性rule
+(905002010, 'CM_WARE_IP_BOARD必填字段维护完整率核查.资源标识', 'CM_WARE_IP_BOARD.int_id', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002011, 'CM_WARE_IP_BOARD必填字段维护完整率核查.板卡名称', 'CM_WARE_IP_BOARD.board_name', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002012, 'CM_WARE_IP_BOARD必填字段维护完整率核查.板卡型号', 'CM_WARE_IP_BOARD.board_type', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002013, 'CM_WARE_IP_BOARD必填字段维护完整率核查.子卡编号', 'CM_WARE_IP_BOARD.board_number', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002014, 'CM_WARE_IP_BOARD必填字段维护完整率核查.母卡编号', 'CM_WARE_IP_BOARD.master_board_number', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002015, 'CM_WARE_IP_BOARD必填字段维护完整率核查.槽位编号', 'CM_WARE_IP_BOARD.slot_no', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002016, 'CM_WARE_IP_BOARD必填字段维护完整率核查.所属机框', 'CM_WARE_IP_BOARD.related_shelf', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002017, 'CM_WARE_IP_BOARD必填字段维护完整率核查.所属设备', 'CM_WARE_IP_BOARD.equipment_id', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002018, 'CM_WARE_IP_BOARD必填字段维护完整率核查.序列号', 'CM_WARE_IP_BOARD.series_no', 905003001, 905000600, 2, null, null, 'admin', 'admin', null),
+-- CE_PORT_IP_pTP完整性rule
+(905002019, 'CE_PORT_IP_PTP必填字段维护完整率核查.资源标识', 'CE_PORT_IP_PTP.int_id', 905003002, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002020, 'CE_PORT_IP_PTP必填字段维护完整率核查.端口编号', 'CE_PORT_IP_PTP.port_number', 905003002, 905000641, 2, null, null, 'admin', 'admin', null),
+(905002021, 'CE_PORT_IP_PTP必填字段维护完整率核查.端口速率', 'CE_PORT_IP_PTP.port_rate', 905003002, 905000642, 2, null, null, 'admin', 'admin', null),
+(905002022, 'CE_PORT_IP_PTP必填字段维护完整率核查.端口状态', 'CE_PORT_IP_PTP.port_status', 905003002, 905000645, 2, null, null, 'admin', 'admin', null),
+(905002023, 'CE_PORT_IP_PTP必填字段维护完整率核查.端口类型', 'CE_PORT_IP_PTP.port_type', 905003002, 905000646, 2, null, null, 'admin', 'admin', null),
+(905002024, 'CE_PORT_IP_PTP必填字段维护完整率核查.所属设备', 'CE_PORT_IP_PTP.equipment_id', 905003002, 905000633, 2, null, null, 'admin', 'admin', null),
+(905002025, 'CE_PORT_IP_PTP必填字段维护完整率核查.连接类型', 'CE_PORT_IP_PTP.line_type', 905003002, 905000648, 2, null, null, 'admin', 'admin', null),
+(905002026, 'CE_PORT_IP_PTP必填字段维护完整率核查.所属板卡', 'CE_PORT_IP_PTP.related_board', 905003002, 905000649, 2, null, null, 'admin', 'admin', null),
+-- CE_PORT_IP_FTP完整性rule
+(905002027, 'CE_PORT_IP_FTP必填字段维护完整率核查.资源标识', 'CE_PORT_IP_FTP.int_id', 905003003, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002028, 'CE_PORT_IP_FTP必填字段维护完整率核查.关联的上一级端口', 'CE_PORT_IP_FTP.relation_port', 905003003, 905000657, 2, null, null, 'admin', 'admin', null),
+(905002029, 'CE_PORT_IP_FTP必填字段维护完整率核查.所属设备', 'CE_PORT_IP_FTP.equipment_id', 905003003, 905000633, 2, null, null, 'admin', 'admin', null),
+(905002030, 'CE_PORT_IP_FTP必填字段维护完整率核查.VLAN ID', 'CE_PORT_IP_FTP.vlan_id', 905003003, 905000660, 2, null, null, 'admin', 'admin', null),
+-- CE_LINK_PHYSICS完整性rule
+(905002031, 'CE_LINK_PHYSICS必填字段维护完整率核查.资源标识', 'CE_LINK_PHYSICS.int_id', 905003004, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002032, 'CE_LINK_PHYSICS必填字段维护完整率核查.传输电路名称', 'CE_LINK_PHYSICS.transmission_circuit_name', 905003004, 905000666, 2, null, null, 'admin', 'admin', null),
+(905002033, 'CE_LINK_PHYSICS必填字段维护完整率核查.电路带宽', 'CE_LINK_PHYSICS.circuit_bandwidth', 905003004, 905000667, 2, null, null, 'admin', 'admin', null),
+(905002034, 'CE_LINK_PHYSICS必填字段维护完整率核查.A端设备', 'CE_LINK_PHYSICS.a_equipment', 905003004, 905000668, 2, null, null, 'admin', 'admin', null),
+(905002035, 'CE_LINK_PHYSICS必填字段维护完整率核查.A端端口', 'CE_LINK_PHYSICS.a_port', 905003004, 905000669, 2, null, null, 'admin', 'admin', null),
+(905002036, 'CE_LINK_PHYSICS必填字段维护完整率核查.Z端设备', 'CE_LINK_PHYSICS.z_equipment', 905003004, 905000671, 2, null, null, 'admin', 'admin', null),
+(905002037, 'CE_LINK_PHYSICS必填字段维护完整率核查.Z端端口', 'CE_LINK_PHYSICS.z_port', 905003004, 905000672, 2, null, null, 'admin', 'admin', null),
+-- CE_LINK_IP_LOGIC完整性rule
+(905002038, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.资源标识', 'CE_LINK_IP_LOGIC.int_id', 905003005, 905000600, 2, null, null, 'admin', 'admin', null),
+(905002039, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.链路带宽', 'CE_LINK_IP_LOGIC.circuit_bandwidth', 905003005, 905000679, 2, null, null, 'admin', 'admin', null),
+(905002040, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.A端设备', 'CE_LINK_IP_LOGIC.a_equipment', 905003005, 905000668, 2, null, null, 'admin', 'admin', null),
+(905002041, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.A端端口', 'CE_LINK_IP_LOGIC.a_port', 905003005, 905000669, 2, null, null, 'admin', 'admin', null),
+(905002042, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.Z端设备', 'CE_LINK_IP_LOGIC.z_equipment', 905003005, 905000671, 2, null, null, 'admin', 'admin', null),
+(905002043, 'CE_LINK_IP_LOGIC必填字段维护完整率核查.Z端端口', 'CE_LINK_IP_LOGIC.z_port', 905003005, 905000672, 2, null, null, 'admin', 'admin', null);
+
+-- 承载网规范性核查
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(905003010, 'CM_DEVICE_IP资源标识关键字查重', 'bearer02r01',201,905000500, '承载网',11, null,'update CM_DEVICE_IP t1
+                   set dims_col_result=(case when dims_col_result like ''%bearer02r01%'' then dims_col_result
+                                             when dims_col_result is null then ''bearer02r01''
+                                             else dims_col_result||'',bearer02r01'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%CM_DEVICE_IP资源标识关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CM_DEVICE_IP资源标识关键字查重''
+                                              else dims_col_rtName||'',CM_DEVICE_IP资源标识关键字查重'' end)
+                 where exists(select 1
+                                from CM_DEVICE_IP t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',905000500,1, null),
+(905003011, 'CM_WARE_IP_BOARD资源标识关键字查重', 'bearer02r02',202,905000501, '承载网',11, null,'update CM_WARE_IP_BOARD t1
+                   set dims_col_result=(case when dims_col_result like ''%bearer02r02%'' then dims_col_result
+                                             when dims_col_result is null then ''bearer02r02''
+                                             else dims_col_result||'',bearer02r02'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%CM_WARE_IP_BOARD资源标识关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CM_WARE_IP_BOARD资源标识关键字查重''
+                                              else dims_col_rtName||'',CM_WARE_IP_BOARD资源标识关键字查重'' end)
+                 where exists(select 1
+                                from CM_WARE_IP_BOARD t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',905000501,1, null),
+-- 资源关联性核查:
+(905003100,'板卡下无物理端口','bearer03r29',301,905000501, '承载网',11, null,'update CM_WARE_IP_BOARD t1
+                   set dims_col_result=(case when dims_col_result like ''%bearer03r29%'' then dims_col_result
+                                             when dims_col_result is null then ''bearer03r29''
+                                             else dims_col_result||'',bearer03r29'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%板卡下无物理端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范: 板卡下无物理端口''
+                                             else dims_col_rtName||'',板卡下无物理端口'' end)
+                 where isNotNull(t1.int_id) and  not exists(select 1 from CE_PORT_IP_PTP t2 where t2.related_board=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',905000501,1,null),
+(905003101,'所属机架位置在机架位置表中不存在','bearer03r25',302,905000500, '承载网',11, null,'update CM_DEVICE_IP t1
+                   set dims_col_result=(case when dims_col_result like ''%bearer03r25%'' then dims_col_result
+                                             when dims_col_result is null then ''bearer03r25''
+                                             else dims_col_result||'',bearer03r25'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%所属机架位置在机架位置表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范: 所属机架位置在机架位置表中不存在''
+                                             else dims_col_rtName||'',所属机架位置在机架位置表中不存在'' end)
+                 where isNotNull(t1.rackpos_id) and  not exists(select 1 from RM_AREA_RACKPOS t2 where isNotNull(t2.int_id) and t2.int_id=t1.rackpos_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',905000500,1,null),
+(905003102,'所属设备在设备主表中不存在','bearer03r02',303,905000500, '承载网',11, null,'update CM_DEVICE_IP t1
+                   set dims_col_result=(case when dims_col_result like ''%bearer03r02%'' then dims_col_result
+                                             when dims_col_result is null then ''bearer03r02''
+                                             else dims_col_result||'',bearer03r02'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%所属设备在设备主表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范: 所属设备在设备主表中不存在''
+                                             else dims_col_rtName||'',所属设备在设备主表中不存在'' end)
+                 where isNotNull(t1.int_id) and  not exists(select 1 from CM_WARE_IP_BOARD t2 where isNotNull(t2.equipment_id) and t2.equipment_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',905000500,1,null);
+
+
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(905001000, 905099001, 905003000, 'admin', 'admin', null),
+(905001001, 905099001, 905003001, 'admin', 'admin', null),
+(905001002, 905099001, 905003002, 'admin', 'admin', null),
+(905001003, 905099001, 905003003, 'admin', 'admin', null),
+(905001004, 905099001, 905003004, 'admin', 'admin', null),
+(905001005, 905099001, 905003005, 'admin', 'admin', null),
+(905001006, 905099002, 905003010, 'admin', 'admin', null),
+(905001007, 905099002, 905003011, 'admin', 'admin', null),
+(905001008, 905099003, 905003100, 'admin', 'admin', null),
+(905001009, 905099003, 905003101, 'admin', 'admin', null),
+(905001010, 905099003, 905003102, 'admin', 'admin', null),
+(905001011, 905099999, 905003000, 'admin', 'admin', null),
+(905001012, 905099999, 905003001, 'admin', 'admin', null),
+(905001013, 905099999, 905003002, 'admin', 'admin', null),
+(905001014, 905099999, 905003003, 'admin', 'admin', null),
+(905001015, 905099999, 905003004, 'admin', 'admin', null),
+(905001016, 905099999, 905003005, 'admin', 'admin', null),
+(905001017, 905099999, 905003010, 'admin', 'admin', null),
+(905001018, 905099999, 905003011, 'admin', 'admin', null),
+(905001019, 905099999, 905003100, 'admin', 'admin', null),
+(905001020, 905099999, 905003101, 'admin', 'admin', null),
+(905001021, 905099999, 905003102, 'admin', 'admin', null);
+
+-- 家客整体指标
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(908099001, '家客数据完整性指标', 'home-1-99001', 99001, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(908099002, '家客数据规范性指标', 'home-2-99002', 99002, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(908099003, '家客数据关联性指标', 'home-3-99003', 99003, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(908099004, '家客数据合规性指标', 'home-4-99004', 99004, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(908099999, '家客数据整体指标', 'home-5-99999', 99999, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+
+
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(908003000, '家庭客户实例必填字段维护完整率核查', 'home-1-1', 101, 908000001, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000001, 1, null),
+(908003001, '宽带业务信息必填字段维护完整率核查', 'home-1-2', 102, 908000002, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000002, 1, null),
+(908003002, 'IMS业务信息必填字段维护完整率核查', 'home-1-3', 103, 908000003, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000003, 1, null),
+(908003003, '互联网电视业务信息必填字段维护完整率核查', 'home-1-4', 104, 908000004, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000004, 1, null),
+(908003004, '小区信息表必填字段维护完整率核查', 'home-1-5', 105, 908000005, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000005, 1, null),
+(908003005, '家客小区网格必填字段维护完整率核查', 'home-1-6', 106, 908000006, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000006, 1, null),
+(908003006, '资源覆盖信息表必填字段维护完整率核查', 'home-1-7', 107, 908000007, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000007, 1, null),
+(908003007, 'ONU必填字段维护完整率核查', 'home-1-8', 108, 908000008, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000008, 1, null),
+(908003008, 'ONU端口必填字段维护完整率核查', 'home-1-9', 109, 908000009, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000009, 1, null),
+(908003009, '分光器必填字段维护完整率核查', 'home-1-10', 110, 908000010, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000010, 1, null),
+(908003010, '分光器端口必填字段维护完整率核查', 'home-1-11', 111, 908000011, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000011, 1, null),
+(908003011, '多媒体箱必填字段维护完整率核查', 'home-1-12', 112, 908000012, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000012, 1, null),
+(908003012, '分纤箱必填字段维护完整率核查', 'home-1-13', 113, 908000013, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000013, 1, null),
+(908003013, '分纤箱端子必填字段维护完整率核查', 'home-1-14', 114, 908000014, '家客', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000014, 1, null);
+
+-- 资源规范性从3030开始
+
+-- 资源规范性核查
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(908003030, '家庭客户实例-客户编号客户编号查重', 'home-2-1', 201, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-1%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-1''
+                                             else dims_col_result||'',home-2-1'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家庭客户实例-客户编号客户编号查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家庭客户实例-客户编号客户编号查重''
+                                             else dims_col_rtName||'',家庭客户实例-客户编号客户编号查重'' end)
+                 where exists(select 1 from CM_HOME_CUST_BUSINESS t2 where t2.ctid <> t1.ctid and t2.cust_num=t1.cust_num)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null), 
+(908003031, '宽带业务信息-宽带产品实例标识关键字查重', 'home-2-2', 202, 908000002, '家客', 11, null, 'update CE_BROADBAND_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-2%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-2''
+                                             else dims_col_result||'',home-2-2'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%宽带业务信息-宽带产品实例标识关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:宽带业务信息-宽带产品实例标识关键字查重''
+                                             else dims_col_rtName|| '',宽带业务信息-宽带产品实例标识关键字查重'' end)
+                 where exists(select 1 from CE_BROADBAND_BUSINESS t2 where t2.ctid <> t1.ctid and t2.broadband_inst_id=t1.broadband_inst_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, null),
+(908003032, 'IMS业务信息-IMS业务产品实例标识不唯一', 'home-2-3', 203, 908000003, '家客', 11, null, 'update CE_IMS_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-3%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-3''
+                                             else dims_col_result||'',home-2-3'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS业务信息-IMS业务产品实例标识不唯一%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS业务信息-IMS业务产品实例标识不唯一'' 
+                                             else dims_col_rtName|| '',IMS业务信息-IMS业务产品实例标识不唯一'' end)
+                 where exists(select 1 from CE_IMS_BUSINESS t2 where t2.ctid <> t1.ctid and t2.ims_inst_id=t1.ims_inst_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, null),
+(908003033, '互联网电视业务信息-互联网电视业务产品实例标识不唯一', 'home-2-4', 204, 908000004, '家客', 11, null, 'update CE_TV_BUSINESS t1
+                   set dims_col_result=(case when dims_col_result like ''%home-2-4%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-4''
+                                             else dims_col_result||'',home-2-4'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%互联网电视业务信息-互联网电视业务产品实例标识不唯一%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:互联网电视业务信息-互联网电视业务产品实例标识不唯一''
+                                             else dims_col_rtName||'',互联网电视业务信息-互联网电视业务产品实例标识不唯一'' end)
+                 where exists(select 1 from CE_TV_BUSINESS t2 where t2.ctid <> t1.ctid and t2.tv_inst_id=t1.tv_inst_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, null),
+(908003034, '小区信息表-小区名称关键字查重', 'home-2-5', 205, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-5%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-5''
+                                             else dims_col_result|| '',home-2-5'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%小区信息表-小区名称关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:小区信息表-小区名称关键字查重'' 
+                                             else dims_col_rtName||'',小区信息表-小区名称关键字查重'' end)
+                 where exists(select 1 from RM_AREA_RESIDENTIAL t2 where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null),
+(908003035, '家客小区网格-网格编码关键字查重', 'home-2-6', 206, 908000006, '家客', 11, null, 'update RM_GRID t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-6%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-6''
+                                             else dims_col_result|| '',home-2-6'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家客小区网格-网格编码关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家客小区网格-网格编码关键字查重''
+                                             else dims_col_rtName||'',家客小区网格-网格编码关键字查重'' end)
+                 where exists(select 1 from RM_GRID t2 where t2.ctid <> t1.ctid and t2.grid_code=t1.grid_code)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, null), 
+(908003036, '资源覆盖信息表-覆盖地址关键字查重', 'home-2-7', 207, 908000007, '家客', 11, null, 'update CUST_RELATION_RESOURCES t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-7%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-7''
+                                             else dims_col_result||'',home-2-7'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%资源覆盖信息表-覆盖地址关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:资源覆盖信息表-覆盖地址关键字查重''
+                                             else dims_col_rtName||'',资源覆盖信息表-覆盖地址关键字查重'' end)
+                 where exists(select 1 from CUST_RELATION_RESOURCES t2 where t2.ctid <> t1.ctid and t2.room_address_id=t1.room_address_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, null), 
+(908003037, 'ONU-认证码关键字查重', 'home-2-8', 208, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-8%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-8'' 
+                                             else dims_col_result||'',home-2-8'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU-认证码关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU-认证码关键字查重''
+                                             else dims_col_rtName||'',ONU-认证码关键字查重'' end)
+                 where exists(select 1 from CM_DEVICE_ONU t2 where t2.ctid <> t1.ctid and t2.loid_password=t1.loid_password)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null),
+(908003038, '多媒体箱-多媒体箱名称关键字查重', 'home-2-9', 209, 908000012, '家客', 11, null, 'update CE_DEVICE_DMT t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-9%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-9''
+                                             else dims_col_result|| '',home-2-9'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%多媒体箱-多媒体箱名称关键字查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:多媒体箱-多媒体箱名称关键字查重''
+                                             else dims_col_rtName||'',多媒体箱-多媒体箱名称关键字查重'' end)
+                 where exists(select 1 from CE_DEVICE_DMT t2 where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, null),
+(908003039, '分纤箱-分纤箱名称关键字查重', 'home-2-10', 210, 908000013, '家客', 11, null, 'update CE_DEVICE_GF t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-10%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-10''
+                                             else dims_col_result|| '',home-2-10'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分纤箱-分纤箱名称关键字查重%'' then dims_col_rtName 
+                                             when dims_col_rtName is null then ''不满足规范:分纤箱-分纤箱名称关键字查重''
+                                             else dims_col_rtName||'',分纤箱-分纤箱名称关键字查重'' end)
+                 where exists(select 1 from CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, null),
+(908003040, '家庭客户实例主键查重', 'home-2-11', 211, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-11%'' then dims_col_result
+                                             when dims_col_result is null then''home-2-11''
+                                             else dims_col_result||'',home-2-11'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家庭客户实例主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家庭客户实例主键查重''
+                                             else dims_col_rtName||'',家庭客户实例主键查重'' end)
+                 where exists(select 1 from CM_HOME_CUST_BUSINESS t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null),
+(908003041, '宽带业务信息主键查重', 'home-2-12', 212, 908000002, '家客', 11, null, 'update CE_BROADBAND_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-12%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-12''
+                                             else dims_col_result||'',home-2-12'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%宽带业务信息主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:宽带业务信息主键查重''
+                                             else dims_col_rtName||'',宽带业务信息主键查重'' end)
+                 where exists(select 1 from CE_BROADBAND_BUSINESS t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, null),
+(908003042, 'IMS业务信息主键查重', 'home-2-13', 213, 908000003, '家客', 11, null, 'update CE_IMS_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-13%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-13''
+                                             else dims_col_result||'',home-2-13'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS业务信息主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS业务信息主键查重''
+                                             else dims_col_rtName||'',IMS业务信息主键查重'' end)
+                 where exists(select 1 from CE_IMS_BUSINESS t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, null),
+(908003043, '互联网电视业务信息主键查重', 'home-2-14', 214, 908000004, '家客', 11, null, ' update CE_TV_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-14%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-14''
+                                             else dims_col_result||'',home-2-14'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%互联网电视业务信息主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:互联网电视业务信息主键查重''
+                                             else dims_col_rtName||'',互联网电视业务信息主键查重'' end)
+                 where exists(select 1 from CE_TV_BUSINESS t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, null),
+(908003044, '小区信息表主键查重', 'home-2-15', 215, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-15%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-15''
+                                             else dims_col_result||'',home-2-15'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%小区信息表主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:小区信息表主键查重''
+                                             else dims_col_rtName||'',小区信息表主键查重'' end)
+                 where exists(select 1 from RM_AREA_RESIDENTIAL t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null),
+(908003045, '家客小区网格主键查重', 'home-2-16', 216, 908000006, '家客', 11, null, 'update RM_GRID t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-16%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-16''
+                                             else dims_col_result||'',home-2-16'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家客小区网格主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家客小区网格主键查重''
+                                             else dims_col_rtName||'',家客小区网格主键查重'' end)
+                 where exists(select 1 from RM_GRID t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, null), 
+(908003046, '资源覆盖信息表主键查重', 'home-2-17', 217, 908000007, '家客', 11, null, 'update CUST_RELATION_RESOURCES t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-17%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-17''
+                                             else dims_col_result||'',home-2-17'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%资源覆盖信息表主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:资源覆盖信息表主键查重''
+                                             else dims_col_rtName||'',资源覆盖信息表主键查重'' end)
+                 where exists(select 1 from CUST_RELATION_RESOURCES t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, null),
+(908003047, 'ONU主键查重', 'home-2-18', 218, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-18%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-18'' 
+                                             else dims_col_result||'',home-2-18'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU主键查重''
+                                             else dims_col_rtName||'',ONU主键查重'' end)
+                 where exists(select 1 from CM_DEVICE_ONU t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null),
+(908003048, 'ONU端口主键查重', 'home-2-19', 219, 908000009, '家客', 11, null, ' update CM_ONU_PORT t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-19%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-19''
+                                             else dims_col_result||'',home-2-19'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU端口主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU端口主键查重''
+                                             else dims_col_rtName||'',ONU端口主键查重'' end)
+                 where exists(select 1 from CM_ONU_PORT t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, null),
+(908003049, '分光器主键查重', 'home-2-20', 220, 908000010, '家客', 11, null, 'update CM_DEVICE_OBD t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-20%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-20''
+                                             else dims_col_result||'',home-2-20'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分光器主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分光器主键查重''
+                                             else dims_col_rtName|| '',分光器主键查重'' end)
+                 where exists(select 1 from CM_DEVICE_OBD t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null),
+(908003050, '分光器端口主键查重', 'home-2-21', 221, 908000011, '家客', 11, null, 'update CM_OBD_PORT t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-21%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-21''
+                                             else dims_col_result||'',home-2-21'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分光器端口主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分光器端口主键查重''
+                                             else dims_col_rtName||'',分光器端口主键查重'' end)
+                 where exists(select 1 from CM_OBD_PORT t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, null),
+(908003051, '多媒体箱主键查重', 'home-2-22', 222, 908000012, '家客', 11, null, 'update CE_DEVICE_DMT t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-22%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-22''
+                                             else dims_col_result||'',home-2-22'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%多媒体箱主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:多媒体箱主键查重''
+                                             else dims_col_rtName||'',多媒体箱主键查重'' end)
+                 where exists(select 1 from CE_DEVICE_DMT t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, null),
+(908003052, '分纤箱主键查重', 'home-2-23', 223, 908000013, '家客', 11, null, 'update CE_DEVICE_GF t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-23%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-23''
+                                             else dims_col_result||'',home-2-23'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分纤箱主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分纤箱主键查重''
+                                             else dims_col_rtName||'',分纤箱主键查重'' end)
+                 where exists(select 1 from CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, null),
+
+(908003053, '分纤箱端子主键查重', 'home-2-24', 224, 908000014, '家客', 11, null, 'update CM_GF_PORT t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-2-24%'' then dims_col_result
+                                             when dims_col_result is null then ''home-2-24''
+                                             else dims_col_result||'',home-2-24'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分纤箱端子主键查重%'' then dims_col_rtName
+                                             when dims_col_rtName is null then  ''不满足规范:分纤箱端子主键查重'' 
+                                             else dims_col_rtName||'',分纤箱端子主键查重'' end)
+                 where exists(select 1 from CM_GF_PORT t2 where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, null),
+(908003054, '宽带业务信息枚举值核查', 'home-2-25', 225, 908000002, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000002, 1, null),
+(908003055, 'IMS业务信息枚举值核查', 'home-2-26', 226, 908000003, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000003, 1, null),
+(908003056, '互联网电视业务信息枚举值核查', 'home-2-27', 227, 908000004, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000004, 1, null),
+(908003057, '小区信息表枚举值核查', 'home-2-28', 228, 908000005, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000005, 1, null),
+(908003058, '家客小区网格枚举值核查', 'home-2-29', 229, 908000006, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000006, 1, null),
+(908003059, '资源覆盖信息表枚举值核查', 'home-2-30', 230, 908000007, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000007, 1, null),
+(908003060, 'ONU枚举值核查', 'home-2-31', 231, 908000008, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000008, 1, null),
+(908003061, 'ONU端口枚举值核查', 'home-2-32', 232, 908000009, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000009, 1, null),
+(908003062, '分光器枚举值核查', 'home-2-33', 233, 908000010, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000010, 1, null),
+(908003063, '分光器端口枚举值核查', 'home-2-34', 234, 908000011, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000011, 1, null),
+(908003064, '多媒体箱枚举值核查', 'home-2-35', 235, 908000012, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000012, 1, null),
+(908003065, '分纤箱枚举值核查', 'home-2-36', 236, 908000013, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000013, 1, null),
+(908003066, '分纤箱端子枚举值核查', 'home-2-37', 237, 908000014, '家客', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000014, 1, null);
+
+-- 家客资源关联性核查
+-- 构造顺序：
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(908003101, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-1', 301, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-3-1%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-1''
+                                             else dims_col_result||'',home-3-1'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null), 
+(908003102, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-2', 302, 908000002, '家客', 11, null, 'update CE_BROADBAND_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-3-2%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-2''
+                                             else dims_col_result||'',home-3-2'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, null),
+(908003103, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-3', 303, 908000003, '家客', 11, null, 'update CE_IMS_BUSINESS t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-3-3%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-3''
+                                             else dims_col_result||'',home-3-3'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, null),
+(908003104, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-4', 304, 908000004, '家客', 11, null, 'update CE_TV_BUSINESS t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-4%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-4''
+                                             else dims_col_result||'',home-3-4'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, null),
+(908003105, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-5', 305, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-5%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-5''
+                                             else dims_col_result||'',home-3-5'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName|| '',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null), 
+(908003106, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-6', 306, 908000006, '家客', 11, null, 'update RM_GRID t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-6%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-6''
+                                             else dims_col_result||'',home-3-6'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, null), 
+(908003107, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-7', 307, 908000007, '家客', 11, null, 'update CUST_RELATION_RESOURCES t1 
+                   set dims_col_result=(case when dims_col_result like ''%home-3-7%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-7''
+                                             else dims_col_result||'',home-3-7'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, null), 
+(908003108, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-8', 308, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-8%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-8''
+                                             else dims_col_result||'',home-3-8'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null), 
+(908003109, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-9', 309, 908000009, '家客', 11, null, 'update CM_ONU_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-9%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-9''
+                                             else dims_col_result||'',home-3-9'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, null), 
+(908003110, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-10', 310, 908000010, '家客', 11, null, 'update CM_DEVICE_OBD t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-10%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-10''
+                                             else dims_col_result||'',home-3-10'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName|| '',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null), 
+(908003111, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-11', 311, 908000011, '家客', 11, null, 'update CM_OBD_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-11%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-11''
+                                             else dims_col_result||'',home-3-11'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, null), 
+(908003112, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-12', 312, 908000012, '家客', 11, null, 'update CE_DEVICE_DMT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-12%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-12''
+                                             else dims_col_result||'',home-3-12'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, null), 
+(908003113, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-13', 313, 908000013, '家客', 11, null, 'update CE_DEVICE_GF t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-13%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-13''
+                                             else dims_col_result||'',home-3-13'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在''
+                                             else dims_col_rtName||'',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, null), 
+(908003114, '省份，地市，区县在省份表、地市表、区县表中不存在', 'home-3-14', 314, 908000014, '家客', 11, null, 'update CM_GF_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-14%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-14''
+                                             else dims_col_result||'',home-3-14'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%省份，地市，区县在省份表、地市表、区县表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:省份，地市，区县在省份表、地市表、区县表中不存在'' 
+                                             else dims_col_rtName|| '',省份，地市，区县在省份表、地市表、区县表中不存在'' end)
+                 where isNotNull(t1.province_id) and isNotNull(t1.city_id) and isNotNull(t1.county_id) and (not exists(select 1 from provice_view t2 where t2.code=t1.province_id) or not exists(select 1 from city_view t3 where t3.code=t1.city_id) or not exists (select 1 from country_view t4 where t4.code=t1.county_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, null),
+
+--(908003115, '家庭客户实例-客户接入地址在【分级地址】对象表中不存在', 'home-3-15', 315, 908000001, '家客', 11, null, 'update', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null),
+(908003116, '家庭客户实例-所属设备在【ONU】（FTTB模式）/【分光器】表中部存在', 'home-3-16', 316, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1
+                  set dims_col_result=(case when dims_col_result like ''%home-3-16%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-16''
+                                             else dims_col_result||'',home-3-16'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家庭客户实例-所属设备在【ONU】（FTTB模式）/【分光器】表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''家庭客户实例-所属设备在【ONU】（FTTB模式）/【分光器】表中不存在''
+                                             else dims_col_rtName||'',家庭客户实例-所属设备在【ONU】（FTTB模式）/【分光器】表中不存在'' end)
+                 where isNotNull(t1.device_id) and not exists(select 1 from CM_DEVICE_ONU t2 where t2.enter_type = ''FTTB'' and t2.int_id=t1.device_id) and not exists(select 1 from CM_DEVICE_OBD t3 where t3.int_id=t1.device_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null), 
+(908003117, '家庭客户实例-所属设备端口在【ONU】（FTTB模式）/【分光器】（FTTH模式）设备对象的端口中部存在', 'home-3-17', 317, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1
+                   set dims_col_result=(case when dims_col_result like ''%home-3-17%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-17''
+                                             else dims_col_result||'',home-3-17'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家庭客户实例-所属设备端口在【ONU】（FTTB模式）/【分光器】（FTTH模式）设备对象的端口中部存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家庭客户实例-所属设备端口在【ONU】（FTTB模式）/【分光器】（FTTH模式）设备对象的端口中部存在''
+                                             else dims_col_rtName||'',家庭客户实例-所属设备端口在【ONU】（FTTB模式）/【分光器】（FTTH模式）设备对象的端口中部存在'' end)
+                 where isNotNull(t1.port_id) and not exists(select 1 from CM_ONU_PORT t2 where isNotNull(t2.int_id) and t1.port_id=t2.int_id) and not exists(select 1 from CM_OBD_PORT t3 where isNotNull(t3.int_id) and t1.port_id=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null),
+ --(908003118, '小区信息表-所属网格编号在【区域网格表】中不存在', 'home-3-18', 318, 908000005, '家客', 11, null, 'update', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null),
+(908003119, 'ONU-上联设备在【分光器】对象中不存在', 'home-3-19', 319, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1
+                   set dims_col_result=(case when dims_col_result like ''%home-3-19%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-19''
+                                             else dims_col_result||'',home-3-19'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU-上联设备在【分光器】对象中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU-上联设备在【分光器】对象中不存在''
+                                             else dims_col_rtName||'',ONU-上联设备在【分光器】对象中不存在'' end)
+                 where isNotNull(t1.relation_up_device_id) and not exists(select 1 from CM_DEVICE_OBD t2 where isNotNull(t2.int_id) and t1.relation_up_device_id=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null), 
+(908003120, 'ONU-上联设备端口在【分光器端口】对象中不存在', 'home-3-20', 320, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-20%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-20''
+                                             else dims_col_result||'',home-3-20'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU-上联设备端口在【分光器端口】对象中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU-上联设备端口在【分光器端口】对象中不存在''
+                                             else dims_col_rtName||'',ONU-上联设备端口在【分光器端口】对象中不存在'' end)
+                 where isNotNull(t1.relation_up_device_port) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.int_id) and t1.relation_up_device_port=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null), 
+(908003121, 'ONU端口-所属onu在【ONU】对象中不存在', 'home-3-21', 321, 908000009, '家客', 11, null, 'update CM_ONU_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-21%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-21''
+                                             else dims_col_result||'',home-3-21'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU端口-所属onu在【ONU】对象中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU端口-所属onu在【ONU】对象中不存在''
+                                             else dims_col_rtName||'',ONU端口-所属onu在【ONU】对象中不存在'' end)
+                 where isNotNull(t1.onu_id) and not exists(select 1 from CM_DEVICE_ONU t2 where isNotNull(t2.int_id) and t1.onu_id=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, null), 
+(908003122, '分光器-安装位置在【光交箱】和【分纤箱】【机房】中都不存在', 'home-3-22', 322, 908000010, '家客', 11, null, 'update CM_DEVICE_OBD t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-22%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-22''
+                                             else dims_col_result||'',home-3-22'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分光器-安装位置在【光交箱】和【分纤箱】【机房】中都不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分光器-安装位置在【光交箱】和【分纤箱】【机房】中都不存在''
+                                             else dims_col_rtName||'',分光器-安装位置在【光交箱】和【分纤箱】【机房】中都不存在'' end)
+                 where isNotNull(t1.up_to_device) and not exists(select 1 from CE_DEVICE_GJ t2 where isNotNull(t2.int_id) and t1.up_to_device=t2.int_id) and not exists(select 1 from CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null), 
+ -- wushuju
+---(908003123, '分光器-安装位置在【OLT】和【分光器】【机房】中都不存在', 'home-3-23', 323, 908000010, '家客', 11, null, 'update', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null), 
+  -- wushuju
+---(908003124, '分光器-安装位置在【OLT端口】和【分光器端口】对象中都不存在', 'home-3-24', 324, 908000010, '家客', 11, null, 'update', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null),  
+(908003125, '分光器端口-所属分光器在【分光器】对象中不存在', 'home-3-25', 325, 908000011, '家客', 11, null, 'update CM_OBD_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-25%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-25''
+                                             else dims_col_result||'',home-3-25'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分光器端口-所属分光器在【分光器】对象中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分光器端口-所属分光器在【分光器】对象中不存在''
+                                             else dims_col_rtName||'',分光器端口-所属分光器在【分光器】对象中不存在'' end)
+                 where isNotNull(t1.related_device) and not exists(select 1 from CM_DEVICE_OBD t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, null), 
+(908003126, '分纤箱端子-所属分纤箱在【分纤箱】对象中不存在', 'home-3-26', 326, 908000014, '家客', 11, null, 'update CM_GF_PORT t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-26%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-26''
+                                             else dims_col_result||'',home-3-26'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分纤箱端子-所属分纤箱在【分纤箱】对象中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分纤箱端子-所属分纤箱在【分纤箱】对象中不存在''
+                                             else dims_col_rtName||'',分纤箱端子-所属分纤箱在【分纤箱】对象中不存在'' end)
+                 where isNotNull(t1.related_device) and not exists(select 1 from CE_DEVICE_GF t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, null), 
+(908003127, '家庭客户实例无任何业务数据', 'home-3-27', 327, 908000001, '家客', 11, null, 'update CM_HOME_CUST_BUSINESS t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-27%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-27''
+                                             else dims_col_result||'',home-3-27'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家庭客户实例无任何业务数据%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家庭客户实例无任何业务数据''
+                                             else dims_col_rtName||'',家庭客户实例无任何业务数据'' end)
+                 where isNotNull(t1.cust_num) and not exists(select 1 from CE_BROADBAND_BUSINESS t2 where isNotNull(t2.cust_num) and t1.cust_num=t2.cust_num) and not exists(select 1 from CE_IMS_BUSINESS t3 where isNotNull(t3.cust_num) and t1.cust_num=t3.cust_num) and not exists(select 1 from CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, null), 
+(908003128, 'FTTB模式的ONU资源未被任何家庭客户关联', 'home-3-28', 328, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-28%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-28''
+                                             else dims_col_result||'',home-3-28'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%FTTB模式的ONU资源未被任何家庭客户关联%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:FTTB模式的ONU资源未被任何家庭客户关联''
+                                             else dims_col_rtName||'',FTTB模式的ONU资源未被任何家庭客户关联'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.enter_type = ''FTTB'' and t1.int_id=t2.device_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null), 
+(908003129, 'FTTH模式的分光器资源未被任何家庭客户关联', 'home-3-29', 329, 908000010, '家客', 11, null, 'update CM_DEVICE_OBD t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-29%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-29''
+                                             else dims_col_result||'',home-3-29'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%FTTH模式的分光器资源未被任何家庭客户关联%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:FTTH模式的分光器资源未被任何家庭客户关联''
+                                             else dims_col_rtName||'',FTTH模式的分光器资源未被任何家庭客户关联'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null), 
+(908003130, '家客小区网格内无任何小区信息', 'home-3-30', 330, 908000006, '家客', 11, null, 'update RM_GRID t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-30%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-30''
+                                             else dims_col_result||'',home-3-30'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%家客小区网格内无任何小区信息%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:家客小区网格内无任何小区信息''
+                                             else dims_col_rtName||'',家客小区网格内无任何小区信息'' end)
+                 where isNotNull(t1.grid_code) and not exists(select 1 from RM_AREA_RESIDENTIAL t2 where isNotNull(t2.related_grid) and t1.grid_code=t2.related_grid)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, null), 
+(908003131, '小区下无任何覆盖信息', 'home-3-31', 331, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-31%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-31''
+                                             else dims_col_result||'',home-3-31'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%小区下无任何覆盖信息%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:小区下无任何覆盖信息''
+                                             else dims_col_rtName||'',小区下无任何覆盖信息'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CUST_RELATION_RESOURCES t2 where isNotNull(t2.residential_id) and t1.int_id=t2.residential_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null), 
+(908003132, 'ONU下无ONU端口', 'home-3-32', 332, 908000008, '家客', 11, null, 'update CM_DEVICE_ONU t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-32%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-32''
+                                             else dims_col_result||'',home-3-32'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%ONU下无ONU端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ONU下无ONU端口''
+                                             else dims_col_rtName||'',ONU下无ONU端口'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CM_ONU_PORT t2 where isNotNull(t2.onu_id) and t1.int_id=t2.onu_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, null), 
+(908003133, '分光器下无分光器端口', 'home-3-33', 333, 908000010, '家客', 11, null, 'update CM_DEVICE_OBD t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-33%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-33''
+                                             else dims_col_result||'',home-3-33'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分光器下无分光器端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分光器下无分光器端口''
+                                             else dims_col_rtName||'',分光器下无分光器端口'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, null), 
+(908003134, '分纤箱下无分纤箱端子', 'home-3-34', 334, 908000013, '家客', 11, null, 'update CE_DEVICE_GF t1
+                    set dims_col_result=(case when dims_col_result like ''%home-3-34%'' then dims_col_result
+                                             when dims_col_result is null then ''home-3-34''
+                                             else dims_col_result||'',home-3-34'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%分纤箱下无分纤箱端子%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分纤箱下无分纤箱端子''
+                                             else dims_col_rtName||'',分纤箱下无分纤箱端子'' end)
+                 where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, null); 
+-- 合规性核查：
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(908004001, '小区信息出现在多个小区网格中', 'home-4-1', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
+                    set dims_col_result=(case when dims_col_result like ''%home-4-1%'' then dims_col_result
+                                             when dims_col_result is null then ''home-4-1''
+                                             else dims_col_result||'',home-4-1'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%小区信息出现在多个小区网格中%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:小区信息出现在多个小区网格中''
+                                             else dims_col_rtName||'',小区信息出现在多个小区网格中'' end)
+                 where isNotNull(t1.int_id) and (select count(t2.related_area) from RM_GRID t2 where isNotNull(t2.related_area) and t2.related_area=t1.int_id) > 1', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null);
+
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+-- values (901000631, 'RRU必填字段完整性.网管中网元名称', 'WL_RRU.omc_name', 901000596, 901003010, 2, null, null, 'admin', 'admin', null),
+(908002001, '家庭客户实例必填字段维护完整率核查.资源标识', 'CM_HOME_CUST_BUSINESS.int_id', 908003000, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002002, '家庭客户实例必填字段维护完整率核查.客户编号', 'CM_HOME_CUST_BUSINESS.cust_num', 908003000, 908000601, 2, null, null, 'admin', 'admin', null),
+(908002003, '家庭客户实例必填字段维护完整率核查.客户接入地址', 'CM_HOME_CUST_BUSINESS.related_standard_address', 908003000, 908000602, 2, null, null, 'admin', 'admin', null),
+(908002004, '家庭客户实例必填字段维护完整率核查.所属设备', 'CM_HOME_CUST_BUSINESS.device_id', 908003000, 908000603, 2, null, null, 'admin', 'admin', null),
+(908002005, '家庭客户实例必填字段维护完整率核查.所属设备端口', 'CM_HOME_CUST_BUSINESS.port_id', 908003000, 908000604, 2, null, null, 'admin', 'admin', null),
+(908002006, '家庭客户实例必填字段维护完整率核查.所属省份', 'CM_HOME_CUST_BUSINESS.province_id', 908003000, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002007, '家庭客户实例必填字段维护完整率核查.所属地市', 'CM_HOME_CUST_BUSINESS.city_id', 908003000, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002008, '家庭客户实例必填字段维护完整率核查.所属区县', 'CM_HOME_CUST_BUSINESS.county_id', 908003000, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002009, '宽带业务信息必填字段维护完整率核查.资源标识', 'CE_BROADBAND_BUSINESS.int_id', 908003001, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002010, '宽带业务信息必填字段维护完整率核查.宽带产品实例标识', 'CE_BROADBAND_BUSINESS.broadband_inst_id', 908003001, 908000609, 2, null, null, 'admin', 'admin', null),
+(908002011, '宽带业务信息必填字段维护完整率核查.客户编号', 'CE_BROADBAND_BUSINESS.cust_num', 908003001, 908000601, 2, null, null, 'admin', 'admin', null),
+(908002012, '宽带业务信息必填字段维护完整率核查.接入方式', 'CE_BROADBAND_BUSINESS.enter_type', 908003001, 908000611, 2, null, null, 'admin', 'admin', null),
+(908002013, '宽带业务信息必填字段维护完整率核查.客户业务状态', 'CE_BROADBAND_BUSINESS.service_status', 908003001, 908000612, 2, null, null, 'admin', 'admin', null),
+(908002014, '宽带业务信息必填字段维护完整率核查.带宽速率', 'CE_BROADBAND_BUSINESS.band_rate', 908003001, 908000613, 2, null, null, 'admin', 'admin', null),
+(908002015, '宽带业务信息必填字段维护完整率核查.所属省份', 'CE_BROADBAND_BUSINESS.province_id', 908003001, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002016, '宽带业务信息必填字段维护完整率核查.所属地市', 'CE_BROADBAND_BUSINESS.city_id', 908003001, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002017, 'IMS业务信息必填字段维护完整率核查.资源标识', 'CE_IMS_BUSINESS.int_id', 908003002, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002018, 'IMS业务信息必填字段维护完整率核查.IMS业务产品实例标识', 'CE_IMS_BUSINESS.ims_inst_id', 908003002, 908000618, 2, null, null, 'admin', 'admin', null),
+(908002019, 'IMS业务信息必填字段维护完整率核查.所属省份', 'CE_IMS_BUSINESS.province_id', 908003002, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002020, 'IMS业务信息必填字段维护完整率核查.所属地市', 'CE_IMS_BUSINESS.city_id', 908003002, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002021, 'IMS业务信息必填字段维护完整率核查.所属区县', 'CE_IMS_BUSINESS.county_id', 908003002, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002022, '互联网电视业务信息必填字段维护完整率核查.资源标识', 'CE_TV_BUSINESS.int_id', 908003003, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002023, '互联网电视业务信息必填字段维护完整率核查.互联网电视业务产品实例标识', 'CE_TV_BUSINESS.tv_inst_id', 908003003, 908000625, 2, null, null, 'admin', 'admin', null),
+(908002024, '互联网电视业务信息必填字段维护完整率核查.客户编号', 'CE_TV_BUSINESS.cust_num', 908003003, 908000601, 2, null, null, 'admin', 'admin', null),
+(908002025, '互联网电视业务信息必填字段维护完整率核查.客户业务状态', 'CE_TV_BUSINESS.service_status', 908003003, 908000612, 2, null, null, 'admin', 'admin', null),
+(908002026, '互联网电视业务信息必填字段维护完整率核查.所属省份', 'CE_TV_BUSINESS.province_id', 908003003, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002027, '互联网电视业务信息必填字段维护完整率核查.所属地市', 'CE_TV_BUSINESS.city_id', 908003003, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002028, '互联网电视业务信息必填字段维护完整率核查.所属区县', 'CE_TV_BUSINESS.county_id', 908003003, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002029, '小区信息表必填字段维护完整率核查.资源标识', 'RM_AREA_RESIDENTIAL.int_id', 908003004, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002030, '小区信息表必填字段维护完整率核查.小区名称', 'RM_AREA_RESIDENTIAL.zh_label', 908003004, 908000632, 2, null, null, 'admin', 'admin', null),
+(908002031, '小区信息表必填字段维护完整率核查.地域属性', 'RM_AREA_RESIDENTIAL.attributes', 908003004, 908000634, 2, null, null, 'admin', 'admin', null),
+(908002032, '小区信息表必填字段维护完整率核查.所属省份', 'RM_AREA_RESIDENTIAL.province_id', 908003004, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002033, '小区信息表必填字段维护完整率核查.所属地市', 'RM_AREA_RESIDENTIAL.city_id', 908003004, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002034, '小区信息表必填字段维护完整率核查.所属区县', 'RM_AREA_RESIDENTIAL.county_id', 908003004, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002035, '小区信息表必填字段维护完整率核查.所属网格编号', 'RM_AREA_RESIDENTIAL.related_grid', 908003004, 908000638, 2, null, null, 'admin', 'admin', null),
+(908002036, '小区信息表必填字段维护完整率核查.生命周期状态', 'RM_AREA_RESIDENTIAL.lifecycle_status', 908003004, 908000639, 2, null, null, 'admin', 'admin', null),
+(908002037, '小区信息表必填字段维护完整率核查.数据质量责任人（移动）', 'RM_AREA_RESIDENTIAL.qualitor', 908003004, 908000640, 2, null, null, 'admin', 'admin', null),
+(908002038, '家客小区网格必填字段维护完整率核查.资源标识', 'RM_GRID.int_id', 908003005, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002039, '家客小区网格必填字段维护完整率核查.网格编码', 'RM_GRID.grid_code', 908003005, 908000642, 2, null, null, 'admin', 'admin', null),
+(908002040, '家客小区网格必填字段维护完整率核查.网格名称（选配字段）', 'RM_GRID.zh_label', 908003005, 908000643, 2, null, null, 'admin', 'admin', null),
+(908002041, '家客小区网格必填字段维护完整率核查.小区名称', 'RM_GRID.related_area', 908003005, 908000632, 2, null, null, 'admin', 'admin', null),
+(908002042, '家客小区网格必填字段维护完整率核查.所属省份', 'RM_GRID.province_id', 908003005, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002043, '家客小区网格必填字段维护完整率核查.所属地市', 'RM_GRID.city_id', 908003005, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002044, '家客小区网格必填字段维护完整率核查.所属区县', 'RM_GRID.county_id', 908003005, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002045, '资源覆盖信息表必填字段维护完整率核查.资源标识', 'CUST_RELATION_RESOURCES.int_id', 908003006, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002046, '资源覆盖信息表必填字段维护完整率核查.覆盖地址', 'CUST_RELATION_RESOURCES.room_address_id', 908003006, 908000650, 2, null, null, 'admin', 'admin', null),
+(908002047, '资源覆盖信息表必填字段维护完整率核查.覆盖箱体/设备/资源点', 'CUST_RELATION_RESOURCES.relation_device_id', 908003006, 908000651, 2, null, null, 'admin', 'admin', null),
+(908002048, '资源覆盖信息表必填字段维护完整率核查.接入类型', 'CUST_RELATION_RESOURCES.enter_type', 908003006, 908000652, 2, null, null, 'admin', 'admin', null),
+(908002049, '资源覆盖信息表必填字段维护完整率核查.覆盖设备空闲端口数量', 'CUST_RELATION_RESOURCES.relation_device_free_num', 908003006, 908000653, 2, null, null, 'admin', 'admin', null),
+(908002050, '资源覆盖信息表必填字段维护完整率核查.所属省份', 'CUST_RELATION_RESOURCES.province_id', 908003006, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002051, '资源覆盖信息表必填字段维护完整率核查.所属地市', 'CUST_RELATION_RESOURCES.city_id', 908003006, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002052, '资源覆盖信息表必填字段维护完整率核查.所属区县', 'CUST_RELATION_RESOURCES.county_id', 908003006, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002053, 'ONU必填字段维护完整率核查.资源标识', 'CM_DEVICE_ONU.int_id', 908003007, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002054, 'ONU必填字段维护完整率核查.ONU名称', 'CM_DEVICE_ONU.zh_label', 908003007, 908000659, 2, null, null, 'admin', 'admin', null),
+(908002055, 'ONU必填字段维护完整率核查.认证码', 'CM_DEVICE_ONU.loid_password', 908003007, 908000660, 2, null, null, 'admin', 'admin', null),
+(908002056, 'ONU必填字段维护完整率核查.厂家', 'CM_DEVICE_ONU.manufacturer', 908003007, 908000661, 2, null, null, 'admin', 'admin', null),
+(908002057, 'ONU必填字段维护完整率核查.接入方式', 'CM_DEVICE_ONU.enter_type', 908003007, 908000611, 2, null, null, 'admin', 'admin', null),
+(908002058, 'ONU必填字段维护完整率核查.上联设备', 'CM_DEVICE_ONU.relation_up_device_id', 908003007, 908000664, 2, null, null, 'admin', 'admin', null),
+(908002059, 'ONU必填字段维护完整率核查.上联设备端口', 'CM_DEVICE_ONU.relation_up_device_port', 908003007, 908000665, 2, null, null, 'admin', 'admin', null),
+(908002060, 'ONU必填字段维护完整率核查.数据质量责任人', 'CM_DEVICE_ONU.qualitor', 908003007, 908000668, 2, null, null, 'admin', 'admin', null),
+(908002061, 'ONU必填字段维护完整率核查.一线数据维护人（代维/一线）', 'CM_DEVICE_ONU.maintainor', 908003007, 908000669, 2, null, null, 'admin', 'admin', null),
+(908002062, 'ONU必填字段维护完整率核查.生命周期状态', 'CM_DEVICE_ONU.lifecycle_status', 908003007, 908000639, 2, null, null, 'admin', 'admin', null),
+(908002063, 'ONU必填字段维护完整率核查.所属省份', 'CM_DEVICE_ONU.province_id', 908003007, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002064, 'ONU必填字段维护完整率核查.所属地市', 'CM_DEVICE_ONU.city_id', 908003007, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002065, 'ONU必填字段维护完整率核查.所属区县', 'CM_DEVICE_ONU.county_id', 908003007, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002066, 'ONU端口必填字段维护完整率核查.资源标识', 'CM_ONU_PORT.int_id', 908003008, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002067, 'ONU端口必填字段维护完整率核查.所属省份', 'CM_ONU_PORT.province_id', 908003008, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002068, 'ONU端口必填字段维护完整率核查.所属地市', 'CM_ONU_PORT.city_id', 908003008, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002069, 'ONU端口必填字段维护完整率核查.所属区县', 'CM_ONU_PORT.county_id', 908003008, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002070, '分光器必填字段维护完整率核查.资源标识', 'CM_DEVICE_OBD.int_id', 908003009, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002071, '分光器必填字段维护完整率核查.分光器名称', 'CM_DEVICE_OBD.zh_label', 908003009, 908000682, 2, null, null, 'admin', 'admin', null),
+(908002072, '分光器必填字段维护完整率核查.安装位置', 'CM_DEVICE_OBD.up_to_device', 908003009, 908000667, 2, null, null, 'admin', 'admin', null),
+(908002073, '分光器必填字段维护完整率核查.分光比', 'CM_DEVICE_OBD.splitter_ratio', 908003009, 908000684, 2, null, null, 'admin', 'admin', null),
+(908002074, '分光器必填字段维护完整率核查.上联设备', 'CM_DEVICE_OBD.link_to_device', 908003009, 908000664, 2, null, null, 'admin', 'admin', null),
+(908002075, '分光器必填字段维护完整率核查.上联设备主用端口', 'CM_DEVICE_OBD.link_to_device_port', 908003009, 908000686, 2, null, null, 'admin', 'admin', null),
+(908002076, '分光器必填字段维护完整率核查.生命周期状态', 'CM_DEVICE_OBD.lifecycle_status', 908003009, 908000639, 2, null, null, 'admin', 'admin', null),
+(908002077, '分光器必填字段维护完整率核查.数据质量责任人', 'CM_DEVICE_OBD.qualitor', 908003009, 908000668, 2, null, null, 'admin', 'admin', null),
+(908002078, '分光器必填字段维护完整率核查.所属省份', 'CM_DEVICE_OBD.province_id', 908003009, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002079, '分光器必填字段维护完整率核查.所属地市', 'CM_DEVICE_OBD.city_id', 908003009, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002080, '分光器必填字段维护完整率核查.所属区县', 'CM_DEVICE_OBD.county_id', 908003009, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002081, '分光器端口必填字段维护完整率核查.资源标识', 'CM_OBD_PORT.int_id', 908003010, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002082, '分光器端口必填字段维护完整率核查.端口序号', 'CM_OBD_PORT.port_no', 908003010, 908000694, 2, null, null, 'admin', 'admin', null),
+(908002083, '分光器端口必填字段维护完整率核查.端口状态', 'CM_OBD_PORT.port_status', 908003010, 908000677, 2, null, null, 'admin', 'admin', null),
+(908002084, '分光器端口必填字段维护完整率核查.所属分光器', 'CM_OBD_PORT.related_device', 908003010, 908000696, 2, null, null, 'admin', 'admin', null),
+(908002085, '分光器端口必填字段维护完整率核查.所属省份', 'CM_OBD_PORT.province_id', 908003010, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002086, '分光器端口必填字段维护完整率核查.所属地市', 'CM_OBD_PORT.city_id', 908003010, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002087, '分光器端口必填字段维护完整率核查.所属区县', 'CM_OBD_PORT.county_id', 908003010, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002088, '多媒体箱必填字段维护完整率核查.资源标识', 'CE_DEVICE_DMT.int_id', 908003011, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002089, '多媒体箱必填字段维护完整率核查.多媒体箱名称', 'CE_DEVICE_DMT.zh_label', 908003011, 908000701, 2, null, null, 'admin', 'admin', null),
+(908002090, '多媒体箱必填字段维护完整率核查.生命周期状态', 'CE_DEVICE_DMT.lifecycle_status', 908003011, 908000639, 2, null, null, 'admin', 'admin', null),
+(908002091, '多媒体箱必填字段维护完整率核查.数据质量责任人', 'CE_DEVICE_DMT.qualitor', 908003011, 908000668, 2, null, null, 'admin', 'admin', null),
+(908002092, '多媒体箱必填字段维护完整率核查.所属省份', 'CE_DEVICE_DMT.province_id', 908003011, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002093, '多媒体箱必填字段维护完整率核查.所属地市', 'CE_DEVICE_DMT.city_id', 908003011, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002094, '多媒体箱必填字段维护完整率核查.所属区县', 'CE_DEVICE_DMT.county_id', 908003011, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002095, '分纤箱必填字段维护完整率核查.资源标识', 'CE_DEVICE_GF.int_id', 908003012, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002096, '分纤箱必填字段维护完整率核查.分纤箱名称', 'CE_DEVICE_GF.zh_label', 908003012, 908000708, 2, null, null, 'admin', 'admin', null),
+(908002097, '分纤箱必填字段维护完整率核查.箱体内设备类型', 'CE_DEVICE_GF.sub_device_type', 908003012, 908000709, 2, null, null, 'admin', 'admin', null),
+(908002098, '分纤箱必填字段维护完整率核查.生命周期状态', 'CE_DEVICE_GF.lifecycle_status', 908003012, 908000639, 2, null, null, 'admin', 'admin', null),
+(908002099, '分纤箱必填字段维护完整率核查.数据质量责任人', 'CE_DEVICE_GF.qualitor', 908003012, 908000668, 2, null, null, 'admin', 'admin', null),
+(908002100, '分纤箱必填字段维护完整率核查.所属省份', 'CE_DEVICE_GF.province_id', 908003012, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002101, '分纤箱必填字段维护完整率核查.所属地市', 'CE_DEVICE_GF.city_id', 908003012, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002102, '分纤箱必填字段维护完整率核查.所属区县', 'CE_DEVICE_GF.county_id', 908003012, 908000607, 2, null, null, 'admin', 'admin', null),
+(908002103, '分纤箱端子必填字段维护完整率核查.资源标识', 'CM_GF_PORT.int_id', 908003013, 908000600, 2, null, null, 'admin', 'admin', null),
+(908002104, '分纤箱端子必填字段维护完整率核查.端子号', 'CM_GF_PORT.port_no', 908003013, 908000716, 2, null, null, 'admin', 'admin', null),
+(908002105, '分纤箱端子必填字段维护完整率核查.端子状态', 'CM_GF_PORT.port_status', 908003013, 908000717, 2, null, null, 'admin', 'admin', null),
+(908002106, '分纤箱端子必填字段维护完整率核查.所属分纤箱', 'CM_GF_PORT.related_device', 908003013, 908000718, 2, null, null, 'admin', 'admin', null),
+(908002107, '分纤箱端子必填字段维护完整率核查.所属省份', 'CM_GF_PORT.province_id', 908003013, 908000605, 2, null, null, 'admin', 'admin', null),
+(908002108, '分纤箱端子必填字段维护完整率核查.所属地市', 'CM_GF_PORT.city_id', 908003013, 908000606, 2, null, null, 'admin', 'admin', null),
+(908002109, '分纤箱端子必填字段维护完整率核查.所属区县', 'CM_GF_PORT.county_id', 908003013, 908000607, 2, null, null, 'admin', 'admin', null),
+-- 2045
+(908002110, '家客小区网格必填字段维护完整率核查.生命周期状态', 'RM_GRID.lifecycle_status', 908003005, 908000639, 2, null, null, 'admin', 'admin', null);
+
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(908001000,908099001,908003000, 'admin', 'admin', null),
+(908001001,908099001,908003001, 'admin', 'admin', null),
+(908001002,908099001,908003002, 'admin', 'admin', null),
+(908001003,908099001,908003003, 'admin', 'admin', null),
+(908001004,908099001,908003004, 'admin', 'admin', null),
+(908001005,908099001,908003005, 'admin', 'admin', null),
+(908001006,908099001,908003006, 'admin', 'admin', null),
+(908001007,908099001,908003007, 'admin', 'admin', null),
+(908001008,908099001,908003008, 'admin', 'admin', null),
+(908001009,908099001,908003009, 'admin', 'admin', null),
+(908001010,908099001,908003010, 'admin', 'admin', null),
+(908001011,908099001,908003011, 'admin', 'admin', null),
+(908001012,908099001,908003012, 'admin', 'admin', null),
+(908001013,908099001,908003013, 'admin', 'admin', null),
+(908001014,908099002,908003030, 'admin', 'admin', null),
+(908001015,908099002,908003031, 'admin', 'admin', null),
+(908001016,908099002,908003032, 'admin', 'admin', null),
+(908001017,908099002,908003033, 'admin', 'admin', null),
+(908001018,908099002,908003034, 'admin', 'admin', null),
+(908001019,908099002,908003035, 'admin', 'admin', null),
+(908001020,908099002,908003036, 'admin', 'admin', null),
+(908001021,908099002,908003037, 'admin', 'admin', null),
+(908001022,908099002,908003038, 'admin', 'admin', null),
+(908001023,908099002,908003039, 'admin', 'admin', null),
+(908001024,908099002,908003040, 'admin', 'admin', null),
+(908001025,908099002,908003041, 'admin', 'admin', null),
+(908001026,908099002,908003042, 'admin', 'admin', null),
+(908001027,908099002,908003043, 'admin', 'admin', null),
+(908001028,908099002,908003044, 'admin', 'admin', null),
+(908001029,908099002,908003045, 'admin', 'admin', null),
+(908001030,908099002,908003046, 'admin', 'admin', null),
+(908001031,908099002,908003047, 'admin', 'admin', null),
+(908001032,908099002,908003048, 'admin', 'admin', null),
+(908001033,908099002,908003049, 'admin', 'admin', null),
+(908001034,908099002,908003050, 'admin', 'admin', null),
+(908001035,908099002,908003051, 'admin', 'admin', null),
+(908001036,908099002,908003052, 'admin', 'admin', null),
+(908001037,908099002,908003053, 'admin', 'admin', null),
+(908001038,908099002,908003054, 'admin', 'admin', null),
+(908001039,908099002,908003055, 'admin', 'admin', null),
+(908001040,908099002,908003056, 'admin', 'admin', null),
+(908001041,908099002,908003057, 'admin', 'admin', null),
+(908001042,908099002,908003058, 'admin', 'admin', null),
+(908001043,908099002,908003059, 'admin', 'admin', null),
+(908001044,908099002,908003060, 'admin', 'admin', null),
+(908001045,908099002,908003061, 'admin', 'admin', null),
+(908001046,908099002,908003062, 'admin', 'admin', null),
+(908001047,908099002,908003063, 'admin', 'admin', null),
+(908001048,908099002,908003064, 'admin', 'admin', null),
+(908001049,908099002,908003065, 'admin', 'admin', null),
+(908001050,908099002,908003066, 'admin', 'admin', null),
+(908001051,908099003,908003101, 'admin', 'admin', null),
+(908001052,908099003,908003102, 'admin', 'admin', null),
+(908001053,908099003,908003103, 'admin', 'admin', null),
+(908001054,908099003,908003104, 'admin', 'admin', null),
+(908001055,908099003,908003105, 'admin', 'admin', null),
+(908001056,908099003,908003106, 'admin', 'admin', null),
+(908001057,908099003,908003107, 'admin', 'admin', null),
+(908001058,908099003,908003108, 'admin', 'admin', null),
+(908001059,908099003,908003109, 'admin', 'admin', null),
+(908001060,908099003,908003110, 'admin', 'admin', null),
+(908001061,908099003,908003111, 'admin', 'admin', null),
+(908001062,908099003,908003112, 'admin', 'admin', null),
+(908001063,908099003,908003113, 'admin', 'admin', null),
+(908001064,908099003,908003114, 'admin', 'admin', null),
+--(908001065,908099003,908003115, 'admin', 'admin', null),
+(908001066,908099003,908003116, 'admin', 'admin', null),
+(908001067,908099003,908003117, 'admin', 'admin', null),
+--(908001068,908099003,908003118, 'admin', 'admin', null),
+(908001069,908099003,908003119, 'admin', 'admin', null),
+(908001070,908099003,908003120, 'admin', 'admin', null),
+(908001071,908099003,908003121, 'admin', 'admin', null),
+(908001072,908099003,908003122, 'admin', 'admin', null),
+--(908001073,908099003,908003123, 'admin', 'admin', null),
+--(908001074,908099003,908003124, 'admin', 'admin', null),
+(908001075,908099003,908003125, 'admin', 'admin', null),
+(908001076,908099003,908003126, 'admin', 'admin', null),
+(908001077,908099003,908003127, 'admin', 'admin', null),
+(908001078,908099003,908003128, 'admin', 'admin', null),
+(908001079,908099003,908003129, 'admin', 'admin', null),
+(908001080,908099003,908003130, 'admin', 'admin', null),
+(908001081,908099003,908003131, 'admin', 'admin', null),
+(908001082,908099003,908003132, 'admin', 'admin', null),
+(908001083,908099003,908003133, 'admin', 'admin', null),
+(908001084,908099003,908003134, 'admin', 'admin', null),
+(908001085,908099004,908004001, 'admin', 'admin', null),
+(908001086,908099999,908003000, 'admin', 'admin', null),
+(908001087,908099999,908003001, 'admin', 'admin', null),
+(908001088,908099999,908003002, 'admin', 'admin', null),
+(908001089,908099999,908003003, 'admin', 'admin', null),
+(908001090,908099999,908003004, 'admin', 'admin', null),
+(908001091,908099999,908003005, 'admin', 'admin', null),
+(908001092,908099999,908003006, 'admin', 'admin', null),
+(908001093,908099999,908003007, 'admin', 'admin', null),
+(908001094,908099999,908003008, 'admin', 'admin', null),
+(908001095,908099999,908003009, 'admin', 'admin', null),
+(908001096,908099999,908003010, 'admin', 'admin', null),
+(908001097,908099999,908003011, 'admin', 'admin', null),
+(908001098,908099999,908003012, 'admin', 'admin', null),
+(908001099,908099999,908003013, 'admin', 'admin', null),
+(908001100,908099999,908003030, 'admin', 'admin', null),
+(908001101,908099999,908003031, 'admin', 'admin', null),
+(908001102,908099999,908003032, 'admin', 'admin', null),
+(908001103,908099999,908003033, 'admin', 'admin', null),
+(908001104,908099999,908003034, 'admin', 'admin', null),
+(908001105,908099999,908003035, 'admin', 'admin', null),
+(908001106,908099999,908003036, 'admin', 'admin', null),
+(908001107,908099999,908003037, 'admin', 'admin', null),
+(908001108,908099999,908003038, 'admin', 'admin', null),
+(908001109,908099999,908003039, 'admin', 'admin', null),
+(908001110,908099999,908003040, 'admin', 'admin', null),
+(908001111,908099999,908003041, 'admin', 'admin', null),
+(908001112,908099999,908003042, 'admin', 'admin', null),
+(908001113,908099999,908003043, 'admin', 'admin', null),
+(908001114,908099999,908003044, 'admin', 'admin', null),
+(908001115,908099999,908003045, 'admin', 'admin', null),
+(908001116,908099999,908003046, 'admin', 'admin', null),
+(908001117,908099999,908003047, 'admin', 'admin', null),
+(908001118,908099999,908003048, 'admin', 'admin', null),
+(908001119,908099999,908003049, 'admin', 'admin', null),
+(908001120,908099999,908003050, 'admin', 'admin', null),
+(908001121,908099999,908003051, 'admin', 'admin', null),
+(908001122,908099999,908003052, 'admin', 'admin', null),
+(908001123,908099999,908003053, 'admin', 'admin', null),
+(908001124,908099999,908003054, 'admin', 'admin', null),
+(908001125,908099999,908003055, 'admin', 'admin', null),
+(908001126,908099999,908003056, 'admin', 'admin', null),
+(908001127,908099999,908003057, 'admin', 'admin', null),
+(908001128,908099999,908003058, 'admin', 'admin', null),
+(908001129,908099999,908003059, 'admin', 'admin', null),
+(908001130,908099999,908003060, 'admin', 'admin', null),
+(908001131,908099999,908003061, 'admin', 'admin', null),
+(908001132,908099999,908003062, 'admin', 'admin', null),
+(908001133,908099999,908003063, 'admin', 'admin', null),
+(908001134,908099999,908003064, 'admin', 'admin', null),
+(908001135,908099999,908003065, 'admin', 'admin', null),
+(908001136,908099999,908003066, 'admin', 'admin', null),
+(908001137,908099999,908003101, 'admin', 'admin', null),
+(908001138,908099999,908003102, 'admin', 'admin', null),
+(908001139,908099999,908003103, 'admin', 'admin', null),
+(908001140,908099999,908003104, 'admin', 'admin', null),
+(908001141,908099999,908003105, 'admin', 'admin', null),
+(908001142,908099999,908003106, 'admin', 'admin', null),
+(908001143,908099999,908003107, 'admin', 'admin', null),
+(908001144,908099999,908003108, 'admin', 'admin', null),
+(908001145,908099999,908003109, 'admin', 'admin', null),
+(908001146,908099999,908003110, 'admin', 'admin', null),
+(908001147,908099999,908003111, 'admin', 'admin', null),
+(908001148,908099999,908003112, 'admin', 'admin', null),
+(908001149,908099999,908003113, 'admin', 'admin', null),
+(908001150,908099999,908003114, 'admin', 'admin', null),
+--(908001151,908099999,908003115, 'admin', 'admin', null),
+(908001152,908099999,908003116, 'admin', 'admin', null),
+(908001153,908099999,908003117, 'admin', 'admin', null),
+--(908001154,908099999,908003118, 'admin', 'admin', null),
+(908001155,908099999,908003119, 'admin', 'admin', null),
+(908001156,908099999,908003120, 'admin', 'admin', null),
+(908001157,908099999,908003121, 'admin', 'admin', null),
+(908001158,908099999,908003122, 'admin', 'admin', null),
+--(908001159,908099999,908003123, 'admin', 'admin', null),
+--(908001160,908099999,908003124, 'admin', 'admin', null),
+(908001161,908099999,908003125, 'admin', 'admin', null),
+(908001162,908099999,908003126, 'admin', 'admin', null),
+(908001163,908099999,908003127, 'admin', 'admin', null),
+(908001164,908099999,908003128, 'admin', 'admin', null),
+(908001165,908099999,908003129, 'admin', 'admin', null),
+(908001166,908099999,908003130, 'admin', 'admin', null),
+(908001167,908099999,908003131, 'admin', 'admin', null),
+(908001168,908099999,908003132, 'admin', 'admin', null),
+(908001169,908099999,908003133, 'admin', 'admin', null),
+(908001170,908099999,908003134, 'admin', 'admin', null),
+(908001171,908099999,908004001, 'admin', 'admin', null);

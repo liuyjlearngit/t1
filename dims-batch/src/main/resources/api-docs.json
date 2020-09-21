@@ -781,6 +781,56 @@
         },
         "deprecated": false
       }
+    },
+    "/api/task/saveResStatistics": {
+      "post": {
+        "tags": [
+          "task-rest"
+        ],
+        "summary": "saveResStatistics",
+        "operationId": "saveResStatisticsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "resStatisticsDtos",
+            "description": "resStatisticsDtos",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ResStatisticsDto"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseDto«Void»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "definitions": {
@@ -1444,6 +1494,68 @@
         }
       },
       "title": "TaskItemIndexDto"
+    },
+    "ResStatisticsDto": {
+      "type": "object",
+      "properties": {
+        "specialityName": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "resIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "collectionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "county": {
+          "type": "string"
+        },
+        "countyCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "prefecture": {
+          "type": "string"
+        },
+        "prefectureCode": {
+          "type": "string"
+        },
+        "province": {
+          "type": "string"
+        },
+        "provinceCode": {
+          "type": "string"
+        },
+        "regionType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "taskCode": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "resName": {
+          "type": "string"
+        },
+        "resType": {
+          "type": "string"
+        },
+        "memo": {
+          "type": "string"
+        }
+      },
+      "title": "ResStatisticsDto"
     }
   }
 }

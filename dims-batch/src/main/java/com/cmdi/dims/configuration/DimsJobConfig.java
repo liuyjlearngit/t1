@@ -1,7 +1,7 @@
 package com.cmdi.dims.configuration;
 
-import com.cmdi.dims.domain.MetaService;
-import com.cmdi.dims.domain.TaskService;
+import com.cmdi.dims.batch.*;
+import com.cmdi.dims.domain.*;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -14,15 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
-
-import com.cmdi.dims.batch.BusinessAnalysisTasklet;
-import com.cmdi.dims.batch.DimsTaskListener;
-import com.cmdi.dims.batch.FileCompareTasklet;
-import com.cmdi.dims.batch.FileProcessTasklet;
-import com.cmdi.dims.batch.FileTransferTasklet;
-import com.cmdi.dims.batch.FileUploadTasklet;
-import com.cmdi.dims.domain.DataService;
-import com.cmdi.dims.domain.LockService;
 
 @Configuration
 public class DimsJobConfig {
@@ -41,7 +32,8 @@ public class DimsJobConfig {
     private DataService dataService;
     @Autowired
     private JobRepository jobRepository;
-
+    @Autowired
+    private StatisticsService statisticsService;
     @Bean
     public JobLauncher asyncJobLauncher() {
         SimpleJobLauncher jobLauncher = new SimpleJobLauncher();
@@ -91,6 +83,13 @@ public class DimsJobConfig {
         tasklet.setDataService(dataService);
         return tasklet;
     }
+    @Bean
+    public StatisticsTasklet statisticsTasklet() {
+        StatisticsTasklet tasklet = new StatisticsTasklet();
+        tasklet.setTaskService(taskService);
+        tasklet.setStatisticsService(statisticsService);
+        return tasklet;
+    }
 
     @Bean
     public JobExecutionListener taskListener() {
@@ -116,6 +115,12 @@ public class DimsJobConfig {
     public Step businessAnalysisStep() {
         return stepBuilderFactory.get("businessAnalysisStep").tasklet(businessAnalysisTasklet()).build();
     }
+    //根据维度统计资源数据
+    @Bean
+    public Step statisticsStep() {
+        return stepBuilderFactory.get("statisticsStep").tasklet(statisticsTasklet()).build();
+    }
+
     //上传错误文件
     @Bean
     public Step fileUploadStep() {
@@ -130,6 +135,7 @@ public class DimsJobConfig {
 //                .next(fileCompareStep())
                 .next(fileProcessStep())
                 .next(businessAnalysisStep())
+                .next(statisticsStep())
                 .next(fileUploadStep())
                 .build();
     }

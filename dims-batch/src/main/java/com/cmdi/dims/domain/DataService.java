@@ -1,12 +1,12 @@
 package com.cmdi.dims.domain;
 
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
-
 import com.cmdi.dims.sdk.model.IndexProcDto;
 import com.cmdi.dims.sdk.model.MetadataDto;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 public interface DataService {
 
@@ -21,4 +21,5 @@ public interface DataService {
     long countErrorData(MetadataDto metadata);
 
     List<Map<String, Object>> exportData(MetadataDto metadata, int limit, int offset);
+
 }

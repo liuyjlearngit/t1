@@ -1,11 +1,14 @@
 package com.cmdi.dims.task.serivce.impl;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
+import com.cmdi.dims.task.TaskStatusEnum;
+import com.cmdi.dims.task.dto.ResStatisticsDto;
+import com.cmdi.dims.task.dto.TaskItemBusinessDto;
+import com.cmdi.dims.task.dto.TaskItemFileDto;
+import com.cmdi.dims.task.dto.TaskItemIndexDto;
+import com.cmdi.dims.task.entity.*;
+import com.cmdi.dims.task.repository.*;
+import com.cmdi.dims.task.serivce.TaskService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.BeanUtils;
@@ -16,24 +19,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
-import lombok.extern.slf4j.Slf4j;
-import com.cmdi.dims.task.TaskStatusEnum;
-import com.cmdi.dims.task.dto.TaskItemBusinessDto;
-import com.cmdi.dims.task.dto.TaskItemFileDto;
-import com.cmdi.dims.task.dto.TaskItemIndexDto;
-import com.cmdi.dims.task.entity.AreaCodeConfig;
-import com.cmdi.dims.task.entity.Task;
-import com.cmdi.dims.task.entity.TaskItemBusiness;
-import com.cmdi.dims.task.entity.TaskItemFile;
-import com.cmdi.dims.task.entity.TaskItemIndex;
-import com.cmdi.dims.task.entity.TaskLatest;
-import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
-import com.cmdi.dims.task.repository.TaskItemBusinessRepository;
-import com.cmdi.dims.task.repository.TaskItemFileRepository;
-import com.cmdi.dims.task.repository.TaskItemIndexRepository;
-import com.cmdi.dims.task.repository.TaskLatestRepository;
-import com.cmdi.dims.task.repository.TaskRepository;
-import com.cmdi.dims.task.serivce.TaskService;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -51,6 +41,8 @@ public class TaskServiceImpl implements TaskService {
     private TaskLatestRepository taskLatestRepository;
     @Autowired
     private AreaCodeConfigRepository areaCodeConfigRepository;
+    @Autowired
+    private ResStatisticsRepository resStatisticsRepository;
 
     @Override
     public String findPreviousTaskCode(String taskCode) {
@@ -197,5 +189,27 @@ public class TaskServiceImpl implements TaskService {
             save.add(index);
         }
         taskItemIndexRepository.saveAll(save);
+    }
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Override
+    public void saveResStatistics(List<ResStatisticsDto> resStatisticsDtos) {
+        List<TaskItemBusiness> taskItemBusinesses = taskItemBusinessRepository.findByTaskCodeOrderByTaskItemBusinessIdAsc(resStatisticsDtos.get(0).getTaskCode());
+        Date collectionDate = taskItemBusinesses.stream().map(TaskItemBusiness::getCollectionDate).findFirst().orElse(null);
+
+        List<ResStatistics> resStatisticsIndices = resStatisticsRepository.findByTaskCode(resStatisticsDtos.get(0).getTaskCode());
+        if (CollectionUtils.isNotEmpty(resStatisticsIndices)) {
+            resStatisticsRepository.deleteInBatch(resStatisticsIndices);
+        }
+        List<ResStatistics> save = new ArrayList<>();
+        for (ResStatisticsDto resIndexDto : resStatisticsDtos) {
+            ResStatistics index = new ResStatistics();
+            BeanUtils.copyProperties(resIndexDto, index);
+            //index.setVersion(1L);
+            if (null != collectionDate) {
+                index.setCollectionDate(collectionDate);
+            }
+            save.add(index);
+        }
+        resStatisticsRepository.saveAll(save);
     }
 }

@@ -1,22 +1,17 @@
 package com.cmdi.dims.api;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.cmdi.dims.app.dto.ResponseDto;
 import com.cmdi.dims.task.TaskStatusEnum;
+import com.cmdi.dims.task.dto.ResStatisticsDto;
 import com.cmdi.dims.task.dto.TaskItemBusinessDto;
 import com.cmdi.dims.task.dto.TaskItemFileDto;
 import com.cmdi.dims.task.dto.TaskItemIndexDto;
 import com.cmdi.dims.task.serivce.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.List;
 
 @RequestMapping("/api/task")
 @RestController
@@ -78,6 +73,11 @@ public class TaskRest {
     @PostMapping("/saveTaskItemIndex")
     public ResponseDto<Void> saveTaskItemIndex(@RequestBody List<TaskItemIndexDto> taskItemIndexDtos) {
         taskService.saveTaskItemIndex(taskItemIndexDtos);
+        return ResponseDto.success();
+    }
+    @PostMapping("/saveResStatistics")
+    public ResponseDto<Void> saveResStatistics(@RequestBody List<ResStatisticsDto> resStatisticsDtos) {
+        taskService.saveResStatistics(resStatisticsDtos);
         return ResponseDto.success();
     }
 }
