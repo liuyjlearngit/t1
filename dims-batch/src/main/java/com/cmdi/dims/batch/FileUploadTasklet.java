@@ -3,7 +3,7 @@ package com.cmdi.dims.batch;
 import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.domain.ConfigService;
 import com.cmdi.dims.domain.meta.dto.AttributeType;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
 import com.cmdi.dims.sdk.model.FileLocationDto;
@@ -55,16 +55,16 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             String date = datetime.toString("yyyyMMdd");
             List<File> zips = new ArrayList();
             for (TaskItemBusinessDto taskItemBusinessDto : taskItemBusinesses) {
-                MetadataDto metadataDto = dataService.loadMetadata(taskItemBusinessDto.getCode());
-                if (Objects.equals(metadataDto.getEntityType().getSpecialityName(), speciality)) {
-                    long count = dataService.countErrorData(metadataDto);
+                Metadata metadata = dataService.loadMetadata(taskItemBusinessDto.getCode());
+                if (Objects.equals(metadata.getEntityType().getSpecialityName(), speciality)) {
+                    long count = dataService.countErrorData(metadata);
                     /*if (count > 0) {
 
                     } else {
                         log.warn("实体对象【" + taskItemBusinessDto.getName() + "】没有错误数据，将不会生成错误文件");
                     }*/
                     try {
-                        File csvFile = exportDataToCsv(metadataDto, location, resultDir, count);
+                        File csvFile = exportDataToCsv(metadata, location, resultDir, count);
                         File zipFile = compressCsvFileToZip(csvFile);
                         log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩成功，原始CSV大小" + FileUtils.sizeOf(csvFile) + "压缩后ZIP大小" + FileUtils.sizeOf(zipFile));
 //                            uploadZipFileToFtp(zipFile, location, date);
@@ -102,7 +102,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         }
     }
 
-    private File exportDataToCsv(MetadataDto metadata, FileLocationDto location, File resultDir, long count) throws IOException {
+    private File exportDataToCsv(Metadata metadata, FileLocationDto location, File resultDir, long count) throws IOException {
         File targetResultFile = new File(resultDir, "RESULT-" + metadata.getEntityType().getCode() + ".csv");
         if (targetResultFile.exists()) {
             FileUtils.forceDelete(targetResultFile);
@@ -181,7 +181,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         return zipFile;
     }
 
-    private String buildHeader(MetadataDto metadata, FileLocationDto location) {
+    private String buildHeader(Metadata metadata, FileLocationDto location) {
         char delimiter = BatchUtil.safeDelimiter(location.getFileDelimiter());
         StringBuilder builder = new StringBuilder();
         for (AttributeType attributeType : metadata.getAttributeTypes()) {
@@ -192,7 +192,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         return builder.toString();
     }
 
-    private String buildData(MetadataDto metadata, FileLocationDto location, Map<String, Object> data) {
+    private String buildData(Metadata metadata, FileLocationDto location, Map<String, Object> data) {
         char delimiter = BatchUtil.safeDelimiter(location.getFileDelimiter());
         StringBuilder builder = new StringBuilder();
         for (AttributeType attributeType : metadata.getAttributeTypes()) {

@@ -10,7 +10,6 @@ import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.util.Assert;
 
 import java.io.File;
-import java.util.Date;
 
 @Slf4j
 public class DimsTaskListener implements JobExecutionListener {
@@ -44,7 +43,6 @@ public class DimsTaskListener implements JobExecutionListener {
     public void afterJob(JobExecution jobExecution) {
         String province = BatchUtil.getProvince(jobExecution);
         String speciality = BatchUtil.getSpeciality(jobExecution);
-        Date lockedAt = BatchUtil.getLockedAt(jobExecution);
         if (StringUtils.isNotEmpty(province) && StringUtils.isNotEmpty(speciality)) {
             try {
                 String taskCode = BatchUtil.getTaskCode(jobExecution);

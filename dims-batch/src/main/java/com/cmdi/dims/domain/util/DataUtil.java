@@ -1,14 +1,14 @@
 package com.cmdi.dims.domain.util;
 
 
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.domain.meta.dto.AttributeType;
 
 import java.util.Objects;
 
 public class DataUtil {
 
-    public static String insertDataStatement(MetadataDto metadata) {
+    public static String insertDataStatement(Metadata metadata) {
         StringBuilder insertStatement = new StringBuilder();
         insertStatement.append("INSERT INTO ").append(metadata.getEntityType().getExtensionTable()).append("(");
         boolean first = true;
@@ -38,11 +38,11 @@ public class DataUtil {
         return "TRUNCATE TABLE " + table;
     }
 
-    public static String countErrorDataStatement(MetadataDto metadata) {
+    public static String countErrorDataStatement(Metadata metadata) {
         return "SELECT COUNT(1) FROM " + metadata.getEntityType().getExtensionTable() + " WHERE DIMS_COL_RESULT IS NOT NULL";
     }
 
-    public static String selectErrorDataStatement(MetadataDto metadata) {
+    public static String selectErrorDataStatement(Metadata metadata) {
         StringBuilder insertStatement = new StringBuilder();
         insertStatement.append("SELECT ");
         for (AttributeType attributeType : metadata.getAttributeTypes()) {
@@ -58,7 +58,7 @@ public class DataUtil {
         insertStatement.append(" LIMIT :LIMIT OFFSET :OFFSET");
         return insertStatement.toString();
     }
-    public static String selectAllDataStatement(MetadataDto metadata) {
+    public static String selectAllDataStatement(Metadata metadata) {
         StringBuilder insertStatement = new StringBuilder();
         insertStatement.append("SELECT ");
         for (AttributeType attributeType : metadata.getAttributeTypes()) {

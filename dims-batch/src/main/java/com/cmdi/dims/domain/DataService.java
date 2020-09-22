@@ -1,7 +1,7 @@
 package com.cmdi.dims.domain;
 
 import com.cmdi.dims.domain.meta.dto.Index;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
 
 import java.sql.SQLException;
@@ -10,13 +10,13 @@ import java.util.Map;
 
 public interface DataService {
 
-    MetadataDto loadMetadata(String tableName);
+    Metadata loadMetadata(String tableName);
 
     List<Index> loadIndices(String speciality);
 
     Map<String, String> loadTables(List<String> specialities);
 
-    int importData(MetadataDto metadata, List<Map<String, Object>> parameters);
+    int importData(Metadata metadata, List<Map<String, Object>> parameters);
 
     void cleanData(String table);
 
@@ -24,7 +24,7 @@ public interface DataService {
 
     List<TaskItemIndexDto> loadCalculateIndexData(String taskCode);
 
-    long countErrorData(MetadataDto metadata);
+    long countErrorData(Metadata metadata);
 
-    List<Map<String, Object>> exportData(MetadataDto metadata, int limit, int offset);
+    List<Map<String, Object>> exportData(Metadata metadata, int limit, int offset);
 }

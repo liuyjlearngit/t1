@@ -1,7 +1,7 @@
 package com.cmdi.dims.batch;
 
 import com.cmdi.dims.domain.meta.dto.AttributeType;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
 import com.cmdi.dims.sdk.model.FileLocationDto;
@@ -19,20 +19,28 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.scope.context.StepContext;
-import java.util.zip.GZIPInputStream;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.GZIPInputStream;
 
 public class BatchUtil {
 
     public static final String PROVINCE = "PROVINCE";
     public static final String SPECIALITY = "SPECIALITY";
-    public static final String LOCKED_AT = "LOCKED_AT";
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
     static final char DefaultDelimiter = '^';
@@ -82,15 +90,6 @@ public class BatchUtil {
         return SkipEnum.get(stepContext.getStepExecution().getJobExecution().getExecutionContext().getInt(SKIP)).isSkip();
     }
 
-
-    static Date getLockedAt(JobExecution jobExecution) {
-        return jobExecution.getJobParameters().getDate(LOCKED_AT);
-    }
-
-    static Date getLockedAt(StepContext stepContext) {
-        return stepContext.getStepExecution().getJobParameters().getDate(LOCKED_AT);
-    }
-
     //创建临时目录
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
         File tempDirectory = FileUtils.getTempDirectory();
@@ -104,20 +103,11 @@ public class BatchUtil {
         return taskDirectory;
     }
 
-    static File getFileValidationFolder(String taskConfigCode, boolean create) throws IOException {
-        File tempDirectory = FileUtils.getTempDirectory();
-        File validationDirectory = new File(tempDirectory, "validation-" + taskConfigCode);
-        if (create) {
-            FileUtils.forceMkdir(validationDirectory);
-        }
-        return validationDirectory;
-    }
-
     static File getTaskFolder(String taskCode) throws IOException {
         return getTaskFolder(taskCode, false);
     }
 
-    static Map<String, Object> asParameter(MetadataDto metadata, Map<String, Integer> headerMap, Map<Integer, String> record) {
+    static Map<String, Object> asParameter(Metadata metadata, Map<String, Integer> headerMap, Map<Integer, String> record) {
         Map<String, Object> p = new HashMap<>();
         int size = record.size();
         for (AttributeType attributeType : metadata.getAttributeTypes()) {
@@ -163,7 +153,7 @@ public class BatchUtil {
 
     static Path csvFile(File taskFolder, String sourceFileName) {
         String baseName = FilenameUtils.getBaseName(sourceFileName);
-        baseName = StringUtils.containsIgnoreCase(baseName,".csv")?StringUtils.substringBefore(baseName,"."):baseName;
+        baseName = StringUtils.containsIgnoreCase(baseName, ".csv") ? StringUtils.substringBefore(baseName, ".") : baseName;
         String targetFileName = baseName + ".csv";
 
         Path csvItemFile = Paths.get(taskFolder.getAbsolutePath(), targetFileName);
@@ -223,9 +213,10 @@ public class BatchUtil {
             throw new RuntimeException("压缩文件存在问题，请检查！", e);
         }
     }
+
     //String sourceDir,String sourceFileName
     static void unGzipFile(Path itemFile) {
-        String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(),".")+".csv";
+        String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(), ".") + ".csv";
         try {
             //建立gzip压缩文件输入流
             InputStream inStream = Files.newInputStream(itemFile);
@@ -250,7 +241,8 @@ public class BatchUtil {
             System.err.println(ex.toString());
         }
     }
-        static DefaultFtpSessionFactory createSessionFactory(FileLocationDto location) {
+
+    static DefaultFtpSessionFactory createSessionFactory(FileLocationDto location) {
         DefaultFtpSessionFactory factory = new DefaultFtpSessionFactory();
         factory.setHost(StringUtils.isNotEmpty(location.getHost()) ? location.getHost() : "localhost");
         factory.setPort(null != location.getPort() ? location.getPort() : 21);
@@ -271,11 +263,11 @@ public class BatchUtil {
         return upperHeaderMap;
     }
 
-    static void validateHeader(Map<String, Integer> csvHeader, MetadataDto metadataDto) {
-        if (CollectionUtils.isNotEmpty(metadataDto.getAttributeTypes())) {
+    static void validateHeader(Map<String, Integer> csvHeader, Metadata metadata) {
+        if (CollectionUtils.isNotEmpty(metadata.getAttributeTypes())) {
             Map<String, Integer> copy = new HashMap<>(csvHeader);
             List<String> notExists = new ArrayList<>();
-            for (AttributeType attributeType : metadataDto.getAttributeTypes()) {
+            for (AttributeType attributeType : metadata.getAttributeTypes()) {
                 Integer index = csvHeader.get(attributeType.getColumnName().toUpperCase());
                 if (null != index) {
                     copy.remove(attributeType.getColumnName().toUpperCase());

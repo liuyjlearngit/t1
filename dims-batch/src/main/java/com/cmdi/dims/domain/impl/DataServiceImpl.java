@@ -4,7 +4,7 @@ import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.domain.meta.MetadataLoader;
 import com.cmdi.dims.domain.meta.dto.EntityType;
 import com.cmdi.dims.domain.meta.dto.Index;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.domain.util.DataUtil;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +38,7 @@ public class DataServiceImpl implements DataService {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public MetadataDto loadMetadata(String tableName) {
+    public Metadata loadMetadata(String tableName) {
         return new MetadataLoader(namedParameterJdbcTemplate).loadMetadata(tableName);
     }
 
@@ -58,7 +58,7 @@ public class DataServiceImpl implements DataService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
-    public int importData(MetadataDto metadata, List<Map<String, Object>> parameters) {
+    public int importData(Metadata metadata, List<Map<String, Object>> parameters) {
         int length = parameters.size();
         SqlParameterSource[] sqlParameterSources = new SqlParameterSource[length];
         for (int i = 0; i < length; i++) {
@@ -121,12 +121,12 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
-    public long countErrorData(MetadataDto metadata) {
+    public long countErrorData(Metadata metadata) {
         return jdbcTemplate.queryForObject(DataUtil.countErrorDataStatement(metadata), Long.class);
     }
 
     @Override
-    public List<Map<String, Object>> exportData(MetadataDto metadata, int limit, int offset) {
+    public List<Map<String, Object>> exportData(Metadata metadata, int limit, int offset) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("LIMIT", limit);
         parameters.put("OFFSET", offset);

@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.cmdi.dims.domain.ConfigService;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
@@ -88,7 +88,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         if (BooleanUtils.isNotTrue(taskItemFile.isSuccess())) {
             return;
         }
-        MetadataDto metadata = dataService.loadMetadata(taskItemFile.getDestTable());
+        Metadata metadata = dataService.loadMetadata(taskItemFile.getDestTable());
         long start = System.currentTimeMillis();
         boolean success = true;
         long totalRecord = 0L;
@@ -207,7 +207,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         }
     }
 
-    private TaskItemBusinessDto populate(MetadataDto metadata, TaskItemFileDto taskItemFile, Long originAmount, Long analysisCosts, boolean success, String message) {
+    private TaskItemBusinessDto populate(Metadata metadata, TaskItemFileDto taskItemFile, Long originAmount, Long analysisCosts, boolean success, String message) {
         return populate(metadata.getEntityType().getName(),
                 metadata.getEntityType().getCode().toUpperCase(),
                 taskItemFile.getCollectionDate(),
@@ -233,7 +233,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         return taskItemBusiness;
     }
 
-    private void publish(RingBuffer<DataWithMetadata> ringBuffer, MetadataDto metadata, List<Map<String, Object>> parameters, long index) {
+    private void publish(RingBuffer<DataWithMetadata> ringBuffer, Metadata metadata, List<Map<String, Object>> parameters, long index) {
         log.debug("{} batch load {}", metadata.getEntityType().getExtensionTable(), index);
         long sequence = ringBuffer.next();
         try {
@@ -252,7 +252,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         for (TaskItemFileDto taskItemFile : taskItemFiles) {
             tables.add(taskItemFile.getDestTable());
             String errorMessage = null;
-            MetadataDto metadata = dataService.loadMetadata(taskItemFile.getDestTable());
+            Metadata metadata = dataService.loadMetadata(taskItemFile.getDestTable());
             boolean success = false;
             try {
                 Path file = Paths.get(taskDirectory.getAbsolutePath(), taskItemFile.getSignature(), taskItemFile.getCsvFile());

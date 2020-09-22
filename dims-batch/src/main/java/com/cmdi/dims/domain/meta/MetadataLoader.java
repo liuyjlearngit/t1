@@ -3,7 +3,7 @@ package com.cmdi.dims.domain.meta;
 import com.cmdi.dims.domain.meta.dto.AttributeType;
 import com.cmdi.dims.domain.meta.dto.EntityType;
 import com.cmdi.dims.domain.meta.dto.Index;
-import com.cmdi.dims.domain.meta.dto.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -23,15 +23,15 @@ public class MetadataLoader {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
-    public MetadataDto loadMetadata(String code) {
+    public Metadata loadMetadata(String code) {
         EntityType entityType = findEntityTypeByCode(code);
         Assert.notNull(entityType, "entity type not exists");
         List<AttributeType> attributeTypes = findAttributeTypeByEntityTypeId(entityType.getId());
         Assert.notEmpty(attributeTypes, "attribute type is empty !");
-        MetadataDto metadataDto = new MetadataDto();
-        metadataDto.setEntityType(entityType);
-        metadataDto.setAttributeTypes(attributeTypes);
-        return metadataDto;
+        Metadata metadata = new Metadata();
+        metadata.setEntityType(entityType);
+        metadata.setAttributeTypes(attributeTypes);
+        return metadata;
     }
 
     public List<EntityType> loadEntityType() {
