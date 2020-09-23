@@ -28,6 +28,7 @@
 
     <modules>
         <module>dims-batch</module>
+        <module>dims-batch-idc</module>
         <module>dims-data-issue-importer</module>
         <module>dims-database-initializer</module>
         <module>dims-domain</module>
@@ -90,6 +91,11 @@
             <dependency>
                 <groupId>com.cmdi.dims</groupId>
                 <artifactId>dims-batch</artifactId>
+                <version>${dims.release.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cmdi.dims</groupId>
+                <artifactId>dims-batch-idc</artifactId>
                 <version>${dims.release.version}</version>
             </dependency>
             <dependency>

@@ -1,26 +1,26 @@
 package com.cmdi.dims.facade;
 
+import com.cmdi.dims.task.entity.AreaCodeConfig;
+import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
+import com.cmdi.dims.util.PinyinUtil;
+import com.offbytwo.jenkins.JenkinsServer;
+import com.offbytwo.jenkins.model.Job;
+import com.offbytwo.jenkins.model.JobWithDetails;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import com.cmdi.dims.task.entity.AreaCodeConfig;
-import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
-
-import com.offbytwo.jenkins.JenkinsServer;
-import com.offbytwo.jenkins.model.Job;
-import com.offbytwo.jenkins.model.JobWithDetails;
-
-import com.cmdi.dims.util.PinyinUtil;
-
 @Component
+@PropertySource({"classpath:config/province_filter.properties"})
 public class JenkinsFacadeImpl implements JenkinsFacade {
 
     private static final String JOB_NAME = "batch-job";
@@ -49,6 +49,12 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
     @Value("classpath:jenkins/batch-job-template.xml")
     private Resource jenkinsTemplate;
 
+    @Value("classpath:jenkins/batch-job-template-idc.xml")
+    private Resource jenkinsTemplateIDC;
+
+    @Value("${filter.list}")
+    private String filterList;
+
     @Autowired
     private AreaCodeConfigRepository areaCodeConfigRepository;
 
@@ -65,7 +71,13 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         String jobName = JOB_NAME + "-" + province + "-" + PinyinUtil.convert(areaCodeConfig.getName()) + "-" + PinyinUtil.convert(speciality);
         String tempateDatabase = "dims-" + province + "-" + PinyinUtil.convert(speciality).toLowerCase();
         String description = "省份：" + areaCodeConfig.getName() + ",专业：" + speciality + ",版本：V20191102";
-        String jobConfig = IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
+        String jobConfig;
+        if(StringUtils.isNotEmpty(filterList)
+                &&StringUtils.containsIgnoreCase(filterList,areaCodeConfig.getCode())){
+            jobConfig = IOUtils.toString(jenkinsTemplateIDC.getInputStream(), "UTF-8");
+        }else{
+            jobConfig = IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
+        }
         jobConfig = StringUtils.replace(jobConfig, "#description#", description);
         jobConfig = StringUtils.replace(jobConfig, "#province#", province);
         jobConfig = StringUtils.replace(jobConfig, "#speciality#", speciality);
