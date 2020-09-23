@@ -1,8 +1,14 @@
 package com.cmdi.dims.batch;
 
-import com.cmdi.dims.domain.MetaService;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.meta.dto.AttributeType;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
+import com.cmdi.dims.sdk.model.FileLocationDto;
+import com.cmdi.dims.sdk.model.TaskConfigDto;
+import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -14,12 +20,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
 import org.springframework.util.Assert;
-import com.cmdi.dims.domain.DataService;
-import com.cmdi.dims.sdk.model.AttributeType;
-import com.cmdi.dims.sdk.model.FileLocationDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
-import com.cmdi.dims.sdk.model.TaskConfigDto;
-import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,14 +40,13 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
     @Setter
     private DataService dataService;
     @Setter
-    private MetaService metaService;
+    private ConfigService configService;
 
     @Override
     public void process(String taskCode, String province, String speciality) throws Exception {
         List<TaskItemBusinessDto> taskItemBusinesses = taskService.findTaskItemBusinessesByTaskCode(taskCode);
-        TaskConfigDto taskConfigDto = metaService.loadConfig(province, speciality);
         if (CollectionUtils.isNotEmpty(taskItemBusinesses)) {
-            TaskConfigDto taskConfig = metaService.loadConfig(province, speciality);
+            TaskConfigDto taskConfig = configService.loadConfig(province, speciality);
             FileLocationDto location = getFileLocationDto(taskConfig);
             File localTaskFolder = BatchUtil.getTaskFolder(taskCode, false);
             File resultDir = new File(localTaskFolder, "result");
@@ -56,16 +55,16 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             String date = datetime.toString("yyyyMMdd");
             List<File> zips = new ArrayList();
             for (TaskItemBusinessDto taskItemBusinessDto : taskItemBusinesses) {
-                MetadataDto metadataDto = metaService.loadMetadata(taskItemBusinessDto.getCode(), taskConfigDto.getTableSpecialityMappings().get(taskItemBusinessDto.getCode()));
-                if (Objects.equals(metadataDto.getEntityType().getSpecialityName(), speciality)) {
-                    long count = dataService.countErrorData(metadataDto);
+                Metadata metadata = dataService.loadMetadata(taskItemBusinessDto.getCode());
+                if (Objects.equals(metadata.getEntityType().getSpecialityName(), speciality)) {
+                    long count = dataService.countErrorData(metadata);
                     if (count > 0) {
-                            try {
-                            File csvFile = exportDataToCsv(metadataDto, location, resultDir, count);
+                        try {
+                            File csvFile = exportDataToCsv(metadata, location, resultDir, count);
                             File zipFile = compressCsvFileToZip(csvFile);
                             log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩成功，原始CSV大小" + FileUtils.sizeOf(csvFile) + "压缩后ZIP大小" + FileUtils.sizeOf(zipFile));
-    //                            uploadZipFileToFtp(zipFile, location, date);
-    //                            log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据上传成功");
+//                            uploadZipFileToFtp(zipFile, location, date);
+//                            log.info("实体对象【" + taskItemBusinessDto.getName() + "】错误数据上传成功");
                             zips.add(zipFile);
                         } catch (Exception e) {
                             log.error("实体对象【" + taskItemBusinessDto.getName() + "】错误数据压缩失败：" + e.getMessage());
@@ -74,6 +73,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                     } else {
                         log.warn("实体对象【" + taskItemBusinessDto.getName() + "】没有错误数据，将不会生成错误文件");
                     }
+
                 } else {
                     log.warn("实体对象【" + taskItemBusinessDto.getName() + "】不是核查的专业对象，将不会生成错误文件");
                 }
@@ -102,7 +102,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         }
     }
 
-    private File exportDataToCsv(MetadataDto metadata, FileLocationDto location, File resultDir, long count) throws IOException {
+    private File exportDataToCsv(Metadata metadata, FileLocationDto location, File resultDir, long count) throws IOException {
         File targetResultFile = new File(resultDir, "RESULT-" + metadata.getEntityType().getCode() + ".csv");
         if (targetResultFile.exists()) {
             FileUtils.forceDelete(targetResultFile);
@@ -181,7 +181,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         return zipFile;
     }
 
-    private String buildHeader(MetadataDto metadata, FileLocationDto location) {
+    private String buildHeader(Metadata metadata, FileLocationDto location) {
         char delimiter = BatchUtil.safeDelimiter(location.getFileDelimiter());
         StringBuilder builder = new StringBuilder();
         for (AttributeType attributeType : metadata.getAttributeTypes()) {
@@ -192,7 +192,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         return builder.toString();
     }
 
-    private String buildData(MetadataDto metadata, FileLocationDto location, Map<String, Object> data) {
+    private String buildData(Metadata metadata, FileLocationDto location, Map<String, Object> data) {
         char delimiter = BatchUtil.safeDelimiter(location.getFileDelimiter());
         StringBuilder builder = new StringBuilder();
         for (AttributeType attributeType : metadata.getAttributeTypes()) {

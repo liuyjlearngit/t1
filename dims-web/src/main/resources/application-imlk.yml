@@ -4,9 +4,9 @@ spring:
     mode: HTML
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.137.128:5432/dims1
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:5432/dims
+    username: admin
+    password: lizhongnan
     tomcat:
       validation-query: select 1
       test-on-borrow: true
@@ -30,7 +30,7 @@ spring:
   servlet:
     multipart.max-file-size: 100MB
   flyway:
-    enabled: true
+    enabled: false
     baseline-version: 8
     baseline-on-migrate: true
 server:
@@ -42,13 +42,13 @@ logging:
   level:
     root: info
 jenkins:
-  url: http://192.168.137.128:8080/
-  username: admin
-  password: admin
+  url: http://127.0.0.1:8080/jenkins
+  username: whosyourdaddy
+  password: -pl,ki8uhb
 template:
   datasource:
-    username: postgres
-    password: postgres
+    username: admin
+    password: lizhongnan
 dims:
-  url: http://172.22.21.90:10001
+  url: http://127.0.0.1:10000
   license.key:

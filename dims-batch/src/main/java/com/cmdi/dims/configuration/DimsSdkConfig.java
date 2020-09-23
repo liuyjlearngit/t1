@@ -1,16 +1,13 @@
 package com.cmdi.dims.configuration;
 
+import com.cmdi.dims.sdk.ApiClient;
+import com.cmdi.dims.sdk.api.ConfigRestApi;
+import com.cmdi.dims.sdk.api.TaskRestApi;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import com.cmdi.dims.sdk.ApiClient;
-import com.cmdi.dims.sdk.api.LockRestApi;
-import com.cmdi.dims.sdk.api.MetaRestApi;
-import com.cmdi.dims.sdk.api.TaskRestApi;
 
 @Configuration
 public class DimsSdkConfig {
@@ -26,18 +23,12 @@ public class DimsSdkConfig {
     }
 
     @Bean
-    public MetaRestApi metaRestApi() {
-        return apiClient().buildClient(MetaRestApi.class);
+    public ConfigRestApi configRestApi() {
+        return apiClient().buildClient(ConfigRestApi.class);
     }
 
     @Bean
     public TaskRestApi taskRestApi() {
         return apiClient().buildClient(TaskRestApi.class);
     }
-
-    @Bean
-    public LockRestApi lockRestApi() {
-        return apiClient().buildClient(LockRestApi.class);
-    }
-
 }

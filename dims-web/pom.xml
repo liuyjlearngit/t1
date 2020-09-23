@@ -36,10 +36,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-jdbc</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
@@ -146,12 +142,6 @@
                                     <directory>${project.basedir}/../dims-batch/target/</directory>
                                     <includes>
                                         <include>dims-batch-${project.version}.jar</include>
-                                    </includes>
-                                </resource>
-                                <resource>
-                                    <directory>${project.basedir}/../dims-batch-gx/target/</directory>
-                                    <includes>
-                                        <include>dims-batch-gx-${project.version}.jar</include>
                                     </includes>
                                 </resource>
                                 <resource>

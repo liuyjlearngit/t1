@@ -1,11 +1,13 @@
 package com.cmdi.dims.batch;
 
-import com.cmdi.dims.domain.MetaService;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.ConfigService;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
 import com.cmdi.dims.sdk.model.FileLocationDto;
 import com.cmdi.dims.sdk.model.TaskConfigDto;
 import com.cmdi.dims.sdk.model.TaskItemFileDto;
+import com.google.common.collect.Lists;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -27,7 +29,9 @@ import java.util.*;
 public class FileTransferTasklet extends AbstractDimsTasklet {
 
     @Setter
-    private MetaService metaService;
+    private ConfigService configService;
+    @Setter
+    private DataService dataService;
     public static final String regex1= "-R";
     public static final String regex2 = ".*[0-9].*";
     //TODO process中的三个参数怎么传进来
@@ -36,7 +40,10 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         /**
          * 加载配置
          */
-        TaskConfigDto config = metaService.loadConfig(province, speciality);
+        TaskConfigDto config = configService.loadConfig(province, speciality);
+        String[] specialities = StringUtils.split(config.getIncludeSpecialities(), ",");
+        List<String> specialityList = ArrayUtils.isNotEmpty(specialities) ? Lists.newArrayList(specialities) : Lists.newArrayList(config.getSpeciality());
+        Map<String, String> specialityTables = dataService.loadTables(specialityList);
         //taskcode由tasklister产生并存入上下文，并且生成核查任务临时目录
         File localTaskFolder = BatchUtil.getTaskFolder(taskCode, true);
         Map<String, List<TaskItemFileDto>> result = new HashMap<>();
@@ -56,7 +63,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                     log.info("目录：" + taskFolder + ",是否存在：" + exists);
                     if (exists) {
 
-                        populateTaskItemFile(config, location, taskCode, lastCollectionDate.toDate(), localTaskFolder, session, taskFolder, 1, resultOfLocation);
+                        populateTaskItemFile(config, specialityTables, location, taskCode, lastCollectionDate.toDate(), localTaskFolder, session, taskFolder, 1, resultOfLocation);
                         break;
                     }
                     lastCollectionDate = lastCollectionDate.minusDays(1);
@@ -70,7 +77,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
     //递归检测目录的层级数
     private static final int MAX_LEVEL = 3;
 
-    private void populateTaskItemFile(TaskConfigDto config, FileLocationDto location, String taskCode, Date collectionDate, File localTaskFolder,
+    private void populateTaskItemFile(TaskConfigDto config, Map<String, String> specialityTables, FileLocationDto location, String taskCode, Date collectionDate, File localTaskFolder,
                                       FtpSession session,
                                       String folder,
                                       int level,
@@ -89,7 +96,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),"-");
                     }
                     String fileName = FilenameUtils.getName(file.getName());
-                    if (config.getTables().containsKey(baseName.toUpperCase())) {
+                    if (specialityTables.containsKey(baseName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
                         taskItemFile.setDestTable(baseName.toUpperCase());
                         taskItemFile.setName(fileName);
@@ -108,7 +115,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         log.warn(file + " no mapping entity type!!!");
                     }
                 } else if (file.isDirectory() && level <= MAX_LEVEL) {
-                    populateTaskItemFile(config, location, taskCode, collectionDate, localTaskFolder, session, folder + "/" + file.getName(), level + 1, result);
+                    populateTaskItemFile(config, specialityTables, location, taskCode, collectionDate, localTaskFolder, session, folder + "/" + file.getName(), level + 1, result);
                 }
             }
         }

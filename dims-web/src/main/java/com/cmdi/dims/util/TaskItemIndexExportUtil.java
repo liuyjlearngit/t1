@@ -24,9 +24,6 @@ public class TaskItemIndexExportUtil {
         } else {
             builder.append("NA");
         }
-        if (null != dto.getFolder()) {
-            builder.append("-").append(dto.getFolder().getName());
-        }
         if (null != dto.getIndex()) {
             builder.append("-").append(dto.getIndex().getName());
         }

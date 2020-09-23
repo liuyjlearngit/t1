@@ -1,9 +1,11 @@
 package com.cmdi.dims.domain.impl;
 
 import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.meta.MetadataLoader;
+import com.cmdi.dims.domain.meta.dto.EntityType;
+import com.cmdi.dims.domain.meta.dto.Index;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.domain.util.DataUtil;
-import com.cmdi.dims.sdk.model.IndexProcDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +26,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -34,9 +37,28 @@ public class DataServiceImpl implements DataService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Override
+    public Metadata loadMetadata(String tableName) {
+        return new MetadataLoader(namedParameterJdbcTemplate).loadMetadata(tableName);
+    }
+
+    @Override
+    public List<Index> loadIndices(String speciality) {
+        return new MetadataLoader(namedParameterJdbcTemplate).loadIndex(speciality);
+    }
+
+    @Override
+    public Map<String, String> loadTables(List<String> specialities) {
+        return new MetadataLoader(namedParameterJdbcTemplate)
+                .loadEntityType()
+                .stream()
+                .filter(e -> specialities.contains(e.getSpecialityName()))
+                .collect(Collectors.toMap(EntityType::getCode, EntityType::getName));
+    }
+
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
-    public int importData(MetadataDto metadata, List<Map<String, Object>> parameters) {
+    public int importData(Metadata metadata, List<Map<String, Object>> parameters) {
         int length = parameters.size();
         SqlParameterSource[] sqlParameterSources = new SqlParameterSource[length];
         for (int i = 0; i < length; i++) {
@@ -44,10 +66,8 @@ public class DataServiceImpl implements DataService {
         }
         int[] result = namedParameterJdbcTemplate.batchUpdate(DataUtil.insertDataStatement(metadata), sqlParameterSources);
         int total = 0;
-        if (null != result) {
-            for (int r : result) {
-                total += r;
-            }
+        for (int r : result) {
+            total += r;
         }
         return total;
     }
@@ -60,8 +80,8 @@ public class DataServiceImpl implements DataService {
     //TODO 核查空间数据时，已经超过7200ms了，为什么没有报错
     @Transactional(propagation = Propagation.REQUIRES_NEW, timeout = 7200)
     @Override
-    public void calculateIndex(String taskCode, String province, IndexProcDto procDto) {
-        if (StringUtils.isEmpty(procDto.getProcName())) {
+    public void calculateIndex(String taskCode, String province, Index index) {
+        if (StringUtils.isEmpty(index.getProcName())) {
             return;
         }
         Connection connection = null;
@@ -70,10 +90,10 @@ public class DataServiceImpl implements DataService {
             connection = jdbcTemplate.getDataSource().getConnection();
             oldAutoCommit = connection.getAutoCommit();
             connection.setAutoCommit(false);
-            CallableStatement callableStatement = connection.prepareCall("{call " + procDto.getProcName() + "(?,?,?)}");
+            CallableStatement callableStatement = connection.prepareCall("{call " + index.getProcName() + "(?,?,?)}");
             callableStatement.setString(1, province);
             callableStatement.setString(2, taskCode);
-            callableStatement.setInt(3, procDto.getIndexId());
+            callableStatement.setInt(3, index.getId().intValue());
             callableStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
@@ -101,12 +121,12 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
-    public long countErrorData(MetadataDto metadata) {
+    public long countErrorData(Metadata metadata) {
         return jdbcTemplate.queryForObject(DataUtil.countErrorDataStatement(metadata), Long.class);
     }
 
     @Override
-    public List<Map<String, Object>> exportData(MetadataDto metadata, int limit, int offset) {
+    public List<Map<String, Object>> exportData(Metadata metadata, int limit, int offset) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("LIMIT", limit);
         parameters.put("OFFSET", offset);

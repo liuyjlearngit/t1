@@ -11,62 +11,6 @@
   Ext.onReady(function () {
 
     Ext.QuickTips.init(true);
-
-    var indicatorTreeLoader = new Ext.tree.TreeLoader({
-      paramOrder: ['node', 'folderId'],
-      directFn: function (node, folderId, processDirectResponse) {
-        $.ajax({
-          url: WEB_ROOT + '/app/v1/indicator/nav',
-          headers: {
-            'Authorization': 'Bearer ' + getToken()
-          },
-          data: {
-            folderId: folderId
-          },
-          method: 'GET',
-          cache: false,
-          success: function (data) {
-            if (data.status === 200) {
-              var result = [];
-              for (var i = 0, len = data.data.folders.length; i < len; i++) {
-                result.push({
-                  type: 'INDICATOR_FOLDER',
-                  text: data.data.folders[i].name,
-                  folderId: data.data.folders[i].folderId,
-                  parentFolderId: data.data.folders[i].parentFolderId,
-                  leaf: false,
-                  iconCls: 'fa fa-folder'
-                })
-              }
-              for (var i = 0, len = data.data.indices.length; i < len; i++) {
-                result.push({
-                  type: 'INDICATOR_INDEX',
-                  text: data.data.indices[i].name,
-                  code: data.data.indices[i].code,
-                  indexId: data.data.indices[i].indexId,
-                  folderId: data.data.indices[i].folderId,
-                  entityTypeId: data.data.indices[i].entityTypeId,
-                  leaf: true,
-                  iconCls: 'fa fa-thermometer-half'
-                })
-              }
-              processDirectResponse(result, data);
-            }
-          },
-          error: function (response) {
-            processResponseError(response);
-          }
-        });
-      },
-      listeners: {
-        'beforeload': function (loader, n, callback) {
-          loader.baseParams = {
-            'folderId': n.attributes.folderId
-          };
-        }
-      }
-    });
-
     var rootNode = new Ext.tree.AsyncTreeNode({
       text: '数据指标',
       iconCls: 'fa fa-tachometer',
@@ -104,7 +48,6 @@
       autoScroll: true,
       root: rootNode,
       rootVisible: false,
-      loader: indicatorTreeLoader,
       listeners: {
         'render': function (c) {
           c.getRootNode().expand(false, true, function (n) {

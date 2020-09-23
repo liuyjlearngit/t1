@@ -1,7 +1,7 @@
 package com.cmdi.dims.domain;
 
-import com.cmdi.dims.sdk.model.IndexProcDto;
-import com.cmdi.dims.sdk.model.MetadataDto;
+import com.cmdi.dims.domain.meta.dto.Index;
+import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
 
 import java.sql.SQLException;
@@ -10,16 +10,21 @@ import java.util.Map;
 
 public interface DataService {
 
-    int importData(MetadataDto metadata, List<Map<String, Object>> parameters);
+    Metadata loadMetadata(String tableName);
+
+    List<Index> loadIndices(String speciality);
+
+    Map<String, String> loadTables(List<String> specialities);
+
+    int importData(Metadata metadata, List<Map<String, Object>> parameters);
 
     void cleanData(String table);
 
-    void calculateIndex(String taskCode, String province, IndexProcDto procDto) throws SQLException;
+    void calculateIndex(String taskCode, String province, Index index) throws SQLException;
 
     List<TaskItemIndexDto> loadCalculateIndexData(String taskCode);
 
-    long countErrorData(MetadataDto metadata);
+    long countErrorData(Metadata metadata);
 
-    List<Map<String, Object>> exportData(MetadataDto metadata, int limit, int offset);
-
+    List<Map<String, Object>> exportData(Metadata metadata, int limit, int offset);
 }

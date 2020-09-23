@@ -1,7 +1,14 @@
 package com.cmdi.dims.configuration;
 
-import com.cmdi.dims.batch.*;
-import com.cmdi.dims.domain.*;
+import com.cmdi.dims.batch.BusinessAnalysisTasklet;
+import com.cmdi.dims.batch.DimsTaskListener;
+import com.cmdi.dims.batch.FileCompareTasklet;
+import com.cmdi.dims.batch.FileProcessTasklet;
+import com.cmdi.dims.batch.FileTransferTasklet;
+import com.cmdi.dims.batch.FileUploadTasklet;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.TaskService;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -25,9 +32,7 @@ public class DimsJobConfig {
     @Autowired
     private TaskService taskService;
     @Autowired
-    private LockService lockService;
-    @Autowired
-    private MetaService metaService;
+    private ConfigService configService;
     @Autowired
     private DataService dataService;
     @Autowired
@@ -46,7 +51,8 @@ public class DimsJobConfig {
     public FileTransferTasklet fileTransferTasklet() {
         FileTransferTasklet tasklet = new FileTransferTasklet();
         tasklet.setTaskService(taskService);
-        tasklet.setMetaService(metaService);
+        tasklet.setConfigService(configService);
+        tasklet.setDataService(dataService);
         return tasklet;
     }
 
@@ -54,7 +60,7 @@ public class DimsJobConfig {
     public FileProcessTasklet fileProcessTasklet() {
         FileProcessTasklet tasklet = new FileProcessTasklet();
         tasklet.setTaskService(taskService);
-        tasklet.setMetaService(metaService);
+        tasklet.setConfigService(configService);
         tasklet.setDataService(dataService);
         return tasklet;
     }
@@ -63,7 +69,7 @@ public class DimsJobConfig {
     public BusinessAnalysisTasklet businessAnalysisTasklet() {
         BusinessAnalysisTasklet tasklet = new BusinessAnalysisTasklet();
         tasklet.setTaskService(taskService);
-        tasklet.setMetaService(metaService);
+        tasklet.setConfigService(configService);
         tasklet.setDataService(dataService);
         return tasklet;
     }
@@ -79,7 +85,7 @@ public class DimsJobConfig {
     public FileUploadTasklet fileUploadTasklet() {
         FileUploadTasklet tasklet = new FileUploadTasklet();
         tasklet.setTaskService(taskService);
-        tasklet.setMetaService(metaService);
+        tasklet.setConfigService(configService);
         tasklet.setDataService(dataService);
         return tasklet;
     }
@@ -93,7 +99,7 @@ public class DimsJobConfig {
 
     @Bean
     public JobExecutionListener taskListener() {
-        return new DimsTaskListener(taskService, lockService);
+        return new DimsTaskListener(taskService);
     }
     //从FTP下载文件
     @Bean

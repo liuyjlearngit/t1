@@ -37,25 +37,10 @@
         <a th:href="@{/system}" th:class="${#strings.contains(#request.requestURI,'system')} ? 'active' : ''"><i class="fa fa-universal-access" aria-hidden="true"></i> 系统管理</a>
       </li>
       <li>
-      </li>
-      <li>
-        <a th:href="@{/meta}" th:class="${#strings.contains(#request.requestURI,'meta')} ? 'active' : ''"><i class="fa fa-connectdevelop" aria-hidden="true"></i> 元数据管理</a>
-      </li>
-      <li>
-      </li>
-      <li>
         <a th:href="@{/collector}" th:class="${#strings.contains(#request.requestURI,'collector')} ? 'active' : ''"><i class="fa fa-cloud-upload" aria-hidden="true"></i> 数据采集</a>
       </li>
       <li>
-      </li>
-      <li>
         <a th:href="@{/indicator}" th:class="${#strings.contains(#request.requestURI,'indicator')} ? 'active' : ''"><i class="fa fa-tachometer" aria-hidden="true"></i> 数据指标</a>
-      </li>
-      <li>
-        <a th:href="@{/attachment}" th:class="${#strings.contains(#request.requestURI,'attachment')} ? 'active' : ''"><i class="fa fa-briefcase" aria-hidden="true"></i> 数据附件</a>
-      </li>
-      <li>
-        <a th:href="@{/admin}" th:class="${#strings.contains(#request.requestURI,'admin')} ? 'active' : ''"><i class="fa fa-lock" aria-hidden="true"></i> 后台管理</a>
       </li>
     </ul>
   </div>
