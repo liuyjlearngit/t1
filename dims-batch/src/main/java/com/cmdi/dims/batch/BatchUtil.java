@@ -41,6 +41,7 @@ public class BatchUtil {
 
     public static final String PROVINCE = "PROVINCE";
     public static final String SPECIALITY = "SPECIALITY";
+    public static final String LOCKED_AT = "LOCKED_AT";
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
     static final char DefaultDelimiter = '^';

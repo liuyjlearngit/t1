@@ -1,13 +1,9 @@
 package com.cmdi.dims.configuration;
 
-import com.cmdi.dims.batch.BusinessAnalysisTasklet;
-import com.cmdi.dims.batch.DimsTaskListener;
-import com.cmdi.dims.batch.FileCompareTasklet;
-import com.cmdi.dims.batch.FileProcessTasklet;
-import com.cmdi.dims.batch.FileTransferTasklet;
-import com.cmdi.dims.batch.FileUploadTasklet;
-import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.batch.*;
 import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.StatisticsService;
 import com.cmdi.dims.domain.TaskService;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;

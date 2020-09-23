@@ -954,7 +954,7 @@ create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2intId on CE_DEVI
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_room on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_room);
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_site on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_site);
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
-create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
+--create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
 create index if not exists idx_CE_NET_PE_SWITCH_POWER2intId on CE_NET_PE_SWITCH_POWER(int_id);
 create index if not exists idx_CE_NET_PE_SWITCH_POWER2related_room on CE_NET_PE_SWITCH_POWER(related_room);
 create index if not exists idx_CE_NET_PE_SWITCH_POWER2related_site on CE_NET_PE_SWITCH_POWER(related_site);
@@ -1039,7 +1039,8 @@ int_id varchar(500),physical_link_name varchar(500),transmission_circuit_name va
 create table CE_LINK_IP_LOGIC(
 int_id varchar(500),logic_link_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),z_equipment varchar(500),z_port varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
-create index if not exists idx_CE_LINK_IP_LOGIC2intId on CM_WARE_IP_BOARD(int_id);
+create index if not exists idx_CM_DEVICE_IP2intId on CM_DEVICE_IP(int_id);
+create index if not exists idx_CM_WARE_IP_BOARD2intId on CM_WARE_IP_BOARD(int_id);
 create index if not exists idx_CE_PORT_IP_PTP2intId on CE_PORT_IP_PTP(int_id);
 create index if not exists idx_CE_PORT_IP_FTP2intId on CE_PORT_IP_FTP(int_id);
 create index if not exists idx_CE_LINK_PHYSICS2intId on CE_LINK_PHYSICS(int_id);
