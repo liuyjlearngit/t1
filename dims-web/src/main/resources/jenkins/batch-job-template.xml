@@ -60,6 +60,12 @@
                     <defaultValue>#data_url#</defaultValue>
                     <trim>false</trim>
                 </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>flyway_path</name>
+                    <description>flyway_path</description>
+                    <defaultValue>#flyway_path#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
             </parameterDefinitions>
         </hudson.model.ParametersDefinitionProperty>
         <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty/>

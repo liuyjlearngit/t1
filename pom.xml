@@ -28,7 +28,6 @@
 
     <modules>
         <module>dims-batch</module>
-        <module>dims-batch-idc</module>
         <module>dims-data-issue-importer</module>
         <module>dims-database-initializer</module>
         <module>dims-domain</module>

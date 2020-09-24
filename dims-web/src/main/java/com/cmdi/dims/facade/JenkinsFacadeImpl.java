@@ -71,13 +71,7 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         String jobName = JOB_NAME + "-" + province + "-" + PinyinUtil.convert(areaCodeConfig.getName()) + "-" + PinyinUtil.convert(speciality);
         String tempateDatabase = "dims-" + province + "-" + PinyinUtil.convert(speciality).toLowerCase();
         String description = "省份：" + areaCodeConfig.getName() + ",专业：" + speciality + ",版本：V20191102";
-        String jobConfig;
-        if(StringUtils.isNotEmpty(filterList)
-                &&StringUtils.containsIgnoreCase(filterList,areaCodeConfig.getCode())){
-            jobConfig = IOUtils.toString(jenkinsTemplateIDC.getInputStream(), "UTF-8");
-        }else{
-            jobConfig = IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
-        }
+        String jobConfig=IOUtils.toString(jenkinsTemplate.getInputStream(), "UTF-8");
         jobConfig = StringUtils.replace(jobConfig, "#description#", description);
         jobConfig = StringUtils.replace(jobConfig, "#province#", province);
         jobConfig = StringUtils.replace(jobConfig, "#speciality#", speciality);
@@ -88,6 +82,12 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         jobConfig = StringUtils.replace(jobConfig, "#data_username#", batchUsername);
         jobConfig = StringUtils.replace(jobConfig, "#data_password#", batchPassword);
         jobConfig = StringUtils.replace(jobConfig, "#data_url#", batchUrl);
+        if(StringUtils.isNotEmpty(filterList)
+                &&StringUtils.containsIgnoreCase(filterList,areaCodeConfig.getCode())){
+            jobConfig = StringUtils.replace(jobConfig, "#flyway_path#", "special");
+        }else{
+            jobConfig = StringUtils.replace(jobConfig, "#flyway_path#", "common");
+        }
         if (!jobs.containsKey(jobName)) {
             jenkinsServer.createJob(jobName, jobConfig, true);
         }

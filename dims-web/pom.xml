@@ -145,12 +145,6 @@
                                     </includes>
                                 </resource>
                                 <resource>
-                                    <directory>${project.basedir}/../dims-batch-idc/target/</directory>
-                                    <includes>
-                                        <include>dims-batch-${project.version}.jar</include>
-                                    </includes>
-                                </resource>
-                                <resource>
                                     <directory>${project.basedir}/../dims-database-initializer/target/</directory>
                                     <includes>
                                         <include>dims-database-initializer-${project.version}-jar-with-dependencies.jar</include>

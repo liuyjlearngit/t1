@@ -5,7 +5,7 @@ def initializeDatabase() {
 
 def startBatch() {
     sh 'curl ${domain}/download/dims-batch-@project.version@.jar -o dims-batch-@project.version@.jar'
-    sh 'java -jar -Xms1G -Xmx4G -Dspring.datasource.username=${template_username} -Dspring.datasource.password=${template_password} -Dspring.datasource.url="jdbc:postgresql://localhost:5432/${template_database}" -Ddims.url="${domain}" dims-batch-@project.version@.jar --job=dataCollector --province=${province} --specialty=${speciality}'
+    sh 'java -jar -Xms1G -Xmx4G -Dspring.datasource.username=${template_username} -Dspring.datasource.password=${template_password} -Dspring.datasource.url="jdbc:postgresql://localhost:5432/${template_database}" -Ddims.url="${domain}" -Dspring.flyway.locations="classpath:db/migration/${flyway_path}" dims-batch-@project.version@.jar --job=dataCollector --province=${province} --specialty=${speciality}'
 }
 
 def startImport() {
