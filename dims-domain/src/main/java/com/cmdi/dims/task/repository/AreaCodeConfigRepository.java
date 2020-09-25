@@ -14,7 +14,7 @@ public interface AreaCodeConfigRepository extends JpaRepository<AreaCodeConfig, 
     //查询县级
     List<AreaCodeConfig> findByPrefectureCodeAndRegionTypeOrderByCode(String prefectureCode, Integer regionType);
 
-
+    AreaCodeConfig findByCodeOrderByRegionTypeDesc(String region);
     AreaCodeConfig findByCode(String code);
 
 }

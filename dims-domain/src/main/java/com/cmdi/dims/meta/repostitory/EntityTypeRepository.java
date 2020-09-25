@@ -25,4 +25,6 @@ public interface EntityTypeRepository extends JpaRepository<EntityType, Long> {
     List<String> findSpecialityNames();
 
     List<EntityType> findBySpecialityNameOrderByCode(String speciality);
+
+    List<EntityType> findBySpecialityName(String SpecialityName);
 }

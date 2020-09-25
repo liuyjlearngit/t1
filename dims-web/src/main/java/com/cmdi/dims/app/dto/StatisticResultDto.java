@@ -12,6 +12,8 @@ public class StatisticResultDto {
 
     private Double totalValue;
 
+    private String regionsName;
+
     @ApiModelProperty("区域维度的统计信息")
     private List<RegionItemDto> regions;
 
