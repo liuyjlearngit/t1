@@ -353,19 +353,22 @@ public class HeadquartersResourcesController {
             //return ResponseDto.success(loadMojarMock(region));
         }
         exceldowns(speciality,request,response);
-
+        System.out.println(speciality);
     }
 
     private void exceldowns(List<String> speciality, HttpServletRequest request, HttpServletResponse response) throws IOException {
         ArrayList<ExcelDownData> list = new ArrayList<>();
-        ExcelDownData excelDownData1 = new ExcelDownData();
+
         for (String specia:speciality) {
             ExcelDownData excelDownData = allData(specia);
+            ExcelDownData excelDownData1 = new ExcelDownData();
             if (excelDownData==null){
                 excelDownData1.setSpeciality(specia);//这个是空的地址用的
-                excelDownData=excelDownData1;
+                list.add(excelDownData1);
+            }else {
+                list.add(excelDownData);
             }
-            list.add(excelDownData);
+
         }
         Map<String, List<ExcelDownData>> collect = list.stream().collect(Collectors.groupingBy(ExcelDownData::getSpeciality));
         ExcelUtils.exportExcel(request,response,speciality,collect);
