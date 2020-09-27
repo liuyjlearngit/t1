@@ -29,6 +29,17 @@ spring:
     static-path-pattern: /static/**
   servlet:
     multipart.max-file-size: 100MB
+  session:
+    timeout: 72h
+    store-type: jdbc
+    jdbc:
+      initialize-schema: never
+      table-name: DIMS_SPRING_SESSION
+  batch:
+    initialize-schema: never
+    table-prefix: DIMS_BATCH_
+    job:
+      enabled: false
   flyway:
     enabled: true
     baseline-version: 8
@@ -52,3 +63,6 @@ template:
 dims:
   url: http://10.254.186.189:10001
   license.key:
+ribbon:
+  ReadTimeOut: 60000
+  ConnectTimeOut: 6000

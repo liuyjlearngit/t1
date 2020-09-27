@@ -8,14 +8,15 @@ import lombok.Data;
 @ApiModel("核查的指标")
 @Data
 @Builder
-public class IndexColumnDto {
-
+public class SpecificationsDto {
     @ApiModelProperty("指标名称")
-    private String name;
+    private String speciality;
     @ApiModelProperty("指标编码")
-    private String code;
+    private String specialityName;
     @ApiModelProperty("指标值")
-    private Double value;
-    private Double amout;
-    private Double error;
+    private Double totalValue;
+    private Double normativityValue;
+    private Double associationValue;
+    private Double complianceValue;
+    private Double integrityValue;
 }
