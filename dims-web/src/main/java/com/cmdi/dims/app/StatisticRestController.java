@@ -1287,6 +1287,7 @@ public class StatisticRestController {
         }
         if (result.size()>0){
             pointerType.add(PointerType.builder().indType("完整性").indexItemDetailDto(result).build());
+
         }
 
 
@@ -1307,7 +1308,9 @@ public class StatisticRestController {
         }
         if (result2.size()>0){
             pointerType.add(PointerType.builder().indType("规范性").indexItemDetailDto(result2).build());
+
         }
+
 
         for (Index index : indices99003) {
             List<TaskItemIndex> indicesOfIndex = indexIndices.get(index.getCode());//99001
@@ -1326,7 +1329,9 @@ public class StatisticRestController {
         }
         if (result3.size()>0){
             pointerType.add(PointerType.builder().indType("关联性").indexItemDetailDto(result3).build());
+
         }
+
 
         for (Index index : indices99004) {
             List<TaskItemIndex> indicesOfIndex = indexIndices.get(index.getCode());//99001
@@ -1345,9 +1350,11 @@ public class StatisticRestController {
         }
         if (result4.size()>0){
             pointerType.add(PointerType.builder().indType("合规性").indexItemDetailDto(result4).build());
+
         }
 
         pointerTypes.add(PointerTypes.builder().specialityType(speciality).specialityValue(pointerType).build());
+
         return pointerTypes;//返回前台
     }
 

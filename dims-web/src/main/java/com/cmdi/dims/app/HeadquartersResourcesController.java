@@ -140,13 +140,13 @@ public class HeadquartersResourcesController {
                     for (ResourcesDetailsDto resourcesDetailsDto:resourcesDetailsDtos) {
                         j++;
                         resourcesDetailsDtostow.add(resourcesDetailsDto);
-                        if (j==3){
+                        if (j==4){
                             threes.add(resourcesDetailsDtostow);
                             resourcesDetailsDtostow=new ArrayList<>();
                             j=0;
                         }
                     }
-                    if (resourcesDetailsDtostow.size()<3){
+                    if (resourcesDetailsDtostow.size()<4){
                         threes.add(resourcesDetailsDtostow);
                     }
 
@@ -166,15 +166,16 @@ public class HeadquartersResourcesController {
             for (ResourcesDto res:resourcesDtos) {
                 i++;
                 resourcesDto.add(res);
-                if (i==6){
+                if (i==8){
                     lists.add(resourcesDto);
                     i=0;
                     resourcesDto=new ArrayList<>();
                 }
             }
-            if(resourcesDto!=null&&resourcesDto.size()<6){
+            if(resourcesDto!=null&&resourcesDto.size()<8){
                 lists.add(resourcesDto);
             }
+
             professionalDots.add(ProfessionalDot.builder()
                     .speciality(speciality)
                     .specialityName(speciality)
@@ -359,6 +360,7 @@ public class HeadquartersResourcesController {
                         regionItemDto.setRegion(ma.getKey());
                         regionItemDto.setRegionName(ma.getKey());
                         regionItemDto.setValue(Double.valueOf(ma.getValue()));
+                        regionItemDto.setVName(resname);
                         regionItemDtos.add(regionItemDto);
         }
         return regionItemDtos;
