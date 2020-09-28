@@ -95,6 +95,7 @@ public class HeadquartersResourcesController {
             resourcesDtos = new ArrayList<>();
             lists = new ArrayList<>();
             String units="";
+
             for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
 
                 List<ResStatistics> value = colle.getValue();
@@ -184,20 +185,10 @@ public class HeadquartersResourcesController {
     }
 
     private List<ProfessionalDot> statisticalss() {
-        //判断是否是  全国
-
-//         result.add(DownExcel.builder()
-//                        .region(currentConfig.getCode())
-//                        .regionName(currentConfig.getName())
-//                        .specificationsDtos(specificationsDtos.get(i))
-//                        .build());
-
         List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
         ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
 
         for (String speciality:specialityNames) {//循环专业
-
-
 
             //如果是全国查找所有 省级数据
             List<String> taskcodes = taskLatestRepository.findAll().stream()
@@ -212,12 +203,13 @@ public class HeadquartersResourcesController {
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
 
             ArrayList<ResourcesDto> resourcesDtos = null;
-            ArrayList<ResourcesDetailsDto> resourcesDetailsDtos=null;
 
+            ArrayList<List<ResourcesDto>> lists=null;
+            ArrayList<List<ResourcesDetailsDto>> threes = new ArrayList<>();
 
             resourcesDtos = new ArrayList<>();
-            ArrayList<List<ResourcesDto>> lists = new ArrayList<>();
-
+            lists = new ArrayList<>();
+            String units="";
             for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
 
                 List<ResStatistics> value = colle.getValue();
@@ -230,7 +222,7 @@ public class HeadquartersResourcesController {
 
                 Map<String, List<ResStatistics>> restypes = value.stream().collect(Collectors.groupingBy(ResStatistics::getResType));
 
-                resourcesDetailsDtos = new ArrayList<>();
+                ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
                 for (Map.Entry<String, List<ResStatistics>> colles:restypes.entrySet()){
 
                     List<ResStatistics> value1 = colles.getValue();
@@ -239,6 +231,7 @@ public class HeadquartersResourcesController {
                     for (ResStatistics resta:value1) {//第三轮
                         j+=resta.getAmount();
                         nuit=resta.getUnit();
+
                     }
                     if (value1==null){
 
@@ -248,6 +241,7 @@ public class HeadquartersResourcesController {
                                 .num(""+j)
                                 .unit(nuit)
                                 .build());
+                        units=nuit;
                     }
 
                 }
@@ -255,20 +249,50 @@ public class HeadquartersResourcesController {
                 if (value==null){//第二轮
 
                 }else {
+                    int j=0;
+                    ArrayList<ResourcesDetailsDto> resourcesDetailsDtostow = new ArrayList<>();
+                    for (ResourcesDetailsDto resourcesDetailsDto:resourcesDetailsDtos) {
+                        j++;
+                        resourcesDetailsDtostow.add(resourcesDetailsDto);
+                        if (j==3){
+                            threes.add(resourcesDetailsDtostow);
+                            resourcesDetailsDtostow=new ArrayList<>();
+                            j=0;
+                        }
+                    }
+                    if (resourcesDetailsDtostow.size()<3){
+                        threes.add(resourcesDetailsDtostow);
+                    }
+
                     resourcesDtos.add(ResourcesDto.builder()
                             .resourcesName(colle.getKey())
                             .allValue(""+i)
-                            .nums(resourcesDetailsDtos)
+                            .allUnit(units)
+                            .numsn(threes)
                             .build());
+                    threes=new ArrayList<>();
 
                 }
             }
 //第一轮
-
+            ArrayList<ResourcesDto> resourcesDto=new ArrayList<>();
+            int i=0;
+            for (ResourcesDto res:resourcesDtos) {
+                i++;
+                resourcesDto.add(res);
+                if (i==6){
+                    lists.add(resourcesDto);
+                    i=0;
+                    resourcesDto=new ArrayList<>();
+                }
+            }
+            if(resourcesDto!=null&&resourcesDto.size()<6){
+                lists.add(resourcesDto);
+            }
             professionalDots.add(ProfessionalDot.builder()
                     .speciality(speciality)
                     .specialityName(speciality)
-                    .resourcesDtosn(resourcesDtos)
+                    .resourcesDtos(lists)
                     .build());
         }
         return professionalDots;
@@ -484,13 +508,30 @@ public class HeadquartersResourcesController {
     }
 
     private StatisticsAllData statisticsAll(){
-        List<ProfessionalDot> statisticals = statisticals();
-        String speciality = statisticals.get(0).getSpeciality();
-        String resourcesName = statisticals.get(0).getResourcesDtos().get(0).get(0).getResourcesName();
+        List<ProfessionalDot> statisticals = statisticalss();
+        String speciality = null;
+        String resourcesName = null;
+
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+        for (ProfessionalDot statis:statisticals) {
+            if (statis.getResourcesDtos().size()>0&&statis.getResourcesDtos().get(0).size()>0){
+                speciality = statis.getSpeciality();
+                resourcesName = statis.getResourcesDtos().get(0).get(0).getResourcesName();
+                professionalDots.add(statis);
+                break;
+            }
+        }
+
+        for (int i=0;i<statisticals.size();i++){
+            if (!statisticals.get(i).getSpeciality().equals(speciality)){
+                professionalDots.add(statisticals.get(i));
+            }
+        }
+
         List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
         StatisticsAllData statisticsAllData = new StatisticsAllData();
         statisticsAllData.setGraphicals(graphicals);
-        statisticsAllData.setStatisticals(statisticals);
+        statisticsAllData.setStatisticals(professionalDots);
         return statisticsAllData;
     }
 }
