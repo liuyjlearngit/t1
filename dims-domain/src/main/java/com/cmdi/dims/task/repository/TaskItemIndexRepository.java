@@ -19,6 +19,8 @@ public interface TaskItemIndexRepository extends JpaRepository<TaskItemIndex, Lo
 
     List<TaskItemIndex> findByTaskCodeInAndRegionType(List<String> taskCodes, Integer regionType);
 
+    List<TaskItemIndex> findByTaskCodeInAndProvinceCodeAndRegionType(List<String> taskCodes,String procode, Integer regionType);
+
     List<TaskItemIndex> findByTaskCodeInAndPrefectureCodeAndRegionType(List<String> taskCodes, String prefecutreCode, Integer regionType);
 
     List<TaskItemIndex> findByTaskCodeInAndCountyCodeAndRegionType(List<String> taskCodes, String countyCode, Integer regionType);
