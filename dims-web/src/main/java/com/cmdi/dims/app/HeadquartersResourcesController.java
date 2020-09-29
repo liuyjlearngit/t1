@@ -301,6 +301,93 @@ public class HeadquartersResourcesController {
         return professionalDots;
     }
 
+    private List<ProfessionalDot> statisticalsn() {
+        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+
+        for (String speciality:specialityNames) {//循环专业
+
+            //如果是全国查找所有 省级数据
+            List<String> taskcodes = taskLatestRepository.findAll().stream()
+                    .map(TaskLatest::getTaskCode).collect(Collectors.toList());//全国所有审核后的数据 taskcode
+            List<String> provinces = taskLatestRepository.findAll().stream()
+                    .map(TaskLatest::getProvince).collect(Collectors.toList());//全国所有审核后的数据 provice
+
+            List<EntityType> bySpecialityName = entityTypeRepository.findBySpecialityName(speciality);//当前专业有哪些类型
+
+            List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
+
+            Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
+
+            ArrayList<ResourcesDto> resourcesDtos = null;
+
+            ArrayList<List<ResourcesDto>> lists=null;
+            ArrayList<List<ResourcesDetailsDto>> threes = new ArrayList<>();
+
+            resourcesDtos = new ArrayList<>();
+            lists = new ArrayList<>();
+            String units="";
+            for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
+
+                List<ResStatistics> value = colle.getValue();
+
+                int i=0;
+                for (ResStatistics restatis:value) {//第二轮
+                    i+=restatis.getAmount();
+                }
+
+
+                Map<String, List<ResStatistics>> restypes = value.stream().collect(Collectors.groupingBy(ResStatistics::getResType));
+
+                ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
+                for (Map.Entry<String, List<ResStatistics>> colles:restypes.entrySet()){
+
+                    List<ResStatistics> value1 = colles.getValue();
+                    int j=0;
+                    String nuit=null;
+                    for (ResStatistics resta:value1) {//第三轮
+                        j+=resta.getAmount();
+                        nuit=resta.getUnit();
+
+                    }
+                    if (value1==null){
+
+                    }else {
+                        resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                                .name(colles.getKey())
+                                .num(""+j)
+                                .unit(nuit)
+                                .build());
+                        units=nuit;
+                    }
+
+                }
+
+                if (value==null){//第二轮
+
+                }else {
+
+
+                    resourcesDtos.add(ResourcesDto.builder()
+                            .resourcesName(colle.getKey())
+                            .allValue(""+i)
+                            .allUnit(units)
+                            .nums(resourcesDetailsDtos)
+                            .build());
+
+                }
+            }
+//第一轮
+
+            professionalDots.add(ProfessionalDot.builder()
+                    .speciality(speciality)
+                    .specialityName(speciality)
+                    .resourcesDtosn(resourcesDtos)
+                    .build());
+        }
+        return professionalDots;
+    }
+
 
 
     @ApiOperation("省端自维资源柱状图")
@@ -470,11 +557,11 @@ public class HeadquartersResourcesController {
             alldata.put(coll,allsums);
         }
 
-        List<ProfessionalDot> statisticals = statisticalss();//全国 数据
+        List<ProfessionalDot> statisticals = statisticalsn();//全国 数据
         List<ResourcesDto> resourcesDtos = new ArrayList<>();//当前专业数据
         for (ProfessionalDot profes:statisticals) {
             if (profes.getSpeciality().equals(speciality)){
-                resourcesDtos = profes.getResourcesDtosn();
+                resourcesDtos.addAll(profes.getResourcesDtosn());
             }
         }
 
