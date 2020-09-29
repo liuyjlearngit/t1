@@ -16,4 +16,7 @@ public class RegionItemDto {
 
     @ApiModelProperty("指标值")
     private Double value;
+
+    @ApiModelProperty("指标名称")
+    private String vName;
 }
