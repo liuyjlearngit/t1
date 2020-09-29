@@ -55,6 +55,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
     private DataService dataService;
 
     private Map<String, AtomicLong> successCounters = new HashMap<>();
+    private Map<String, AtomicLong> originCounters = new HashMap<>();
 
     private void countBusinessData(String taskCode) {
         List<TaskItemBusinessDto> taskItemBusinesses = taskService.findTaskItemBusinessesByTaskCode(taskCode);
@@ -69,20 +70,6 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         }
 
     }
-
-//    private void preCleanData() {
-//        List<String> tables = metaService.loadAllTables();
-//        if (CollectionUtils.isNotEmpty(tables)) {
-//            for (String table : tables) {
-//                try {
-//                    dataService.cleanData(table);
-//                    log.info("Pre clean table " + table + " success!");
-//                } catch (Exception e) {
-//                    log.error("Pre clean table " + table + " error! " + e.getMessage(), e);
-//                }
-//            }
-//        }
-//    }
 
     private void executeTaskItemFileNative(TaskConfigDto taskConfigDto, TaskItemFileDto taskItemFile, File taskDirectory, RingBuffer<DataWithMetadata> ringBuffer) {
         if (BooleanUtils.isNotTrue(taskItemFile.isSuccess())) {
@@ -203,7 +190,8 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
             errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错" + e.getMessage();
             log.error(errorMessage, e);
         } finally {
-            taskService.saveTaskItemBusiness(populate(metadata, taskItemFile, totalRecord, System.currentTimeMillis() - start, success, errorMessage));
+            long finalTotalRecord = originCounters.get(taskItemFile.getDestTable().toUpperCase()).addAndGet(totalRecord);
+            taskService.saveTaskItemBusiness(populate(metadata, taskItemFile, finalTotalRecord, System.currentTimeMillis() - start, success, errorMessage));
         }
     }
 
@@ -289,18 +277,18 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         return result;
     }
 
-    //Map<String, AtomicLong> successCounters = new HashMap<>();
     @Override
     public void process(String taskCode, String province, String speciality) throws Exception {
         Assert.hasText(taskCode, "taskId is null");
-//        log.info("begin clean business data, prepare space for Task[taskCode=" + taskCode + "] ...");
-//        this.preCleanData();
-//        log.info("finish clean business data!");
         TaskConfigDto taskConfigDto = configService.loadConfig(province, speciality);
         List<TaskItemFileDto> taskItemFiles = taskService.findTaskItemFilesByTaskCode(taskCode);
         Assert.notEmpty(taskItemFiles, "task item files is empty !!!");
         successCounters.clear();
-        taskItemFiles.forEach(taskItemFile -> successCounters.put(taskItemFile.getDestTable().toUpperCase(), new AtomicLong(0)));
+        originCounters.clear();
+        taskItemFiles.forEach(taskItemFile -> {
+            successCounters.computeIfAbsent(taskItemFile.getDestTable().toUpperCase(), t -> new AtomicLong(0));
+            originCounters.computeIfAbsent(taskItemFile.getDestTable().toUpperCase(), t -> new AtomicLong(0));
+        });
         //找到该task的临时目录
         File taskDirectory = BatchUtil.getTaskFolder(taskCode);
         Assert.state(taskDirectory.exists(), "task folder not exists");
