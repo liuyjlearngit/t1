@@ -146,16 +146,18 @@ public class HeadquartersResourcesController {
                             j=0;
                         }
                     }
-                    if (resourcesDetailsDtostow.size()<4){
+                    if (resourcesDetailsDtostow.size()<4&&resourcesDetailsDtostow.size()>0){
                         threes.add(resourcesDetailsDtostow);
                     }
 
-                    resourcesDtos.add(ResourcesDto.builder()
-                            .resourcesName(colle.getKey())
-                            .allValue(""+i)
-                            .allUnit(units)
-                            .numsn(threes)
-                            .build());
+                        resourcesDtos.add(ResourcesDto.builder()
+                                .resourcesName(colle.getKey())
+                                .allValue(""+i)
+                                .allUnit(units)
+                                .numsn(threes)
+                                .build());
+
+
                     threes=new ArrayList<>();
 
                 }
@@ -172,7 +174,7 @@ public class HeadquartersResourcesController {
                     resourcesDto=new ArrayList<>();
                 }
             }
-            if(resourcesDto!=null&&resourcesDto.size()<8){
+            if(resourcesDto!=null&&resourcesDto.size()<8&&resourcesDto.size()>0){
                 lists.add(resourcesDto);
             }
 
@@ -255,13 +257,13 @@ public class HeadquartersResourcesController {
                     for (ResourcesDetailsDto resourcesDetailsDto:resourcesDetailsDtos) {
                         j++;
                         resourcesDetailsDtostow.add(resourcesDetailsDto);
-                        if (j==3){
+                        if (j==4){
                             threes.add(resourcesDetailsDtostow);
                             resourcesDetailsDtostow=new ArrayList<>();
                             j=0;
                         }
                     }
-                    if (resourcesDetailsDtostow.size()<3){
+                    if (resourcesDetailsDtostow.size()<4&&resourcesDetailsDtostow.size()>0){
                         threes.add(resourcesDetailsDtostow);
                     }
 
@@ -281,13 +283,13 @@ public class HeadquartersResourcesController {
             for (ResourcesDto res:resourcesDtos) {
                 i++;
                 resourcesDto.add(res);
-                if (i==6){
+                if (i==8){
                     lists.add(resourcesDto);
                     i=0;
                     resourcesDto=new ArrayList<>();
                 }
             }
-            if(resourcesDto!=null&&resourcesDto.size()<6){
+            if(resourcesDto!=null&&resourcesDto.size()<8&&resourcesDto.size()>0){
                 lists.add(resourcesDto);
             }
             professionalDots.add(ProfessionalDot.builder()
