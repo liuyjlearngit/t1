@@ -53,7 +53,8 @@ logging:
   level:
     root: info
 jenkins:
-  url: http://192.168.137.128:8080/
+  #url: http://10.254.222.163:9090/jenkins
+  url: http://192.168.137.128:8080
   username: admin
   password: admin
 template:
@@ -61,6 +62,7 @@ template:
     username: postgres
     password: postgres
 dims:
+  #url: http://10.254.222.163:10001
   url: http://10.254.186.189:10001
   license.key:
 ribbon:
