@@ -3617,7 +3617,7 @@ insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPD
 (901000224, '无线', '信号接收方式', 'signal_receive_type', 'admin', 'admin', null),
 (901000225, '无线', '供电方式', 'power_supply_type', 'admin', 'admin', null);
 
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values,
+insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
 (901000300,901000200,1, '爱立信', 'admin', 'admin', null),
 (901000301,901000200,2, '阿尔卡特', 'admin', 'admin', null),
 (901000302,901000200,3, '华为', 'admin', 'admin', null) ,
@@ -3634,7 +3634,7 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (901000313,901000200,14, '广州中海达', 'admin', 'admin', null),
 (901000314,901000200,15, '北斗星通', 'admin', 'admin', null),
 (901000315,901000200,16, '诺西', 'admin', 'admin', null),
-(901000316,901000200,17, '京信', 'admin', 'admin', null);,
+(901000316,901000200,17, '京信', 'admin', 'admin', null),
 (901000317,901000200,18, '其他', 'admin', 'admin', null),
 (901000318,901000201,1, '临时停用', 'admin', 'admin', null),
 (901000319,901000201,2, '工程', 'admin', 'admin', null) ,
@@ -3812,7 +3812,7 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (901000491,901000222,4,'无', 'admin', 'admin', null),
 (901000492,901000222,5,'其他', 'admin', 'admin', null),
 (901000493,901000223,1,'移动自维铁塔', 'admin', 'admin', null),
-(901000494,901000223,2,'普通地面塔 ', 'admin', 'admin', null),
+(901000494,901000223,2,'普通地面塔', 'admin', 'admin', null),
 (901000495,901000223,3,'景观塔', 'admin', 'admin', null),
 (901000496,901000223,4,'简易塔', 'admin', 'admin', null),
 (901000497,901000223,5,'普通楼面塔', 'admin', 'admin', null),
