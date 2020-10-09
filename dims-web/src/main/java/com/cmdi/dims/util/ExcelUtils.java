@@ -1,6 +1,7 @@
 package com.cmdi.dims.util;
 
 import com.cmdi.dims.app.dto.ExcelDownData;
+import com.cmdi.dims.data.entity.DataStorage;
 import com.cmdi.dims.task.entity.ResStatistics;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
@@ -12,10 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class ExcelUtils {
     /**
@@ -57,10 +57,39 @@ public class ExcelUtils {
     /**
      * 生成单个工作表
      *
-     * @param sheetName
-     * @param excelDownData
      *
      */
+
+    public static void exportExcels(HttpServletRequest request, HttpServletResponse response,Map<String, List<DataStorage>> collect,String[] stringsName) throws IOException, ParseException {
+        /** 第一步，创建一个Workbook，对应一个Excel文件  */
+        HSSFWorkbook wb = new HSSFWorkbook();
+
+        /////
+        String templateName = "导出模板.xls";
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("application/vnd.ms-excel");
+        //输出文件名
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
+        response.setHeader("Content-Disposition",
+                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+        ServletOutputStream stream = response.getOutputStream();
+
+
+        for (Map.Entry<String, List<DataStorage>> colle:collect.entrySet()){
+            createExcelSheets(wb,colle.getKey(),colle.getValue(),stringsName);
+        }
+
+
+
+        if (null != wb && null != stream) {
+            wb.write(stream);
+            // 将数据写出去
+            wb.close();
+            stream.close();
+        }
+    }
+
     private static void createExcelSheet(HSSFWorkbook wb, String sheetName, ExcelDownData excelDownData){
         /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
         HSSFSheet sheet = wb.createSheet(sheetName);
@@ -96,6 +125,7 @@ public class ExcelUtils {
         ArrayList<Integer> onenum = excelDownData.getOnenum();//第一行数量
         ArrayList<String> stringss = excelDownData.getStringss();//第二行数据   他的size是总长度
         HashMap<String, List<Integer>> alldata = excelDownData.getAlldata();//地址数据
+        List<Integer> allDatas = excelDownData.getAllDatas();//总计
 
         //第一行 数据开始
         String[] row_first = new String[stringss.size()];
@@ -161,6 +191,113 @@ public class ExcelUtils {
             }
         }
 
+        //最后一行
+        HSSFRow end = sheet.createRow(rowNum++);
+        end.setHeight((short) 700);
+
+        HSSFCell ends = end.createCell(0);
+        ends.setCellValue("总计");
+        ends.setCellStyle(headerStyle);
+
+        for (int i = 0; i < allDatas.size(); i++) {
+            HSSFCell tempCell = end.createCell(i+1);
+            tempCell.setCellValue(allDatas.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
+    }
+
+    private static void createExcelSheets(HSSFWorkbook wb, String sheetName, List<DataStorage> list,String[] stringsName) throws ParseException {
+        /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
+        HSSFSheet sheet = wb.createSheet(sheetName);
+
+        /** 第三步，设置样式以及字体样式*/
+        HSSFCellStyle titleStyle = createTitleCellStyle(wb);
+        HSSFCellStyle headerStyle = createHeadCellStyle(wb);
+        HSSFCellStyle contentStyle = createContentCellStyle(wb);
+
+        List<DataStorage> list1 = list;
+        if (list1.size()==0){
+            int rowNum = 0;
+            // 创建第一页的第一行，索引从0开始
+            HSSFRow row0 = sheet.createRow(rowNum++);
+            row0.setHeight((short) 800);// 设置行高
+
+            HSSFCell c00 = row0.createCell(0);
+            c00.setCellValue(sheetName+"没有错误数据");
+            c00.setCellStyle(headerStyle);
+            return;
+        }
+        /** 第四步，创建标题 ,合并标题单元格 */
+        // 行号
+        int rowNum = 0;
+        // 创建第一页的第一行，索引从0开始
+        HSSFRow row0 = sheet.createRow(rowNum++);
+        row0.setHeight((short) 800);// 设置行高
+
+        //第一行 数据开始
+
+        for (int i=0;i<stringsName.length;i++){
+            HSSFCell tempCell = row0.createCell(i);
+            tempCell.setCellValue(stringsName[i]);
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        ListSort(list1);
+
+        //下面数据
+
+
+//下面行
+        for (DataStorage datastor:list1) {
+            HSSFRow row = sheet.createRow(rowNum++);//创建行
+            row.setHeight((short) 800);// 设置行高
+
+            String[] split = datastor.getData().split("\\^");
+            String s = split[split.length - 1];
+            String s2 = split[split.length - 2];
+            String errorname="";
+            for (int i=0;i<split.length-2;i++){
+                errorname+=split[i];
+            }
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            String createdAt = datastor.getCreatedAt();
+            Date parse = format.parse(createdAt);
+            String format1 = format.format(parse);
+            String[] data={format1,datastor.getSpecialityName(),datastor.getTableName(),errorname,s2,s};
+            for (int i=0;i<6;i++){
+                HSSFCell ro = row.createCell(i);
+                ro.setCellValue(data[i]);
+                ro.setCellStyle(headerStyle);
+            }
+
+        }
+
+    }
+
+    //时间排序
+    private static void ListSort(List<DataStorage> list) {
+        Collections.sort(list, new Comparator<DataStorage>() {
+            @Override
+            //定义一个比较器
+            public int compare(DataStorage o1, DataStorage o2) {
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                try {
+                    Date dt1 = format.parse(o1.getCreatedAt());
+                    Date dt2 = format.parse(o2.getCreatedAt());
+                    if (dt1.getTime() > dt2.getTime()) {
+                        return 1;
+                    } else if (dt1.getTime() < dt2.getTime()) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 0;
+            }
+        });
     }
 
     private static HSSFCellStyle createTitleCellStyle(HSSFWorkbook wb) {

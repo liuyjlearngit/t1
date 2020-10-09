@@ -86,7 +86,8 @@ public class HeadquartersResourcesController {
             List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
-
+            TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
+            stringListTreeMap.putAll(resnames);
             ArrayList<ResourcesDto> resourcesDtos = null;
 
             ArrayList<List<ResourcesDto>> lists=null;
@@ -96,7 +97,7 @@ public class HeadquartersResourcesController {
             lists = new ArrayList<>();
             String units="";
 
-            for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
+            for (Map.Entry<String, List<ResStatistics>> colle:stringListTreeMap.entrySet()){
 
                 List<ResStatistics> value = colle.getValue();
 
@@ -204,7 +205,8 @@ public class HeadquartersResourcesController {
             List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
-
+            TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
+            stringListTreeMap.putAll(resnames);
             ArrayList<ResourcesDto> resourcesDtos = null;
 
             ArrayList<List<ResourcesDto>> lists=null;
@@ -213,7 +215,8 @@ public class HeadquartersResourcesController {
             resourcesDtos = new ArrayList<>();
             lists = new ArrayList<>();
             String units="";
-            for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
+
+            for (Map.Entry<String, List<ResStatistics>> colle:stringListTreeMap.entrySet()){
 
                 List<ResStatistics> value = colle.getValue();
 
@@ -318,7 +321,8 @@ public class HeadquartersResourcesController {
             List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
-
+            TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
+            stringListTreeMap.putAll(resnames);
             ArrayList<ResourcesDto> resourcesDtos = null;
 
             ArrayList<List<ResourcesDto>> lists=null;
@@ -327,7 +331,8 @@ public class HeadquartersResourcesController {
             resourcesDtos = new ArrayList<>();
             lists = new ArrayList<>();
             String units="";
-            for (Map.Entry<String, List<ResStatistics>> colle:resnames.entrySet()){
+
+            for (Map.Entry<String, List<ResStatistics>> colle:stringListTreeMap.entrySet()){
 
                 List<ResStatistics> value = colle.getValue();
 
@@ -500,13 +505,15 @@ public class HeadquartersResourcesController {
         List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(taskcodes);
 
         Map<String, List<ResStatistics>> collect = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatistics::getResName));
+        TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
+        stringListTreeMap.putAll(collect);
         ArrayList<String> strings = new ArrayList<>();//这个是第一行数据
         ArrayList<String> stringss = new ArrayList<>();//这个是第二行数据  大专业包含的小专业（带 单位 和 合计的） 他的size可以当总长度
         ArrayList<Integer> onenum = new ArrayList<>();//第一行每个长度  用来合并
 
         Map<String, List<ResStatistics>> collect1 = null;//
         HashMap<String, List<String>> stringStringHashMap = new HashMap<>();// 键 大专业  值他包含的小专业
-        for (Map.Entry<String, List<ResStatistics>> colles:collect.entrySet()){
+        for (Map.Entry<String, List<ResStatistics>> colles:stringListTreeMap.entrySet()){
             strings.add(colles.getKey());
 
              collect1 = colles.getValue().stream().collect(Collectors.groupingBy(ResStatistics::getResType));
@@ -572,13 +579,14 @@ public class HeadquartersResourcesController {
             }
             allsums.add(Integer.valueOf(res.getAllValue()));
         }
-        alldata.put("总计",allsums);
+
         ExcelDownData excelDownData = new ExcelDownData();
         if (strings.size()==0){
             excelDownData=null;
         }else {
             excelDownData.setSpeciality(speciality);
             excelDownData.setAlldata(alldata);
+            excelDownData.setAllDatas(allsums);
             excelDownData.setOnenum(onenum);
             excelDownData.setStrings(strings);
             excelDownData.setStringss(stringss);

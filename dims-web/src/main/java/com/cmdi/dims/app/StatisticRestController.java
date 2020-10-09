@@ -1,10 +1,14 @@
 package com.cmdi.dims.app;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 
 import com.cmdi.dims.app.dto.*;
 
+import com.cmdi.dims.data.entity.DataStorage;
+import com.cmdi.dims.data.repository.DataStorageRepository;
 import com.cmdi.dims.index.entity.Index;
 import com.cmdi.dims.index.entity.IndexCarrier;
 import com.cmdi.dims.index.repository.IndexCarrierRepository;
@@ -13,6 +17,7 @@ import com.cmdi.dims.meta.entity.EntityType;
 import com.cmdi.dims.meta.repostitory.EntityTypeRepository;
 import com.cmdi.dims.task.TaskStatusEnum;
 
+import com.cmdi.dims.util.ExcelUtils;
 import com.cmdi.dims.util.ExportExcelUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
@@ -67,6 +72,8 @@ public class StatisticRestController {
     private TaskRepository taskRepository;
     @Autowired
     private IndexCarrierRepository indexCarrierRepository;
+    @Autowired
+    private DataStorageRepository dataStorageRepositors;
 
     @ApiOperation("首屏统计信息用户地图按省份展示和按专业列表展示")
     @GetMapping("/global")
@@ -1648,6 +1655,40 @@ public class StatisticRestController {
         }
     }
 
+    @ApiOperation("错误数据下载excel")
+    @PostMapping ("/statistics/exceldown/{speciality}/{region}")
+    public void exceldown (
+            @ApiParam("专业")
+            @PathVariable("speciality") String speciality,
+            @ApiParam("地址code")
+            @PathVariable("region") String region,
+            HttpServletRequest request,
+            HttpServletResponse response,
+            @ApiParam("是否采用Mock数据")
+            @RequestParam(value = "mock", required = false) Boolean mock) throws IOException, ParseException {
+        if (BooleanUtils.isTrue(mock)) {
+            //return ResponseDto.success(loadMojarMock(region));
+        }
+//        exceldowns(speciality,request,response);
+//        System.out.println(speciality);
+        errordata(request,response,speciality,region);
+    }
 
+    private void errordata(HttpServletRequest request,HttpServletResponse response,String speciality, String region) throws IOException, ParseException {
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findByProvinceAndSpecialityName(region,speciality);//最新的数据
+        List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
 
+        String[] stringsName={"时间","专业","对象","问题数据","不满足规则","问题详情"};//第一行
+
+        List<DataStorage> byTaskCodeIn = dataStorageRepositors.findByTaskCodeIn(taskcodes);
+        Map<String, List<DataStorage>>
+                collect = byTaskCodeIn
+                .stream().collect(Collectors.groupingBy(DataStorage::getTableName));//取到数据按 对象划分
+        if (collect.size()==0){
+            collect.put(speciality,new ArrayList<DataStorage>());
+        }
+        ExcelUtils.exportExcels(request,response,collect,stringsName);
+
+    }
 }
