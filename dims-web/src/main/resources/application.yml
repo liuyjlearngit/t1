@@ -4,9 +4,9 @@ spring:
     mode: HTML
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.137.128:5432/dims1
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://192.168.229.132:5432/dims1
+    username: post
+    password: post
     tomcat:
       validation-query: select 1
       test-on-borrow: true
@@ -54,16 +54,16 @@ logging:
     root: info
 jenkins:
   #url: http://10.254.222.163:9090/jenkins
-  url: http://192.168.137.128:8080
-  username: admin
+  url: http://192.168.229.132:8080/jenkins/
+  username: zhangyaox
   password: admin
 template:
   datasource:
-    username: postgres
-    password: postgres
+    username: pg
+    password: pg
 dims:
   #url: http://10.254.222.163:10001
-  url: http://10.254.186.189:10001
+  url: http://172.22.54.223:10001
   license.key:
 ribbon:
   ReadTimeOut: 60000
