@@ -41,4 +41,10 @@ public class DataStorage {
     private String data;
     @Column(name = "created_at")
     private String createdAt;
+    @Column(name = "province_code")
+    private String provinceCode;
+    @Column(name = "prefecture_code")
+    private String prefectureCode;
+    @Column(name = "county_code")
+    private String countyCode;
 }

@@ -1,6 +1,8 @@
 package com.cmdi.dims.app;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -9,6 +11,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.cmdi.dims.app.dto.FileLocationDto;
+import com.cmdi.dims.app.dto.ReadFileErrDot;
 import com.cmdi.dims.app.dto.ResponseDto;
 import com.cmdi.dims.common.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.task.entity.FileLocation;
@@ -29,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @RestController
@@ -107,6 +111,7 @@ public class FileConfigRestController {
                 factory.setControlEncoding(StringUtils.isNotEmpty(fileLocation.getEncoding()) ? fileLocation.getEncoding() : "UTF-8");
 
                 names = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
+                System.out.println("===---"+ Arrays.toString(names));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -114,4 +119,118 @@ public class FileConfigRestController {
         return ResponseDto.success(names);
     }
 
+    //按csv文件格式读取
+    @PostMapping (value = "/fileread")
+    public ReadFileErrDot fileread(MultipartFile file) throws IOException {
+        String filename = file.getOriginalFilename();//文件名  用来判断文件名  文件后缀  文件头判断(英文)
+        System.out.println(filename);
+        String[] split = filename.split("\\.");
+        if (!split[split.length-1].equals("csv")){
+            throw new IllegalArgumentException("文件格式错误");
+        }
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(file.getInputStream(), "utf-8"));
+        List<FileLocation> saveAll = null;
+        ArrayList<String> objects=null;
+        ArrayList<String> arrayLists = new ArrayList<>();
+        String s ="";
+        int numftp=0;
+        int i1=0;
+        try {
+            String line;
+            int i=0;
+            ArrayList<FileLocation> fileLocationDtos = new ArrayList<>();
+
+            while ((line = br.readLine()) != null) {
+                String[] info = line.split(";");
+                i++;
+                if (i==1&&!line.equals("province;specialityName;name;schema;host;port;path;username;password;fileDelimiter")){
+                    throw new IllegalArgumentException("文件头错误");
+                }
+                if (i!=1){
+                    FileLocation fileLocationDto = new FileLocation();
+
+                    int len=info.length;
+
+                    for (String inf:info) {
+                        if (inf.equals("")){
+                            len=info.length-1;
+                        }
+                    }
+                    if (len!=10){
+
+                    }else {
+                        fileLocationDto.setProvince(info[0]);
+                        fileLocationDto.setSpecialityName(info[1]);
+                        fileLocationDto.setName(info[2]);
+                        fileLocationDto.setSchema(info[3]);
+                        fileLocationDto.setHost(info[4]);
+                        fileLocationDto.setPort(Integer.valueOf(info[5]));
+                        fileLocationDto.setPath(info[6]);
+                        fileLocationDto.setUsername(info[7]);
+                        fileLocationDto.setPassword(info[8]);
+                        fileLocationDto.setFileDelimiter(info[9]);
+                        fileLocationDtos.add(fileLocationDto);
+                    }
+
+                }
+
+//                    FileLocation saved = fileLocationRepository.save(fileLocation);
+//                    return ResponseDto.success(saved);
+
+                 saveAll = fileLocationRepository.saveAll(fileLocationDtos);
+            }
+            //错误条数
+            i1 = i - 1 - saveAll.size();//添加错误了几条
+
+            objects = new ArrayList<>();
+            for (FileLocation  fileLocations:fileLocationDtos) {
+//                ResponseDto<String[]> responseDto = testFileLocation(fileLocation.getFileLocationId());
+
+                Assert.notNull(fileLocations.getFileLocationId(), "not null");
+                FileLocation fileLocation = fileLocationRepository.findById(fileLocations.getFileLocationId()).orElseThrow(() -> new IllegalArgumentException("FTP配置ID=" + fileLocations.getFileLocationId() + "不存在"));
+                Assert.notNull(fileLocation, "not null");
+                String[] responseDto = null;
+                if ("FTP".equalsIgnoreCase(fileLocation.getSchema())) {
+                    DefaultFtpSessionFactory factory = new DefaultFtpSessionFactory();
+                    factory.setHost(StringUtils.isNotEmpty(fileLocation.getHost()) ? fileLocation.getHost() : "localhost");
+                    factory.setPort(null != fileLocation.getPort() ? fileLocation.getPort() : 21);
+                    factory.setUsername(fileLocation.getUsername());
+                    factory.setPassword(fileLocation.getPassword());
+                    factory.setControlEncoding(StringUtils.isNotEmpty(fileLocation.getEncoding()) ? fileLocation.getEncoding() : "UTF-8");
+                    try {
+                        responseDto = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
+                    }catch (IllegalStateException e){
+
+                    }
+
+                    System.out.println("===---" + Arrays.toString(responseDto));
+                }
+                if (responseDto==null){
+                    String name = fileLocation.getName();
+                    objects.add(name);//错误的数据的名字
+                    s+=" "+name;
+                    if (objects.size()==3){
+                        arrayLists.add(s);
+                        s="";
+                    }else {
+                        s+="，";
+                    }
+                    numftp++;
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("没找到文件！");
+        } catch (IOException ex) {
+            System.out.println("读写文件出错！");
+        }
+        arrayLists.add(s);
+        return ReadFileErrDot.builder().numerr(i1).ftperrs(arrayLists).ftperrnum(numftp).build();
+    }
+
+    @PostMapping("/upload")
+    public String singleFileUpload(MultipartFile file) throws Exception {
+        System.out.println("成功上传");
+        return "result";
+    }
 }

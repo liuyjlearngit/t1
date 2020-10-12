@@ -45,6 +45,7 @@ import com.cmdi.dims.task.repository.TaskItemBusinessRepository;
 import com.cmdi.dims.task.repository.TaskItemIndexRepository;
 import com.cmdi.dims.task.repository.TaskLatestRepository;
 import com.cmdi.dims.task.repository.TaskRepository;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -1675,13 +1676,27 @@ public class StatisticRestController {
     }
 
     private void errordata(HttpServletRequest request,HttpServletResponse response,String speciality, String region) throws IOException, ParseException {
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findByProvinceAndSpecialityName(region,speciality);//最新的数据
+        AreaCodeConfig config = areaCodeConfigRepository.findByCode(region);
+        Assert.notNull(config, "没有找到对应区域");
+        String targetRegion = config.getRegionType() == 1 ? region : config.getProvinceCode();
+
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findByProvinceAndSpecialityName(targetRegion,speciality);//最新的数据
         List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
 
         String[] stringsName={"时间","专业","对象","问题数据","不满足规则","问题详情"};//第一行
 
-        List<DataStorage> byTaskCodeIn = dataStorageRepositors.findByTaskCodeIn(taskcodes);
+        List<DataStorage> byTaskCodeIn=null;
+        if (config.getRegionType() == 1){
+             byTaskCodeIn = dataStorageRepositors.findByTaskCodeIn(taskcodes);
+        }else if (config.getRegionType() == 2){
+            byTaskCodeIn = dataStorageRepositors.findByTaskCodeInAndPrefectureCode(taskcodes,region);
+        }else {
+            byTaskCodeIn = dataStorageRepositors.findByTaskCodeInAndCountyCode(taskcodes,region);
+        }
+
+
+
         Map<String, List<DataStorage>>
                 collect = byTaskCodeIn
                 .stream().collect(Collectors.groupingBy(DataStorage::getTableName));//取到数据按 对象划分
@@ -1691,4 +1706,6 @@ public class StatisticRestController {
         ExcelUtils.exportExcels(request,response,collect,stringsName);
 
     }
+
+
 }
