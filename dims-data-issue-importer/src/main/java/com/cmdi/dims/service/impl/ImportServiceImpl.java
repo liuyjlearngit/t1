@@ -1,22 +1,12 @@
 package com.cmdi.dims.service.impl;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
+import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
+import com.cmdi.dims.infrastructure.util.FtpSession;
+import com.cmdi.dims.service.DataService;
+import com.cmdi.dims.service.ImportService;
 import com.cmdi.dims.service.vo.FileLocationVo;
 import com.cmdi.dims.service.vo.TaskVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -27,11 +17,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import lombok.extern.slf4j.Slf4j;
-import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
-import com.cmdi.dims.infrastructure.util.FtpSession;
-import com.cmdi.dims.service.DataService;
-import com.cmdi.dims.service.ImportService;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -202,8 +196,10 @@ public class ImportServiceImpl implements ImportService {
 
     private void saveStorage(String province, String speciality, String tableName, String taskCode, Map<String, String> indexNames, Map<String, Integer> upperHeaderMap, List<String[]> parameters, char delimiter, int columnSize) {
         Integer headerIdx = upperHeaderMap.get("DIMS_COL_RESULT");
-        Integer prefectureIdx = upperHeaderMap.get("PREFECTURE_CODE");
-        Integer countyIdx = upperHeaderMap.get("COUNTY_CODE");
+        //Integer prefectureIdx = upperHeaderMap.get("PREFECTURE_CODE");
+        //Integer countyIdx = upperHeaderMap.get("COUNTY_CODE");
+        Integer prefectureIdx = null!=upperHeaderMap.get("CITY_ID")?upperHeaderMap.get("CITY_ID"):upperHeaderMap.get("CITY");
+        Integer countyIdx = null!=upperHeaderMap.get("COUNTY_ID")?upperHeaderMap.get("COUNTY_ID"):upperHeaderMap.get("COUNTY");
         List<Map<String, Object>> storages = new ArrayList<>();
         List<Map<String, Object>> indices = new ArrayList<>();
         for (String[] cur : parameters) {
