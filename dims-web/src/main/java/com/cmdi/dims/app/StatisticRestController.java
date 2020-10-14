@@ -1,12 +1,6 @@
 package com.cmdi.dims.app;
 
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.cmdi.dims.app.dto.*;
-
 import com.cmdi.dims.data.entity.DataStorage;
 import com.cmdi.dims.data.repository.DataStorageRepository;
 import com.cmdi.dims.index.entity.Index;
@@ -16,9 +10,16 @@ import com.cmdi.dims.index.repository.IndexRepository;
 import com.cmdi.dims.meta.entity.EntityType;
 import com.cmdi.dims.meta.repostitory.EntityTypeRepository;
 import com.cmdi.dims.task.TaskStatusEnum;
-
+import com.cmdi.dims.task.entity.*;
+import com.cmdi.dims.task.repository.*;
 import com.cmdi.dims.util.ExcelUtils;
 import com.cmdi.dims.util.ExportExcelUtils;
+import com.google.common.collect.Lists;
+import io.jsonwebtoken.lang.Assert;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.RandomUtils;
@@ -28,27 +29,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-import com.google.common.collect.Lists;
-
-import io.jsonwebtoken.lang.Assert;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import lombok.extern.slf4j.Slf4j;
-import com.cmdi.dims.task.entity.AreaCodeConfig;
-import com.cmdi.dims.task.entity.Task;
-import com.cmdi.dims.task.entity.TaskItemBusiness;
-import com.cmdi.dims.task.entity.TaskItemIndex;
-import com.cmdi.dims.task.entity.TaskLatest;
-import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
-import com.cmdi.dims.task.repository.TaskItemBusinessRepository;
-import com.cmdi.dims.task.repository.TaskItemIndexRepository;
-import com.cmdi.dims.task.repository.TaskLatestRepository;
-import com.cmdi.dims.task.repository.TaskRepository;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Api(tags = "统计信息API")
@@ -1227,9 +1213,6 @@ public class StatisticRestController {
             List<Long> carrier99001 = indexCarrierRepository.findByParentIndexId(indices99001.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99001.add(indices99001.get(0).getIndexId());
-
-
-
             indices99001 = indexRepository.findByIndexIdIn(carrier99001);
 
         }
@@ -1237,7 +1220,6 @@ public class StatisticRestController {
             List<Long> carrier99002 = indexCarrierRepository.findByParentIndexId(indices99002.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99002.add(indices99002.get(0).getIndexId());
-
             indices99002 = indexRepository.findByIndexIdIn(carrier99002);
 
         }
@@ -1245,7 +1227,6 @@ public class StatisticRestController {
             List<Long> carrier99003 = indexCarrierRepository.findByParentIndexId(indices99003.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99003.add(indices99003.get(0).getIndexId());
-
             indices99003 = indexRepository.findByIndexIdIn(carrier99003);
 
         }
@@ -1256,8 +1237,6 @@ public class StatisticRestController {
             carrier99004.add(indices99004.get(0).getIndexId());
             indices99004 = indexRepository.findByIndexIdIn(carrier99004);
         }
-
-
 
         List<TaskItemIndex> taskItemIndices;
         if (config.getRegionType() == 1) {
@@ -1289,7 +1268,6 @@ public class StatisticRestController {
                             .errorAmount(null != task && null != task.getErrorAmount() ? task.getErrorAmount() : 0L)
                             .value(null != task && null != task.getIndexValue() ? task.getIndexValue() : 0.0D).build());
                 }
-
             }
 
         }
@@ -1297,8 +1275,6 @@ public class StatisticRestController {
             pointerType.add(PointerType.builder().indType("完整性").indexItemDetailDto(result).build());
 
         }
-
-
         for (Index index : indices99002) {
             List<TaskItemIndex> indicesOfIndex = indexIndices.get(index.getCode());//99001
             TaskItemIndex value = null;
@@ -1316,9 +1292,7 @@ public class StatisticRestController {
         }
         if (result2.size()>0){
             pointerType.add(PointerType.builder().indType("规范性").indexItemDetailDto(result2).build());
-
         }
-
 
         for (Index index : indices99003) {
             List<TaskItemIndex> indicesOfIndex = indexIndices.get(index.getCode());//99001
@@ -1339,8 +1313,6 @@ public class StatisticRestController {
             pointerType.add(PointerType.builder().indType("关联性").indexItemDetailDto(result3).build());
 
         }
-
-
         for (Index index : indices99004) {
             List<TaskItemIndex> indicesOfIndex = indexIndices.get(index.getCode());//99001
             TaskItemIndex value = null;
@@ -1400,7 +1372,6 @@ public class StatisticRestController {
 
         }
 
-
         String site=null;//要传递
         if ("".equals(region)||region==null){
             site="";
@@ -1417,7 +1388,6 @@ public class StatisticRestController {
         }
 
         Map<String, List<DownExcel>> collect2 = regionSpecialityIndexItemDtos.stream().collect(Collectors.groupingBy(DownExcel::getRegionName));
-
 
 //        RegionSpecialityIndexItemDto regionSpecialityIndexItemDto = regionSpecialityIndexItemDtos.get(0);
 //        for (RegionSpecialityIndexItemDto regionss:regionSpecialityIndexItemDtos) {
