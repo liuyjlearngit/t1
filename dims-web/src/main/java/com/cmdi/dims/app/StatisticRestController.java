@@ -25,7 +25,9 @@ import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import com.google.common.collect.Lists;
@@ -55,6 +57,7 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 @RestController
 @RequestMapping("/app/v1/statistic")
+@Component
 public class StatisticRestController {
 
     @Autowired
@@ -75,6 +78,8 @@ public class StatisticRestController {
     private IndexCarrierRepository indexCarrierRepository;
     @Autowired
     private DataStorageRepository dataStorageRepositors;
+    @Value("${filter.list}")
+    List<String> filterlist;
 
     @ApiOperation("首屏统计信息用户地图按省份展示和按专业列表展示")
     @GetMapping("/global")
@@ -87,6 +92,29 @@ public class StatisticRestController {
             return ResponseDto.success(loadGlobalMock(region));
         }
         return ResponseDto.success(loadGlobal(region));
+    }
+
+//IDC过滤
+    public List<String> datafilt(String region,List<String> specialities){
+        List<String> filterlist = this.filterlist;
+        boolean flag=false;
+        for (String filter:filterlist) {
+            if (region.equals(filter)){
+                flag=true;
+                break;
+            }
+        }
+        if (flag==false){
+            if (specialities.contains("IDC")){
+                List<String> arrayList= new  ArrayList<String>(specialities);
+                arrayList.remove( "IDC" );
+                return arrayList;
+            }else {
+                return specialities;
+            }
+        }else {
+            return specialities;
+        }
     }
 
     private StatisticResultDto loadGlobalMock(String region) {
@@ -264,7 +292,8 @@ public class StatisticRestController {
             statistic.setTotalValue(0.0D);
         }
         //获取所有的专业名称
-        List<String> specialities = entityTypeRepository.findSpecialityNames();
+
+        List<String> specialities = datafilt(region, entityTypeRepository.findSpecialityNames());//过滤数据
         //一个为
         Map<String, List<TaskItemIndex>> specialityIndices = taskItemIndices.stream().collect(Collectors.groupingBy(t -> indexSpeciality.get(t.getCode())));
         Map<String, List<TaskItemIndex>> globleSpecialityIndices = globle.stream().collect(Collectors.groupingBy(t -> indexSpeciality.get(t.getCode())));
@@ -603,7 +632,7 @@ public class StatisticRestController {
     }
 
     private List<RegionSpecialityIndexItemDto> doLoadProvinceMock(String region) {
-        List<String> specialities = entityTypeRepository.findSpecialityNames();
+        List<String> specialities = datafilt(region, entityTypeRepository.findSpecialityNames());//过滤数据
         List<RegionSpecialityIndexItemDto> result = new ArrayList<>();
         AreaCodeConfig config = areaCodeConfigRepository.findByCode(region);
         Assert.notNull(config, "没有找到对应区域");
@@ -614,7 +643,7 @@ public class StatisticRestController {
     }
 
     private List<RegionSpecialityIndexItemDto> doLoadProvince(String region) {
-        List<String> specialities = entityTypeRepository.findSpecialityNames();
+        List<String> specialities = datafilt(region, entityTypeRepository.findSpecialityNames());//过滤数据
         List<RegionSpecialityIndexItemDto> result = new ArrayList<>();
         AreaCodeConfig config = areaCodeConfigRepository.findByCode(region);
         Assert.notNull(config, "没有找到对应的区域");
@@ -1035,7 +1064,7 @@ public class StatisticRestController {
             config = null;
         }
 
-        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
+        List<String> specialityNames = datafilt(region, entityTypeRepository.findSpecialityNames());//过滤数据
 
         List<SpecificationsDto> result = new ArrayList<>();//
 
