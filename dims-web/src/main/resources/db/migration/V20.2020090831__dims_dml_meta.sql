@@ -17655,7 +17655,26 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%传输管线-标石规范性核查-纬度-经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:传输管线-标石规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-标石规范性核查-纬度-经纬度规范性核查'' end)
-                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, null);	
+                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, null),
+(904003237, '传输管线-光缆段的纤芯数与实际的纤芯数量一致性', 'DIMS_GX_04005', 4005, 904001006, '传输管线', 11, null, 
+'update CE_CABLE_SEGMENT t1
+                   set dims_col_result=(case when dims_col_result like ''%DIMS_GX_04005%'' then dims_col_result
+                                             when dims_col_result is null then ''DIMS_GX_04005''
+                                             else dims_col_result||'',DIMS_GX_04005'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光缆段的纤芯数与实际的纤芯数量一致性%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:传输管线-光缆段的纤芯数与实际的纤芯数量一致性''
+                                             else dims_col_rtName||'',传输管线-光缆段的纤芯数与实际的纤芯数量一致性'' end)
+                 where  fiber_count != cast((select count(*) from CE_CABLE_FIBER t2 where t1.resfdn = t2.fibercableseg_id) as varchar)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, null),	
+(904003238, '传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在', 'DIMS_GX_04006', 4006, 904001025, '传输管线', 11, null, 
+'update CR_CABLE_CABLE t1
+                   set dims_col_result=(case when dims_col_result like ''%DIMS_GX_04006%'' then dims_col_result
+                                             when dims_col_result is null then ''DIMS_GX_04006''
+                                             else dims_col_result||'',DIMS_GX_04006'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在''
+                                             else dims_col_rtName||'',传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在'' end)
+                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.upper_cable_id = t1.resfdn)
+				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.lower_cable_id = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);					 
 --插入传输管线 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (904004001,904099001,904003001,'admin','admin',null),
@@ -17871,6 +17890,8 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (904004211,904099002,904003234,'admin','admin',null),
 (904004212,904099002,904003235,'admin','admin',null),
 (904004213,904099002,904003236,'admin','admin',null),
+(904004214,904099004,904003237,'admin','admin',null),
+(904004215,904099004,904003238,'admin','admin',null),
 (904005490,904099999,904099001,'admin','admin',null),
 (904005491,904099999,904099002,'admin','admin',null),
 (904005492,904099999,904099003,'admin','admin',null),
@@ -24831,7 +24852,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (902001312, '所属数据中心', 'related_dc', 902001001, 'RELATED_DC', 'string', null, 'admin', 'admin', null),
 (902001313, '别名', 'alias_name', 902001001, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null),
 (902001314, '楼层数', 'floor_number', 902001001, 'FLOOR_NUMBER', 'integer', null, 'admin', 'admin', null),
-(902001315, '生命周期状态', 'lifecycle_status', 902001001, 'LIFECYCLE_STATUS', 'string', null, 'admin', 'admin', null),
+(902001315, '生命周期状态', 'lifecycle_status', 902001001, 'LIFECYCLE_STATUS', 'string', 902000003, 'admin', 'admin', null),
 (902001316, '使用单位', 'use_corp', 902001001, 'USE_CORP', 'string', 902000011, 'admin', 'admin', null),
 --RM_AREA_RESPOINT
 (902001317, '资源标识', 'int_id', 902001002, 'INT_ID', 'string', null, 'admin', 'admin', null),
@@ -25126,7 +25147,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 											 from RM_AREA_RACKPOS t2
 											 where t1.int_id = t2.equiproom_id
 												   and (t1.equiproom_level like ''核心%''
-														or t1.equiproom_level like ''汇聚%''))', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
+														or t1.equiproom_level like ''汇聚%''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
 (902003043, '空间-数据中心业务合规性核查-数据中心下无归属站点', 'DIMS_KJ_04003', 4003, 902001005, '空间', 11, null,  
 'update RM_AREA_DC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_04003%'' then dims_col_result
