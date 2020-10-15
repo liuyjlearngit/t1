@@ -3580,244 +3580,6 @@ SELECT  code ,name FROM dims_tm_areacodeconfig WHERE regiontype=2;
 CREATE OR REPLACE VIEW county_view AS
 SELECT  code ,name FROM dims_tm_areacodeconfig WHERE regiontype=3;
 
-insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
-(901000200, '无线', '设备厂家', 'vendor_id', 'admin', 'admin', null),
-(901000201, '无线', '生命周期状态', 'lifecycle_status',  'admin', 'admin', null),
-(901000202, '无线', '安装位置类型', 'location_type',  'admin', 'admin', null),
-(901000203, '无线', '覆盖类型', ' beehive_type', 'admin', 'admin', null),
-(901000204, '无线', 'VIP级别', ' vip_type', 'admin', 'admin', null),
-(901000205, '无线', '网络制式', 'net_model', 'admin', 'admin', null),
-(901000206, '无线', '设备类型', 'device_type', 'admin', 'admin', null),
-(901000207, '无线', '构建方式', 'construction_type','admin', 'admin', null),
-(901000208, '无线', '使用频段', 'frequency', 'admin', 'admin', null),
-(901000209, '无线', '覆盖场景', 'cover_scene', 'admin', 'admin', null),
-(901000210, '无线', '是否拉远', 'if_remote', 'admin', 'admin', null),
-(901000211, '无线', '接入方式', 'connect_model', 'admin', 'admin', null),
-(901000212, '无线', 'RTK安装方式', 'place_type', 'admin', 'admin', null),
-(901000213, '无线', '扼流圈天线安装方式', 'install_type', 'admin', 'admin', null),
-(901000214, '无线', '板卡功能类型', 'board_function_type', 'admin', 'admin', null),
-(901000215, '无线', '端口状态', 'port_status', 'admin', 'admin', null),
-(901000216, '无线', '接口类型', 'port_type', 'admin', 'admin', null),
-(901000217, '无线', '天线类型', 'antenna_type', 'admin', 'admin', null),
-(901000218, '无线', '是否与AAU一体化', 'if_aau', 'admin', 'admin', null),
-(901000219, '无线', '铁塔类型', 'tower_type', 'admin', 'admin', null),
-(901000220, '无线', '产权性质', 'property_right', 'admin', 'admin', null),
-(901000221, '无线', '产权单位', 'property_unit', 'admin', 'admin', null),
-(901000222, '无线', '共享单位', 'share_unit', 'admin', 'admin', null),
-(901000223, '无线', '铁塔产品种类', 'production_type', 'admin', 'admin', null),
-(901000224, '无线', '信号接收方式', 'signal_receive_type', 'admin', 'admin', null),
-(901000225, '无线', '供电方式', 'power_supply_type', 'admin', 'admin', null);
-
-insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
-(901000300,901000200,1, '爱立信', 'admin', 'admin', null),
-(901000301,901000200,2, '阿尔卡特', 'admin', 'admin', null),
-(901000302,901000200,3, '华为', 'admin', 'admin', null) ,
-(901000303,901000200,4, '大唐', 'admin', 'admin', null) ,
-(901000304,901000200,5, '新邮通', 'admin', 'admin', null),
-(901000305,901000200,6, '诺基亚贝尔', 'admin', 'admin', null),
-(901000306,901000200,7, '中兴', 'admin', 'admin', null) ,
-(901000307,901000200,8, '普天', 'admin', 'admin', null) ,
-(901000308,901000200,9, '烽火', 'admin', 'admin', null) ,
-(901000309,901000200,10, '华测', 'admin', 'admin', null),
-(901000310,901000200,11, '和芯星通', 'admin', 'admin', null),
-(901000311,901000200,12, '司南导航', 'admin', 'admin', null),
-(901000312,901000200,13, '南方测绘', 'admin', 'admin', null),
-(901000313,901000200,14, '广州中海达', 'admin', 'admin', null),
-(901000314,901000200,15, '北斗星通', 'admin', 'admin', null),
-(901000315,901000200,16, '诺西', 'admin', 'admin', null),
-(901000316,901000200,17, '京信', 'admin', 'admin', null),
-(901000317,901000200,18, '其他', 'admin', 'admin', null),
-(901000318,901000201,1, '临时停用', 'admin', 'admin', null),
-(901000319,901000201,2, '工程', 'admin', 'admin', null) ,
-(901000320,901000201,3, '在网', 'admin', 'admin', null) ,
-(901000321,901000201,4, '退网', 'admin', 'admin', null) ,
-(901000322,901000201,5, '其他', 'admin', 'admin', null) ,
-(901000323,901000202,1, '机房', 'admin', 'admin', null) ,
-(901000324,901000202,2, '位置点', 'admin', 'admin', null),
-(901000325,901000202,3, '其他', 'admin', 'admin', null),
-(901000326,901000203,1, '室内', 'admin', 'admin', null) ,
-(901000327,901000203,2, '室外', 'admin', 'admin', null) ,
-(901000328,901000203,3, '室内外', 'admin', 'admin', null),
-(901000329,901000203,4, '其他', 'admin', 'admin', null),
-(901000330,901000204,1, '超级基站', 'admin', 'admin', null),
-(901000331,901000204,2, 'VIP', 'admin', 'admin', null),
-(901000332,901000204,3, '非VIP', 'admin', 'admin', null),
-(901000333,901000204,4, '其他', 'admin', 'admin', null),
-(901000334,901000205,1, 'G', 'admin', 'admin', null)  ,
-(901000335,901000205,2, 'D', 'admin', 'admin', null)  ,
-(901000336,901000205,3, 'T', 'admin', 'admin', null)  ,
-(901000337,901000205,4, 'L', 'admin', 'admin', null)  ,
-(901000338,901000205,5, 'F', 'admin', 'admin', null)  ,
-(901000339,901000205,6, 'N', 'admin', 'admin', null)  ,
-(901000340,901000205,7, '5G', 'admin', 'admin', null) ,
-(901000341,901000205,8, '其他', 'admin', 'admin', null) ,
-(901000342,901000206,1, '宏基站', 'admin', 'admin', null),
-(901000343,901000206,2, '微基站', 'admin', 'admin', null),
-(901000344,901000206,3, '皮基站', 'admin', 'admin', null),
-(901000345,901000206,4, '飞基站', 'admin', 'admin', null),
-(901000346,901000206,5, '其他', 'admin', 'admin', null),
-(901000347,901000207,1, '分布式', 'admin', 'admin', null),
-(901000348,901000207,2, '一体化', 'admin', 'admin', null),
-(901000349,901000207,3, '其他', 'admin', 'admin', null),
-(901000350,901000208,1, 'GSM900MHz', 'admin', 'admin', null),
-(901000351,901000208,2, 'DCS1800MHz', 'admin', 'admin', null),
-(901000352,901000208,3, 'GSM900MHz/DCS1800MHz', 'admin', 'admin', null),
-(901000353,901000208,4, 'FDD-900MHz', 'admin', 'admin', null),
-(901000354,901000208,5, 'FDD-1800MHz', 'admin', 'admin', null),
-(901000355,901000208,6, 'D频段', 'admin', 'admin', null),
-(901000356,901000208,7, 'F频段', 'admin', 'admin', null),
-(901000357,901000208,8, 'A频段', 'admin', 'admin', null),
-(901000358,901000208,9, 'E频段', 'admin', 'admin', null),
-(901000359,901000208,10, 'A+F频段', 'admin', 'admin', null),
-(901000360,901000208,11, 'LD', 'admin', 'admin', null),
-(901000361,901000208,12, 'LE', 'admin', 'admin', null),
-(901000362,901000208,13, 'LF', 'admin', 'admin', null),
-(901000363,901000208,14, 'FG', 'admin', 'admin', null),
-(901000364,901000208,15, 'FD', 'admin', 'admin', null),
-(901000365,901000208,16, '2.6GHz', 'admin', 'admin', null),
-(901000366,901000208,17, '4.9GHz', 'admin', 'admin', null),
-(901000367,901000208,18, 'NB', 'admin', 'admin', null),
-(901000368,901000208,19, '其他', 'admin', 'admin', null),
-(901000369,901000209,1, '党政军机关', 'admin', 'admin', null),
-(901000370,901000209,2, '党政军宿舍', 'admin', 'admin', null),
-(901000371,901000209,3, '武警军区', 'admin', 'admin', null),
-(901000372,901000209,4, '星级酒店', 'admin', 'admin', null),
-(901000373,901000209,5, '商业中心', 'admin', 'admin', null),
-(901000374,901000209,6, '写字楼', 'admin', 'admin', null),
-(901000375,901000209,7, '企事业单位', 'admin', 'admin', null),
-(901000376,901000209,8, '会展中心', 'admin', 'admin', null),
-(901000377,901000209,9, '机场', 'admin', 'admin', null) ,
-(901000378,901000209,10, '火车站', 'admin', 'admin', null),
-(901000379,901000209,11, '长途汽车站', 'admin', 'admin', null),
-(901000380,901000209,12, '码头', 'admin', 'admin', null),
-(901000381,901000209,13, '高铁', 'admin', 'admin', null),
-(901000382,901000209,14, '普铁', 'admin', 'admin', null),
-(901000383,901000209,15, '地铁', 'admin', 'admin', null),
-(901000384,901000209,16, '高速公路', 'admin', 'admin', null),
-(901000385,901000209,17, '国道省道', 'admin', 'admin', null),
-(901000386,901000209,18, '城区道路', 'admin', 'admin', null),
-(901000387,901000209,19, '郊区道路', 'admin', 'admin', null),
-(901000388,901000209,20, '航道', 'admin', 'admin', null),
-(901000389,901000209,21, '休闲娱乐场所', 'admin', 'admin', null),
-(901000390,901000209,22, '体育场馆', 'admin', 'admin', null),
-(901000391,901000209,23, '广场公园', 'admin', 'admin', null),
-(901000392,901000209,24, '风景区', 'admin', 'admin', null),
-(901000393,901000209,25, '医院', 'admin', 'admin', null),
-(901000394,901000209,26, '高校', 'admin', 'admin', null),
-(901000395,901000209,27, '中小学', 'admin', 'admin', null),
-(901000396,901000209,28, '高层居民区', 'admin', 'admin', null),
-(901000397,901000209,29, '低层居民区', 'admin', 'admin', null),
-(901000398,901000209,30, '城中村', 'admin', 'admin', null),
-(901000399,901000209,31, '别墅群', 'admin', 'admin', null),
-(901000400,901000209,32, '工业园区', 'admin', 'admin', null),
-(901000401,901000209,33, '集贸市场', 'admin', 'admin', null),
-(901000402,901000209,34, '乡镇', 'admin', 'admin', null),
-(901000403,901000209,35, '村庄', 'admin', 'admin', null),
-(901000404,901000209,36, '边境小区', 'admin', 'admin', null),
-(901000405,901000209,37, '沙漠戈壁', 'admin', 'admin', null),
-(901000406,901000209,38, '山农牧林', 'admin', 'admin', null),
-(901000407,901000209,39, '近水近海域', 'admin', 'admin', null),
-(901000408,901000209,40, '公墓', 'admin', 'admin', null),
-(901000409,901000209,41, '其他', 'admin', 'admin', null),
-(901000410,901000210,1, '是', 'admin', 'admin', null),
-(901000411,901000210,2, '否', 'admin', 'admin', null),
-(901000412,901000210,3, '其他', 'admin', 'admin', null),
-(901000413,901000211,1, '直联', 'admin', 'admin', null),
-(901000414,901000211,2, '级联', 'admin', 'admin', null),
-(901000415,901000211,3, '其他', 'admin', 'admin', null),
-(901000416,901000212,1, '标准机柜式', 'admin', 'admin', null),
-(901000417,901000212,2, '挂墙机框式', 'admin', 'admin', null),
-(901000418,901000212,3, '小型落地机柜式', 'admin', 'admin', null),
-(901000419,901000212,4, '室外机柜式', 'admin', 'admin', null),
-(901000420,901000212,5, '其他', 'admin', 'admin', null) ,
-(901000421,901000213,1,'附墙立杆式', 'admin', 'admin', null),
-(901000422,901000213,2,'钢标墩式', 'admin', 'admin', null) ,
-(901000423,901000213,3,'地面观测墩式', 'admin', 'admin', null),
-(901000424,901000213,4,'其他', 'admin', 'admin', null),
-(901000425,901000214,1,'载频板', 'admin', 'admin', null),
-(901000426,901000214,2,'主控板', 'admin', 'admin', null),
-(901000427,901000214,3,'传输板', 'admin', 'admin', null),
-(901000428,901000214,4,'基带板', 'admin', 'admin', null),
-(901000429,901000214,5, '其他', 'admin', 'admin', null),
-(901000430,901000215,1,'空闲', 'admin', 'admin', null),
-(901000431,901000215,2,'预占用', 'admin', 'admin', null),
-(901000432,901000215,3,'占用', 'admin', 'admin', null),
-(901000433,901000215,4,'预释放', 'admin', 'admin', null),
-(901000434,901000215,5, '其他', 'admin', 'admin', null),
-(901000435,901000216,1,'A', 'admin', 'admin', null),
-(901000436,901000216,2,'GB', 'admin', 'admin', null),
-(901000437,901000216,3,'ABIS', 'admin', 'admin', null),
-(901000438,901000216,4,'IUB', 'admin', 'admin', null),
-(901000439,901000216,5,'IUPS', 'admin', 'admin', null),
-(901000440,901000216,6,'IUCS', 'admin', 'admin', null),
-(901000441,901000216,7,'S1', 'admin', 'admin', null),
-(901000442,901000216,8,'X2', 'admin', 'admin', null),
-(901000443,901000216,9, '其他', 'admin', 'admin', null),
-(901000444,901000217,1,'单频单极化', 'admin', 'admin', null),
-(901000445,901000217,2,'单频双极化', 'admin', 'admin', null),
-(901000446,901000217,3,'单频双极化电调', 'admin', 'admin', null),
-(901000447,901000217,4,'双频双极化/双频双极化电调', 'admin', 'admin', null),
-(901000448,901000217,5,'三频双极化', 'admin', 'admin', null),
-(901000449,901000217,6,'三频双极化电调', 'admin', 'admin', null),
-(901000450,901000217,7,'智能天线', 'admin', 'admin', null) ,
-(901000451,901000217,8,'远程电调天线', 'admin', 'admin', null),
-(901000452,901000217,9, '其他', 'admin', 'admin', null),
-(901000453,901000218,1, '是', 'admin', 'admin', null),
-(901000454,901000218,2, '否', 'admin', 'admin', null),
-(901000455,901000218,3, '其他', 'admin', 'admin', null),
-(901000456,901000219,1,'落地角钢塔', 'admin', 'admin', null),
-(901000457,901000219,2,'楼顶角钢塔', 'admin', 'admin', null),
-(901000458,901000219,3,'落地四管塔', 'admin', 'admin', null),
-(901000459,901000219,4,'落地三管塔', 'admin', 'admin', null),
-(901000460,901000219,5,'楼顶三管塔', 'admin', 'admin', null),
-(901000461,901000219,6,'落地内爬单管塔', 'admin', 'admin', null),
-(901000462,901000219,7,'落地外爬单管塔', 'admin', 'admin', null),
-(901000463,901000219,8,'楼顶单管塔', 'admin', 'admin', null),
-(901000464,901000219,9,'落地拉线塔', 'admin', 'admin', null),
-(901000465,901000219,10,'楼顶拉线塔', 'admin', 'admin', null),
-(901000466,901000219,11,'楼顶井字架', 'admin', 'admin', null),
-(901000467,901000219,12,'落地景观塔', 'admin', 'admin', null),
-(901000468,901000219,13,'楼顶景观塔', 'admin', 'admin', null),
-(901000469,901000219,14,'抱杆', 'admin', 'admin', null),
-(901000470,901000219,15,'桅杆', 'admin', 'admin', null),
-(901000471,901000219,16,'楼顶美化天线', 'admin', 'admin', null),
-(901000472,901000219,17,'集束天线', 'admin', 'admin', null),
-(901000473,901000219,18,'其他', 'admin', 'admin', null),
-(901000474,901000220,1,'自有（自建）', 'admin', 'admin', null),
-(901000475,901000220,2,'自有（合建）', 'admin', 'admin', null),
-(901000476,901000220,3,'自有（购买）', 'admin', 'admin', null),
-(901000477,901000220,4,'租用', 'admin', 'admin', null),
-(901000478,901000220,5,'用户所有', 'admin', 'admin', null),
-(901000479,901000220,6,'其他', 'admin', 'admin', null),
-(901000480,901000221,1,'中国铁塔', 'admin', 'admin', null),
-(901000481,901000221,2,'中国移动', 'admin', 'admin', null),
-(901000482,901000221,3,'中国联通', 'admin', 'admin', null),
-(901000483,901000221,4,'中国电信', 'admin', 'admin', null),
-(901000484,901000221,5,'中国铁通', 'admin', 'admin', null),
-(901000485,901000221,6,'中国广电', 'admin', 'admin', null),
-(901000486,901000221,7,'业主', 'admin', 'admin', null),
-(901000487,901000221,8,'其他', 'admin', 'admin', null),
-(901000488,901000222,1,'电信', 'admin', 'admin', null),
-(901000489,901000222,2,'联通', 'admin', 'admin', null),
-(901000490,901000222,3,'电信+联通', 'admin', 'admin', null),
-(901000491,901000222,4,'无', 'admin', 'admin', null),
-(901000492,901000222,5,'其他', 'admin', 'admin', null),
-(901000493,901000223,1,'移动自维铁塔', 'admin', 'admin', null),
-(901000494,901000223,2,'普通地面塔', 'admin', 'admin', null),
-(901000495,901000223,3,'景观塔', 'admin', 'admin', null),
-(901000496,901000223,4,'简易塔', 'admin', 'admin', null),
-(901000497,901000223,5,'普通楼面塔', 'admin', 'admin', null),
-(901000498,901000223,6,'楼面抱杆', 'admin', 'admin', null),
-(901000499,901000223,7,'其他', 'admin', 'admin', null),
-(901000500,901000224,1,'选频', 'admin', 'admin', null),
-(901000501,901000224,2,'选带', 'admin', 'admin', null),
-(901000502,901000224,3,'宽频', 'admin', 'admin', null),
-(901000503,901000224,4,'其他', 'admin', 'admin', null),
-(901000504,901000225,1,'太阳能', 'admin', 'admin', null),
-(901000505,901000225,2,'市电', 'admin', 'admin', null),
-(901000506,901000225,3,'风能', 'admin', 'admin', null),
-(901000507,901000225,4, '其他', 'admin', 'admin', null);
-
 --dictionary：承载网
 insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
 (905000000, '承载网', '设备厂家', 'manufacturer', 'admin', 'admin', null),
@@ -4189,406 +3951,6 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (908000444,908000207,3, '直溶', 'admin', 'admin', null),
 (908000445,908000207,4, '其他', 'admin', 'admin', null);
 
---entitytype：无线
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
-(901000001,'OMC','OMC', '无线', null,'OMC', null, null, 'admin', 'admin', null),
-(901000002,'BSC','BSC', '无线', null,'BSC', null, null, 'admin', 'admin', null),
-(901000003,'BTS','BTS', '无线', null,'BTS', null, null, 'admin', 'admin', null),
-(901000004,'E-NODEB','ENODEB', '无线', null,'ENODEB', null, null, 'admin', 'admin', null),
-(901000005,'G-NODEB','GNODEB', '无线', null,'GNODEB', null, null, 'admin', 'admin', null),
-(901000006,'RTK基准站','RTK', '无线', null,'RTK', null, null, 'admin', 'admin', null),
-(901000007,'CELL','CELL', '无线', null,'CELL', null, null, 'admin', 'admin', null),
-(901000008,'E-UTRANCELL','EUTRANCELL', '无线', null,'EUTRANCELL', null, null, 'admin', 'admin', null),
-(901000009,'NR-CELL','NRCELL', '无线', null,'NRCELL', null, null, 'admin', 'admin', null),
-(901000010,'扼流天线圈','ANTENNACHOKECOIL', '无线', null,'ANTENNACHOKECOIL', null, null, 'admin','admin', null),
-(901000011,'BBU','BBU', '无线', null,'BBU', null, null, 'admin', 'admin', null),
-(901000012,'RRU','RRU', '无线', null,'RRU', null, null, 'admin', 'admin', null),
-(901000013,'DU','DU', '无线', null,'DU', null, null, 'admin', 'admin', null),
-(901000014,'CU','CU', '无线', null,'CU', null, null, 'admin', 'admin', null),
-(901000015,'AAU','AAU', '无线', null,'AAU', null, null, 'admin', 'admin', null),
-(901000016,'板卡','BOARD', '无线', null,'BOARD', null, null, 'admin', 'admin', null),
-(901000017,'端口','PORT', '无线', null,'PORT', null, null, 'admin', 'admin', null),
-(901000018,'天线','ANTENNA', '无线', null,'ANTENNA', null, null, 'admin', 'admin', null),
-(901000019,'天线工参','ANTENNAPARA', '无线', null,'ANTENNAPARA', null, null, 'admin', 'admin', null),
-(901000020,'铁塔','TOWER', '无线', null,'TOWER', null, null, 'admin', 'admin', null),
-(901000021,'直放站','RPT', '无线', null,'RPT', null, null, 'admin', 'admin', null),
-(901000022,'分布系统','SPEARD', '无线', null,'SPEARD', null, null, 'admin', 'admin', null),
-(901000023,'一体化皮站AP','PICOAP', '无线', null,'PICOAP', null, null, 'admin', 'admin', null),
-(901000024,'扩展型皮站AU','PICOAU', '无线', null,'PICOAU', null, null, 'admin', 'admin', null),
-(901000025,'扩展型皮站交换机','PICOSWITCH', '无线', null,'PICOSWITCH', null, null, 'admin', 'admin', null);
-
-insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
-(901000600,'资源标识','int_id',901000001,'INT_ID', 'string', null, 'admin', 'admin', null),
-(901000601,'OMC名称','zh_label',901000001,'ZH_LABEL', 'string', null, 'admin', 'admin', null),
-(901000602,'设备厂家','vendor_id',901000001,'VENDOR_ID', 'string',901000200, 'admin', 'admin', null),
-(901000603,'IP地址','ip_addr',901000001,'IP_ADDR', 'string', null, 'admin', 'admin', null),
-(901000604,'所属省份','province_id',901000001,'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(901000605,'所属地市','city_id',901000001,'CITY_ID', 'string', null, 'admin', 'admin', null),
-(901000606,'所属区县','county_id',901000001,'COUNTY_ID', 'string', null, 'admin', 'admin', null),
-(901000607,'资源标识','int_id',901000002,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000608,'网管中网元名称','userlabel',901000002,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000609,'设备厂家','vendor_id',901000002,'VENDOR_ID', 'string',null, 'admin', 'admin',null),
-(901000610,'设备型号','product_name',901000002,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000611,'所属机架位置','related_rackpos',901000002,'RELATED_RACKPOS', 'string',null, 'admin', 'admin',null),
-(901000612,'所属OMC','related_omc',901000002,'RELATED_OMC', 'string',null, 'admin', 'admin',null),
-(901000613,'本地信令点编码','local_spc',901000002,'LOCAL_SPC', 'string',null, 'admin', 'admin',null),
-(901000614,'软件版本','software_version',901000002,'SOFTWARE_VERSION', 'string',null, 'admin', 'admin',null),
-(901000615,'生命周期状态','lifecycle_status',901000002,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000616,'入网时间','setup_time',901000002,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000617,'数据质量责任人（移动）','qualitor',901000002,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000618,'一线数据维护人（代维/一线）','maintainor',901000002,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000619,'所属MGW','related_mgw',901000002,'RELATED_MGW', 'string',null, 'admin', 'admin',null),
-(901000620,'所属SGSN/MME','related_mme_sgsn',901000002,'RELATED_MME_SGSN', 'string',null, 'admin', 'admin',null),
-(901000621,'所属省份','province_id',901000002,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000622,'所属地市','city_id',901000002,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000623,'所属区县','county_id',901000002,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000624,'资源标识','int_id',901000003,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000625,'基站名称','zh_label',901000003,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000626,'网管中网元名称','userlabel',901000003,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000627,'所属OMC','related_omc',901000003,'RELATED_OMC', 'string',null, 'admin', 'admin',null),
-(901000628,'安装位置类型','location_type',901000003,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000629,'所属机房/位置点','related_room_location',901000003,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000630,'设备厂家','vendor_id',901000003,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000631,'设备型号','product_name',901000003,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000632,'软件版本','software_version',901000003,'SOFTWARE_VERSION', 'string',null, 'admin', 'admin',null),
-(901000633,'生命周期状态','lifecycle_status',901000003,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000634,'入网时间','setup_time',901000003,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000635,'VIP级别','vip_type',901000003,'VIP_TYPE', 'string',901000204, 'admin', 'admin',null),
-(901000636,'网络制式','net_model',901000003,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000637,'设备类型','device_type',901000003,'DEVICE_TYPE', 'string',901000206, 'admin', 'admin',null),
-(901000638,'覆盖类型','beehive_type',901000003,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000639,'所属核心设备','related_bsc',901000003,'RELATED_BSC', 'string',null, 'admin', 'admin',null),
-(901000640,'数据质量责任人（移动）','qualitor',901000003,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000641,'一线数据维护人（代维/一线）','maintainor',901000003,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000642,'所属省份','province_id',901000003,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000643,'所属地市','city_id',901000003,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000644,'所属区县','county_id',901000003,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000645,'资源标识','int_id',901000004,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000646,'E-NODEB ID','nodeb_id',901000004,'NODEB_ID', 'string',null, 'admin', 'admin',null),
-(901000647,'基站名称','zh_label',901000004,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000648,'网管中网元名称','userlabel',901000004,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000649,'所属OMC','related_omc',901000004,'RELATED_OMC', 'string',null, 'admin', 'admin',null),
-(901000650,'安装位置类型','location_type',901000004,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000651,'所属机房/位置点','related_room_location',901000004,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000652,'设备厂家','rated_power',901000004,'RATED_POWER', 'string',901000200, 'admin', 'admin',null),
-(901000653,'设备型号','product_name',901000004,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000654,'软件版本','software_version',901000004,'SOFTWARE_VERSION', 'string',null, 'admin', 'admin',null),
-(901000655,'生命周期状态','lifecycle_status',901000004,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000656,'入网时间','setup_time',901000004,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000657,'VIP级别','vip_type',901000004,'VIP_TYPE', 'string',901000204, 'admin', 'admin',null),
-(901000658,'网络制式','net_model',901000004,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000659,'设备类型','device_type',901000004,'DEVICE_TYPE', 'string',901000206, 'admin', 'admin',null),
-(901000660,'覆盖类型','beehive_type',901000004,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000661,'所属核心设备','related_bsc',901000004,'RELATED_BSC', 'string',null, 'admin', 'admin',null),
-(901000662,'S1接口地址','s1_ipaddress',901000004,'S1_IPADDRESS', 'string',null, 'admin', 'admin',null),
-(901000663,'构建方式','construction_type',901000004,'CONSTRUCTION_TYPE', 'string',901000207, 'admin', 'admin',null),
-(901000664,'数据质量责任人（移动）','qualitor',901000004,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000665,'一线数据维护人（代维/一线）','maintainor',901000004,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000666,'所属省份','province_id',901000004,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000667,'所属地市','city_id',901000004,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000668,'所属区县','county_id',901000004,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000669,'资源标识','int_id',901000005,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000670,'G-NODEB ID','nodeb_id',901000005,'NODEB_ID', 'string',null, 'admin', 'admin',null),
-(901000671,'基站名称','zh_label',901000005,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000672,'网管中网元名称','userlabel',901000005,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000673,'所属OMC','related_omc',901000005,'RELATED_OMC', 'string',null, 'admin', 'admin',null),
-(901000674,'安装位置类型','location_type',901000005,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000675,'所属机房/位置点','related_room_location',901000005,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000676,'设备厂家','rated_power',901000005,'RATED_POWER', 'string',901000200, 'admin', 'admin',null),
-(901000677,'设备型号','product_name',901000005,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000678,'软件版本','software_version',901000005,'SOFTWARE_VERSION', 'string',null, 'admin', 'admin',null),
-(901000679,'生命周期状态','lifecycle_status',901000005,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000680,'入网时间','setup_time',901000005,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000681,'VIP级别','vip_type',901000005,'VIP_TYPE', 'string',901000204, 'admin', 'admin',null),
-(901000682,'网络制式','net_model',901000005,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000683,'设备类型','device_type',901000005,'DEVICE_TYPE', 'string',901000206, 'admin', 'admin',null),
-(901000684,'覆盖类型','beehive_type',901000005,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000685,'所属核心设备','related_bsc',901000005,'RELATED_BSC', 'string',null, 'admin', 'admin',null),
-(901000686,'数据质量责任人（移动）','qualitor',901000005,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000687,'一线数据维护人（代维/一线）','maintainor',901000005,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000688,'所属省份','province_id',901000005,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000689,'所属地市','city_id',901000005,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000690,'所属区县','county_id',901000005,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000691,'资源标识','int_id',901000006,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000692,'RTK-CORS ID','cors_id',901000006,'CORS_ID', 'string',null, 'admin', 'admin',null),
-(901000693,'安装方式','place_type',901000006,'PLACE_TYPE', 'string',901000212, 'admin', 'admin',null),
-(901000694,'网管中网元名称','userlabel',901000006,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000695,'安装位置类型','location_type',901000006,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000696,'所属机房/位置点','related_room_location',901000006,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000697,'软件版本','software_version',901000006,'SOFTWARE_VERSION', 'string',null, 'admin', 'admin',null),
-(901000698,'生命周期状态','lifecycle_status',901000006,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000699,'入网时间','setup_time',901000006,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000700,'数据质量责任人（移动）','qualitor',901000006,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000701,'一线数据维护人（代维/一线）','maintainor',901000006,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000702,'设备厂家','vendor_id',901000006,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000703,'设备型号','product_name',901000006,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000704,'RTK基准站名称','zh_label',901000006,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000705,'设备序列号','device_sn',901000006,'DEVICE_SN', 'string',null, 'admin', 'admin',null),
-(901000706,'所属省份','province_id',901000006,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000707,'所属地市','city_id',901000006,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000708,'所属区县','county_id',901000006,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000709,'资源标识','int_id',901000007,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000710,'小区码 ','ci',901000007,'CI', 'string',null, 'admin', 'admin',null),
-(901000711,'位置区码','lac',901000007,'LAC', 'string',null, 'admin', 'admin',null),
-(901000712,'小区名称','zh_label',901000007,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000713,'网管中网元名称','userlabel',901000007,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000714,'所属基站','related_bs',901000007,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000715,'安装位置类型','location_type',901000007,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000716,'所属机房/位置点','related_room_location',901000007,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000717,'生命周期状态','lifecycle_status',901000007,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000718,'入网时间','setup_time',901000007,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000719,'网络制式','net_model',901000007,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000720,'使用频段','frequency',901000007,'FREQUENCY', 'string',901000208, 'admin', 'admin',null),
-(901000721,'是否拉远','if_remote',901000007,'IF_REMOTE', 'string',901000210, 'admin', 'admin',null),
-(901000722,'覆盖类型','beehive_type',901000007,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000723,'覆盖场景','cover_scene',901000007,'COVER_SCENE', 'string',901000209, 'admin', 'admin',null),
-(901000724,'覆盖场景细化','cover_scene_label',901000007,'COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000725,'二级覆盖场景','secondary_cover_scene',901000007,'SECONDARY_COVER_SCENE', 'string',null, 'admin', 'admin',null),
-(901000726,'二级覆盖场景细化','secondary_cover_scene_label',901000007,'SECONDARY_COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000727,'所属省份','province_id',901000007,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000728,'所属地市','city_id',901000007,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000729,'所属区县','county_id',901000007,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000730,'资源标识','int_id',901000008,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000731,'E-CGI','e_cgi',901000008,'E_CGI', 'string',null, 'admin', 'admin',null),
-(901000732,'TAC','tac',901000008,'TAC', 'string',null, 'admin', 'admin',null),
-(901000733,'PCI','pci',901000008,'PCI', 'string',null, 'admin', 'admin',null),
-(901000734,'小区名称','zh_label',901000008,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000735,'网管中网元名称','userlabel',901000008,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000736,'所属基站','related_bs',901000008,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000737,'安装位置类型','location_type',901000008,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000738,'所属机房/位置点','related_room_location',901000008,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000739,'生命周期状态','lifecycle_status',901000008,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000740,'入网时间','setup_time',901000008,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000741,'网络制式','net_model',901000008,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000742,'使用频段','frequency',901000008,'FREQUENCY', 'string',901000208, 'admin', 'admin',null),
-(901000743,'是否拉远','if_remote',901000008,'IF_REMOTE', 'string',901000210, 'admin', 'admin',null),
-(901000744,'覆盖类型','beehive_type',901000008,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000745,'覆盖场景','cover_scene',901000008,'COVER_SCENE', 'string',901000209, 'admin', 'admin',null),
-(901000746,'覆盖场景细化','cover_scene_label',901000008,'COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000747,'二级覆盖场景','secondary_cover_scene',901000008,'SECONDARY_COVER_SCENE', 'string',null, 'admin', 'admin',null),
-(901000748,'二级覆盖场景细化','secondary_cover_scene_label',901000008,'SECONDARY_COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000749,'所属省份','province_id',901000008,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000750,'所属地市','city_id',901000008,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000751,'所属区县','county_id',901000008,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000752,'资源标识','int_id',901000009,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000753,'N-CGI','n_cgi',901000009,'N_CGI', 'string',null, 'admin', 'admin',null),
-(901000754,'TAC','tac',901000009,'TAC', 'string',null, 'admin', 'admin',null),
-(901000755,'PCI','pci',901000009,'PCI', 'string',null, 'admin', 'admin',null),
-(901000756,'小区名称','zh_label',901000009,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000757,'网管中网元名称','userlabel',901000009,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000758,'所属基站','related_bs',901000009,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000759,'安装位置类型','location_type',901000009,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000760,'所属机房/位置点','related_room_location',901000009,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000761,'生命周期状态','lifecycle_status',901000009,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000762,'入网时间','setup_time',901000009,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000763,'网络制式','net_model',901000009,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000764,'使用频段','frequency',901000009,'FREQUENCY', 'string',901000208, 'admin', 'admin',null),
-(901000765,'是否拉远','if_remote',901000009,'IF_REMOTE', 'string',901000210, 'admin', 'admin',null),
-(901000766,'覆盖类型','beehive_type',901000009,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000767,'覆盖场景','cover_scene',901000009,'COVER_SCENE', 'string',901000209, 'admin', 'admin',null),
-(901000768,'覆盖场景细化','cover_scene_label',901000009,'COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000769,'二级覆盖场景','secondary_cover_scene',901000009,'SECONDARY_COVER_SCENE', 'string',null, 'admin', 'admin',null),
-(901000770,'二级覆盖场景细化','secondary_cover_scene_label',901000009,'SECONDARY_COVER_SCENE_LABEL', 'string',null, 'admin', 'admin',null),
-(901000771,'所属省份','province_id',901000009,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000772,'所属地市','city_id',901000009,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000773,'所属区县','county_id',901000009,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000774,'资源标识','int_id',901000010,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000775,'天线名称','userlabel',901000010,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000776,'所属RTK基准站','rtkcors',901000010,'RTKCORS', 'string',null, 'admin', 'admin',null),
-(901000777,'设备厂家','vendor_id',901000010,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000778,'设备型号','device_type',901000010,'DEVICE_TYPE', 'string',901000206, 'admin', 'admin',null),
-(901000779,'设备序列号','device_sn',901000010,'DEVICE_SN', 'string',null, 'admin', 'admin',null),
-(901000780,'所属铁塔','related_tower',901000010,'RELATED_TOWER', 'string',null, 'admin', 'admin',null),
-(901000781,'所在铁塔平台','setup_location',901000010,'SETUP_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000782,'生命周期状态','lifecycle_status',901000010,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000783,'入网时间','setup_time',901000010,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000784,'安装方式','install_type',901000010,'INSTALL_TYPE', 'string',901000213, 'admin', 'admin',null),
-(901000785,'所属省份','province_id',901000010,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000786,'所属地市','city_id',901000010,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000787,'所属区县','county_id',901000010,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000788,'资源标识','int_id',901000011,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000789,'BBU名称','zh_label',901000011,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000790,'BBU串号','bbu_serial',901000011,'BBU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000791,'所属基站','related_bs',901000011,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000792,'额定功率','rated_power',901000011,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000793,'网络制式','net_model',901000011,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000794,'所属省份','province_id',901000011,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000795,'所属地市','city_id',901000011,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000796,'所属区县','county_id',901000011,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000797,'资源标识','int_id',901000012,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000798,'网管中网元名称','zh_label',901000012,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000799,'安装位置类型','location_type',901000012,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000800,'所属机房/位置点','related_room_location',901000012,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000801,'设备详细安装位置','location',901000012,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000802,'关联小区','related_cell',901000012,'RELATED_CELL', 'string',null, 'admin', 'admin',null),
-(901000803,'额定功率','rated_power',901000012,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000804,'接入方式','connect_model',901000012,'CONNECT_MODEL', 'string',901000211, 'admin', 'admin',null),
-(901000805,'RRU串号','rru_serial',901000012,'RRU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000806,'RRU设备型号','product_name',901000012,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000807,'所属省份','province_id',901000012,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000808,'所属地市','city_id',901000012,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000809,'所属区县','county_id',901000012,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000810,'资源标识','int_id',901000013,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000811,'DU名称','zh_label',901000013,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000812,'DU串号','du_serial',901000013,'DU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000813,'所属基站','related_bs',901000013,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000814,'额定功率','rated_power',901000013,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000815,'网络制式','net_model',901000013,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000816,'归属CU','related_cu',901000013,'RELATED_CU', 'string',null, 'admin', 'admin',null),
-(901000817,'安装位置类型','location_type',901000013,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000818,'所属机房/位置点','related_room_location',901000013,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000819,'所属省份','province_id',901000013,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000820,'所属地市','city_id',901000013,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000821,'所属区县','county_id',901000013,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000822,'资源标识','int_id',901000014,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000823,'CU名称','zh_label',901000014,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000824,'CU串号','cu_serial',901000014,'CU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000825,'额定功率','rated_power',901000014,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000826,'网络制式','net_model',901000014,'NET_MODEL', 'string',901000205, 'admin', 'admin',null),
-(901000827,'安装位置类型','location_type',901000014,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000828,'所属机房/位置点','related_room_location',901000014,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000829,'所属省份','province_id',901000014,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000830,'所属地市','city_id',901000014,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000831,'所属区县','county_id',901000014,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000832,'资源标识','int_id',901000015,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000833,'AAU名称','zh_label',901000015,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000834,'安装位置类型','location_type',901000015,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000835,'所属机房/位置点','related_room_location',901000015,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000836,'设备详细安装位置','location',901000015,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000837,'关联小区','related_cell',901000015,'RELATED_CELL', 'string',null, 'admin', 'admin',null),
-(901000838,'额定功率','rated_power',901000015,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000839,'接入方式','connect_model',901000015,'CONNECT_MODEL', 'string',901000211, 'admin', 'admin',null),
-(901000840,'AAU串号','aau_serial',901000015,'AAU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000841,'AAU设备型号','product_name',901000015,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000842,'所属省份','province_id',901000015,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000843,'所属地市','city_id',901000015,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000844,'所属区县','county_id',901000015,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000845,'资源标识','int_id',901000016,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000846,'板卡串号','board_serial',901000016,'BOARD_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000847,'板卡型号','product_name',901000016,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000848,'物理位置信息','physical_location',901000016,'PHYSICAL_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000849,'板卡功能类型','board_function_type',901000016,'BOARD_FUNCTION_TYPE', 'string',901000214, 'admin', 'admin',null),
-(901000850,'所属网元','related_bs',901000016,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000851,'所属省份','province_id',901000016,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000852,'所属地市','city_id',901000016,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000853,'所属区县','county_id',901000016,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000854,'资源标识','int_id',901000017,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000855,'端口编号','port_no',901000017,'PORT_NO', 'string',null, 'admin', 'admin',null),
-(901000856,'物理位置信息','location',901000017,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000857,'电路名称','circuit_name',901000017,'CIRCUIT_NAME', 'string',null, 'admin', 'admin',null),
-(901000858,'无线侧DDF/ODF端子','fiber_id',901000017,'FIBER_ID', 'string',null, 'admin', 'admin',null),
-(901000859,'端口状态','port_status',901000017,'PORT_STATUS', 'string',901000215, 'admin', 'admin',null),
-(901000860,'接口类型','port_type',901000017,'PORT_TYPE', 'string',901000216, 'admin', 'admin',null),
-(901000861,'所属网元','related_ne',901000017,'RELATED_NE', 'string',null, 'admin', 'admin',null),
-(901000862,'所属省份','province_id',901000017,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000863,'所属地市','city_id',901000017,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000864,'所属区县','county_id',901000017,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000865,'资源标识','int_id',901000018,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000866,'天线名称','zh_label',901000018,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000867,'设备厂家','vendor_id',901000018,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000868,'设备型号','product_name',901000018,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000869,'所属铁塔','related_tower',901000018,'RELATED_TOWER', 'string',null, 'admin', 'admin',null),
-(901000870,'所在铁塔平台','setup_location',901000018,'SETUP_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000871,'天线挂高','height',901000018,'HEIGHT', 'string',null, 'admin', 'admin',null),
-(901000872,'入网时间','setup_time',901000018,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000873,'天线类型','antenna_type',901000018,'ANTENNA_TYPE', 'string',901000217, 'admin', 'admin',null),
-(901000874,'是否与AAU一体化','if_aau',901000018,'IF_AAU', 'string',901000218, 'admin', 'admin',null),
-(901000875,'关联AAU名称','related_aau',901000018,'RELATED_AAU', 'string',null, 'admin', 'admin',null),
-(901000876,'所属省份','province_id',901000018,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000877,'所属地市','city_id',901000018,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000878,'所属区县','county_id',901000018,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000879,'资源标识','int_id',901000019,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000880,'方位角','azimuth',901000019,'AZIMUTH', 'string',null, 'admin', 'admin',null),
-(901000881,'关联小区','related_cell',901000019,'RELATED_CELL', 'string',null, 'admin', 'admin',null),
-(901000882,'所属天线','related_antenna',901000019,'RELATED_ANTENNA', 'string',null, 'admin', 'admin',null),
-(901000883,'电下倾角','ele_bend',901000019,'ELE_BEND', 'string',null, 'admin', 'admin',null),
-(901000884,'机械下倾角','machine_cor',901000019,'MACHINE_COR', 'string',null, 'admin', 'admin',null),
-(901000885,'关联频段','related_frequency',901000019,'RELATED_FREQUENCY', 'string',null, 'admin', 'admin',null),
-(901000886,'所属省份','province_id',901000019,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000887,'所属地市','city_id',901000019,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000888,'所属区县','county_id',901000019,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000889,'资源标识','int_id',901000020,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000890,'铁塔名称','zh_label',901000020,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000891,'铁塔塔身高度','tower_stature',901000020,'TOWER_STATURE', 'string',null, 'admin', 'admin',null),
-(901000892,'铁塔平台数量','tower_platnum',901000020,'TOWER_PLATNUM', 'string',null, 'admin', 'admin',null),
-(901000893,'安装位置类型','location_type',901000020,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000894,'所属机房/位置点','related_room_location',901000020,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000895,'铁塔类型','tower_type',901000020,'TOWER_TYPE', 'string',901000219, 'admin', 'admin',null),
-(901000896,'产权性质','property_right',901000020,'PROPERTY_RIGHT', 'string',901000220, 'admin', 'admin',null),
-(901000897,'产权单位','property_unit',901000020,'PROPERTY_UNIT', 'string',901000221, 'admin', 'admin',null),
-(901000898,'共享单位','share_unit',901000020,'SHARE_UNIT', 'string',901000222, 'admin', 'admin',null),
-(901000899,'入网时间','setup_time',901000020,'SETUP_TIME', 'date',null, 'admin', 'admin',null),
-(901000900,'铁塔产品种类','production_type',901000020,'PRODUCTION_TYPE', 'string',901000223, 'admin', 'admin',null),
-(901000901,'所属铁塔公司站址编码','tc_res_id',901000020,'TC_RES_ID', 'string',null, 'admin', 'admin',null),
-(901000902,'所属省份','province_id',901000020,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000903,'所属地市','city_id',901000020,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000904,'所属区县','county_id',901000020,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000905,'资源标识','int_id',901000021,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000906,'直放站名称','zh_label',901000021,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000907,'设备厂家','vendor_id',901000021,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000908,'信号接收方式','signal_receive_type',901000021,'SIGNAL_RECEIVE_TYPE', 'string',901000224, 'admin', 'admin',null),
-(901000909,'供电方式','power_supply_type',901000021,'POWER_SUPPLY_TYPE', 'string',901000225, 'admin', 'admin',null),
-(901000910,'安装位置类型','location_type',901000021,'LOCATION_TYPE', 'string',901000202, 'admin', 'admin',null),
-(901000911,'所属机房/位置点','related_room_location',901000021,'RELATED_ROOM_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000912,'设备详细安装位置','location',901000021,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000913,'生命周期状态','lifecycle_status',901000021,'LIFECYCLE_STATUS', 'string',901000201, 'admin', 'admin',null),
-(901000914,'数据质量责任人（移动）','qualitor',901000021,'QUALITOR', 'string',null, 'admin', 'admin',null),
-(901000915,'一线数据维护人（代维/一线）','maintainor',901000021,'MAINTAINOR', 'string',null, 'admin', 'admin',null),
-(901000916,'直放站类型','repeater_type',901000021,'REPEATER_TYPE', 'string',null, 'admin', 'admin',null),
-(901000917,'覆盖类型','beehive_type',901000021,'BEEHIVE_TYPE', 'string',901000203, 'admin', 'admin',null),
-(901000918,'信源小区','related_cell',901000021,'RELATED_CELL', 'string',null, 'admin', 'admin',null),
-(901000919,'额定功率','rated_power',901000021,'RATED_POWER', 'string',null, 'admin', 'admin',null),
-(901000920,'所属省份','province_id',901000021,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000921,'所属地市','city_id',901000021,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000922,'所属区县','county_id',901000021,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000923,'资源标识','int_id',901000022,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000924,'分布系统名称','zh_label',901000022,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000925,'集成厂家','integrated_vendor',901000022,'INTEGRATED_VENDOR', 'string',null, 'admin', 'admin',null),
-(901000926,'所属位置点','related_location',901000022,'RELATED_LOCATION', 'string',null, 'admin', 'admin',null),
-(901000927,'天线数量','antenna_num',901000022,'ANTENNA_NUM', 'string',null, 'admin', 'admin',null),
-(901000928,'干放数量','trunk_amplifier_num',901000022,'TRUNK_AMPLIFIER_NUM', 'string',null, 'admin', 'admin',null),
-(901000929,'关联基站','related_bs',901000022,'RELATED_BS', 'string',null, 'admin', 'admin',null),
-(901000930,'信源小区','related_cell',901000022,'RELATED_CELL', 'string',null, 'admin', 'admin',null),
-(901000931,'无源器件厂家','passive_device_vendor',901000022,'PASSIVE_DEVICE_VENDOR', 'string',null, 'admin', 'admin',null),
-(901000932,'馈线厂家','feeder_vendor',901000022,'FEEDER_VENDOR', 'string',null, 'admin', 'admin',null),
-(901000933,'天线厂家','antenna_vendor_id',901000022,'ANTENNA_VENDOR_ID', 'string',null, 'admin', 'admin',null),
-(901000934,'所属省份','province_id',901000022,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000935,'所属地市','city_id',901000022,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000936,'所属区县','county_id',901000022,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000937,'资源标识','int_id',901000023,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000938,'AP名称','zh_label',901000023,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000939,'串号','ap_serial',901000023,'AP_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000940,'所属基站','related_femto',901000023,'RELATED_FEMTO', 'string',null, 'admin', 'admin',null),
-(901000941,'额定功率','rated_pawer',901000023,'RATED_PAWER', 'string',null, 'admin', 'admin',null),
-(901000942,'设备详细安装位置','location',901000023,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000943,'设备厂家','vendor_id',901000023,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000944,'设备型号','product_name',901000023,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000945,'所属省份','province_id',901000023,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000946,'所属地市','city_id',901000023,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000947,'所属区县','county_id',901000023,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000948,'资源标识','int_id',901000024,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000949,'AU名称','zh_label',901000024,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000950,'串号','au_serial',901000024,'AU_SERIAL', 'string',null, 'admin', 'admin',null),
-(901000951,'所属基站','related_femto',901000024,'RELATED_FEMTO', 'string',null, 'admin', 'admin',null),
-(901000952,'额定功率','rated_pawer',901000024,'RATED_PAWER', 'string',null, 'admin', 'admin',null),
-(901000953,'设备详细安装位置','location',901000024,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000954,'设备厂家','vendor_id',901000024,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000955,'设备型号','product_name',901000024,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000956,'所属省份','province_id',901000024,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000957,'所属地市','city_id',901000024,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000958,'所属区县','county_id',901000024,'COUNTY_ID', 'string',null, 'admin', 'admin',null),
-(901000959,'资源标识','int_id',901000025,'INT_ID', 'string',null, 'admin', 'admin',null),
-(901000960,'交换机名称','zh_label',901000025,'ZH_LABEL', 'string',null, 'admin', 'admin',null),
-(901000961,'串号','serial',901000025,'SERIAL', 'string',null, 'admin', 'admin',null),
-(901000962,'所属基站','related_femto',901000025,'RELATED_FEMTO', 'string',null, 'admin', 'admin',null),
-(901000963,'额定功率','rated_pawer',901000025,'RATED_PAWER', 'string',null, 'admin', 'admin',null),
-(901000964,'设备详细安装位置','location',901000025,'LOCATION', 'string',null, 'admin', 'admin',null),
-(901000965,'设备厂家','vendor_id',901000025,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
-(901000966,'设备型号','product_name',901000025,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
-(901000967,'所属省份','province_id',901000025,'PROVINCE_ID', 'string',null, 'admin', 'admin',null),
-(901000968,'所属地市','city_id',901000025,'CITY_ID', 'string',null, 'admin', 'admin',null),
-(901000969,'所属区县','county_id',901000025,'COUNTY_ID', 'string',null, 'admin', 'admin',null);
-
 --entitytype：承载网
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values 
 (905000500,'设备','CM_DEVICE_IP', '承载网', null,'CM_DEVICE_IP', null, null, 'admin', 'admin', null),
@@ -4700,7 +4062,7 @@ insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTEN
 (908000010, '分光器', 'CM_DEVICE_OBD', '家客', null, 'CM_DEVICE_OBD', null, null, 'admin', 'admin', null) ,
 (908000011, '分光器端口', 'CM_OBD_PORT', '家客', null, 'CM_OBD_PORT', null, null, 'admin', 'admin', null) ,
 (908000012, '多媒体箱', 'CE_DEVICE_DMT', '家客', null, 'CE_DEVICE_DMT', null, null, 'admin', 'admin', null) ,
-(908000013, '分纤箱', 'CE_DEVICE_GF', '家客', null, 'CE_DEVICE_GF', null, null, 'admin', 'admin', null) ,
+(908000013, '分纤箱', 'JIAKE_CE_DEVICE_GF', '家客', null, 'JIAKE_CE_DEVICE_GF', null, null, 'admin', 'admin', null) ,
 (908000014, '分纤箱端子', 'CM_GF_PORT', '家客', null, 'CM_GF_PORT', null, null, 'admin', 'admin', null);
 insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
 (908000600, '资源标识', 'int_id', 908000001, 'INT_ID', 'string', null, 'admin', 'admin', null),
@@ -4826,1685 +4188,12 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (908000720, '所属地市', 'city_id', 908000014, 'CITY_ID', 'string', null, 'admin', 'admin', null),
 (908000721, '所属区县', 'county_id', 908000014, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
----无线整体指标待定
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(901099001, '无线数据完整性指标', 'wireless-1-99001', 99001, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(901099002, '无线数据规范性指标', 'wireless-2-99002', 99002, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(901099003, '无线数据关联性指标', 'wireless-3-99003', 99003, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
---(901099004, '无线数据合规性指标', 'wireless-4-99004', 99004, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(901099999, '无线数据整体指标', 'wireless-5-99999', 99999, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
----无线资源完整性核查
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(901003000,'BSC必填字段维护完整率核查','wireless-1-1',101,901000002, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000002,1, null),
-(901003001,'BTS必填字段维护完整率核查','wireless-1-2',102,901000003, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000003,1, null),
-(901003002,'E-NODEB必填字段维护完整率核查','wireless-1-3',103,901000004, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000004,1, null),
-(901003003,'G-NODEB必填字段维护完整率核查','wireless-1-4',104,901000005, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000005,1, null),
-(901003004,'RTK基准站必填字段维护完整率核查','wireless-1-5',105,901000006, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000006,1, null),
-(901003005,'CELL必填字段维护完整率核查','wireless-1-6',106,901000007, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000007,1, null),
-(901003006,'E-UTRANCELL必填字段维护完整率核查','wireless-1-7',107,901000008, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000008,1, null),
-(901003007,'NR-CELL必填字段维护完整率核查','wireless-1-8',108,901000009, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000009,1, null),
-(901003008,'BBU必填字段维护完整率核查','wireless-1-9',109,901000011, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000011,1, null),
-(901003009,'RRU必填字段维护完整率核查','wireless-1-10',110,901000012, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000012,1, null),
-(901003010,'CU必填字段维护完整率核查','wireless-1-11',111,901000014, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000014,1, null),
-(901003011,'DU必填字段维护完整率核查','wireless-1-12',112,901000013, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000013,1, null),
-(901003012,'AAU必填字段维护完整率核查','wireless-1-13',113,901000015, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000015,1, null),
-(901003013,'板卡必填字段维护完整率核查','wireless-1-14',114,901000016, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000016,1, null),
-(901003014,'端口必填字段维护完整率核查','wireless-1-15',115,901000017, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000017,1, null),
-(901003015,'分布系统必填字段维护完整率核查','wireless-1-16',116,901000022, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000022,1, null),
-(901003016,'直放站必填字段维护完整率核查','wireless-1-17',117,901000021, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000021,1, null),
-(901003017,'天线必填字段维护完整率核查','wireless-1-18',118,901000018, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000018,1, null),
-(901003018,'扼流圈天线必填字段维护完整率核查','wireless-1-19',119,901000010, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000010,1, null),
-(901003019,'天线工参必填字段维护完整率核查','wireless-1-20',120,901000019, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000019,1, null),
-(901003020,'铁塔必填字段维护完整率核查','wireless-1-21',121,901000020, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000020,1, null),
-(901003021,'扩展型皮站AU必填字段维护完整率核查','wireless-1-22',122,901000024, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000024,1, null),
-(901003022,'扩展型皮站交换机必填字段维护完整率核查','wireless-1-23',123,901000025, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000025,1, null),
-(901003023,'一体化皮站AP必填字段维护完整率核查','wireless-1-24',124,901000023, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000023,1, null),
-(901003024, 'OMC必填字段维护完整率核查', 'wireless-1-25',125,901000001, '无线',5, null, null,1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX',901000001,1, null);
-
---资源规范性核查
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(901003025, 'BSC资源名称关键字查重', 'wireless-2-1',201,901000002, '无线',11, null,'update BSC t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-1''
-                                             else dims_col_result||'',wireless-2-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BSC资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BSC资源名称关键字查重''
-                                             else dims_col_rtName||'',BSC资源名称关键字查重'' end)
-                 where exists(select 1
-                                from BSC t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000002,1, null);
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(901003026,'BTS资源名称关键字查重','wireless-2-2',202,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-2''
-                                             else dims_col_result||'',wireless-2-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BTS资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BTS资源名称关键字查重''
-                                             else dims_col_rtName||'',BTS资源名称关键字查重'' end)
-                 where exists(select 1
-                                from BTS t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1, null),
-(901003027,'E-NODEB资源名称关键字查重','wireless-2-3',203,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-3%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-3''
-                                             else dims_col_result||'',wireless-2-3'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-NODEB资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-NODEB资源名称关键字查重''
-                                             else dims_col_rtName||'',E-NODEB资源名称关键字查重'' end)
-                 where exists(select 1
-                                from ENODEB t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1, null),
-(901003028,'G-NODEB资源名称关键字查重','wireless-2-4',204,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-4%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-4''
-                                             else dims_col_result||'',wireless-2-4'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%G-NODEB资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:G-NODEB资源名称关键字查重''
-                                             else dims_col_rtName||'',G-NODEB资源名称关键字查重'' end)
-                 where exists(select 1
-                                from GNODEB t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1, null),
-(901003029,'RTK基准站资源名称关键字查重','wireless-2-5',205,901000006, '无线',11, null,'update RTK t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-5%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-5''
-                                             else dims_col_result||'',wireless-2-5'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RTK基准站资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RTK基准站资源名称关键字查重''
-                                             else dims_col_rtName||'',RTK基准站资源名称关键字查重'' end)
-                 where exists(select 1
-                                from RTK t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000006,1, null),
-(901003030,'CELL资源名称关键字查重','wireless-2-6',206,901000007, '无线',11, null,'update CELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-6%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-6''
-                                             else dims_col_result||'',wireless-2-6'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CELL资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CELL资源名称关键字查重''
-                                             else dims_col_rtName||'',CELL资源名称关键字查重'' end)
-                 where exists(select 1
-                                from CELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000007,1, null),
-(901003031,'E-UTRANCELL资源名称关键字查重','wireless-2-7',207,901000008, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-7%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-7''
-                                             else dims_col_result||'',wireless-2-7'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-UTRANCELL资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-UTRANCELL资源名称关键字查重''
-                                             else dims_col_rtName||'',E-UTRANCELL资源名称关键字查重'' end)
-                 where exists(select 1
-                                from EUTRANCELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000008,1, null),
-(901003032,'NR-CELL资源名称关键字查重','wireless-2-8',208,901000009, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-8%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-8''
-                                             else dims_col_result||'',wireless-2-8'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%NR-CELL资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:NR-CELL资源名称关键字查重''
-                                             else dims_col_rtName||'',NR-CELL资源名称关键字查重'' end)
-                 where exists(select 1
-                                from NRCELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000009,1, null),
-(901003033,'BBU资源名称关键字查重','wireless-2-9',209,901000011, '无线',11, null,'update BBU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-9%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-9''
-                                             else dims_col_result||'',wireless-2-9'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BBU资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BBU资源名称关键字查重''
-                                             else dims_col_rtName||'',BBU资源名称关键字查重'' end)
-                 where exists(select 1
-                                from BBU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000011,1, null),
-(901003034,'RRU资源名称关键字查重','wireless-2-10',210,901000012, '无线',11, null,'update RRU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-10%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-10''
-                                             else dims_col_result||'',wireless-2-10'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RRU资源名称在系统里不唯一%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RRU资源名称在系统里不唯一''
-                                             else dims_col_rtName||'',RRU资源名称在系统里不唯一'' end)
-                 where exists(select 1
-                                from RRU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000012,1, null),
-(901003035,'CU资源名称关键字查重','wireless-2-11',211,901000013, '无线',11, null,'update CU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-11%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-11''
-                                             else dims_col_result||'',wireless-2-11'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CU资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CU资源名称关键字查重''
-                                             else dims_col_rtName||'',CU资源名称关键字查重'' end)
-                 where exists(select 1
-                                from CU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000013,1, null),
-(901003036,'DU资源名称关键字查重','wireless-2-12',212,901000014, '无线',11, null,'update DU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-12%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-12''
-                                             else dims_col_result||'',wireless-2-12'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DU资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DU资源名称关键字查重''
-                                             else dims_col_rtName||'',DU资源名称关键字查重'' end)
-                 where exists(select 1
-                                from DU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1, null),
-(901003037,'AAU资源名称关键字查重','wireless-2-13',213,901000015, '无线',11, null,'update AAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-13%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-13''
-                                             else dims_col_result||'',wireless-2-13'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AAU资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AAU资源名称关键字查重''
-                                             else dims_col_rtName||'',AAU资源名称关键字查重'' end)
-                 where exists(select 1
-                                from AAU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000015,1, null),
-(901003038,'板卡资源名称关键字查重','wireless-2-14',214,901000016, '无线',11, null,'update BOARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-14%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-14''
-                                             else dims_col_result||'',wireless-2-14'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%板卡资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:板卡资源名称关键字查重''
-                                             else dims_col_rtName||'',板卡资源名称关键字查重'' end)
-                 where exists(select 1
-                                from BOARD t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000016,1, null),
-(901003039, '端口资源名称关键字查重','wireless-2-15',215,901000017, '无线',11, null,'update PORT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-15%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-15''
-                                             else dims_col_result||'',wireless-2-15'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口资源名称关键字查重''
-                                             else dims_col_rtName||'',端口资源名称关键字查重'' end)
-                 where exists(select 1
-                                from PORT t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.port_no=t1.port_no)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000017,1, null),
-(901003040,'分布系统资源名称关键字查重','wireless-2-16',216,901000022, '无线',11, null,'update SPEARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-16%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-16''
-                                             else dims_col_result||'',wireless-2-16'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分布系统资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分布系统资源名称关键字查重''
-                                             else dims_col_rtName||'',分布系统资源名称关键字查重'' end)
-                 where exists(select 1
-                                from SPEARD t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000022,1, null),
-(901003041,'直放站资源名称关键字查重','wireless-2-17',217,901000021, '无线',11, null,'update RPT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-17%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-17''
-                                             else dims_col_result||'',wireless-2-17'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%直放站资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:直放站资源名称关键字查重''
-                                             else dims_col_rtName||'',直放站资源名称关键字查重'' end)
-                 where exists(select 1
-                                from RPT t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000021,1, null),
-(901003042,'天线资源名称关键字查重','wireless-2-18',218,901000018, '无线',11, null,'update ANTENNA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-18%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-18''
-                                             else dims_col_result||'',wireless-2-18'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:天线资源名称关键字查重''
-                                             else dims_col_rtName||'',天线资源名称关键字查重'' end)
-                 where exists(select 1
-                                from ANTENNA t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1, null),
-(901003043,'扼流圈天线资源名称关键字查重','wireless-2-19',219,901000010, '无线',11, null,'update ANTENNACHOKECOIL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-19%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-19''
-                                             else dims_col_result||'',wireless-2-19'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扼流圈天线资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扼流圈天线资源名称关键字查重''
-                                             else dims_col_rtName||'',扼流圈天线资源名称关键字查重'' end)
-                 where exists(select 1
-                                from ANTENNACHOKECOIL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.userlabel=t1.userlabel)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000010,1, null),
-(901003044,'铁塔资源名称关键字查重','wireless-2-20',220,901000020, '无线',11, null,'update TOWER t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-20%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-20''
-                                             else dims_col_result||'',wireless-2-20'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%铁塔资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:铁塔资源名称关键字查重''
-                                             else dims_col_rtName||'',铁塔资源名称关键字查重'' end)
-                 where exists(select 1
-                                from TOWER t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000020,1, null),
-(901003045,'扩展型皮站AU资源名称关键字查重','wireless-2-21',221,901000024, '无线',11, null,'update PICOAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-21%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-21''
-                                             else dims_col_result||'',wireless-2-21'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扩展型皮站AU资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扩展型皮站AU资源名称关键字查重''
-                                             else dims_col_rtName||'',扩展型皮站AU资源名称关键字查重'' end)
-                 where exists(select 1
-                                from PICOAU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000024,1, null),
-(901003046,'扩展型皮站交换机资源名称关键字查重','wireless-2-22',222,901000025, '无线',11, null,'update PICOSWITCH t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-22%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-22''
-                                             else dims_col_result||'',wireless-2-22'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扩展型皮站交换机资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扩展型皮站交换机资源名称关键字查重''
-                                             else dims_col_rtName||'',扩展型皮站交换机资源名称关键字查重'' end)
-                 where exists(select 1
-                                from PICOSWITCH t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000025,1, null),
-(901003047,'一体化皮站AP资源名称关键字查重','wireless-2-23',223,901000023, '无线',11, null,'update PICOAP t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-23%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-23''
-                                             else dims_col_result||'',wireless-2-23'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%一体化皮站AP资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:一体化皮站AP资源名称关键字查重''
-                                             else dims_col_rtName||'',一体化皮站AP资源名称关键字查重'' end)
-                 where exists(select 1
-                                from PICOAP t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t2.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000023,1, null),
-(901003048,'OMC资源名称关键字查重','wireless-2-24',224,901000001, '无线',11, null,'update OMC t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-24%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-24''
-                                             else dims_col_result||'',wireless-2-24'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%OMC资源名称关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:OMC资源名称关键字查重''
-                                             else dims_col_rtName||'',OMC资源名称关键字查重'' end)
-                 where exists(select 1
-                                from OMC t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.zh_label=t1.zh_label)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000001,1, null),
-(901003049,'BBU串号关键字查重','wireless-2-25',225,901000011, '无线',11, null,'update BBU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-25%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-25''
-                                             else dims_col_result||'',wireless-2-25'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BBU串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BBU串号关键字查重''
-                                             else dims_col_rtName||'',BBU串号关键字查重'' end)
-                 where exists(select 1
-                                from BBU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.bbu_serial=t1.bbu_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000011,1, null),
-(901003050,'RRU串号关键字查重','wireless-2-26',226,901000012, '无线',11, null,'update RRU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-26%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-26''
-                                             else dims_col_result||'',wireless-2-26'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RRU串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RRU串号关键字查重''
-                                             else dims_col_rtName||'',RRU串号关键字查重'' end)
-                 where exists(select 1
-                                from RRU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.rru_serial=t1.rru_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000012,1, null),
-(901003051,'板卡串号关键字查重','wireless-2-27',227,901000016, '无线',11, null,'update BOARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-27%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-27''
-                                             else dims_col_result||'',wireless-2-27'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%板卡串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:板卡串号关键字查重''
-                                             else dims_col_rtName||'',板卡串号关键字查重'' end)
-                 where exists(select 1
-                                from BOARD t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.board_serial=t1.board_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000016,1, null),
-(901003052,'CU串号关键字查重','wireless-2-28',228,901000013, '无线',11, null,'update CU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-28%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-28''
-                                             else dims_col_result||'',wireless-2-28'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CU串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CU串号关键字查重''
-                                             else dims_col_rtName||'',CU串号关键字查重'' end)
-                 where exists(select 1
-                                from CU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.cu_serial=t1.cu_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000013,1, null),
-(901003053,'DU串号关键字查重','wireless-2-29',229,901000014, '无线',11, null,'update DU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-29%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-29''
-                                             else dims_col_result||'',wireless-2-29'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DU串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DU串号关键字查重''
-                                             else dims_col_rtName||'',DU串号关键字查重'' end)
-                 where exists(select 1
-                                from DU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.du_serial=t1.du_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1, null),
-(901003054,'AAU串号关键字查重','wireless-2-30',230,901000015, '无线',11, null,'update AAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-30%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-30''
-                                             else dims_col_result||'',wireless-2-30'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AAU串号关键字查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AAU串号关键字查重''
-                                             else dims_col_rtName||'',AAU串号关键字查重'' end)
-                 where exists(select 1
-                                from AAU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.aau_serial=t1.aau_serial)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000015,1, null),
-(901003055,'BSC主键查重','wireless-2-31',231,901000002, '无线',11, null,'update BSC t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-31%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-31''
-                                             else dims_col_result||'',wireless-2-31'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BSC主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BSC主键查重''
-                                             else dims_col_rtName||'',BSC主键查重'' end)
-                 where exists(select 1
-                                from BSC t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000002,1, null),
-(901003056,'BTS主键查重','wireless-2-32',232,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-32%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-32''
-                                             else dims_col_result||'',wireless-2-32'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BTS主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BTS主键查重''
-                                             else dims_col_rtName||'',BTS主键查重'' end)
-                 where exists(select 1
-                                from BTS t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1, null),
-(901003057,'E-NODEB主键查重','wireless-2-33',233,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-33%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-33''
-                                             else dims_col_result||'',wireless-2-33'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-NODEB主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-NODEB主键查重''
-                                             else dims_col_rtName||'',E-NODEB主键查重'' end)
-                 where exists(select 1
-                                from ENODEB t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1, null),
-(901003058,'G-NODEB主键查重','wireless-2-34',234,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-34%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-34''
-                                             else dims_col_result||'',wireless-2-34'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%G-NODEB主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:G-NODEB主键查重''
-                                             else dims_col_rtName||'',G-NODEB主键查重'' end)
-                 where exists(select 1
-                                from GNODEB t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1, null),
-(901003059,'RTK基准站主键查重','wireless-2-35',235,901000006, '无线',11, null,'update RTK t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-35%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-35''
-                                             else dims_col_result||'',wireless-2-35'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RTK基准站主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RTK基准站主键查重''
-                                             else dims_col_rtName||'',RTK基准站主键查重'' end)
-                 where exists(select 1
-                                from RTK t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000006,1, null),
-(901003060,'CELL主键查重','wireless-2-36',236,901000007, '无线',11, null,'update CELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-36%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-36''
-                                             else dims_col_result||'',wireless-2-36'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CELL主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CELL主键查重''
-                                             else dims_col_rtName||'',CELL主键查重'' end)
-                 where exists(select 1
-                                from CELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000007,1, null),
-(901003061,'E-UTRANCELL主键查重','wireless-2-37',237,901000008, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-37%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-37''
-                                             else dims_col_result||'',wireless-2-37'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-UTRANCELL主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-UTRANCELL主键查重''
-                                             else dims_col_rtName||'',E-UTRANCELL主键查重'' end)
-                 where exists(select 1
-                                from EUTRANCELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000008,1, null),
-(901003062,'NR-CELL主键查重','wireless-2-38',238,901000009, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-38%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-38''
-                                             else dims_col_result||'',wireless-2-38'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%NR-CELL主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:NR-CELL主键查重''
-                                             else dims_col_rtName||'',NR-CELL主键查重'' end)
-                 where exists(select 1
-                                from NRCELL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000009,1, null),
-(901003063,'BBU主键查重','wireless-2-39',239,901000011, '无线',11, null,'update BBU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-39%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-39''
-                                             else dims_col_result||'',wireless-2-39'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BBU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BBU主键查重''
-                                             else dims_col_rtName||'',BBU主键查重'' end)
-                 where exists(select 1
-                                from BBU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000011,1, null),
-(901003064,'RRU主键查重','wireless-2-40',240,901000012, '无线',11, null,'update RRU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-40%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-40''
-                                             else dims_col_result||'',wireless-2-40'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RRU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RRU主键查重''
-                                             else dims_col_rtName||'',RRU主键查重'' end)
-                 where exists(select 1
-                                from RRU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000012,1, null),
-(901003065,'CU主键查重','wireless-2-41',241,901000013, '无线',11, null,'update CU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-41%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-41''
-                                             else dims_col_result||'',wireless-2-41'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CU主键查重''
-                                             else dims_col_rtName||'',CU主键查重'' end)
-                 where exists(select 1
-                                from CU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000013,1, null),
-(901003066,'DU主键查重','wireless-2-42',242,901000014, '无线',11, null,'update DU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-42%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-42''
-                                             else dims_col_result||'',wireless-2-42'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DU主键查重''
-                                             else dims_col_rtName||'',DU主键查重'' end)
-                 where exists(select 1
-                                from DU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1, null),
-(901003067,'AAU主键查重','wireless-2-43',243,901000015, '无线',11, null,'update AAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-43%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-43''
-                                             else dims_col_result||'',wireless-2-43'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AAU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AAU主键查重''
-                                             else dims_col_rtName||'',AAU主键查重'' end)
-                 where exists(select 1
-                                from AAU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000015,1, null),
-(901003068,'板卡主键查重','wireless-2-44',244,901000016, '无线',11, null,'update BOARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-44%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-44''
-                                             else dims_col_result||'',wireless-2-44'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%板卡主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:板卡主键查重''
-                                             else dims_col_rtName||'',板卡主键查重'' end)
-                 where exists(select 1
-                                from BOARD t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000016,1, null),
-(901003069,'端口主键查重','wireless-2-45',245,901000017, '无线',11, null,'update PORT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-45%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-45''
-                                             else dims_col_result||'',wireless-2-45'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口主键查重''
-                                             else dims_col_rtName||'',端口主键查重'' end)
-                 where exists(select 1
-                                from PORT t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000017,1, null),
-(901003070,'分布系统主键查重','wireless-2-46',246,901000022, '无线',11, null,'update SPEARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-46%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-46''
-                                             else dims_col_result||'',wireless-2-46'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分布系统主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分布系统主键查重''
-                                             else dims_col_rtName||'',分布系统主键查重'' end)
-                 where exists(select 1
-                                from SPEARD t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000022,1, null),
-(901003071,'直放站主键查重','wireless-2-47',247,901000021, '无线',11, null,'update RPT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-47%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-47''
-                                             else dims_col_result||'',wireless-2-47'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%直放站主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:直放站主键查重''
-                                             else dims_col_rtName||'',直放站主键查重'' end)
-                 where exists(select 1
-                                from RPT t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000021,1, null),
-(901003072,'天线主键查重','wireless-2-48',248,901000018, '无线',11, null,'update ANTENNA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-48%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-48''
-                                             else dims_col_result||'',wireless-2-48'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:天线主键查重''
-                                             else dims_col_rtName||'',天线主键查重'' end)
-                 where exists(select 1
-                                from ANTENNA t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1, null),
-(901003073,'扼流圈天线主键查重','wireless-2-49',249,901000010, '无线',11, null,'update ANTENNACHOKECOIL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-49%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-49''
-                                             else dims_col_result||'',wireless-2-49'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扼流圈天线主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扼流圈天线主键查重''
-                                             else dims_col_rtName||'',扼流圈天线主键查重'' end)
-                 where exists(select 1
-                                from ANTENNACHOKECOIL t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000010,1, null),
-(901003074,'天线工参主键查重','wireless-2-50',250,901000019, '无线',11, null,'update ANTENNAPARA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-50%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-50''
-                                             else dims_col_result||'',wireless-2-50'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线工参主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:天线工参主键查重''
-                                             else dims_col_rtName||'',天线工参主键查重'' end)
-                 where exists(select 1
-                                from ANTENNAPARA t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000019,1, null),
-(901003075,'铁塔主键查重','wireless-2-51',251,901000020, '无线',11, null,'update TOWER t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-51%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-51''
-                                             else dims_col_result||'',wireless-2-51'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%铁塔主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:铁塔主键查重''
-                                             else dims_col_rtName||'',铁塔主键查重'' end)
-                 where exists(select 1
-                                from TOWER t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000020,1, null),
-(901003076,'扩展型皮站AU主键查重','wireless-2-52',252,901000024, '无线',11, null,'update PICOAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-52%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-52''
-                                             else dims_col_result||'',wireless-2-52'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扩展型皮站AU主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扩展型皮站AU主键查重''
-                                             else dims_col_rtName||'',扩展型皮站AU主键查重'' end)
-                 where exists(select 1
-                                from PICOAU t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000024,1, null),
-(901003077,'扩展型皮站交换机主键查重','wireless-2-53',253,901000025, '无线',11, null,'update PICOSWITCH t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-53%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-53''
-                                             else dims_col_result||'',wireless-2-53'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%扩展型皮站交换机主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:扩展型皮站交换机主键查重''
-                                             else dims_col_rtName||'',扩展型皮站交换机主键查重'' end)
-                 where exists(select 1
-                                from PICOSWITCH t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000025,1, null),
-(901003078,'一体化皮站AP主键查重','wireless-2-54',254,901000023, '无线',11, null,'update PICOAP t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-54%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-54''
-                                             else dims_col_result||'',wireless-2-54'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%一体化皮站AP主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:一体化皮站AP主键查重''
-                                             else dims_col_rtName||'',一体化皮站AP主键查重'' end)
-                 where exists(select 1
-                                from PICOAP t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000023,1, null),
-(901003079,'OMC主键查重','wireless-2-55',255,901000001, '无线',11, null,'update OMC t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-2-55%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-2-55''
-                                             else dims_col_result||'',wireless-2-55'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%OMC主键查重%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:OMC主键查重''
-                                             else dims_col_rtName||'',OMC主键查重'' end)
-                 where exists(select 1
-                                from OMC t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.int_id=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000001,1, null),
-(901003080,'BTS枚举值核查:安装位置类型','wireless-2-56-0',256,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003081,'BTS枚举值核查:生命周期状态','wireless-2-56-1',257,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003082,'BTS枚举值核查:设备类型','wireless-2-56-2',258,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003083,'BTS枚举值核查:覆盖类型','wireless-2-56-3',259,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003084,'BTS枚举值核查:设备厂家','wireless-2-56-4',260,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003085,'BTS枚举值核查:VIP级别','wireless-2-56-5',261,901000003, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000003,1, null),
-(901003086,'E-NODEB枚举值核查:生命周期状态','wireless-2-57-0',262,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003087,'E-NODEB枚举值核查:设备类型','wireless-2-57-1',263,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003088,'E-NODEB枚举值核查:覆盖类型','wireless-2-57-2',264,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003089,'E-NODEB枚举值核查:VIP级别','wireless-2-57-3',265,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003090,'E-NODEB枚举值核查:设备厂家','wireless-2-57-4',266,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003091,'E-NODEB枚举值核查:安装位置类型','wireless-2-57-5',267,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003092,'E-NODEB枚举值核查:构建方式','wireless-2-57-6',268,901000004, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000004,1, null),
-(901003093,'G-NODEB枚举值核查:生命周期状态','wireless-2-58-0',269,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003094,'G-NODEB枚举值核查:设备类型','wireless-2-58-1',270,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003095,'G-NODEB枚举值核查:覆盖类型','wireless-2-58-2',271,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003096,'G-NODEB枚举值核查:VIP级别','wireless-2-58-3',272,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003097,'G-NODEB枚举值核查:设备厂家','wireless-2-58-4',273,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003098,'G-NODEB枚举值核查:安装位置类型','wireless-2-58-5',274,901000005, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000005,1, null),
-(901003099,'RTK基准站枚举值核查:安装方式','wireless-2-59-0',275,901000006, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000006,1, null),
-(901003100,'RTK基准站枚举值核查:安装位置类型','wireless-2-59-1',276,901000006, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000006,1, null),
-(901003101,'RTK基准站枚举值核查:生命周期状态','wireless-2-59-2',277,901000006, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000006,1, null),
-(901003102,'RTK基准站枚举值核查:设备厂家','wireless-2-59-3',278,901000006, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000006,1, null),
-(901003103,'CELL枚举值核查:使用频段','wireless-2-60-0',279,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003104,'CELL枚举值核查:安装位置类型','wireless-2-60-1',280,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003105,'CELL枚举值核查:生命周期状态','wireless-2-60-2',281,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003106,'CELL枚举值核查:覆盖类型','wireless-2-60-3',282,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003107,'CELL枚举值核查:覆盖场景','wireless-2-60-4',283,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003108,'CELL枚举值核查:是否拉远','wireless-2-60-5',284,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003109,'CELL枚举值核查:网络制式','wireless-2-60-6',285,901000007, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000007,1, null),
-(901003110,'E-UTRANCELL枚举值核查:使用频段','wireless-2-61-0',286,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003111,'E-UTRANCELL枚举值核查:安装位置类型','wireless-2-61-1',287,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003112,'E-UTRANCELL枚举值核查:生命周期状态','wireless-2-61-2',288,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003113,'E-UTRANCELL枚举值核查:覆盖类型','wireless-2-61-3',289,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003114,'E-UTRANCELL枚举值核查:覆盖场景','wireless-2-61-4',290,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003115,'E-UTRANCELL枚举值核查:是否拉远','wireless-2-61-5',291,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003116,'E-UTRANCELL枚举值核查:网络制式','wireless-2-61-6',292,901000008, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000008,1, null),
-(901003117,'NR-CELL枚举值核查:使用频段','wireless-2-62-0',293,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003118,'NR-CELL枚举值核查:安装位置类型','wireless-2-62-1',294,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003119,'NR-CELL枚举值核查:生命周期状态','wireless-2-62-2',295,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003120,'NR-CELL枚举值核查:覆盖类型','wireless-2-62-3',296,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003121,'NR-CELL枚举值核查:覆盖场景','wireless-2-62-4',297,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003122,'NR-CELL枚举值核查:是否拉远','wireless-2-62-5',298,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003123,'NR-CELL枚举值核查:网络制式','wireless-2-62-6',299,901000009, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000009,1, null),
-(901003124,'RRU枚举值核查:RRU设备型号','wireless-2-63',300,901000012, '无线',4, null,null,2, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000012,1, null),
-(901003125,'AAU枚举值核查:AAU设备型号','wireless-2-64',301,901000015, '无线',4, null,null,2, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000015,1, null),
-(901003126,'无线板卡枚举值核查:板卡功能类型','wireless-2-65',302,901000016, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000016,1, null),
-(901003127,'无线端口枚举值核查:端口状态','wireless-2-66',303,901000017, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000017,1, null),
-(901003128,'直放站枚举值规范性核查:设备厂家','wireless-2-67-0',304,901000021, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003129,'直放站枚举值规范性核查:信号接收方式','wireless-2-67-1',305,901000021, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003130,'直放站枚举值规范性核查:供电方式','wireless-2-67-2',306,901000021, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003131,'直放站枚举值规范性核查:生命周期状态','wireless-2-67-3',307,901000021, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003132,'直放站枚举值规范性核查:直放站类型','wireless-2-67-4',308,901000021, '无线',4, null,null,2, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003133,'直放站枚举值规范性核查:覆盖类型','wireless-2-67-5',309,901000021, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000021,1, null),
-(901003134,'天线枚举值核查:设备厂家','wireless-2-68-0',310,901000018, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000018,1, null),
-(901003135,'天线枚举值核查:天线类型','wireless-2-68-1',311,901000018, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000018,1, null),
-(901003136,'天线枚举值核查:是否与AAU一体化','wireless-2-68-2',312,901000018, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000018,1, null),
-(901003137,'扼流圈天线枚举值核查:设备厂家','wireless-2-69-0',313,901000010, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000010,1, null),
-(901003138,'扼流圈天线枚举值核查:生命周期状态','wireless-2-69-1',314,901000010, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000010,1, null),
-(901003139,'扼流圈天线枚举值核查:安装方式','wireless-2-69-2',315,901000010, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000010,1, null),
-(901003140,'铁塔枚举值核查:铁塔类型','wireless-2-70-0',316,901000020, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000020,1, null),
-(901003141,'铁塔枚举值核查:产权性质','wireless-2-70-1',317,901000020, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000020,1, null),
-(901003142,'铁塔枚举值核查:产权单位','wireless-2-70-2',318,901000020, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000020,1, null),
-(901003143,'铁塔枚举值核查:共享单位','wireless-2-70-3',319,901000020, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000020,1, null),
-(901003144,'铁塔枚举值核查:铁塔产品种类','wireless-2-70-4',320,901000020, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000020,1, null),
-(901003145,'扩展型皮站AU枚举值核查:设备厂家','wireless-2-71',321,901000024, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000024,1, null),
-(901003146,'扩展型皮站交换机枚举值核查:设备厂家','wireless-2-72',322,901000025, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000025,1, null),
-(901003147,'一体化皮站AP枚举值核查:设备厂家','wireless-2-73',323,901000023, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000023,1, null),
-(901003148,'OMC枚举值核查:设备厂家','wireless-2-74',324,901000001, '无线',4, null,null,1, 'admin', 'admin','PROC_CHECKONEDICTACCURACYINDEX',901000001,1, null);
-
---资源关联性核查
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(901003149,'BTS基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-1',301,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-1''
-                                             else dims_col_result||'',wireless-3-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BTS基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BTS基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',BTS基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003150,'E-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-2',302,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-2''
-                                             else dims_col_result||'',wireless-3-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',E-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003151,'G-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-3',303,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-3%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-3''
-                                             else dims_col_result||'',wireless-3-3'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%G-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:G-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',G-NODEB基站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003152,'RTK基准站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-4',304,901000006, '无线',11, null,'update RTK t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-4%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-4''
-                                             else dims_col_result||'',wireless-3-4'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RTK基准站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RTK基准站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',RTK基准站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000006,1,null),
-(901003153,'CELL小区资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-5',305,901000007, '无线',11, null,'update CELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-5%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-5''
-                                             else dims_col_result||'',wireless-3-5'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CELL小区资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CELL小区资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',CELL小区资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.beehive_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000007,1,null),
-(901003154,'E-UTRANCELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-6',306,901000008, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-6%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-6''
-                                             else dims_col_result||'',wireless-3-6'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-UTRANCELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-UTRANCELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',E-UTRANCELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000008,1,null),
-(901003155,'NR-CELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-7',307,901000009, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-7%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-7''
-                                             else dims_col_result||'',wireless-3-7'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%NR-CELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:NR-CELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',NR-CELL资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000009,1,null),
-(901003156,'直放站资源所属信源小区是否在CELL/EUTRANCELL/NR-CELL表中都不存在','wireless-3-8',308,901000021, '无线',11, null,'update RPT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-8%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-8''
-                                             else dims_col_result||'',wireless-3-8'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%直放站资源所属信源小区是否在CELL/EUTRANCELL/NR-CELL表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:直放站资源所属信源小区是否在CELL/EUTRANCELL/NR-CELL表中都不存在''
-                                             else dims_col_rtName||'',直放站资源所属信源小区是否在CELL/EUTRANCELL/NR-CELL表中都不存在'' end)
-                 where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000021,1,null),
-(901003157,'直放站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-9',309,901000021, '无线',11, null,'update RPT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-9%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-9''
-                                             else dims_col_result||'',wireless-3-9'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%直放站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:直放站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',直放站资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000021,1,null),
-(901003158,'铁塔资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在','wireless-3-10',310,901000020, '无线',11, null,'update TOWER t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-10%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-10''
-                                             else dims_col_result||'',wireless-3-10'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%铁塔资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''铁塔资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在''
-                                             else dims_col_rtName||'',铁塔资源所属机房/位置点是否在空间资源中机房表或位置点表中不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000020,1,null),
-(901003159,'分布系统资源所属基站是否在BTS/E-NODEB/G-NODEB表中不存在','wireless-3-11',311,901000022, '无线',11, null,'update SPEARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-11%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-11''
-                                             else dims_col_result||'',wireless-3-11'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分布系统资源所属基站是否在BTS/E-NODEB/G-NODEB表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分布系统资源所属基站是否在BTS/E-NODEB/G-NODEB表中不存在''
-                                             else dims_col_rtName||'',分布系统资源所属基站是否在BTS/E-NODEB/G-NODEB表中不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000022,1,null),
-(901003160,'分布系统资源所属位置点是否在位置点表中不存在','wireless-3-12',312,901000022, '无线',11, null,'update SPEARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-12%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-12''
-                                             else dims_col_result||'',wireless-3-12'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分布系统资源所属位置点是否在位置点表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''分布系统资源所属位置点是否在位置点表中不存在''
-                                             else dims_col_rtName||'',分布系统资源所属位置点是否在位置点表中不存在'' end)
-                 where isNotNull(t1.related_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000022,1,null),
-(901003161,'CELL小区资源所属BTS是否在BTS表中不存在','wireless-3-13',313,901000007, '无线',11, null,'update CELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-13%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-13''
-                                             else dims_col_result||'',wireless-3-13'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CELL小区资源所属BTS是否在BTS表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''CELL小区资源所属BTS是否在BTS表中不存在''
-                                             else dims_col_rtName||'',CELL小区资源所属BTS是否在BTS表中不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where t2.int_id=t1.related_bs)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000007,1,null),
-(901003162,'E-UTRANCELL小区资源所属基站是否在E-NODEB表中不存在','wireless-3-14',314,901000008, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-14%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-14''
-                                             else dims_col_result||'',wireless-3-14'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-UTRANCELL小区资源所属基站是否在E-NODEB表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''E-UTRANCELL小区资源所属基站是否在E-NODEB表中不存在''
-                                             else dims_col_rtName||'',E-UTRANCELL小区资源所属基站是否在E-NODEB表中不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from ENODEB t2 where t2.int_id=t1.related_bs)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000008,1,null),
-(901003163,'NR-CELL小区资源所属基站是否在G-NODEB表中不存在','wireless-3-15',315,901000009, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-15%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-15''
-                                             else dims_col_result||'',wireless-3-15'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%NR-CELL小区资源所属基站是否在G-NODEB表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''NR-CELL小区资源所属基站是否在G-NODEB表中不存在''
-                                             else dims_col_rtName||'',NR-CELL小区资源所属基站是否在G-NODEB表中不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from GNODEB t2 where t2.int_id=t1.related_bs)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000009,1,null),
-(901003164,'BTS基站资源的所属核心设备是否在核心资源表中不存在','wireless-3-16',316,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-16%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-16''
-                                             else dims_col_result||'',wireless-3-16'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BTS基站资源的所属核心设备是否在核心资源表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BTS基站资源的所属核心设备是否在核心资源表中不存在''
-                                             else dims_col_rtName||'',BTS基站资源的所属核心设备是否在核心资源表中不存在'' end)
-                 where isNotNull(t1.related_bsc) and not exists(select 1 from BSC t2 where t2.userlabel=t1.related_bsc)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003165, 'E-NODEB基站资源的所属核心设备是否在核心资源表中不存在','wireless-3-17',317,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-17%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-17''
-                                             else dims_col_result||'',wireless-3-17'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%E-NODEB基站资源的所属核心设备是否在核心资源表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:E-NODEB基站资源的所属核心设备是否在核心资源表中不存在''
-                                             else dims_col_rtName||'',E-NODEB基站资源的所属核心设备是否在核心资源表中不存在'' end)
-                 where isNotNull(t1.related_bsc) and not exists(select 1 from PS_MME t2 where t2.int_id=t1.related_bsc) and not exists(select 1 from PS_POOL t3 where t3.int_id=t1.related_bsc) ',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003166,'G-NODEB基站资源的所属核心设备是否在核心资源表中不存在','wireless-3-18',318,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-18%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-18''
-                                             else dims_col_result||'',wireless-3-18'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%G-NODEB基站资源的所属核心设备是否在核心资源表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:G-NODEB基站资源的所属核心设备是否在核心资源表中不存在''
-                                             else dims_col_rtName||'',G-NODEB基站资源的所属核心设备是否在核心资源表中不存在'' end)
-                 where isNotNull(t1.related_bsc) and not exists(select 1 from PS_MME t2 where t2.int_id=t1.related_bsc) and not exists(select 1 from PS_POOL t3 where t3.int_id=t1.related_bsc) ',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003167,'BBU所属基站是否在BTS、E-NODEB、G-NODEB表中都不存在','wireless-3-19',319,901000011, '无线',11, null,'update BBU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-19%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-19''
-                                             else dims_col_result||'',wireless-3-19'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BBU所属基站是否在BTS、E-NODEB、G-NODEB表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BBU所属基站是否在BTS、E-NODEB、G-NODEB表中都不存在''
-                                             else dims_col_rtName||'',BBU所属基站是否在BTS、E-NODEB、G-NODEB表中都不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000011,1,null),
-(901003168,'RRU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在','wireless-3-20',320,901000012, '无线',11, null,'update RRU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-20%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-20''
-                                             else dims_col_result||'',wireless-3-20'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RRU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''RRU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在''
-                                             else dims_col_rtName||'',RRU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000012,1,null),
-(901003169,'RRU资源所属小区是否在CELL、E-UTRANCELL表中都不存在','wireless-3-21',321,901000012, '无线',11, null,'update SPEARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-21%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-21''
-                                             else dims_col_result||'',wireless-3-21'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%RRU资源所属小区是否在CELL、E-UTRANCELL表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:RRU资源所属小区是否在CELL、E-UTRANCELL表中都不存在''
-                                             else dims_col_rtName||'',RRU资源所属小区是否在CELL、E-UTRANCELL表中都不存在'' end)
-                 where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) ',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000012,1,null),
-(901003170,'无线CU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在','wireless-3-22',322,901000013, '无线',11, null,'update CU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-22%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-22''
-                                             else dims_col_result||'',wireless-3-22'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线CU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线CU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在''
-                                             else dims_col_rtName||'',无线CU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000013,1,null),
-(901003171,'无线DU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在','wireless-3-23',323,901000014, '无线',11, null,'update RRU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-23%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-23''
-                                             else dims_col_result||'',wireless-3-23'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线DU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线DU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在''
-                                             else dims_col_rtName||'',无线DU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1,null),
-(901003172,'无线AAU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在','wireless-3-24',324,901000015, '无线',11, null,'update AAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-24%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-24''
-                                             else dims_col_result||'',wireless-3-24'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线AAU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线AAU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在''
-                                             else dims_col_rtName||'',无线AAU资源所属机房/位置点是否在空间资源中机房表或位置点表中都不存在'' end)
-                 where isNotNull(t1.related_room_location) and isNotNull(t1.location_type) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id=t1.related_room_location) and not exists(select 1 from RM_AREA_ROOM t3 where t3.int_id=t1.related_room_location)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000015,1,null),
-(901003173,'无线DU资源所属基站是否在G-NODEB表中不存在','wireless-3-25',325,901000014, '无线',11, null,'update DU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-25%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-25''
-                                             else dims_col_result||'',wireless-3-25'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线DU资源所属基站是否在G-NODEB表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线DU资源所属基站是否在G-NODEB表中不存在''
-                                             else dims_col_rtName||'',无线DU资源所属基站是否在G-NODEB表中不存在'' end)
-                 where isNotNull(t1.related_bs) and not exists(select 1 from GNODEB t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1,null),
-(901003174,'无线DU资源所属CU资源是否在无线CU资源中不存在','wireless-3-26',326,901000014, '无线',11, null,'update DU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-26%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-26''
-                                             else dims_col_result||'',wireless-3-26'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线DU资源所属CU资源是否在无线CU资源中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线DU资源所属CU资源是否在无线CU资源中不存在''
-                                             else dims_col_rtName||'',无线DU资源所属CU资源是否在无线CU资源中不存在'' end)
-                 where isNotNull(t1.related_cu) and not exists(select 1 from CU t2 where t2.int_id=t1.related_cu)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000014,1,null),
-(901003175,'无线AAU资源关联小区是否在NR-CELL表中不存在','wireless-3-27',327,901000015, '无线',11, null,'update AAU t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-27%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-27''
-                                             else dims_col_result||'',wireless-3-27'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线AAU资源关联小区是否在NR-CELL表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线AAU资源关联小区是否在NR-CELL表中不存在''
-                                             else dims_col_rtName||'',无线AAU资源关联小区是否在NR-CELL表中不存在'' end)
-                 where isNotNull(t1.related_cell) and not exists(select 1 from NRCELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000015,1,null),
-(901003176,'无线板卡资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在','wireless-3-28',328,901000016, '无线',11, null,'update BOARD t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-28%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-28''
-                                             else dims_col_result||'',wireless-3-28'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线板卡资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线板卡资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在''
-                                             else dims_col_rtName||'',无线板卡资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在'' end)
-where isNotNull(t1.related_bs) and  not exists(select 1 from BSC t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from BTS t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from ENODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id) and not exists(select 1 from GNODEB t5 where isNotNull(t5.int_id) and t1.related_bs~t5.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000016,1,null),
-(901003177,'无线端口资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在','wireless-3-29',329,901000017, '无线',11, null,'update PORT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-29%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-29''
-                                             else dims_col_result||'',wireless-3-29'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线端口资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线端口资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在''
-                                             else dims_col_rtName||'',无线端口资源所属网元是否在BSC/BTS/ENODEB/GNODEB表中都不存在'' end)
-                 where isNotNull(t1.related_ne) and not exists(select 1 from BSC t2 where isNotNull(t2.int_id) and t1.related_ne~t2.int_id) and not exists(select 1 from BTS t3 where isNotNull(t3.int_id) and t1.related_ne~t3.int_id) and not exists(select 1 from ENODEB t4 where isNotNull(t4.int_id) and t1.related_ne~t4.int_id) and not exists(select 1 from GNODEB t5 where isNotNull(t5.int_id) and t1.related_ne~t5.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000017,1,null),
-(901003178,'无线端口资源所属无线侧DDF/ODF端子是否在DDF、ODF端子表中都不存在','wireless-3-30',330,901000017, '无线',11, null,'update PORT t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-27%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-27''
-                                             else dims_col_result||'',wireless-3-27'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%无线端口资源所属无线侧DDF/ODF端子是否在DDF、ODF端子表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''无线端口资源所属无线侧DDF/ODF端子是否在DDF、ODF端子表中都不存在''
-                                             else dims_col_rtName||'',无线端口资源所属无线侧DDF/ODF端子是否在DDF、ODF端子表中都不存在'' end)
-                 where isNotNull(t1.fiber_id) and not exists(select 1 from CM_PORT_DDF t2 where  isNotNull(t2.int_id) and t1.fiber_id~t2.int_id ) and not exists(select 1 from CM_PORT_ODF t3 where isNotNull(t3.int_id) and t1.fiber_id~t3.int_id )',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000017,1,null),
-(901003179,'天线资源所属铁塔是否在铁塔表中都不存在','wireless-3-31',331,901000018, '无线',11, null,'update ANTENNA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-31%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-31''
-                                             else dims_col_result||'',wireless-3-31'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线资源所属铁塔是否在铁塔表中都不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''天线资源所属铁塔是否在铁塔表中都不存在''
-                                             else dims_col_rtName||'',天线资源所属铁塔是否在铁塔表中都不存在'' end)
-                 where isNotNull(t1.related_tower) and not exists(select 1 from TOWER t2 where t2.int_id=t1.related_tower)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1,null),
-(901003180,'天线资源关联AAU名称是否在AAU表中不存在','wireless-3-32',332,901000018, '无线',11, null,'update ANTENNA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-32%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-32''
-                                             else dims_col_result||'',wireless-3-32'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线资源关联AAU名称是否在AAU表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''天线资源关联AAU名称是否在AAU表中不存在''
-                                             else dims_col_rtName||'',天线资源关联AAU名称是否在AAU表中不存在'' end)
-                 where isNotNull(t1.related_tower) and not exists(select 1 from AAU t2 where t2.int_id=t1.related_tower)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1,null),
-(901003181,'天线工参资源关联小区是否在小区表中不存在','wireless-3-33',333,901000019, '无线',11, null,'update ANTENNAPARA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-33%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-33''
-                                             else dims_col_result||'',wireless-3-33'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线工参资源关联小区是否在小区表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:天线工参资源关联小区是否在小区表中不存在''
-                                             else dims_col_rtName||'',天线工参资源关联小区是否在小区表中不存在'' end)
-                 where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where t2.int_id=t1.related_cell) and not exists(select 1 from EUTRANCELL t3 where t3.int_id=t1.related_cell) and not exists(select 1 from NRCELL t4 where t4.int_id=t1.related_cell)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000019,1,null),
-(901003182,'天线工参资源关联天线是否在天线表中不存在','wireless-3-34',334,901000019, '无线',11, null,'update ANTENNAPARA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-34%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-34''
-                                             else dims_col_result||'',wireless-3-34'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线工参资源关联天线是否在天线表中不存在%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''天线工参资源关联天线是否在天线表中不存在''
-                                             else dims_col_rtName||'',天线工参资源关联天线是否在天线表中不存在'' end)
-                 where isNotNull(t1.related_antenna) and not exists(select 1 from ANTENNA t2 where t2.int_id=t1.related_antenna)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000019,1,null),
-(901003183,'扼流圈天线资源所属铁塔是否在所属铁塔表中不存在','wireless-3-35',335,901000010, '无线',11, null,null,2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000010,1,null),
-(901003184,'扼流圈天线资源所属RTK基准站是否在所属RTK基准站表中不存在','wireless-3-36',336,901000010, '无线',11, null,null,2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000010,1,null),
-(901003185,'BTS基站下无小区','wireless-3-37-0',337,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-37-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-37-0''
-                                             else dims_col_result||'',wireless-3-37-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BTS基站下无小区%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''BTS基站下无小区''
-                                             else dims_col_rtName||'',BTS基站下无小区'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from CELL t2 where isNotNull(t2.related_bs) and t2.related_bs=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003186,'ENODEB基站下无小区','wireless-3-37-1',338,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-37-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-37-1''
-                                             else dims_col_result||'',wireless-3-37-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ENODEB基站下无小区%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''ENODEB基站下无小区''
-                                             else dims_col_rtName||'',ENODEB基站下无小区'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from EUTRANCELL t2 where isNotNull(t2.related_bs) and t2.related_bs=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003187,'GNODEB基站下无小区','wireless-3-37-2',339,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-37-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-37-2''
-                                             else dims_col_result||'',wireless-3-37-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%GNODEB基站下无小区%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''GNODEB基站下无小区''
-                                             else dims_col_rtName||'',GNODEB基站下无小区'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from NRCELL t2 where isNotNull(t2.related_bs) and t2.related_bs=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003188,'小区下无天线','wireless-3-38',340,901000018, '无线',11, null,null,2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1,null),
-(901003189,'CELL小区下无天线工参','wireless-3-39-0',341,901000007, '无线',11, null,'update CELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-39-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-39-0''
-                                             else dims_col_result||'',wireless-3-39-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CELL小区下无天线工参%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''CELL小区下无天线工参''
-                                             else dims_col_rtName||'',CELL小区下无天线工参'' end)
-                where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000007,1,null),
-(901003190,'EUTRANCELL小区下无天线工参','wireless-3-39-1',342,901000008, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-39-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-39-1''
-                                             else dims_col_result||'',wireless-3-39-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%EUTRANCELL小区下无天线工参%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''EUTRANCELL小区下无天线工参''
-                                             else dims_col_rtName||'',EUTRANCELL小区下无天线工参'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000008,1,null),
-(901003191,'NRCELL小区下无天线工参','wireless-3-39-2',343,901000009, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-39-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-39-2''
-                                             else dims_col_result||'',wireless-3-39-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%NRCELL小区下无天线工参%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''NRCELL小区下无天线工参''
-                                             else dims_col_rtName||'',NRCELL小区下无天线工参'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell=t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000009,1,null),
-(901003192, '2G基站无归属的BBU', 'wireless-3-40-0',344,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-40-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-40-0''
-                                             else dims_col_result||'',wireless-3-40-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%2G基站无归属的BBU%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''2G基站无归属的BBU''
-                                             else dims_col_rtName||'',2G基站无归属的BBU'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003193, '4G基站无归属的BBU', 'wireless-3-40-1',345,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-40-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-40-1''
-                                             else dims_col_result||'',wireless-3-40-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%4G基站无归属的BBU%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''4G基站无归属的BBU''
-                                             else dims_col_rtName||'',4G基站无归属的BBU'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003194, '4G小区下无RRU或AAU', 'wireless-3-41-0',346,901000004, '无线',11, null,'update EUTRANCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-41-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-41-0''
-                                             else dims_col_result||'',wireless-3-41-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%4G小区下无RRU或AAU%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''4G小区下无RRU或AAU''
-                                             else dims_col_rtName||'',4G小区下无RRU或AAU'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003195, '5G小区下无RRU或AAU', 'wireless-3-41-1',347,901000005, '无线',11, null,'update NRCELL t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-41-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-41-1''
-                                             else dims_col_result||'',wireless-3-41-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%5G小区下无RRU或AAU%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''5G小区下无RRU或AAU''
-                                             else dims_col_rtName||'',5G小区下无RRU或AAU'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003196,'2G基站下无板卡','wireless-3-42-0',348,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-42-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-42-0''
-                                             else dims_col_result||'',wireless-3-42-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%2G基站下无板卡%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''2G基站下无板卡''
-                                             else dims_col_rtName||'',2G基站下无板卡'' end)
-                  where isNotNull(t1.int_id) and not exists(select 1 from BOARD t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003197,'4G基站下无板卡','wireless-3-42-1',349,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-40-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-40-1''
-                                             else dims_col_result||'',wireless-3-40-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%4G基站下无板卡%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''4G基站下无板卡''
-                                             else dims_col_rtName||'',4G基站下无板卡'' end)
-                  where isNotNull(t1.int_id) and not exists(select 1 from BOARD t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003198,'5G基站下无板卡','wireless-3-42-2',350,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-40-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-40-2''
-                                             else dims_col_result||'',wireless-3-40-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%5G基站下无板卡%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''5G基站下无板卡''
-                                             else dims_col_rtName||'',5G基站下无板卡'' end)
-                  where isNotNull(t1.int_id) and not exists(select 1 from BOARD t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003199,'5G基站下无DU或BBU','wireless-3-43',351,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-43%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-43''
-                                             else dims_col_result||'',wireless-3-43'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%5G基站下无DU或BBU%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''5G基站下无DU或BBU''
-                                             else dims_col_rtName||'',5G基站下无DU或BBU'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id) and not exists(select 1 from BBU t3 where isNotNull(t3.related_bs) and t3.related_bs~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003200,'铁塔下无天线','wireless-3-44',352,901000020, '无线',11, null,'update TOWER t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-44%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-44''
-                                             else dims_col_result||'',wireless-3-44'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%铁塔下无天线%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''铁塔下无天线''
-                                             else dims_col_rtName||'',铁塔下无天线'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from ANTENNA t2 where isNotNull(t2.related_tower) and t2.related_tower~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000020,1,null),
-(901003201,'天线下无天线工参','wireless-3-45',353,901000018, '无线',11, null,'update ANTENNA t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-45%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-45''
-                                             else dims_col_result||'',wireless-3-45'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%天线下无天线工参%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''天线下无天线工参''
-                                             else dims_col_rtName||'',天线下无天线工参'' end)
-                 where isNotNull(t1.zh_label) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_antenna) and t2.related_antenna~t1.zh_label) ',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000018,1,null),
-(901003202,'2G基站下无端口','wireless-3-46-0',354,901000003, '无线',11, null,'update BTS t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-46-0%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-46-0''
-                                             else dims_col_result||'',wireless-3-46-0'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%2G基站下无端口%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''2G基站下无端口''
-                                             else dims_col_rtName||'',2G基站下无端口'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from PORT t2 where isNotNull(t2.related_ne) and t2.related_ne~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000003,1,null),
-(901003203,'4G基站下无端口','wireless-3-46-1',355,901000004, '无线',11, null,'update ENODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-46-1%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-46-1''
-                                             else dims_col_result||'',wireless-3-46-1'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%4G基站下无端口%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''4G基站下无端口''
-                                             else dims_col_rtName||'',4G基站下无端口'' end)
-                 where isNotNull(t1.int_id) and not exists(select 1 from PORT t2 where isNotNull(t2.related_ne) and t2.related_ne~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000004,1,null),
-(901003204,'5G基站下无端口','wireless-3-46-2',356,901000005, '无线',11, null,'update GNODEB t1
-                   set dims_col_result=(case when dims_col_result like ''%wireless-3-46-2%'' then dims_col_result
-                                             when dims_col_result is null then ''wireless-3-46-2''
-                                             else dims_col_result||'',wireless-3-46-2'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%5G基站下无端口%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''5G基站下无端口''
-                                             else dims_col_rtName||'',5G基站下无端口'' end)
-                  where isNotNull(t1.int_id) and not exists(select 1 from PORT t2 where isNotNull(t2.related_ne) and t2.related_ne~t1.int_id)',1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000005,1,null),
-(901003205,'端口关联电路校验','wireless-3-47',357,901000017, '无线',11, null,null,2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX',901000017,1, null);
-
---资源合规性核查
---insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-
-insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
-(901001000,901099001,901003000, 'admin', 'admin', null),
-(901001001,901099001,901003001, 'admin', 'admin', null),
-(901001002,901099001,901003002, 'admin', 'admin', null),
-(901001003,901099001,901003003, 'admin', 'admin', null),
-(901001004,901099001,901003004, 'admin', 'admin', null),
-(901001005,901099001,901003005, 'admin', 'admin', null),
-(901001006,901099001,901003006, 'admin', 'admin', null),
-(901001007,901099001,901003007, 'admin', 'admin', null),
-(901001008,901099001,901003008, 'admin', 'admin', null),
-(901001009,901099001,901003009, 'admin', 'admin', null),
-(901001010,901099001,901003010, 'admin', 'admin', null),
-(901001011,901099001,901003011, 'admin', 'admin', null),
-(901001012,901099001,901003012, 'admin', 'admin', null),
-(901001013,901099001,901003013, 'admin', 'admin', null),
-(901001014,901099001,901003014, 'admin', 'admin', null),
-(901001015,901099001,901003015, 'admin', 'admin', null),
-(901001016,901099001,901003016, 'admin', 'admin', null),
-(901001017,901099001,901003017, 'admin', 'admin', null),
-(901001018,901099001,901003018, 'admin', 'admin', null),
-(901001019,901099001,901003019, 'admin', 'admin', null),
-(901001020,901099001,901003020, 'admin', 'admin', null),
-(901001021,901099001,901003021, 'admin', 'admin', null),
-(901001022,901099001,901003022, 'admin', 'admin', null),
-(901001023,901099001,901003023, 'admin', 'admin', null),
-(901001024,901099001,901003024, 'admin', 'admin', null),
-(901001025,901099002,901003025, 'admin', 'admin', null),
-(901001026,901099002,901003026, 'admin', 'admin', null),
-(901001027,901099002,901003027, 'admin', 'admin', null),
-(901001028,901099002,901003028, 'admin', 'admin', null),
-(901001029,901099002,901003029, 'admin', 'admin', null),
-(901001030,901099002,901003030, 'admin', 'admin', null),
-(901001031,901099002,901003031, 'admin', 'admin', null),
-(901001032,901099002,901003032, 'admin', 'admin', null),
-(901001033,901099002,901003033, 'admin', 'admin', null),
-(901001034,901099002,901003034, 'admin', 'admin', null),
-(901001035,901099002,901003035, 'admin', 'admin', null),
-(901001036,901099002,901003036, 'admin', 'admin', null),
-(901001037,901099002,901003037, 'admin', 'admin', null),
-(901001038,901099002,901003038, 'admin', 'admin', null),
-(901001039,901099002,901003039, 'admin', 'admin', null),
-(901001040,901099002,901003040, 'admin', 'admin', null),
-(901001041,901099002,901003041, 'admin', 'admin', null),
-(901001042,901099002,901003042, 'admin', 'admin', null),
-(901001043,901099002,901003043, 'admin', 'admin', null),
-(901001044,901099002,901003044, 'admin', 'admin', null),
-(901001045,901099002,901003045, 'admin', 'admin', null),
-(901001046,901099002,901003046, 'admin', 'admin', null),
-(901001047,901099002,901003047, 'admin', 'admin', null),
-(901001048,901099002,901003048, 'admin', 'admin', null),
-(901001049,901099002,901003049, 'admin', 'admin', null),
-(901001050,901099002,901003050, 'admin', 'admin', null),
-(901001051,901099002,901003051, 'admin', 'admin', null),
-(901001052,901099002,901003052, 'admin', 'admin', null),
-(901001053,901099002,901003053, 'admin', 'admin', null),
-(901001054,901099002,901003054, 'admin', 'admin', null),
-(901001055,901099002,901003055, 'admin', 'admin', null),
-(901001056,901099002,901003056, 'admin', 'admin', null),
-(901001057,901099002,901003057, 'admin', 'admin', null),
-(901001058,901099002,901003058, 'admin', 'admin', null),
-(901001059,901099002,901003059, 'admin', 'admin', null),
-(901001060,901099002,901003060, 'admin', 'admin', null),
-(901001061,901099002,901003061, 'admin', 'admin', null),
-(901001062,901099002,901003062, 'admin', 'admin', null),
-(901001063,901099002,901003063, 'admin', 'admin', null),
-(901001064,901099002,901003064, 'admin', 'admin', null),
-(901001065,901099002,901003065, 'admin', 'admin', null),
-(901001066,901099002,901003066, 'admin', 'admin', null),
-(901001067,901099002,901003067, 'admin', 'admin', null),
-(901001068,901099002,901003068, 'admin', 'admin', null),
-(901001069,901099002,901003069, 'admin', 'admin', null),
-(901001070,901099002,901003070, 'admin', 'admin', null),
-(901001071,901099002,901003071, 'admin', 'admin', null),
-(901001072,901099002,901003072, 'admin', 'admin', null),
-(901001073,901099002,901003073, 'admin', 'admin', null),
-(901001074,901099002,901003074, 'admin', 'admin', null),
-(901001075,901099002,901003075, 'admin', 'admin', null),
-(901001076,901099002,901003076, 'admin', 'admin', null),
-(901001077,901099002,901003077, 'admin', 'admin', null),
-(901001078,901099002,901003078, 'admin', 'admin', null),
-(901001079,901099002,901003079, 'admin', 'admin', null),
-(901001080,901099002,901003080, 'admin', 'admin', null),
-(901001081,901099002,901003081, 'admin', 'admin', null),
-(901001082,901099002,901003082, 'admin', 'admin', null),
-(901001083,901099002,901003083, 'admin', 'admin', null),
-(901001084,901099002,901003084, 'admin', 'admin', null),
-(901001085,901099002,901003085, 'admin', 'admin', null),
-(901001086,901099002,901003086, 'admin', 'admin', null),
-(901001087,901099002,901003087, 'admin', 'admin', null),
-(901001088,901099002,901003088, 'admin', 'admin', null),
-(901001089,901099002,901003089, 'admin', 'admin', null),
-(901001090,901099002,901003090, 'admin', 'admin', null),
-(901001091,901099002,901003091, 'admin', 'admin', null),
-(901001092,901099002,901003092, 'admin', 'admin', null),
-(901001093,901099002,901003093, 'admin', 'admin', null),
-(901001094,901099002,901003094, 'admin', 'admin', null),
-(901001095,901099002,901003095, 'admin', 'admin', null),
-(901001096,901099002,901003096, 'admin', 'admin', null),
-(901001097,901099002,901003097, 'admin', 'admin', null),
-(901001098,901099002,901003098, 'admin', 'admin', null),
-(901001099,901099002,901003099, 'admin', 'admin', null),
-(901001100,901099002,901003100, 'admin', 'admin', null),
-(901001101,901099002,901003101, 'admin', 'admin', null),
-(901001102,901099002,901003102, 'admin', 'admin', null),
-(901001103,901099002,901003103, 'admin', 'admin', null),
-(901001104,901099002,901003104, 'admin', 'admin', null),
-(901001105,901099002,901003105, 'admin', 'admin', null),
-(901001106,901099002,901003106, 'admin', 'admin', null),
-(901001107,901099002,901003107, 'admin', 'admin', null),
-(901001108,901099002,901003108, 'admin', 'admin', null),
-(901001109,901099002,901003109, 'admin', 'admin', null),
-(901001110,901099002,901003110, 'admin', 'admin', null),
-(901001111,901099002,901003111, 'admin', 'admin', null),
-(901001112,901099002,901003112, 'admin', 'admin', null),
-(901001113,901099002,901003113, 'admin', 'admin', null),
-(901001114,901099002,901003114, 'admin', 'admin', null),
-(901001115,901099002,901003115, 'admin', 'admin', null),
-(901001116,901099002,901003116, 'admin', 'admin', null),
-(901001117,901099002,901003117, 'admin', 'admin', null),
-(901001118,901099002,901003118, 'admin', 'admin', null),
-(901001119,901099002,901003119, 'admin', 'admin', null),
-(901001120,901099002,901003120, 'admin', 'admin', null),
-(901001121,901099002,901003121, 'admin', 'admin', null),
-(901001122,901099002,901003122, 'admin', 'admin', null),
-(901001123,901099002,901003123, 'admin', 'admin', null),
-(901001124,901099002,901003124, 'admin', 'admin', null),
-(901001125,901099002,901003125, 'admin', 'admin', null),
-(901001126,901099002,901003126, 'admin', 'admin', null),
-(901001127,901099002,901003127, 'admin', 'admin', null),
-(901001128,901099002,901003128, 'admin', 'admin', null),
-(901001129,901099002,901003129, 'admin', 'admin', null),
-(901001130,901099002,901003130, 'admin', 'admin', null),
-(901001131,901099002,901003131, 'admin', 'admin', null),
-(901001132,901099002,901003132, 'admin', 'admin', null),
-(901001133,901099002,901003133, 'admin', 'admin', null),
-(901001134,901099002,901003134, 'admin', 'admin', null),
-(901001135,901099002,901003135, 'admin', 'admin', null),
-(901001136,901099002,901003136, 'admin', 'admin', null),
-(901001137,901099002,901003137, 'admin', 'admin', null),
-(901001138,901099002,901003138, 'admin', 'admin', null),
-(901001139,901099002,901003139, 'admin', 'admin', null),
-(901001140,901099002,901003140, 'admin', 'admin', null),
-(901001141,901099002,901003141, 'admin', 'admin', null),
-(901001142,901099002,901003142, 'admin', 'admin', null),
-(901001143,901099002,901003143, 'admin', 'admin', null),
-(901001144,901099002,901003144, 'admin', 'admin', null),
-(901001145,901099002,901003145, 'admin', 'admin', null),
-(901001146,901099002,901003146, 'admin', 'admin', null),
-(901001147,901099002,901003147, 'admin', 'admin', null),
-(901001148,901099002,901003148, 'admin', 'admin', null),
-(901001149,901099003,901003149, 'admin', 'admin', null),
-(901001150,901099003,901003150, 'admin', 'admin', null),
-(901001151,901099003,901003151, 'admin', 'admin', null),
-(901001152,901099003,901003152, 'admin', 'admin', null),
-(901001153,901099003,901003153, 'admin', 'admin', null),
-(901001154,901099003,901003154, 'admin', 'admin', null),
-(901001155,901099003,901003155, 'admin', 'admin', null),
-(901001156,901099003,901003156, 'admin', 'admin', null),
-(901001157,901099003,901003157, 'admin', 'admin', null),
-(901001158,901099003,901003158, 'admin', 'admin', null),
-(901001159,901099003,901003159, 'admin', 'admin', null),
-(901001160,901099003,901003160, 'admin', 'admin', null),
-(901001161,901099003,901003161, 'admin', 'admin', null),
-(901001162,901099003,901003162, 'admin', 'admin', null),
-(901001163,901099003,901003163, 'admin', 'admin', null),
-(901001164,901099003,901003164, 'admin', 'admin', null),
-(901001165,901099003,901003165, 'admin', 'admin', null),
-(901001166,901099003,901003166, 'admin', 'admin', null),
-(901001167,901099003,901003167, 'admin', 'admin', null),
-(901001168,901099003,901003168, 'admin', 'admin', null),
-(901001169,901099003,901003169, 'admin', 'admin', null),
-(901001170,901099003,901003170, 'admin', 'admin', null),
-(901001171,901099003,901003171, 'admin', 'admin', null),
-(901001172,901099003,901003172, 'admin', 'admin', null),
-(901001173,901099003,901003173, 'admin', 'admin', null),
-(901001174,901099003,901003174, 'admin', 'admin', null),
-(901001175,901099003,901003175, 'admin', 'admin', null),
-(901001176,901099003,901003176, 'admin', 'admin', null),
-(901001177,901099003,901003177, 'admin', 'admin', null),
-(901001178,901099003,901003178, 'admin', 'admin', null),
-(901001179,901099003,901003179, 'admin', 'admin', null),
-(901001180,901099003,901003180, 'admin', 'admin', null),
-(901001181,901099003,901003181, 'admin', 'admin', null),
-(901001182,901099003,901003182, 'admin', 'admin', null),
-(901001183,901099003,901003183, 'admin', 'admin', null),
-(901001184,901099003,901003184, 'admin', 'admin', null),
-(901001185,901099003,901003185, 'admin', 'admin', null),
-(901001186,901099003,901003186, 'admin', 'admin', null),
-(901001187,901099003,901003187, 'admin', 'admin', null),
-(901001188,901099003,901003188, 'admin', 'admin', null),
-(901001189,901099003,901003189, 'admin', 'admin', null),
-(901001190,901099003,901003190, 'admin', 'admin', null),
-(901001191,901099003,901003191, 'admin', 'admin', null),
-(901001192,901099003,901003192, 'admin', 'admin', null),
-(901001193,901099003,901003193, 'admin', 'admin', null),
-(901001194,901099003,901003194, 'admin', 'admin', null),
-(901001195,901099003,901003195, 'admin', 'admin', null),
-(901001196,901099003,901003196, 'admin', 'admin', null),
-(901001197,901099003,901003197, 'admin', 'admin', null),
-(901001198,901099003,901003198, 'admin', 'admin', null),
-(901001199,901099003,901003199, 'admin', 'admin', null),
-(901001200,901099003,901003200, 'admin', 'admin', null),
-(901001201,901099003,901003201, 'admin', 'admin', null),
-(901001202,901099003,901003202, 'admin', 'admin', null),
-(901001203,901099003,901003203, 'admin', 'admin', null),
-(901001204,901099003,901003204, 'admin', 'admin', null),
-(901001205,901099003,901003205, 'admin', 'admin', null),
-(901001206,901099999,901099001, 'admin', 'admin', null),
-(901001207,901099999,901099002, 'admin', 'admin', null),
-(901001208,901099999,901099003, 'admin', 'admin', null);
---(901001209,901099999,901003004, 'admin', 'admin', null);
-
-insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
---values (901000631, 'RRU必填字段完整性.网管中网元名称', 'WL_RRU.omc_name', 901000596, 901003010, 2, null, null, 'admin', 'admin', null),
-(901002000,'铁塔必填字段维护完整率核查.铁塔名称','TOWER.zh_label',901003020,901000890,2, null, null, 'admin', 'admin', null),
-(901002001,'铁塔必填字段维护完整率核查.铁塔类型','TOWER.tower_type',901003020,901000895,2, null, null, 'admin', 'admin', null),
-(901002002,'铁塔必填字段维护完整率核查.铁塔塔身高度','TOWER.tower_stature',901003020,901000891,2, null, null, 'admin', 'admin', null),
-(901002003,'铁塔必填字段维护完整率核查.铁塔平台数量','TOWER.tower_platnum',901003020,901000892,2, null, null, 'admin', 'admin', null),
-(901002004,'铁塔必填字段维护完整率核查.共享单位','TOWER.share_unit',901003020,901000898,2, null, null, 'admin', 'admin', null),
-(901002005,'铁塔必填字段维护完整率核查.入网时间','TOWER.setup_time',901003020,901000899,2, null, null, 'admin', 'admin', null),
-(901002006,'铁塔必填字段维护完整率核查.所属机房/位置点','TOWER.related_room_location',901003020,901000894,2, null, null, 'admin', 'admin', null),
-(901002007,'铁塔必填字段维护完整率核查.产权单位','TOWER.property_unit',901003020,901000897,2, null, null, 'admin', 'admin', null),
-(901002008,'铁塔必填字段维护完整率核查.产权性质','TOWER.property_right',901003020,901000896,2, null, null, 'admin', 'admin', null),
-(901002009,'铁塔必填字段维护完整率核查.铁塔产品种类','TOWER.production_type',901003020,901000900,2, null, null, 'admin', 'admin', null),
-(901002010,'铁塔必填字段维护完整率核查.资源标识','TOWER.int_id',901003020,901000889,2, null, null, 'admin', 'admin', null),
-(901002011,'分布系统必填字段维护完整率核查.分布系统名称','SPEARD.zh_label',901003015,901000924,2, null, null, 'admin', 'admin', null),
-(901002012,'分布系统必填字段维护完整率核查.干放数量','SPEARD.trunk_amplifier_num',901003015,901000928,2, null, null, 'admin', 'admin', null),
-(901002013,'分布系统必填字段维护完整率核查.所属位置点','SPEARD.related_location',901003015,901000926,2, null, null, 'admin', 'admin', null),
-(901002014,'分布系统必填字段维护完整率核查.信源小区','SPEARD.related_cell',901003015,901000930,2, null, null, 'admin', 'admin', null),
-(901002015,'分布系统必填字段维护完整率核查.关联基站','SPEARD.related_bs',901003015,901000929,2, null, null, 'admin', 'admin', null),
-(901002016,'分布系统必填字段维护完整率核查.无源器件厂家','SPEARD.passive_device_vendor',901003015,901000931,2, null, null, 'admin', 'admin', null),
-(901002017,'分布系统必填字段维护完整率核查.集成厂家','SPEARD.integrated_vendor',901003015,901000925,2, null, null, 'admin', 'admin', null),
-(901002018,'分布系统必填字段维护完整率核查.资源标识','SPEARD.int_id',901003015,901000923,2, null, null, 'admin', 'admin', null),
-(901002019,'分布系统必填字段维护完整率核查.馈线厂家','SPEARD.feeder_vendor',901003015,901000932,2, null, null, 'admin', 'admin', null),
-(901002020,'分布系统必填字段维护完整率核查.天线厂家','SPEARD.antenna_vendor_id',901003015,901000933,2, null, null, 'admin', 'admin', null),
-(901002021,'分布系统必填字段维护完整率核查.天线数量','SPEARD.antenna_num',901003015,901000927,2, null, null, 'admin', 'admin', null),
-(901002022,'RTK基准站必填字段维护完整率核查.RTK基准站名称','RTK.zh_label',901003004,901000704,2, null, null, 'admin', 'admin', null),
-(901002023,'RTK基准站必填字段维护完整率核查.设备厂家','RTK.vendor_id',901003004,901000702,2, null, null, 'admin', 'admin', null),
-(901002024,'RTK基准站必填字段维护完整率核查.网管中网元名称','RTK.userlabel',901003004,901000694,2, null, null, 'admin', 'admin', null),
-(901002025,'RTK基准站必填字段维护完整率核查.软件版本','RTK.software_version',901003004,901000697,2, null, null, 'admin', 'admin', null),
-(901002026,'RTK基准站必填字段维护完整率核查.入网时间','RTK.setup_time',901003004,901000699,2, null, null, 'admin', 'admin', null),
-(901002027,'RTK基准站必填字段维护完整率核查.所属机房/位置点','RTK.related_room_location',901003004,901000696,2, null, null, 'admin', 'admin', null),
-(901002028,'RTK基准站必填字段维护完整率核查.数据质量责任人（移动）','RTK.qualitor',901003004,901000700,2, null, null, 'admin', 'admin', null),
-(901002029,'RTK基准站必填字段维护完整率核查.设备型号','RTK.product_name',901003004,901000703,2, null, null, 'admin', 'admin', null),
-(901002030,'RTK基准站必填字段维护完整率核查.安装方式','RTK.place_type',901003004,901000693,2, null, null, 'admin', 'admin', null),
-(901002031,'RTK基准站必填字段维护完整率核查.一线数据维护人（代维/一线）','RTK.maintainor',901003004,901000701,2, null, null, 'admin', 'admin', null),
-(901002032,'RTK基准站必填字段维护完整率核查.安装位置类型','RTK.location_type',901003004,901000695,2, null, null, 'admin', 'admin', null),
-(901002033,'RTK基准站必填字段维护完整率核查.生命周期状态','RTK.lifecycle_status',901003004,901000698,2, null, null, 'admin', 'admin', null),
-(901002034,'RTK基准站必填字段维护完整率核查.资源标识','RTK.int_id',901003004,901000691,2, null, null, 'admin', 'admin', null),
-(901002035,'RTK基准站必填字段维护完整率核查.设备序列号','RTK.device_sn',901003004,901000705,2, null, null, 'admin', 'admin', null),
-(901002036,'RTK基准站必填字段维护完整率核查.RTK-CORS ID','RTK.cors_id',901003004,901000692,2, null, null, 'admin', 'admin', null),
-(901002037,'RRU必填字段维护完整率核查.网管中网元名称','RRU.zh_label',901003009,901000798,2, null, null, 'admin', 'admin', null),
-(901002038,'RRU必填字段维护完整率核查.所属机房/位置点','RRU.related_room_location',901003009,901000800,2, null, null, 'admin', 'admin', null),
-(901002039,'RRU必填字段维护完整率核查.关联小区','RRU.related_cell',901003009,901000802,2, null, null, 'admin', 'admin', null),
-(901002040,'RRU必填字段维护完整率核查.额定功率','RRU.rated_power',901003009,901000803,2, null, null, 'admin', 'admin', null),
-(901002041,'RRU必填字段维护完整率核查.RRU设备型号','RRU.product_name',901003009,901000806,2, null, null, 'admin', 'admin', null),
-(901002042,'RRU必填字段维护完整率核查.资源标识','RRU.int_id',901003009,901000797,2, null, null, 'admin', 'admin', null),
-(901002043,'RRU必填字段维护完整率核查.接入方式','RRU.connect_model',901003009,901000804,2, null, null, 'admin', 'admin', null),
-(901002044,'直放站必填字段维护完整率核查.直放站名称','RPT.zh_label',901003016,901000906,2, null, null, 'admin', 'admin', null),
-(901002045,'直放站必填字段维护完整率核查.设备厂家','RPT.vendor_id',901003016,901000907,2, null, null, 'admin', 'admin', null),
-(901002046,'直放站必填字段维护完整率核查.信号接收方式','RPT.signal_receive_type',901003016,901000908,2, null, null, 'admin', 'admin', null),
-(901002047,'直放站必填字段维护完整率核查.直放站类型','RPT.repeater_type',901003016,901000916,2, null, null, 'admin', 'admin', null),
-(901002048,'直放站必填字段维护完整率核查.所属机房/位置点','RPT.related_room_location',901003016,901000911,2, null, null, 'admin', 'admin', null),
-(901002049,'直放站必填字段维护完整率核查.信源小区','RPT.related_cell',901003016,901000918,2, null, null, 'admin', 'admin', null),
-(901002050,'直放站必填字段维护完整率核查.额定功率','RPT.rated_power',901003016,901000919,2, null, null, 'admin', 'admin', null),
-(901002051,'直放站必填字段维护完整率核查.数据质量责任人（移动）','RPT.qualitor',901003016,901000914,2, null, null, 'admin', 'admin', null),
-(901002052,'直放站必填字段维护完整率核查.供电方式','RPT.power_supply_type',901003016,901000909,2, null, null, 'admin', 'admin', null),
-(901002053,'直放站必填字段维护完整率核查.一线数据维护人（代维/一线）','RPT.maintainor',901003016,901000915,2, null, null, 'admin', 'admin', null),
-(901002054,'直放站必填字段维护完整率核查.生命周期状态','RPT.lifecycle_status',901003016,901000913,2, null, null, 'admin', 'admin', null),
-(901002055,'直放站必填字段维护完整率核查.资源标识','RPT.int_id',901003016,901000905,2, null, null, 'admin', 'admin', null),
-(901002056,'直放站必填字段维护完整率核查.覆盖类型','RPT.beehive_type',901003016,901000917,2, null, null, 'admin', 'admin', null),
-(901002057,'端口必填字段维护完整率核查.所属网元','PORT.related_ne',901003014,901000861,2, null, null, 'admin', 'admin', null),
-(901002058,'端口必填字段维护完整率核查.端口状态','PORT.port_status',901003014,901000859,2, null, null, 'admin', 'admin', null),
-(901002059,'端口必填字段维护完整率核查.端口编号','PORT.port_no',901003014,901000855,2, null, null, 'admin', 'admin', null),
-(901002060,'端口必填字段维护完整率核查.资源标识','PORT.int_id',901003014,901000854,2, null, null, 'admin', 'admin', null),
-(901002061,'扩展型皮站交换机必填字段维护完整率核查.交换机名称','PICOSWITCH.zh_label',901003022,901000960,2, null, null, 'admin', 'admin', null),
-(901002062,'扩展型皮站交换机必填字段维护完整率核查.设备厂家','PICOSWITCH.vendor_id',901003022,901000965,2, null, null, 'admin', 'admin', null),
-(901002063,'扩展型皮站交换机必填字段维护完整率核查.额定功率','PICOSWITCH.rated_pawer',901003022,901000963,2, null, null, 'admin', 'admin', null),
-(901002064,'扩展型皮站交换机必填字段维护完整率核查.设备型号','PICOSWITCH.product_name',901003022,901000966,2, null, null, 'admin', 'admin', null),
-(901002065,'扩展型皮站交换机必填字段维护完整率核查.资源标识','PICOSWITCH.int_id',901003022,901000959,2, null, null, 'admin', 'admin', null),
-(901002066,'扩展型皮站AU必填字段维护完整率核查.AU名称','PICOAU.zh_label',901003021,901000949,2, null, null, 'admin', 'admin', null),
-(901002067,'扩展型皮站AU必填字段维护完整率核查.设备厂家','PICOAU.vendor_id',901003021,901000954,2, null, null, 'admin', 'admin', null),
-(901002068,'扩展型皮站AU必填字段维护完整率核查.额定功率','PICOAU.rated_pawer',901003021,901000952,2, null, null, 'admin', 'admin', null),
-(901002069,'扩展型皮站AU必填字段维护完整率核查.设备型号','PICOAU.product_name',901003021,901000955,2, null, null, 'admin', 'admin', null),
-(901002070,'扩展型皮站AU必填字段维护完整率核查.资源标识','PICOAU.int_id',901003021,901000948,2, null, null, 'admin', 'admin', null),
-(901002071,'一体化皮站AP必填字段维护完整率核查.AP名称','PICOAP.zh_label',901003023,901000938,2, null, null, 'admin', 'admin', null),
-(901002072,'一体化皮站AP必填字段维护完整率核查.设备厂家','PICOAP.vendor_id',901003023,901000943,2, null, null, 'admin', 'admin', null),
-(901002073,'一体化皮站AP必填字段维护完整率核查.额定功率','PICOAP.rated_pawer',901003023,901000941,2, null, null, 'admin', 'admin', null),
-(901002074,'一体化皮站AP必填字段维护完整率核查.设备型号','PICOAP.product_name',901003023,901000944,2, null, null, 'admin', 'admin', null),
-(901002075,'一体化皮站AP必填字段维护完整率核查.资源标识','PICOAP.int_id',901003023,901000937,2, null, null, 'admin', 'admin', null),
-(901002076,'OMC必填字段维护完整率核查.OMC名称','OMC.zh_label',901003024,901000601,2, null, null, 'admin', 'admin', null),
-(901002077,'OMC必填字段维护完整率核查.设备厂家','OMC.vendor_id',901003024,901000602,2, null, null, 'admin', 'admin', null),
-(901002078,'OMC必填字段维护完整率核查.IP地址','OMC.ip_addr',901003024,901000603,2, null, null, 'admin', 'admin', null),
-(901002079,'OMC必填字段维护完整率核查.资源标识','OMC.int_id',901003024,901000600,2, null, null, 'admin', 'admin', null),
-(901002080,'NR-CELL必填字段维护完整率核查.小区名称','NRCELL.zh_label',901003007,901000756,2, null, null, 'admin', 'admin', null),
-(901002081,'NR-CELL必填字段维护完整率核查.网管中网元名称','NRCELL.userlabel',901003007,901000757,2, null, null, 'admin', 'admin', null),
-(901002082,'NR-CELL必填字段维护完整率核查.TAC','NRCELL.tac',901003007,901000754,2, null, null, 'admin', 'admin', null),
-(901002083,'NR-CELL必填字段维护完整率核查.入网时间','NRCELL.setup_time',901003007,901000762,2, null, null, 'admin', 'admin', null),
-(901002084,'NR-CELL必填字段维护完整率核查.所属机房/位置点','NRCELL.related_room_location',901003007,901000760,2, null, null, 'admin', 'admin', null),
-(901002085,'NR-CELL必填字段维护完整率核查.所属基站','NRCELL.related_bs',901003007,901000758,2, null, null, 'admin', 'admin', null),
-(901002086,'NR-CELL必填字段维护完整率核查.PCI','NRCELL.pci',901003007,901000755,2, null, null, 'admin', 'admin', null),
-(901002087,'NR-CELL必填字段维护完整率核查.网络制式','NRCELL.net_model',901003007,901000763,2, null, null, 'admin', 'admin', null),
-(901002088,'NR-CELL必填字段维护完整率核查.安装位置类型','NRCELL.location_type',901003007,901000759,2, null, null, 'admin', 'admin', null),
-(901002089,'NR-CELL必填字段维护完整率核查.生命周期状态','NRCELL.lifecycle_status',901003007,901000761,2, null, null, 'admin', 'admin', null),
-(901002090,'NR-CELL必填字段维护完整率核查.资源标识','NRCELL.int_id',901003007,901000752,2, null, null, 'admin', 'admin', null),
-(901002091,'NR-CELL必填字段维护完整率核查.是否拉远','NRCELL.if_remote',901003007,901000765,2, null, null, 'admin', 'admin', null),
-(901002092,'NR-CELL必填字段维护完整率核查.使用频段','NRCELL.frequency',901003007,901000764,2, null, null, 'admin', 'admin', null),
-(901002093,'NR-CELL必填字段维护完整率核查.覆盖场景','NRCELL.cover_scene',901003007,901000767,2, null, null, 'admin', 'admin', null),
-(901002094,'NR-CELL必填字段维护完整率核查.覆盖类型','NRCELL.beehive_type',901003007,901000766,2, null, null, 'admin', 'admin', null),
-(901002095,'G-NODEB必填字段维护完整率核查.基站名称','GNODEB.zh_label',901003003,901000671,2, null, null, 'admin', 'admin', null),
-(901002096,'G-NODEB必填字段维护完整率核查.VIP级别','GNODEB.vip_type',901003003,901000681,2, null, null, 'admin', 'admin', null),
-(901002097,'G-NODEB必填字段维护完整率核查.网管中网元名称','GNODEB.userlabel',901003003,901000672,2, null, null, 'admin', 'admin', null),
-(901002098,'G-NODEB必填字段维护完整率核查.软件版本','GNODEB.software_version',901003003,901000678,2, null, null, 'admin', 'admin', null),
-(901002099,'G-NODEB必填字段维护完整率核查.入网时间','GNODEB.setup_time',901003003,901000680,2, null, null, 'admin', 'admin', null),
-(901002100,'G-NODEB必填字段维护完整率核查.所属机房/位置点','GNODEB.related_room_location',901003003,901000675,2, null, null, 'admin', 'admin', null),
-(901002101,'G-NODEB必填字段维护完整率核查.所属OMC','GNODEB.related_omc',901003003,901000673,2, null, null, 'admin', 'admin', null),
-(901002102,'G-NODEB必填字段维护完整率核查.设备厂家','GNODEB.rated_power',901003003,901000676,2, null, null, 'admin', 'admin', null),
-(901002103,'G-NODEB必填字段维护完整率核查.数据质量责任人（移动）','GNODEB.qualitor',901003003,901000686,2, null, null, 'admin', 'admin', null),
-(901002104,'G-NODEB必填字段维护完整率核查.G-NODEB ID','GNODEB.nodeb_id',901003003,901000670,2, null, null, 'admin', 'admin', null),
-(901002105,'G-NODEB必填字段维护完整率核查.网络制式','GNODEB.net_model',901003003,901000682,2, null, null, 'admin', 'admin', null),
-(901002106,'G-NODEB必填字段维护完整率核查.一线数据维护人（代维/一线）','GNODEB.maintainor',901003003,901000687,2, null, null, 'admin', 'admin', null),
-(901002107,'G-NODEB必填字段维护完整率核查.安装位置类型','GNODEB.location_type',901003003,901000674,2, null, null, 'admin', 'admin', null),
-(901002108,'G-NODEB必填字段维护完整率核查.生命周期状态','GNODEB.lifecycle_status',901003003,901000679,2, null, null, 'admin', 'admin', null),
-(901002109,'G-NODEB必填字段维护完整率核查.资源标识','GNODEB.int_id',901003003,901000669,2, null, null, 'admin', 'admin', null),
-(901002110,'G-NODEB必填字段维护完整率核查.设备类型','GNODEB.device_type',901003003,901000683,2, null, null, 'admin', 'admin', null),
-(901002111,'G-NODEB必填字段维护完整率核查.覆盖类型','GNODEB.beehive_type',901003003,901000684,2, null, null, 'admin', 'admin', null),
-(901002112,'E-UTRANCELL必填字段维护完整率核查.小区名称','EUTRANCELL.zh_label',901003006,901000734,2, null, null, 'admin', 'admin', null),
-(901002113,'E-UTRANCELL必填字段维护完整率核查.网管中网元名称','EUTRANCELL.userlabel',901003006,901000735,2, null, null, 'admin', 'admin', null),
-(901002114,'E-UTRANCELL必填字段维护完整率核查.TAC','EUTRANCELL.tac',901003006,901000732,2, null, null, 'admin', 'admin', null),
-(901002115,'E-UTRANCELL必填字段维护完整率核查.入网时间','EUTRANCELL.setup_time',901003006,901000740,2, null, null, 'admin', 'admin', null),
-(901002116,'E-UTRANCELL必填字段维护完整率核查.所属机房/位置点','EUTRANCELL.related_room_location',901003006,901000738,2, null, null, 'admin', 'admin', null),
-(901002117,'E-UTRANCELL必填字段维护完整率核查.所属基站','EUTRANCELL.related_bs',901003006,901000736,2, null, null, 'admin', 'admin', null),
-(901002118,'E-UTRANCELL必填字段维护完整率核查.网络制式','EUTRANCELL.net_model',901003006,901000741,2, null, null, 'admin', 'admin', null),
-(901002119,'E-UTRANCELL必填字段维护完整率核查.安装位置类型','EUTRANCELL.location_type',901003006,901000737,2, null, null, 'admin', 'admin', null),
-(901002120,'E-UTRANCELL必填字段维护完整率核查.生命周期状态','EUTRANCELL.lifecycle_status',901003006,901000739,2, null, null, 'admin', 'admin', null),
-(901002121,'E-UTRANCELL必填字段维护完整率核查.资源标识','EUTRANCELL.int_id',901003006,901000730,2, null, null, 'admin', 'admin', null),
-(901002122,'E-UTRANCELL必填字段维护完整率核查.是否拉远','EUTRANCELL.if_remote',901003006,901000743,2, null, null, 'admin', 'admin', null),
-(901002123,'E-UTRANCELL必填字段维护完整率核查.使用频段','EUTRANCELL.frequency',901003006,901000742,2, null, null, 'admin', 'admin', null),
-(901002124,'E-UTRANCELL必填字段维护完整率核查.E-CGI','EUTRANCELL.e_cgi',901003006,901000731,2, null, null, 'admin', 'admin', null),
-(901002125,'E-UTRANCELL必填字段维护完整率核查.覆盖场景','EUTRANCELL.cover_scene',901003006,901000745,2, null, null, 'admin', 'admin', null),
-(901002126,'E-UTRANCELL必填字段维护完整率核查.覆盖类型','EUTRANCELL.beehive_type',901003006,901000744,2, null, null, 'admin', 'admin', null),
-(901002127,'E-NODEB必填字段维护完整率核查.基站名称','ENODEB.zh_label',901003002,901000647,2, null, null, 'admin', 'admin', null),
-(901002128,'E-NODEB必填字段维护完整率核查.VIP级别','ENODEB.vip_type',901003002,901000657,2, null, null, 'admin', 'admin', null),
-(901002129,'E-NODEB必填字段维护完整率核查.网管中网元名称','ENODEB.userlabel',901003002,901000648,2, null, null, 'admin', 'admin', null),
-(901002130,'E-NODEB必填字段维护完整率核查.软件版本','ENODEB.software_version',901003002,901000654,2, null, null, 'admin', 'admin', null),
-(901002131,'E-NODEB必填字段维护完整率核查.入网时间','ENODEB.setup_time',901003002,901000656,2, null, null, 'admin', 'admin', null),
-(901002132,'E-NODEB必填字段维护完整率核查.所属机房/位置点','ENODEB.related_room_location',901003002,901000651,2, null, null, 'admin', 'admin', null),
-(901002133,'E-NODEB必填字段维护完整率核查.所属OMC','ENODEB.related_omc',901003002,901000649,2, null, null, 'admin', 'admin', null),
-(901002134,'E-NODEB必填字段维护完整率核查.设备厂家','ENODEB.rated_power',901003002,901000652,2, null, null, 'admin', 'admin', null),
-(901002135,'E-NODEB必填字段维护完整率核查.数据质量责任人（移动）','ENODEB.qualitor',901003002,901000664,2, null, null, 'admin', 'admin', null),
-(901002136,'E-NODEB必填字段维护完整率核查.E-NODEB ID','ENODEB.nodeb_id',901003002,901000646,2, null, null, 'admin', 'admin', null),
-(901002137,'E-NODEB必填字段维护完整率核查.网络制式','ENODEB.net_model',901003002,901000658,2, null, null, 'admin', 'admin', null),
-(901002138,'E-NODEB必填字段维护完整率核查.一线数据维护人（代维/一线）','ENODEB.maintainor',901003002,901000665,2, null, null, 'admin', 'admin', null),
-(901002139,'E-NODEB必填字段维护完整率核查.安装位置类型','ENODEB.location_type',901003002,901000650,2, null, null, 'admin', 'admin', null),
-(901002140,'E-NODEB必填字段维护完整率核查.生命周期状态','ENODEB.lifecycle_status',901003002,901000655,2, null, null, 'admin', 'admin', null),
-(901002141,'E-NODEB必填字段维护完整率核查.资源标识','ENODEB.int_id',901003002,901000645,2, null, null, 'admin', 'admin', null),
-(901002142,'E-NODEB必填字段维护完整率核查.设备类型','ENODEB.device_type',901003002,901000659,2, null, null, 'admin', 'admin', null),
-(901002143,'E-NODEB必填字段维护完整率核查.覆盖类型','ENODEB.beehive_type',901003002,901000660,2, null, null, 'admin', 'admin', null),
-(901002144,'DU必填字段维护完整率核查.DU名称','DU.zh_label',901003011,901000811,2, null, null, 'admin', 'admin', null),
-(901002145,'DU必填字段维护完整率核查.所属机房/位置点','DU.related_room_location',901003011,901000818,2, null, null, 'admin', 'admin', null),
-(901002146,'DU必填字段维护完整率核查.所属基站','DU.related_bs',901003011,901000813,2, null, null, 'admin', 'admin', null),
-(901002147,'DU必填字段维护完整率核查.额定功率','DU.rated_power',901003011,901000814,2, null, null, 'admin', 'admin', null),
-(901002148,'DU必填字段维护完整率核查.网络制式','DU.net_model',901003011,901000815,2, null, null, 'admin', 'admin', null),
-(901002149,'DU必填字段维护完整率核查.资源标识','DU.int_id',901003011,901000810,2, null, null, 'admin', 'admin', null),
-(901002150,'CU必填字段维护完整率核查.CU名称','CU.zh_label',901003010,901000823,2, null, null, 'admin', 'admin', null),
-(901002151,'CU必填字段维护完整率核查.所属机房/位置点','CU.related_room_location',901003010,901000828,2, null, null, 'admin', 'admin', null),
-(901002152,'CU必填字段维护完整率核查.额定功率','CU.rated_power',901003010,901000825,2, null, null, 'admin', 'admin', null),
-(901002153,'CU必填字段维护完整率核查.网络制式','CU.net_model',901003010,901000826,2, null, null, 'admin', 'admin', null),
-(901002154,'CU必填字段维护完整率核查.资源标识','CU.int_id',901003010,901000822,2, null, null, 'admin', 'admin', null),
-(901002155,'CELL必填字段维护完整率核查.小区名称','CELL.zh_label',901003005,901000712,2, null, null, 'admin', 'admin', null),
-(901002156,'CELL必填字段维护完整率核查.网管中网元名称','CELL.userlabel',901003005,901000713,2, null, null, 'admin', 'admin', null),
-(901002157,'CELL必填字段维护完整率核查.入网时间','CELL.setup_time',901003005,901000718,2, null, null, 'admin', 'admin', null),
-(901002158,'CELL必填字段维护完整率核查.所属机房/位置点','CELL.related_room_location',901003005,901000716,2, null, null, 'admin', 'admin', null),
-(901002159,'CELL必填字段维护完整率核查.所属基站','CELL.related_bs',901003005,901000714,2, null, null, 'admin', 'admin', null),
-(901002160,'CELL必填字段维护完整率核查.网络制式','CELL.net_model',901003005,901000719,2, null, null, 'admin', 'admin', null),
-(901002161,'CELL必填字段维护完整率核查.安装位置类型','CELL.location_type',901003005,901000715,2, null, null, 'admin', 'admin', null),
-(901002162,'CELL必填字段维护完整率核查.生命周期状态','CELL.lifecycle_status',901003005,901000717,2, null, null, 'admin', 'admin', null),
-(901002163,'CELL必填字段维护完整率核查.位置区码','CELL.lac',901003005,901000711,2, null, null, 'admin', 'admin', null),
-(901002164,'CELL必填字段维护完整率核查.资源标识','CELL.int_id',901003005,901000709,2, null, null, 'admin', 'admin', null),
-(901002165,'CELL必填字段维护完整率核查.是否拉远','CELL.if_remote',901003005,901000721,2, null, null, 'admin', 'admin', null),
-(901002166,'CELL必填字段维护完整率核查.使用频段','CELL.frequency',901003005,901000720,2, null, null, 'admin', 'admin', null),
-(901002167,'CELL必填字段维护完整率核查.覆盖场景','CELL.cover_scene',901003005,901000723,2, null, null, 'admin', 'admin', null),
-(901002168,'CELL必填字段维护完整率核查.小区码 ','CELL.ci',901003005,901000710,2, null, null, 'admin', 'admin', null),
-(901002169,'CELL必填字段维护完整率核查.覆盖类型','CELL.beehive_type',901003005,901000722,2, null, null, 'admin', 'admin', null),
-(901002170,'BTS必填字段维护完整率核查.基站名称','BTS.zh_label',901003001,901000625,2, null, null, 'admin', 'admin', null),
-(901002171,'BTS必填字段维护完整率核查.VIP级别','BTS.vip_type',901003001,901000635,2, null, null, 'admin', 'admin', null),
-(901002172,'BTS必填字段维护完整率核查.设备厂家','BTS.vendor_id',901003001,901000630,2, null, null, 'admin', 'admin', null),
-(901002173,'BTS必填字段维护完整率核查.网管中网元名称','BTS.userlabel',901003001,901000626,2, null, null, 'admin', 'admin', null),
-(901002174,'BTS必填字段维护完整率核查.软件版本','BTS.software_version',901003001,901000632,2, null, null, 'admin', 'admin', null),
-(901002175,'BTS必填字段维护完整率核查.入网时间','BTS.setup_time',901003001,901000634,2, null, null, 'admin', 'admin', null),
-(901002176,'BTS必填字段维护完整率核查.所属机房/位置点','BTS.related_room_location',901003001,901000629,2, null, null, 'admin', 'admin', null),
-(901002177,'BTS必填字段维护完整率核查.数据质量责任人（移动）','BTS.qualitor',901003001,901000640,2, null, null, 'admin', 'admin', null),
-(901002178,'BTS必填字段维护完整率核查.设备型号','BTS.product_name',901003001,901000631,2, null, null, 'admin', 'admin', null),
-(901002179,'BTS必填字段维护完整率核查.网络制式','BTS.net_model',901003001,901000636,2, null, null, 'admin', 'admin', null),
-(901002180,'BTS必填字段维护完整率核查.一线数据维护人（代维/一线）','BTS.maintainor',901003001,901000641,2, null, null, 'admin', 'admin', null),
-(901002181,'BTS必填字段维护完整率核查.安装位置类型','BTS.location_type',901003001,901000628,2, null, null, 'admin', 'admin', null),
-(901002182,'BTS必填字段维护完整率核查.生命周期状态','BTS.lifecycle_status',901003001,901000633,2, null, null, 'admin', 'admin', null),
-(901002183,'BTS必填字段维护完整率核查.资源标识','BTS.int_id',901003001,901000624,2, null, null, 'admin', 'admin', null),
-(901002184,'BTS必填字段维护完整率核查.设备类型','BTS.device_type',901003001,901000637,2, null, null, 'admin', 'admin', null),
-(901002185,'BTS必填字段维护完整率核查.覆盖类型','BTS.beehive_type',901003001,901000638,2, null, null, 'admin', 'admin', null),
-(901002186,'BSC必填字段维护完整率核查.设备厂家','BSC.vendor_id',901003000,901000609,2, null, null, 'admin', 'admin', null),
-(901002187,'BSC必填字段维护完整率核查.网管中网元名称','BSC.userlabel',901003000,901000608,2, null, null, 'admin', 'admin', null),
-(901002188,'BSC必填字段维护完整率核查.软件版本','BSC.software_version',901003000,901000614,2, null, null, 'admin', 'admin', null),
-(901002189,'BSC必填字段维护完整率核查.入网时间','BSC.setup_time',901003000,901000616,2, null, null, 'admin', 'admin', null),
-(901002190,'BSC必填字段维护完整率核查.所属SGSN/MME','BSC.related_mme_sgsn',901003000,901000620,2, null, null, 'admin', 'admin', null),
-(901002191,'BSC必填字段维护完整率核查.所属MGW','BSC.related_mgw',901003000,901000619,2, null, null, 'admin', 'admin', null),
-(901002192,'BSC必填字段维护完整率核查.数据质量责任人（移动）','BSC.qualitor',901003000,901000617,2, null, null, 'admin', 'admin', null),
-(901002193,'BSC必填字段维护完整率核查.设备型号','BSC.product_name',901003000,901000610,2, null, null, 'admin', 'admin', null),
-(901002194,'BSC必填字段维护完整率核查.一线数据维护人（代维/一线）','BSC.maintainor',901003000,901000618,2, null, null, 'admin', 'admin', null),
-(901002195,'BSC必填字段维护完整率核查.本地信令点编码','BSC.local_spc',901003000,901000613,2, null, null, 'admin', 'admin', null),
-(901002196,'BSC必填字段维护完整率核查.生命周期状态','BSC.lifecycle_status',901003000,901000615,2, null, null, 'admin', 'admin', null),
-(901002197,'BSC必填字段维护完整率核查.资源标识','BSC.int_id',901003000,901000607,2, null, null, 'admin', 'admin', null),
-(901002198,'板卡必填字段维护完整率核查.所属网元','BOARD.related_bs',901003013,901000850,2, null, null, 'admin', 'admin', null),
-(901002199,'板卡必填字段维护完整率核查.板卡型号','BOARD.product_name',901003013,901000847,2, null, null, 'admin', 'admin', null),
-(901002200,'板卡必填字段维护完整率核查.资源标识','BOARD.int_id',901003013,901000845,2, null, null, 'admin', 'admin', null),
-(901002201,'板卡必填字段维护完整率核查.板卡功能类型','BOARD.board_function_type',901003013,901000849,2, null, null, 'admin', 'admin', null),
-(901002202,'BBU必填字段维护完整率核查.BBU名称','BBU.zh_label',901003008,901000789,2, null, null, 'admin', 'admin', null),
-(901002203,'BBU必填字段维护完整率核查.所属基站','BBU.related_bs',901003008,901000791,2, null, null, 'admin', 'admin', null),
-(901002204,'BBU必填字段维护完整率核查.额定功率','BBU.rated_power',901003008,901000792,2, null, null, 'admin', 'admin', null),
-(901002205,'BBU必填字段维护完整率核查.网络制式','BBU.net_model',901003008,901000793,2, null, null, 'admin', 'admin', null),
-(901002206,'BBU必填字段维护完整率核查.资源标识','BBU.int_id',901003008,901000788,2, null, null, 'admin', 'admin', null),
-(901002207,'天线工参必填字段维护完整率核查.关联频段','ANTENNAPARA.related_frequency',901003019,901000885,2, null, null, 'admin', 'admin', null),
-(901002208,'天线工参必填字段维护完整率核查.关联小区','ANTENNAPARA.related_cell',901003019,901000881,2, null, null, 'admin', 'admin', null),
-(901002209,'天线工参必填字段维护完整率核查.所属天线','ANTENNAPARA.related_antenna',901003019,901000882,2, null, null, 'admin', 'admin', null),
-(901002210,'天线工参必填字段维护完整率核查.机械下倾角','ANTENNAPARA.machine_cor',901003019,901000884,2, null, null, 'admin', 'admin', null),
-(901002211,'天线工参必填字段维护完整率核查.资源标识','ANTENNAPARA.int_id',901003019,901000879,2, null, null, 'admin', 'admin', null),
-(901002212,'天线工参必填字段维护完整率核查.电下倾角','ANTENNAPARA.ele_bend',901003019,901000883,2, null, null, 'admin', 'admin', null),
-(901002213,'天线工参必填字段维护完整率核查.方位角','ANTENNAPARA.azimuth',901003019,901000880,2, null, null, 'admin', 'admin', null),
-(901002214,'扼流圈天线必填字段维护完整率核查.设备厂家','ANTENNACHOKECOIL.vendor_id',901003018,901000777,2, null, null, 'admin', 'admin', null),
-(901002215,'扼流圈天线必填字段维护完整率核查.天线名称','ANTENNACHOKECOIL.userlabel',901003018,901000775,2, null, null, 'admin', 'admin', null),
-(901002216,'扼流圈天线必填字段维护完整率核查.入网时间','ANTENNACHOKECOIL.setup_time',901003018,901000783,2, null, null, 'admin', 'admin', null),
-(901002217,'扼流圈天线必填字段维护完整率核查.所属RTK基准站','ANTENNACHOKECOIL.rtkcors',901003018,901000776,2, null, null, 'admin', 'admin', null),
-(901002218,'扼流圈天线必填字段维护完整率核查.生命周期状态','ANTENNACHOKECOIL.lifecycle_status',901003018,901000782,2, null, null, 'admin', 'admin', null),
-(901002219,'扼流圈天线必填字段维护完整率核查.资源标识','ANTENNACHOKECOIL.int_id',901003018,901000774,2, null, null, 'admin', 'admin', null),
-(901002220,'扼流圈天线必填字段维护完整率核查.安装方式','ANTENNACHOKECOIL.install_type',901003018,901000784,2, null, null, 'admin', 'admin', null),
-(901002221,'扼流圈天线必填字段维护完整率核查.设备型号','ANTENNACHOKECOIL.device_type',901003018,901000778,2, null, null, 'admin', 'admin', null),
-(901002222,'扼流圈天线必填字段维护完整率核查.设备序列号','ANTENNACHOKECOIL.device_sn',901003018,901000779,2, null, null, 'admin', 'admin', null),
-(901002223,'天线必填字段维护完整率核查.天线名称','ANTENNA.zh_label',901003017,901000866,2, null, null, 'admin', 'admin', null),
-(901002224,'天线必填字段维护完整率核查.设备厂家','ANTENNA.vendor_id',901003017,901000867,2, null, null, 'admin', 'admin', null),
-(901002225,'天线必填字段维护完整率核查.入网时间','ANTENNA.setup_time',901003017,901000872,2, null, null, 'admin', 'admin', null),
-(901002226,'天线必填字段维护完整率核查.所在铁塔平台','ANTENNA.setup_location',901003017,901000870,2, null, null, 'admin', 'admin', null),
-(901002227,'天线必填字段维护完整率核查.所属铁塔','ANTENNA.related_tower',901003017,901000869,2, null, null, 'admin', 'admin', null),
-(901002228,'天线必填字段维护完整率核查.设备型号','ANTENNA.product_name',901003017,901000868,2, null, null, 'admin', 'admin', null),
-(901002229,'天线必填字段维护完整率核查.资源标识','ANTENNA.int_id',901003017,901000865,2, null, null, 'admin', 'admin', null),
-(901002230,'天线必填字段维护完整率核查.是否与AAU一体化','ANTENNA.if_aau',901003017,901000874,2, null, null, 'admin', 'admin', null),
-(901002231,'天线必填字段维护完整率核查.天线挂高','ANTENNA.height',901003017,901000871,2, null, null, 'admin', 'admin', null),
-(901002232,'天线必填字段维护完整率核查.天线类型','ANTENNA.antenna_type',901003017,901000873,2, null, null, 'admin', 'admin', null),
-(901002233,'AAU必填字段维护完整率核查.AAU名称','AAU.zh_label',901003012,901000833,2, null, null, 'admin', 'admin', null),
-(901002234,'AAU必填字段维护完整率核查.所属机房/位置点','AAU.related_room_location',901003012,901000835,2, null, null, 'admin', 'admin', null),
-(901002235,'AAU必填字段维护完整率核查.关联小区','AAU.related_cell',901003012,901000837,2, null, null, 'admin', 'admin', null),
-(901002236,'AAU必填字段维护完整率核查.额定功率','AAU.rated_power',901003012,901000838,2, null, null, 'admin', 'admin', null),
-(901002237,'AAU必填字段维护完整率核查.AAU设备型号','AAU.product_name',901003012,901000841,2, null, null, 'admin', 'admin', null),
-(901002238,'AAU必填字段维护完整率核查.设备详细安装位置','AAU.location',901003012,901000836,2, null, null, 'admin', 'admin', null),
-(901002239,'AAU必填字段维护完整率核查.资源标识','AAU.int_id',901003012,901000832,2, null, null, 'admin', 'admin', null),
-(901002240,'AAU必填字段维护完整率核查.接入方式','AAU.connect_model',901003012,901000839,2, null, null, 'admin', 'admin', null),
-(901002241,'BTS枚举值核查.安装位置类型','BTS.location_type',901003080,901000628,1, null, null, 'admin', 'admin', null),
-(901002242,'BTS枚举值核查.生命周期状态','BTS.lifecycle_status',901003081,901000633,1, null, null, 'admin', 'admin', null),
-(901002243,'BTS枚举值核查.设备类型','BTS.device_type',901003082,901000637,1, null, null, 'admin', 'admin', null),
-(901002244,'BTS枚举值核查.覆盖类型','BTS.beehive_type',901003083,901000638,1, null, null, 'admin', 'admin', null),
-(901002245,'BTS枚举值核查.设备厂家','BTS.vendor_id',901003084,901000630,1, null, null, 'admin', 'admin', null),
-(901002246,'BTS枚举值核查.VIP级别','BTS.vip_type',901003085,901000635,1, null, null, 'admin', 'admin', null),
-(901002247,'E-NODEB枚举值核查.生命周期状态','ENODEB.lifecycle_status',901003086,901000655,1, null, null, 'admin', 'admin', null),
-(901002248,'E-NODEB枚举值核查.设备类型','ENODEB.device_type',901003087,901000659,1, null, null, 'admin', 'admin', null),
-(901002249,'E-NODEB枚举值核查.覆盖类型','ENODEB.beehive_type',901003088,901000660,1, null, null, 'admin', 'admin', null),
-(901002250,'E-NODEB枚举值核查.VIP级别','ENODEB.vip_type',901003089,901000657,1, null, null, 'admin', 'admin', null),
-(901002251,'E-NODEB枚举值核查.设备厂家','ENODEB.rated_power',901003090,901000652,1, null, null, 'admin', 'admin', null),
-(901002252,'E-NODEB枚举值核查.安装位置类型','ENODEB.location_type',901003091,901000650,1, null, null, 'admin', 'admin', null),
-(901002253,'E-NODEB枚举值核查.构建方式','ENODEB.construction_type',901003092,901000663,1, null, null, 'admin', 'admin', null),
-(901002254,'G-NODEB枚举值核查.安装位置类型','GNODEB.location_type',901003093,901000674,1, null, null, 'admin', 'admin', null),
-(901002255,'G-NODEB枚举值核查.生命周期状态','GNODEB.lifecycle_status',901003094,901000679,1, null, null, 'admin', 'admin', null),
-(901002256,'G-NODEB枚举值核查.设备类型','GNODEB.device_type',901003095,901000683,1, null, null, 'admin', 'admin', null),
-(901002257,'G-NODEB枚举值核查.覆盖类型','GNODEB.beehive_type',901003096,901000684,1, null, null, 'admin', 'admin', null),
-(901002258,'G-NODEB枚举值核查.VIP级别','GNODEB.vip_type',901003097,901000681,1, null, null, 'admin', 'admin', null),
-(901002259,'G-NODEB枚举值核查.设备厂家','GNODEB.rated_power',901003098,901000676,1, null, null, 'admin', 'admin', null),
-(901002260,'RTK基准站枚举值核查.安装方式','RTK.place_type',901003099,901000693,1, null, null, 'admin', 'admin', null),
-(901002261,'RTK基准站枚举值核查.安装位置类型','RTK.location_type',901003100,901000695,1, null, null, 'admin', 'admin', null),
-(901002262,'RTK基准站枚举值核查.生命周期状态','RTK.lifecycle_status',901003101,901000698,1, null, null, 'admin', 'admin', null),
-(901002263,'RTK基准站枚举值核查.设备厂家','RTK.vendor_id',901003102,901000702,1, null, null, 'admin', 'admin', null),
-(901002264,'CELL枚举值核查.使用频段','CELL.frequency',901003103,901000720,1, null, null, 'admin', 'admin', null),
-(901002265,'CELL枚举值核查.安装位置类型','CELL.location_type',901003104,901000715,1, null, null, 'admin', 'admin', null),
-(901002266,'CELL枚举值核查.生命周期状态','CELL.lifecycle_status',901003105,901000717,1, null, null, 'admin', 'admin', null),
-(901002267,'CELL枚举值核查.覆盖类型','CELL.beehive_type',901003106,901000722,1, null, null, 'admin', 'admin', null),
-(901002268,'CELL枚举值核查.覆盖场景','CELL.cover_scene',901003107,901000723,1, null, null, 'admin', 'admin', null),
-(901002269,'CELL枚举值核查.是否拉远','CELL.if_remote',901003108,901000721,1, null, null, 'admin', 'admin', null),
-(901002270,'CELL枚举值核查.网络制式','CELL.net_model',901003109,901000719,1, null, null, 'admin', 'admin', null),
-(901002271,'E-UTRANCELL枚举值核查.使用频段','EUTRANCELL.frequency',901003110,901000742,1, null, null, 'admin', 'admin', null),
-(901002272,'E-UTRANCELL枚举值核查.安装位置类型','EUTRANCELL.location_type',901003111,901000737,1, null, null, 'admin', 'admin', null),
-(901002273,'E-UTRANCELL枚举值核查.生命周期状态','EUTRANCELL.lifecycle_status',901003112,901000739,1, null, null, 'admin', 'admin', null),
-(901002274,'E-UTRANCELL枚举值核查.覆盖类型','EUTRANCELL.beehive_type',901003113,901000744,1, null, null, 'admin', 'admin', null),
-(901002275,'E-UTRANCELL枚举值核查.覆盖场景','EUTRANCELL.cover_scene',901003114,901000745,1, null, null, 'admin', 'admin', null),
-(901002276,'E-UTRANCELL枚举值核查.是否拉远','EUTRANCELL.if_remote',901003115,901000743,1, null, null, 'admin', 'admin', null),
-(901002277,'E-UTRANCELL枚举值核查.网络制式','EUTRANCELL.net_model',901003116,901000741,1, null, null, 'admin', 'admin', null),
-(901002278,'NR-CELL枚举值核查.使用频段','NRCELL.frequency',901003117,901000764,1, null, null, 'admin', 'admin', null),
-(901002279,'NR-CELL枚举值核查.安装位置类型','NRCELL.location_type',901003118,901000759,1, null, null, 'admin', 'admin', null),
-(901002280,'NR-CELL枚举值核查.生命周期状态','NRCELL.lifecycle_status',901003119,901000761,1, null, null, 'admin', 'admin', null),
-(901002281,'NR-CELL枚举值核查.覆盖类型','NRCELL.beehive_type',901003120,901000766,1, null, null, 'admin', 'admin', null),
-(901002282,'NR-CELL枚举值核查.覆盖场景','NRCELL.cover_scene',901003121,901000767,1, null, null, 'admin', 'admin', null),
-(901002283,'NR-CELL枚举值核查.是否拉远','NRCELL.if_remote',901003122,901000765,1, null, null, 'admin', 'admin', null),
-(901002284,'NR-CELL枚举值核查.网络制式','NRCELL.net_model',901003123,901000763,1, null, null, 'admin', 'admin', null),
-(901002285,'RRU枚举值核查.设备型号','RRU.product_name',901003124,901000806,1, null, null, 'admin', 'admin', null),
-(901002286,'AAU枚举值核查.设备型号','AAU.product_name',901003125,901000841,1, null, null, 'admin', 'admin', null),
-(901002287,'无线板卡枚举值核查.板卡功能类型','BOARD.board_function_type',901003126,901000849,1, null, null, 'admin', 'admin', null),
-(901002288,'无线端口枚举值核查.端口状态','PORT.port_status',901003127,901000859,1, null, null, 'admin', 'admin', null),
-(901002289,'直放站枚举值核查.设备厂家','RPT.vendor_id',901003128,901000907,1, null, null, 'admin', 'admin', null),
-(901002290,'直放站枚举值核查.信号接收方式','RPT.signal_receive_type',901003129,901000908,1, null, null, 'admin', 'admin', null),
-(901002291,'直放站枚举值核查.供电方式','RPT.power_supply_type',901003130,901000909,1, null, null, 'admin', 'admin', null),
-(901002292,'直放站枚举值核查.生命周期状态','RPT.lifecycle_status',901003131,901000913,1, null, null, 'admin', 'admin', null),
-(901002293,'直放站枚举值核查.直放站类型','RPT.repeater_type',901003132,901000916,1, null, null, 'admin', 'admin', null),
-(901002294,'直放站枚举值核查.覆盖类型','RPT.beehive_type',901003133,901000917,1, null, null, 'admin', 'admin', null),
-(901002295,'天线枚举值核查.设备厂家','ANTENNA.vendor_id',901003134,901000867,1, null, null, 'admin', 'admin', null),
-(901002296,'天线枚举值核查.天线类型','ANTENNA.antenna_type',901003135,901000873,1, null, null, 'admin', 'admin', null),
-(901002297,'天线枚举值核查.是否与AAU一体化','ANTENNA.if_aau',901003136,901000874,1, null, null, 'admin', 'admin', null),
-(901002298,'扼流圈天线枚举值核查.设备厂家','ANTENNACHOKECOIL.vendor_id',901003137,901000777,1, null, null, 'admin', 'admin', null),
-(901002299,'扼流圈天线枚举值核查.生命周期状态','ANTENNACHOKECOIL.lifecycle_status',901003138,901000782,1, null, null, 'admin', 'admin', null),
-(901002300,'扼流圈天线枚举值核查.安装方式','ANTENNACHOKECOIL.install_type',901003139,901000784,1, null, null, 'admin', 'admin', null),
-(901002301,'铁塔枚举值核查.铁塔类型','TOWER.tower_type',901003140,901000895,1, null, null, 'admin', 'admin', null),
-(901002302,'铁塔枚举值核查.产权性质','TOWER.property_right',901003141,901000896,1, null, null, 'admin', 'admin', null),
-(901002303,'铁塔枚举值核查.产权单位','TOWER.property_unit',901003142,901000897,1, null, null, 'admin', 'admin', null),
-(901002304,'铁塔枚举值核查.共享单位','TOWER.share_unit',901003143,901000898,1, null, null, 'admin', 'admin', null),
-(901002305,'铁塔枚举值核查.铁塔产品种类','TOWER.production_type',901003144,901000900,1, null, null, 'admin', 'admin', null),
-(901002306,'扩展型皮站AU枚举值核查.设备厂家','PICOAU.vendor_id',901003145,901000954,1, null, null, 'admin', 'admin', null),
-(901002307,'扩展型皮站交换机枚举值核查.设备厂家','PICOSWITCH.vendor_id',901003146,901000965,1, null, null, 'admin', 'admin', null),
-(901002308,'一体化皮站AP枚举值核查.设备厂家','PICOAP.vendor_id',901003147,901000943,1, null, null, 'admin', 'admin', null),
-(901002309,'OMC枚举值核查.设备厂家','OMC.vendor_id',901003148,901000602,1, null, null, 'admin', 'admin', null);
-
 -- 承载网整体指标
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(905099001, '承载网数据完整性指标', 'bearer01r99001', 99001, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(905099002, '承载网数据规范性指标', 'bearer02r99002', 99002, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(905099003, '承载网数据关联性指标', 'bearer03r99003', 99003, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(905099999, '承载网数据整体指标', 'bearer05r99999', 99999, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+(905099001, '承载网数据完整性指标', 'DIMS_CZ_99001', 99001, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099002, '承载网数据规范性指标', 'DIMS_CZ_99002', 99002, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099003, '承载网数据关联性指标', 'DIMS_CZ_99003', 99003, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(905099999, '承载网数据整体指标', 'DIMS_CZ_99999', 99999, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
 
 -- 承载网完整性核查
  INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "version", "createdate", "creator", "updatedate", "updater", "procname", "threadno", "priority", "memo", "ruledesc") VALUES                
@@ -6933,21 +4622,8 @@ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id",
  (905002104, '承载网-设备规范性核查-网络层次-字典规范性核查', 'network_level', 905003107, 905000615, 1, NULL, '网络层次network_level', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
  (905002105, '承载网-物理端口规范性核查-端口速率-字典规范性核查', 'port_rate', 905003112, 905000642, 1, NULL, '端口速率port_rate', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
  (905002106, '承载网-物理端口规范性核查-端口状态-字典规范性核查', 'port_status', 905003113, 905000645, 1, NULL, '端口状态port_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002107, '承载网-物理端口规范性核查-端口类型-字典规范性核查', 'port_type', 905003114, 905000646, 1, NULL, '端口类型port_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002108, '承载网-IPv4地址规范性核查-业务状态-字典规范性核查', 'business_status', 905003124, 905000692, 1, NULL, '业务状态business_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002109, '承载网-IPv4地址段规范性核查-所属业务系统-字典规范性核查', 'business_system', 905003127, 905000701, 1, NULL, '所属业务系统business_system', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002110, '承载网-IPv4地址段规范性核查-地址段用途描述-字典规范性核查', 'usage_description', 905003128, 905000703, 1, NULL, '地址段用途描述usage_description', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002111, '承载网-IPv4地址段规范性核查-业务状态-字典规范性核查', 'business_status', 905003129, 905000704, 1, NULL, '业务状态business_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002112, '承载网-IPv4地址段规范性核查-地址段类型-字典规范性核查', 'address_type', 905003130, 905000705, 1, NULL, '地址段类型address_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002113, '承载网-IPv6地址规范性核查-业务状态-字典规范性核查', 'business_status', 905003134, 905000714, 1, NULL, '业务状态business_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002114, '承载网-IPv6地址规范性核查-地址归属业务系统-字典规范性核查', 'address_business_system', 905003135, 905000718, 1, NULL, '地址归属业务系统address_business_system', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002115, '承载网-IPv6地址段规范性核查-类型标识-字典规范性核查', 'type_identifier', 905003138, 905000725, 1, NULL, '类型标识type_identifier', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002116, '承载网-IPv6地址段规范性核查-所属网络-字典规范性核查', 'network_type', 905003139, 905000726, 1, NULL, '所属网络network_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002117, '承载网-IPv6地址段规范性核查-划分状态-字典规范性核查', 'partition_state', 905003140, 905000728, 1, NULL, '划分状态partition_state', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002118, '承载网-IPv6地址段规范性核查-业务状态-字典规范性核查', 'business_status', 905003141, 905000729, 1, NULL, '业务状态business_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002119, '承载网-IPv6地址段规范性核查-地址段用途-字典规范性核查', 'ipv6_address_segment_purpose', 905003142, 905000730, 1, NULL, '地址段用途ipv6_address_segment_purpose', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002120, '承载网-IPv6地址段规范性核查-归属业务-字典规范性核查', 'affiliated_business', 905003143, 905000731, 1, NULL, '归属业务affiliated_business', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
- (905002121, '承载网-IPv6地址段规范性核查-地址段用途描述-字典规范性核查', 'usage_description', 905003144, 905000733, 1, NULL, '地址段用途描述usage_description', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL);
+ (905002107, '承载网-物理端口规范性核查-端口类型-字典规范性核查', 'port_type', 905003114, 905000646, 1, NULL, '端口类型port_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL);
+
 
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (905001000, 905099001, 905003000, 'admin', 'admin', null),
@@ -7186,23 +4862,23 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 										  					          else dims_col_result||'',DIMS_JIAKE_02018'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from CE_DEVICE_DMT t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
- (908003118, '家客-分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02019', 2019, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003118, '家客-分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02019', 2019, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱规范性核查-资源标识-唯一性核查''
 			 								else dims_col_rtName||'',家客-分纤箱规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02019%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02019''
 										  			else dims_col_result||'',DIMS_JIAKE_02019'' end)
-							       where isNotNull(t1.int_id) and exists (select 1 from CE_DEVICE_GF t2
+							       where isNotNull(t1.int_id) and exists (select 1 from JIAKE_CE_DEVICE_GF t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
- (908003119, '家客-分纤箱规范性核查-分纤箱名称-唯一性核查', 'DIMS_JIAKE_02020', 2020, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003119, '家客-分纤箱规范性核查-分纤箱名称-唯一性核查', 'DIMS_JIAKE_02020', 2020, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱规范性核查-分纤箱名称-唯一性核查%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱规范性核查-分纤箱名称-唯一性核查''
 			 									 else dims_col_rtName||'',家客-分纤箱规范性核查-分纤箱名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02020%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02020''
 										  			else dims_col_result||'',DIMS_JIAKE_02020'' end)
-							       where isNotNull(t1.zh_label) and exists (select 1 from CE_DEVICE_GF t2
+							       where isNotNull(t1.zh_label) and exists (select 1 from JIAKE_CE_DEVICE_GF t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003120, '家客-分纤箱端子规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02021', 2021, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
@@ -7509,7 +5185,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03035%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03035''
 										  					          else dims_col_result||'',DIMS_JIAKE_03035'' end)	
-							  where isNotNull(t1.up_to_device) and not exists(select 1 from CE_DEVICE_GJ t2 where isNotNull(t2.int_id) and t1.up_to_device=t2.int_id) and not exists(select 1 from CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+							  where isNotNull(t1.up_to_device) and not exists(select 1 from JIAKE_CE_DEVICE_GJ t2 where isNotNull(t2.int_id) and t1.up_to_device=t2.int_id) and not exists(select 1 from JIAKE_CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003235, '家客-分光器关联性核查-上联设备', 'DIMS_JIAKE_03036', 3036, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-上联设备%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-上联设备''
@@ -7606,7 +5282,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03047''
 										  					          else dims_col_result||'',DIMS_JIAKE_03047'' end)		
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
- (908003247, '家客-分纤箱关联性核查-所属省份', 'DIMS_JIAKE_03048', 3048, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003247, '家客-分纤箱关联性核查-所属省份', 'DIMS_JIAKE_03048', 3048, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属省份'' end),
@@ -7614,7 +5290,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03048''
 										  					          else dims_col_result||'',DIMS_JIAKE_03048'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
- (908003248, '家客-分纤箱关联性核查-所属地市', 'DIMS_JIAKE_03049', 3049, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003248, '家客-分纤箱关联性核查-所属地市', 'DIMS_JIAKE_03049', 3049, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属地市%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属地市'' end),
@@ -7622,7 +5298,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03049''
 										  					          else dims_col_result||'',DIMS_JIAKE_03049'' end)	
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
- (908003249, '家客-分纤箱关联性核查-所属区县', 'DIMS_JIAKE_03050', 3050, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003249, '家客-分纤箱关联性核查-所属区县', 'DIMS_JIAKE_03050', 3050, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属区县%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属区县'' end),
@@ -7637,7 +5313,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03051%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03051''
 										  					          else dims_col_result||'',DIMS_JIAKE_03051'' end)		
-							  where isNotNull(t1.related_device) and not exists(select 1 from CE_DEVICE_GF t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
+							  where isNotNull(t1.related_device) and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
  (908003251, '家客-分纤箱端子关联性核查-所属省份', 'DIMS_JIAKE_03052', 3052, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱端子关联性核查-所属省份''
@@ -7720,7 +5396,7 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03061''
 										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)		
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
- (908003261, '家客-分纤箱-分纤箱下无分纤箱端子', 'DIMS_JIAKE_03062', 3062, 908000013, '家客', 11, NULL, 'update CE_DEVICE_GF t1
+ (908003261, '家客-分纤箱-分纤箱下无分纤箱端子', 'DIMS_JIAKE_03062', 3062, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱-分纤箱下无分纤箱端子%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱-分纤箱下无分纤箱端子''
 			 												            else dims_col_rtName||'',家客-分纤箱-分纤箱下无分纤箱端子'' end),
@@ -7831,14 +5507,14 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
   (908002091, '家客-多媒体箱必填完整性核查.所属省份', 'CE_DEVICE_DMT.province_id', 908003011, 908000704, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002092, '家客-多媒体箱必填完整性核查.所属地市', 'CE_DEVICE_DMT.city_id', 908003011, 908000705, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002093, '家客-多媒体箱必填完整性核查.所属区县', 'CE_DEVICE_DMT.county_id', 908003011, 908000706, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002094, '家客-分纤箱必填完整性核查.资源标识', 'CE_DEVICE_GF.int_id', 908003012, 908000707, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002095, '家客-分纤箱必填完整性核查.分纤箱名称', 'CE_DEVICE_GF.zh_label', 908003012, 908000708, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002096, '家客-分纤箱必填完整性核查.箱体内设备类型', 'CE_DEVICE_GF.sub_device_type', 908003012, 908000709, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002097, '家客-分纤箱必填完整性核查.生命周期状态', 'CE_DEVICE_GF.lifecycle_status', 908003012, 908000710, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002098, '家客-分纤箱必填完整性核查.数据质量责任人', 'CE_DEVICE_GF.qualitor', 908003012, 908000711, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002099, '家客-分纤箱必填完整性核查.所属省份', 'CE_DEVICE_GF.province_id', 908003012, 908000712, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002100, '家客-分纤箱必填完整性核查.所属地市', 'CE_DEVICE_GF.city_id', 908003012, 908000713, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
-  (908002101, '家客-分纤箱必填完整性核查.所属区县', 'CE_DEVICE_GF.county_id', 908003012, 908000714, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002094, '家客-分纤箱必填完整性核查.资源标识', 'JIAKE_CE_DEVICE_GF.int_id', 908003012, 908000707, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002095, '家客-分纤箱必填完整性核查.分纤箱名称', 'JIAKE_CE_DEVICE_GF.zh_label', 908003012, 908000708, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002096, '家客-分纤箱必填完整性核查.箱体内设备类型', 'JIAKE_CE_DEVICE_GF.sub_device_type', 908003012, 908000709, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002097, '家客-分纤箱必填完整性核查.生命周期状态', 'JIAKE_CE_DEVICE_GF.lifecycle_status', 908003012, 908000710, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002098, '家客-分纤箱必填完整性核查.数据质量责任人', 'JIAKE_CE_DEVICE_GF.qualitor', 908003012, 908000711, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002099, '家客-分纤箱必填完整性核查.所属省份', 'JIAKE_CE_DEVICE_GF.province_id', 908003012, 908000712, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002100, '家客-分纤箱必填完整性核查.所属地市', 'JIAKE_CE_DEVICE_GF.city_id', 908003012, 908000713, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
+  (908002101, '家客-分纤箱必填完整性核查.所属区县', 'JIAKE_CE_DEVICE_GF.county_id', 908003012, 908000714, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002102, '家客-分纤箱端子必填完整性核查.资源标识', 'CM_GF_PORT.int_id', 908003013, 908000715, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002103, '家客-分纤箱端子必填完整性核查.端子号', 'CM_GF_PORT.port_no', 908003013, 908000716, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002104, '家客-分纤箱端子必填完整性核查.端子状态', 'CM_GF_PORT.port_status', 908003013, 908000717, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
@@ -15491,7 +13167,7 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 --插入传输管线 dims_mm_entitytype
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
 (904001001, '光交接箱', 'CE_DEVICE_GJ', '传输管线', null, 'CE_DEVICE_GJ', null, null, 'admin', 'admin', null),
-(904001002, '光分纤箱', 'CE_DEVICE_GF', '传输管线', null, 'CE_DEVICE_GF', null, null, 'admin', 'admin', null),
+(904001002, '光分纤箱', 'TSGX_CE_DEVICE_GF', '传输管线', null, 'TSGX_CE_DEVICE_GF', null, null, 'admin', 'admin', null),
 (904001003, '光终端盒', 'CE_DEVICE_GB', '传输管线', null, 'CE_DEVICE_GB', null, null, 'admin', 'admin', null),
 (904001004, '分纤接续点（接头）', 'CE_DEVICE_JT', '传输管线', null, 'CE_DEVICE_JT', null, null, 'admin', 'admin', null),
 (904001005, '光端子主表', 'CM_PORT_FIBER', '传输管线', null, 'CM_PORT_FIBER', null, null, 'admin', 'admin', null),
@@ -15537,7 +13213,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (904001316, '分纤点级别', 'fpp_level', 904001001, 'FPP_LEVEL', 'string', 904000078, 'admin', 'admin', null),
 (904001317, '所属市场网格编号', 'market_grid_no', 904001001, 'MARKET_GRID_NO', 'string', null, 'admin', 'admin', null),
 (904001318, '所属流程id', 'process_id', 904001001, 'PROCESS_ID', 'string', null, 'admin', 'admin', null),
---光分纤箱	CE_DEVICE_GF
+--光分纤箱	TSGX_CE_DEVICE_GF
 (904001319, '资源标识', 'resfdn', 904001002, 'RESFDN', 'string', null, 'admin', 'admin', null),
 (904001320, '资源名称', 'zh_label', 904001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (904001321, '生命周期状态', 'lifecycle_status', 904001002, 'LIFECYCLE_STATUS', 'string', 904000006, 'admin', 'admin', null),
@@ -15975,7 +13651,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱关联性核查-所属区县''
 																											 else dims_col_rtName||'',传输管线-光交接箱关联性核查-所属区县'' end)
 													 where isNotNull(t1.county) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.county)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
-(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update CE_DEVICE_GF t1
+(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03004%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03004''
 																											 else dims_col_result||'',DIMS_GX_03004'' end),
@@ -15983,7 +13659,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属省份''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属省份'' end)
 													 where isNotNull(t1.province) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update CE_DEVICE_GF t1
+(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03005''
 																											 else dims_col_result||'',DIMS_GX_03005'' end),
@@ -15991,7 +13667,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属地市''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属地市'' end)
 													 where isNotNull(t1.city) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.city)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update CE_DEVICE_GF t1
+(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03006''
 																											 else dims_col_result||'',DIMS_GX_03006'' end),
@@ -16524,7 +14200,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 
 (904003121, '传输管线-光缆段关联性核查-终点', 'DIMS_GX_03017', 3017, 904001006, '传输管线', 11, NULL, 'update CE_CABLE_SEGMENT t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03017%'' then dims_col_result
@@ -16539,7 +14215,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 (904003122, '传输管线-纤芯关联性核查-所属光缆段', 'DIMS_GX_03024', 3024, 904001007, '传输管线', 11, NULL, 'update CE_CABLE_FIBER t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03024%'' then dims_col_result
 																		 when dims_col_result is null then ''DIMS_GX_03024''
@@ -16612,7 +14288,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
 (904003130, '传输管线-引上段关联性核查-终点', 'DIMS_GX_03057', 3057, 904001017, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_UPSEG t1
@@ -16631,7 +14307,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
 (904003131, '传输管线-杆路段关联性核查-起点', 'DIMS_GX_03061', 3061, 904001018, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_POLESEG t1
@@ -16649,7 +14325,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
 (904003132, '传输管线-杆路段关联性核查-终点', 'DIMS_GX_03062', 3062, 904001018, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_POLESEG t1
@@ -16667,7 +14343,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
 (904003133, '传输管线-直埋段关联性核查-起点', 'DIMS_GX_03066', 3066, 904001019, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_STONESEG t1
@@ -16685,7 +14361,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
 (904003134, '传输管线-直埋段关联性核查-终点', 'DIMS_GX_03067', 3067, 904001019, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_STONESEG t1
@@ -16703,7 +14379,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
 (904003135, '传输管线-挂墙段关联性核查-起点', 'DIMS_GX_03071', 3071, 904001020, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WALLSEG t1
@@ -16721,7 +14397,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
 (904003136, '传输管线-挂墙段关联性核查-终点', 'DIMS_GX_03072', 3072, 904001020, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WALLSEG t1
@@ -16739,7 +14415,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
 (904003137, '传输管线-管道段关联性核查-起点', 'DIMS_GX_03076', 3076, 904001021, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WELLSEG t1
@@ -16757,7 +14433,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
 (904003138, '传输管线-管道段关联性核查-终点', 'DIMS_GX_03077', 3077, 904001021, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WELLSEG t1
@@ -16775,7 +14451,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
 (904003143, '传输管线-光交接箱规范性核查-规格型号-字典规范性核查', 'DIMS_GX_02005', 2005, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
@@ -16797,22 +14473,22 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from CE_DEVICE_GJ t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
 (904003141, '传输管线-光交接箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02003', 2003, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
 (904003142, '传输管线-光交接箱规范性核查-单双面-字典规范性核查', 'DIMS_GX_02004', 2004, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
-(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update CE_DEVICE_GF t1
+(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02006''
 																											 else dims_col_result||'',DIMS_GX_02006'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update CE_DEVICE_GF t1
+													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02007''
 																											 else dims_col_result||'',DIMS_GX_02007'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
 (904003146, '传输管线-光分纤箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02008', 2008, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003147, '传输管线-光分纤箱规范性核查-产权性质-字典规范性核查', 'DIMS_GX_02009', 2009, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003148, '传输管线-光分纤箱规范性核查-产权单位-字典规范性核查', 'DIMS_GX_02010', 2010, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
@@ -17199,7 +14875,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 		
 		
 (904003225, '传输管线-光分纤箱规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02087', 2087, 904001002, '传输管线', 11, null, 
-'update CE_DEVICE_GF t1
+'update TSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02087''
                                              else dims_col_result||'',DIMS_GX_02087'' end),
@@ -17208,7 +14884,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',传输管线-光分纤箱规范性核查-经度-经纬度规范性核查'' end)
                  where  isnotfloat(longitude) or length(substring( longitude from ''\.(.*)''))<5 or substr(reverse(longitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),
 (904003226, '传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查', 'DIMS_GX_02088', 2088, 904001002, '传输管线', 11, null, 
-'update CE_DEVICE_GF t1
+'update TSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02088%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02088''
                                              else dims_col_result||'',DIMS_GX_02088'' end),
@@ -17311,7 +14987,26 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%传输管线-标石规范性核查-纬度-经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:传输管线-标石规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-标石规范性核查-纬度-经纬度规范性核查'' end)
-                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, null);	
+                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, null),
+(904003237, '传输管线-光缆段的纤芯数与实际的纤芯数量一致性', 'DIMS_GX_04005', 4005, 904001006, '传输管线', 11, null,
+'update CE_CABLE_SEGMENT t1
+                   set dims_col_result=(case when dims_col_result like ''%DIMS_GX_04005%'' then dims_col_result
+                                             when dims_col_result is null then ''DIMS_GX_04005''
+                                             else dims_col_result||'',DIMS_GX_04005'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光缆段的纤芯数与实际的纤芯数量一致性%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:传输管线-光缆段的纤芯数与实际的纤芯数量一致性''
+                                             else dims_col_rtName||'',传输管线-光缆段的纤芯数与实际的纤芯数量一致性'' end)
+                 where  fiber_count != cast((select count(*) from CE_CABLE_FIBER t2 where t1.resfdn = t2.fibercableseg_id) as varchar)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, null),
+(904003238, '传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在', 'DIMS_GX_04006', 4006, 904001025, '传输管线', 11, null,
+'update CR_CABLE_CABLE t1
+                   set dims_col_result=(case when dims_col_result like ''%DIMS_GX_04006%'' then dims_col_result
+                                             when dims_col_result is null then ''DIMS_GX_04006''
+                                             else dims_col_result||'',DIMS_GX_04006'' end),
+                       dims_col_rtName=(case when dims_col_rtName like ''%传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在''
+                                             else dims_col_rtName||'',传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在'' end)
+                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.upper_cable_id = t1.resfdn)
+				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.lower_cable_id = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);
 --插入传输管线 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (904004001,904099001,904003001,'admin','admin',null),
@@ -18049,8 +15744,8 @@ insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTEN
 (903001002, '子网', 'SUBNET', '传输内线', null, 'SUBNET', null, null, 'admin', 'admin', null),
 (903001003, '传输系统', 'TRANSI_SYSTEM', '传输内线', null, 'TRANSI_SYSTEM', null, null, 'admin', 'admin', null),
 (903001004, '网元', 'DEVICE', '传输内线', null, 'DEVICE', null, null, 'admin', 'admin', null),
-(903001005, '板卡', 'BOARD', '传输内线', null, 'BOARD', null, null, 'admin', 'admin', null),
-(903001006, '端口', 'PORT', '传输内线', null, 'PORT', null, null, 'admin', 'admin', null),
+(903001005, '板卡', 'TSNX_BOARD', '传输内线', null, 'TSNX_BOARD', null, null, 'admin', 'admin', null),
+(903001006, '端口', 'TSNX_PORT', '传输内线', null, 'TSNX_PORT', null, null, 'admin', 'admin', null),
 (903001007, '端口与ODF连接', 'LINK_PORT_ODF', '传输内线', null, 'LINK_PORT_ODF', null, null, 'admin', 'admin', null),
 (903001008, '端口连接', 'TOPO', '传输内线', null, 'TOPO', null, null, 'admin', 'admin', null),
 (903001009, '光通道（OCH）（波分）', 'OPATH', '传输内线', null, 'OPATH', null, null, 'admin', 'admin', null),
@@ -18100,7 +15795,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 --网元 DEVICE
 (903001322, '资源标识', 'res_identifier', 903001004, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001323, '网元名称', 'zh_label', 903001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
-(903001324, '所属机架位置', 'related_rack_position', 903001004, 'RELATED_RACK_POSITION', 'string', null, 'admin', 'admin', null),
+(903001324, '所属机架', 'related_rack', 903001004, 'RELATED_RACK', 'string', null, 'admin', 'admin', null),
 (903001325, '网元类型', 'ne_type', 903001004, 'NE_TYPE', 'string', 903000004, 'admin', 'admin', null),
 (903001326, '业务级别', 'service_level', 903001004, 'SERVICE_LEVEL', 'string', 903000005, 'admin', 'admin', null),
 (903001327, '设备厂家', 'vendor_id', 903001004, 'VENDOR_ID', 'string', 903000006, 'admin', 'admin', null),
@@ -18115,7 +15810,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001336, '所属省份', 'province_id', 903001004, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001337, '所属地市', 'city_id', 903001004, 'CITY_ID', 'string', null, 'admin', 'admin', null),
 (903001338, '所属区县', 'county_id', 903001004, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
---板卡 BOARD 
+--板卡 TSNX_BOARD 
 (903001339, '资源标识', 'res_identifier', 903001005, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001340, '板卡名称', 'zh_label', 903001005, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001341, '所属传输网元', 'related_ne', 903001005, 'RELATED_NE', 'string', null, 'admin', 'admin', null),
@@ -18125,7 +15820,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001345, '所属省份', 'province_id', 903001005, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001346, '所属地市', 'city_id', 903001005, 'CITY_ID', 'string', null, 'admin', 'admin', null),
 (903001347, '所属区县', 'county_id', 903001005, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
---903001006 端口 PORT
+--903001006 端口 TSNX_PORT
 (903001348, '资源标识', 'res_identifier', 903001006, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001349, '端口名称', 'zh_label', 903001006, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001350, '端口状态', 'port_status', 903001006, 'PORT_STATUS', 'string', 903000008, 'admin', 'admin', null),
@@ -18413,18 +16108,18 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001619, '资源标识', 'res_identifier', 903001024, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001620, '网络切片名称', 'zh_label', 903001024, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001621, '网络切片类型', 'type', 903001024, 'TYPE', 'string', null, 'admin', 'admin', null),
-(903001622, '所属省份', 'z_province_id', 903001024, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001623, '所属地市', 'z_city_id', 903001024, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001624, '所属区县', 'z_county_id', 903001024, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001622, '所属省份', 'z_province_id', 903001024, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001623, '所属地市', 'z_city_id', 903001024, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001624, '所属区县', 'z_county_id', 903001024, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001025 MtnGroup（SPN) MTN_GROUP
 (903001625, '资源标识', 'res_identifier', 903001025, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001626, 'Mtn Group所属网元', 'zh_label', 903001025, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001627, 'Mtn Group序号', 'serial_no', 903001025, 'SERIAL_NO', 'integer', null, 'admin', 'admin', null),
 (903001628, 'Mtn Group带宽', 'bandwidth', 903001025, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
 (903001629, '物理端口', 'physical_port', 903001025, 'PHYSICAL_PORT', 'string', null, 'admin', 'admin', null),
-(903001630, '所属省份', 'z_province_id', 903001025, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001631, '所属地市', 'z_city_id', 903001025, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001632, '所属区县', 'z_county_id', 903001025, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001630, '所属省份', 'z_province_id', 903001025, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001631, '所属地市', 'z_city_id', 903001025, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001632, '所属区县', 'z_county_id', 903001025, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001026 MtnChannel（SPN) MTN_CHANNEL
 (903001633, '资源标识', 'res_identifier', 903001026, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001634, '本地名称', 'zh_label', 903001026, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
@@ -18435,9 +16130,9 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001639, '宿端网元', 'z_ne', 903001026, 'Z_NE', 'string', null, 'admin', 'admin', null),
 (903001640, '宿端Mtn client口', 'z_port', 903001026, 'Z_PORT', 'string', null, 'admin', 'admin', null),
 (903001641, '带宽', 'bandwidth', 903001026, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
-(903001642, '所属省份', 'z_province_id', 903001026, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001643, '所属地市', 'z_city_id', 903001026, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001644, '所属区县', 'z_county_id', 903001026, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
+(903001642, '所属省份', 'z_province_id', 903001026, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001643, '所属地市', 'z_city_id', 903001026, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001644, '所属区县', 'z_county_id', 903001026, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
 --插入传输内线 dims_idx_index
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
@@ -18543,38 +16238,38 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (903003039, '传输内线-网元规范性核查-业务级别-字典规范性核查', 'DIMS_TSNX_02013', 2013, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003040, '传输内线-网元规范性核查-设备厂家-字典规范性核查', 'DIMS_TSNX_02014', 2014, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003041, '传输内线-网元规范性核查-生命周期状态-字典规范性核查', 'DIMS_TSNX_02015', 2015, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
-(903003042, '传输内线-板卡规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02016', 2016, 903001005, '传输内线', 11, NULL, 'update BOARD t1
+(903003042, '传输内线-板卡规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02016', 2016, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02016%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02016''
 																											 else dims_col_result||'',DIMS_TSNX_02016'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-板卡规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from BOARD t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003043, '传输内线-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_TSNX_02017', 2017, 903001005, '传输内线', 11, NULL, 'update BOARD t1
+													                         where  exists(select 1 from TSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
+(903003043, '传输内线-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_TSNX_02017', 2017, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02017%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02017''
 																											 else dims_col_result||'',DIMS_TSNX_02017'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-板卡规范性核查-板卡名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡规范性核查-板卡名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-板卡规范性核查-板卡名称-唯一性核查'' end)
-													                         where  exists(select 1 from BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003044, '传输内线-端口规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02018', 2018, 903001006, '传输内线', 11, NULL, 'update PORT t1
+													                         where  exists(select 1 from TSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
+(903003044, '传输内线-端口规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02018', 2018, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02018''
 																											 else dims_col_result||'',DIMS_TSNX_02018'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from PORT t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
-(903003045, '传输内线-端口规范性核查-端口名称-唯一性核查', 'DIMS_TSNX_02019', 2019, 903001006, '传输内线', 11, NULL, 'update PORT t1
+													                         where  exists(select 1 from TSNX_PORT t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
+(903003045, '传输内线-端口规范性核查-端口名称-唯一性核查', 'DIMS_TSNX_02019', 2019, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02019%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02019''
 																											 else dims_col_result||'',DIMS_TSNX_02019'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口规范性核查-端口名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口规范性核查-端口名称-唯一性核查'' end)
-													                         where  exists(select 1 from PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
+													                         where  exists(select 1 from TSNX_PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
 (903003046, '传输内线-端口规范性核查-端口状态-字典规范性核查', 'DIMS_TSNX_02020', 2020, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003047, '传输内线-端口规范性核查-端口速率-字典规范性核查', 'DIMS_TSNX_02021', 2021, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003048, '传输内线-端口规范性核查-端口组网类型-字典规范性核查', 'DIMS_TSNX_02022', 2022, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
@@ -18910,7 +16605,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003105, '传输内线-MtnChannel(SPN)规范性核查-激活标识-字典规范性核查', 'DIMS_TSNX_02079', 2079, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003106, '传输内线-MtnChannel(SPN)规范性核查-带宽-字典规范性核查', 'DIMS_TSNX_02080', 2080, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
-(903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update BOARD t1
+(903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03004%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03004''
 																											 else dims_col_result||'',DIMS_TSNX_03004'' end),
@@ -18918,7 +16613,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡关联性核查-所属传输网元''
 																											 else dims_col_rtName||'',传输内线-板卡关联性核查-所属传输网元'' end)
 													 where isNotNull(t1.related_ne) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003108, '传输内线-端口关联性核查-所属传输网元', 'DIMS_TSNX_03005', 3005, 903001006, '传输内线', 11, NULL, 'update PORT t1
+(903003108, '传输内线-端口关联性核查-所属传输网元', 'DIMS_TSNX_03005', 3005, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03005''
 																											 else dims_col_result||'',DIMS_TSNX_03005'' end),
@@ -18933,7 +16628,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口与ODF连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口与ODF连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口与ODF连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
 (903003110, '传输内线-端口连接关联性核查-A端设备', 'DIMS_TSNX_03008', 3008, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03008%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03008''
@@ -18949,7 +16644,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003112, '传输内线-端口连接关联性核查-Z端设备', 'DIMS_TSNX_03010', 3010, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03010%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03010''
@@ -18965,7 +16660,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003114, '传输内线-波分光通道关联性核查-A端设备', 'DIMS_TSNX_03013', 3013, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03013%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03013''
@@ -18981,7 +16676,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003116, '传输内线-波分光通道关联性核查-Z端设备', 'DIMS_TSNX_03015', 3015, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03015%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03015''
@@ -18997,7 +16692,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003118, '传输内线-波分光传送段关联性核查-A端端口', 'DIMS_TSNX_03017', 3017, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03017%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03017''
@@ -19005,7 +16700,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003119, '传输内线-波分光传送段关联性核查-Z端端口', 'DIMS_TSNX_03018', 3018, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03018''
@@ -19013,7 +16708,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003120, '传输内线-波分复用段关联性核查-A端端口', 'DIMS_TSNX_03019', 3019, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03019%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03019''
@@ -19021,7 +16716,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分复用段关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分复用段关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分复用段关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
 (903003121, '传输内线-波分复用段关联性核查-Z端端口', 'DIMS_TSNX_03020', 3020, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03020%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03020''
@@ -19029,7 +16724,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分复用段关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分复用段关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分复用段关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
 (903003122, '传输内线-波分业务通道关联性核查-A端端口', 'DIMS_TSNX_03021', 3021, 903001012, '传输内线', 11, NULL, 'update SERVICE_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03021%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03021''
@@ -19037,7 +16732,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分业务通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分业务通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
 (903003123, '传输内线-波分业务通道关联性核查-Z端端口', 'DIMS_TSNX_03022', 3022, 903001012, '传输内线', 11, NULL, 'update SERVICE_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03022%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03022''
@@ -19045,7 +16740,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分业务通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分业务通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
 (903003124, '传输内线-SDH通道关联性核查-A端设备', 'DIMS_TSNX_03023', 3023, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03023%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03023''
@@ -19061,7 +16756,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003126, '传输内线-SDH通道关联性核查-Z端设备', 'DIMS_TSNX_03025', 3025, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03025%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03025''
@@ -19077,7 +16772,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003128, '传输内线-隧道关联性核查-A端设备', 'DIMS_TSNX_03027', 3027, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03027%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03027''
@@ -19093,7 +16788,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003130, '传输内线-隧道关联性核查-Z端设备', 'DIMS_TSNX_03029', 3029, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03029%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03029''
@@ -19110,7 +16805,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003132, '传输内线-伪线关联性核查-A端设备', 'DIMS_TSNX_03031', 3031, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03031%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03031''
@@ -19126,7 +16821,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 
 (903003134, '传输内线-伪线关联性核查-Z端设备', 'DIMS_TSNX_03033', 3033, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03033%'' then dims_col_result
@@ -19143,7 +16838,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003136, '传输内线-传输电路关联性核查-A端传输网元', 'DIMS_TSNX_03035', 3035, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03035%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03035''
@@ -19159,7 +16854,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输电路关联性核查-A端传输网元端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输电路关联性核查-A端传输网元端口''
 																											 else dims_col_rtName||'',传输内线-传输电路关联性核查-A端传输网元端口'' end)
-													 where isNotNull(t1.a_trans_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
+													 where isNotNull(t1.a_trans_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
 (903003138, '传输内线-传输电路关联性核查-Z端传输网元', 'DIMS_TSNX_03037', 3037, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03037%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03037''
@@ -19175,7 +16870,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输电路关联性核查-Z端传输网元端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输电路关联性核查-Z端传输网元端口''
 																											 else dims_col_rtName||'',传输内线-传输电路关联性核查-Z端传输网元端口'' end)
-													 where isNotNull(t1.z_trans_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
+													 where isNotNull(t1.z_trans_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
 (903003140, '传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在网元名称', 'DIMS_TSNX_03041', 3041, 903001019, '传输内线', 11, NULL, 'update L3VPN_AP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03041%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03041''
@@ -19191,7 +16886,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称''
 																											 else dims_col_rtName||'',传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称'' end)
-													 where isNotNull(t1.port_id) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.port_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
+													 where isNotNull(t1.port_id) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.port_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
 (903003142, '传输内线-SR隧道业务(SPN)关联性核查-源端网元', 'DIMS_TSNX_03044', 3044, 903001020, '传输内线', 11, NULL, 'update SR_TUNNEL_SER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03044%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03044''
@@ -19239,7 +16934,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-IGP连接(SPN)关联性核查-连接起点端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-IGP连接(SPN)关联性核查-连接起点端口''
 																											 else dims_col_rtName||'',传输内线-IGP连接(SPN)关联性核查-连接起点端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
 (903003148, '传输内线-IGP连接(SPN)关联性核查-连接终点网元', 'DIMS_TSNX_03052', 3052, 903001023, '传输内线', 11, NULL, 'update IGP_LINK_INFO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03052%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03052''
@@ -19255,7 +16950,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-IGP连接(SPN)关联性核查-连接终点端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-IGP连接(SPN)关联性核查-连接终点端口''
 																											 else dims_col_rtName||'',传输内线-IGP连接(SPN)关联性核查-连接终点端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
 (903003150, '传输内线-MtnGroup(SPN)关联性核查-Mtn Group所属网元', 'DIMS_TSNX_03054', 3054, 903001025, '传输内线', 11, NULL, 'update MTN_GROUP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03054%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03054''
@@ -19279,7 +16974,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003153, '传输内线-MtnChannel(SPN)关联性核查-宿端网元', 'DIMS_TSNX_03057', 3057, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03057%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03057''
@@ -19295,7 +16990,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003155, '传输内线-子网关联性核查-所属EMS', 'DIMS_TSNX_03001', 3001, 903001002, '传输内线', 11, NULL, 'update SUBNET t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03001%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03001''
@@ -19566,19 +17261,19 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (903005512, '传输内线-传输系统必填完整性核查.系统设计容量', 'TRANSI_SYSTEM.designed_capacity', 903003003, 903001317, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005513, '传输内线-传输系统必填完整性核查.系统层级', 'TRANSI_SYSTEM.system_level', 903003003, 903001318, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005514, '传输内线-传输系统必填完整性核查.所属EMS', 'TRANSI_SYSTEM.related_omc', 903003003, 903001319, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005515, '传输内线-板卡必填完整性核查.资源标识', 'BOARD.res_identifier', 903003004, 903001339, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005516, '传输内线-板卡必填完整性核查.板卡名称', 'BOARD.zh_label', 903003004, 903001340, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005517, '传输内线-板卡必填完整性核查.所属传输网元', 'BOARD.related_ne', 903003004, 903001341, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005518, '传输内线-板卡必填完整性核查.所属槽位', 'BOARD.related_solt', 903003004, 903001342, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005519, '传输内线-板卡必填完整性核查.板卡型号', 'BOARD.board_model', 903003004, 903001343, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005520, '传输内线-板卡必填完整性核查.软件版本', 'BOARD.soft_version', 903003004, 903001344, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005521, '传输内线-端口必填完整性核查.资源标识', 'PORT.res_identifier', 903003005, 903001348, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005522, '传输内线-端口必填完整性核查.端口名称', 'PORT.zh_label', 903003005, 903001349, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005523, '传输内线-端口必填完整性核查.端口状态', 'PORT.port_status', 903003005, 903001350, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005524, '传输内线-端口必填完整性核查.所属传输网元', 'PORT.related_ne', 903003005, 903001351, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005525, '传输内线-端口必填完整性核查.端口速率', 'PORT.port_rate', 903003005, 903001354, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005526, '传输内线-端口必填完整性核查.端口组网类型', 'PORT.port_net_type', 903003005, 903001355, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005527, '传输内线-端口必填完整性核查.端口模块类型', 'PORT.physics_type', 903003005, 903001356, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005515, '传输内线-板卡必填完整性核查.资源标识', 'TSNX_BOARD.res_identifier', 903003004, 903001339, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005516, '传输内线-板卡必填完整性核查.板卡名称', 'TSNX_BOARD.zh_label', 903003004, 903001340, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005517, '传输内线-板卡必填完整性核查.所属传输网元', 'TSNX_BOARD.related_ne', 903003004, 903001341, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005518, '传输内线-板卡必填完整性核查.所属槽位', 'TSNX_BOARD.related_solt', 903003004, 903001342, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005519, '传输内线-板卡必填完整性核查.板卡型号', 'TSNX_BOARD.board_model', 903003004, 903001343, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005520, '传输内线-板卡必填完整性核查.软件版本', 'TSNX_BOARD.soft_version', 903003004, 903001344, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005521, '传输内线-端口必填完整性核查.资源标识', 'TSNX_PORT.res_identifier', 903003005, 903001348, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005522, '传输内线-端口必填完整性核查.端口名称', 'TSNX_PORT.zh_label', 903003005, 903001349, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005523, '传输内线-端口必填完整性核查.端口状态', 'TSNX_PORT.port_status', 903003005, 903001350, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005524, '传输内线-端口必填完整性核查.所属传输网元', 'TSNX_PORT.related_ne', 903003005, 903001351, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005525, '传输内线-端口必填完整性核查.端口速率', 'TSNX_PORT.port_rate', 903003005, 903001354, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005526, '传输内线-端口必填完整性核查.端口组网类型', 'TSNX_PORT.port_net_type', 903003005, 903001355, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005527, '传输内线-端口必填完整性核查.端口模块类型', 'TSNX_PORT.physics_type', 903003005, 903001356, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005528, '传输内线-端口与ODF连接必填完整性核查.资源标识', 'LINK_PORT_ODF.res_identifier', 903003006, 903001362, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005529, '传输内线-端口与ODF连接必填完整性核查.资源名称', 'LINK_PORT_ODF.zh_label', 903003006, 903001363, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005530, '传输内线-端口与ODF连接必填完整性核查.A端端口', 'LINK_PORT_ODF.a_port', 903003006, 903001364, 2, NULL, NULL, 'admin', 'admin', NULL),
@@ -19763,19 +17458,19 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (904005511, '传输管线-光交接箱必填完整性核查.所属区县', 'CE_DEVICE_GJ.county', 904003001, 904001312, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005512, '传输管线-光交接箱必填完整性核查.规格型号', 'CE_DEVICE_GJ.specifications', 904003001, 904001314, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005513, '传输管线-光交接箱必填完整性核查.安装容量', 'CE_DEVICE_GJ.cm_install_capacity', 904003001, 904001315, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'TSGX_CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'TSGX_CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'TSGX_CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'TSGX_CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'TSGX_CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'TSGX_CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'TSGX_CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'TSGX_CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'TSGX_CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'TSGX_CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'TSGX_CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'TSGX_CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'TSGX_CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005527, '传输管线-光终端盒必填完整性核查.资源标识', 'CE_DEVICE_GB.resfdn', 904003003, 904001334, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005528, '传输管线-光终端盒必填完整性核查.资源名称', 'CE_DEVICE_GB.zh_label', 904003003, 904001335, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005529, '传输管线-光终端盒必填完整性核查.生命周期状态', 'CE_DEVICE_GB.lifecycle_status', 904003003, 904001336, 2, NULL, NULL, 'admin', 'admin', NULL),
@@ -20709,7 +18404,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_rtName is null then ''公共-ODM模块关联性核查-所属设备''
 														 else dims_col_rtName||'',公共-ODM模块关联性核查-所属设备'' end)
  where isNotNull(t1.related_device_id) and not exists(select 1
-														from CE_DEVICE_GJ t2,CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
+														from CE_DEVICE_GJ t2,TSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
 													   where  t1.related_device_id = t2.resfdn
 															  or t1.related_device_id = t3.resfdn
 															  or t1.related_device_id = t4.resfdn
@@ -22344,7 +20039,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (907001979, '设备厂家', 'vendor_id', 907001511, 'VENDOR_ID', 'string', 907000051, 'admin', 'admin', null),
 (907001980, '所属系统', 'related_system', 907001511, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
 (907001981, '额定容量(A)', 'reted_capacity', 907001511, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
-(907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000019, 'admin', 'admin', null),
+(907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000040, 'admin', 'admin', null),
 (907001983, '输出端口总数（路）', 'total_output_port', 907001511, 'TOTAL_OUTPUT_PORT', 'integer', null, 'admin', 'admin', null),
 (907001984, '设备配置的SPD品牌', 'device_configuration_spd_brand', 907001511, 'DEVICE_CONFIGURATION_SPD_BRAND', 'string', null, 'admin', 'admin', null),
 (907001985, 'SPD最大通流量（KA）', 'spd_max_rate', 907001511, 'SPD_MAX_RATE', 'string', null, 'admin', 'admin', null),
@@ -25101,5 +22796,2351 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (907006566, '动环-其他设备规范性核查-设备厂家-字典规范性核查', 'vendor_id', 907003846, 907002288, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
 (907006567, '动环-其他设备规范性核查-使用状态-字典规范性核查', 'lifecycle_status', 907003847, 907002291, 1, NULL, '使用状态lifecycle_status', 'admin', 'admin', NULL),
 (907006568, '动环-开关电源系统规范性核查-系统类型-字典规范性核查', 'system_type', 907003848, 907002035, 1, NULL, '系统类型system_type', 'admin', 'admin', NULL);
+---无线整体指标待定
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(901099001, '无线数据完整性指标', 'wireless-1-99001', 99001, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(901099002, '无线数据规范性指标', 'wireless-2-99002', 99002, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(901099003, '无线数据关联性指标', 'wireless-3-99003', 99003, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+--(901099004, '无线数据合规性指标', 'wireless-4-99004', 99004, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(901099999, '无线数据整体指标', 'wireless-5-99999', 99999, null, '无线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+---无线整体指标待定
+-- insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+ INSERT INTO "dims_idx_index"("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "creator", "updater", "procname", "threadno", "priority", "memo") VALUES
+ (901003000, '无线-OMC必填完整性核查', 'DIMS_WX_01001', 1001, 901000001, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000001, 1, NULL),
+ (901003001, '无线-BSC必填完整性核查', 'DIMS_WX_01002', 1002, 901000002, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000002, 1, NULL),
+ (901003002, '无线-BTS必填完整性核查', 'DIMS_WX_01003', 1003, 901000003, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000003, 1, NULL),
+ (901003003, '无线-E-NODEB必填完整性核查', 'DIMS_WX_01004', 1004, 901000004, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000004, 1, NULL),
+ (901003004, '无线-G-NODEB必填完整性核查', 'DIMS_WX_01005', 1005, 901000005, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000005, 1, NULL),
+ (901003005, '无线-RTK基准站必填完整性核查', 'DIMS_WX_01006', 1006, 901000006, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000006, 1, NULL),
+ (901003006, '无线-CELL必填完整性核查', 'DIMS_WX_01007', 1007, 901000007, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000007, 1, NULL),
+ (901003007, '无线-E-UTRANCELL必填完整性核查', 'DIMS_WX_01008', 1008, 901000008, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000008, 1, NULL),
+ (901003008, '无线-NR-CELL必填完整性核查', 'DIMS_WX_01009', 1009, 901000009, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000009, 1, NULL),
+ (901003009, '无线-扼流圈天线必填完整性核查', 'DIMS_WX_01010', 1010, 901000010, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000010, 1, NULL),
+ (901003010, '无线-BBU必填完整性核查', 'DIMS_WX_01011', 1011, 901000011, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000011, 1, NULL),
+ (901003011, '无线-RRU必填完整性核查', 'DIMS_WX_01012', 1012, 901000012, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000012, 1, NULL),
+ (901003012, '无线-DU必填完整性核查', 'DIMS_WX_01013', 1013, 901000013, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000013, 1, NULL),
+ (901003013, '无线-CU必填完整性核查', 'DIMS_WX_01014', 1014, 901000014, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000014, 1, NULL),
+ (901003014, '无线-AAU必填完整性核查', 'DIMS_WX_01015', 1015, 901000015, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000015, 1, NULL),
+ (901003015, '无线-板卡必填完整性核查', 'DIMS_WX_01016', 1016, 901000016, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000016, 1, NULL),
+ (901003016, '无线-端口必填完整性核查', 'DIMS_WX_01017', 1017, 901000017, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000017, 1, NULL),
+ (901003017, '无线-天线必填完整性核查', 'DIMS_WX_01018', 1018, 901000018, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000018, 1, NULL),
+ (901003018, '无线-天线工参必填完整性核查', 'DIMS_WX_01019', 1019, 901000019, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000019, 1, NULL),
+ (901003019, '无线-铁塔必填完整性核查', 'DIMS_WX_01020', 1020, 901000020, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000020, 1, NULL),
+ (901003020, '无线-直放站必填完整性核查', 'DIMS_WX_01021', 1021, 901000021, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000021, 1, NULL),
+ (901003021, '无线-分布系统必填完整性核查', 'DIMS_WX_01022', 1022, 901000022, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000022, 1, NULL),
+ (901003022, '无线-一体化皮站AP必填完整性核查', 'DIMS_WX_01023', 1023, 901000023, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000023, 1, NULL),
+ (901003023, '无线-扩展型皮站AU必填完整性核查', 'DIMS_WX_01024', 1024, 901000024, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000024, 1, NULL),
+ (901003024, '无线-扩展型皮站交换机必填完整性核查', 'DIMS_WX_01025', 1025, 901000025, '无线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 901000025, 1, NULL),
+ (901003100, '无线-OMC规范性核查-资源标识-唯一性核查', 'DIMS_WX_02001', 2001, 901000001, '无线', 11, NULL, 'update OMC t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02001%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02001''
+			 												            else dims_col_result||'',DIMS_WX_02001'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-OMC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-OMC规范性核查-资源标识-唯一性核查''
+										  					          else dims_col_rtName||'',无线-OMC规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from OMC t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000001, 1, NULL),
+ (901003101, '无线-OMC规范性核查-OMC名称-唯一性核查', 'DIMS_WX_02002', 2002, 901000001, '无线', 11, NULL, 'update OMC t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02002%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02002''
+			 												            else dims_col_result||'',DIMS_WX_02002'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-OMC规范性核查-OMC名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-OMC规范性核查-OMC名称-唯一性核查''
+										  					          else dims_col_rtName||'',无线-OMC规范性核查-OMC名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from OMC t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000001, 1, NULL),
+ (901003102, '无线-OMC规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02003', 2003, 901000001, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000001, 1, NULL),
+ (901003115, '无线-BTS规范性核查-VIP级别-字典规范性核查', 'DIMS_WX_02016', 2016, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003116, '无线-BTS规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02017', 2017, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003132, '无线-G-NODEB规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02033', 2033, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003144, '无线-CELL规范性核查-使用频段-字典规范性核查', 'DIMS_WX_02045', 2045, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003103, '无线-OMC规范性核查-IP地址-IP地址规范性核查', 'DIMS_WX_02004', 2004, 901000001, '无线', 11, NULL, 'update OMC t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02004%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02004''
+			 												            else dims_col_result||'',DIMS_WX_02004'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-OMC规范性核查-IP地址-IP地址规范性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-OMC规范性核查-IP地址-IP地址规范性核查''
+										  					          else dims_col_rtName||'',无线-OMC规范性核查-IP地址-IP地址规范性核查'' end)
+							       where isNotNull(t1.ip_addr) and exists (select 1 from OMC t2 where t2.ctid <> t1.ctid
+                                 and t2.ip_addr=t1.ip_addr)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000001, 1, NULL),
+ (901003104, '无线-BSC规范性核查-资源标识-唯一性核查', 'DIMS_WX_02005', 2005, 901000002, '无线', 11, NULL, 'update BSC t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02005%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02005''
+		                                      else dims_col_result||'',DIMS_WX_02005'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BSC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BSC规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BSC规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1 from BSC t2 where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000002, 1, NULL),
+ (901003105, '无线-BSC规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02006', 2006, 901000002, '无线', 11, NULL, 'update BSC t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02006%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02006''
+ 		                                      else dims_col_result||'',DIMS_WX_02006'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BSC规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BSC规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BSC规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1 from BSC t2 where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000002, 1, NULL),
+ (901003106, '无线-BSC规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02007', 2007, 901000002, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000002, 1, NULL),
+ (901003107, '无线-BSC规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02008', 2008, 901000002, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000002, 1, NULL),
+ (901003108, '无线-BTS规范性核查-资源标识-唯一性核查', 'DIMS_WX_02009', 2009, 901000003, '无线', 11, NULL, 'update BTS t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02009%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02009''
+ 		                                      else dims_col_result||'',DIMS_WX_02009'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BTS规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1 from BTS t2 where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003109, '无线-BTS规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02010', 2010, 901000003, '无线', 11, NULL, 'update BTS t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02010%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02010''
+		                                      else dims_col_result||'',DIMS_WX_02010'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BTS规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BTS规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1 from BTS t2 where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003110, '无线-BTS规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02011', 2011, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003111, '无线-BTS规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02012', 2012, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003112, '无线-BTS规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02013', 2013, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003113, '无线-BTS规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02014', 2014, 901000003, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000003, 1, NULL),
+ (901003114, '无线-BTS规范性核查-基站名称-唯一性核查', 'DIMS_WX_02015', 2015, 901000003, '无线', 11, NULL, 'update BTS t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02015%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02015''
+		                                      else dims_col_result||'',DIMS_WX_02015'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS规范性核查-基站名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS规范性核查-基站名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BTS规范性核查-基站名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1 from BTS t2 where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003117, '无线-E-NODEB规范性核查-资源标识-唯一性核查', 'DIMS_WX_02018', 2018, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02018%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02018''
+		                                      else dims_col_result||'',DIMS_WX_02018'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-NODEB规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-NODEB规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1 from ENODEB t2 where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003118, '无线-E-NODEB规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02019', 2019, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02019%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02019''
+		                                      else dims_col_result||'',DIMS_WX_02019'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-NODEB规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1 from ENODEB t2 where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003119, '无线-E-NODEB规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02020', 2020, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003120, '无线-E-NODEB规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02021', 2021, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003121, '无线-E-NODEB规范性核查-VIP级别-字典规范性核查', 'DIMS_WX_02022', 2022, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003122, '无线-E-NODEB规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02023', 2023, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003123, '无线-E-NODEB规范性核查-基站名称-唯一性核查', 'DIMS_WX_02024', 2024, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02024%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02024''
+		                                      else dims_col_result||'',DIMS_WX_02024'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB规范性核查-基站名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB规范性核查-基站名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-NODEB规范性核查-基站名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1 from ENODEB t2 where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003124, '无线-E-NODEB规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02025', 2025, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003125, '无线-E-NODEB规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02026', 2026, 901000004, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000004, 1, NULL),
+ (901003126, '无线-G-NODEB规范性核查-资源标识-唯一性核查', 'DIMS_WX_02027', 2027, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02027%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02027''
+		                                      else dims_col_result||'',DIMS_WX_02027'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-G-NODEB规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-G-NODEB规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1 from GNODEB t2 where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003127, '无线-G-NODEB规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02028', 2028, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02028%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02028''
+		                                      else dims_col_result||'',DIMS_WX_02028'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-G-NODEB规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1 from GNODEB t2 where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003128, '无线-G-NODEB规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02029', 2029, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003129, '无线-G-NODEB规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02030', 2030, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003130, '无线-G-NODEB规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02031', 2031, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003131, '无线-G-NODEB规范性核查-VIP级别-字典规范性核查', 'DIMS_WX_02032', 2032, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003133, '无线-G-NODEB规范性核查-基站名称-唯一性核查', 'DIMS_WX_02034', 2034, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02034%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02034''
+		                                      else dims_col_result||'',DIMS_WX_02034'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB规范性核查-基站名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-G-NODEB规范性核查-基站名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-G-NODEB规范性核查-基站名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from GNODEB t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003134, '无线-G-NODEB规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02035', 2035, 901000005, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000005, 1, NULL),
+ (901003135, '无线-RTK基准站规范性核查-资源标识-唯一性核查', 'DIMS_WX_02036', 2036, 901000006, '无线', 11, NULL, 'update RTK t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02036%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02036''
+		                                      else dims_col_result||'',DIMS_WX_02036'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-RTK基准站规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-RTK基准站规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from RTK t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003136, '无线-RTK基准站规范性核查-安装方式-字典规范性核查', 'DIMS_WX_02037', 2037, 901000006, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000006, 1, NULL),
+ (901003137, '无线-RTK基准站规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02038', 2038, 901000006, '无线', 11, NULL, 'update RTK t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02038%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02038''
+		                                      else dims_col_result||'',DIMS_WX_02038'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-RTK基准站规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-RTK基准站规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1 from RTK t2 where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003138, '无线-RTK基准站规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02039', 2039, 901000006, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000006, 1, NULL),
+ (901003139, '无线-RTK基准站规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02040', 2040, 901000006, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000006, 1, NULL),
+ (901003140, '无线-RTK基准站规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02041', 2041, 901000006, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000006, 1, NULL),
+ (901003141, '无线-RTK基准站规范性核查-RTK基准站名称-唯一性核查', 'DIMS_WX_02042', 2042, 901000006, '无线', 11, NULL, 'update RTK t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02042%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02042''
+		                                      else dims_col_result||'',DIMS_WX_02042'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站规范性核查-RTK基准站名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-RTK基准站规范性核查-RTK基准站名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-RTK基准站规范性核查-RTK基准站名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from RTK t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003142, '无线-CELL规范性核查-资源标识-唯一性核查', 'DIMS_WX_02043', 2043, 901000007, '无线', 11, NULL, 'update CELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02043%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02043''
+		                                      else dims_col_result||'',DIMS_WX_02043'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-CELL规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-CELL规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from CELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003143, '无线-CELL规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02044', 2044, 901000007, '无线', 11, NULL, 'update CELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02044%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02044''
+		                                      else dims_col_result||'',DIMS_WX_02044'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-CELL规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-CELL规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1
+                                from CELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003145, '无线-CELL规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02046', 2046, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003146, '无线-CELL规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02047', 2047, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003147, '无线-CELL规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02048', 2048, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003148, '无线-CELL规范性核查-覆盖场景-字典规范性核查', 'DIMS_WX_02049', 2049, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003149, '无线-CELL规范性核查-是否拉远-字典规范性核查', 'DIMS_WX_02050', 2050, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003150, '无线-CELL规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02051', 2051, 901000007, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000007, 1, NULL),
+ (901003151, '无线-CELL规范性核查-小区名称-唯一性核查', 'DIMS_WX_02052', 2052, 901000007, '无线', 11, NULL, 'update CELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02052%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02052''
+		                                      else dims_col_result||'',DIMS_WX_02052'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL规范性核查-小区名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-CELL规范性核查-小区名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-CELL规范性核查-小区名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from CELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003152, '无线-E-UTRANCELL规范性核查-资源标识-唯一性核查', 'DIMS_WX_02053', 2053, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02053%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02053''
+		                                      else dims_col_result||'',DIMS_WX_02053'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from EUTRANCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003153, '无线-E-UTRANCELL规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02054', 2054, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02054%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02054''
+		                                      else dims_col_result||'',DIMS_WX_02054'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1
+                                from EUTRANCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003154, '无线-E-UTRANCELL规范性核查-使用频段-字典规范性核查', 'DIMS_WX_02055', 2055, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003155, '无线-E-UTRANCELL规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02056', 2056, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003156, '无线-E-UTRANCELL规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02057', 2057, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003157, '无线-E-UTRANCELL规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02058', 2058, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003158, '无线-E-UTRANCELL规范性核查-覆盖场景-字典规范性核查', 'DIMS_WX_02059', 2059, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003159, '无线-E-UTRANCELL规范性核查-是否拉远-字典规范性核查', 'DIMS_WX_02060', 2060, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003160, '无线-E-UTRANCELL规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02061', 2061, 901000008, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000008, 1, NULL),
+ (901003161, '无线-E-UTRANCELL规范性核查-小区名称-唯一性核查', 'DIMS_WX_02062', 2062, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02062%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02062''
+		                                      else dims_col_result||'',DIMS_WX_02062'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL规范性核查-小区名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL规范性核查-小区名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL规范性核查-小区名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from EUTRANCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003162, '无线-NR-CELL规范性核查-资源标识-唯一性核查', 'DIMS_WX_02063', 2063, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02063%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02063''
+		                                      else dims_col_result||'',DIMS_WX_02063'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-NR-CELL规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-NR-CELL规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from NRCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003163, '无线-NR-CELL规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02064', 2064, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02064%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02064''
+		                                      else dims_col_result||'',DIMS_WX_02064'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-NR-CELL规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-NR-CELL规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1
+                                from NRCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003164, '无线-NR-CELL规范性核查-使用频段-字典规范性核查', 'DIMS_WX_02065', 2065, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003165, '无线-NR-CELL规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02066', 2066, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003166, '无线-NR-CELL规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02067', 2067, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003167, '无线-NR-CELL规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02068', 2068, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003168, '无线-NR-CELL规范性核查-覆盖场景-字典规范性核查', 'DIMS_WX_02069', 2069, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003169, '无线-NR-CELL规范性核查-是否拉远-字典规范性核查', 'DIMS_WX_02070', 2070, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003170, '无线-NR-CELL规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02071', 2071, 901000009, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000009, 1, NULL),
+ (901003171, '无线-NR-CELL规范性核查-小区名称-唯一性核查', 'DIMS_WX_02072', 2072, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02072%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02072''
+		                                      else dims_col_result||'',DIMS_WX_02072'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL规范性核查-小区名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-NR-CELL规范性核查-小区名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-NR-CELL规范性核查-小区名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from NRCELL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003172, '无线-扼流圈天线规范性核查-资源标识-唯一性核查', 'DIMS_WX_02073', 2073, 901000010, '无线', 11, NULL, 'update ANTENNACHOKECOIL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02073%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02073''
+		                                      else dims_col_result||'',DIMS_WX_02073'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扼流圈天线规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扼流圈天线规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扼流圈天线规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from ANTENNACHOKECOIL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000010, 1, NULL),
+ (901003173, '无线-扼流圈天线规范性核查-天线名称-唯一性核查', 'DIMS_WX_02074', 2074, 901000010, '无线', 11, NULL, 'update ANTENNACHOKECOIL t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02074%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02074''
+		                                      else dims_col_result||'',DIMS_WX_02074'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扼流圈天线规范性核查-天线名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扼流圈天线规范性核查-天线名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扼流圈天线规范性核查-天线名称-唯一性核查'' end)
+							       where isNotNull(t1.userlabel) and exists (select 1
+                                from ANTENNACHOKECOIL t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.userlabel=t1.userlabel)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000010, 1, NULL),
+ (901003174, '无线-扼流圈天线规范性核查-设备厂家-字典规范性核查', 'DIMS_WX_02075', 2075, 901000010, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000010, 1, NULL),
+ (901003175, '无线-扼流圈天线规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02076', 2076, 901000010, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000010, 1, NULL),
+ (901003176, '无线-扼流圈天线规范性核查-安装方式-字典规范性核查', 'DIMS_WX_02077', 2077, 901000010, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000010, 1, NULL),
+ (901003177, '无线-BBU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02078', 2078, 901000011, '无线', 11, NULL, 'update BBU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02078%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02078''
+		                                      else dims_col_result||'',DIMS_WX_02078'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BBU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BBU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from BBU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003178, '无线-BBU规范性核查-BBU名称-唯一性核查', 'DIMS_WX_02079', 2079, 901000011, '无线', 11, NULL, 'update BBU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02079%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02079''
+		                                      else dims_col_result||'',DIMS_WX_02079'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU规范性核查-BBU名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BBU规范性核查-BBU名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-BBU规范性核查-BBU名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from BBU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003179, '无线-BBU规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02080', 2080, 901000011, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000011, 1, NULL),
+ (901003180, '无线-RRU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02081', 2081, 901000012, '无线', 11, NULL, 'update RRU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02081%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02081''
+		                                      else dims_col_result||'',DIMS_WX_02081'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-RRU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-RRU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from RRU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003181, '无线-RRU规范性核查-网管中网元名称-唯一性核查', 'DIMS_WX_02082', 2082, 901000012, '无线', 11, NULL, 'update RRU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02082%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02082''
+		                                      else dims_col_result||'',DIMS_WX_02082'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-RRU规范性核查-网管中网元名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-RRU规范性核查-网管中网元名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from RRU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003182, '无线-RRU规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02083', 2083, 901000012, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000012, 1, NULL),
+ (901003183, '无线-RRU规范性核查-接入方式-字典规范性核查', 'DIMS_WX_02084', 2084, 901000012, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000012, 1, NULL),
+ (901003184, '无线-DU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02085', 2085, 901000013, '无线', 11, NULL, 'update DU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02085%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02085''
+		                                      else dims_col_result||'',DIMS_WX_02085'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-DU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-DU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from DU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003185, '无线-DU规范性核查-DU名称-唯一性核查', 'DIMS_WX_02086', 2086, 901000013, '无线', 11, NULL, 'update DU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02086%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02086''
+		                                      else dims_col_result||'',DIMS_WX_02086'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU规范性核查-DU名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-DU规范性核查-DU名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-DU规范性核查-DU名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from DU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003186, '无线-DU规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02087', 2087, 901000013, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000013, 1, NULL),
+ (901003187, '无线-DU规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02088', 2088, 901000013, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000013, 1, NULL),
+ (901003188, '无线-CU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02089', 2089, 901000014, '无线', 11, NULL, 'update CU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02089%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02089''
+		                                      else dims_col_result||'',DIMS_WX_02089'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-CU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-CU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from CU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003189, '无线-CU规范性核查-CU名称-唯一性核查', 'DIMS_WX_02090', 2090, 901000014, '无线', 11, NULL, 'update CU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02090%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02090''
+		                                      else dims_col_result||'',DIMS_WX_02090'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU规范性核查-CU名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-CU规范性核查-CU名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-CU规范性核查-CU名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from CU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003190, '无线-CU规范性核查-网络制式-字典规范性核查', 'DIMS_WX_02091', 2091, 901000014, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000014, 1, NULL),
+ (901003191, '无线-CU规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02092', 2092, 901000014, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000014, 1, NULL),
+ (901003192, '无线-AAU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02093', 2093, 901000015, '无线', 11, NULL, 'update AAU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02093%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02093''
+		                                      else dims_col_result||'',DIMS_WX_02093'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-AAU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-AAU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from AAU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003193, '无线-AAU规范性核查-AAU名称-唯一性核查', 'DIMS_WX_02094', 2094, 901000015, '无线', 11, NULL, 'update AAU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02094%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02094''
+		                                      else dims_col_result||'',DIMS_WX_02094'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU规范性核查-AAU名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-AAU规范性核查-AAU名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-AAU规范性核查-AAU名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from AAU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003194, '无线-AAU规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02095', 2095, 901000015, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000015, 1, NULL),
+ (901003195, '无线-AAU规范性核查-接入方式-字典规范性核查', 'DIMS_WX_02096', 2096, 901000015, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000015, 1, NULL),
+ (901003196, '无线-板卡规范性核查-资源标识-唯一性核查', 'DIMS_WX_02097', 2097, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02097%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02097''
+		                                      else dims_col_result||'',DIMS_WX_02097'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-板卡规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-板卡规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from WX_BOARD t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+ (901003197, '无线-板卡规范性核查-板卡功能类型-字典规范性核查', 'DIMS_WX_02098', 2098, 901000016, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000016, 1, NULL),
+ (901003198, '无线-端口规范性核查-资源标识-唯一性核查', 'DIMS_WX_02099', 2099, 901000017, '无线', 11, NULL, 'update WX_PORT t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02099%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02099''
+		                                      else dims_col_result||'',DIMS_WX_02099'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-端口规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-端口规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from WX_PORT t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000017, 1, NULL),
+ (901003199, '无线-端口规范性核查-端口状态-字典规范性核查', 'DIMS_WX_02100', 2100, 901000017, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000017, 1, NULL),
+ (901003200, '无线-天线规范性核查-资源标识-唯一性核查', 'DIMS_WX_02101', 2101, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02101%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02101''
+		                                      else dims_col_result||'',DIMS_WX_02101'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-天线规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-天线规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from ANTENNA t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003201, '无线-天线规范性核查-天线名称-唯一性核查', 'DIMS_WX_02102', 2102, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02102%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02102''
+		                                      else dims_col_result||'',DIMS_WX_02102'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线规范性核查-天线名称-唯一性核查%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线规范性核查-天线名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-天线规范性核查-天线名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from ANTENNA t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003202, '无线-天线规范性核查-天线类型-字典规范性核查', 'DIMS_WX_02103', 2103, 901000018, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000018, 1, NULL),
+ (901003203, '无线-天线规范性核查-是否与AAU一体化-字典规范性核查', 'DIMS_WX_02104', 2104, 901000018, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000018, 1, NULL),
+ (901003204, '无线-天线工参规范性核查-资源标识-唯一性核查', 'DIMS_WX_02105', 2105, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02105%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02105''
+		                                      else dims_col_result||'',DIMS_WX_02105'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-天线工参规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-天线工参规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from ANTENNAPARA t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003205, '无线-天线工参规范性核查-关联频段-字典规范性核查', 'DIMS_WX_02106', 2106, 901000019, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000019, 1, NULL),
+ (901003206, '无线-铁塔规范性核查-资源标识-唯一性核查', 'DIMS_WX_02107', 2107, 901000020, '无线', 11, NULL, 'update TOWER t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02107%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02107''
+		                                      else dims_col_result||'',DIMS_WX_02107'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-铁塔规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-铁塔规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from TOWER t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003207, '无线-铁塔规范性核查-铁塔名称-唯一性核查', 'DIMS_WX_02108', 2108, 901000020, '无线', 11, NULL, 'update TOWER t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02108%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02108''
+		                                      else dims_col_result||'',DIMS_WX_02108'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔规范性核查-铁塔名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-铁塔规范性核查-铁塔名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-铁塔规范性核查-铁塔名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from TOWER t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003208, '无线-铁塔规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02109', 2109, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003209, '无线-铁塔规范性核查-铁塔类型-字典规范性核查', 'DIMS_WX_02110', 2110, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003210, '无线-铁塔规范性核查-产权性质-字典规范性核查', 'DIMS_WX_02111', 2111, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003211, '无线-铁塔规范性核查-产权单位-字典规范性核查', 'DIMS_WX_02112', 2112, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003212, '无线-铁塔规范性核查-共享单位-字典规范性核查', 'DIMS_WX_02113', 2113, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003213, '无线-铁塔规范性核查-铁塔产品种类-字典规范性核查', 'DIMS_WX_02114', 2114, 901000020, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000020, 1, NULL),
+ (901003214, '无线-直放站规范性核查-资源标识-唯一性核查', 'DIMS_WX_02115', 2115, 901000021, '无线', 11, NULL, 'update RPT t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02115%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02115''
+		                                      else dims_col_result||'',DIMS_WX_02115'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-直放站规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-直放站规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from RPT t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003215, '无线-直放站规范性核查-直放站名称-唯一性核查', 'DIMS_WX_02116', 2116, 901000021, '无线', 11, NULL, 'update RPT t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02116%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02116''
+		                                      else dims_col_result||'',DIMS_WX_02116'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站规范性核查-直放站名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-直放站规范性核查-直放站名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-直放站规范性核查-直放站名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from RPT t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003216, '无线-直放站规范性核查-信号接收方式-字典规范性核查', 'DIMS_WX_02117', 2117, 901000021, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000021, 1, NULL),
+ (901003217, '无线-直放站规范性核查-供电方式-字典规范性核查', 'DIMS_WX_02118', 2118, 901000021, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000021, 1, NULL),
+ (901003218, '无线-直放站规范性核查-安装位置类型-字典规范性核查', 'DIMS_WX_02119', 2119, 901000021, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000021, 1, NULL),
+ (901003219, '无线-直放站规范性核查-生命周期状态-字典规范性核查', 'DIMS_WX_02120', 2120, 901000021, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000021, 1, NULL),
+ (901003220, '无线-直放站规范性核查-覆盖类型-字典规范性核查', 'DIMS_WX_02121', 2121, 901000021, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000021, 1, NULL),
+ (901003221, '无线-分布系统规范性核查-资源标识-唯一性核查', 'DIMS_WX_02122', 2122, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02122%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02122''
+		                                      else dims_col_result||'',DIMS_WX_02122'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-分布系统规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-分布系统规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from SPEARD t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003222, '无线-分布系统规范性核查-分布系统名称-唯一性核查', 'DIMS_WX_02123', 2123, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02123%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02123''
+		                                      else dims_col_result||'',DIMS_WX_02123'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统规范性核查-分布系统名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-分布系统规范性核查-分布系统名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-分布系统规范性核查-分布系统名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from SPEARD t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003223, '无线-一体化皮站AP规范性核查-资源标识-唯一性核查', 'DIMS_WX_02124', 2124, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02124%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02124''
+		                                      else dims_col_result||'',DIMS_WX_02124'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-一体化皮站AP规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from PICOAP t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003224, '无线-一体化皮站AP规范性核查-AP名称-唯一性核查', 'DIMS_WX_02125', 2125, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02125%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02125''
+		                                      else dims_col_result||'',DIMS_WX_02125'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP规范性核查-AP名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP规范性核查-AP名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-一体化皮站AP规范性核查-AP名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from PICOAP t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003225, '无线-扩展型皮站AU规范性核查-资源标识-唯一性核查', 'DIMS_WX_02126', 2126, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02126%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02126''
+		                                      else dims_col_result||'',DIMS_WX_02126'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站AU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站AU规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扩展型皮站AU规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from PICOAU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003226, '无线-扩展型皮站AU规范性核查-AU名称-唯一性核查', 'DIMS_WX_02127', 2127, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02127%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02127''
+		                                      else dims_col_result||'',DIMS_WX_02127'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站AU规范性核查-AU名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站AU规范性核查-AU名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扩展型皮站AU规范性核查-AU名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from PICOAU t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003227, '无线-扩展型皮站交换机规范性核查-资源标识-唯一性核查', 'DIMS_WX_02128', 2128, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02128%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02128''
+		                                      else dims_col_result||'',DIMS_WX_02128'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站交换机规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站交换机规范性核查-资源标识-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扩展型皮站交换机规范性核查-资源标识-唯一性核查'' end)
+							       where isNotNull(t1.int_id) and exists (select 1
+                                from PICOSWITCH t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL),
+ (901003228, '无线-扩展型皮站交换机规范性核查-交换机名称-唯一性核查', 'DIMS_WX_02129', 2129, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02129%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_02129''
+		                                      else dims_col_result||'',DIMS_WX_02129'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站交换机规范性核查-交换机名称-唯一性核查%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站交换机规范性核查-交换机名称-唯一性核查''
+		                                      else dims_col_rtName||'',无线-扩展型皮站交换机规范性核查-交换机名称-唯一性核查'' end)
+							       where isNotNull(t1.zh_label) and exists (select 1
+                                from PICOSWITCH t2
+                               where t2.ctid <> t1.ctid
+                                 and t2.zh_label=t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL),
+ (901003501, '无线-BSC关联性核查-所属地市', 'DIMS_WX_03002', 3002, 901000002, '无线', 11, NULL, 'update BSC t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03002%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03002''
+		                                      else dims_col_result||'',DIMS_WX_03002'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BSC关联性核查-所属地市%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BSC关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-BSC关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000002, 1, NULL),
+ (901003500, '无线-BSC关联性核查-所属省份', 'DIMS_WX_03001', 3001, 901000002, '无线', 11, NULL, 'update BSC t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03001%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03001''
+		                                      else dims_col_result||'',DIMS_WX_03001'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BSC关联性核查-所属省份%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BSC关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-BSC关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000002, 1, NULL),
+ (901003502, '无线-BSC关联性核查-所属区县', 'DIMS_WX_03003', 3003, 901000002, '无线', 11, NULL, 'update BSC t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03003%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03003''
+		                                      else dims_col_result||'',DIMS_WX_03003'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BSC关联性核查-所属区县%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BSC关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-BSC关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000002, 1, NULL),
+ (901003503, '无线-BTS关联性核查-所属机房/位置点', 'DIMS_WX_03004', 3004, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03004%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03004''
+		                                      else dims_col_result||'',DIMS_WX_03004'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-所属机房/位置点%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-BTS关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003504, '无线-BTS关联性核查-所属省份', 'DIMS_WX_03005', 3005, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03005%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03005''
+		                                      else dims_col_result||'',DIMS_WX_03005'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-所属省份%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-BTS关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003505, '无线-BTS关联性核查-所属地市', 'DIMS_WX_03006', 3006, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03006%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03006''
+		                                      else dims_col_result||'',DIMS_WX_03006'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-所属地市%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-BTS关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003506, '无线-BTS关联性核查-所属区县', 'DIMS_WX_03007', 3007, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03007%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03007''
+		                                      else dims_col_result||'',DIMS_WX_03007'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-所属区县%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-BTS关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003507, '无线-E-NODEB关联性核查-所属机房/位置点', 'DIMS_WX_03008', 3008, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03008%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03008''
+		                                      else dims_col_result||'',DIMS_WX_03008'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-所属机房/位置点%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-E-NODEB关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003508, '无线-E-NODEB关联性核查-所属省份', 'DIMS_WX_03009', 3009, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03009%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03009''
+		                                      else dims_col_result||'',DIMS_WX_03009'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-所属省份%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-E-NODEB关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003546, '无线-DU关联性核查-所属省份', 'DIMS_WX_03047', 3047, 901000013, '无线', 11, NULL, 'update DU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03047%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03047''
+		                                      else dims_col_result||'',DIMS_WX_03047'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属省份%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-DU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003509, '无线-E-NODEB关联性核查-所属地市', 'DIMS_WX_03010', 3010, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03010%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03010''
+		                                      else dims_col_result||'',DIMS_WX_03010'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-所属地市%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-E-NODEB关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003510, '无线-E-NODEB关联性核查-所属区县', 'DIMS_WX_03011', 3011, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03011%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03011''
+		                                      else dims_col_result||'',DIMS_WX_03011'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-所属区县%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-E-NODEB关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003511, '无线-G-NODEB关联性核查-所属机房/位置点', 'DIMS_WX_03012', 3012, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03012%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03012''
+		                                      else dims_col_result||'',DIMS_WX_03012'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-所属机房/位置点%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-G-NODEB关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003512, '无线-G-NODEB关联性核查-所属省份', 'DIMS_WX_03013', 3013, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03013%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03013''
+		                                      else dims_col_result||'',DIMS_WX_03013'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-G-NODEB关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003513, '无线-G-NODEB关联性核查-所属地市', 'DIMS_WX_03014', 3014, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03014%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03014''
+		                                      else dims_col_result||'',DIMS_WX_03014'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-所属地市%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-G-NODEB关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003514, '无线-G-NODEB关联性核查-所属区县', 'DIMS_WX_03015', 3015, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03015%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03015''
+		                                      else dims_col_result||'',DIMS_WX_03015'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-G-NODEB关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003515, '无线-RTK基准站关联性核查-所属机房/位置点', 'DIMS_WX_03016', 3016, 901000006, '无线', 11, NULL, 'update RTK t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03016%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03016''
+		                                      else dims_col_result||'',DIMS_WX_03016'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RTK基准站关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-RTK基准站关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003516, '无线-RTK基准站关联性核查-所属省份', 'DIMS_WX_03017', 3017, 901000006, '无线', 11, NULL, 'update RTK t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03017%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03017''
+		                                      else dims_col_result||'',DIMS_WX_03017'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RTK基准站关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-RTK基准站关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003517, '无线-RTK基准站关联性核查-所属地市', 'DIMS_WX_03018', 3018, 901000006, '无线', 11, NULL, 'update RTK t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03018%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03018''
+		                                      else dims_col_result||'',DIMS_WX_03018'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RTK基准站关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-RTK基准站关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003518, '无线-RTK基准站关联性核查-所属区县', 'DIMS_WX_03019', 3019, 901000006, '无线', 11, NULL, 'update RTK t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03019%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03019''
+		                                      else dims_col_result||'',DIMS_WX_03019'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RTK基准站关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RTK基准站关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-RTK基准站关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000006, 1, NULL),
+ (901003519, '无线-CELL关联性核查-所属机房/位置点', 'DIMS_WX_03020', 3020, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03020%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03020''
+		                                      else dims_col_result||'',DIMS_WX_03020'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-CELL关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003520, '无线-CELL关联性核查-所属基站', 'DIMS_WX_03021', 3021, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03021%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03021''
+		                                      else dims_col_result||'',DIMS_WX_03021'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-所属基站''
+		                                      else dims_col_rtName||'',无线-CELL关联性核查-所属基站'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003521, '无线-CELL关联性核查-所属省份', 'DIMS_WX_03022', 3022, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03022%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03022''
+		                                      else dims_col_result||'',DIMS_WX_03022'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-CELL关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003522, '无线-CELL关联性核查-所属地市', 'DIMS_WX_03023', 3023, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03023%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03023''
+		                                      else dims_col_result||'',DIMS_WX_03023'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-CELL关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003523, '无线-CELL关联性核查-所属区县', 'DIMS_WX_03024', 3024, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03024%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03024''
+		                                      else dims_col_result||'',DIMS_WX_03024'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-CELL关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003524, '无线-E-UTRANCELL关联性核查-所属省份', 'DIMS_WX_03025', 3025, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03025%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03025''
+		                                      else dims_col_result||'',DIMS_WX_03025'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003525, '无线-E-UTRANCELL关联性核查-所属地市', 'DIMS_WX_03026', 3026, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03026%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03026''
+		                                      else dims_col_result||'',DIMS_WX_03026'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003526, '无线-E-UTRANCELL关联性核查-所属区县', 'DIMS_WX_03027', 3027, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03027%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03027''
+		                                      else dims_col_result||'',DIMS_WX_03027'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003527, '无线-NR-CELL关联性核查-所属机房/位置点', 'DIMS_WX_03028', 3028, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03028%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03028''
+		                                      else dims_col_result||'',DIMS_WX_03028'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-NR-CELL关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003528, '无线-NR-CELL关联性核查-所属基站', 'DIMS_WX_03029', 3029, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03029%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03029''
+		                                      else dims_col_result||'',DIMS_WX_03029'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-所属基站''
+		                                      else dims_col_rtName||'',无线-NR-CELL关联性核查-所属基站'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from GNODEB t2 where isNotNull(t2.int_id) and t1.related_bs=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003529, '无线-NR-CELL关联性核查-所属省份', 'DIMS_WX_03030', 3030, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03030%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03030''
+		                                      else dims_col_result||'',DIMS_WX_03030'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-所属省份%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-NR-CELL关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003530, '无线-NR-CELL关联性核查-所属地市', 'DIMS_WX_03031', 3031, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03031%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03031''
+		                                      else dims_col_result||'',DIMS_WX_03031'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-NR-CELL关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003531, '无线-NR-CELL关联性核查-所属区县', 'DIMS_WX_03032', 3032, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03032%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03032''
+		                                      else dims_col_result||'',DIMS_WX_03032'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-NR-CELL关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003532, '无线-扼流圈天线关联性核查-所属省份', 'DIMS_WX_03033', 3033, 901000010, '无线', 11, NULL, 'update ANTENNACHOKECOIL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03033%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03033''
+		                                      else dims_col_result||'',DIMS_WX_03033'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扼流圈天线关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扼流圈天线关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-扼流圈天线关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000010, 1, NULL),
+ (901003533, '无线-扼流圈天线关联性核查-所属地市', 'DIMS_WX_03034', 3034, 901000010, '无线', 11, NULL, 'update ANTENNACHOKECOIL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03034%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03034''
+		                                      else dims_col_result||'',DIMS_WX_03034'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扼流圈天线关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扼流圈天线关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-扼流圈天线关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000010, 1, NULL),
+ (901003534, '无线-扼流圈天线关联性核查-所属区县', 'DIMS_WX_03035', 3035, 901000010, '无线', 11, NULL, 'update ANTENNACHOKECOIL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03035%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03035''
+		                                      else dims_col_result||'',DIMS_WX_03035'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扼流圈天线关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扼流圈天线关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-扼流圈天线关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000010, 1, NULL),
+ (901003535, '无线-BBU关联性核查-所属基站', 'DIMS_WX_03036', 3036, 901000011, '无线', 11, NULL, 'update BBU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03036%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03036''
+		                                      else dims_col_result||'',DIMS_WX_03036'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BBU关联性核查-所属基站''
+		                                      else dims_col_rtName||'',无线-BBU关联性核查-所属基站'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003536, '无线-BBU关联性核查-所属省份', 'DIMS_WX_03037', 3037, 901000011, '无线', 11, NULL, 'update BBU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03037%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03037''
+		                                      else dims_col_result||'',DIMS_WX_03037'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BBU关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-BBU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003537, '无线-BBU关联性核查-所属地市', 'DIMS_WX_03038', 3038, 901000011, '无线', 11, NULL, 'update BBU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03038%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03038''
+		                                      else dims_col_result||'',DIMS_WX_03038'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BBU关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-BBU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003538, '无线-BBU关联性核查-所属区县', 'DIMS_WX_03039', 3039, 901000011, '无线', 11, NULL, 'update BBU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03039%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03039''
+		                                      else dims_col_result||'',DIMS_WX_03039'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BBU关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-BBU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+ (901003547, '无线-DU关联性核查-所属地市', 'DIMS_WX_03048', 3048, 901000013, '无线', 11, NULL, 'update DU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03048%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03048''
+		                                      else dims_col_result||'',DIMS_WX_03048'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-DU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003539, '无线-RRU关联性核查-所属机房/位置点', 'DIMS_WX_03040', 3040, 901000012, '无线', 11, NULL, 'update RRU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03040%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03040''
+		                                      else dims_col_result||'',DIMS_WX_03040'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-RRU关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003540, '无线-RRU关联性核查-关联小区', 'DIMS_WX_03041', 3041, 901000012, '无线', 11, NULL, 'update RRU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03041%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03041''
+		                                      else dims_col_result||'',DIMS_WX_03041'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-关联小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-关联小区''
+		                                      else dims_col_rtName||'',无线-RRU关联性核查-关联小区'' end)
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003541, '无线-RRU关联性核查-所属省份', 'DIMS_WX_03042', 3042, 901000012, '无线', 11, NULL, 'update RRU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03042%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03042''
+		                                      else dims_col_result||'',DIMS_WX_03042'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-RRU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003542, '无线-RRU关联性核查-所属地市', 'DIMS_WX_03043', 3043, 901000012, '无线', 11, NULL, 'update RRU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03043%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03043''
+		                                      else dims_col_result||'',DIMS_WX_03043'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-RRU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003543, '无线-RRU关联性核查-所属区县', 'DIMS_WX_03044', 3044, 901000012, '无线', 11, NULL, 'update RRU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03044%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03044''
+		                                      else dims_col_result||'',DIMS_WX_03044'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-RRU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+ (901003544, '无线-DU关联性核查-所属基站', 'DIMS_WX_03045', 3045, 901000013, '无线', 11, NULL, 'update DU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03045%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03045''
+		                                      else dims_col_result||'',DIMS_WX_03045'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属基站''
+		                                      else dims_col_rtName||'',无线-DU关联性核查-所属基站'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from ENODEB t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from GNODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003545, '无线-DU关联性核查-所属机房/位置点', 'DIMS_WX_03046', 3046, 901000013, '无线', 11, NULL, 'update DU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03046%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03046''
+		                                      else dims_col_result||'',DIMS_WX_03046'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-DU关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003548, '无线-DU关联性核查-所属区县', 'DIMS_WX_03049', 3049, 901000013, '无线', 11, NULL, 'update DU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03049%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03049''
+		                                      else dims_col_result||'',DIMS_WX_03049'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-DU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+ (901003549, '无线-CU关联性核查-所属机房/位置点', 'DIMS_WX_03050', 3050, 901000014, '无线', 11, NULL, 'update CU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03050%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03050''
+		                                      else dims_col_result||'',DIMS_WX_03050'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CU关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-CU关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003550, '无线-CU关联性核查-所属省份', 'DIMS_WX_03051', 3051, 901000014, '无线', 11, NULL, 'update CU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03051%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03051''
+		                                      else dims_col_result||'',DIMS_WX_03051'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CU关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-CU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003551, '无线-CU关联性核查-所属地市', 'DIMS_WX_03052', 3052, 901000014, '无线', 11, NULL, 'update CU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03052%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03052''
+		                                      else dims_col_result||'',DIMS_WX_03052'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CU关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-CU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003552, '无线-CU关联性核查-所属区县', 'DIMS_WX_03053', 3053, 901000014, '无线', 11, NULL, 'update CU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03053%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03053''
+		                                      else dims_col_result||'',DIMS_WX_03053'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CU关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-CU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000014, 1, NULL),
+ (901003553, '无线-AAU关联性核查-所属机房/位置点', 'DIMS_WX_03054', 3054, 901000015, '无线', 11, NULL, 'update AAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03054%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03054''
+		                                      else dims_col_result||'',DIMS_WX_03054'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-所属机房/位置点''
+		                                      else dims_col_rtName||'',无线-AAU关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003554, '无线-AAU关联性核查-关联小区', 'DIMS_WX_03055', 3055, 901000015, '无线', 11, NULL, 'update AAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03055%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03055''
+		                                      else dims_col_result||'',DIMS_WX_03055'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-关联小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-关联小区''
+		                                      else dims_col_rtName||'',无线-AAU关联性核查-关联小区'' end)
+								where isNotNull(t1.related_cell) and not exists(select 1 from NRCELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003555, '无线-AAU关联性核查-所属省份', 'DIMS_WX_03056', 3056, 901000015, '无线', 11, NULL, 'update AAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03056%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03056''
+		                                      else dims_col_result||'',DIMS_WX_03056'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-AAU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003556, '无线-AAU关联性核查-所属地市', 'DIMS_WX_03057', 3057, 901000015, '无线', 11, NULL, 'update AAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03057%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03057''
+		                                      else dims_col_result||'',DIMS_WX_03057'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-所属地市''
+		                                      else dims_col_rtName||'',无线-AAU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003557, '无线-AAU关联性核查-所属区县', 'DIMS_WX_03058', 3058, 901000015, '无线', 11, NULL, 'update AAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03058%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03058''
+		                                      else dims_col_result||'',DIMS_WX_03058'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-所属区县''
+		                                      else dims_col_rtName||'',无线-AAU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+ (901003558, '无线-板卡关联性核查-所属省份', 'DIMS_WX_03060', 3060, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03060%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03060''
+		                                      else dims_col_result||'',DIMS_WX_03060'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-板卡关联性核查-所属省份''
+		                                      else dims_col_rtName||'',无线-板卡关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+ (901003559, '无线-板卡关联性核查-所属地市', 'DIMS_WX_03061', 3061, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03061%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03061''
+			 												            else dims_col_result||'',DIMS_WX_03061'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-板卡关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-板卡关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+ (901003560, '无线-板卡关联性核查-所属区县', 'DIMS_WX_03062', 3062, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03062%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03062''
+			 												            else dims_col_result||'',DIMS_WX_03062'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-板卡关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-板卡关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+ (901003561, '无线-端口关联性核查-所属省份', 'DIMS_WX_03064', 3064, 901000017, '无线', 11, NULL, 'update WX_PORT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03064%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03064''
+			 												            else dims_col_result||'',DIMS_WX_03064'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-端口关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-端口关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-端口关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000017, 1, NULL),
+ (901003562, '无线-端口关联性核查-所属地市', 'DIMS_WX_03065', 3065, 901000017, '无线', 11, NULL, 'update WX_PORT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03065%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03065''
+			 												            else dims_col_result||'',DIMS_WX_03065'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-端口关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-端口关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-端口关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000017, 1, NULL),
+ (901003563, '无线-端口关联性核查-所属区县', 'DIMS_WX_03066', 3066, 901000017, '无线', 11, NULL, 'update WX_PORT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03066%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03066''
+			 												            else dims_col_result||'',DIMS_WX_03066'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-端口关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-端口关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-端口关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000017, 1, NULL),
+ (901003564, '无线-天线关联性核查-所属铁塔', 'DIMS_WX_03067', 3067, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03067%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03067''
+			 												            else dims_col_result||'',DIMS_WX_03067'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线关联性核查-所属铁塔%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线关联性核查-所属铁塔''
+										  					          else dims_col_rtName||'',无线-天线关联性核查-所属铁塔'' end)
+								where isNotNull(t1.related_tower) and not exists(select 1 from TOWER t2 where isNotNull(t2.int_id) and t1.related_tower=t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003565, '无线-端口关联性核查-所属网元', 'DIMS_WX_03063', 3063, 901000017, '无线', 11, NULL, 'update WX_PORT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03063%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03063''
+			 												            else dims_col_result||'',DIMS_WX_03063'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-端口关联性核查-所属网元%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-端口关联性核查-所属网元''
+										  					          else dims_col_rtName||'',无线-端口关联性核查-所属网元'' end)
+								where isNotNull(t1.related_ne) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_ne=t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_ne=t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_ne=t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000017, 1, NULL),
+ (901003566, '无线-天线关联性核查-所属省份', 'DIMS_WX_03068', 3068, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03068%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03068''
+			 												            else dims_col_result||'',DIMS_WX_03068'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-天线关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003567, '无线-天线关联性核查-所属地市', 'DIMS_WX_03069', 3069, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03069%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03069''
+			 												            else dims_col_result||'',DIMS_WX_03069'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-天线关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003568, '无线-天线关联性核查-所属区县', 'DIMS_WX_03070', 3070, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03070%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03070''
+			 												            else dims_col_result||'',DIMS_WX_03070'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-天线关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003569, '无线-天线工参关联性核查-关联小区', 'DIMS_WX_03071', 3071, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03071%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03071''
+			 												            else dims_col_result||'',DIMS_WX_03071'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-关联小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-关联小区''
+										  					          else dims_col_rtName||'',无线-天线工参关联性核查-关联小区'' end)
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003570, '无线-天线工参关联性核查-所属省份', 'DIMS_WX_03073', 3073, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03073%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03073''
+			 												            else dims_col_result||'',DIMS_WX_03073'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-天线工参关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003571, '无线-天线工参关联性核查-所属地市', 'DIMS_WX_03074', 3074, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03074%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03074''
+			 												            else dims_col_result||'',DIMS_WX_03074'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-天线工参关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003572, '无线-天线工参关联性核查-所属区县', 'DIMS_WX_03075', 3075, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03075%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03075''
+			 												            else dims_col_result||'',DIMS_WX_03075'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-天线工参关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003573, '无线-铁塔关联性核查-所属机房/位置点', 'DIMS_WX_03076', 3076, 901000020, '无线', 11, NULL, 'update TOWER t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03076%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03076''
+			 												            else dims_col_result||'',DIMS_WX_03076'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-铁塔关联性核查-所属机房/位置点''
+										  					          else dims_col_rtName||'',无线-铁塔关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003574, '无线-铁塔关联性核查-所属省份', 'DIMS_WX_03077', 3077, 901000020, '无线', 11, NULL, 'update TOWER t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03077%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03077''
+			 												            else dims_col_result||'',DIMS_WX_03077'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-铁塔关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-铁塔关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003575, '无线-铁塔关联性核查-所属地市', 'DIMS_WX_03078', 3078, 901000020, '无线', 11, NULL, 'update TOWER t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03078%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03078''
+			 												            else dims_col_result||'',DIMS_WX_03078'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-铁塔关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-铁塔关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003576, '无线-铁塔关联性核查-所属区县', 'DIMS_WX_03079', 3079, 901000020, '无线', 11, NULL, 'update TOWER t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03079%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03079''
+			 												            else dims_col_result||'',DIMS_WX_03079'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-铁塔关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-铁塔关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003584, '无线-分布系统关联性核查-所属地市', 'DIMS_WX_03089', 3089, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03089%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03089''
+			 												            else dims_col_result||'',DIMS_WX_03089'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003577, '无线-直放站关联性核查-所属机房/位置点', 'DIMS_WX_03080', 3080, 901000021, '无线', 11, NULL, 'update RPT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03080%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03080''
+			 												            else dims_col_result||'',DIMS_WX_03080'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-所属机房/位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-所属机房/位置点''
+										  					          else dims_col_rtName||'',无线-直放站关联性核查-所属机房/位置点'' end)
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003578, '无线-直放站关联性核查-信源小区', 'DIMS_WX_03081', 3081, 901000021, '无线', 11, NULL, 'update RPT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03081%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03081''
+			 												            else dims_col_result||'',DIMS_WX_03081'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-信源小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-信源小区''
+										  					          else dims_col_rtName||'',无线-直放站关联性核查-信源小区'' end)
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003579, '无线-直放站关联性核查-所属省份', 'DIMS_WX_03082', 3082, 901000021, '无线', 11, NULL, 'update RPT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03082%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03082''
+			 												            else dims_col_result||'',DIMS_WX_03082'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-直放站关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003580, '无线-直放站关联性核查-所属地市', 'DIMS_WX_03083', 3083, 901000021, '无线', 11, NULL, 'update RPT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03083%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03083''
+			 												            else dims_col_result||'',DIMS_WX_03083'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-直放站关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003581, '无线-直放站关联性核查-所属区县', 'DIMS_WX_03084', 3084, 901000021, '无线', 11, NULL, 'update RPT t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03084%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03084''
+			 												            else dims_col_result||'',DIMS_WX_03084'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-直放站关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+ (901003582, '无线-分布系统关联性核查-信源小区', 'DIMS_WX_03087', 3087, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03087%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03087''
+			 												            else dims_col_result||'',DIMS_WX_03087'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-信源小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-信源小区''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-信源小区'' end)
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003583, '无线-分布系统关联性核查-所属省份', 'DIMS_WX_03088', 3088, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03088%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03088''
+			 												            else dims_col_result||'',DIMS_WX_03088'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003585, '无线-天线工参关联性核查-所属天线', 'DIMS_WX_03072', 3072, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03072%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03072''
+			 												            else dims_col_result||'',DIMS_WX_03072'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-所属天线%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-所属天线''
+										  					          else dims_col_rtName||'',无线-天线工参关联性核查-所属天线'' end)
+								where isNotNull(t1.related_antenna) and not exists(select 1 from ANTENNA t2 where isNotNull(t2.zh_label) and t1.related_antenna=t2.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+ (901003586, '无线-分布系统关联性核查-所属位置点', 'DIMS_WX_03085', 3085, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03085%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03085''
+			 												            else dims_col_result||'',DIMS_WX_03085'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-所属位置点%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-所属位置点''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-所属位置点'' end)
+								where isNotNull(t1.related_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_location~t2.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003587, '无线-分布系统关联性核查-所属区县', 'DIMS_WX_03090', 3090, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03090%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03090''
+			 												            else dims_col_result||'',DIMS_WX_03090'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003588, '无线-一体化皮站AP关联性核查-所属省份', 'DIMS_WX_03091', 3091, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03091%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03091''
+			 												            else dims_col_result||'',DIMS_WX_03091'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-一体化皮站AP关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003589, '无线-一体化皮站AP关联性核查-所属地市', 'DIMS_WX_03092', 3092, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03092%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03092''
+			 												            else dims_col_result||'',DIMS_WX_03092'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-一体化皮站AP关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003590, '无线-一体化皮站AP关联性核查-所属区县', 'DIMS_WX_03093', 3093, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03093%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03093''
+			 												            else dims_col_result||'',DIMS_WX_03093'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-一体化皮站AP关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003591, '无线-扩展型皮站AU关联性核查-所属省份', 'DIMS_WX_03094', 3094, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03094%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03094''
+			 												            else dims_col_result||'',DIMS_WX_03094'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站AU关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站AU关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-扩展型皮站AU关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003592, '无线-扩展型皮站AU关联性核查-所属地市', 'DIMS_WX_03095', 3095, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03095%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03095''
+			 												            else dims_col_result||'',DIMS_WX_03095'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站AU关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站AU关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-扩展型皮站AU关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003593, '无线-扩展型皮站AU关联性核查-所属区县', 'DIMS_WX_03096', 3096, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03096%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03096''
+			 												            else dims_col_result||'',DIMS_WX_03096'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站AU关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站AU关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-扩展型皮站AU关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003594, '无线-扩展型皮站交换机关联性核查-所属省份', 'DIMS_WX_03097', 3097, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03097%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03097''
+			 												            else dims_col_result||'',DIMS_WX_03097'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站交换机关联性核查-所属省份%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站交换机关联性核查-所属省份''
+										  					          else dims_col_rtName||'',无线-扩展型皮站交换机关联性核查-所属省份'' end)
+								where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL),
+ (901003595, '无线-扩展型皮站交换机关联性核查-所属地市', 'DIMS_WX_03098', 3098, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03098%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03098''
+			 												            else dims_col_result||'',DIMS_WX_03098'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站交换机关联性核查-所属地市%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站交换机关联性核查-所属地市''
+										  					          else dims_col_rtName||'',无线-扩展型皮站交换机关联性核查-所属地市'' end)
+								where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL),
+ (901003596, '无线-扩展型皮站交换机关联性核查-所属区县', 'DIMS_WX_03099', 3099, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03099%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03099''
+			 												            else dims_col_result||'',DIMS_WX_03099'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-扩展型皮站交换机关联性核查-所属区县%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-扩展型皮站交换机关联性核查-所属区县''
+										  					          else dims_col_rtName||'',无线-扩展型皮站交换机关联性核查-所属区县'' end)
+								where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL),
+ (901003597, '无线-BTS关联性核查-孤立点核查-2G基站下无小区', 'DIMS_WX_03103', 3103, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03103%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03103''
+			 												            else dims_col_result||'',DIMS_WX_03103'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-孤立点核查-2G基站下无小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-孤立点核查-2G基站下无小区''
+										  					          else dims_col_rtName||'',无线-BTS关联性核查-孤立点核查-2G基站下无小区'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from CELL t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003598, '无线-E-NODEB关联性核查-孤立点核查-4G基站下无小区', 'DIMS_WX_03104', 3104, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03104%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03104''
+			 												            else dims_col_result||'',DIMS_WX_03104'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-孤立点核查-4G基站下无小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-孤立点核查-4G基站下无小区''
+										  					          else dims_col_rtName||'',无线-E-NODEB关联性核查-孤立点核查-4G基站下无小区'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from EUTRANCELL t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003599, '无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区', 'DIMS_WX_03105', 3105, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03105%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03105''
+			 												            else dims_col_result||'',DIMS_WX_03105'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区''
+										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from NRCELL t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003600, '无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在', 'DIMS_WX_03106', 3106, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03106%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03106''
+			 												            else dims_col_result||'',DIMS_WX_03106'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在''
+										  					          else dims_col_rtName||'',无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003601, '无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在', 'DIMS_WX_03107', 3107, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03107%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03107''
+			 												            else dims_col_result||'',DIMS_WX_03107'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在''
+										  					          else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003602, '无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在', 'DIMS_WX_03108', 3108, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03108%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03108''
+			 												            else dims_col_result||'',DIMS_WX_03108'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在''
+										  					          else dims_col_rtName||'',无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003603, '无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU', 'DIMS_WX_03109', 3109, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03109%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03109''
+			 												            else dims_col_result||'',DIMS_WX_03109'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU''
+										  					          else dims_col_rtName||'',无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003604, '无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU', 'DIMS_WX_03110', 3110, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03110%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03110''
+			 												            else dims_col_result||'',DIMS_WX_03110'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU''
+										  					          else dims_col_rtName||'',无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003605, '无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU', 'DIMS_WX_03111', 3111, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03111%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03111''
+			 												            else dims_col_result||'',DIMS_WX_03111'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU''
+										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs) and not exists(select 1 from  BBU t3 where isNotNull(t3.related_bs) and t1.int_id=t3.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003606, '无线-CELL关联性核查-孤立点核查-2G小区下无RRU', 'DIMS_WX_03112', 3112, 901000007, '无线', 11, NULL, 'update CELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03112%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03112''
+			 												            else dims_col_result||'',DIMS_WX_03112'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-孤立点核查-2G小区下无RRU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-孤立点核查-2G小区下无RRU''
+										  					          else dims_col_rtName||'',无线-CELL关联性核查-孤立点核查-2G小区下无RRU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+ (901003607, '无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU', 'DIMS_WX_03113', 3113, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03113%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03113''
+			 												            else dims_col_result||'',DIMS_WX_03113'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU''
+										  					          else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t1.int_id=t3.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+ (901003608, '无线-一体化皮站AU关联性核查-所属基站', 'DIMS_WX_03101', 3101, 901000024, '无线', 11, NULL, 'update PICOAU t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03101%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03101''
+			 												            else dims_col_result||'',DIMS_WX_03101'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AU关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AU关联性核查-所属基站''
+										  					          else dims_col_rtName||'',无线-一体化皮站AU关联性核查-所属基站'' end)
+								where isNotNull(t1.related_femto) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_femto=t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_femto=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000024, 1, NULL),
+ (901003609, '无线-BTS关联性核查-孤立点核查-2G基站下无板卡', 'DIMS_WX_03115', 3115, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03115%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03115''
+			 												            else dims_col_result||'',DIMS_WX_03115'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-孤立点核查-2G基站下无板卡%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-孤立点核查-2G基站下无板卡''
+										  					          else dims_col_rtName||'',无线-BTS关联性核查-孤立点核查-2G基站下无板卡'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_BOARD t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003610, '无线-E-NODEB关联性核查-孤立点核查-4G基站下无板卡', 'DIMS_WX_03116', 3116, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03116%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03116''
+			 												            else dims_col_result||'',DIMS_WX_03116'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-孤立点核查-4G基站下无板卡%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-孤立点核查-4G基站下无板卡''
+										  					          else dims_col_rtName||'',无线-E-NODEB关联性核查-孤立点核查-4G基站下无板卡'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_BOARD t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003611, '无线-G-NODEB关联性核查-孤立点核查-5G基站下无板卡', 'DIMS_WX_03117', 3117, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03117%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03117''
+			 												            else dims_col_result||'',DIMS_WX_03117'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-5G基站下无板卡%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无板卡''
+										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无板卡'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_BOARD t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003612, '无线-铁塔关联性核查-孤立点核查-铁塔下无天线', 'DIMS_WX_03118', 3118, 901000020, '无线', 11, NULL, 'update TOWER t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03118%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03118''
+			 												            else dims_col_result||'',DIMS_WX_03118'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-铁塔关联性核查-孤立点核查-铁塔下无天线%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-铁塔关联性核查-孤立点核查-铁塔下无天线''
+										  					          else dims_col_rtName||'',无线-铁塔关联性核查-孤立点核查-铁塔下无天线'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from ANTENNA t2 where isNotNull(t2.related_tower) and t1.int_id=t2.related_tower)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000020, 1, NULL),
+ (901003613, '无线-天线关联性核查-孤立点核查-天线下无天线工参', 'DIMS_WX_03119', 3119, 901000018, '无线', 11, NULL, 'update ANTENNA t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03119%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03119''
+			 												            else dims_col_result||'',DIMS_WX_03119'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线关联性核查-孤立点核查-天线下无天线工参%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-天线关联性核查-孤立点核查-天线下无天线工参''
+										  					          else dims_col_rtName||'',无线-天线关联性核查-孤立点核查-天线下无天线工参'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_antenna) and t1.int_id=t2.related_antenna)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000018, 1, NULL),
+ (901003614, '无线-BTS关联性核查-孤立点核查-基站下无端口', 'DIMS_WX_03120', 3120, 901000003, '无线', 11, NULL, 'update BTS t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03120%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03120''
+			 												            else dims_col_result||'',DIMS_WX_03120'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-孤立点核查-基站下无端口%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-孤立点核查-基站下无端口''
+										  					          else dims_col_rtName||'',无线-BTS关联性核查-孤立点核查-基站下无端口'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_PORT t2 where isNotNull(t2.related_ne) and t1.int_id=t2.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+ (901003615, '无线-E-NODEB关联性核查-孤立点核查-基站下无端口', 'DIMS_WX_03121', 3121, 901000004, '无线', 11, NULL, 'update ENODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03121%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03121''
+			 												            else dims_col_result||'',DIMS_WX_03121'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查-孤立点核查-基站下无端口%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查-孤立点核查-基站下无端口''
+										  					          else dims_col_rtName||'',无线-E-NODEB关联性核查-孤立点核查-基站下无端口'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_PORT t2 where isNotNull(t2.related_ne) and t1.int_id=t2.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+ (901003616, '无线-G-NODEB关联性核查-孤立点核查-基站下无端口', 'DIMS_WX_03122', 3122, 901000005, '无线', 11, NULL, 'update GNODEB t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03122%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03122''
+			 												            else dims_col_result||'',DIMS_WX_03122'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-基站下无端口%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-基站下无端口''
+										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-基站下无端口'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from WX_PORT t2 where isNotNull(t2.related_ne) and t1.int_id=t2.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+ (901003617, '无线-NR-CELL关联性核查-5G小区下无RRU或AAU', 'DIMS_WX_03114', 3114, 901000009, '无线', 11, NULL, 'update NRCELL t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03114%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03114''
+			 												            else dims_col_result||'',DIMS_WX_03114'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-5G小区下无RRU或AAU%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-5G小区下无RRU或AAU''
+										  					          else dims_col_rtName||'',无线-NR-CELL关联性核查-5G小区下无RRU或AAU'' end)
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t1.int_id=t3.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+ (901003618, '无线-板卡关联性核查-所属网元', 'DIMS_WX_03059', 3059, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03059%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03059''
+			 												            else dims_col_result||'',DIMS_WX_03059'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡关联性核查-所属网元%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-板卡关联性核查-所属网元''
+										  					          else dims_col_rtName||'',无线-板卡关联性核查-所属网元'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+ (901003619, '无线-分布系统关联性核查-关联基站', 'DIMS_WX_03086', 3086, 901000022, '无线', 11, NULL, 'update SPEARD t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03086%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03086''
+			 												            else dims_col_result||'',DIMS_WX_03086'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-关联基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-关联基站''
+										  					          else dims_col_rtName||'',无线-分布系统关联性核查-关联基站'' end)
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+ (901003620, '无线-一体化皮站AP关联性核查-所属基站', 'DIMS_WX_03100', 3100, 901000023, '无线', 11, NULL, 'update PICOAP t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03100%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03100''
+			 												            else dims_col_result||'',DIMS_WX_03100'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站AP关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站AP关联性核查-所属基站''
+										  					          else dims_col_rtName||'',无线-一体化皮站AP关联性核查-所属基站'' end)
+								where isNotNull(t1.related_femto) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_femto=t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_femto=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000023, 1, NULL),
+ (901003621, '无线-一体化皮站交换机关联性核查-所属基站', 'DIMS_WX_03102', 3102, 901000025, '无线', 11, NULL, 'update PICOSWITCH t1
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03102%'' then dims_col_result
+		                                      when dims_col_result is null then ''DIMS_WX_03102''
+			 												            else dims_col_result||'',DIMS_WX_03102'' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%无线-一体化皮站交换机关联性核查-所属基站%'' then dims_col_rtName
+				                                  when dims_col_rtName is null then ''不满足规范:无线-一体化皮站交换机关联性核查-所属基站''
+										  					          else dims_col_rtName||'',无线-一体化皮站交换机关联性核查-所属基站'' end)
+								where isNotNull(t1.related_femto) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_femto=t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_femto=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000025, 1, NULL);
+--资源合规性核查
+--insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+ (901001000, 901099001, 901003000, 'admin', 'admin', NULL),
+ (901001001, 901099001, 901003001, 'admin', 'admin', NULL),
+ (901001002, 901099001, 901003002, 'admin', 'admin', NULL),
+ (901001003, 901099001, 901003003, 'admin', 'admin', NULL),
+ (901001004, 901099001, 901003004, 'admin', 'admin', NULL),
+ (901001005, 901099001, 901003005, 'admin', 'admin', NULL),
+ (901001006, 901099001, 901003006, 'admin', 'admin', NULL),
+ (901001007, 901099001, 901003007, 'admin', 'admin', NULL),
+ (901001008, 901099001, 901003008, 'admin', 'admin', NULL),
+ (901001009, 901099001, 901003009, 'admin', 'admin', NULL),
+ (901001010, 901099001, 901003010, 'admin', 'admin', NULL),
+ (901001011, 901099001, 901003011, 'admin', 'admin', NULL),
+ (901001012, 901099001, 901003012, 'admin', 'admin', NULL),
+ (901001013, 901099001, 901003013, 'admin', 'admin', NULL),
+ (901001014, 901099001, 901003014, 'admin', 'admin', NULL),
+ (901001015, 901099001, 901003015, 'admin', 'admin', NULL),
+ (901001016, 901099001, 901003016, 'admin', 'admin', NULL),
+ (901001017, 901099001, 901003017, 'admin', 'admin', NULL),
+ (901001018, 901099001, 901003018, 'admin', 'admin', NULL),
+ (901001019, 901099001, 901003019, 'admin', 'admin', NULL),
+ (901001020, 901099001, 901003020, 'admin', 'admin', NULL),
+ (901001021, 901099001, 901003021, 'admin', 'admin', NULL),
+ (901001022, 901099001, 901003022, 'admin', 'admin', NULL),
+ (901001023, 901099001, 901003023, 'admin', 'admin', NULL),
+ (901001024, 901099001, 901003024, 'admin', 'admin', NULL),
+ (901001025, 901099002, 901003100, 'admin', 'admin', NULL),
+ (901001026, 901099002, 901003101, 'admin', 'admin', NULL),
+ (901001027, 901099002, 901003102, 'admin', 'admin', NULL),
+ (901001028, 901099002, 901003115, 'admin', 'admin', NULL),
+ (901001029, 901099002, 901003116, 'admin', 'admin', NULL),
+ (901001030, 901099002, 901003132, 'admin', 'admin', NULL),
+ (901001031, 901099002, 901003144, 'admin', 'admin', NULL),
+ (901001032, 901099002, 901003103, 'admin', 'admin', NULL),
+ (901001033, 901099002, 901003104, 'admin', 'admin', NULL),
+ (901001034, 901099002, 901003105, 'admin', 'admin', NULL),
+ (901001035, 901099002, 901003106, 'admin', 'admin', NULL),
+ (901001036, 901099002, 901003107, 'admin', 'admin', NULL),
+ (901001037, 901099002, 901003108, 'admin', 'admin', NULL),
+ (901001038, 901099002, 901003109, 'admin', 'admin', NULL),
+ (901001039, 901099002, 901003110, 'admin', 'admin', NULL),
+ (901001040, 901099002, 901003111, 'admin', 'admin', NULL),
+ (901001041, 901099002, 901003112, 'admin', 'admin', NULL),
+ (901001042, 901099002, 901003113, 'admin', 'admin', NULL),
+ (901001043, 901099002, 901003114, 'admin', 'admin', NULL),
+ (901001044, 901099002, 901003117, 'admin', 'admin', NULL),
+ (901001045, 901099002, 901003118, 'admin', 'admin', NULL),
+ (901001046, 901099002, 901003119, 'admin', 'admin', NULL),
+ (901001047, 901099002, 901003120, 'admin', 'admin', NULL),
+ (901001048, 901099002, 901003121, 'admin', 'admin', NULL),
+ (901001049, 901099002, 901003122, 'admin', 'admin', NULL),
+ (901001050, 901099002, 901003123, 'admin', 'admin', NULL),
+ (901001051, 901099002, 901003124, 'admin', 'admin', NULL),
+ (901001052, 901099002, 901003125, 'admin', 'admin', NULL),
+ (901001053, 901099002, 901003126, 'admin', 'admin', NULL),
+ (901001054, 901099002, 901003127, 'admin', 'admin', NULL),
+ (901001055, 901099002, 901003128, 'admin', 'admin', NULL),
+ (901001056, 901099002, 901003129, 'admin', 'admin', NULL),
+ (901001057, 901099002, 901003130, 'admin', 'admin', NULL),
+ (901001058, 901099002, 901003131, 'admin', 'admin', NULL),
+ (901001059, 901099002, 901003133, 'admin', 'admin', NULL),
+ (901001060, 901099002, 901003134, 'admin', 'admin', NULL),
+ (901001061, 901099002, 901003135, 'admin', 'admin', NULL),
+ (901001062, 901099002, 901003136, 'admin', 'admin', NULL),
+ (901001063, 901099002, 901003137, 'admin', 'admin', NULL),
+ (901001064, 901099002, 901003138, 'admin', 'admin', NULL),
+ (901001065, 901099002, 901003139, 'admin', 'admin', NULL),
+ (901001066, 901099002, 901003140, 'admin', 'admin', NULL),
+ (901001067, 901099002, 901003141, 'admin', 'admin', NULL),
+ (901001068, 901099002, 901003142, 'admin', 'admin', NULL),
+ (901001069, 901099002, 901003143, 'admin', 'admin', NULL),
+ (901001070, 901099002, 901003145, 'admin', 'admin', NULL),
+ (901001071, 901099002, 901003146, 'admin', 'admin', NULL),
+ (901001072, 901099002, 901003147, 'admin', 'admin', NULL),
+ (901001073, 901099002, 901003148, 'admin', 'admin', NULL),
+ (901001074, 901099002, 901003149, 'admin', 'admin', NULL),
+ (901001075, 901099002, 901003150, 'admin', 'admin', NULL),
+ (901001076, 901099002, 901003151, 'admin', 'admin', NULL),
+ (901001077, 901099002, 901003152, 'admin', 'admin', NULL),
+ (901001078, 901099002, 901003153, 'admin', 'admin', NULL),
+ (901001079, 901099002, 901003154, 'admin', 'admin', NULL),
+ (901001080, 901099002, 901003155, 'admin', 'admin', NULL),
+ (901001081, 901099002, 901003156, 'admin', 'admin', NULL),
+ (901001082, 901099002, 901003157, 'admin', 'admin', NULL),
+ (901001083, 901099002, 901003158, 'admin', 'admin', NULL),
+ (901001084, 901099002, 901003159, 'admin', 'admin', NULL),
+ (901001085, 901099002, 901003160, 'admin', 'admin', NULL),
+ (901001086, 901099002, 901003161, 'admin', 'admin', NULL),
+ (901001087, 901099002, 901003162, 'admin', 'admin', NULL),
+ (901001088, 901099002, 901003163, 'admin', 'admin', NULL),
+ (901001089, 901099002, 901003164, 'admin', 'admin', NULL),
+ (901001090, 901099002, 901003165, 'admin', 'admin', NULL),
+ (901001091, 901099002, 901003166, 'admin', 'admin', NULL),
+ (901001092, 901099002, 901003167, 'admin', 'admin', NULL),
+ (901001093, 901099002, 901003168, 'admin', 'admin', NULL),
+ (901001094, 901099002, 901003169, 'admin', 'admin', NULL),
+ (901001095, 901099002, 901003170, 'admin', 'admin', NULL),
+ (901001096, 901099002, 901003171, 'admin', 'admin', NULL),
+ (901001097, 901099002, 901003172, 'admin', 'admin', NULL),
+ (901001098, 901099002, 901003173, 'admin', 'admin', NULL),
+ (901001099, 901099002, 901003174, 'admin', 'admin', NULL),
+ (901001100, 901099002, 901003175, 'admin', 'admin', NULL),
+ (901001101, 901099002, 901003176, 'admin', 'admin', NULL),
+ (901001102, 901099002, 901003177, 'admin', 'admin', NULL),
+ (901001103, 901099002, 901003178, 'admin', 'admin', NULL),
+ (901001104, 901099002, 901003179, 'admin', 'admin', NULL),
+ (901001105, 901099002, 901003180, 'admin', 'admin', NULL),
+ (901001106, 901099002, 901003181, 'admin', 'admin', NULL),
+ (901001107, 901099002, 901003182, 'admin', 'admin', NULL),
+ (901001108, 901099002, 901003183, 'admin', 'admin', NULL),
+ (901001109, 901099002, 901003184, 'admin', 'admin', NULL),
+ (901001110, 901099002, 901003185, 'admin', 'admin', NULL),
+ (901001111, 901099002, 901003186, 'admin', 'admin', NULL),
+ (901001112, 901099002, 901003187, 'admin', 'admin', NULL),
+ (901001113, 901099002, 901003188, 'admin', 'admin', NULL),
+ (901001114, 901099002, 901003189, 'admin', 'admin', NULL),
+ (901001115, 901099002, 901003190, 'admin', 'admin', NULL),
+ (901001116, 901099002, 901003191, 'admin', 'admin', NULL),
+ (901001117, 901099002, 901003192, 'admin', 'admin', NULL),
+ (901001118, 901099002, 901003193, 'admin', 'admin', NULL),
+ (901001119, 901099002, 901003194, 'admin', 'admin', NULL),
+ (901001120, 901099002, 901003195, 'admin', 'admin', NULL),
+ (901001121, 901099002, 901003196, 'admin', 'admin', NULL),
+ (901001122, 901099002, 901003197, 'admin', 'admin', NULL),
+ (901001123, 901099002, 901003198, 'admin', 'admin', NULL),
+ (901001124, 901099002, 901003199, 'admin', 'admin', NULL),
+ (901001125, 901099002, 901003200, 'admin', 'admin', NULL),
+ (901001126, 901099002, 901003201, 'admin', 'admin', NULL),
+ (901001127, 901099002, 901003202, 'admin', 'admin', NULL),
+ (901001128, 901099002, 901003203, 'admin', 'admin', NULL),
+ (901001129, 901099002, 901003204, 'admin', 'admin', NULL),
+ (901001130, 901099002, 901003205, 'admin', 'admin', NULL),
+ (901001131, 901099002, 901003206, 'admin', 'admin', NULL),
+ (901001132, 901099002, 901003207, 'admin', 'admin', NULL),
+ (901001133, 901099002, 901003208, 'admin', 'admin', NULL),
+ (901001134, 901099002, 901003209, 'admin', 'admin', NULL),
+ (901001135, 901099002, 901003210, 'admin', 'admin', NULL),
+ (901001136, 901099002, 901003211, 'admin', 'admin', NULL),
+ (901001137, 901099002, 901003212, 'admin', 'admin', NULL),
+ (901001138, 901099002, 901003213, 'admin', 'admin', NULL),
+ (901001139, 901099002, 901003214, 'admin', 'admin', NULL),
+ (901001140, 901099002, 901003215, 'admin', 'admin', NULL),
+ (901001141, 901099002, 901003216, 'admin', 'admin', NULL),
+ (901001142, 901099002, 901003217, 'admin', 'admin', NULL),
+ (901001143, 901099002, 901003218, 'admin', 'admin', NULL),
+ (901001144, 901099002, 901003219, 'admin', 'admin', NULL),
+ (901001145, 901099002, 901003220, 'admin', 'admin', NULL),
+ (901001146, 901099002, 901003221, 'admin', 'admin', NULL),
+ (901001147, 901099002, 901003222, 'admin', 'admin', NULL),
+ (901001148, 901099002, 901003223, 'admin', 'admin', NULL),
+ (901001149, 901099002, 901003224, 'admin', 'admin', NULL),
+ (901001150, 901099002, 901003225, 'admin', 'admin', NULL),
+ (901001151, 901099002, 901003226, 'admin', 'admin', NULL),
+ (901001152, 901099002, 901003227, 'admin', 'admin', NULL),
+ (901001153, 901099002, 901003228, 'admin', 'admin', NULL),
+ (901001154, 901099003, 901003500, 'admin', 'admin', NULL),
+ (901001155, 901099003, 901003501, 'admin', 'admin', NULL),
+ (901001156, 901099003, 901003502, 'admin', 'admin', NULL),
+ (901001157, 901099003, 901003503, 'admin', 'admin', NULL),
+ (901001158, 901099003, 901003504, 'admin', 'admin', NULL),
+ (901001159, 901099003, 901003505, 'admin', 'admin', NULL),
+ (901001160, 901099003, 901003506, 'admin', 'admin', NULL),
+ (901001161, 901099003, 901003507, 'admin', 'admin', NULL),
+ (901001162, 901099003, 901003508, 'admin', 'admin', NULL),
+ (901001163, 901099003, 901003509, 'admin', 'admin', NULL),
+ (901001164, 901099003, 901003510, 'admin', 'admin', NULL),
+ (901001165, 901099003, 901003511, 'admin', 'admin', NULL),
+ (901001166, 901099003, 901003512, 'admin', 'admin', NULL),
+ (901001167, 901099003, 901003513, 'admin', 'admin', NULL),
+ (901001168, 901099003, 901003514, 'admin', 'admin', NULL),
+ (901001169, 901099003, 901003515, 'admin', 'admin', NULL),
+ (901001170, 901099003, 901003516, 'admin', 'admin', NULL),
+ (901001171, 901099003, 901003517, 'admin', 'admin', NULL),
+ (901001172, 901099003, 901003518, 'admin', 'admin', NULL),
+ (901001173, 901099003, 901003519, 'admin', 'admin', NULL),
+ (901001174, 901099003, 901003520, 'admin', 'admin', NULL),
+ (901001175, 901099003, 901003521, 'admin', 'admin', NULL),
+ (901001176, 901099003, 901003522, 'admin', 'admin', NULL),
+ (901001177, 901099003, 901003523, 'admin', 'admin', NULL),
+ (901001178, 901099003, 901003524, 'admin', 'admin', NULL),
+ (901001179, 901099003, 901003525, 'admin', 'admin', NULL),
+ (901001180, 901099003, 901003526, 'admin', 'admin', NULL),
+ (901001181, 901099003, 901003527, 'admin', 'admin', NULL),
+ (901001182, 901099003, 901003528, 'admin', 'admin', NULL),
+ (901001183, 901099003, 901003529, 'admin', 'admin', NULL),
+ (901001184, 901099003, 901003530, 'admin', 'admin', NULL),
+ (901001185, 901099003, 901003531, 'admin', 'admin', NULL),
+ (901001186, 901099003, 901003532, 'admin', 'admin', NULL),
+ (901001187, 901099003, 901003533, 'admin', 'admin', NULL),
+ (901001188, 901099003, 901003534, 'admin', 'admin', NULL),
+ (901001189, 901099003, 901003535, 'admin', 'admin', NULL),
+ (901001190, 901099003, 901003536, 'admin', 'admin', NULL),
+ (901001191, 901099003, 901003537, 'admin', 'admin', NULL),
+ (901001192, 901099003, 901003538, 'admin', 'admin', NULL),
+ (901001193, 901099003, 901003539, 'admin', 'admin', NULL),
+ (901001194, 901099003, 901003540, 'admin', 'admin', NULL),
+ (901001195, 901099003, 901003541, 'admin', 'admin', NULL),
+ (901001196, 901099003, 901003542, 'admin', 'admin', NULL),
+ (901001197, 901099003, 901003543, 'admin', 'admin', NULL),
+ (901001198, 901099003, 901003544, 'admin', 'admin', NULL),
+ (901001199, 901099003, 901003545, 'admin', 'admin', NULL),
+ (901001200, 901099003, 901003546, 'admin', 'admin', NULL),
+ (901001201, 901099003, 901003547, 'admin', 'admin', NULL),
+ (901001202, 901099003, 901003548, 'admin', 'admin', NULL),
+ (901001203, 901099003, 901003549, 'admin', 'admin', NULL),
+ (901001204, 901099003, 901003550, 'admin', 'admin', NULL),
+ (901001205, 901099003, 901003551, 'admin', 'admin', NULL),
+ (901001206, 901099003, 901003552, 'admin', 'admin', NULL),
+ (901001207, 901099003, 901003553, 'admin', 'admin', NULL),
+ (901001208, 901099003, 901003554, 'admin', 'admin', NULL),
+ (901001209, 901099003, 901003555, 'admin', 'admin', NULL),
+ (901001210, 901099003, 901003556, 'admin', 'admin', NULL),
+ (901001211, 901099003, 901003557, 'admin', 'admin', NULL),
+ (901001212, 901099003, 901003558, 'admin', 'admin', NULL),
+ (901001213, 901099003, 901003559, 'admin', 'admin', NULL),
+ (901001214, 901099003, 901003560, 'admin', 'admin', NULL),
+ (901001215, 901099003, 901003561, 'admin', 'admin', NULL),
+ (901001216, 901099003, 901003562, 'admin', 'admin', NULL),
+ (901001217, 901099003, 901003563, 'admin', 'admin', NULL),
+ (901001218, 901099003, 901003564, 'admin', 'admin', NULL),
+ (901001219, 901099003, 901003565, 'admin', 'admin', NULL),
+ (901001220, 901099003, 901003566, 'admin', 'admin', NULL),
+ (901001221, 901099003, 901003567, 'admin', 'admin', NULL),
+ (901001222, 901099003, 901003568, 'admin', 'admin', NULL),
+ (901001223, 901099003, 901003569, 'admin', 'admin', NULL),
+ (901001224, 901099003, 901003570, 'admin', 'admin', NULL),
+ (901001225, 901099003, 901003571, 'admin', 'admin', NULL),
+ (901001226, 901099003, 901003572, 'admin', 'admin', NULL),
+ (901001227, 901099003, 901003573, 'admin', 'admin', NULL),
+ (901001228, 901099003, 901003574, 'admin', 'admin', NULL),
+ (901001229, 901099003, 901003575, 'admin', 'admin', NULL),
+ (901001230, 901099003, 901003576, 'admin', 'admin', NULL),
+ (901001231, 901099003, 901003577, 'admin', 'admin', NULL),
+ (901001232, 901099003, 901003578, 'admin', 'admin', NULL),
+ (901001233, 901099003, 901003579, 'admin', 'admin', NULL),
+ (901001234, 901099003, 901003580, 'admin', 'admin', NULL),
+ (901001235, 901099003, 901003581, 'admin', 'admin', NULL),
+ (901001236, 901099003, 901003582, 'admin', 'admin', NULL),
+ (901001237, 901099003, 901003583, 'admin', 'admin', NULL),
+ (901001238, 901099003, 901003584, 'admin', 'admin', NULL),
+ (901001239, 901099003, 901003585, 'admin', 'admin', NULL),
+ (901001240, 901099003, 901003586, 'admin', 'admin', NULL),
+ (901001241, 901099003, 901003587, 'admin', 'admin', NULL),
+ (901001242, 901099003, 901003588, 'admin', 'admin', NULL),
+ (901001243, 901099003, 901003589, 'admin', 'admin', NULL),
+ (901001244, 901099003, 901003590, 'admin', 'admin', NULL),
+ (901001245, 901099003, 901003591, 'admin', 'admin', NULL),
+ (901001246, 901099003, 901003592, 'admin', 'admin', NULL),
+ (901001247, 901099003, 901003593, 'admin', 'admin', NULL),
+ (901001248, 901099003, 901003594, 'admin', 'admin', NULL),
+ (901001249, 901099003, 901003595, 'admin', 'admin', NULL),
+ (901001250, 901099003, 901003596, 'admin', 'admin', NULL),
+ (901001251, 901099003, 901003597, 'admin', 'admin', NULL),
+ (901001252, 901099003, 901003598, 'admin', 'admin', NULL),
+ (901001253, 901099003, 901003599, 'admin', 'admin', NULL),
+ (901001254, 901099003, 901003600, 'admin', 'admin', NULL),
+ (901001255, 901099003, 901003601, 'admin', 'admin', NULL),
+ (901001256, 901099003, 901003602, 'admin', 'admin', NULL),
+ (901001257, 901099003, 901003603, 'admin', 'admin', NULL),
+ (901001258, 901099003, 901003604, 'admin', 'admin', NULL),
+ (901001259, 901099003, 901003605, 'admin', 'admin', NULL),
+ (901001260, 901099003, 901003606, 'admin', 'admin', NULL),
+ (901001261, 901099003, 901003607, 'admin', 'admin', NULL),
+ (901001262, 901099003, 901003608, 'admin', 'admin', NULL),
+ (901001263, 901099003, 901003609, 'admin', 'admin', NULL),
+ (901001264, 901099003, 901003610, 'admin', 'admin', NULL),
+ (901001265, 901099003, 901003611, 'admin', 'admin', NULL),
+ (901001266, 901099003, 901003612, 'admin', 'admin', NULL),
+ (901001267, 901099003, 901003613, 'admin', 'admin', NULL),
+ (901001268, 901099003, 901003614, 'admin', 'admin', NULL),
+ (901001269, 901099003, 901003615, 'admin', 'admin', NULL),
+ (901001270, 901099003, 901003616, 'admin', 'admin', NULL),
+ (901001271, 901099003, 901003617, 'admin', 'admin', NULL),
+ (901001272, 901099003, 901003618, 'admin', 'admin', NULL),
+ (901001273, 901099003, 901003619, 'admin', 'admin', NULL),
+ (901001274, 901099003, 901003620, 'admin', 'admin', NULL),
+ (901001275, 901099003, 901003621, 'admin', 'admin', NULL),
+ (901001276, 901099999, 901099001, 'admin', 'admin', NULL),
+ (901001277, 901099999, 901099002, 'admin', 'admin', NULL),
+ (901001278, 901099999, 901099003, 'admin', 'admin', NULL);
 
+-- (901001206,901099999,901099001, 'admin', 'admin', null),
+-- (901001207,901099999,901099002, 'admin', 'admin', null),
+-- (901001208,901099999,901099003, 'admin', 'admin', null);
+-- (901001209,901099999,901003004, 'admin', 'admin', null);
+-- insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+-- values (901000631, 'RRU必填字段完整性.网管中网元名称', 'WL_RRU.omc_name', 901000596, 901003010, 2, null, null, 'admin', 'admin', null),
+ INSERT INTO "dims_idx_rule"("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "creator", "updater", "memo") VALUES
+ (901002001, '无线-OMC必填完整性核查.资源标识', 'OMC.int_id', 901003000, 901000600, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002002, '无线-OMC必填完整性核查.OMC名称', 'OMC.zh_label', 901003000, 901000601, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002003, '无线-OMC必填完整性核查.设备厂家', 'OMC.vendor_id', 901003000, 901000602, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002004, '无线-OMC必填完整性核查.IP地址', 'OMC.ip_addr', 901003000, 901000603, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002005, '无线-OMC必填完整性核查.所属省份', 'OMC.province_id', 901003000, 901000604, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002006, '无线-OMC必填完整性核查.所属地市', 'OMC.city_id', 901003000, 901000605, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002007, '无线-OMC必填完整性核查.所属区县', 'OMC.county_id', 901003000, 901000606, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002008, '无线-BSC必填完整性核查.资源标识', 'BSC.int_id', 901003001, 901000607, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002009, '无线-BSC必填完整性核查.网管中网元名称', 'BSC.userlabel', 901003001, 901000608, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002010, '无线-BSC必填完整性核查.设备厂家', 'BSC.vendor_id', 901003001, 901000609, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002011, '无线-BSC必填完整性核查.设备型号', 'BSC.product_name', 901003001, 901000610, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002012, '无线-BSC必填完整性核查.软件版本', 'BSC.software_version', 901003001, 901000614, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002013, '无线-BSC必填完整性核查.生命周期状态', 'BSC.lifecycle_status', 901003001, 901000615, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002014, '无线-BSC必填完整性核查.入网时间', 'BSC.setup_time', 901003001, 901000616, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002015, '无线-BSC必填完整性核查.数据质量责任人（移动）', 'BSC.qualitor', 901003001, 901000617, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002016, '无线-BSC必填完整性核查.一线数据维护人（代维/一线）', 'BSC.maintainor', 901003001, 901000618, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002017, '无线-BSC必填完整性核查.所属省份', 'BSC.province_id', 901003001, 901000621, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002018, '无线-BSC必填完整性核查.所属地市', 'BSC.city_id', 901003001, 901000622, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002019, '无线-BSC必填完整性核查.所属区县', 'BSC.county_id', 901003001, 901000623, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002020, '无线-BTS必填完整性核查.资源标识', 'BTS.int_id', 901003002, 901000624, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002021, '无线-BTS必填完整性核查.网管中网元名称', 'BTS.userlabel', 901003002, 901000626, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002022, '无线-BTS必填完整性核查.安装位置类型', 'BTS.location_type', 901003002, 901000628, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002023, '无线-BTS必填完整性核查.所属机房/位置点', 'BTS.related_room_location', 901003002, 901000629, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002024, '无线-BTS必填完整性核查.生命周期状态', 'BTS.lifecycle_status', 901003002, 901000633, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002025, '无线-BTS必填完整性核查.覆盖类型', 'BTS.beehive_type', 901003002, 901000638, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002026, '无线-BTS必填完整性核查.设备厂家', 'BTS.vendor_id', 901003002, 901000630, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002027, '无线-BTS必填完整性核查.基站名称', 'BTS.zh_label', 901003002, 901000625, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002028, '无线-BTS必填完整性核查.设备型号', 'BTS.product_name', 901003002, 901000631, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002029, '无线-BTS必填完整性核查.软件版本', 'BTS.software_version', 901003002, 901000632, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002030, '无线-BTS必填完整性核查.入网时间', 'BTS.setup_time', 901003002, 901000634, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002031, '无线-BTS必填完整性核查.VIP级别', 'BTS.vip_type', 901003002, 901000635, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002032, '无线-BTS必填完整性核查.网络制式', 'BTS.net_model', 901003002, 901000636, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002033, '无线-BTS必填完整性核查.数据质量责任人（移动）', 'BTS.qualitor', 901003002, 901000640, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002034, '无线-BTS必填完整性核查.一线数据维护人（代维/一线）', 'BTS.maintainor', 901003002, 901000641, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002035, '无线-BTS必填完整性核查.所属省份', 'BTS.province_id', 901003002, 901000642, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002036, '无线-BTS必填完整性核查.所属地市', 'BTS.city_id', 901003002, 901000643, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002037, '无线-BTS必填完整性核查.所属区县', 'BTS.county_id', 901003002, 901000644, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002038, '无线-E-NODEB必填完整性核查.资源标识', 'ENODEB.int_id', 901003003, 901000645, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002039, '无线-E-NODEB必填完整性核查.E-NODEB ID', 'ENODEB.nodeb_id', 901003003, 901000646, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002040, '无线-E-NODEB必填完整性核查.网管中网元名称', 'ENODEB.userlabel', 901003003, 901000648, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002041, '无线-E-NODEB必填完整性核查.所属机房/位置点', 'ENODEB.related_room_location', 901003003, 901000651, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002042, '无线-E-NODEB必填完整性核查.生命周期状态', 'ENODEB.lifecycle_status', 901003003, 901000655, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002043, '无线-E-NODEB必填完整性核查.入网时间', 'ENODEB.setup_time', 901003003, 901000656, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002044, '无线-E-NODEB必填完整性核查.覆盖类型', 'ENODEB.beehive_type', 901003003, 901000660, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002045, '无线-E-NODEB必填完整性核查.VIP级别', 'ENODEB.vip_type', 901003003, 901000657, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002046, '无线-E-NODEB必填完整性核查.设备厂家', 'ENODEB.rated_power', 901003003, 901000652, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002047, '无线-E-NODEB必填完整性核查.所属OMC', 'ENODEB.related_omc', 901003003, 901000649, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002048, '无线-E-NODEB必填完整性核查.基站名称', 'ENODEB.zh_label', 901003003, 901000647, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002049, '无线-E-NODEB必填完整性核查.安装位置类型', 'ENODEB.location_type', 901003003, 901000650, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002050, '无线-E-NODEB必填完整性核查.设备型号', 'ENODEB.product_name', 901003003, 901000653, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002051, '无线-E-NODEB必填完整性核查.软件版本', 'ENODEB.software_version', 901003003, 901000654, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002052, '无线-E-NODEB必填完整性核查.网络制式', 'ENODEB.net_model', 901003003, 901000658, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002053, '无线-E-NODEB必填完整性核查.数据质量责任人（移动）', 'ENODEB.qualitor', 901003003, 901000664, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002054, '无线-E-NODEB必填完整性核查.一线数据维护人（代维/一线）', 'ENODEB.maintainor', 901003003, 901000665, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002055, '无线-E-NODEB必填完整性核查.所属省份', 'ENODEB.province_id', 901003003, 901000666, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002056, '无线-E-NODEB必填完整性核查.所属地市', 'ENODEB.city_id', 901003003, 901000667, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002057, '无线-E-NODEB必填完整性核查.所属区县', 'ENODEB.county_id', 901003003, 901000668, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002058, '无线-G-NODEB必填完整性核查.资源标识', 'GNODEB.int_id', 901003004, 901000669, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002059, '无线-G-NODEB必填完整性核查.G-NODEB ID', 'GNODEB.nodeb_id', 901003004, 901000670, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002060, '无线-G-NODEB必填完整性核查.网管中网元名称', 'GNODEB.userlabel', 901003004, 901000672, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002061, '无线-G-NODEB必填完整性核查.安装位置类型', 'GNODEB.location_type', 901003004, 901000674, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002062, '无线-G-NODEB必填完整性核查.所属机房/位置点', 'GNODEB.related_room_location', 901003004, 901000675, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002063, '无线-G-NODEB必填完整性核查.生命周期状态', 'GNODEB.lifecycle_status', 901003004, 901000679, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002064, '无线-G-NODEB必填完整性核查.覆盖类型', 'GNODEB.beehive_type', 901003004, 901000684, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002065, '无线-G-NODEB必填完整性核查.VIP级别', 'GNODEB.vip_type', 901003004, 901000681, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002066, '无线-G-NODEB必填完整性核查.设备厂家', 'GNODEB.rated_power', 901003004, 901000676, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002067, '无线-G-NODEB必填完整性核查.所属OMC', 'GNODEB.related_omc', 901003004, 901000673, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002068, '无线-G-NODEB必填完整性核查.基站名称', 'GNODEB.zh_label', 901003004, 901000671, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002069, '无线-G-NODEB必填完整性核查.设备型号', 'GNODEB.product_name', 901003004, 901000677, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002070, '无线-G-NODEB必填完整性核查.软件版本', 'GNODEB.software_version', 901003004, 901000678, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002071, '无线-G-NODEB必填完整性核查.入网时间', 'GNODEB.setup_time', 901003004, 901000680, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002072, '无线-G-NODEB必填完整性核查.网络制式', 'GNODEB.net_model', 901003004, 901000682, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002073, '无线-G-NODEB必填完整性核查.数据质量责任人（移动）', 'GNODEB.qualitor', 901003004, 901000686, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002074, '无线-G-NODEB必填完整性核查.一线数据维护人（代维/一线）', 'GNODEB.maintainor', 901003004, 901000687, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002075, '无线-G-NODEB必填完整性核查.所属省份', 'GNODEB.province_id', 901003004, 901000688, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002076, '无线-G-NODEB必填完整性核查.所属地市', 'GNODEB.city_id', 901003004, 901000689, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002077, '无线-G-NODEB必填完整性核查.所属区县', 'GNODEB.county_id', 901003004, 901000690, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002078, '无线-RTK基准站必填完整性核查.资源标识', 'RTK.int_id', 901003005, 901000691, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002079, '无线-RTK基准站必填完整性核查.RTK-CORS ID', 'RTK.cors_id', 901003005, 901000692, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002080, '无线-RTK基准站必填完整性核查.安装方式', 'RTK.place_type', 901003005, 901000693, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002081, '无线-RTK基准站必填完整性核查.网管中网元名称', 'RTK.userlabel', 901003005, 901000694, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002082, '无线-RTK基准站必填完整性核查.安装位置类型', 'RTK.location_type', 901003005, 901000695, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002083, '无线-RTK基准站必填完整性核查.所属机房/位置点', 'RTK.related_room_location', 901003005, 901000696, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002084, '无线-RTK基准站必填完整性核查.软件版本', 'RTK.software_version', 901003005, 901000697, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002085, '无线-RTK基准站必填完整性核查.生命周期状态', 'RTK.lifecycle_status', 901003005, 901000698, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002086, '无线-RTK基准站必填完整性核查.入网时间', 'RTK.setup_time', 901003005, 901000699, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002087, '无线-RTK基准站必填完整性核查.数据质量责任人（移动）', 'RTK.qualitor', 901003005, 901000700, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002088, '无线-RTK基准站必填完整性核查.一线数据维护人（代维/一线）', 'RTK.maintainor', 901003005, 901000701, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002089, '无线-RTK基准站必填完整性核查.设备厂家', 'RTK.vendor_id', 901003005, 901000702, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002090, '无线-RTK基准站必填完整性核查.设备型号', 'RTK.product_name', 901003005, 901000703, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002091, '无线-RTK基准站必填完整性核查.RTK基准站名称', 'RTK.zh_label', 901003005, 901000704, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002092, '无线-RTK基准站必填完整性核查.设备序列号', 'RTK.device_sn', 901003005, 901000705, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002093, '无线-RTK基准站必填完整性核查.所属省份', 'RTK.province_id', 901003005, 901000706, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002094, '无线-RTK基准站必填完整性核查.所属地市', 'RTK.city_id', 901003005, 901000707, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002095, '无线-RTK基准站必填完整性核查.所属区县', 'RTK.county_id', 901003005, 901000708, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002096, '无线-CELL必填完整性核查.资源标识', 'CELL.int_id', 901003006, 901000709, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002097, '无线-CELL必填完整性核查.小区码', 'CELL.ci', 901003006, 901000710, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002098, '无线-CELL必填完整性核查.位置区码', 'CELL.lac', 901003006, 901000711, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002099, '无线-CELL必填完整性核查.网管中网元名称', 'CELL.userlabel', 901003006, 901000713, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002100, '无线-CELL必填完整性核查.使用频段', 'CELL.frequency', 901003006, 901000720, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002101, '无线-CELL必填完整性核查.安装位置类型', 'CELL.location_type', 901003006, 901000715, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002302, '无线-扩展型皮站AU必填完整性核查.资源标识', 'PICOAU.int_id', 901003023, 901000948, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002102, '无线-CELL必填完整性核查.所属机房/位置点', 'CELL.related_room_location', 901003006, 901000716, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002103, '无线-CELL必填完整性核查.生命周期状态', 'CELL.lifecycle_status', 901003006, 901000717, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002104, '无线-CELL必填完整性核查.所属基站', 'CELL.related_bs', 901003006, 901000714, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002105, '无线-CELL必填完整性核查.覆盖类型', 'CELL.beehive_type', 901003006, 901000722, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002106, '无线-CELL必填完整性核查.覆盖场景', 'CELL.cover_scene', 901003006, 901000723, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002107, '无线-CELL必填完整性核查.是否拉远', 'CELL.if_remote', 901003006, 901000721, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002108, '无线-CELL必填完整性核查.网络制式', 'CELL.net_model', 901003006, 901000719, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002109, '无线-CELL必填完整性核查.小区名称', 'CELL.zh_label', 901003006, 901000712, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002110, '无线-CELL必填完整性核查.入网时间', 'CELL.setup_time', 901003006, 901000718, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002111, '无线-CELL必填完整性核查.所属省份', 'CELL.province_id', 901003006, 901000727, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002112, '无线-CELL必填完整性核查.所属地市', 'CELL.city_id', 901003006, 901000728, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002113, '无线-CELL必填完整性核查.所属区县', 'CELL.county_id', 901003006, 901000729, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002114, '无线-E-UTRANCELL必填完整性核查.资源标识', 'EUTRANCELL.int_id', 901003007, 901000730, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002115, '无线-E-UTRANCELL必填完整性核查.E-CGI', 'EUTRANCELL.e_cgi', 901003007, 901000731, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002116, '无线-E-UTRANCELL必填完整性核查.网管中网元名称', 'EUTRANCELL.userlabel', 901003007, 901000735, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002117, '无线-E-UTRANCELL必填完整性核查.使用频段', 'EUTRANCELL.frequency', 901003007, 901000742, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002118, '无线-E-UTRANCELL必填完整性核查.安装位置类型', 'EUTRANCELL.location_type', 901003007, 901000737, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002119, '无线-E-UTRANCELL必填完整性核查.所属机房/位置点', 'EUTRANCELL.related_room_location', 901003007, 901000738, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002120, '无线-E-UTRANCELL必填完整性核查.生命周期状态', 'EUTRANCELL.lifecycle_status', 901003007, 901000739, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002121, '无线-E-UTRANCELL必填完整性核查.所属基站', 'EUTRANCELL.related_bs', 901003007, 901000736, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002122, '无线-E-UTRANCELL必填完整性核查.覆盖类型', 'EUTRANCELL.beehive_type', 901003007, 901000744, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002123, '无线-E-UTRANCELL必填完整性核查.覆盖场景', 'EUTRANCELL.cover_scene', 901003007, 901000745, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002124, '无线-E-UTRANCELL必填完整性核查.是否拉远', 'EUTRANCELL.if_remote', 901003007, 901000743, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002125, '无线-E-UTRANCELL必填完整性核查.网络制式', 'EUTRANCELL.net_model', 901003007, 901000741, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002126, '无线-E-UTRANCELL必填完整性核查.TAC', 'EUTRANCELL.tac', 901003007, 901000732, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002127, '无线-E-UTRANCELL必填完整性核查.小区名称', 'EUTRANCELL.zh_label', 901003007, 901000734, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002128, '无线-E-UTRANCELL必填完整性核查.入网时间', 'EUTRANCELL.setup_time', 901003007, 901000740, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002129, '无线-E-UTRANCELL必填完整性核查.所属省份', 'EUTRANCELL.province_id', 901003007, 901000749, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002130, '无线-E-UTRANCELL必填完整性核查.所属地市', 'EUTRANCELL.city_id', 901003007, 901000750, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002131, '无线-E-UTRANCELL必填完整性核查.所属区县', 'EUTRANCELL.county_id', 901003007, 901000751, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002132, '无线-NR-CELL必填完整性核查.资源标识', 'NRCELL.int_id', 901003008, 901000752, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002133, '无线-NR-CELL必填完整性核查.N-CGI', 'NRCELL.n_cgi', 901003008, 901000753, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002134, '无线-NR-CELL必填完整性核查.网管中网元名称', 'NRCELL.userlabel', 901003008, 901000757, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002135, '无线-NR-CELL必填完整性核查.使用频段', 'NRCELL.frequency', 901003008, 901000764, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002136, '无线-NR-CELL必填完整性核查.安装位置类型', 'NRCELL.location_type', 901003008, 901000759, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002137, '无线-NR-CELL必填完整性核查.所属机房/位置点', 'NRCELL.related_room_location', 901003008, 901000760, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002138, '无线-NR-CELL必填完整性核查.生命周期状态', 'NRCELL.lifecycle_status', 901003008, 901000761, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002139, '无线-NR-CELL必填完整性核查.所属基站', 'NRCELL.related_bs', 901003008, 901000758, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002140, '无线-NR-CELL必填完整性核查.覆盖类型', 'NRCELL.beehive_type', 901003008, 901000766, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002141, '无线-NR-CELL必填完整性核查.覆盖场景', 'NRCELL.cover_scene', 901003008, 901000767, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002142, '无线-NR-CELL必填完整性核查.是否拉远', 'NRCELL.if_remote', 901003008, 901000765, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002143, '无线-NR-CELL必填完整性核查.网络制式', 'NRCELL.net_model', 901003008, 901000763, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002144, '无线-NR-CELL必填完整性核查.TAC', 'NRCELL.tac', 901003008, 901000754, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002145, '无线-NR-CELL必填完整性核查.小区名称', 'NRCELL.zh_label', 901003008, 901000756, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002146, '无线-NR-CELL必填完整性核查.入网时间', 'NRCELL.setup_time', 901003008, 901000762, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002147, '无线-NR-CELL必填完整性核查.所属省份', 'NRCELL.province_id', 901003008, 901000771, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002148, '无线-NR-CELL必填完整性核查.所属地市', 'NRCELL.city_id', 901003008, 901000772, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002149, '无线-NR-CELL必填完整性核查.所属区县', 'NRCELL.county_id', 901003008, 901000773, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002150, '无线-扼流圈天线必填完整性核查.资源标识', 'ANTENNACHOKECOIL.int_id', 901003009, 901000774, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002151, '无线-扼流圈天线必填完整性核查.天线名称', 'ANTENNACHOKECOIL.userlabel', 901003009, 901000775, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002152, '无线-扼流圈天线必填完整性核查.设备厂家', 'ANTENNACHOKECOIL.vendor_id', 901003009, 901000777, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002153, '无线-扼流圈天线必填完整性核查.设备型号', 'ANTENNACHOKECOIL.device_type', 901003009, 901000778, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002154, '无线-扼流圈天线必填完整性核查.入网时间', 'ANTENNACHOKECOIL.setup_time', 901003009, 901000783, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002155, '无线-扼流圈天线必填完整性核查.生命周期状态', 'ANTENNACHOKECOIL.lifecycle_status', 901003009, 901000782, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002156, '无线-扼流圈天线必填完整性核查.所属RTK基准站', 'ANTENNACHOKECOIL.rtkcors', 901003009, 901000776, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002157, '无线-扼流圈天线必填完整性核查.设备序列号', 'ANTENNACHOKECOIL.device_sn', 901003009, 901000779, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002158, '无线-扼流圈天线必填完整性核查.安装方式', 'ANTENNACHOKECOIL.install_type', 901003009, 901000784, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002159, '无线-扼流圈天线必填完整性核查.所属省份', 'ANTENNACHOKECOIL.province_id', 901003009, 901000785, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002160, '无线-扼流圈天线必填完整性核查.所属地市', 'ANTENNACHOKECOIL.city_id', 901003009, 901000786, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002161, '无线-扼流圈天线必填完整性核查.所属区县', 'ANTENNACHOKECOIL.county_id', 901003009, 901000787, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002162, '无线-BBU必填完整性核查.资源标识', 'BBU.int_id', 901003010, 901000788, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002163, '无线-BBU必填完整性核查.BBU名称', 'BBU.zh_label', 901003010, 901000789, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002164, '无线-BBU必填完整性核查.所属基站', 'BBU.related_bs', 901003010, 901000791, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002165, '无线-BBU必填完整性核查.额定功率', 'BBU.rated_power', 901003010, 901000792, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002166, '无线-BBU必填完整性核查.网络制式', 'BBU.net_model', 901003010, 901000793, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002167, '无线-BBU必填完整性核查.所属省份', 'BBU.province_id', 901003010, 901000794, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002168, '无线-BBU必填完整性核查.所属地市', 'BBU.city_id', 901003010, 901000795, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002169, '无线-BBU必填完整性核查.所属区县', 'BBU.county_id', 901003010, 901000796, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002170, '无线-RRU必填完整性核查.资源标识', 'RRU.int_id', 901003011, 901000797, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002171, '无线-RRU必填完整性核查.网管中网元名称', 'RRU.zh_label', 901003011, 901000798, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002172, '无线-RRU必填完整性核查.安装位置类型', 'RRU.location_type', 901003011, 901000799, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002173, '无线-RRU必填完整性核查.所属机房/位置点', 'RRU.related_room_location', 901003011, 901000800, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002174, '无线-RRU必填完整性核查.关联小区', 'RRU.related_cell', 901003011, 901000802, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002175, '无线-RRU必填完整性核查.额定功率', 'RRU.rated_power', 901003011, 901000803, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002176, '无线-RRU必填完整性核查.接入方式', 'RRU.connect_model', 901003011, 901000804, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002177, '无线-RRU必填完整性核查.RRU设备型号', 'RRU.product_name', 901003011, 901000806, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002178, '无线-RRU必填完整性核查.所属省份', 'RRU.province_id', 901003011, 901000807, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002179, '无线-RRU必填完整性核查.所属地市', 'RRU.city_id', 901003011, 901000808, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002180, '无线-RRU必填完整性核查.所属区县', 'RRU.county_id', 901003011, 901000809, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002181, '无线-DU必填完整性核查.资源标识', 'DU.int_id', 901003012, 901000810, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002182, '无线-DU必填完整性核查.DU名称', 'DU.zh_label', 901003012, 901000811, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002183, '无线-DU必填完整性核查.所属基站', 'DU.related_bs', 901003012, 901000813, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002184, '无线-DU必填完整性核查.额定功率', 'DU.rated_power', 901003012, 901000814, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002185, '无线-DU必填完整性核查.网络制式', 'DU.net_model', 901003012, 901000815, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002186, '无线-DU必填完整性核查.安装位置类型', 'DU.location_type', 901003012, 901000817, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002187, '无线-DU必填完整性核查.所属机房/位置点', 'DU.related_room_location', 901003012, 901000818, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002188, '无线-DU必填完整性核查.所属省份', 'DU.province_id', 901003012, 901000819, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002189, '无线-DU必填完整性核查.所属地市', 'DU.city_id', 901003012, 901000820, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002190, '无线-DU必填完整性核查.所属区县', 'DU.county_id', 901003012, 901000821, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002191, '无线-CU必填完整性核查.资源标识', 'CU.int_id', 901003013, 901000822, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002192, '无线-CU必填完整性核查.CU名称', 'CU.zh_label', 901003013, 901000823, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002193, '无线-CU必填完整性核查.额定功率', 'CU.rated_power', 901003013, 901000825, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002194, '无线-CU必填完整性核查.网络制式', 'CU.net_model', 901003013, 901000826, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002195, '无线-CU必填完整性核查.安装位置类型', 'CU.location_type', 901003013, 901000827, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002196, '无线-CU必填完整性核查.所属机房/位置点', 'CU.related_room_location', 901003013, 901000828, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002197, '无线-CU必填完整性核查.所属省份', 'CU.province_id', 901003013, 901000829, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002198, '无线-CU必填完整性核查.所属地市', 'CU.city_id', 901003013, 901000830, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002199, '无线-CU必填完整性核查.所属区县', 'CU.county_id', 901003013, 901000831, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002200, '无线-AAU必填完整性核查.资源标识', 'AAU.int_id', 901003014, 901000832, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002201, '无线-AAU必填完整性核查.AAU名称', 'AAU.zh_label', 901003014, 901000833, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002202, '无线-AAU必填完整性核查.安装位置类型', 'AAU.location_type', 901003014, 901000834, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002203, '无线-AAU必填完整性核查.所属机房/位置点', 'AAU.related_room_location', 901003014, 901000835, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002204, '无线-AAU必填完整性核查.关联小区', 'AAU.related_cell', 901003014, 901000837, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002205, '无线-AAU必填完整性核查.额定功率', 'AAU.rated_power', 901003014, 901000838, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002206, '无线-AAU必填完整性核查.接入方式', 'AAU.connect_model', 901003014, 901000839, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002207, '无线-AAU必填完整性核查.AAU设备型号', 'AAU.product_name', 901003014, 901000841, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002208, '无线-AAU必填完整性核查.所属省份', 'AAU.province_id', 901003014, 901000842, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002209, '无线-AAU必填完整性核查.所属地市', 'AAU.city_id', 901003014, 901000843, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002210, '无线-AAU必填完整性核查.所属区县', 'AAU.county_id', 901003014, 901000844, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002211, '无线-板卡必填完整性核查.资源标识', 'WX_BOARD.int_id', 901003015, 901000845, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002212, '无线-板卡必填完整性核查.板卡型号', 'WX_BOARD.product_name', 901003015, 901000847, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002213, '无线-板卡必填完整性核查.板卡功能类型', 'WX_BOARD.board_function_type', 901003015, 901000849, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002214, '无线-板卡必填完整性核查.所属网元', 'WX_BOARD.related_bs', 901003015, 901000850, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002215, '无线-板卡必填完整性核查.所属省份', 'WX_BOARD.province_id', 901003015, 901000851, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002216, '无线-板卡必填完整性核查.所属地市', 'WX_BOARD.city_id', 901003015, 901000852, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002217, '无线-板卡必填完整性核查.所属区县', 'WX_BOARD.county_id', 901003015, 901000853, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002218, '无线-端口必填完整性核查.资源标识', 'WX_PORT.int_id', 901003016, 901000854, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002219, '无线-端口必填完整性核查.端口编号', 'WX_PORT.port_no', 901003016, 901000855, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002220, '无线-端口必填完整性核查.端口状态', 'WX_PORT.port_status', 901003016, 901000859, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002221, '无线-端口必填完整性核查.所属网元', 'WX_PORT.related_ne', 901003016, 901000861, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002222, '无线-端口必填完整性核查.所属省份', 'WX_PORT.province_id', 901003016, 901000862, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002223, '无线-端口必填完整性核查.所属地市', 'WX_PORT.city_id', 901003016, 901000863, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002224, '无线-端口必填完整性核查.所属区县', 'WX_PORT.county_id', 901003016, 901000864, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002225, '无线-天线必填完整性核查.资源标识', 'ANTENNA.int_id', 901003017, 901000865, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002226, '无线-天线必填完整性核查.天线名称', 'ANTENNA.zh_label', 901003017, 901000866, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002227, '无线-天线必填完整性核查.设备厂家', 'ANTENNA.vendor_id', 901003017, 901000867, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002228, '无线-天线必填完整性核查.设备型号', 'ANTENNA.product_name', 901003017, 901000868, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002229, '无线-天线必填完整性核查.所属铁塔', 'ANTENNA.related_tower', 901003017, 901000869, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002230, '无线-天线必填完整性核查.所在铁塔平台', 'ANTENNA.setup_location', 901003017, 901000870, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002231, '无线-天线必填完整性核查.天线挂高', 'ANTENNA.height', 901003017, 901000871, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002232, '无线-天线必填完整性核查.入网时间', 'ANTENNA.setup_time', 901003017, 901000872, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002233, '无线-天线必填完整性核查.天线类型', 'ANTENNA.antenna_type', 901003017, 901000873, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002234, '无线-天线必填完整性核查.是否与AAU一体化', 'ANTENNA.if_aau', 901003017, 901000874, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002235, '无线-天线必填完整性核查.所属省份', 'ANTENNA.province_id', 901003017, 901000876, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002236, '无线-天线必填完整性核查.所属地市', 'ANTENNA.city_id', 901003017, 901000877, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002237, '无线-天线必填完整性核查.所属区县', 'ANTENNA.county_id', 901003017, 901000878, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002238, '无线-天线工参必填完整性核查.资源标识', 'ANTENNAPARA.int_id', 901003018, 901000879, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002239, '无线-天线工参必填完整性核查.方位角', 'ANTENNAPARA.azimuth', 901003018, 901000880, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002240, '无线-天线工参必填完整性核查.关联小区', 'ANTENNAPARA.related_cell', 901003018, 901000881, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002241, '无线-天线工参必填完整性核查.所属天线', 'ANTENNAPARA.related_antenna', 901003018, 901000882, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002242, '无线-天线工参必填完整性核查.电下倾角', 'ANTENNAPARA.ele_bend', 901003018, 901000883, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002243, '无线-天线工参必填完整性核查.机械下倾角', 'ANTENNAPARA.machine_cor', 901003018, 901000884, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002244, '无线-天线工参必填完整性核查.关联频段', 'ANTENNAPARA.related_frequency', 901003018, 901000885, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002245, '无线-天线工参必填完整性核查.所属省份', 'ANTENNAPARA.province_id', 901003018, 901000886, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002246, '无线-天线工参必填完整性核查.所属地市', 'ANTENNAPARA.city_id', 901003018, 901000887, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002247, '无线-天线工参必填完整性核查.所属区县', 'ANTENNAPARA.county_id', 901003018, 901000888, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002248, '无线-铁塔必填完整性核查.资源标识', 'TOWER.int_id', 901003019, 901000889, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002249, '无线-铁塔必填完整性核查.铁塔名称', 'TOWER.zh_label', 901003019, 901000890, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002250, '无线-铁塔必填完整性核查.铁塔塔身高度', 'TOWER.tower_stature', 901003019, 901000891, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002251, '无线-铁塔必填完整性核查.铁塔平台数量', 'TOWER.tower_platnum', 901003019, 901000892, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002252, '无线-铁塔必填完整性核查.安装位置类型', 'TOWER.location_type', 901003019, 901000893, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002303, '无线-扩展型皮站AU必填完整性核查.AU名称', 'PICOAU.zh_label', 901003023, 901000949, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002253, '无线-铁塔必填完整性核查.所属机房/位置点', 'TOWER.related_room_location', 901003019, 901000894, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002254, '无线-铁塔必填完整性核查.铁塔类型', 'TOWER.tower_type', 901003019, 901000895, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002255, '无线-铁塔必填完整性核查.产权性质', 'TOWER.property_right', 901003019, 901000896, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002256, '无线-铁塔必填完整性核查.产权单位', 'TOWER.property_unit', 901003019, 901000897, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002257, '无线-铁塔必填完整性核查.共享单位', 'TOWER.share_unit', 901003019, 901000898, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002258, '无线-铁塔必填完整性核查.入网时间', 'TOWER.setup_time', 901003019, 901000899, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002259, '无线-铁塔必填完整性核查.铁塔产品种类', 'TOWER.production_type', 901003019, 901000900, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002260, '无线-铁塔必填完整性核查.所属省份', 'TOWER.province_id', 901003019, 901000902, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002261, '无线-铁塔必填完整性核查.所属地市', 'TOWER.city_id', 901003019, 901000903, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002262, '无线-铁塔必填完整性核查.所属区县', 'TOWER.county_id', 901003019, 901000904, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002263, '无线-直放站必填完整性核查.资源标识', 'RPT.int_id', 901003020, 901000905, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002264, '无线-直放站必填完整性核查.直放站名称', 'RPT.zh_label', 901003020, 901000906, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002265, '无线-直放站必填完整性核查.设备厂家', 'RPT.vendor_id', 901003020, 901000907, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002266, '无线-直放站必填完整性核查.信号接收方式', 'RPT.signal_receive_type', 901003020, 901000908, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002267, '无线-直放站必填完整性核查.供电方式', 'RPT.power_supply_type', 901003020, 901000909, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002268, '无线-直放站必填完整性核查.安装位置类型', 'RPT.location_type', 901003020, 901000910, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002269, '无线-直放站必填完整性核查.所属机房/位置点', 'RPT.related_room_location', 901003020, 901000911, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002270, '无线-直放站必填完整性核查.生命周期状态', 'RPT.lifecycle_status', 901003020, 901000913, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002271, '无线-直放站必填完整性核查.数据质量责任人（移动）', 'RPT.qualitor', 901003020, 901000914, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002272, '无线-直放站必填完整性核查.一线数据维护人（代维/一线）', 'RPT.maintainor', 901003020, 901000915, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002273, '无线-直放站必填完整性核查.直放站类型', 'RPT.repeater_type', 901003020, 901000916, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002274, '无线-直放站必填完整性核查.覆盖类型', 'RPT.beehive_type', 901003020, 901000917, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002275, '无线-直放站必填完整性核查.信源小区', 'RPT.related_cell', 901003020, 901000918, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002276, '无线-直放站必填完整性核查.额定功率', 'RPT.rated_power', 901003020, 901000919, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002277, '无线-直放站必填完整性核查.所属省份', 'RPT.province_id', 901003020, 901000920, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002278, '无线-直放站必填完整性核查.所属地市', 'RPT.city_id', 901003020, 901000921, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002279, '无线-直放站必填完整性核查.所属区县', 'RPT.county_id', 901003020, 901000922, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002280, '无线-分布系统必填完整性核查.资源标识', 'SPEARD.int_id', 901003021, 901000923, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002281, '无线-分布系统必填完整性核查.分布系统名称', 'SPEARD.zh_label', 901003021, 901000924, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002282, '无线-分布系统必填完整性核查.集成厂家', 'SPEARD.integrated_vendor', 901003021, 901000925, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002283, '无线-分布系统必填完整性核查.所属位置点', 'SPEARD.related_location', 901003021, 901000926, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002284, '无线-分布系统必填完整性核查.天线数量', 'SPEARD.antenna_num', 901003021, 901000927, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002285, '无线-分布系统必填完整性核查.干放数量', 'SPEARD.trunk_amplifier_num', 901003021, 901000928, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002286, '无线-分布系统必填完整性核查.关联基站', 'SPEARD.related_bs', 901003021, 901000929, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002287, '无线-分布系统必填完整性核查.信源小区', 'SPEARD.related_cell', 901003021, 901000930, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002288, '无线-分布系统必填完整性核查.无源器件厂家', 'SPEARD.passive_device_vendor', 901003021, 901000931, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002289, '无线-分布系统必填完整性核查.馈线厂家', 'SPEARD.feeder_vendor', 901003021, 901000932, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002290, '无线-分布系统必填完整性核查.天线厂家', 'SPEARD.antenna_vendor_id', 901003021, 901000933, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002291, '无线-分布系统必填完整性核查.所属省份', 'SPEARD.province_id', 901003021, 901000934, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002292, '无线-分布系统必填完整性核查.所属地市', 'SPEARD.city_id', 901003021, 901000935, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002293, '无线-分布系统必填完整性核查.所属区县', 'SPEARD.county_id', 901003021, 901000936, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002294, '无线-一体化皮站AP必填完整性核查.资源标识', 'PICOAP.int_id', 901003022, 901000937, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002295, '无线-一体化皮站AP必填完整性核查.AP名称', 'PICOAP.zh_label', 901003022, 901000938, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002296, '无线-一体化皮站AP必填完整性核查.额定功率', 'PICOAP.rated_pawer', 901003022, 901000941, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002297, '无线-一体化皮站AP必填完整性核查.设备厂家', 'PICOAP.vendor_id', 901003022, 901000943, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002298, '无线-一体化皮站AP必填完整性核查.设备型号', 'PICOAP.product_name', 901003022, 901000944, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002299, '无线-一体化皮站AP必填完整性核查.所属省份', 'PICOAP.province_id', 901003022, 901000945, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002300, '无线-一体化皮站AP必填完整性核查.所属地市', 'PICOAP.city_id', 901003022, 901000946, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002301, '无线-一体化皮站AP必填完整性核查.所属区县', 'PICOAP.county_id', 901003022, 901000947, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002304, '无线-扩展型皮站AU必填完整性核查.额定功率', 'PICOAU.rated_pawer', 901003023, 901000952, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002305, '无线-扩展型皮站AU必填完整性核查.设备厂家', 'PICOAU.vendor_id', 901003023, 901000954, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002306, '无线-扩展型皮站AU必填完整性核查.设备型号', 'PICOAU.product_name', 901003023, 901000955, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002307, '无线-扩展型皮站AU必填完整性核查.所属省份', 'PICOAU.province_id', 901003023, 901000956, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002308, '无线-扩展型皮站AU必填完整性核查.所属地市', 'PICOAU.city_id', 901003023, 901000957, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002309, '无线-扩展型皮站AU必填完整性核查.所属区县', 'PICOAU.county_id', 901003023, 901000958, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002310, '无线-扩展型皮站交换机必填完整性核查.资源标识', 'PICOSWITCH.int_id', 901003024, 901000959, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002311, '无线-扩展型皮站交换机必填完整性核查.交换机名称', 'PICOSWITCH.zh_label', 901003024, 901000960, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002312, '无线-扩展型皮站交换机必填完整性核查.额定功率', 'PICOSWITCH.rated_pawer', 901003024, 901000963, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002313, '无线-扩展型皮站交换机必填完整性核查.设备厂家', 'PICOSWITCH.vendor_id', 901003024, 901000965, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002314, '无线-扩展型皮站交换机必填完整性核查.设备型号', 'PICOSWITCH.product_name', 901003024, 901000966, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002315, '无线-扩展型皮站交换机必填完整性核查.所属省份', 'PICOSWITCH.province_id', 901003024, 901000967, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002316, '无线-扩展型皮站交换机必填完整性核查.所属地市', 'PICOSWITCH.city_id', 901003024, 901000968, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002317, '无线-扩展型皮站交换机必填完整性核查.所属区县', 'PICOSWITCH.county_id', 901003024, 901000969, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002500, '无线-OMC规范性核查-设备厂家-字典规范性核查', 'vendor_id', 901003102, 901000602, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
+ (901002501, '无线-BSC规范性核查-设备厂家-字典规范性核查', 'vendor_id', 901003106, 901000609, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
+ (901002502, '无线-BSC规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003107, 901000615, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002503, '无线-BTS规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003110, 901000628, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002504, '无线-BTS规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003111, 901000633, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002505, '无线-BTS规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003112, 901000638, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002506, '无线-BTS规范性核查-设备厂家-字典规范性核查', 'vendor_id', 901003113, 901000630, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
+ (901002507, '无线-BTS规范性核查-VIP级别-字典规范性核查', 'vip_type', 901003115, 901000635, 1, NULL, 'VIP级别vip_type', 'admin', 'admin', NULL),
+ (901002508, '无线-BTS规范性核查-网络制式-字典规范性核查', 'net_model', 901003116, 901000636, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002509, '无线-E-NODEB规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003119, 901000655, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002510, '无线-E-NODEB规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003120, 901000660, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002511, '无线-E-NODEB规范性核查-VIP级别-字典规范性核查', 'vip_type', 901003121, 901000657, 1, NULL, 'VIP级别vip_type', 'admin', 'admin', NULL),
+ (901002512, '无线-E-NODEB规范性核查-设备厂家-字典规范性核查', 'rated_power', 901003122, 901000652, 1, NULL, '设备厂家rated_power', 'admin', 'admin', NULL),
+ (901002513, '无线-E-NODEB规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003124, 901000650, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002514, '无线-E-NODEB规范性核查-网络制式-字典规范性核查', 'net_model', 901003125, 901000658, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002515, '无线-G-NODEB规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003128, 901000674, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002516, '无线-G-NODEB规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003129, 901000679, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002517, '无线-G-NODEB规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003130, 901000684, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002518, '无线-G-NODEB规范性核查-VIP级别-字典规范性核查', 'vip_type', 901003131, 901000681, 1, NULL, 'VIP级别vip_type', 'admin', 'admin', NULL),
+ (901002519, '无线-G-NODEB规范性核查-设备厂家-字典规范性核查', 'rated_power', 901003132, 901000676, 1, NULL, '设备厂家rated_power', 'admin', 'admin', NULL),
+ (901002520, '无线-G-NODEB规范性核查-网络制式-字典规范性核查', 'net_model', 901003134, 901000682, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002521, '无线-RTK基准站规范性核查-安装方式-字典规范性核查', 'place_type', 901003136, 901000693, 1, NULL, '安装方式place_type', 'admin', 'admin', NULL),
+ (901002522, '无线-RTK基准站规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003138, 901000695, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002523, '无线-RTK基准站规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003139, 901000698, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002524, '无线-RTK基准站规范性核查-设备厂家-字典规范性核查', 'vendor_id', 901003140, 901000702, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
+ (901002525, '无线-CELL规范性核查-使用频段-字典规范性核查', 'frequency', 901003144, 901000720, 1, NULL, '使用频段frequency', 'admin', 'admin', NULL),
+ (901002526, '无线-CELL规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003145, 901000715, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002527, '无线-CELL规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003146, 901000717, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002528, '无线-CELL规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003147, 901000722, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002529, '无线-CELL规范性核查-覆盖场景-字典规范性核查', 'cover_scene', 901003148, 901000723, 1, NULL, '覆盖场景cover_scene', 'admin', 'admin', NULL),
+ (901002530, '无线-CELL规范性核查-是否拉远-字典规范性核查', 'if_remote', 901003149, 901000721, 1, NULL, '是否拉远if_remote', 'admin', 'admin', NULL),
+ (901002531, '无线-CELL规范性核查-网络制式-字典规范性核查', 'net_model', 901003150, 901000719, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002532, '无线-E-UTRANCELL规范性核查-使用频段-字典规范性核查', 'frequency', 901003154, 901000742, 1, NULL, '使用频段frequency', 'admin', 'admin', NULL),
+ (901002533, '无线-E-UTRANCELL规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003155, 901000737, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002534, '无线-E-UTRANCELL规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003156, 901000739, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002535, '无线-E-UTRANCELL规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003157, 901000744, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002536, '无线-E-UTRANCELL规范性核查-覆盖场景-字典规范性核查', 'cover_scene', 901003158, 901000745, 1, NULL, '覆盖场景cover_scene', 'admin', 'admin', NULL),
+ (901002537, '无线-E-UTRANCELL规范性核查-是否拉远-字典规范性核查', 'if_remote', 901003159, 901000743, 1, NULL, '是否拉远if_remote', 'admin', 'admin', NULL),
+ (901002538, '无线-E-UTRANCELL规范性核查-网络制式-字典规范性核查', 'net_model', 901003160, 901000741, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002539, '无线-NR-CELL规范性核查-使用频段-字典规范性核查', 'frequency', 901003164, 901000764, 1, NULL, '使用频段frequency', 'admin', 'admin', NULL),
+ (901002540, '无线-NR-CELL规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003165, 901000759, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002541, '无线-NR-CELL规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003166, 901000761, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002542, '无线-NR-CELL规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003167, 901000766, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL),
+ (901002543, '无线-NR-CELL规范性核查-覆盖场景-字典规范性核查', 'cover_scene', 901003168, 901000767, 1, NULL, '覆盖场景cover_scene', 'admin', 'admin', NULL),
+ (901002544, '无线-NR-CELL规范性核查-是否拉远-字典规范性核查', 'if_remote', 901003169, 901000765, 1, NULL, '是否拉远if_remote', 'admin', 'admin', NULL),
+ (901002545, '无线-NR-CELL规范性核查-网络制式-字典规范性核查', 'net_model', 901003170, 901000763, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002546, '无线-扼流圈天线规范性核查-设备厂家-字典规范性核查', 'vendor_id', 901003174, 901000777, 1, NULL, '设备厂家vendor_id', 'admin', 'admin', NULL),
+ (901002547, '无线-扼流圈天线规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003175, 901000782, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002548, '无线-扼流圈天线规范性核查-安装方式-字典规范性核查', 'install_type', 901003176, 901000784, 1, NULL, '安装方式install_type', 'admin', 'admin', NULL),
+ (901002549, '无线-BBU规范性核查-网络制式-字典规范性核查', 'net_model', 901003179, 901000793, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002550, '无线-RRU规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003182, 901000799, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002551, '无线-RRU规范性核查-接入方式-字典规范性核查', 'connect_model', 901003183, 901000804, 1, NULL, '接入方式connect_model', 'admin', 'admin', NULL),
+ (901002552, '无线-DU规范性核查-网络制式-字典规范性核查', 'net_model', 901003186, 901000815, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002553, '无线-DU规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003187, 901000817, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002554, '无线-CU规范性核查-网络制式-字典规范性核查', 'net_model', 901003190, 901000826, 1, NULL, '网络制式net_model', 'admin', 'admin', NULL),
+ (901002555, '无线-CU规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003191, 901000827, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002556, '无线-AAU规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003194, 901000834, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002557, '无线-AAU规范性核查-接入方式-字典规范性核查', 'connect_model', 901003195, 901000839, 1, NULL, '接入方式connect_model', 'admin', 'admin', NULL),
+ (901002558, '无线-板卡规范性核查-板卡功能类型-字典规范性核查', 'board_function_type', 901003197, 901000849, 1, NULL, '板卡功能类型board_function_type', 'admin', 'admin', NULL),
+ (901002559, '无线-端口规范性核查-端口状态-字典规范性核查', 'port_status', 901003199, 901000859, 1, NULL, '端口状态port_status', 'admin', 'admin', NULL),
+ (901002560, '无线-天线规范性核查-天线类型-字典规范性核查', 'antenna_type', 901003202, 901000873, 1, NULL, '天线类型antenna_type', 'admin', 'admin', NULL),
+ (901002561, '无线-天线规范性核查-是否与AAU一体化-字典规范性核查', 'if_aau', 901003203, 901000874, 1, NULL, '是否与AAU一体化if_aau', 'admin', 'admin', NULL),
+ (901002562, '无线-天线工参规范性核查-关联频段-字典规范性核查', 'related_frequency', 901003205, 901000885, 1, NULL, '关联频段related_frequency', 'admin', 'admin', NULL),
+ (901002563, '无线-铁塔规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003208, 901000893, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002564, '无线-铁塔规范性核查-铁塔类型-字典规范性核查', 'tower_type', 901003209, 901000895, 1, NULL, '铁塔类型tower_type', 'admin', 'admin', NULL),
+ (901002565, '无线-铁塔规范性核查-产权性质-字典规范性核查', 'property_right', 901003210, 901000896, 1, NULL, '产权性质property_right', 'admin', 'admin', NULL),
+ (901002566, '无线-铁塔规范性核查-产权单位-字典规范性核查', 'property_unit', 901003211, 901000897, 1, NULL, '产权单位property_unit', 'admin', 'admin', NULL),
+ (901002567, '无线-铁塔规范性核查-共享单位-字典规范性核查', 'share_unit', 901003212, 901000898, 1, NULL, '共享单位share_unit', 'admin', 'admin', NULL),
+ (901002568, '无线-铁塔规范性核查-铁塔产品种类-字典规范性核查', 'production_type', 901003213, 901000900, 1, NULL, '铁塔产品种类production_type', 'admin', 'admin', NULL),
+ (901002569, '无线-直放站规范性核查-信号接收方式-字典规范性核查', 'signal_receive_type', 901003216, 901000908, 1, NULL, '信号接收方式signal_receive_type', 'admin', 'admin', NULL),
+ (901002570, '无线-直放站规范性核查-供电方式-字典规范性核查', 'power_supply_type', 901003217, 901000909, 1, NULL, '供电方式power_supply_type', 'admin', 'admin', NULL),
+ (901002571, '无线-直放站规范性核查-安装位置类型-字典规范性核查', 'location_type', 901003218, 901000910, 1, NULL, '安装位置类型location_type', 'admin', 'admin', NULL),
+ (901002572, '无线-直放站规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 901003219, 901000913, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL),
+ (901002573, '无线-直放站规范性核查-覆盖类型-字典规范性核查', 'beehive_type', 901003220, 901000917, 1, NULL, '覆盖类型beehive_type', 'admin', 'admin', NULL);
 

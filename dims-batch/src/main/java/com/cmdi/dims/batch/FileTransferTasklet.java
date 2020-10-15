@@ -1,7 +1,7 @@
 package com.cmdi.dims.batch;
 
-import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.infrastructure.util.FtpSession;
 import com.cmdi.dims.sdk.model.FileLocationDto;
@@ -34,6 +34,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
     private DataService dataService;
     public static final String regex1= "-R";
     public static final String regex2 = ".*[0-9].*";
+    public static final String specialTableName = "BOARD,PORT,CE_DEVICE_GF";
     //TODO process中的三个参数怎么传进来
     @Override
     public void process(String taskCode, String province, String speciality) throws Exception {
@@ -95,10 +96,12 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         //in case of split files
                         baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),"-");
                     }
+                    //table name mapping
+                    String tableName = StringUtils.containsIgnoreCase(specialTableName,baseName)?PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName:baseName;
                     String fileName = FilenameUtils.getName(file.getName());
-                    if (specialityTables.containsKey(baseName.toUpperCase())) {
+                    if (specialityTables.containsKey(tableName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
-                        taskItemFile.setDestTable(baseName.toUpperCase());
+                        taskItemFile.setDestTable(tableName.toUpperCase());
                         taskItemFile.setName(fileName);
                         taskItemFile.setCode(folder + "/" + file.getName());
                         taskItemFile.setTaskCode(taskCode);

@@ -13,8 +13,8 @@ drop table if exists RRU;
 drop table if exists DU;
 drop table if exists CU;
 drop table if exists AAU;
-drop table if exists BOARD;
-drop table if exists PORT;
+drop table if exists WX_BOARD;
+drop table if exists WX_PORT;
 drop table if exists ANTENNA;
 drop table if exists ANTENNAPARA;
 drop table if exists TOWER;
@@ -31,7 +31,7 @@ create table BSC(
 int_id 	varchar(500),userlabel varchar(500),vendor_id varchar(500),product_name varchar(500),related_rackpos varchar(500),related_omc varchar(500),local_spc varchar(500),software_version	varchar(500),lifecycle_status varchar(500),setup_time varchar(500),qualitor varchar(500),maintainor varchar(500),related_mgw varchar(500),related_mme_sgsn	varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result 	text,dims_col_rtName text
 );
 create table BTS(
-int_id  varchar(500),zh_label 	varchar(500),userlabel 	varchar(500),related_omc 	varchar(500),location_type varchar(500),related_room_location	varchar(500),vendor_id 	varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type 	varchar(500),net_model 	varchar(500),device_type 	varchar(500),beehive_type varchar(500),related_bsc 	varchar(500),qualitor 	varchar(500),maintainor 	varchar(500),province_id 	varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
+int_id  varchar(500),zh_label 	varchar(500),userlabel 	varchar(500),related_omc 	varchar(500),location_type varchar(500),related_room_location	varchar(500),vendor_id 	varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type 	varchar(500),net_model 	varchar(500),beehive_type varchar(500),related_bsc 	varchar(500),qualitor 	varchar(500),maintainor 	varchar(500),province_id 	varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
 );
 create table ENODEB(
 int_id  varchar(500),nodeb_id varchar(500),zh_label varchar(500),userlabel 	varchar(500),related_omc varchar(500),location_type varchar(500),related_room_location	varchar(500),rated_power varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type varchar(500),net_model varchar(500),device_type varchar(500),beehive_type varchar(500),related_bsc varchar(500),s1_ipaddress varchar(500),construction_type varchar(500),qualitor varchar(500),maintainor varchar(500),province_id varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
@@ -69,10 +69,10 @@ int_id varchar(500),zh_label varchar(500),du_serial varchar(500),related_bs varc
 create table AAU(
 int_id varchar(500),zh_label varchar(500),location_type varchar(500),related_room_location varchar(500),location varchar(500),related_cell varchar(500),rated_power varchar(500),connect_model varchar(500),aau_serial varchar(500),product_name varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
-create table BOARD(
+create table WX_BOARD(
 int_id varchar(500),board_serial varchar(500),product_name varchar(500),physical_location varchar(500),board_function_type varchar(500),related_bs varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
-create table PORT(
+create table WX_PORT(
 int_id varchar(500),port_no varchar(500),location varchar(500),circuit_name varchar(500),fiber_id varchar(500),port_status varchar(500),port_type varchar(500),related_ne varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table ANTENNA(
@@ -115,8 +115,8 @@ create index if not exists idx_RRU2intId on RRU(int_id);
 create index if not exists idx_DU2intId on DU(int_id);
 create index if not exists idx_CU2intId on CU(int_id);
 create index if not exists idx_AAU2intId on AAU(int_id);
-create index if not exists idx_BOARD2intId on BOARD(int_id);
-create index if not exists idx_PORT2intId on PORT(int_id);
+create index if not exists idx_BOARD2intId on WX_BOARD(int_id);
+create index if not exists idx_PORT2intId on WX_PORT(int_id);
 create index if not exists idx_ANTENNA2intId on ANTENNA(int_id);
 create index if not exists idx_ANTENNAPARA2intId on ANTENNAPARA(int_id);
 create index if not exists idx_TOWER2intId on TOWER(int_id);
@@ -184,7 +184,7 @@ DROP TABLE IF EXISTS CM_ONU_PORT;
 DROP TABLE IF EXISTS CM_DEVICE_OBD;
 DROP TABLE IF EXISTS CM_OBD_PORT;
 DROP TABLE IF EXISTS CE_DEVICE_DMT;
-DROP TABLE IF EXISTS CE_DEVICE_GF;
+DROP TABLE IF EXISTS JIAKE_CE_DEVICE_GF;
 DROP TABLE IF EXISTS CM_GF_PORT;
 CREATE TABLE CM_HOME_CUST_BUSINESS (int_id VARCHAR ( 500 ),cust_num VARCHAR ( 500 ),related_standard_address VARCHAR ( 500 ),device_id VARCHAR ( 500 ),port_id VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
 );
@@ -221,7 +221,7 @@ int_id VARCHAR ( 500 ),port_no VARCHAR ( 500 ),port_status VARCHAR ( 500 ),relat
 CREATE TABLE CE_DEVICE_DMT (
 int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
 );
-CREATE TABLE CE_DEVICE_GF (
+CREATE TABLE JIAKE_CE_DEVICE_GF (
 int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),sub_device_type VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
 );
 CREATE TABLE CM_GF_PORT (
@@ -239,7 +239,7 @@ CREATE INDEX IF NOT EXISTS idx_CM_ONU_PORT2intId ON CM_ONU_PORT ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CM_DEVICE_OBD2intId ON CM_DEVICE_OBD ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CM_OBD_PORT2intId ON CM_OBD_PORT ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_DMT2intId ON CE_DEVICE_DMT ( int_id );
-CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_GF2intId ON CE_DEVICE_GF ( int_id );
+CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_GF2intId ON JIAKE_CE_DEVICE_GF ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CM_GF_PORT2intId ON CM_GF_PORT ( int_id );
 ---核心网
 drop table if exists SMS_MSSBASEINFO;
@@ -698,7 +698,7 @@ create index if not exists idx_HSS_BE_related_lstp on HSS_BE(related_lstp);
 create index if not exists idx_HSS_BE_related_dra on HSS_BE(related_dra);
 --传输管线ddl
 drop table if exists CE_DEVICE_GJ;
-drop table if exists CE_DEVICE_GF;
+drop table if exists TSGX_CE_DEVICE_GF;
 drop table if exists CE_DEVICE_GB;
 drop table if exists CE_DEVICE_JT;
 drop table if exists CM_PORT_FIBER;
@@ -746,7 +746,7 @@ CREATE TABLE CE_DEVICE_GJ (
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );
-CREATE TABLE CE_DEVICE_GF (
+CREATE TABLE TSGX_CE_DEVICE_GF (
 	resfdn VARCHAR (500),
 	zh_label VARCHAR (500),
 	lifecycle_status VARCHAR (500),
@@ -1202,7 +1202,7 @@ CREATE TABLE CR_LAYINGSEGMENT_CABLE (
     dims_col_rtName TEXT 
 );
 create index if not exists idx_CE_DEVICE_GJ2resfdn on CE_DEVICE_GJ(resfdn); 
-create index if not exists idx_CE_DEVICE_GF2resfdn on CE_DEVICE_GF(resfdn); 
+create index if not exists idx_CE_DEVICE_GF2resfdn on TSGX_CE_DEVICE_GF(resfdn); 
 create index if not exists idx_CE_DEVICE_GB2resfdn on CE_DEVICE_GB(resfdn); 
 create index if not exists idx_CE_DEVICE_JT2resfdn on CE_DEVICE_JT(resfdn); 
 create index if not exists idx_CM_PORT_FIBER2resfdn on CM_PORT_FIBER(resfdn); 
@@ -2057,8 +2057,8 @@ drop table if exists EMS;
 drop table if exists SUBNET;
 drop table if exists TRANSI_SYSTEM;
 drop table if exists DEVICE;
-drop table if exists BOARD;
-drop table if exists PORT;
+drop table if exists TSNX_BOARD;
+drop table if exists TSNX_PORT;
 drop table if exists LINK_PORT_ODF;
 drop table if exists TOPO;
 drop table if exists OPATH;
@@ -2116,7 +2116,7 @@ CREATE TABLE TRANSI_SYSTEM (
 CREATE TABLE DEVICE (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
-	related_rack_position VARCHAR ( 500 ),
+	related_rack VARCHAR ( 500 ),
 	ne_type VARCHAR ( 500 ),
 	service_level VARCHAR ( 500 ),
 	vendor_id VARCHAR ( 500 ),
@@ -2137,7 +2137,7 @@ CREATE TABLE DEVICE (
     dims_col_rtName TEXT 
 );
 
-CREATE TABLE BOARD (
+CREATE TABLE TSNX_BOARD (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
 	related_ne VARCHAR ( 500 ),
@@ -2151,7 +2151,7 @@ CREATE TABLE BOARD (
     dims_col_rtName TEXT 
 );
 
-CREATE TABLE PORT (
+CREATE TABLE TSNX_PORT (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
 	port_status VARCHAR ( 500 ),
@@ -2545,10 +2545,10 @@ create index if not exists idx_TRANSI_SYSTEM2res_identifier on TRANSI_SYSTEM(res
 create index if not exists idx_TRANSI_SYSTEM2related_omc on TRANSI_SYSTEM(related_omc);
 create index if not exists idx_DEVICE2res_identifier on DEVICE(res_identifier);
 create index if not exists idx_DEVICE2related_postion_related_room on DEVICE(related_postion_related_room);
-create index if not exists idx_BOARD2res_identifier on BOARD(res_identifier);
-create index if not exists idx_BOARD2related_ne on BOARD(related_ne);
-create index if not exists idx_PORT2res_identifier on PORT(res_identifier);
-create index if not exists idx_PORT2related_ne on PORT(related_ne);
+create index if not exists idx_BOARD2res_identifier on TSNX_BOARD(res_identifier);
+create index if not exists idx_BOARD2related_ne on TSNX_BOARD(related_ne);
+create index if not exists idx_PORT2res_identifier on TSNX_PORT(res_identifier);
+create index if not exists idx_PORT2related_ne on TSNX_PORT(related_ne);
 create index if not exists idx_LINK_PORT_ODF2res_identifier on LINK_PORT_ODF(res_identifier);
 create index if not exists idx_LINK_PORT_ODF2a_port on LINK_PORT_ODF(a_port);
 create index if not exists idx_LINK_PORT_ODF2z_port on LINK_PORT_ODF(z_port);
@@ -4096,5 +4096,64 @@ begin
           county=(select name from dims_tm_areaCodeConfig where code=t.countyCode and regiontype=3)
     where taskcode=p_taskCode
       and index_id=p_indexId;
+end;
+$$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION proc_checkonedictaccuracyindex_DIMS_CZ_02044(p_provincecode varchar, p_taskcode varchar, p_indexid integer)
+ returns void as $$
+declare
+   v_idxName          text;
+   v_idxCode          text;
+   v_entitytypeId     integer;
+   v_sql              text;
+	 v_province	        varchar(100);
+	 v_tableName	      varchar(100);
+	 v_columnName	      varchar(100);
+	 v_dictTypeId	      integer;
+   v_amount           integer;
+	 v_errorAmount      integer;
+	 v_indexValue       numeric(6,5);
+  
+begin
+
+	 select name,code,entitytype_id
+	   into v_idxName,v_idxCode,v_entitytypeId
+	   From dims_idx_index
+	  where id=p_indexId;
+
+	 select extensiontable
+	   into strict v_tableName
+	   from dims_mm_entitytype
+	  where id=v_entitytypeId;
+
+	 select attr.columnName,attr.dictionarytype_id
+	   into strict v_columnName,v_dictTypeId
+	   from dims_idx_rule r,dims_mm_attributetype attr
+	  where attr.dictionarytype_id is not null
+	    and attr.id=r.attributeType_id
+	    and r.type=1
+	    and r.index_id=p_indexId;
+
+	 --总量
+	 v_sql := 'select count(1) from '||v_tableName;
+   execute v_sql into v_amount;
+
+      v_sql := 'update '||v_tableName||' c
+		            set dims_col_result=(case when dims_col_result like ''%'||v_idxCode||'%'' then dims_col_result
+		                                      when dims_col_result is null then '''||v_idxCode||'''
+		                                      else dims_col_result||'','||v_idxCode||''' end),
+										dims_col_rtName=(case when dims_col_rtName like ''%'||v_idxName||'%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:'||v_idxName||'''
+		                                      else dims_col_rtName||'','||v_idxName||''' end)
+		                                      where isNotNull('||v_columnName||') and not exists ( select 1 from dims_mm_dictionary dict
+							                  where c.type_identifier = ''网络地址'' and ''网络设备地址、自有业务地址、其他''~ c.'||v_columnName||') and
+		                                      not exists ( select 1 from dims_mm_dictionary dict where c.type_identifier = ''用户地址'' and ''家宽（上网、固话、机顶盒）、手机上网、volte、集客专线、wlan、IDC、物联网、其他'' ~ c.'||v_columnName||' ) 
+		                                     and not exists ( select 1 from dims_mm_dictionary dict where c.type_identifier != ''用户地址'' and  c.type_identifier != ''网络地址''   and ''网络设备地址、自有业务地址、家宽（上网、固话、机顶盒）、手机上网、volte、集客专线、wlan、IDC、物联网、其他'' ~ c.'||v_columnName||' )';
+	
+   execute v_sql;
+	 get diagnostics v_errorAmount = row_count;
+
+	 --指标值统计
+	 perform proc_generateCommonIndexValue(p_provinceCode,p_taskCode,p_indexid,v_tableName);
 end;
 $$ language plpgsql;
