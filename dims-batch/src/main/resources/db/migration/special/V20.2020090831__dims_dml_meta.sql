@@ -15145,10 +15145,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-光交接箱规范性核查-纬度-经纬度规范性核查'' end)
                  where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, null),
-		
-		
-		
-(904003225, '传输管线-光分纤箱规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02087', 2087, 904001002, '传输管线', 11, null, 
+(904003225, '传输管线-光分纤箱规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02087', 2087, 904001002, '传输管线', 11, null,
 'update CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02087''
@@ -15165,9 +15162,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查'' end)
-                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),		
-		
-		
+                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),
 (904003227, '传输管线-人手井规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02089', 2089, 904001012, '传输管线', 11, null, 
 'update CE_FACILITY_WELL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02089%'' then dims_col_result
@@ -15262,7 +15257,6 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              when dims_col_rtName is null then ''不满足规范:传输管线-标石规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-标石规范性核查-纬度-经纬度规范性核查'' end)
                  where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, null),
-(904003236, '传输管线-标石规范性核查-纬度-经纬度规范性核查', 'DIMS_GX_02098', 2098, 904001016, '传输管线', 11, null,
 (904003237, '传输管线-光缆段的纤芯数与实际的纤芯数量一致性', 'DIMS_GX_04005', 4005, 904001006, '传输管线', 11, null,
 'update CE_CABLE_SEGMENT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_04005%'' then dims_col_result
@@ -20649,7 +20643,7 @@ insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTEN
 (903001023, 'IGP连接（SPN)', 'IGP_LINK_INFO', '传输内线', null, 'IGP_LINK_INFO', null, null, 'admin', 'admin', null),
 (903001024, '网络切片（SPN)', 'NETWORK_SLICING', '传输内线', null, 'NETWORK_SLICING', null, null, 'admin', 'admin', null),
 (903001025, 'MtnGroup（SPN)', 'MTN_GROUP', '传输内线', null, 'MTN_GROUP', null, null, 'admin', 'admin', null),
-(903001026, 'MtnChannel（SPN)', 'MTN_CHANNEL', '传输内线', null, 'MTN_CHANNEL', null, null, 'admin', 'admin', null);
+(903001026, 'MtnChannel（SPN)', 'CSNX_MTN_CHANNEL', '传输内线', null, 'CSNX_MTN_CHANNEL', null, null, 'admin', 'admin', null);
 
 --插入传输内线 dims_mm_attributetype
 insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DATATYPE, DICTIONARYTYPE_ID, CREATOR, UPDATER, MEMO) values
@@ -20994,18 +20988,18 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001619, '资源标识', 'res_identifier', 903001024, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001620, '网络切片名称', 'zh_label', 903001024, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001621, '网络切片类型', 'type', 903001024, 'TYPE', 'string', null, 'admin', 'admin', null),
-(903001622, '所属省份', 'z_province_id', 903001024, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001623, '所属地市', 'z_city_id', 903001024, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001624, '所属区县', 'z_county_id', 903001024, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001622, '所属省份', 'z_province_id', 903001024, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001623, '所属地市', 'z_city_id', 903001024, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001624, '所属区县', 'z_county_id', 903001024, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001025 MtnGroup（SPN) MTN_GROUP
 (903001625, '资源标识', 'res_identifier', 903001025, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001626, 'Mtn Group所属网元', 'zh_label', 903001025, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001627, 'Mtn Group序号', 'serial_no', 903001025, 'SERIAL_NO', 'integer', null, 'admin', 'admin', null),
 (903001628, 'Mtn Group带宽', 'bandwidth', 903001025, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
 (903001629, '物理端口', 'physical_port', 903001025, 'PHYSICAL_PORT', 'string', null, 'admin', 'admin', null),
-(903001630, '所属省份', 'z_province_id', 903001025, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001631, '所属地市', 'z_city_id', 903001025, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001632, '所属区县', 'z_county_id', 903001025, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001630, '所属省份', 'z_province_id', 903001025, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001631, '所属地市', 'z_city_id', 903001025, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001632, '所属区县', 'z_county_id', 903001025, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001026 MtnChannel（SPN) MTN_CHANNEL
 (903001633, '资源标识', 'res_identifier', 903001026, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001634, '本地名称', 'zh_label', 903001026, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
@@ -21016,9 +21010,9 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001639, '宿端网元', 'z_ne', 903001026, 'Z_NE', 'string', null, 'admin', 'admin', null),
 (903001640, '宿端Mtn client口', 'z_port', 903001026, 'Z_PORT', 'string', null, 'admin', 'admin', null),
 (903001641, '带宽', 'bandwidth', 903001026, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
-(903001642, '所属省份', 'z_province_id', 903001026, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001643, '所属地市', 'z_city_id', 903001026, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001644, '所属区县', 'z_county_id', 903001026, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
+(903001642, '所属省份', 'z_province_id', 903001026, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001643, '所属地市', 'z_city_id', 903001026, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001644, '所属区县', 'z_county_id', 903001026, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
 --插入传输内线 dims_idx_index
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
@@ -21473,22 +21467,22 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 else dims_col_rtName||'',传输内线-MtnGroup(SPN)规范性核查-资源标识-唯一性核查'' end)
 													                         where  exists(select 1 from MTN_GROUP t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001025, 1, NULL),
 (903003102, '传输内线-MtnGroup(SPN)规范性核查-Mtn Group带宽-字典规范性核查', 'DIMS_TSNX_02076', 2076, 903001025, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001025, 1, NULL),
-(903003103, '传输内线-MtnChannel(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02077', 2077, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+(903003103, '传输内线-MtnChannel(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02077', 2077, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02077%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02077''
 																											 else dims_col_result||'',DIMS_TSNX_02077'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
-(903003104, '传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查', 'DIMS_TSNX_02078', 2078, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+													                         where  exists(select 1 from CSNX_MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+(903003104, '传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查', 'DIMS_TSNX_02078', 2078, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02078%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02078''
 																											 else dims_col_result||'',DIMS_TSNX_02078'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查'' end)
-													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													                         where  exists(select 1 from CSNX_MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003105, '传输内线-MtnChannel(SPN)规范性核查-激活标识-字典规范性核查', 'DIMS_TSNX_02079', 2079, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003106, '传输内线-MtnChannel(SPN)规范性核查-带宽-字典规范性核查', 'DIMS_TSNX_02080', 2080, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update BOARD t1
@@ -21845,7 +21839,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnGroup(SPN)关联性核查-Mtn Group所属网元''
 																											 else dims_col_rtName||'',传输内线-MtnGroup(SPN)关联性核查-Mtn Group所属网元'' end)
 													 where isNotNull(t1.zh_label) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001025, 1, NULL),
-(903003151, '传输内线-MtnChannel(SPN)关联性核查-源端网元', 'DIMS_TSNX_03055', 3055, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+(903003151, '传输内线-MtnChannel(SPN)关联性核查-源端网元', 'DIMS_TSNX_03055', 3055, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03055%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03055''
 																											 else dims_col_result||'',DIMS_TSNX_03055'' end),
@@ -21853,7 +21847,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-源端网元''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-源端网元'' end)
 													 where isNotNull(t1.a_ne) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
-(903003152, '传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口', 'DIMS_TSNX_03056', 3056, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+(903003152, '传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口', 'DIMS_TSNX_03056', 3056, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03056%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03056''
 																											 else dims_col_result||'',DIMS_TSNX_03056'' end),
@@ -21861,7 +21855,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口'' end)
 													 where isNotNull(t1.a_port) and not exists(select 1 from PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
-(903003153, '传输内线-MtnChannel(SPN)关联性核查-宿端网元', 'DIMS_TSNX_03057', 3057, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+(903003153, '传输内线-MtnChannel(SPN)关联性核查-宿端网元', 'DIMS_TSNX_03057', 3057, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03057%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03057''
 																											 else dims_col_result||'',DIMS_TSNX_03057'' end),
@@ -21869,7 +21863,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-宿端网元''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-宿端网元'' end)
 													 where isNotNull(t1.z_ne) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
-(903003154, '传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口', 'DIMS_TSNX_03058', 3058, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
+(903003154, '传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口', 'DIMS_TSNX_03058', 3058, 903001026, '传输内线', 11, NULL, 'update CSNX_MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03058%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03058''
 																											 else dims_col_result||'',DIMS_TSNX_03058'' end),
@@ -22278,14 +22272,14 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (903005643, '传输内线-MtnGroup(SPN)必填完整性核查.Mtn Group序号', 'MTN_GROUP.serial_no', 903003024, 903001627, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005644, '传输内线-MtnGroup(SPN)必填完整性核查.Mtn Group带宽', 'MTN_GROUP.bandwidth', 903003024, 903001628, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005645, '传输内线-MtnGroup(SPN)必填完整性核查.物理端口', 'MTN_GROUP.physical_port', 903003024, 903001629, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005646, '传输内线-MtnChannel(SPN)必填完整性核查.资源标识', 'MTN_CHANNEL.res_identifier', 903003025, 903001633, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005647, '传输内线-MtnChannel(SPN)必填完整性核查.本地名称', 'MTN_CHANNEL.zh_label', 903003025, 903001634, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005648, '传输内线-MtnChannel(SPN)必填完整性核查.激活标识', 'MTN_CHANNEL.activate_flag', 903003025, 903001636, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005649, '传输内线-MtnChannel(SPN)必填完整性核查.源端网元', 'MTN_CHANNEL.a_ne', 903003025, 903001637, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005650, '传输内线-MtnChannel(SPN)必填完整性核查.源端Mtn client口', 'MTN_CHANNEL.a_port', 903003025, 903001638, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005651, '传输内线-MtnChannel(SPN)必填完整性核查.宿端网元', 'MTN_CHANNEL.z_ne', 903003025, 903001639, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005652, '传输内线-MtnChannel(SPN)必填完整性核查.宿端Mtn client口', 'MTN_CHANNEL.z_port', 903003025, 903001640, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005653, '传输内线-MtnChannel(SPN)必填完整性核查.带宽', 'MTN_CHANNEL.bandwidth', 903003025, 903001641, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005646, '传输内线-MtnChannel(SPN)必填完整性核查.资源标识', 'CSNX_MTN_CHANNEL.res_identifier', 903003025, 903001633, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005647, '传输内线-MtnChannel(SPN)必填完整性核查.本地名称', 'CSNX_MTN_CHANNEL.zh_label', 903003025, 903001634, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005648, '传输内线-MtnChannel(SPN)必填完整性核查.激活标识', 'CSNX_MTN_CHANNEL.activate_flag', 903003025, 903001636, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005649, '传输内线-MtnChannel(SPN)必填完整性核查.源端网元', 'CSNX_MTN_CHANNEL.a_ne', 903003025, 903001637, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005650, '传输内线-MtnChannel(SPN)必填完整性核查.源端Mtn client口', 'CSNX_MTN_CHANNEL.a_port', 903003025, 903001638, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005651, '传输内线-MtnChannel(SPN)必填完整性核查.宿端网元', 'CSNX_MTN_CHANNEL.z_ne', 903003025, 903001639, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005652, '传输内线-MtnChannel(SPN)必填完整性核查.宿端Mtn client口', 'CSNX_MTN_CHANNEL.z_port', 903003025, 903001640, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005653, '传输内线-MtnChannel(SPN)必填完整性核查.带宽', 'CSNX_MTN_CHANNEL.bandwidth', 903003025, 903001641, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005654, '传输内线-网元必填完整性核查.资源标识', 'DEVICE.res_identifier', 903003026, 903001322, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005655, '传输内线-网元必填完整性核查.网元名称', 'DEVICE.zh_label', 903003026, 903001323, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005656, '传输内线-网元必填完整性核查.网元类型', 'DEVICE.ne_type', 903003026, 903001325, 2, NULL, NULL, 'admin', 'admin', NULL),

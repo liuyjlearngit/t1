@@ -16108,18 +16108,18 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001619, '资源标识', 'res_identifier', 903001024, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001620, '网络切片名称', 'zh_label', 903001024, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001621, '网络切片类型', 'type', 903001024, 'TYPE', 'string', null, 'admin', 'admin', null),
-(903001622, '所属省份', 'z_province_id', 903001024, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001623, '所属地市', 'z_city_id', 903001024, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001624, '所属区县', 'z_county_id', 903001024, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001622, '所属省份', 'z_province_id', 903001024, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001623, '所属地市', 'z_city_id', 903001024, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001624, '所属区县', 'z_county_id', 903001024, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001025 MtnGroup（SPN) MTN_GROUP
 (903001625, '资源标识', 'res_identifier', 903001025, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001626, 'Mtn Group所属网元', 'zh_label', 903001025, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001627, 'Mtn Group序号', 'serial_no', 903001025, 'SERIAL_NO', 'integer', null, 'admin', 'admin', null),
 (903001628, 'Mtn Group带宽', 'bandwidth', 903001025, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
 (903001629, '物理端口', 'physical_port', 903001025, 'PHYSICAL_PORT', 'string', null, 'admin', 'admin', null),
-(903001630, '所属省份', 'z_province_id', 903001025, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001631, '所属地市', 'z_city_id', 903001025, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001632, '所属区县', 'z_county_id', 903001025, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
+(903001630, '所属省份', 'z_province_id', 903001025, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001631, '所属地市', 'z_city_id', 903001025, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001632, '所属区县', 'z_county_id', 903001025, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
 --903001026 MtnChannel（SPN) MTN_CHANNEL
 (903001633, '资源标识', 'res_identifier', 903001026, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001634, '本地名称', 'zh_label', 903001026, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
@@ -16130,9 +16130,9 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001639, '宿端网元', 'z_ne', 903001026, 'Z_NE', 'string', null, 'admin', 'admin', null),
 (903001640, '宿端Mtn client口', 'z_port', 903001026, 'Z_PORT', 'string', null, 'admin', 'admin', null),
 (903001641, '带宽', 'bandwidth', 903001026, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
-(903001642, '所属省份', 'z_province_id', 903001026, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001643, '所属地市', 'z_city_id', 903001026, 'CITY_ID', 'string', null, 'admin', 'admin', null),
-(903001644, '所属区县', 'z_county_id', 903001026, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
+(903001642, '所属省份', 'z_province_id', 903001026, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
+(903001643, '所属地市', 'z_city_id', 903001026, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
+(903001644, '所属区县', 'z_county_id', 903001026, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
 --插入传输内线 dims_idx_index
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values

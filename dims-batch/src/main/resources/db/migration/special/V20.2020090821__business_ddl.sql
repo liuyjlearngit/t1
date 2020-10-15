@@ -2078,7 +2078,7 @@ drop table if exists IGP_TOPO;
 drop table if exists IGP_LINK_INFO;
 drop table if exists NETWORK_SLICING;
 drop table if exists MTN_GROUP;
-drop table if exists MTN_CHANNEL;
+drop table if exists CSNX_MTN_CHANNEL;
 CREATE TABLE EMS (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
@@ -2521,7 +2521,7 @@ CREATE TABLE MTN_GROUP (
     dims_col_rtName TEXT 
 );
 
-CREATE TABLE MTN_CHANNEL (
+CREATE TABLE CSNX_MTN_CHANNEL (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
 	related_SPN VARCHAR ( 500 ),
@@ -2617,11 +2617,11 @@ create index if not exists idx_IGP_LINK_INFO2related_SR_tunnel_service on IGP_LI
 create index if not exists idx_NETWORK_SLICING2res_identifier on NETWORK_SLICING(res_identifier);
 create index if not exists idx_MTN_GROUP2res_identifier on MTN_GROUP(res_identifier);
 create index if not exists idx_MTN_GROUP2zh_label on MTN_GROUP(zh_label);
-create index if not exists idx_MTN_CHANNEL2res_identifier on MTN_CHANNEL(res_identifier);
-create index if not exists idx_MTN_CHANNEL2a_ne on MTN_CHANNEL(a_ne);
-create index if not exists idx_MTN_CHANNEL2z_ne on MTN_CHANNEL(z_ne);
-create index if not exists idx_MTN_CHANNEL2a_port on MTN_CHANNEL(a_port);
-create index if not exists idx_MTN_CHANNEL2z_port on MTN_CHANNEL(z_port);
+create index if not exists idx_MTN_CHANNEL2res_identifier on CSNX_MTN_CHANNEL(res_identifier);
+create index if not exists idx_MTN_CHANNEL2a_ne on CSNX_MTN_CHANNEL(a_ne);
+create index if not exists idx_MTN_CHANNEL2z_ne on CSNX_MTN_CHANNEL(z_ne);
+create index if not exists idx_MTN_CHANNEL2a_port on CSNX_MTN_CHANNEL(a_port);
+create index if not exists idx_MTN_CHANNEL2z_port on CSNX_MTN_CHANNEL(z_port);
 
 --空间ddl
 drop table if exists RM_AREA_SITE;
