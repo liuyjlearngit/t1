@@ -2150,7 +2150,7 @@ CREATE TABLE TRANSI_SYSTEM (
 CREATE TABLE DEVICE (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
-	related_rack_position VARCHAR ( 500 ),
+	related_rack VARCHAR ( 500 ),
 	ne_type VARCHAR ( 500 ),
 	service_level VARCHAR ( 500 ),
 	vendor_id VARCHAR ( 500 ),

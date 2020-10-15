@@ -17354,7 +17354,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (907001979, '设备厂家', 'vendor_id', 907001511, 'VENDOR_ID', 'string', 907000051, 'admin', 'admin', null),
 (907001980, '所属系统', 'related_system', 907001511, 'RELATED_SYSTEM', 'string', null, 'admin', 'admin', null),
 (907001981, '额定容量(A)', 'reted_capacity', 907001511, 'RETED_CAPACITY', 'string', null, 'admin', 'admin', null),
-(907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000019, 'admin', 'admin', null),
+(907001982, '输入端口数（路）', 'total_input_port', 907001511, 'TOTAL_INPUT_PORT', 'string', 907000040, 'admin', 'admin', null),
 (907001983, '输出端口总数（路）', 'total_output_port', 907001511, 'TOTAL_OUTPUT_PORT', 'integer', null, 'admin', 'admin', null),
 (907001984, '设备配置的SPD品牌', 'device_configuration_spd_brand', 907001511, 'DEVICE_CONFIGURATION_SPD_BRAND', 'string', null, 'admin', 'admin', null),
 (907001985, 'SPD最大通流量（KA）', 'spd_max_rate', 907001511, 'SPD_MAX_RATE', 'string', null, 'admin', 'admin', null),
@@ -20679,7 +20679,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 --网元 DEVICE
 (903001322, '资源标识', 'res_identifier', 903001004, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001323, '网元名称', 'zh_label', 903001004, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
-(903001324, '所属机架位置', 'related_rack_position', 903001004, 'RELATED_RACK_POSITION', 'string', null, 'admin', 'admin', null),
+(903001324, '所属机架', 'related_rack', 903001004, 'RELATED_RACK', 'string', null, 'admin', 'admin', null),
 (903001325, '网元类型', 'ne_type', 903001004, 'NE_TYPE', 'string', 903000004, 'admin', 'admin', null),
 (903001326, '业务级别', 'service_level', 903001004, 'SERVICE_LEVEL', 'string', 903000005, 'admin', 'admin', null),
 (903001327, '设备厂家', 'vendor_id', 903001004, 'VENDOR_ID', 'string', 903000006, 'admin', 'admin', null),
