@@ -20131,8 +20131,10 @@ insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPD
 (903000022, '传输内线', '是否', 'isOrNot', 'admin', 'admin', null),
 (903000023, '传输内线', '业务保障等级', 'serviceAssuranceLevel', 'admin', 'admin', null),
 (903000024, '传输内线', '承载方式', 'bearingType', 'admin', 'admin', null),
-(903000025, '传输内线', '速率', 'rate', 'admin', 'admin', null);
-
+(903000025, '传输内线', '速率', 'rate', 'admin', 'admin', null),
+(903000026, '传输内线', '业务通道（波分）状态', 'servicePathStatus', 'admin', 'admin', null),
+(903000027, '传输内线', '隧道方向', 'tunnelDirection', 'admin', 'admin', null),
+(903000028, '传输内线', '隧道状态', 'tunnelStatus', 'admin', 'admin', null);
 
 
 --插入传输内线 dims_mm_dictionary
@@ -20614,7 +20616,20 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (903000675,903000025,40,'4G','admin','admin', null),
 (903000676,903000025,41,'8G','admin','admin', null),
 (903000677,903000025,42,'100G','admin','admin', null),
-(903000678,903000025,43,'其他','admin','admin', null);
+(903000678,903000025,43,'其他','admin','admin', null),
+(903000679,903000026,0,'工作','admin','admin', null),
+(903000680,903000026,1,'保护','admin','admin', null),
+(903000681,903000026,2,'空闲','admin','admin', null),
+(903000682,903000026,3,'未配置','admin','admin', null),
+(903000683,903000026,4,'故障','admin','admin', null),
+(903000684,903000026,5,'其他','admin','admin', null),
+(903000685,903000027,0,'正向','admin','admin', null),
+(903000686,903000027,1,'反向','admin','admin', null),
+(903000687,903000027,2,'双向','admin','admin', null),
+(903000688,903000027,3,'其他','admin','admin', null),
+(903000689,903000028,0,'UP','admin','admin', null),
+(903000690,903000028,1,'DOWN','admin','admin', null),
+(903000691,903000028,2,'其他','admin','admin', null);
 
 --插入传输内线 dims_mm_entitytype
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values 
@@ -20651,7 +20666,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001301, '资源标识', 'res_identifier', 903001001, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001302, 'EMS名称', 'zh_label', 903001001, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001303, '所属省份', 'province_id', 903001001, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
-(903001304, '被管设备类型', 'ems_type', 903001001, 'EMS_TYPE', 'string', null, 'admin', 'admin', null),
+(903001304, '被管设备类型', 'ems_type', 903001001, 'EMS_TYPE', 'string', 903000004, 'admin', 'admin', null),
 (903001305, '数据质量责任人（移动）', 'qualitor', 903001001, 'QUALITOR', 'string', null, 'admin', 'admin', null),
 (903001306, '有无保护', 'is_protected', 903001001, 'IS_PROTECTED', 'string', 903000022, 'admin', 'admin', null),
 --子网 SUBNET
@@ -20800,10 +20815,10 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001440, 'Z端所属省份', 'z_province_id', 903001012, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001441, 'Z端所属地市', 'z_city_id', 903001012, 'z_city_id', 'string', null, 'admin', 'admin', null),
 (903001442, 'Z端所属区县', 'z_county_id', 903001012, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null),
-(903001443, '业务波道类别', 'type', 903001012, 'TYPE', 'string', null, 'admin', 'admin', null),
+(903001443, '业务波道类别', 'type', 903001012, 'TYPE', 'string', 903000019, 'admin', 'admin', null),
 (903001444, '业务通道路由', 'route', 903001012, 'ROUTE', 'string', null, 'admin', 'admin', null),
-(903001445, '业务通道速率', 'rate', 903001012, 'RATE', 'string', null, 'admin', 'admin', null),
-(903001446, '业务通道状态', 'status', 903001012, 'STATUS', 'string', null, 'admin', 'admin', null),
+(903001445, '业务通道速率', 'rate', 903001012, 'RATE', 'string', 903000025, 'admin', 'admin', null),
+(903001446, '业务通道状态', 'status', 903001012, 'STATUS', 'string', 903000026, 'admin', 'admin', null),
 (903001447, '所属保护组', 'related_protect_group', 903001012, 'RELATED_PROTECT_GROUP', 'string', null, 'admin', 'admin', null),
 (903001448, '主备用角色', 'use_type', 903001012, 'USE_TYPE', 'string', 903000007, 'admin', 'admin', null),
 --903001013 SDH通道 SDH_PATH
@@ -20947,8 +20962,8 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001581, '资源标识', 'res_identifier', 903001021, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001582, '所属SR隧道业务', 'related_SR_tunnel_service', 903001021, 'RELATED_SR_TUNNEL_SERVICE', 'string', null, 'admin', 'admin', null),
 (903001583, '本地名称', 'zh_label', 903001021, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
-(903001584, '隧道方向', 'direction', 903001021, 'DIRECTION', 'string', 903000013, 'admin', 'admin', null),
-(903001585, '隧道状态', 'status', 903001021, 'STATUS', 'string', null, 'admin', 'admin', null),
+(903001584, '隧道方向', 'direction', 903001021, 'DIRECTION', 'string', 903000027, 'admin', 'admin', null),
+(903001585, '隧道状态', 'status', 903001021, 'STATUS', 'string', 903000028, 'admin', 'admin', null),
 (903001586, '源端网元', 'a_ne', 903001021, 'A_NE', 'string', null, 'admin', 'admin', null),
 (903001587, '源端IP', 'a_ip', 903001021, 'A_IP', 'string', null, 'admin', 'admin', null),
 (903001588, '宿端网元', 'z_ne', 903001021, 'Z_NE', 'string', null, 'admin', 'admin', null),
@@ -20977,7 +20992,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001609, '连接起点端口', 'a_port', 903001023, 'A_PORT', 'string', null, 'admin', 'admin', null),
 (903001610, '连接终点网元', 'z_ne', 903001023, 'Z_NE', 'string', null, 'admin', 'admin', null),
 (903001611, '连接终点端口', 'z_port', 903001023, 'Z_PORT', 'string', null, 'admin', 'admin', null),
-(903001612, '链路带宽', 'bandwidth', 903001023, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
+(903001612, '链路带宽', 'bandwidth', 903001023, 'BANDWIDTH', 'string', 903000025, 'admin', 'admin', null),
 (903001613, 'A端所属省份', 'a_province_id', 903001023, 'A_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001614, 'A端所属地市', 'a_city_id', 903001023, 'A_CITY_ID', 'string', null, 'admin', 'admin', null),
 (903001615, 'A端所属区县', 'a_county_id', 903001023, 'A_COUNTY_ID', 'string', null, 'admin', 'admin', null),
@@ -20995,7 +21010,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001625, '资源标识', 'res_identifier', 903001025, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001626, 'Mtn Group所属网元', 'zh_label', 903001025, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001627, 'Mtn Group序号', 'serial_no', 903001025, 'SERIAL_NO', 'integer', null, 'admin', 'admin', null),
-(903001628, 'Mtn Group带宽', 'bandwidth', 903001025, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
+(903001628, 'Mtn Group带宽', 'bandwidth', 903001025, 'BANDWIDTH', 'string', 903000025, 'admin', 'admin', null),
 (903001629, '物理端口', 'physical_port', 903001025, 'PHYSICAL_PORT', 'string', null, 'admin', 'admin', null),
 (903001630, '所属省份', 'z_province_id', 903001025, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001631, '所属地市', 'z_city_id', 903001025, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
@@ -21009,7 +21024,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001638, '源端Mtn client口', 'a_port', 903001026, 'A_PORT', 'string', null, 'admin', 'admin', null),
 (903001639, '宿端网元', 'z_ne', 903001026, 'Z_NE', 'string', null, 'admin', 'admin', null),
 (903001640, '宿端Mtn client口', 'z_port', 903001026, 'Z_PORT', 'string', null, 'admin', 'admin', null),
-(903001641, '带宽', 'bandwidth', 903001026, 'BANDWIDTH', 'string', null, 'admin', 'admin', null),
+(903001641, '带宽', 'bandwidth', 903001026, 'BANDWIDTH', 'string', 903000025, 'admin', 'admin', null),
 (903001642, '所属省份', 'z_province_id', 903001026, 'Z_PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001643, '所属地市', 'z_city_id', 903001026, 'Z_CITY_ID', 'string', null, 'admin', 'admin', null),
 (903001644, '所属区县', 'z_county_id', 903001026, 'Z_COUNTY_ID', 'string', null, 'admin', 'admin', null);
@@ -23217,7 +23232,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',公共-DDM模块业务合规性核查-DDM模块下无归属DDM端子'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 																from CM_PORT_DDF t2
-															   where  (t2.related_ddm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null),								  
+															   where  (t2.related_ddm = t1.int_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, null),								  
 (900003039, '公共-ODM模块业务合规性核查-ODM模块下无归属ODM端子', 'DIMS_GG_04002', 4002, 900001003, '公共', 11, null,
 'update CE_WARE_ODM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GG_04002%'' then dims_col_result
@@ -23228,7 +23243,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',公共-ODM模块业务合规性核查-ODM模块下无归属ODM端子'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 															from CM_PORT_ODF t2
-														   where  (t2.related_odm = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null);
+														   where  (t2.related_odm = t1.int_id))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, null);
 
 --插入公共 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
