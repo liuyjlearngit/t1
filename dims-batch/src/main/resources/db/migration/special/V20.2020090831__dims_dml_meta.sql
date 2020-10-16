@@ -4624,7 +4624,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
  (905003140, '承载网-IPv6地址段规范性核查-划分状态-字典规范性核查', 'DIMS_CZ_02041', 2041, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000509, 1, NULL, NULL),
  (905003141, '承载网-IPv6地址段规范性核查-业务状态-字典规范性核查', 'DIMS_CZ_02042', 2042, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000509, 1, NULL, NULL),
  (905003142, '承载网-IPv6地址段规范性核查-地址段用途-字典规范性核查', 'DIMS_CZ_02043', 2043, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000509, 1, NULL, NULL),
- (905003143, '承载网-IPv6地址段规范性核查-归属业务-字典规范性核查', 'DIMS_CZ_02044', 2044, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'proc_checkonedictaccuracyindex-DIMS_CZ_02044', 905000509, 1, NULL, NULL),
+ (905003143, '承载网-IPv6地址段规范性核查-归属业务-字典规范性核查', 'DIMS_CZ_02044', 2044, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'proc_checkonedictaccuracyindex_DIMS_CZ_02044', 905000509, 1, NULL, NULL),
  (905003144, '承载网-IPv6地址段规范性核查-地址段用途描述-字典规范性核查', 'DIMS_CZ_02045', 2045, 905000509, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000509, 1, NULL, NULL),
  -- 承载网关联性核查 
  (905003200, '承载网-设备关联性核查-所属机架位置', 'DIMS_CZ_03001', 3001, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
