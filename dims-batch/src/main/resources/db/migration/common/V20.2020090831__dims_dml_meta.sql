@@ -3901,7 +3901,9 @@ insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPD
 (908000204, '家客', '厂家', 'manufacturer', 'admin', 'admin', null),
 (908000205, '家客', '端口状态', 'port_status', 'admin', 'admin', null),
 (908000206, '家客', '分光比', 'splitter_ratio', 'admin', 'admin', null),
-(908000207, '家客', '箱体内设备类型', 'sub_device_type','admin', 'admin', null);
+(908000207, '家客', '箱体内设备类型', 'sub_device_type','admin', 'admin', null),
+(908000208, '家客', '接入类型', 'enter_type','admin', 'admin', null);
+
 
 insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
 (908000400,908000200,1, 'FTTH', 'admin', 'admin', null),
@@ -3937,9 +3939,9 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (908000430,908000206,1, '1:2', 'admin', 'admin', null)  ,
 (908000431,908000206,2, '1:4', 'admin', 'admin', null)  ,
 (908000432,908000206,3, '1:8', 'admin', 'admin', null)  ,
-(908000433,908000205,4, '1:16', 'admin', 'admin', null)  ,
-(908000434,908000205,5, '1:32', 'admin', 'admin', null)  ,
-(908000435,908000205,6, '1:64', 'admin', 'admin', null) ,
+(908000433,908000206,4, '1:16', 'admin', 'admin', null)  ,
+(908000434,908000206,5, '1:32', 'admin', 'admin', null)  ,
+(908000435,908000206,6, '1:64', 'admin', 'admin', null) ,
 (908000436,908000206,7, '2:4', 'admin', 'admin', null),
 (908000437,908000206,8, '2:8', 'admin', 'admin', null),
 (908000438,908000206,9, '2:16', 'admin', 'admin', null),
@@ -3949,10 +3951,13 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (908000442,908000207,1, '分光器', 'admin', 'admin', null),
 (908000443,908000207,2, '法兰盘', 'admin', 'admin', null),
 (908000444,908000207,3, '直溶', 'admin', 'admin', null),
-(908000445,908000207,4, '其他', 'admin', 'admin', null);
+(908000445,908000207,4, '其他', 'admin', 'admin', null),
+(908000446,908000208,1, 'FTTH', 'admin', 'admin', null),
+(908000447,908000208,2, 'FTTB', 'admin', 'admin', null),
+(908000448,908000208,3, '其他', 'admin', 'admin', null);
 
 --entitytype：承载网
-insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values 
+insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
 (905000500,'设备','CM_DEVICE_IP', '承载网', null,'CM_DEVICE_IP', null, null, 'admin', 'admin', null),
 (905000501,'板卡','CM_WARE_IP_BOARD', '承载网', null,'CM_WARE_IP_BOARD', null, null, 'admin', 'admin', null),
 (905000502,'物理端口','CE_PORT_IP_PTP', '承载网', null,'CE_PORT_IP_PTP', null, null, 'admin', 'admin', null),
@@ -4117,7 +4122,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (908000649, '资源标识', 'int_id', 908000007, 'INT_ID', 'string', null, 'admin', 'admin', null),
 (908000650, '覆盖地址', 'room_address_id', 908000007, 'ROOM_ADDRESS_ID', 'string', null, 'admin', 'admin', null),
 (908000651, '覆盖箱体/设备/资源点', 'relation_device_id', 908000007, 'RELATION_DEVICE_ID', 'string', null, 'admin', 'admin', null),
-(908000652, '接入类型', 'enter_type', 908000007, 'ENTER_TYPE', 'string', null, 'admin', 'admin', null),
+(908000652, '接入类型', 'enter_type', 908000007, 'ENTER_TYPE', 'string', 908000208, 'admin', 'admin', null),
 (908000653, '覆盖设备空闲端口数量', 'relation_device_free_num', 908000007, 'RELATION_DEVICE_FREE_NUM', 'string', null, 'admin', 'admin', null),
 (908000654, '归属小区', 'residential_id', 908000007, 'RESIDENTIAL_ID', 'string', null, 'admin', 'admin', null),
 (908000655, '所属省份', 'province_id', 908000007, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
@@ -4182,7 +4187,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (908000714, '所属区县', 'county_id', 908000013, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
 (908000715, '资源标识', 'int_id', 908000014, 'INT_ID', 'string', null, 'admin', 'admin', null),
 (908000716, '端子号', 'port_no', 908000014, 'PORT_NO', 'string', null, 'admin', 'admin', null),
-(908000717, '端子状态', 'port_status', 908000014, 'PORT_STATUS', 'string', null, 'admin', 'admin', null),
+(908000717, '端子状态', 'port_status', 908000014, 'PORT_STATUS', 'string', 908000205, 'admin', 'admin', null),
 (908000718, '所属分纤箱', 'related_device', 908000014, 'RELATED_DEVICE', 'string', null, 'admin', 'admin', null),
 (908000719, '所属省份', 'province_id', 908000014, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (908000720, '所属地市', 'city_id', 908000014, 'CITY_ID', 'string', null, 'admin', 'admin', null),
@@ -23095,7 +23100,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (901000606,'所属区县','county_id',901000001,'COUNTY_ID', 'string', null, 'admin', 'admin', null),
 (901000607,'资源标识','int_id',901000002,'INT_ID', 'string',null, 'admin', 'admin',null),
 (901000608,'网管中网元名称','userlabel',901000002,'USERLABEL', 'string',null, 'admin', 'admin',null),
-(901000609,'设备厂家','vendor_id',901000002,'VENDOR_ID', 'string',null, 'admin', 'admin',null),
+(901000609,'设备厂家','vendor_id',901000002,'VENDOR_ID', 'string',901000200, 'admin', 'admin',null),
 (901000610,'设备型号','product_name',901000002,'PRODUCT_NAME', 'string',null, 'admin', 'admin',null),
 (901000611,'所属机架位置','related_rackpos',901000002,'RELATED_RACKPOS', 'string',null, 'admin', 'admin',null),
 (901000612,'所属OMC','related_omc',901000002,'RELATED_OMC', 'string',null, 'admin', 'admin',null),
@@ -24003,7 +24008,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                 from ANTENNAPARA t2
                                where t2.ctid <> t1.ctid
                                  and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
- (901003205, '无线-天线工参规范性核查-关联频段-字典规范性核查', 'DIMS_WX_02106', 2106, 901000019, '无线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000019, 1, NULL),
+ (901003205, '无线-天线工参规范性核查-关联频段-字典规范性核查', 'DIMS_WX_02106', 2106, 901000019, '无线', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 901000019, 1, NULL),
  (901003206, '无线-铁塔规范性核查-资源标识-唯一性核查', 'DIMS_WX_02107', 2107, 901000020, '无线', 11, NULL, 'update TOWER t1
 		           set dims_col_result=(case when dims_col_result like ''%DIMS_WX_02107%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_02107''
