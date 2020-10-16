@@ -14472,9 +14472,9 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 				                                 and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 
 (904003121, '传输管线-光缆段关联性核查-终点', 'DIMS_GX_03017', 3017, 904001006, '传输管线', 11, NULL, 'update CE_CABLE_SEGMENT t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03017%'' then dims_col_result
@@ -14487,9 +14487,9 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 				                                 and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 (904003122, '传输管线-纤芯关联性核查-所属光缆段', 'DIMS_GX_03024', 3024, 904001007, '传输管线', 11, NULL, 'update CE_CABLE_FIBER t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03024%'' then dims_col_result
 																		 when dims_col_result is null then ''DIMS_GX_03024''
@@ -14562,7 +14562,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
 (904003130, '传输管线-引上段关联性核查-终点', 'DIMS_GX_03057', 3057, 904001017, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_UPSEG t1
@@ -14581,7 +14581,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
 (904003131, '传输管线-杆路段关联性核查-起点', 'DIMS_GX_03061', 3061, 904001018, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_POLESEG t1
@@ -14599,7 +14599,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
 (904003132, '传输管线-杆路段关联性核查-终点', 'DIMS_GX_03062', 3062, 904001018, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_POLESEG t1
@@ -14617,7 +14617,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_STONE t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
 (904003133, '传输管线-直埋段关联性核查-起点', 'DIMS_GX_03066', 3066, 904001019, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_STONESEG t1
@@ -14635,7 +14635,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
 (904003134, '传输管线-直埋段关联性核查-终点', 'DIMS_GX_03067', 3067, 904001019, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_STONESEG t1
@@ -14653,7 +14653,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
 (904003135, '传输管线-挂墙段关联性核查-起点', 'DIMS_GX_03071', 3071, 904001020, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WALLSEG t1
@@ -14671,7 +14671,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
 (904003136, '传输管线-挂墙段关联性核查-终点', 'DIMS_GX_03072', 3072, 904001020, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WALLSEG t1
@@ -14689,7 +14689,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
 (904003137, '传输管线-管道段关联性核查-起点', 'DIMS_GX_03076', 3076, 904001021, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WELLSEG t1
@@ -14707,7 +14707,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
 (904003138, '传输管线-管道段关联性核查-终点', 'DIMS_GX_03077', 3077, 904001021, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WELLSEG t1
@@ -14725,7 +14725,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_FACILITY_WELL t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_GB t2 where t2.resfdn = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
 (904003143, '传输管线-光交接箱规范性核查-规格型号-字典规范性核查', 'DIMS_GX_02005', 2005, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
@@ -15274,8 +15274,8 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在''
                                              else dims_col_rtName||'',传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在'' end)
-                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.upper_cable_id = t1.resfdn)
-				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t2.lower_cable_id = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);
+                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t1 where t2.upper_cable_id = t2.resfdn)
+				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t1 where t2.lower_cable_id = t2.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);
 --插入传输管线 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (904004001,904099001,904003001,'admin','admin',null),
