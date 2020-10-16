@@ -20997,10 +20997,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																						 when dims_col_rtName is null then ''不满足规范:动环-蓄电池关联性核查-所属电源设备''
 																						 else dims_col_rtName||'',动环-蓄电池关联性核查-所属电源设备'' end)
 								 where isNotNull(t1.ralated_power_device) and not exists(select 1 from CE_DEVICE_PE_UPS t2 where t2.res_code = t1.ralated_power_device)
-								 not exists(select 1 from CE_DEVICE_PE_SWITCH_POWER t2 where t2.res_code = t1.ralated_power_device)
-								 not exists(select 1 from CE_DEVICE_PE_POWER_GENERATION t2 where t2.res_code = t1.ralated_power_device)
-								 not exists(select 1 from CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)
-								 not exists(select 1 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001519, 1, NULL),
+								 and not exists(select 1 from CE_DEVICE_PE_SWITCH_POWER t2 where t2.res_code = t1.ralated_power_device)
+								 and not exists(select 1 from CE_DEVICE_PE_POWER_GENERATION t2 where t2.res_code = t1.ralated_power_device)
+								 and not exists(select 1 from CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)
+								 and not exists(select 1 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001519, 1, NULL),
 (907003658, '动环-动环专业内输出分路关联性核查-所属设备', 'DIMS_DH_03101', 3101, 907001524, '动环', 11, NULL, 'update CE_LINK_PE_IN t1
 									 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_03101%'' then dims_col_result
 																						 when dims_col_result is null then ''DIMS_DH_03101''
