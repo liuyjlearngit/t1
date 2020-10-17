@@ -5190,7 +5190,7 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03035%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03035''
 										  					          else dims_col_result||'',DIMS_JIAKE_03035'' end)	
-							  where isNotNull(t1.up_to_device) and not exists(select 1 from JIAKE_CE_DEVICE_GJ t2 where isNotNull(t2.int_id) and t1.up_to_device=t2.int_id) and not exists(select 1 from JIAKE_CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+							  where isNotNull(t1.up_to_device) and not exists(select 1 from CE_DEVICE_GJ t2 where isNotNull(t2.int_id) and t1.up_to_device=t2.int_id) and not exists(select 1 from JIAKE_CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003235, '家客-分光器关联性核查-上联设备', 'DIMS_JIAKE_03036', 3036, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-上联设备%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-上联设备''

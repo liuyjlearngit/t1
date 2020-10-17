@@ -25976,7 +25976,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
  (901002020, '无线-BTS必填完整性核查.资源标识', 'BTS.int_id', 901003002, 901000624, 2, NULL, NULL, 'admin', 'admin', NULL),
  (901002021, '无线-BTS必填完整性核查.网管中网元名称', 'BTS.userlabel', 901003002, 901000626, 2, NULL, NULL, 'admin', 'admin', NULL),
  (901002022, '无线-BTS必填完整性核查.安装位置类型', 'BTS.location_type', 901003002, 901000628, 2, NULL, NULL, 'admin', 'admin', NULL),
- (901002023, '无线-BTS必填完整性核查.所属机房/位置点', 'BTS.related_room_location', 901003002, 901000629, 2, NULL, NULL, 'admin', 'admin', NULL),
+ (901002023, '无线-jiake_ce_device_gjBTS必填完整性核查.所属机房/位置点', 'BTS.related_room_location', 901003002, 901000629, 2, NULL, NULL, 'admin', 'admin', NULL),
  (901002024, '无线-BTS必填完整性核查.生命周期状态', 'BTS.lifecycle_status', 901003002, 901000633, 2, NULL, NULL, 'admin', 'admin', NULL),
  (901002025, '无线-BTS必填完整性核查.覆盖类型', 'BTS.beehive_type', 901003002, 901000638, 2, NULL, NULL, 'admin', 'admin', NULL),
  (901002026, '无线-BTS必填完整性核查.设备厂家', 'BTS.vendor_id', 901003002, 901000630, 2, NULL, NULL, 'admin', 'admin', NULL),
