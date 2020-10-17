@@ -149,7 +149,7 @@ begin
 	select code into v_columnName	from dims_mm_attributetype where id=v_attributeTypeId;
 	select code into v_groupColumnName	from dims_mm_attributetype where id=v_dictTypeId;
 	
-	if v_specialityName = '管线' then
+	if v_specialityName = '传输管线' then
 				 select count(1)
 				 into v_countRegionCode
 				 from dims_mm_entitytype me,dims_mm_attributetype attr

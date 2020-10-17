@@ -15106,7 +15106,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from JAIKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 
 (904003121, '传输管线-光缆段关联性核查-终点', 'DIMS_GX_03017', 3017, 904001006, '传输管线', 11, NULL, 'update CE_CABLE_SEGMENT t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03017%'' then dims_col_result
@@ -15121,7 +15121,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.resfdn = t1.z_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.z_object_id)
-												 and not exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.z_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 (904003122, '传输管线-纤芯关联性核查-所属光缆段', 'DIMS_GX_03024', 3024, 904001007, '传输管线', 11, NULL, 'update CE_CABLE_FIBER t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03024%'' then dims_col_result
 																		 when dims_col_result is null then ''DIMS_GX_03024''
@@ -15729,7 +15729,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from CE_LAYINGSEGMENT_TUBEHOLE t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001022, 1, NULL),
 (904003212, '传输管线-管孔规范性核查-管孔状态-字典规范性核查', 'DIMS_GX_02074', 2074, 904001022, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001022, 1, NULL),
 (904003213, '传输管线-管孔规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02075', 2075, 904001022, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001022, 1, NULL),
-(904003214, '传输管线-管孔规范性核查-所属敷设段-字典规范性核查', 'DIMS_GX_02076', 2076, 904001022, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001022, 1, NULL),
+(904003214, '传输管线-管孔规范性核查-所属敷设段-字典规范性核查', 'DIMS_GX_02076', 2076, 904001022, '传输管线', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001022, 1, NULL),
 (904003215, '传输管线-子孔规范性核查-资源标识-唯一性核查', 'DIMS_GX_02077', 2077, 904001023, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_SUBHOLE t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02077%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02077''
@@ -17292,7 +17292,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道规范性核查-业务通道名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-波分业务通道规范性核查-业务通道名称-唯一性核查'' end)
 													                         where  exists(select 1 from SERVICE_PATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
-(903003063, '传输内线-波分业务通道规范性核查-业务波道类别-字典规范性核查', 'DIMS_TSNX_02037', 2037, 903001012, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
+(903003063, '传输内线-波分业务通道规范性核查-业务波道类别-字典规范性核查', 'DIMS_TSNX_02037', 2037, 903001012, '传输内线', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
 (903003064, '传输内线-波分业务通道规范性核查-业务通道速率-字典规范性核查', 'DIMS_TSNX_02038', 2038, 903001012, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
 (903003065, '传输内线-波分业务通道规范性核查-业务通道状态-字典规范性核查', 'DIMS_TSNX_02039', 2039, 903001012, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
 (903003066, '传输内线-SDH通道规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02040', 2040, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
