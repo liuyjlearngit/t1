@@ -114,7 +114,7 @@ $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
   
-  CREATE OR REPLACE FUNCTION "public"."proc_countresource"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
+CREATE OR REPLACE FUNCTION "public"."proc_countresource"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
   RETURNS "pg_catalog"."void" AS $BODY$
 declare
 	v_idxName          text;
@@ -168,9 +168,9 @@ begin
 			end if;
 			
 				 if v_countRegionCode =3 then
-					v_selectSql := 'select '''||p_provincecode||''',city,county,'||v_selectSql||' group by '||p_provincecode||',city,county,'||v_groupColumnName;
+					v_selectSql := 'select '''||p_provincecode||''',city,county,'||v_selectSql||' group by province,city,county,'||v_groupColumnName;
 			 else
-					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by '||p_provincecode||','||v_groupColumnName;
+					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by province,'||v_groupColumnName;
 			 end if;
 	else		
 	    select count(1)
@@ -191,9 +191,9 @@ begin
 			end if;
 			
 				 if v_countRegionCode =3 then
-					v_selectSql := 'select '''||p_provincecode||''',city_id,county_id,'||v_selectSql||' group by '||p_provincecode||',city_id,county_id,'||v_groupColumnName;
+					v_selectSql := 'select '''||p_provincecode||''',city_id,county_id,'||v_selectSql||' group by province_id,city_id,county_id,'||v_groupColumnName;
 			 else
-					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by '||p_provincecode||','||v_groupColumnName;
+					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by province_id,'||v_groupColumnName;
 			 end if;
 	end if;
 	
