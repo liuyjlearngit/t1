@@ -114,7 +114,7 @@ $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
   
- CREATE OR REPLACE FUNCTION "public"."proc_countresource_lgc"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
+ CREATE OR REPLACE FUNCTION "public"."proc_countresource"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
   RETURNS "pg_catalog"."void" AS $BODY$
 declare
 	v_idxName          text;
