@@ -212,9 +212,9 @@ begin
 	 --地市的指标:regionType=2
    insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 										   countyCode,regionType,specialityName,resName,resType,amount,unit)
-   select resIndex,taskCode,provinceCode,prefectureCode,
-          countyCode,2,specialityName,resName,resType,
-          sum(amount),unit
+   select p_indexid,p_taskcode,provinceCode,prefectureCode,
+          null,2,v_specialityName,v_idxName,v_resType,
+          sum(amount),v_unit
      from dims_tm_res_statistics
     where taskcode=p_taskCode  
       and resIndex=p_indexId
@@ -224,9 +224,9 @@ begin
 	 --省份的指标:regionType=1
    insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 										   countyCode,regionType,specialityName,resName,resType,amount,unit)
-   select resIndex,taskCode,provinceCode,prefectureCode,
-          countyCode,1,specialityName,resName,resType,
-          sum(amount),unit
+   select p_indexid,p_taskcode,provinceCode,null,
+          null,1,v_specialityName,v_idxName,v_resType,
+          sum(amount),v_unit
      from dims_tm_res_statistics
     where taskcode=p_taskCode  
       and resIndex=p_indexId
