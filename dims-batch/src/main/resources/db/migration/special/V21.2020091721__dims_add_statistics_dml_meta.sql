@@ -50,4 +50,4 @@ insert into dims_tm_res_index (ID, NAME, SPECIALITYNAME, ENTITYTYPE_ID, ATTRIBUT
 --承载网
 (800000034,'设备_网元类型','承载网','905000500','905000600','905000606',null,'count','个','proc_countresource',1,null),
 (800000035,'设备_5G-CE','承载网','905000500','905000600','905000604','5G-CE is not null','count','个','proc_countresource',1,null),
-(800000035,'设备_5G-CE','承载网','905000500','905000600','905000614',null,'count','个','proc_countresource',1,null);
+(800000036,'设备_5G-CE','承载网','905000500','905000600','905000614',null,'count','个','proc_countresource',1,null);
