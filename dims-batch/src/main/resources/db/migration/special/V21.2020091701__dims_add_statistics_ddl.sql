@@ -47,7 +47,7 @@ create table dims_tm_res_index
 	   memo               varchar(200)--备注
 );
 
-CREATE OR REPLACE FUNCTION proc_countresource("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
+CREATE OR REPLACE FUNCTION proc_countresource_v1("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
   RETURNS void AS $BODY$
 declare
 	v_idxName          text;
@@ -102,6 +102,136 @@ begin
 	    fetch cur into v_provinceCode,v_prefectureCode,v_countyCode,v_resType,v_amount;
 	 end loop;
 	 close cur;
+	 --指标值,更新指标的区域名称
+   update dims_tm_res_statistics t
+      set province=(select name from dims_tm_areaCodeConfig where code=t.provinceCode and regiontype=1),
+          prefecture=(select name from dims_tm_areaCodeConfig where code=t.prefectureCode and regiontype=2),
+          county=(select name from dims_tm_areaCodeConfig where code=t.countyCode and regiontype=3)
+    where taskcode=p_taskCode
+      and resIndex=p_indexId;
+end;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+  
+ CREATE OR REPLACE FUNCTION "public"."proc_countresource_lgc"("p_provincecode" varchar, "p_taskcode" varchar, "p_indexid" int4)
+  RETURNS "pg_catalog"."void" AS $BODY$
+declare
+	v_idxName          text;
+	cur	              refcursor;
+	v_entitytypeId     integer;
+	v_attributeTypeId     integer;
+	v_dictTypeId	      integer;
+	v_selectSql        text;
+	v_tableName	      varchar(100);
+	v_columnName	      varchar(100);
+	v_groupColumnName  varchar(100);
+	v_conditon        varchar(100);
+	v_unit        varchar(100);
+	v_methodType         varchar(100);
+	v_specialityName         varchar(100);
+	v_amount           integer;
+	v_provinceCode         varchar(100);
+	v_prefectureCode         varchar(100);
+	v_countyCode         varchar(100);
+	v_resType         varchar(100);
+	v_countRegionCode  integer;
+begin
+  -- Routine body goes here...
+	delete from dims_tm_res_statistics where taskcode=p_taskCode and resIndex=p_indexId;
+	
+	select entitytype_id,attributeType_id,dictionaryType_id,filterCondition,unit,methodType,specialityName,name
+	into v_entitytypeId,v_attributeTypeId,v_dictTypeId,v_conditon,v_unit,v_methodType,v_specialityName,v_idxName
+	from dims_tm_res_index
+	where id=p_indexid;
+
+	select code into v_tableName	from dims_mm_entitytype where id=v_entitytypeId;
+	select code into v_columnName	from dims_mm_attributetype where id=v_attributeTypeId;
+	select code into v_groupColumnName	from dims_mm_attributetype where id=v_dictTypeId;
+	
+	if v_specialityName = '管线' then
+				 select count(1)
+				 into v_countRegionCode
+				 from dims_mm_entitytype me,dims_mm_attributetype attr
+				where attr.columnname in ('PROVINCE','CITY','COUNTY')
+					and attr.entitytype_id=me.id
+					and me.id=v_entitytypeId;
+			
+			if v_methodType='sum' then
+					v_selectSql := v_groupColumnName||',sum(to_number('||v_columnName||')) from '||v_tableName||' where isnotnull('||v_groupColumnName||')';
+			else
+					v_selectSql := v_groupColumnName||',count(distinct '||v_columnName||') from '||v_tableName||' where isnotnull('||v_groupColumnName||')';
+			end if;
+
+			if isNotNull(v_conditon) then
+				 v_selectSql := v_selectSql||' and '||v_conditon;
+			end if;
+			
+				 if v_countRegionCode =3 then
+					v_selectSql := 'select '''||p_provincecode||''',city,county,'||v_selectSql||' group by '||p_provincecode||',city,county,'||v_groupColumnName;
+			 else
+					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by '||p_provincecode||','||v_groupColumnName;
+			 end if;
+	else		
+	    select count(1)
+				 into v_countRegionCode
+				 from dims_mm_entitytype me,dims_mm_attributetype attr
+				where attr.columnname in ('PROVINCE_ID','CITY_ID','COUNTY_ID')
+					and attr.entitytype_id=me.id
+					and me.id=v_entitytypeId;
+			
+			if v_methodType='sum' then
+					v_selectSql := v_groupColumnName||',sum(to_number('||v_columnName||')) from '||v_tableName||' where isnotnull('||v_groupColumnName||')';
+			else
+					v_selectSql := v_groupColumnName||',count(distinct '||v_columnName||') from '||v_tableName||' where isnotnull('||v_groupColumnName||')';
+			end if;
+
+			if isNotNull(v_conditon) then
+				 v_selectSql := v_selectSql||' and '||v_conditon;
+			end if;
+			
+				 if v_countRegionCode =3 then
+					v_selectSql := 'select '''||p_provincecode||''',city_id,county_id,'||v_selectSql||' group by '||p_provincecode||',city_id,county_id,'||v_groupColumnName;
+			 else
+					v_selectSql := 'select '''||p_provincecode||''',null,null,'||v_selectSql||' group by '||p_provincecode||','||v_groupColumnName;
+			 end if;
+	end if;
+	
+	open cur for execute v_selectSql;
+	fetch cur into v_provinceCode,v_prefectureCode,v_countyCode,v_resType,v_amount;
+	while found loop
+	    insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
+										   countyCode,regionType,specialityName,resName,resType,amount,unit)
+        values(p_indexid,p_taskcode,v_provinceCode,v_prefectureCode,
+             v_countyCode,3,v_specialityName,v_idxName,v_resType,
+             v_amount,v_unit);
+	    fetch cur into v_provinceCode,v_prefectureCode,v_countyCode,v_resType,v_amount;
+	 end loop;
+	 close cur;
+	 
+	 --地市的指标:regionType=2
+   insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
+										   countyCode,regionType,specialityName,resName,resType,amount,unit)
+   select resIndex,taskCode,provinceCode,prefectureCode,
+          countyCode,2,specialityName,resName,resType,
+          sum(amount),unit
+     from dims_tm_res_statistics
+    where taskcode=p_taskCode  
+      and resIndex=p_indexId
+      and regionType=3
+   group by provinceCode,prefectureCode;
+
+	 --省份的指标:regionType=1
+   insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
+										   countyCode,regionType,specialityName,resName,resType,amount,unit)
+   select resIndex,taskCode,provinceCode,prefectureCode,
+          countyCode,1,specialityName,resName,resType,
+          sum(amount),unit
+     from dims_tm_res_statistics
+    where taskcode=p_taskCode  
+      and resIndex=p_indexId
+      and regionType=3
+   group by provinceCode;
 	 --指标值,更新指标的区域名称
    update dims_tm_res_statistics t
       set province=(select name from dims_tm_areaCodeConfig where code=t.provinceCode and regiontype=1),
