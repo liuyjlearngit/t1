@@ -228,9 +228,5 @@ public class FileConfigRestController {
         return ReadFileErrDot.builder().numerr(i1).ftperrs(arrayLists).ftperrnum(numftp).build();
     }
 
-    @PostMapping("/upload")
-    public String singleFileUpload(MultipartFile file) throws Exception {
-        System.out.println("成功上传");
-        return "result";
-    }
+
 }
