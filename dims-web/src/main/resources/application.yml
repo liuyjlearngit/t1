@@ -1,38 +1,3 @@
-spring:
-  thymeleaf:
-    cache: false
-    mode: HTML
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.137.128:5432/dims1
-    username: postgres
-    password: postgres
-    tomcat:
-      validation-query: select 1
-      test-on-borrow: true
-      test-on-return: false
-      test-while-idle: true
-      max-active: 100
-      min-idle: 5
-  jpa:
-    open-in-view: false
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
-        jdbc.lob.non_contextual_creation: true
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-    default-property-inclusion: non_null
-  mvc:
-    static-path-pattern: /static/**
-  servlet:
-    multipart.max-file-size: 100MB
-  flyway:
-    enabled: true
-    baseline-version: 8
-    baseline-on-migrate: true
 server:
   port: 10001
   servlet:
@@ -41,14 +6,9 @@ logging:
   file: dims.log
   level:
     root: info
-jenkins:
-  url: http://192.168.137.128:8080/
-  username: admin
-  password: admin
-template:
-  datasource:
-    username: postgres
-    password: postgres
-dims:
-  url: http://172.22.21.90:10001
-  license.key:
+# 设置指定配置文件生效：
+# dev：开发环境使用  application-dev.yml的配置文件
+# pro：生产环境使用  application-pro.yml的配置文件
+spring:
+  profiles:
+    active: pro
