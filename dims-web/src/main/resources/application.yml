@@ -7,8 +7,8 @@ logging:
   level:
     root: info
 # 设置指定配置文件生效：
-# dev：指定application-dev.yml的配置文件生效
-# pro：指定application-pro.yml的配置文件生效
+# dev：开发环境使用  application-dev.yml的配置文件
+# pro：生产环境使用  application-pro.yml的配置文件
 spring:
   profiles:
     active: pro
