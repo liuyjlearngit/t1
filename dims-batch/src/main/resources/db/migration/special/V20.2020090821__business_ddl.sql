@@ -665,6 +665,7 @@ create index if not exists idx_PS_SW_related_room on PS_SW(related_room);
 create index if not exists idx_PS_SW_related_fw on PS_SW(related_fw);
 create index if not exists idx_PS_CG_related_rack on PS_CG(related_rack);
 create index if not exists idx_PS_MME_related_rack on PS_MME(related_rack);
+create index if not exists idx_PS_MME_related_room on PS_MME(related_room);
 create index if not exists idx_PS_DNS_related_rack on PS_DNS(related_rack);
 create index if not exists idx_PS_SGSN_related_rack on PS_SGSN(related_rack);
 create index if not exists idx_PS_SAE_GW_related_rack on PS_SAE_GW(related_rack);
