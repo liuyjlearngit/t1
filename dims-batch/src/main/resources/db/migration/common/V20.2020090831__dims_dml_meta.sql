@@ -15106,7 +15106,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 												 and not exists(select 1 from CE_DEVICE_GJ t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_JT t2 where t2.resfdn = t1.a_object_id)
 												 and not exists(select 1 from CE_DEVICE_DMT t2 where t2.int_id = t1.a_object_id)
-												 and not exists(select 1 from JAIKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+												 and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where t2.int_id = t1.a_object_id)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 
 (904003121, '传输管线-光缆段关联性核查-终点', 'DIMS_GX_03017', 3017, 904001006, '传输管线', 11, NULL, 'update CE_CABLE_SEGMENT t1
 					 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03017%'' then dims_col_result
