@@ -84,23 +84,31 @@ public class StatisticRestController {
     public List<String> datafilt(String region,List<String> specialities){
         List<String> filterlist = this.filterlist;
         boolean flag=false;
-        for (String filter:filterlist) {
-            if (region.equals(filter)){
-                flag=true;
-                break;
-            }
+        List<String> arrayList= new  ArrayList<String>(specialities);
+        if (arrayList.contains("集客")){//所有集客数据过滤掉
+            arrayList.remove( "集客" );
         }
-        if (flag==false){
-            if (specialities.contains("IDC")){
-                List<String> arrayList= new  ArrayList<String>(specialities);
-                arrayList.remove( "IDC" );
-                return arrayList;
+        if(region!=null){
+            for (String filter:filterlist) {
+                if (region.equals(filter)){
+                    flag=true;
+                    break;
+                }
+            }
+
+            if (flag==false){
+                if (arrayList.contains("IDC")){
+                    arrayList.remove( "IDC" );
+                    return arrayList;
+                }else {
+                    return specialities;
+                }
             }else {
-                return specialities;
+                return arrayList;
             }
-        }else {
-            return specialities;
+
         }
+        return arrayList;
     }
 
     private StatisticResultDto loadGlobalMock(String region) {
