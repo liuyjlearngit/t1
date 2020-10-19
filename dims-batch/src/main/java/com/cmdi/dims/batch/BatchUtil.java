@@ -19,22 +19,15 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.scope.context.StepContext;
+import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
+import org.springframework.integration.sftp.session.SftpSession;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.zip.GZIPInputStream;
 
 public class BatchUtil {
@@ -185,6 +178,13 @@ public class BatchUtil {
             session.read(filePath, stream);
         }
     }
+    static void transferSFTP(SftpSession session, String filePath, Path itemFile) throws IOException {
+        try (OutputStream os = Files.newOutputStream(itemFile);
+             BufferedOutputStream stream = new BufferedOutputStream(os)
+        ) {
+            session.read(filePath, stream);
+        }
+    }
 
     static String sha1(Path itemFile) throws IOException {
         try (InputStream is = Files.newInputStream(itemFile);
@@ -251,6 +251,16 @@ public class BatchUtil {
         factory.setUsername(location.getUsername());
         factory.setPassword(location.getPassword());
         factory.setControlEncoding(StringUtils.isNotEmpty(location.getEncoding()) ? location.getEncoding() : "UTF-8");
+        return factory;
+    }
+    static DefaultSftpSessionFactory createSFTPSessionFactory(FileLocationDto location) {
+        DefaultSftpSessionFactory factory = new DefaultSftpSessionFactory();
+        factory.setHost(StringUtils.isNotEmpty(location.getHost()) ? location.getHost() : "localhost");
+        factory.setPort(null != location.getPort() ? location.getPort() : 22);
+        factory.setUser(location.getUsername());
+        factory.setPassword(location.getPassword());
+       // factory.setControlEncoding(StringUtils.isNotEmpty(location.getEncoding()) ? location.getEncoding() : "UTF-8");
+        factory.setAllowUnknownKeys(true);
         return factory;
     }
 

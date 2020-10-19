@@ -8,6 +8,7 @@ import com.cmdi.dims.sdk.model.FileLocationDto;
 import com.cmdi.dims.sdk.model.TaskConfigDto;
 import com.cmdi.dims.sdk.model.TaskItemFileDto;
 import com.google.common.collect.Lists;
+import com.jcraft.jsch.ChannelSftp;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -16,6 +17,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.net.ftp.FTPFile;
 import org.joda.time.DateTime;
+import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
+import org.springframework.integration.sftp.session.SftpSession;
 import org.springframework.util.Assert;
 
 import java.io.File;
@@ -23,6 +26,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.*;
 
 @Slf4j
@@ -51,25 +55,44 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         //加载任务配置中所有FTP配置中的路径
         for (FileLocationDto location : config.getLocations()) {
             List<TaskItemFileDto> resultOfLocation = result.computeIfAbsent(location.getSpecialityName(), k -> new ArrayList<>());
-            DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(location);
-            try (FtpSession session = factory.getSession()) {
-
-                boolean exists = false;
-                String taskFolder = null;
-                DateTime lastCollectionDate = new DateTime().withMillisOfDay(0);
-                DateTime min = lastCollectionDate.minusDays(90);
-                while (lastCollectionDate.isAfter(min)) {
-                    taskFolder = location.getPath() + "/" + lastCollectionDate.toString("yyyyMMdd");
-                    exists = session.exists(taskFolder);
-                    log.info("目录：" + taskFolder + ",是否存在：" + exists);
-                    if (exists) {
-
-                        populateTaskItemFile(config, specialityTables, location, taskCode, lastCollectionDate.toDate(), localTaskFolder, session, taskFolder, 1, resultOfLocation);
-                        break;
+            if(StringUtils.equalsIgnoreCase(location.getSchema(),"sftp")){
+                DefaultSftpSessionFactory sftpFactory = BatchUtil.createSFTPSessionFactory(location);
+                try (SftpSession session = sftpFactory.getSession()) {
+                    boolean exists = false;
+                    String taskFolder = null;
+                    DateTime lastCollectionDate = new DateTime().withMillisOfDay(0);
+                    DateTime min = lastCollectionDate.minusDays(90);
+                    while (lastCollectionDate.isAfter(min)) {
+                        taskFolder = location.getPath() + "/" + lastCollectionDate.toString("yyyyMMdd");
+                        exists = session.exists(taskFolder);
+                        log.info("目录：" + taskFolder + ",是否存在：" + exists);
+                        if (exists) {
+                            populateTaskItemFile(config, specialityTables, location, taskCode, lastCollectionDate.toDate(), localTaskFolder, session, taskFolder, 1, resultOfLocation);
+                            break;
+                        }
+                        lastCollectionDate = lastCollectionDate.minusDays(1);
                     }
-                    lastCollectionDate = lastCollectionDate.minusDays(1);
+                }
+            } else{
+                DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(location);
+                try (FtpSession session = factory.getSession()) {
+                    boolean exists = false;
+                    String taskFolder = null;
+                    DateTime lastCollectionDate = new DateTime().withMillisOfDay(0);
+                    DateTime min = lastCollectionDate.minusDays(90);
+                    while (lastCollectionDate.isAfter(min)) {
+                        taskFolder = location.getPath() + "/" + lastCollectionDate.toString("yyyyMMdd");
+                        exists = session.exists(taskFolder);
+                        log.info("目录：" + taskFolder + ",是否存在：" + exists);
+                        if (exists) {
+                            populateTaskItemFile(config, specialityTables, location, taskCode, lastCollectionDate.toDate(), localTaskFolder, session, taskFolder, 1, resultOfLocation);
+                            break;
+                        }
+                        lastCollectionDate = lastCollectionDate.minusDays(1);
+                    }
                 }
             }
+
         }
         for (Map.Entry<String, List<TaskItemFileDto>> entry : result.entrySet()) {
             Assert.notEmpty(entry.getValue(), "对应专业【" + entry.getKey() + "】没有找到匹配文件");
@@ -79,10 +102,10 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
     private static final int MAX_LEVEL = 3;
 
     private void populateTaskItemFile(TaskConfigDto config, Map<String, String> specialityTables, FileLocationDto location, String taskCode, Date collectionDate, File localTaskFolder,
-                                      FtpSession session,
-                                      String folder,
-                                      int level,
-                                      List<TaskItemFileDto> result) throws IOException {
+                                       FtpSession session,
+                                       String folder,
+                                       int level,
+                                       List<TaskItemFileDto> result) throws IOException {
         FTPFile[] files = session.list(folder);
         if (ArrayUtils.isNotEmpty(files)) {
             for (FTPFile file : files) {
@@ -123,7 +146,55 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
             }
         }
     }
-
+    private void populateTaskItemFile(TaskConfigDto config, Map<String, String> specialityTables, FileLocationDto location, String taskCode, Date collectionDate, File localTaskFolder,
+                                      SftpSession session,
+                                      String folder,
+                                      int level,
+                                      List<TaskItemFileDto> result) throws IOException {
+        ChannelSftp.LsEntry[] fileEntry = session.list(folder);
+        if (ArrayUtils.isNotEmpty(fileEntry)) {
+            for (ChannelSftp.LsEntry entry : fileEntry) {
+                //TBD:未实现目录多级索检
+                //if (file.isFile()) {
+                    //String baseName = FilenameUtils.getBaseName(file.getName());
+                    String baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),".");
+                    if(StringUtils.isEmpty(baseName)){
+                        continue;
+                    }
+                    if(baseName.matches(regex1)){
+                        //filer files which are retransmissions
+                        continue;
+                    }else if(baseName.matches(regex2)){
+                        //in case of split files
+                        baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),"-");
+                    }
+                    //table name mapping
+                    String tableName = StringUtils.containsIgnoreCase(specialTableName,baseName)?PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName:baseName;
+                    String fileName = FilenameUtils.getName(entry.getFilename());
+                    if (specialityTables.containsKey(tableName.toUpperCase())) {
+                        TaskItemFileDto taskItemFile = new TaskItemFileDto();
+                        taskItemFile.setDestTable(tableName.toUpperCase());
+                        taskItemFile.setName(fileName);
+                        taskItemFile.setCode(folder + "/" + entry.getFilename());
+                        taskItemFile.setTaskCode(taskCode);
+                        taskItemFile.setCollectionDate(collectionDate);
+                        taskItemFile.setProvince(config.getProvince());
+                        taskItemFile.setFileEncoding(location.getFileEncoding());
+                        taskItemFile.setFileDelimiter(location.getFileDelimiter());
+                        //assembleUrl方法组装FTPURL
+                        taskItemFile.setMemo(assembleUrl(location, taskItemFile.getCode()));
+                        //根据文件信息下载数据，并区分ZIP包和CSV数据，并保存下载的具体信息
+                        downloadFileFromSFtp(session, localTaskFolder, taskItemFile);
+                        result.add(taskItemFile);
+                    } else {
+                        log.warn(entry.getFilename() + " no mapping entity type!!!");
+                    }
+                /*} else if (file.isDirectory() && level <= MAX_LEVEL) {
+                    populateTaskItemFile(config, specialityTables, location, taskCode, collectionDate, localTaskFolder, session, folder + "/" + file.getName(), level + 1, result);
+                }*/
+            }
+        }
+    }
     private String assembleUrl(FileLocationDto fileLocation, String path) {
         StringBuilder builder = new StringBuilder();
         builder.append(fileLocation.getSchema());
@@ -168,7 +239,60 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
             }
             Path destPath = Paths.get(signaturePath.toFile().getAbsolutePath(), taskItemFile.getName());
 
-            Files.move(itemFile, destPath);
+            Files.move(itemFile, destPath, StandardCopyOption.REPLACE_EXISTING);
+
+            Path csvFile = null;
+            String extension = FilenameUtils.getExtension(taskItemFile.getName());
+            if ("zip".equalsIgnoreCase(extension)) {
+                //!!!unsupport split files
+                BatchUtil.extractCsv(destPath);
+                csvFile = BatchUtil.csvFile(destPath.getParent().toFile(), taskItemFile.getName());
+            }  else if("gz".equalsIgnoreCase(extension)){
+                BatchUtil.unGzipFile(destPath);
+                csvFile = BatchUtil.csvFile(destPath.getParent().toFile(), taskItemFile.getName());
+            } else if ("csv".equalsIgnoreCase(extension)) {
+                csvFile = destPath;
+            }
+            if (null != csvFile) {
+                taskItemFile.setCsvFile(csvFile.toFile().getName());
+                taskItemFile.setCsvFileSize(Files.size(destPath));
+                taskItemFile.setSuccess(true);
+            } else {
+                taskItemFile.setSuccess(false);
+                taskItemFile.setFailureReason("文件名：" + taskItemFile.getName() + "解压后对应的CSV文件不存在！");
+                log.warn("file " + taskItemFile.getName() + " extract without csv !!!");
+            }
+        } catch (Exception e) {
+            taskItemFile.setSuccess(false);
+            taskItemFile.setFailureReason(e.getMessage());
+            log.error(e.getMessage(), e);
+        } finally {
+            long useTime = System.currentTimeMillis() - start;
+            taskItemFile.setFileGettingCosts(useTime);
+            taskItemFile.setFinishTime(new Date());
+            taskService.saveTaskItemFile(taskItemFile);
+        }
+    }
+    private void downloadFileFromSFtp(SftpSession session, File taskFolder, TaskItemFileDto taskItemFile) {
+
+        long start = System.currentTimeMillis();
+        try {
+            Path itemFile = Paths.get(taskFolder.getAbsolutePath(), taskItemFile.getName());
+            if (Files.exists(itemFile)) {
+                FileUtils.forceDelete(itemFile.toFile());
+            }
+            BatchUtil.transferSFTP(session, taskItemFile.getCode(), itemFile);
+            taskItemFile.setFileSize(Files.size(itemFile));
+
+            taskItemFile.setSignature(BatchUtil.sha1(itemFile));
+
+            Path signaturePath = Paths.get(taskFolder.getAbsolutePath(), taskItemFile.getSignature());
+            if (!Files.exists(signaturePath)) {
+                Files.createDirectory(signaturePath);
+            }
+            Path destPath = Paths.get(signaturePath.toFile().getAbsolutePath(), taskItemFile.getName());
+
+            Files.move(itemFile, destPath, StandardCopyOption.REPLACE_EXISTING);
 
             Path csvFile = null;
             String extension = FilenameUtils.getExtension(taskItemFile.getName());

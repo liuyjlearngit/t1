@@ -1,38 +1,34 @@
 package com.cmdi.dims.app;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
 import com.cmdi.dims.app.dto.FileLocationDto;
 import com.cmdi.dims.app.dto.ReadFileErrDot;
 import com.cmdi.dims.app.dto.ResponseDto;
 import com.cmdi.dims.common.util.DefaultFtpSessionFactory;
 import com.cmdi.dims.task.entity.FileLocation;
 import com.cmdi.dims.task.repository.FileLocationRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
 import org.springframework.util.Assert;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -109,11 +105,23 @@ public class FileConfigRestController {
                 factory.setUsername(fileLocation.getUsername());
                 factory.setPassword(fileLocation.getPassword());
                 factory.setControlEncoding(StringUtils.isNotEmpty(fileLocation.getEncoding()) ? fileLocation.getEncoding() : "UTF-8");
-
                 names = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
                 System.out.println("===---"+ Arrays.toString(names));
             } catch (Exception e) {
                 throw new RuntimeException(e);
+            }
+        } else{
+            try {
+                DefaultSftpSessionFactory factory = new DefaultSftpSessionFactory();
+                factory.setHost(StringUtils.isNotEmpty(fileLocation.getHost()) ? fileLocation.getHost() : "localhost");
+                factory.setPort(null != fileLocation.getPort() ? fileLocation.getPort() : 22);
+                factory.setUser(fileLocation.getUsername());
+                factory.setPassword(fileLocation.getPassword());
+                factory.setAllowUnknownKeys(true);
+                // factory.setControlEncoding(StringUtils.isNotEmpty(location.getEncoding()) ? location.getEncoding() : "UTF-8");
+                names = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
         return ResponseDto.success(names);
@@ -174,19 +182,13 @@ public class FileConfigRestController {
                     }
 
                 }
-
-//                    FileLocation saved = fileLocationRepository.save(fileLocation);
-//                    return ResponseDto.success(saved);
-
                  saveAll = fileLocationRepository.saveAll(fileLocationDtos);
             }
             //错误条数
             i1 = i - 1 - saveAll.size();//添加错误了几条
 
-            objects = new ArrayList<>();
-            for (FileLocation  fileLocations:fileLocationDtos) {
-//                ResponseDto<String[]> responseDto = testFileLocation(fileLocation.getFileLocationId());
-
+  /*             objects = new ArrayList<>();
+                for (FileLocation  fileLocations:fileLocationDtos) {
                 Assert.notNull(fileLocations.getFileLocationId(), "not null");
                 FileLocation fileLocation = fileLocationRepository.findById(fileLocations.getFileLocationId()).orElseThrow(() -> new IllegalArgumentException("FTP配置ID=" + fileLocations.getFileLocationId() + "不存在"));
                 Assert.notNull(fileLocation, "not null");
@@ -201,9 +203,7 @@ public class FileConfigRestController {
                     try {
                         responseDto = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
                     }catch (IllegalStateException e){
-
                     }
-
                     System.out.println("===---" + Arrays.toString(responseDto));
                 }
                 if (responseDto==null){
@@ -218,7 +218,7 @@ public class FileConfigRestController {
                     }
                     numftp++;
                 }
-            }
+            }*/
         } catch (FileNotFoundException ex) {
             System.out.println("没找到文件！");
         } catch (IOException ex) {
@@ -227,6 +227,5 @@ public class FileConfigRestController {
         arrayLists.add(s);
         return ReadFileErrDot.builder().numerr(i1).ftperrs(arrayLists).ftperrnum(numftp).build();
     }
-
 
 }

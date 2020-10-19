@@ -1,7 +1,7 @@
 package com.cmdi.dims.batch;
 
-import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.DataService;
 import com.cmdi.dims.domain.meta.dto.AttributeType;
 import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.infrastructure.util.DefaultFtpSessionFactory;
@@ -18,7 +18,10 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
+import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
+import org.springframework.integration.sftp.session.SftpSession;
 import org.springframework.util.Assert;
 
 import java.io.File;
@@ -80,7 +83,12 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             }
             try {
                 File result = compressZips(localTaskFolder, date + "_RESULT.zip", zips);
-                uploadZipFileToFtp(result, location);
+                if(StringUtils.equalsIgnoreCase(location.getSchema(),"sftp")){
+                    uploadZipFileToSFtp(result, location);
+                }else{
+                    uploadZipFileToFtp(result, location);
+                }
+
             } catch (Exception e) {
                 log.error("错误数据上传失败：" + e.getMessage(), e);
             }
@@ -90,6 +98,20 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
     private void uploadZipFileToFtp(File zipFile, FileLocationDto location) throws IOException {
         DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(location);
         try (FtpSession session = factory.getSession();
+             InputStream inputStream = Files.newInputStream(zipFile.toPath())
+        ) {
+            Assert.state(session.exists(location.getPath()), "没有找到FTP配置的目录:" + location.getPath());
+            String zipFileName = FilenameUtils.getName(zipFile.getName());
+            boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
+            if (remoteExists) {
+                session.remove(location.getPath() + "/" + zipFileName);
+            }
+            session.write(inputStream, location.getPath() + "/" + zipFileName);
+        }
+    }
+    private void uploadZipFileToSFtp(File zipFile, FileLocationDto location) throws IOException {
+        DefaultSftpSessionFactory factory = BatchUtil.createSFTPSessionFactory(location);
+        try (SftpSession session = factory.getSession();
              InputStream inputStream = Files.newInputStream(zipFile.toPath())
         ) {
             Assert.state(session.exists(location.getPath()), "没有找到FTP配置的目录:" + location.getPath());
