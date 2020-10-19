@@ -137,6 +137,7 @@ declare
 	v_resType         varchar(100);
 	v_countRegionCode  integer;
 	v_count            integer;
+	 curAttr          record;
 begin
   -- Routine body goes here...
 	delete from dims_tm_res_statistics where taskcode=p_taskCode and resIndex=p_indexId;
@@ -217,12 +218,17 @@ begin
     where taskcode=p_taskCode
       and resIndex=p_indexId;
    if v_count =0 then
-     insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
-										   countyCode,regionType,specialityName,resName,resType,amount,unit)
-      values(p_indexid,p_taskcode,p_provinceCode,null,null,
-             3,v_specialityName,v_idxName,null,0,v_unit);
+  
+			 for curAttr in (select dictvalue from dims_mm_attributetype a left join dims_mm_dictionarytype b on a.dictionarytype_id = b.id left join dims_mm_dictionary c on c.dictionarytype_id = b.id  where a.id = 901000638 )
+			 loop
+						 insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
+													 countyCode,regionType,specialityName,resName,resType,amount,unit)
+					values(p_indexid,p_taskcode,p_provinceCode,null,null,
+								 3,v_specialityName,v_idxName,curAttr.dictvalue,0,v_unit);   
+			 end loop;
    end if;
-   
+	 
+	 
    --原始数据provicecode为空的更新一下
 	 update dims_tm_res_statistics t
       set provinceCode=p_provinceCode
