@@ -136,6 +136,8 @@ declare
 	v_countyCode         varchar(100);
 	v_resType         varchar(100);
 	v_countRegionCode  integer;
+	v_count            integer;
+	 curAttr          record;
 begin
   -- Routine body goes here...
 	delete from dims_tm_res_statistics where taskcode=p_taskCode and resIndex=p_indexId;
@@ -209,29 +211,54 @@ begin
 	 end loop;
 	 close cur;
 	 
+	    --没有数据，就插入一条区县级别的0，0，0   
+   select count(1) 
+     into v_count 
+     from dims_tm_res_statistics 
+    where taskcode=p_taskCode
+      and resIndex=p_indexId;
+   if v_count =0 then
+  
+			 for curAttr in (select dictvalue from dims_mm_attributetype a left join dims_mm_dictionarytype b on a.dictionarytype_id = b.id left join dims_mm_dictionary c on c.dictionarytype_id = b.id  where a.id = v_dictTypeId )
+			 loop
+						 insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
+													 countyCode,regionType,specialityName,resName,resType,amount,unit)
+					values(p_indexid,p_taskcode,p_provinceCode,null,null,
+								 3,v_specialityName,v_idxName,curAttr.dictvalue,0,v_unit);   
+			 end loop;
+   end if;
+	 
+	 
+   --原始数据provicecode为空的更新一下
+	 update dims_tm_res_statistics t
+      set provinceCode=p_provinceCode
+    where provinceCode is null
+      and taskcode=p_taskCode
+      and resIndex=p_indexId;
+	 
 	 --地市的指标:regionType=2
    insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 										   countyCode,regionType,specialityName,resName,resType,amount,unit)
    select p_indexid,p_taskcode,provinceCode,prefectureCode,
-          null,2,v_specialityName,v_idxName,v_resType,
+          null,2,v_specialityName,v_idxName,resType,
           sum(amount),v_unit
      from dims_tm_res_statistics
     where taskcode=p_taskCode  
       and resIndex=p_indexId
       and regionType=3
-   group by provinceCode,prefectureCode;
+   group by provinceCode,prefectureCode,resType;
 
 	 --省份的指标:regionType=1
    insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 										   countyCode,regionType,specialityName,resName,resType,amount,unit)
    select p_indexid,p_taskcode,provinceCode,null,
-          null,1,v_specialityName,v_idxName,v_resType,
+          null,1,v_specialityName,v_idxName,resType,
           sum(amount),v_unit
      from dims_tm_res_statistics
     where taskcode=p_taskCode  
       and resIndex=p_indexId
       and regionType=3
-   group by provinceCode;
+   group by provinceCode,resType;
 	 --指标值,更新指标的区域名称
    update dims_tm_res_statistics t
       set province=(select name from dims_tm_areaCodeConfig where code=t.provinceCode and regiontype=1),
