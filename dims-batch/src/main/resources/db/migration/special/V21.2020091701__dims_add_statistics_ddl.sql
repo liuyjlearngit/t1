@@ -219,7 +219,7 @@ begin
       and resIndex=p_indexId;
    if v_count =0 then
   
-			 for curAttr in (select dictvalue from dims_mm_attributetype a left join dims_mm_dictionarytype b on a.dictionarytype_id = b.id left join dims_mm_dictionary c on c.dictionarytype_id = b.id  where a.id = 901000638 )
+			 for curAttr in (select dictvalue from dims_mm_attributetype a left join dims_mm_dictionarytype b on a.dictionarytype_id = b.id left join dims_mm_dictionary c on c.dictionarytype_id = b.id  where a.id = v_dictTypeId )
 			 loop
 						 insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 													 countyCode,regionType,specialityName,resName,resType,amount,unit)
