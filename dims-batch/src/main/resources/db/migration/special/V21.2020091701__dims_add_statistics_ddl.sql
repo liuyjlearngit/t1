@@ -220,7 +220,7 @@ begin
      insert into dims_tm_res_statistics(resIndex,taskCode,provinceCode,prefectureCode,
 										   countyCode,regionType,specialityName,resName,resType,amount,unit)
       values(p_indexid,p_taskcode,p_provinceCode,null,null,
-             3,v_specialityName,v_idxName,null,0,null);
+             3,v_specialityName,v_idxName,null,0,v_unit);
    end if;
    
    --原始数据provicecode为空的更新一下
