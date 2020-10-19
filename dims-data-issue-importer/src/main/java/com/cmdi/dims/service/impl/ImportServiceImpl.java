@@ -14,6 +14,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
+import org.springframework.integration.sftp.session.SftpSession;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -63,18 +65,35 @@ public class ImportServiceImpl implements ImportService {
         Assert.notEmpty(locations, "没有找到任务对应的FTP");
         FileLocationVo location = null;
         for (FileLocationVo curLocation : locations) {
-            DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(curLocation);
-            try (FtpSession session = factory.getSession()) {
-                String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
-                if (session.exists(resultFtpFilePath)) {
-                    Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
-                    if (Files.exists(resultZip)) {
-                        FileUtils.forceDelete(resultZip.toFile());
+            if(StringUtils.equalsIgnoreCase(curLocation.getSchema(),"sftp")){
+                DefaultSftpSessionFactory factory = BatchUtil.createSFTPSessionFactory(curLocation);
+                try (SftpSession session = factory.getSession()) {
+                    String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    if (session.exists(resultFtpFilePath)) {
+                        Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
+                        if (Files.exists(resultZip)) {
+                            FileUtils.forceDelete(resultZip.toFile());
+                        }
+                        BatchUtil.transferSFTP(session, resultFtpFilePath, resultZip);
+                        BatchUtil.extractCsv(resultZip);
+                        location = curLocation;
+                        break;
                     }
-                    BatchUtil.transfer(session, resultFtpFilePath, resultZip);
-                    BatchUtil.extractCsv(resultZip);
-                    location = curLocation;
-                    break;
+                }
+            } else{
+                DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(curLocation);
+                try (FtpSession session = factory.getSession()) {
+                    String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    if (session.exists(resultFtpFilePath)) {
+                        Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
+                        if (Files.exists(resultZip)) {
+                            FileUtils.forceDelete(resultZip.toFile());
+                        }
+                        BatchUtil.transfer(session, resultFtpFilePath, resultZip);
+                        BatchUtil.extractCsv(resultZip);
+                        location = curLocation;
+                        break;
+                    }
                 }
             }
         }

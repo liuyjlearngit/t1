@@ -2015,7 +2015,6 @@ create index if not exists idx_CE_NET_PE_LOW_DISTRIBUTION2related_room on CE_NET
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2intId on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(res_code);
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_room on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_room);
 create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
-create index if not exists idx_CE_DEVICE_PE_LOW_AC_DISTRIBUTION2related_system on CE_DEVICE_PE_LOW_AC_DISTRIBUTION(related_system);
 create index if not exists idx_CE_NET_PE_SWITCH_POWER2intId on CE_NET_PE_SWITCH_POWER(res_code);
 create index if not exists idx_CE_NET_PE_SWITCH_POWER2related_room on CE_NET_PE_SWITCH_POWER(related_room);
 create index if not exists idx_CE_DEVICE_PE_POWER_GENERATION2intId on CE_DEVICE_PE_POWER_GENERATION(res_code);

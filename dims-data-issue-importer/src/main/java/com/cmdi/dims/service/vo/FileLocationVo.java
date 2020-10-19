@@ -1,9 +1,9 @@
 package com.cmdi.dims.service.vo;
 
 
-import java.util.Map;
-
 import org.apache.commons.collections4.MapUtils;
+
+import java.util.Map;
 
 public class FileLocationVo {
 
@@ -43,5 +43,8 @@ public class FileLocationVo {
 
     public String getFileDelimiter() {
         return MapUtils.getString(data, "file_delimiter");
+    }
+    public String getSchema() {
+        return MapUtils.getString(data, "schema");
     }
 }
