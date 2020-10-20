@@ -16890,7 +16890,228 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (913001368, '设备类型', 'device_type', 913001005, 'DEVICE_TYPE', 'string', null, 'admin', 'admin', null),
 (913001369, '生命周期状态', 'lifecycle_status', 913001005, 'LIFECYCLE_STATUS', 'string', 913000016, 'admin', 'admin', null),
 (913001370, '所属机架', 'related_rack', 913001005, 'RELATED_RACK', 'string', null, 'admin', 'admin', null);
-
+--插入IDC dims_idx_index
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(913099001, 'IDC资源完整性指标', 'DIMS_GG_99001', 99001, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099002, 'IDC资源规范性指标', 'DIMS_GG_99002', 99002, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099003, 'IDC资源关联性指标', 'DIMS_GG_99003', 99003, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099004, 'IDC业务合规性指标', 'DIMS_GG_99004', 99004, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099999, 'IDC数据整体指标', 'DIMS_GG_99999', 99999, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913003001, 'IDC-IDC数据中心信息必填完整性核查', 'DIMS_IDC_01001', 1001, 913001001, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001001, 1, NULL),
+(913003002, 'IDC-IDC站点信息必填完整性核查', 'DIMS_IDC_01002', 1002, 913001002, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001002, 1, NULL),
+(913003003, 'IDC-IDC机房信息必填完整性核查', 'DIMS_IDC_01003', 1003, 913001003, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001003, 1, NULL),
+(913003004, 'IDC-IDC机架信息必填完整性核查', 'DIMS_IDC_01004', 1004, 913001004, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001004, 1, NULL),
+(913003005, 'IDC-IDC业务设备必填完整性核查', 'DIMS_IDC_01005', 1005, 913001005, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001005, 1, NULL),
+(913003006, 'IDC-IDC数据中心信息规范性核查-资源标识-唯一性核查', 'DIMS_IDC_02001', 2001, 913001001, 'IDC', 11, NULL, 'update IDC_DATACENTER t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02001%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02001''
+																											 else dims_col_result||'',DIMS_IDC_02001'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC数据中心信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC数据中心信息规范性核查-资源标识-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC数据中心信息规范性核查-资源标识-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_DATACENTER t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001001, 1, NULL),
+(913003007, 'IDC-IDC数据中心信息规范性核查-网络接入层次-字典规范性核查', 'DIMS_IDC_02002', 2002, 913001001, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001001, 1, NULL),
+(913003008, 'IDC-IDC数据中心信息规范性核查-是否具备三线接入能力-字典规范性核查', 'DIMS_IDC_02004', 2004, 913001001, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001001, 1, NULL),
+(913003009, 'IDC-IDC数据中心信息规范性核查-数据中心性质-字典规范性核查', 'DIMS_IDC_02005', 2005, 913001001, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001001, 1, NULL),
+(913003010, 'IDC-IDC数据中心信息规范性核查-数据中心级别（政企）-字典规范性核查', 'DIMS_IDC_02006', 2006, 913001001, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001001, 1, NULL),
+(913003011, 'IDC-IDC站点信息规范性核查-资源标识-唯一性核查', 'DIMS_IDC_02007', 2007, 913001002, 'IDC', 11, NULL, 'update IDC_SITE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02007%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02007''
+																											 else dims_col_result||'',DIMS_IDC_02007'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC站点信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC站点信息规范性核查-资源标识-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC站点信息规范性核查-资源标识-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_SITE t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001002, 1, NULL),
+(913003012, 'IDC-IDC机房信息规范性核查-资源标识-唯一性核查', 'DIMS_IDC_02008', 2008, 913001003, 'IDC', 11, NULL, 'update IDC_ROOM t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02008%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02008''
+																											 else dims_col_result||'',DIMS_IDC_02008'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC机房信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC机房信息规范性核查-资源标识-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC机房信息规范性核查-资源标识-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_ROOM t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001003, 1, NULL),
+(913003013, 'IDC-IDC机房信息规范性核查-机房等级-字典规范性核查', 'DIMS_IDC_02009', 2009, 913001003, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001003, 1, NULL),
+(913003014, 'IDC-IDC机架信息规范性核查-资源标识-唯一性核查', 'DIMS_IDC_02010', 2010, 913001004, 'IDC', 11, NULL, 'update IDC_RACK t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02010%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02010''
+																											 else dims_col_result||'',DIMS_IDC_02010'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC机架信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC机架信息规范性核查-资源标识-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC机架信息规范性核查-资源标识-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_RACK t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001004, 1, NULL),
+(913003015, 'IDC-IDC机架信息规范性核查-规划用途-字典规范性核查', 'DIMS_IDC_02011', 2011, 913001004, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001004, 1, NULL),
+(913003016, 'IDC-IDC机架信息规范性核查-使用单位-字典规范性核查', 'DIMS_IDC_02012', 2012, 913001004, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001004, 1, NULL),
+(913003017, 'IDC-IDC机架信息规范性核查-用电类型-字典规范性核查', 'DIMS_IDC_02013', 2013, 913001004, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001004, 1, NULL),
+(913003018, 'IDC-IDC业务设备规范性核查-资源标识-唯一性核查', 'DIMS_IDC_02014', 2014, 913001005, 'IDC', 11, NULL, 'update IDC_DEVICE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02014%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02014''
+																											 else dims_col_result||'',DIMS_IDC_02014'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC业务设备规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC业务设备规范性核查-资源标识-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC业务设备规范性核查-资源标识-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_DEVICE t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL),
+(913003019, 'IDC-IDC业务设备规范性核查-设备名称-唯一性核查', 'DIMS_IDC_02015', 2015, 913001005, 'IDC', 11, NULL, 'update IDC_DEVICE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02015%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02015''
+																											 else dims_col_result||'',DIMS_IDC_02015'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC业务设备规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC业务设备规范性核查-设备名称-唯一性核查''
+																											 else dims_col_rtName||'',IDC-IDC业务设备规范性核查-设备名称-唯一性核查'' end)
+													                         where  exists(select 1 from IDC_DEVICE t2 where t2.ctid <> t1.ctid and t2.device_name = t1.device_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL),
+(913003020, 'IDC-IDC业务设备规范性核查-是否需要采集端口流量-字典规范性核查', 'DIMS_IDC_02017', 2017, 913001005, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001005, 1, NULL),
+(913003021, 'IDC-IDC业务设备规范性核查-设备类型-字典规范性核查', 'DIMS_IDC_02018', 2018, 913001005, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001005, 1, NULL),
+(913003022, 'IDC-IDC业务设备规范性核查-生命周期状态-字典规范性核查', 'DIMS_IDC_02019', 2019, 913001005, 'IDC', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 913001005, 1, NULL),
+(913003023, 'IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查', 'DIMS_IDC_02003', 2003, 913001001, 'IDC', 11, NULL, 'update IDC_DATACENTER t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02003%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02003''
+																											 else dims_col_result||'',DIMS_IDC_02003'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查''
+																											 else dims_col_rtName||'',IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查'' end)
+													                         where isNull(net_export_gateway_ip_address) or net_export_gateway_ip_address !~ ''^\s*(((([0-9A-Fa-f]{1,4}:){7}(([0-9A-Fa-f]{1,4})|:))|(([0-9A-Fa-f]{1,4}:){6}(:|((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})|(:[0-9A-Fa-f]{1,4})))|(([0-9A-Fa-f]{1,4}:){5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){0,1}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){0,2}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){0,3}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){0,4}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(:(:[0-9A-Fa-f]{1,4}){0,5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})))\;?\s*)*(/(?:[1-9]|[12][0-9]|3[012]))?$''', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001001, 1, NULL),
+(913003024, 'IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查', 'DIMS_IDC_02016', 2016, 913001005, 'IDC', 11, NULL, 'update IDC_DEVICE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02016%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_02016''
+																											 else dims_col_result||'',DIMS_IDC_02016'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查''
+																											 else dims_col_rtName||'',IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查'' end)
+													                         where isNull(ipv4_manage) or ipv4_manage !~ ''^\s*(((([0-9A-Fa-f]{1,4}:){7}(([0-9A-Fa-f]{1,4})|:))|(([0-9A-Fa-f]{1,4}:){6}(:|((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})|(:[0-9A-Fa-f]{1,4})))|(([0-9A-Fa-f]{1,4}:){5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){0,1}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){0,2}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){0,3}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){0,4}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(:(:[0-9A-Fa-f]{1,4}){0,5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})))\;?\s*)*(/(?:[1-9]|[12][0-9]|3[012]))?$''', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL),
+(913003025, 'IDC-IDC数据中心信息关联性核查-归属数据中心名称', 'DIMS_IDC_03001', 3001, 913001001, 'IDC', 11, NULL, 'update IDC_DATACENTER t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03001%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_03001''
+																											 else dims_col_result||'',DIMS_IDC_03001'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC数据中心信息关联性核查-归属数据中心名称%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC数据中心信息关联性核查-归属数据中心名称''
+																											 else dims_col_rtName||'',IDC-IDC数据中心信息关联性核查-归属数据中心名称'' end)
+													                   where isNotNull(t1.related_dc) and not exists(select 1 from RM_AREA_DC t2 where t2.int_id = t1.related_dc) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001001, 1, NULL),
+(913003026, 'IDC-IDC站点信息关联性核查-归属站点名称', 'DIMS_IDC_03002', 3002, 913001002, 'IDC', 11, NULL, 'update IDC_SITE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03002%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_03002''
+																											 else dims_col_result||'',DIMS_IDC_03002'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC站点信息关联性核查-归属站点名称%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC站点信息关联性核查-归属站点名称''
+																											 else dims_col_rtName||'',IDC-IDC站点信息关联性核查-归属站点名称'' end)
+													                   where isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001002, 1, NULL),
+(913003027, 'IDC-IDC机房信息关联性核查-归属机房名称', 'DIMS_IDC_03003', 3003, 913001003, 'IDC', 11, NULL, 'update IDC_ROOM t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03003%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_03003''
+																											 else dims_col_result||'',DIMS_IDC_03003'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC机房信息关联性核查-归属机房名称%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC机房信息关联性核查-归属机房名称''
+																											 else dims_col_rtName||'',IDC-IDC机房信息关联性核查-归属机房名称'' end)
+													                   where isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001003, 1, NULL),
+(913003028, 'IDC-IDC机架信息关联性核查-归属机架名称', 'DIMS_IDC_03004', 3004, 913001004, 'IDC', 11, NULL, 'update IDC_RACK t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03004%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_03004''
+																											 else dims_col_result||'',DIMS_IDC_03004'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC机架信息关联性核查-归属机架名称%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC机架信息关联性核查-归属机架名称''
+																											 else dims_col_rtName||'',IDC-IDC机架信息关联性核查-归属机架名称'' end)
+													                   where isNotNull(t1.related_rack) and not exists(select 1 from CM_DEVICE_RACK t2 where t2.int_id = t1.related_rack) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001004, 1, NULL),
+(913003029, 'IDC-IDC业务设备关联性核查-所属机架', 'DIMS_IDC_03005', 3005, 913001005, 'IDC', 11, NULL, 'update IDC_DEVICE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03005%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_IDC_03005''
+																											 else dims_col_result||'',DIMS_IDC_03005'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC业务设备关联性核查-所属机架%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC业务设备关联性核查-所属机架''
+																											 else dims_col_rtName||'',IDC-IDC业务设备关联性核查-所属机架'' end)
+													                   where isNotNull(t1.related_rack) and not exists(select 1 from IDC_RACK t2 where t2.int_id = t1.related_rack) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL);
+--插入IDC dims_idx_IndexCarrier
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(913004001, 913099001, 913003001, 'admin', 'admin', null),
+(913004002, 913099001, 913003002, 'admin', 'admin', null),
+(913004003, 913099001, 913003003, 'admin', 'admin', null),
+(913004004, 913099001, 913003004, 'admin', 'admin', null),
+(913004005, 913099001, 913003005, 'admin', 'admin', null),
+(913004006, 913099002, 913003006, 'admin', 'admin', null),
+(913004007, 913099002, 913003007, 'admin', 'admin', null),
+(913004008, 913099002, 913003008, 'admin', 'admin', null),
+(913004009, 913099002, 913003009, 'admin', 'admin', null),
+(913004010, 913099002, 913003010, 'admin', 'admin', null),
+(913004011, 913099002, 913003011, 'admin', 'admin', null),
+(913004012, 913099002, 913003012, 'admin', 'admin', null),
+(913004013, 913099002, 913003013, 'admin', 'admin', null),
+(913004014, 913099002, 913003014, 'admin', 'admin', null),
+(913004015, 913099002, 913003015, 'admin', 'admin', null),
+(913004016, 913099002, 913003016, 'admin', 'admin', null),
+(913004017, 913099002, 913003017, 'admin', 'admin', null),
+(913004018, 913099002, 913003018, 'admin', 'admin', null),
+(913004019, 913099002, 913003019, 'admin', 'admin', null),
+(913004020, 913099002, 913003020, 'admin', 'admin', null),
+(913004021, 913099002, 913003021, 'admin', 'admin', null),
+(913004022, 913099002, 913003022, 'admin', 'admin', null),
+(913004023, 913099002, 913003023, 'admin', 'admin', null),
+(913004024, 913099002, 913003024, 'admin', 'admin', null),
+(913004025, 913099003, 913003025, 'admin', 'admin', null),
+(913004026, 913099003, 913003026, 'admin', 'admin', null),
+(913004027, 913099003, 913003027, 'admin', 'admin', null),
+(913004028, 913099003, 913003028, 'admin', 'admin', null),
+(913004029, 913099003, 913003029, 'admin', 'admin', null),
+(913005490, 913099999, 913099001, 'admin', 'admin', null),
+(913005491, 913099999, 913099002, 'admin', 'admin', null),
+(913005492, 913099999, 913099003, 'admin', 'admin', null),
+(913005493, 913099999, 913099004, 'admin', 'admin', null);
+--插入IDC dims_idx_rule
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+(913005501, 'IDC-IDC数据中心信息必填完整性核查.资源标识', 'IDC_DATACENTER.int_id', 913003001, 913001301, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005502, 'IDC-IDC数据中心信息必填完整性核查.数据中心编码（政企）', 'IDC_DATACENTER.dc_id', 913003001, 913001302, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005503, 'IDC-IDC数据中心信息必填完整性核查.归属数据中心名称', 'IDC_DATACENTER.related_dc', 913003001, 913001303, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005504, 'IDC-IDC数据中心信息必填完整性核查.主管省', 'IDC_DATACENTER.province', 913003001, 913001304, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005505, 'IDC-IDC数据中心信息必填完整性核查.网络接入层次', 'IDC_DATACENTER.network_access_level', 913003001, 913001308, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005506, 'IDC-IDC数据中心信息必填完整性核查.互联网出口带宽', 'IDC_DATACENTER.net_export_bandwidth', 913003001, 913001309, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005507, 'IDC-IDC数据中心信息必填完整性核查.互联网出口网关IP地址', 'IDC_DATACENTER.net_export_gateway_ip_address', 913003001, 913001310, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005508, 'IDC-IDC数据中心信息必填完整性核查.是否具备三线接入能力', 'IDC_DATACENTER.three_wire_access_capacity', 913003001, 913001311, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005509, 'IDC-IDC数据中心信息必填完整性核查.入网时间', 'IDC_DATACENTER.setup_time', 913003001, 913001312, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005510, 'IDC-IDC数据中心信息必填完整性核查.数据中心性质', 'IDC_DATACENTER.dc_property', 913003001, 913001314, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005511, 'IDC-IDC数据中心信息必填完整性核查.数据中心级别（政企）', 'IDC_DATACENTER.dc_level', 913003001, 913001315, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005512, 'IDC-IDC站点信息必填完整性核查.资源标识', 'IDC_SITE.int_id', 913003002, 913001316, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005513, 'IDC-IDC站点信息必填完整性核查.站点编码（政企）', 'IDC_SITE.site_code', 913003002, 913001317, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005514, 'IDC-IDC站点信息必填完整性核查.归属站点名称', 'IDC_SITE.related_site', 913003002, 913001318, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005515, 'IDC-IDC站点信息必填完整性核查.入网时间', 'IDC_SITE.setup_time', 913003002, 913001319, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005516, 'IDC-IDC机房信息必填完整性核查.资源标识', 'IDC_ROOM.int_id', 913003003, 913001322, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005517, 'IDC-IDC机房信息必填完整性核查.机房编码（政企）', 'IDC_ROOM.room_code', 913003003, 913001323, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005518, 'IDC-IDC机房信息必填完整性核查.归属机房名称', 'IDC_ROOM.related_room', 913003003, 913001324, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005519, 'IDC-IDC机房信息必填完整性核查.层高', 'IDC_ROOM.floor_height', 913003003, 913001325, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005520, 'IDC-IDC机房信息必填完整性核查.机房等级', 'IDC_ROOM.room_level', 913003003, 913001326, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005521, 'IDC-IDC机房信息必填完整性核查.规划机架数', 'IDC_ROOM.plan_rack_num', 913003003, 913001327, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005522, 'IDC-IDC机房信息必填完整性核查.设计总功耗', 'IDC_ROOM.design_power', 913003003, 913001330, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005523, 'IDC-IDC机房信息必填完整性核查.机房联系人', 'IDC_ROOM.room_contact', 913003003, 913001331, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005524, 'IDC-IDC机房信息必填完整性核查.机房联系方式', 'IDC_ROOM.room_telephone', 913003003, 913001332, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005525, 'IDC-IDC机架信息必填完整性核查.资源标识', 'IDC_RACK.int_id', 913003004, 913001336, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005526, 'IDC-IDC机架信息必填完整性核查.机架编码（政企）', 'IDC_RACK.rack_id', 913003004, 913001337, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005527, 'IDC-IDC机架信息必填完整性核查.归属机架名称', 'IDC_RACK.related_rack', 913003004, 913001338, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005528, 'IDC-IDC机架信息必填完整性核查.现场位置标签', 'IDC_RACK.location_label', 913003004, 913001339, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005529, 'IDC-IDC机架信息必填完整性核查.规划用途', 'IDC_RACK.planned_use', 913003004, 913001340, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005530, 'IDC-IDC机架信息必填完整性核查.额定功率', 'IDC_RACK.rated_power', 913003004, 913001344, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005531, 'IDC-IDC机架信息必填完整性核查.规格型号', 'IDC_RACK.specification_type', 913003004, 913001345, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005532, 'IDC-IDC机架信息必填完整性核查.入网时间', 'IDC_RACK.setup_time', 913003004, 913001346, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005533, 'IDC-IDC机架信息必填完整性核查.使用单位', 'IDC_RACK.use_corp', 913003004, 913001347, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005534, 'IDC-IDC机架信息必填完整性核查.维护单位', 'IDC_RACK.related_supplycompany', 913003004, 913001348, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005535, 'IDC-IDC机架信息必填完整性核查.已占U位数', 'IDC_RACK.occupy_upos_num', 913003004, 913001352, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005536, 'IDC-IDC机架信息必填完整性核查.用电类型', 'IDC_RACK.power_consume_type', 913003004, 913001355, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005537, 'IDC-IDC业务设备必填完整性核查.资源标识', 'IDC_DEVICE.int_id', 913003005, 913001356, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005538, 'IDC-IDC业务设备必填完整性核查.设备名称', 'IDC_DEVICE.device_name', 913003005, 913001357, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005539, 'IDC-IDC业务设备必填完整性核查.起始U位', 'IDC_DEVICE.start_u', 913003005, 913001360, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005540, 'IDC-IDC业务设备必填完整性核查.占用U位数量', 'IDC_DEVICE.occupy_upos_num', 913003005, 913001361, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005541, 'IDC-IDC业务设备必填完整性核查.IPv4管理地址', 'IDC_DEVICE.ipv4_manage', 913003005, 913001362, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005542, 'IDC-IDC业务设备必填完整性核查.额定功率', 'IDC_DEVICE.rated_power', 913003005, 913001364, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005543, 'IDC-IDC业务设备必填完整性核查.是否需要采集端口流量', 'IDC_DEVICE.collect_port_rate', 913003005, 913001365, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005544, 'IDC-IDC业务设备必填完整性核查.入网时间', 'IDC_DEVICE.setup_time', 913003005, 913001366, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005545, 'IDC-IDC业务设备必填完整性核查.设备类型', 'IDC_DEVICE.device_type', 913003005, 913001368, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005546, 'IDC-IDC业务设备必填完整性核查.生命周期状态', 'IDC_DEVICE.lifecycle_status', 913003005, 913001369, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005547, 'IDC-IDC业务设备必填完整性核查.所属机架', 'IDC_DEVICE.related_rack', 913003005, 913001370, 2, NULL, NULL, 'admin', 'admin', NULL),
+(913005548, 'IDC-IDC数据中心信息规范性核查-网络接入层次-字典规范性核查', 'network_access_level', 913003007, 913001308, 1, NULL, '网络接入层次network_access_level', 'admin', 'admin', NULL),
+(913005549, 'IDC-IDC数据中心信息规范性核查-是否具备三线接入能力-字典规范性核查', 'three_wire_access_capacity', 913003008, 913001311, 1, NULL, '是否具备三线接入能力three_wire_access_capacity', 'admin', 'admin', NULL),
+(913005550, 'IDC-IDC数据中心信息规范性核查-数据中心性质-字典规范性核查', 'dc_property', 913003009, 913001314, 1, NULL, '数据中心性质dc_property', 'admin', 'admin', NULL),
+(913005551, 'IDC-IDC数据中心信息规范性核查-数据中心级别（政企）-字典规范性核查', 'dc_level', 913003010, 913001315, 1, NULL, '数据中心级别（政企）dc_level', 'admin', 'admin', NULL),
+(913005552, 'IDC-IDC机房信息规范性核查-机房等级-字典规范性核查', 'room_level', 913003013, 913001326, 1, NULL, '机房等级room_level', 'admin', 'admin', NULL),
+(913005553, 'IDC-IDC机架信息规范性核查-规划用途-字典规范性核查', 'planned_use', 913003015, 913001340, 1, NULL, '规划用途planned_use', 'admin', 'admin', NULL),
+(913005554, 'IDC-IDC机架信息规范性核查-使用单位-字典规范性核查', 'use_corp', 913003016, 913001347, 1, NULL, '使用单位use_corp', 'admin', 'admin', NULL),
+(913005555, 'IDC-IDC机架信息规范性核查-用电类型-字典规范性核查', 'power_consume_type', 913003017, 913001355, 1, NULL, '用电类型power_consume_type', 'admin', 'admin', NULL),
+(913005556, 'IDC-IDC业务设备规范性核查-是否需要采集端口流量-字典规范性核查', 'collect_port_rate', 913003020, 913001365, 1, NULL, '是否需要采集端口流量collect_port_rate', 'admin', 'admin', NULL),
+(913005557, 'IDC-IDC业务设备规范性核查-设备类型-字典规范性核查', 'device_type', 913003021, 913001368, 1, NULL, '设备类型device_type', 'admin', 'admin', NULL),
+(913005558, 'IDC-IDC业务设备规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 913003022, 913001369, 1, NULL, '生命周期状态lifecycle_status', 'admin', 'admin', NULL);
 --插入动环 dims_mm_dictionarytype
 insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
 (907000001,'动环','动环专业站点级别','powerSiteLevel','admin','admin',null),
