@@ -16740,7 +16740,8 @@ insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPD
 (913000013, 'IDC', '用电类型', 'power_consume_type', 'admin', 'admin', null),
 (913000014, 'IDC', '是否需要采集端口流量', 'collect_port_rate', 'admin', 'admin', null),
 (913000015, 'IDC', '所在机架面', 'rack_surface', 'admin', 'admin', null),
-(913000016, 'IDC', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null);
+(913000016, 'IDC', '生命周期状态', 'lifecycle_status', 'admin', 'admin', null),
+(913000017, 'IDC', '设备类型', 'device_type', 'admin', 'admin', null);
 --插入idc dims_mm_dictionary
 insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREATOR, UPDATER, MEMO) values
 (913000201, 913000001, 0, '集团骨干网', 'admin', 'admin', null),
@@ -16803,8 +16804,11 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 (913000258, 913000016, 2, '工程', 'admin', 'admin', null),
 (913000259, 913000016, 3, '在网', 'admin', 'admin', null),
 (913000260, 913000016, 4, '退网', 'admin', 'admin', null),
-(913000261, 913000016, 5, '其他', 'admin', 'admin', null);
-
+(913000261, 913000016, 5, '其他', 'admin', 'admin', null),
+(913000262, 913000017, 0, '服务器', 'admin', 'admin', null),
+(913000263, 913000017, 1, '负载均衡', 'admin', 'admin', null),
+(913000264, 913000017, 2, '流量清洗', 'admin', 'admin', null),
+(913000265, 913000017, 3, '其他', 'admin', 'admin', null);
 --插入IDC dims_mm_entitytype
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
 (913001001, 'IDC数据中心信息', 'IDC_DATACENTER', 'IDC', null, 'IDC_DATACENTER', null, null, 'admin', 'admin', null),
@@ -16887,7 +16891,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (913001365, '是否需要采集端口流量', 'collect_port_rate', 913001005, 'COLLECT_PORT_RATE', 'string', 913000014, 'admin', 'admin', null),
 (913001366, '入网时间', 'setup_time', 913001005, 'SETUP_TIME', 'date', null, 'admin', 'admin', null),
 (913001367, '所在机架面', 'rack_surface', 913001005, 'RACK_SURFACE', 'string', 913000015, 'admin', 'admin', null),
-(913001368, '设备类型', 'device_type', 913001005, 'DEVICE_TYPE', 'string', null, 'admin', 'admin', null),
+(913001368, '设备类型', 'device_type', 913001005, 'DEVICE_TYPE', 'string', 913000017, 'admin', 'admin', null),
 (913001369, '生命周期状态', 'lifecycle_status', 913001005, 'LIFECYCLE_STATUS', 'string', 913000016, 'admin', 'admin', null),
 (913001370, '所属机架', 'related_rack', 913001005, 'RELATED_RACK', 'string', null, 'admin', 'admin', null);
 --插入IDC dims_idx_index
