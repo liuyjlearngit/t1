@@ -154,13 +154,12 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         ChannelSftp.LsEntry[] fileEntry = session.list(folder);
         if (ArrayUtils.isNotEmpty(fileEntry)) {
             for (ChannelSftp.LsEntry entry : fileEntry) {
-                //TBD:未实现目录多级索检
-                //if (file.isFile()) {
-                    //String baseName = FilenameUtils.getBaseName(file.getName());
+                if(StringUtils.equalsIgnoreCase(entry.getFilename(),".")||StringUtils.equalsIgnoreCase(entry.getFilename(),"..")){
+                    continue;
+                }
+                Boolean isDirectory = entry.getAttrs().isDir();
+                if (!isDirectory) {
                     String baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),".");
-                    if(StringUtils.isEmpty(baseName)){
-                        continue;
-                    }
                     if(baseName.matches(regex1)){
                         //filer files which are retransmissions
                         continue;
@@ -189,9 +188,9 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                     } else {
                         log.warn(entry.getFilename() + " no mapping entity type!!!");
                     }
-                /*} else if (file.isDirectory() && level <= MAX_LEVEL) {
-                    populateTaskItemFile(config, specialityTables, location, taskCode, collectionDate, localTaskFolder, session, folder + "/" + file.getName(), level + 1, result);
-                }*/
+                } else if (isDirectory && level <= MAX_LEVEL) {
+                    populateTaskItemFile(config, specialityTables, location, taskCode, collectionDate, localTaskFolder, session, folder + "/" + entry.getFilename(), level + 1, result);
+                }
             }
         }
     }

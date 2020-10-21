@@ -67,7 +67,7 @@ public class BatchUtil {
     static Charset encodingOf(String encoding) {
         try {
             if (StringUtils.isEmpty(encoding)) {
-                encoding = "GBK";
+                encoding = "UTF8";
             }
             return Charset.forName(encoding);
         } catch (Exception e) {

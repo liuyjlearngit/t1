@@ -16892,11 +16892,11 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (913001370, '所属机架', 'related_rack', 913001005, 'RELATED_RACK', 'string', null, 'admin', 'admin', null);
 --插入IDC dims_idx_index
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(913099001, 'IDC资源完整性指标', 'DIMS_GG_99001', 99001, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(913099002, 'IDC资源规范性指标', 'DIMS_GG_99002', 99002, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(913099003, 'IDC资源关联性指标', 'DIMS_GG_99003', 99003, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(913099004, 'IDC业务合规性指标', 'DIMS_GG_99004', 99004, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(913099999, 'IDC数据整体指标', 'DIMS_GG_99999', 99999, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099001, 'IDC资源完整性指标', 'DIMS_IDC_99001', 99001, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099002, 'IDC资源规范性指标', 'DIMS_IDC_99002', 99002, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099003, 'IDC资源关联性指标', 'DIMS_IDC_99003', 99003, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099004, 'IDC业务合规性指标', 'DIMS_IDC_99004', 99004, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(913099999, 'IDC数据整体指标', 'DIMS_IDC_99999', 99999, null, 'IDC', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (913003001, 'IDC-IDC数据中心信息必填完整性核查', 'DIMS_IDC_01001', 1001, 913001001, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001001, 1, NULL),
 (913003002, 'IDC-IDC站点信息必填完整性核查', 'DIMS_IDC_01002', 1002, 913001002, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001002, 1, NULL),
 (913003003, 'IDC-IDC机房信息必填完整性核查', 'DIMS_IDC_01003', 1003, 913001003, 'IDC', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 913001003, 1, NULL),
