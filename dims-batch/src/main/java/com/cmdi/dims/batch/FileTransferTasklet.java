@@ -92,7 +92,6 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                     }
                 }
             }
-
         }
         for (Map.Entry<String, List<TaskItemFileDto>> entry : result.entrySet()) {
             Assert.notEmpty(entry.getValue(), "对应专业【" + entry.getKey() + "】没有找到匹配文件");

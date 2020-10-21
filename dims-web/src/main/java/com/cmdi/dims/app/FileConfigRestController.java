@@ -1,5 +1,15 @@
 package com.cmdi.dims.app;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
 import com.cmdi.dims.app.dto.FileLocationDto;
 import com.cmdi.dims.app.dto.ReadFileErrDot;
 import com.cmdi.dims.app.dto.ResponseDto;
@@ -105,6 +115,7 @@ public class FileConfigRestController {
                 factory.setUsername(fileLocation.getUsername());
                 factory.setPassword(fileLocation.getPassword());
                 factory.setControlEncoding(StringUtils.isNotEmpty(fileLocation.getEncoding()) ? fileLocation.getEncoding() : "UTF-8");
+
                 names = factory.getSession().listNames(StringUtils.isNotEmpty(fileLocation.getPath()) ? fileLocation.getPath() : "/");
                 System.out.println("===---"+ Arrays.toString(names));
             } catch (Exception e) {
@@ -182,6 +193,10 @@ public class FileConfigRestController {
                     }
 
                 }
+
+//                    FileLocation saved = fileLocationRepository.save(fileLocation);
+//                    return ResponseDto.success(saved);
+
                  saveAll = fileLocationRepository.saveAll(fileLocationDtos);
             }
             //错误条数
@@ -227,5 +242,6 @@ public class FileConfigRestController {
         arrayLists.add(s);
         return ReadFileErrDot.builder().numerr(i1).ftperrs(arrayLists).ftperrnum(numftp).build();
     }
+
 
 }

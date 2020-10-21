@@ -31,11 +31,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.slf4j.Slf4j;
 import com.cmdi.dims.task.entity.Task;
@@ -105,7 +101,7 @@ public class TaskRestController {
         return ResponseDto.success(tasks, Long.valueOf(tasks.size()), tasks.size());
     }
 
-    @GetMapping(value = "/{taskId}/result/export", produces = "application/vnd.ms-excel")
+    @PostMapping(value = "/{taskId}/result/export", produces = "application/vnd.ms-excel")
     public ResponseEntity<byte[]> dataExport(
             @PathVariable("taskId") Long taskId
     ) {
@@ -132,7 +128,7 @@ public class TaskRestController {
                 .body(result);
     }
 
-    @GetMapping(value = "/result/export", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    @PostMapping(value = "/result/export", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     public ResponseEntity<byte[]> dataExport(
             @RequestParam("taskIds") String taskIds
     ) {

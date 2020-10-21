@@ -62,18 +62,16 @@ public class HeadquartersResourcesController {
     private List<ProfessionalDot> statisticals() {
         //判断是否是  全国
 
-        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
+        List<String> taskcodess = taskLatestRepository.findAll().stream()
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        List<String> strname=new ArrayList<>();
+        for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
+            strname.add(colle.getKey());
+        }//所有专业名
         ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
         String name="";
-        for (String speciality:specialityNames) {//循环专业
-            if (speciality.equals("空间")){
-                speciality=name;
-            }
-            if (name.equals("")){
-                    name=speciality;
-                    speciality="空间";
-                }
-
+        for (String speciality:strname) {//循环专业
 
                 //如果是全国查找所有 省级数据
             List<String> taskcodes = taskLatestRepository.findAll().stream()
@@ -104,6 +102,9 @@ public class HeadquartersResourcesController {
                 int i=0;
                 for (ResStatistics restatis:value) {//第二轮
                     i+=restatis.getAmount();
+                    if (restatis.getResType()==null){
+                        restatis.setResType("");
+                    }
                 }
 
 
@@ -123,12 +124,16 @@ public class HeadquartersResourcesController {
                     if (value1==null){
 
                     }else {
-                        resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
-                                .name(colles.getKey())
-                                .num(""+j)
-                                .unit(nuit)
-                                .build());
-                        units=nuit;
+                        if (colles.getKey().equals("")){///
+
+                        }else {///
+                            resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                                    .name(colles.getKey())
+                                    .num(""+j)
+                                    .unit(nuit)
+                                    .build());
+                            units=nuit;
+                        }
                     }
 
                 }
@@ -151,13 +156,17 @@ public class HeadquartersResourcesController {
                         threes.add(resourcesDetailsDtostow);
                     }
 
+                    if (i==0){///
+
+                    }else {
                         resourcesDtos.add(ResourcesDto.builder()
                                 .resourcesName(colle.getKey())
                                 .allValue(""+i)
                                 .allUnit(units)
                                 .numsn(threes)
                                 .build());
-
+                        threes=new ArrayList<>();
+                    }
 
                     threes=new ArrayList<>();
 
@@ -189,10 +198,20 @@ public class HeadquartersResourcesController {
     }
 
     private List<ProfessionalDot> statisticalss() {
-        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
-        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+//        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
+//        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
 
-        for (String speciality:specialityNames) {//循环专业
+        List<String> taskcodess = taskLatestRepository.findAll().stream()
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        List<String> strname=new ArrayList<>();
+        for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
+            strname.add(colle.getKey());
+        }//所有专业名
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+        String name="";
+
+        for (String speciality:strname) {//循环专业
 
             //如果是全国查找所有 省级数据
             List<String> taskcodes = taskLatestRepository.findAll().stream()
@@ -223,6 +242,9 @@ public class HeadquartersResourcesController {
                 int i=0;
                 for (ResStatistics restatis:value) {//第二轮
                     i+=restatis.getAmount();
+                    if (restatis.getResType()==null){
+                        restatis.setResType("");
+                    }
                 }
 
 
@@ -242,12 +264,17 @@ public class HeadquartersResourcesController {
                     if (value1==null){
 
                     }else {
-                        resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
-                                .name(colles.getKey())
-                                .num(""+j)
-                                .unit(nuit)
-                                .build());
-                        units=nuit;
+                        if (colles.getKey().equals("")){///
+
+                        }else {///
+                            resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                                    .name(colles.getKey())
+                                    .num(""+j)
+                                    .unit(nuit)
+                                    .build());
+                            units=nuit;
+                        }
+
                     }
 
                 }
@@ -269,14 +296,18 @@ public class HeadquartersResourcesController {
                     if (resourcesDetailsDtostow.size()<4&&resourcesDetailsDtostow.size()>0){
                         threes.add(resourcesDetailsDtostow);
                     }
+                   if (i==0){///
 
-                    resourcesDtos.add(ResourcesDto.builder()
-                            .resourcesName(colle.getKey())
-                            .allValue(""+i)
-                            .allUnit(units)
-                            .numsn(threes)
-                            .build());
-                    threes=new ArrayList<>();
+                   }else {
+                       resourcesDtos.add(ResourcesDto.builder()
+                               .resourcesName(colle.getKey())
+                               .allValue(""+i)
+                               .allUnit(units)
+                               .numsn(threes)
+                               .build());
+                       threes=new ArrayList<>();
+                   }
+
 
                 }
             }
@@ -305,10 +336,17 @@ public class HeadquartersResourcesController {
     }
 
     private List<ProfessionalDot> statisticalsn() {
-        List<String> specialityNames = entityTypeRepository.findSpecialityNames();//所有专业名
+        List<String> taskcodess = taskLatestRepository.findAll().stream()
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        List<String> strname=new ArrayList<>();
+        for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
+            strname.add(colle.getKey());
+        }//所有专业名
         ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+        String name="";
 
-        for (String speciality:specialityNames) {//循环专业
+        for (String speciality:strname) {//循环专业
 
             //如果是全国查找所有 省级数据
             List<String> taskcodes = taskLatestRepository.findAll().stream()
@@ -339,6 +377,9 @@ public class HeadquartersResourcesController {
                 int i=0;
                 for (ResStatistics restatis:value) {//第二轮
                     i+=restatis.getAmount();
+                    if (restatis.getResType()==null){///
+                        restatis.setResType("");
+                    }
                 }
 
 
@@ -358,12 +399,16 @@ public class HeadquartersResourcesController {
                     if (value1==null){
 
                     }else {
-                        resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
-                                .name(colles.getKey())
-                                .num(""+j)
-                                .unit(nuit)
-                                .build());
-                        units=nuit;
+                        if (colles.getKey().equals("")){///
+
+                        }else {///
+                            resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                                    .name(colles.getKey())
+                                    .num(""+j)
+                                    .unit(nuit)
+                                    .build());
+                            units=nuit;
+                        }
                     }
 
                 }
@@ -512,9 +557,15 @@ public class HeadquartersResourcesController {
         ArrayList<Integer> onenum = new ArrayList<>();//第一行每个长度  用来合并
 
         Map<String, List<ResStatistics>> collect1 = null;//
-        HashMap<String, List<String>> stringStringHashMap = new HashMap<>();// 键 大专业  值他包含的小专业
+        LinkedHashMap<String, List<String>> stringStringHashMap = new LinkedHashMap<>();// 键 大专业  值他包含的小专业
         for (Map.Entry<String, List<ResStatistics>> colles:stringListTreeMap.entrySet()){
-            strings.add(colles.getKey());
+
+
+            for (ResStatistics restatis:colles.getValue()) {//第二轮
+                if (restatis.getResType()==null){///
+                    restatis.setResType("");
+                }
+            }
 
              collect1 = colles.getValue().stream().collect(Collectors.groupingBy(ResStatistics::getResType));
             onenum.add(collect1.size()+1);
@@ -531,6 +582,10 @@ public class HeadquartersResourcesController {
 
 
             stringss.add("总和"+"/"+unm);
+        }
+
+        for (Map.Entry<String, List<String>> colles:stringStringHashMap.entrySet()){
+            strings.add(colles.getKey());
         }
 
         //每个省 每个大专业下的小专业数据
@@ -556,6 +611,9 @@ public class HeadquartersResourcesController {
                 for (Integer sums:allsum) {
                     sum+=sums;
                 }
+                if (in.size()==0){
+                    sum=0;
+                }
                 littall+=sum;
                 allsums.add(sum);
             }
@@ -572,12 +630,21 @@ public class HeadquartersResourcesController {
             }
         }
 
+        Map<String, List<ResourcesDto>> collect3 = resourcesDtos.stream().collect(Collectors.groupingBy(ResourcesDto::getResourcesName));
+
+
         List<Integer> allsums=new ArrayList<>();
-        for (ResourcesDto res:resourcesDtos) {
-            for (ResourcesDetailsDto resouces:res.getNums()) {
-                allsums.add(Integer.valueOf(resouces.getNum()));
+        for (String res:strings) {
+            ResourcesDto resourcesDto = collect3.get(res).get(0);
+            if (resourcesDto.getNums().size()==0){
+                allsums.add(Integer.valueOf(0));
             }
-            allsums.add(Integer.valueOf(res.getAllValue()));
+            int num=0;
+            for (ResourcesDetailsDto resouces:resourcesDto.getNums()) {
+                allsums.add(Integer.valueOf(resouces.getNum()));
+                num+=Integer.valueOf(resouces.getNum());
+            }
+            allsums.add(Integer.valueOf(num));
         }
 
         ExcelDownData excelDownData = new ExcelDownData();
@@ -632,5 +699,19 @@ public class HeadquartersResourcesController {
         statisticsAllData.setGraphicals(graphicals);
         statisticsAllData.setStatisticals(professionalDots);
         return statisticsAllData;
+    }
+
+    private Map<String, List<ResStatistics>> findBySpecialityName(String SpecialityName){
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(SpecialityName);
+        List<String> collect = bySpecialityName.stream()
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(collect);
+        for (ResStatistics res:byTaskCodeIn) {
+            if (res.getResType()==null){
+                res.setResType("");
+            }
+        }
+        Map<String, List<ResStatistics>> collect1 = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatistics::getResName));
+        return collect1;
     }
 }

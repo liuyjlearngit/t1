@@ -58,6 +58,7 @@ public class FtpSession implements Closeable {
     }
 
     public String[] listNames(String path) throws IOException {
+        client.enterLocalPassiveMode();//设置被动模式
         return this.client.listNames(path);
     }
 
