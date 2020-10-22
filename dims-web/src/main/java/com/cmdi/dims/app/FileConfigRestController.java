@@ -77,6 +77,7 @@ public class FileConfigRestController {
             FileLocationDto fileLocationDto
     ) {
         FileLocation fileLocation;
+
         if (null != fileLocationDto.getFileLocationId()) {
             fileLocation = fileLocationRepository.findById(fileLocationDto.getFileLocationId())
                     .orElseThrow(() -> new IllegalArgumentException("FTP配置ID=" + fileLocationDto.getFileLocationId() + "不存在"));
