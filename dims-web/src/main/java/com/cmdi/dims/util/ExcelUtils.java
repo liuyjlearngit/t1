@@ -258,8 +258,9 @@ public class ExcelUtils {
             String s2 = split[split.length - 2];
             String errorname="";
             for (int i=0;i<split.length-2;i++){
-                errorname+=split[i];
+                errorname+=split[i]+"^";
             }
+            errorname = errorname.substring(0, errorname.length() - 1);
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             String createdAt = datastor.getCreatedAt();
             Date parse = format.parse(createdAt);
