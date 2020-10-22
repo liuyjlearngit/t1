@@ -88,10 +88,8 @@ public class StatisticRestController {
         if (arrayList.contains("集客")){//所有集客数据过滤掉
             arrayList.remove( "集客" );
         }
-        if (region==null){
-            region="";
-        }
-        if(!"".equalsIgnoreCase(region)){
+
+        if(!StringUtils.isEmpty(region)){
             for (String filter:filterlist) {
                 if (region.equals(filter)){
                     flag=true;
