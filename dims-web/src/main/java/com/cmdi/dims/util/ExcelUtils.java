@@ -77,7 +77,7 @@ public class ExcelUtils {
 
 
         for (Map.Entry<String, List<DataStorage>> colle:collect.entrySet()){
-            if (colle.getValue().size()>5){
+            if (colle.getValue().size()>60000){
                 int n=0;
                 ArrayList<DataStorage> arrayList= new ArrayList<DataStorage>();
                 for (DataStorage dataStorage:colle.getValue()) {
