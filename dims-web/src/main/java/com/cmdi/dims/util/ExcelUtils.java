@@ -77,7 +77,28 @@ public class ExcelUtils {
 
 
         for (Map.Entry<String, List<DataStorage>> colle:collect.entrySet()){
-            createExcelSheets(wb,colle.getKey(),colle.getValue(),stringsName);
+            if (colle.getValue().size()>5){
+                int n=0;
+                ArrayList<DataStorage> arrayList= new ArrayList<DataStorage>();
+                for (DataStorage dataStorage:colle.getValue()) {
+                    arrayList.add(dataStorage);
+
+                    if (arrayList.size()==60000){
+                        n++;
+                        String name=colle.getKey()+"_"+n;
+                        createExcelSheets(wb,name,arrayList,stringsName);
+                        arrayList=new ArrayList<DataStorage>();
+                    }
+                }
+                if (arrayList.size()!=0){
+                    n++;
+                    String name=colle.getKey()+"_"+n;
+                    createExcelSheets(wb,name,arrayList,stringsName);
+                    arrayList=new ArrayList<DataStorage>();
+                }
+            }else {
+                createExcelSheets(wb,colle.getKey(),colle.getValue(),stringsName);
+            }
         }
 
 
