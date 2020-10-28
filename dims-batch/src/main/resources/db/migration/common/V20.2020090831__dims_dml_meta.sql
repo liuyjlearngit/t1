@@ -25852,14 +25852,14 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区''
 										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无小区'' end)
 								where isNotNull(t1.int_id) and not exists(select 1 from NRCELL t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
- (901003600, '无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在', 'DIMS_WX_03106', 3106, 901000007, '无线', 11, NULL, 'update CELL t1
+  (901003600, '无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在', 'DIMS_WX_03106', 3106, 901000007, '无线', 11, NULL, 'update CELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03106%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03106''
 			 												            else dims_col_result||'',DIMS_WX_03106'' end),
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在''
 										  					          else dims_col_rtName||'',无线-CELL关联性核查-孤立点核查-2G小区的下属天线工参资源不存在'' end)
-								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
  (901003601, '无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在', 'DIMS_WX_03107', 3107, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03107%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03107''
@@ -25867,7 +25867,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在''
 										  					          else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-孤立点核查-4G小区的下属天线工参资源不存在'' end)
-								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
  (901003602, '无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在', 'DIMS_WX_03108', 3108, 901000009, '无线', 11, NULL, 'update NRCELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03108%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03108''
@@ -25875,7 +25875,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在''
 										  					          else dims_col_rtName||'',无线-NR-CELL关联性核查-孤立点核查-5G小区的下属天线工参资源不存在'' end)
-								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+								where isNotNull(t1.int_id) and t1.beehive_type != ''室内'' and not exists(select 1 from ANTENNAPARA t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
  (901003603, '无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU', 'DIMS_WX_03109', 3109, 901000003, '无线', 11, NULL, 'update BTS t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03109%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03109''
@@ -25883,7 +25883,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU''
 										  					          else dims_col_rtName||'',无线-BTS关联性核查-孤立点核查-2G基站无归属的BBU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000003, 1, NULL),
  (901003604, '无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU', 'DIMS_WX_03110', 3110, 901000004, '无线', 11, NULL, 'update ENODEB t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03110%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03110''
@@ -25891,7 +25891,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU''
 										  					          else dims_col_rtName||'',无线-E-NODEB关联性核查--孤立点核查-4G基站无归属的BBU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from BBU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000004, 1, NULL),
  (901003605, '无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU', 'DIMS_WX_03111', 3111, 901000005, '无线', 11, NULL, 'update GNODEB t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03111%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03111''
@@ -25899,7 +25899,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU''
 										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t1.int_id=t2.related_bs) and not exists(select 1 from  BBU t3 where isNotNull(t3.related_bs) and t1.int_id=t3.related_bs)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id) and not exists(select 1 from  BBU t3 where isNotNull(t3.related_bs) and t3.related_bs~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
  (901003606, '无线-CELL关联性核查-孤立点核查-2G小区下无RRU', 'DIMS_WX_03112', 3112, 901000007, '无线', 11, NULL, 'update CELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03112%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03112''
@@ -25907,7 +25907,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-CELL关联性核查-孤立点核查-2G小区下无RRU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-CELL关联性核查-孤立点核查-2G小区下无RRU''
 										  					          else dims_col_rtName||'',无线-CELL关联性核查-孤立点核查-2G小区下无RRU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000007, 1, NULL),
  (901003607, '无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU', 'DIMS_WX_03113', 3113, 901000008, '无线', 11, NULL, 'update EUTRANCELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03113%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03113''
@@ -25915,7 +25915,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU''
 										  					          else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t1.int_id=t3.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
  (901003608, '无线-一体化皮站AU关联性核查-所属基站', 'DIMS_WX_03101', 3101, 901000024, '无线', 11, NULL, 'update PICOAU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03101%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03101''
@@ -25995,7 +25995,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-5G小区下无RRU或AAU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-5G小区下无RRU或AAU''
 										  					          else dims_col_rtName||'',无线-NR-CELL关联性核查-5G小区下无RRU或AAU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t1.int_id=t2.related_cell) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t1.int_id=t3.related_cell)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
  (901003618, '无线-板卡关联性核查-所属网元', 'DIMS_WX_03059', 3059, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03059%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03059''
