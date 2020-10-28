@@ -6,6 +6,7 @@ import com.cmdi.dims.task.entity.ResStatistics;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.joda.time.LocalDateTime;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,8 @@ import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 public class ExcelUtils {
     /**
@@ -60,21 +63,22 @@ public class ExcelUtils {
      *
      */
 
-    public static void exportExcels(HttpServletRequest request, HttpServletResponse response,Map<String, List<DataStorage>> collect,String[] stringsName) throws IOException, ParseException {
+    public static void exportExcels(HttpServletRequest request, HttpServletResponse response,Map<String, List<DataStorage>> collect,String[] stringsName,String nam,String zy) throws IOException, ParseException {
         /** 第一步，创建一个Workbook，对应一个Excel文件  */
         HSSFWorkbook wb = new HSSFWorkbook();
-
         /////
-        String templateName = "导出模板.xls";
+        String templateName = nam+"-"+zy+"问题数据明细-"+LocalDateTime.now().toLocalDate()+".xls";
         response.setCharacterEncoding("utf-8");
-        response.setContentType("application/vnd.ms-excel");
-        //输出文件名
-        response.setHeader("Pragma", "no-cache");
-        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
-        response.setHeader("Content-Disposition",
-                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+//        response.setContentType("application/vnd.ms-excel");
+//        //输出文件名
+//        response.setHeader("Pragma", "no-cache");
+//        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
+//        response.setHeader("Content-Disposition",
+//                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+        response.setContentType("application/octet-stream; charset=utf-8");
+        response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("导出模板.zip", "UTF-8"));
         ServletOutputStream stream = response.getOutputStream();
-
+        ZipOutputStream zipOutputStream = new ZipOutputStream(stream);
 
         for (Map.Entry<String, List<DataStorage>> colle:collect.entrySet()){
             if (colle.getValue().size()>60000){
@@ -101,12 +105,17 @@ public class ExcelUtils {
             }
         }
 
+        ZipEntry z = new ZipEntry(templateName);
 
+        zipOutputStream.putNextEntry(z);
 
         if (null != wb && null != stream) {
-            wb.write(stream);
+            wb.write(zipOutputStream);
+            zipOutputStream.flush();
             // 将数据写出去
-            wb.close();
+            if (zipOutputStream != null) {
+                zipOutputStream.close();
+            }
             stream.close();
         }
     }

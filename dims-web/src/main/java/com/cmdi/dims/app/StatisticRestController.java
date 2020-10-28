@@ -1711,7 +1711,7 @@ public class StatisticRestController {
         if (collect.size()==0){
             collect.put(speciality,new ArrayList<DataStorage>());
         }
-        ExcelUtils.exportExcels(request,response,collect,stringsName);
+        ExcelUtils.exportExcels(request,response,collect,stringsName,speciality,config.getName());
 
     }
 
