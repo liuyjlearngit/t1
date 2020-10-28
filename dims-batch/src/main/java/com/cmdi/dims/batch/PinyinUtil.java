@@ -2,10 +2,15 @@ package com.cmdi.dims.batch;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class PinyinUtil {
 
     public static String convert(String str) {
+        if(StringUtils.equalsIgnoreCase(str,"家客"))
+            return "JIAKE" ;
+        if(StringUtils.equalsIgnoreCase(str,"集客"))
+            return "JIKE" ;
         StringBuffer resultPinyinStrBuf = new StringBuffer();
 
         for (int i = 0; i < str.length(); i++) {
