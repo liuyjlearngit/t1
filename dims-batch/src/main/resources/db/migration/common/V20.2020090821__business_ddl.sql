@@ -2864,7 +2864,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,prefectureCode,countyCode,3,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=3
 	    and it.taskcode=p_taskCode
@@ -2878,7 +2878,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,prefectureCode,null,2,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=2
 	    and it.taskcode=p_taskCode
@@ -2892,7 +2892,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,null,null,1,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=1
 	    and it.taskcode=p_taskCode
@@ -3973,3 +3973,10 @@ begin
 	 perform proc_generateCommonIndexValue(p_provinceCode,p_taskCode,p_indexid,v_tableName);
 end;
 $$ language plpgsql;
+create or replace function  is_valid_ipaddress(ip varchar) returns bool as
+$$
+declare
+begin
+    return ip is not null and ip ~ '^\s*(((([0-9A-Fa-f]{1,4}:){7}(([0-9A-Fa-f]{1,4})|:))|(([0-9A-Fa-f]{1,4}:){6}(:|((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})|(:[0-9A-Fa-f]{1,4})))|(([0-9A-Fa-f]{1,4}:){5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){0,1}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){0,2}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){0,3}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){0,4}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(:(:[0-9A-Fa-f]{1,4}){0,5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})))\;?\s*)*(/(?:[1-9]|[12][0-9]|3[012]))?$';
+end;
+$$ language plpgsql STABLE COST 100;

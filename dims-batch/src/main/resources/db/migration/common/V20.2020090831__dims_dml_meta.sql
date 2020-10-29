@@ -11225,10 +11225,8 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联DRA关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE关联DRA关联性''
                                              else dims_col_rtName||'',HSS_BE关联DRA关联性'' end)
-                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.zh_label=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010578, '核心网数据业务合规性', 'DIMS_HX_99004', 99004, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
-
-
+                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.zh_label=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null);
+---(906010578, '核心网数据业务合规性', 'DIMS_HX_99004', 99004, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
 
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO)
 values (906012001, 906010001, 906010003, 'admin', 'admin', null),
@@ -17059,7 +17057,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (903099001, '传输内线资源完整性指标', 'DIMS_TSNX_99001', 99001, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (903099002, '传输内线资源规范性指标', 'DIMS_TSNX_99002', 99002, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (903099003, '传输内线资源关联性指标', 'DIMS_TSNX_99003', 99003, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(903099004, '传输内线资源合规性指标', 'DIMS_TSNX_99004', 99004, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+---(903099004, '传输内线资源合规性指标', 'DIMS_TSNX_99004', 99004, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (903099999, '传输内线数据整体指标', 'DIMS_TSNX_99999', 99999, null, '传输内线', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (903003001, '传输内线-EMS必填完整性核查', 'DIMS_TSNX_01001', 1001, 903001001, '传输内线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 903001001, 1, NULL),
 (903003002, '传输内线-子网必填完整性核查', 'DIMS_TSNX_01002', 1002, 903001002, '传输内线', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 903001002, 1, NULL),
@@ -18162,8 +18160,8 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (903004164,903099003,903003164,'admin','admin',null),
 (903005490,903099999,903099001,'admin','admin',null),
 (903005491,903099999,903099002,'admin','admin',null),
-(903005492,903099999,903099003,'admin','admin',null),
-(903005493,903099999,903099004,'admin','admin',null);
+(903005492,903099999,903099003,'admin','admin',null);
+---(903005493,903099999,903099004,'admin','admin',null);
 
 --插入传输内线 dims_idx_rule
 insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
@@ -21292,7 +21290,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (907099001, '动环资源完整性指标', 'DIMS_DH_99001', 99001, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (907099002, '动环资源规范性指标', 'DIMS_DH_99002', 99002, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (907099003, '动环资源关联性指标', 'DIMS_DH_99003', 99003, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(907099004, '动环资源合规性指标', 'DIMS_DH_99004', 99004, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+---(907099004, '动环资源合规性指标', 'DIMS_DH_99004', 99004, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (907099999, '动环数据整体指标', 'DIMS_DH_99999', 99999, null, '动环', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (907003501, '动环-站点动环属性必填完整性核查', 'DIMS_DH_01001', 1001, 907001501, '动环', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001501, 1, NULL),
 (907003502, '动环-机房动环属性必填完整性核查', 'DIMS_DH_01002', 1002, 907001502, '动环', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 907001502, 1, NULL),
@@ -23143,8 +23141,8 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004848,907099002,907003848,'admin','admin',null),
 (907005990,907099999,907099001,'admin','admin',null),
 (907005991,907099999,907099002,'admin','admin',null),
-(907005992,907099999,907099003,'admin','admin',null),
-(907005993,907099999,907099004,'admin','admin',null);
+(907005992,907099999,907099003,'admin','admin',null);
+---(907005993,907099999,907099004,'admin','admin',null);
 
 --插入动环 dims_idx_rule
 insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
