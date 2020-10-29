@@ -2864,7 +2864,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,prefectureCode,countyCode,3,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=3
 	    and it.taskcode=p_taskCode
@@ -2878,7 +2878,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,prefectureCode,null,2,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=2
 	    and it.taskcode=p_taskCode
@@ -2892,7 +2892,7 @@ begin
 	                                    amount,errorAmount,indexValue,creator,updater)
 	 select v_idxName,v_idxCode,p_taskCode,p_indexId,
 	        provinceCode,null,null,1,
-	        null,null,coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
+	        sum(amount),sum(errorAmount),coalesce(sum(it.indexValue)/v_idxAmount,0),'db','db'
 	   from dims_idx_IndexCarrier r,dims_tm_taskItem_index it
 	  where it.regionType=1
 	    and it.taskcode=p_taskCode
