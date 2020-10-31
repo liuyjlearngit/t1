@@ -17057,7 +17057,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查''
 																											 else dims_col_rtName||'',IDC-IDC数据中心信息规范性核查-互联网出口网关IP地址-IP地址规范性核查'' end)
-													                         where isNotNull(net_export_gateway_ip_address) and is_valid_ipaddress_mul(net_export_gateway_ip_address)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001001, 1, NULL),
+													                         where isNotNull(net_export_gateway_ip_address) and is_not_valid_ipaddress_mul(net_export_gateway_ip_address)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001001, 1, NULL),
 (913003024, 'IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查', 'DIMS_IDC_02016', 2016, 913001005, 'IDC', 11, NULL, 'update IDC_DEVICE t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_02016%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_IDC_02016''
@@ -17065,7 +17065,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查''
 																											 else dims_col_rtName||'',IDC-IDC业务设备规范性核查-IPv4管理地址-IP地址规范性核查'' end)
-													                         where isNotNull(ipv4_manage) and is_valid_ipaddress_mul(ipv4_manage) and ipv4_manage != ''无''', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL),
+													                         where isNotNull(ipv4_manage) and is_not_valid_ipaddress_mul(ipv4_manage) and ipv4_manage != ''无''', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 913001005, 1, NULL),
 (913003025, 'IDC-IDC数据中心信息关联性核查-归属数据中心名称', 'DIMS_IDC_03001', 3001, 913001001, 'IDC', 11, NULL, 'update IDC_DATACENTER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_IDC_03001%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_IDC_03001''
