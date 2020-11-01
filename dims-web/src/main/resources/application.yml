@@ -11,4 +11,4 @@ logging:
 # pro：生产环境使用  application-pro.yml的配置文件
 spring:
   profiles:
-    active: pro
+    active: dev
