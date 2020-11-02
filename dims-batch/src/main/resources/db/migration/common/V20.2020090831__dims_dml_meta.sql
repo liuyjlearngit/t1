@@ -19391,7 +19391,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-机架规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-机架规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-机架规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_DEVICE_RACK t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_DEVICE_RACK Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
 (900003018, '公共-机架规范性核查-机架名称-唯一性核查', 'DIMS_GG_02002', 2002, 900001001, '公共', 11, NULL, 'update CM_DEVICE_RACK t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02002%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02002''
@@ -19399,7 +19399,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-机架规范性核查-机架名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-机架规范性核查-机架名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-机架规范性核查-机架名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_DEVICE_RACK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_DEVICE_RACK Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
 (900003019, '公共-机架规范性核查-机架类型-字典规范性核查', 'DIMS_GG_02003', 2003, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
 (900003020, '公共-机架规范性核查-生命周期状态-字典规范性核查', 'DIMS_GG_02004', 2004, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
 (900003021, '公共-机架规范性核查-所属空间类型-字典规范性核查', 'DIMS_GG_02005', 2005, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
@@ -19410,7 +19410,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDM模块规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDM模块规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDM模块规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_DDM t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
+													                         where int_id in ( Select int_id  From CE_WARE_DDM Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
 (900003023, '公共-DDM模块规范性核查-DDM模块名称-唯一性核查', 'DIMS_GG_02007', 2007, 900001002, '公共', 11, NULL, 'update CE_WARE_DDM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02007''
@@ -19418,7 +19418,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDM模块规范性核查-DDM模块名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDM模块规范性核查-DDM模块名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDM模块规范性核查-DDM模块名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_DDM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CE_WARE_DDM Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
 (900003024, '公共-ODM模块规范性核查-资源标识-唯一性核查', 'DIMS_GG_02008', 2008, 900001003, '公共', 11, NULL, 'update CE_WARE_ODM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02008%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02008''
@@ -19426,7 +19426,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODM模块规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODM模块规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODM模块规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_ODM t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
+													                         where int_id in ( Select int_id  From CE_WARE_ODM Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
 (900003025, '公共-ODM模块规范性核查-ODM模块名称-唯一性核查', 'DIMS_GG_02009', 2009, 900001003, '公共', 11, NULL, 'update CE_WARE_ODM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02009%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02009''
@@ -19434,7 +19434,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODM模块规范性核查-ODM模块名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODM模块规范性核查-ODM模块名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODM模块规范性核查-ODM模块名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_ODM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CE_WARE_ODM Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
 (900003026, '公共-ODM模块规范性核查-所属设备类型-字典规范性核查', 'DIMS_GG_02010', 2010, 900001003, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001003, 1, NULL),
 (900003027, '公共-DDF端子规范性核查-资源标识-唯一性核查', 'DIMS_GG_02011', 2011, 900001004, '公共', 11, NULL, 'update CM_PORT_DDF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02011%'' then dims_col_result
@@ -19443,7 +19443,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDF端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDF端子规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDF端子规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_DDF t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_PORT_DDF Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
 (900003028, '公共-DDF端子规范性核查-DDF端子名称-唯一性核查', 'DIMS_GG_02012', 2012, 900001004, '公共', 11, NULL, 'update CM_PORT_DDF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02012%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02012''
@@ -19451,7 +19451,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDF端子规范性核查-DDF端子名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDF端子规范性核查-DDF端子名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDF端子规范性核查-DDF端子名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_DDF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_PORT_DDF Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
 (900003029, '公共-DDF端子规范性核查-端子状态-字典规范性核查', 'DIMS_GG_02013', 2013, 900001004, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001004, 1, NULL),
 (900003030, '公共-ODF端子规范性核查-资源标识-唯一性核查', 'DIMS_GG_02014', 2014, 900001005, '公共', 11, NULL, 'update CM_PORT_ODF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02014%'' then dims_col_result
@@ -19460,7 +19460,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODF端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODF端子规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODF端子规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_PORT_ODF Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
 (900003031, '公共-ODF端子规范性核查-ODF端子名称-唯一性核查', 'DIMS_GG_02015', 2015, 900001005, '公共', 11, NULL, 'update CM_PORT_ODF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02015%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02015''
@@ -19468,7 +19468,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODF端子规范性核查-ODF端子名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODF端子规范性核查-ODF端子名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODF端子规范性核查-ODF端子名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_PORT_ODF Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
 (900003032, '公共-ODF端子规范性核查-端子状态-字典规范性核查', 'DIMS_GG_02016', 2016, 900001005, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001005, 1, NULL),
 /*(900003033, '公共-U位规范性核查-资源标识-唯一性核查', 'DIMS_GG_02017', 2017, 900001006, '公共', 11, NULL, 'update RM_AREA_UPOS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02017%'' then dims_col_result
