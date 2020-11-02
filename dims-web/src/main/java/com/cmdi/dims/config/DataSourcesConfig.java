@@ -21,10 +21,18 @@ public class DataSourcesConfig {
     @Qualifier("primaryDataSource")
     @ConfigurationProperties(prefix="spring.datasource.primary")
     public DataSource PrimaryDataSource() {
-        //return DataSourceBuilder.create().type(DruidDataSource.class).build();
         return DataSourceBuilder.create().build();
     }
-
+    /**
+     * 配置第一个数据源操作对象
+     * @param dataSource
+     * @return
+     */
+    @Primary
+    @Bean(name = "primaryJdbcTemplate")
+    public JdbcTemplate primaryJdbcTemplate(@Qualifier("primaryDataSource") DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
     /**
      * 第二个数据源
      * @return
@@ -33,7 +41,6 @@ public class DataSourcesConfig {
     @Qualifier("secondDataSource")
     @ConfigurationProperties(prefix="spring.datasource.second")
     public DataSource secondaryDataSource() {
-        //return DataSourceBuilder.create().type(DruidDataSource.class).build();
         return DataSourceBuilder.create().build();
     }
 

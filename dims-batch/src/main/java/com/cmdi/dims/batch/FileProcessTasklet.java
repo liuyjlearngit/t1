@@ -1,5 +1,24 @@
 package com.cmdi.dims.batch;
 
+import com.cmdi.dims.domain.ConfigService;
+import com.cmdi.dims.domain.DataService;
+import com.cmdi.dims.domain.meta.dto.Metadata;
+import com.cmdi.dims.sdk.model.TaskConfigDto;
+import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
+import com.cmdi.dims.sdk.model.TaskItemFileDto;
+import com.google.common.collect.Lists;
+import com.lmax.disruptor.BlockingWaitStrategy;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.dsl.Disruptor;
+import com.lmax.disruptor.dsl.ProducerType;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.Assert;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
@@ -7,38 +26,11 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
-
-import com.cmdi.dims.domain.ConfigService;
-import com.cmdi.dims.domain.meta.dto.Metadata;
-import com.google.common.collect.Lists;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.Assert;
-
-import com.lmax.disruptor.BlockingWaitStrategy;
-import com.lmax.disruptor.RingBuffer;
-import com.lmax.disruptor.dsl.Disruptor;
-import com.lmax.disruptor.dsl.ProducerType;
-
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-import com.cmdi.dims.domain.DataService;
-import com.cmdi.dims.sdk.model.TaskConfigDto;
-import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
-import com.cmdi.dims.sdk.model.TaskItemFileDto;
 
 @Slf4j
 public class FileProcessTasklet extends AbstractDimsTasklet {
@@ -48,6 +40,8 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
     private static final int HANDLER_SIZE = 16;
 
     private static final int RING_BUFFER_SIZE = 64;
+
+    private static final int ERROR_COUNT = 1000;
 
     @Setter
     private ConfigService configService;
@@ -80,6 +74,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         boolean success = true;
         long totalRecord = 0L;
         String errorMessage = null;
+        int errorCount = 0;
         try {
             Path file = Paths.get(taskDirectory.getAbsolutePath(), taskItemFile.getSignature(), taskItemFile.getCsvFile());
             Assert.state(Files.exists(file), "file not exists");
@@ -102,7 +97,13 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 String preDateLine = null;
                 while (null != (dataLine = reader.readLine())) {
                     totalRecord++;
-
+                    if(errorCount >= ERROR_COUNT){
+                        log.info("超过最大入库失败条数，入库失败，退出......");
+                        parameters.clear();
+                        success = false;
+                        errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错:数据文件包含多余的分割符（超过1000条）.";
+                        break;
+                    }
                     dataLine = dataLine.replaceAll("\u0000", "");
                     String currentDateLine = dataLine;
                     if (null != preDateLine) {
@@ -131,6 +132,8 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                         } else if (currentSize > columnSize) {
                             if (null == preDateLine) {
                                 log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行可能包含多余的分割符");
+                                log.warn("第" + totalRecord + "行:"+currentDateLine);
+                                errorCount++;
                                 for (idx = 0; idx < currentSize; idx++) {
                                     parameter.put(idx, columns[idx]);
                                 }
@@ -159,6 +162,8 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                                         }
                                     } else if (currentLineSize > columnSize) {
                                         log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行可能包含多余的分割符");
+                                        log.warn("第" + totalRecord + "行:"+dataLine);
+                                        errorCount++;
                                         for (idx = 0; idx < currentLineSize; idx++) {
                                             parameter.put(idx, currentLineColumns[idx]);
                                         }

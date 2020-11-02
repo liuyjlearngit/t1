@@ -12,7 +12,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
 import org.springframework.integration.sftp.session.SftpSession;
@@ -54,13 +53,14 @@ public class ImportServiceImpl implements ImportService {
 
         String taskCode = task.getTaskCode();
         File localFolder = BatchUtil.getTaskFolder(taskCode, true);
-        Date collectionDate = task.getCollectionDate();
+        //Date collectionDate = task.getCollectionDate();
         log.info("开始清理数据...");
         dataService.cleanColumns(taskCode);
         dataService.cleanStorage(taskCode);
 
         log.info("下载文件...");
-        String resultZipName = new DateTime(collectionDate).toString("yyyyMMdd") + "_RESULT.zip";
+       // String resultZipName = new DateTime(collectionDate).toString("yyyyMMdd") + "_RESULT.zip";
+        String resultZipName = taskCode + "_RESULT.zip";
         List<FileLocationVo> locations = dataService.getFileLocation(province, speciality);
         Assert.notEmpty(locations, "没有找到任务对应的FTP");
         FileLocationVo location = null;
@@ -210,6 +210,8 @@ public class ImportServiceImpl implements ImportService {
                 }
             }
         }
+        //log.info("清除历史冗余文件......");
+
 
     }
 
