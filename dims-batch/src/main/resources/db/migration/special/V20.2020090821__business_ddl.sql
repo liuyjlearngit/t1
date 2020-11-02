@@ -125,9 +125,7 @@ create index if not exists idx_SPEARD2intId on SPEARD(int_id);
 create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
-create index if not exists idx_BOARD2RelatedBs on WX_BOARD(related_bs);
-
-
+-- create index if not exists idx_BOARD2RelatedBs on WX_BOARD(related_bs);
 
 
 create index if not exists idx_OMC2zh_label on OMC(zh_label);
@@ -152,9 +150,9 @@ create index if not exists idx_CU2related_room_location on CU(related_room_locat
 create index if not exists idx_CELL2zh_label on CELL(zh_label);
 create index if not exists idx_AAU2related_room_location on AAU(related_room_location);
 create index if not exists idx_AAU2related_cell on AAU(related_cell);
-create index if not exists idx_BOARD2related_bs on BOARD(related_bs);
+create index if not exists idx_BOARD2related_bs on WX_BOARD(related_bs);
 create index if not exists idx_EUTRANCELL2zh_label on EUTRANCELL(zh_label);
-create index if not exists idx_PORT2related_ne on PORT(related_ne);
+create index if not exists idx_PORT2related_ne on WX_PORT(related_ne);
 create index if not exists idx_ANTENNA2related_tower on ANTENNA(related_tower);
 create index if not exists idx_ANTENNAPARA2related_cell on ANTENNAPARA(related_cell);
 create index if not exists idx_ANTENNAPARA2related_antenna on ANTENNAPARA(related_antenna);
@@ -180,8 +178,6 @@ create index if not exists idx_SPEARD2zh_label on SPEARD(zh_label);
 create index if not exists idx_PICOAP2zh_label on PICOAP(zh_label);
 create index if not exists idx_PICOAU2zh_label on PICOAU(zh_label);
 create index if not exists idx_PICOSWITCH2zh_label on PICOSWITCH(zh_label);
-
-
 
 
 
@@ -304,7 +300,6 @@ CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_GF2intId ON JIAKE_CE_DEVICE_GF ( int_id
 CREATE INDEX IF NOT EXISTS idx_CM_GF_PORT2intId ON CM_GF_PORT ( int_id );
 
 
-
 create index if not exists idx_CM_HOME_CUST_BUSINESS2related_standard_address on CM_HOME_CUST_BUSINESS(related_standard_address);
 create index if not exists idx_CM_HOME_CUST_BUSINESS2device_id on CM_HOME_CUST_BUSINESS(device_id);
 create index if not exists idx_CM_HOME_CUST_BUSINESS2port_id on CM_HOME_CUST_BUSINESS(port_id);
@@ -325,6 +320,7 @@ create index if not exists idx_CM_DEVICE_OBD2link_to_device_port on CM_DEVICE_OB
 create index if not exists idx_CM_OBD_PORT2related_device on CM_OBD_PORT(related_device);
 create index if not exists idx_CM_GF_PORT2related_device on CM_GF_PORT(related_device);
 create index if not exists idx_CM_HOME_CUST_BUSINESS2cust_num on CM_HOME_CUST_BUSINESS(cust_num);
+
 
 
 ---核心网
