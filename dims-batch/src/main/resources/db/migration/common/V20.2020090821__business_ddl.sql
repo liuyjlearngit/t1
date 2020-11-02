@@ -125,7 +125,7 @@ create index if not exists idx_SPEARD2intId on SPEARD(int_id);
 create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
-
+create index if not exists idx_BOARD2RelatedBs on WX_BOARD(related_bs);
 --空间ddl
 drop table if exists RM_AREA_SITE;
 drop table if exists RM_AREA_RESPOINT;
@@ -2332,7 +2332,7 @@ CREATE TABLE SDH_PATH (
 	link_used_flag VARCHAR ( 500 ),
 	rate VARCHAR ( 500 ),
 	use_type VARCHAR ( 500 ),
-	route VARCHAR ( 500 ),
+	route text,
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );
@@ -2389,7 +2389,7 @@ CREATE TABLE TRANSI_CIRCUIT (
 	ext_ids VARCHAR ( 500 ),
 	cic_level VARCHAR ( 500 ),
 	bandwidth VARCHAR ( 500 ),
-	circuit_route VARCHAR ( 500 ),
+	circuit_route text,
 	a_trans_ne VARCHAR ( 500 ),
 	a_biz_port VARCHAR ( 500 ),
 	a_trans_port VARCHAR ( 500 ),
