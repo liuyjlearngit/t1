@@ -126,6 +126,66 @@ create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
 
+
+
+
+
+create index if not exists idx_OMC2zh_label on OMC(zh_label);
+create index if not exists idx_BTS2related_room_location on BTS(related_room_location);
+create index if not exists idx_ENODEB2related_room_location on ENODEB(related_room_location);
+create index if not exists idx_GNODEB2related_room_location on GNODEB(related_room_location);
+create index if not exists idx_BTS2zh_label on BTS(zh_label);
+create index if not exists idx_RTK2related_room_location on RTK(related_room_location);
+create index if not exists idx_CELL2related_room_location on CELL(related_room_location);
+create index if not exists idx_CELL2related_bs on CELL(related_bs);
+create index if not exists idx_ENODEB2zh_label on ENODEB(zh_label);
+create index if not exists idx_NRCELL2related_room_location on NRCELL(related_room_location);
+create index if not exists idx_NRCELL2related_bs on NRCELL(related_bs);
+create index if not exists idx_GNODEB2zh_label on GNODEB(zh_label);
+create index if not exists idx_BBU2related_bs on BBU(related_bs);
+create index if not exists idx_RRU2related_room_location on RRU(related_room_location);
+create index if not exists idx_RRU2related_cell on RRU(related_cell);
+create index if not exists idx_RTK2zh_label on RTK(zh_label);
+create index if not exists idx_DU2related_bs on DU(related_bs);
+create index if not exists idx_DU2related_room_location on DU(related_room_location);
+create index if not exists idx_CU2related_room_location on CU(related_room_location);
+create index if not exists idx_CELL2zh_label on CELL(zh_label);
+create index if not exists idx_AAU2related_room_location on AAU(related_room_location);
+create index if not exists idx_AAU2related_cell on AAU(related_cell);
+create index if not exists idx_BOARD2related_bs on BOARD(related_bs);
+create index if not exists idx_EUTRANCELL2zh_label on EUTRANCELL(zh_label);
+create index if not exists idx_PORT2related_ne on PORT(related_ne);
+create index if not exists idx_ANTENNA2related_tower on ANTENNA(related_tower);
+create index if not exists idx_ANTENNAPARA2related_cell on ANTENNAPARA(related_cell);
+create index if not exists idx_ANTENNAPARA2related_antenna on ANTENNAPARA(related_antenna);
+create index if not exists idx_NRCELL2zh_label on NRCELL(zh_label);
+create index if not exists idx_TOWER2related_room_location on TOWER(related_room_location);
+create index if not exists idx_BBU2zh_label on BBU(zh_label);
+create index if not exists idx_RPT2related_room_location on RPT(related_room_location);
+create index if not exists idx_RPT2related_cell on RPT(related_cell);
+create index if not exists idx_RRU2zh_label on RRU(zh_label);
+create index if not exists idx_SPEARD2related_location on SPEARD(related_location);
+create index if not exists idx_SPEARD2related_bs on SPEARD(related_bs);
+create index if not exists idx_DU2zh_label on DU(zh_label);
+create index if not exists idx_SPEARD2related_cell on SPEARD(related_cell);
+create index if not exists idx_CU2zh_label on CU(zh_label);
+create index if not exists idx_AAU2zh_label on AAU(zh_label);
+create index if not exists idx_PICOAP2related_femto on PICOAP(related_femto);
+create index if not exists idx_PICOAU2related_femto on PICOAU(related_femto);
+create index if not exists idx_PICOSWITCH2related_femto on PICOSWITCH(related_femto);
+create index if not exists idx_ANTENNA2zh_label on ANTENNA(zh_label);
+create index if not exists idx_TOWER2zh_label on TOWER(zh_label);
+create index if not exists idx_RPT2zh_label on RPT(zh_label);
+create index if not exists idx_SPEARD2zh_label on SPEARD(zh_label);
+create index if not exists idx_PICOAP2zh_label on PICOAP(zh_label);
+create index if not exists idx_PICOAU2zh_label on PICOAU(zh_label);
+create index if not exists idx_PICOSWITCH2zh_label on PICOSWITCH(zh_label);
+
+
+
+
+
+
 --空间ddl
 drop table if exists RM_AREA_SITE;
 drop table if exists RM_AREA_RESPOINT;
@@ -1080,6 +1140,36 @@ CREATE INDEX IF NOT EXISTS idx_CM_OBD_PORT2intId ON CM_OBD_PORT ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_DMT2intId ON CE_DEVICE_DMT ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CE_DEVICE_GF2intId ON JIAKE_CE_DEVICE_GF ( int_id );
 CREATE INDEX IF NOT EXISTS idx_CM_GF_PORT2intId ON CM_GF_PORT ( int_id );
+
+
+
+create index if not exists idx_CM_HOME_CUST_BUSINESS2related_standard_address on CM_HOME_CUST_BUSINESS(related_standard_address);
+create index if not exists idx_CM_HOME_CUST_BUSINESS2device_id on CM_HOME_CUST_BUSINESS(device_id);
+create index if not exists idx_CM_HOME_CUST_BUSINESS2port_id on CM_HOME_CUST_BUSINESS(port_id);
+create index if not exists idx_RM_AREA_RESIDENTIAL2zh_label on RM_AREA_RESIDENTIAL(zh_label);
+create index if not exists idx_RM_GRID2zh_label on RM_GRID(zh_label);
+create index if not exists idx_RM_GRID2related_area on RM_GRID(related_area);
+create index if not exists idx_CE_IMS_BUSINESS2ims_inst_id on CE_IMS_BUSINESS(ims_inst_id);
+create index if not exists idx_CM_DEVICE_ONU2zh_label on CM_DEVICE_ONU(zh_label);
+create index if not exists idx_CE_TV_BUSINESS2tv_inst_id on CE_TV_BUSINESS(tv_inst_id);
+create index if not exists idx_CM_DEVICE_OBD2zh_label on CM_DEVICE_OBD(zh_label);
+create index if not exists idx_CE_DEVICE_DMT2zh_label on CE_DEVICE_DMT(zh_label);
+create index if not exists idx_CE_DEVICE_GF2zh_label on CE_DEVICE_GF(zh_label);
+create index if not exists idx_CM_DEVICE_ONU2relation_up_device_id on CM_DEVICE_ONU(relation_up_device_id);
+create index if not exists idx_CM_DEVICE_ONU2relation_up_device_port on CM_DEVICE_ONU(relation_up_device_port);
+create index if not exists idx_CM_DEVICE_OBD2up_to_device on CM_DEVICE_OBD(up_to_device);
+create index if not exists idx_CM_DEVICE_OBD2link_to_device on CM_DEVICE_OBD(link_to_device);
+create index if not exists idx_CM_DEVICE_OBD2link_to_device_port on CM_DEVICE_OBD(link_to_device_port);
+create index if not exists idx_CM_OBD_PORT2related_device on CM_OBD_PORT(related_device);
+create index if not exists idx_CM_GF_PORT2related_device on CM_GF_PORT(related_device);
+create index if not exists idx_CM_HOME_CUST_BUSINESS2cust_num on CM_HOME_CUST_BUSINESS(cust_num);
+
+
+
+
+
+
+
 --核心网
 drop table if exists SMS_MSSBASEINFO;
 drop table if exists SMS_SMSBASEINFO;
