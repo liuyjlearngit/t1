@@ -150,9 +150,9 @@ create index if not exists idx_CU2related_room_location on CU(related_room_locat
 create index if not exists idx_CELL2zh_label on CELL(zh_label);
 create index if not exists idx_AAU2related_room_location on AAU(related_room_location);
 create index if not exists idx_AAU2related_cell on AAU(related_cell);
-create index if not exists idx_BOARD2related_bs on WX_BOARD(related_bs);
+create index if not exists idx_WX_BOARD2related_bs on WX_BOARD(related_bs);
 create index if not exists idx_EUTRANCELL2zh_label on EUTRANCELL(zh_label);
-create index if not exists idx_PORT2related_ne on WX_PORT(related_ne);
+create index if not exists idx_WX_PORT2related_ne on WX_PORT(related_ne);
 create index if not exists idx_ANTENNA2related_tower on ANTENNA(related_tower);
 create index if not exists idx_ANTENNAPARA2related_cell on ANTENNAPARA(related_cell);
 create index if not exists idx_ANTENNAPARA2related_antenna on ANTENNAPARA(related_antenna);
