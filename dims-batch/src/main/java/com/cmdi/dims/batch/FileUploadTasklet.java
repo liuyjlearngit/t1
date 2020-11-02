@@ -82,7 +82,8 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 }
             }
             try {
-                File result = compressZips(localTaskFolder, date + "_RESULT.zip", zips);
+               // File result = compressZips(localTaskFolder, date + "_RESULT.zip", zips);
+                File result = compressZips(localTaskFolder, taskCode + "_RESULT.zip", zips);
                 if(StringUtils.equalsIgnoreCase(location.getSchema(),"sftp")){
                     uploadZipFileToSFtp(result, location);
                 }else{

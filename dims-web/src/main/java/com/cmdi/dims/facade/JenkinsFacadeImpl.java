@@ -31,13 +31,13 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
     @Value("${dims.url}")
     private String domain;
 
-    @Value("${spring.datasource.username}")
+    @Value("${spring.datasource.primary.username}")
     private String batchUsername;
 
-    @Value("${spring.datasource.password}")
+    @Value("${spring.datasource.primary.password}")
     private String batchPassword;
 
-    @Value("${spring.datasource.url}")
+    @Value("${spring.datasource.primary.url}")
     private String batchUrl;
 
     @Value("${template.datasource.username}")

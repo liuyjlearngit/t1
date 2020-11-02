@@ -125,7 +125,7 @@ create index if not exists idx_SPEARD2intId on SPEARD(int_id);
 create index if not exists idx_PICOAP2intId on PICOAP(int_id);
 create index if not exists idx_PICOAU2intId on PICOAU(int_id);
 create index if not exists idx_PICOSWITCH2intId on PICOSWITCH(int_id);
-
+create index if not exists idx_BOARD2RelatedBs on WX_BOARD(related_bs);
 
 
 
@@ -316,7 +316,7 @@ create index if not exists idx_CM_DEVICE_ONU2zh_label on CM_DEVICE_ONU(zh_label)
 create index if not exists idx_CE_TV_BUSINESS2tv_inst_id on CE_TV_BUSINESS(tv_inst_id);
 create index if not exists idx_CM_DEVICE_OBD2zh_label on CM_DEVICE_OBD(zh_label);
 create index if not exists idx_CE_DEVICE_DMT2zh_label on CE_DEVICE_DMT(zh_label);
-create index if not exists idx_CE_DEVICE_GF2zh_label on CE_DEVICE_GF(zh_label);
+create index if not exists idx_JK_CE_DEVICE_GF2zh_label on JIAKE_CE_DEVICE_GF(zh_label);
 create index if not exists idx_CM_DEVICE_ONU2relation_up_device_id on CM_DEVICE_ONU(relation_up_device_id);
 create index if not exists idx_CM_DEVICE_ONU2relation_up_device_port on CM_DEVICE_ONU(relation_up_device_port);
 create index if not exists idx_CM_DEVICE_OBD2up_to_device on CM_DEVICE_OBD(up_to_device);
@@ -325,8 +325,6 @@ create index if not exists idx_CM_DEVICE_OBD2link_to_device_port on CM_DEVICE_OB
 create index if not exists idx_CM_OBD_PORT2related_device on CM_OBD_PORT(related_device);
 create index if not exists idx_CM_GF_PORT2related_device on CM_GF_PORT(related_device);
 create index if not exists idx_CM_HOME_CUST_BUSINESS2cust_num on CM_HOME_CUST_BUSINESS(cust_num);
-
-
 
 
 ---核心网
@@ -2389,7 +2387,7 @@ CREATE TABLE SDH_PATH (
 	link_used_flag VARCHAR ( 500 ),
 	rate VARCHAR ( 500 ),
 	use_type VARCHAR ( 500 ),
-	route VARCHAR ( 500 ),
+	route text,
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );
@@ -2446,7 +2444,7 @@ CREATE TABLE TRANSI_CIRCUIT (
 	ext_ids VARCHAR ( 500 ),
 	cic_level VARCHAR ( 500 ),
 	bandwidth VARCHAR ( 500 ),
-	circuit_route VARCHAR ( 500 ),
+	circuit_route text,
 	a_trans_ne VARCHAR ( 500 ),
 	a_biz_port VARCHAR ( 500 ),
 	a_trans_port VARCHAR ( 500 ),
