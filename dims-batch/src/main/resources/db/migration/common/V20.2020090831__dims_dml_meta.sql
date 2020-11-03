@@ -14067,7 +14067,7 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 --插入传输管线 dims_mm_entitytype
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
 (904001001, '光交接箱', 'CE_DEVICE_GJ', '传输管线', null, 'CE_DEVICE_GJ', null, null, 'admin', 'admin', null),
-(904001002, '光分纤箱', 'TSGX_CE_DEVICE_GF', '传输管线', null, 'TSGX_CE_DEVICE_GF', null, null, 'admin', 'admin', null),
+(904001002, '光分纤箱', 'CSGX_CE_DEVICE_GF', '传输管线', null, 'CSGX_CE_DEVICE_GF', null, null, 'admin', 'admin', null),
 (904001003, '光终端盒', 'CE_DEVICE_GB', '传输管线', null, 'CE_DEVICE_GB', null, null, 'admin', 'admin', null),
 (904001004, '分纤接续点（接头）', 'CE_DEVICE_JT', '传输管线', null, 'CE_DEVICE_JT', null, null, 'admin', 'admin', null),
 (904001005, '光端子主表', 'CM_PORT_FIBER', '传输管线', null, 'CM_PORT_FIBER', null, null, 'admin', 'admin', null),
@@ -14113,7 +14113,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (904001316, '分纤点级别', 'fpp_level', 904001001, 'FPP_LEVEL', 'string', 904000078, 'admin', 'admin', null),
 (904001317, '所属市场网格编号', 'market_grid_no', 904001001, 'MARKET_GRID_NO', 'string', null, 'admin', 'admin', null),
 (904001318, '所属流程id', 'process_id', 904001001, 'PROCESS_ID', 'string', null, 'admin', 'admin', null),
---光分纤箱	TSGX_CE_DEVICE_GF
+--光分纤箱	CSGX_CE_DEVICE_GF
 (904001319, '资源标识', 'resfdn', 904001002, 'RESFDN', 'string', null, 'admin', 'admin', null),
 (904001320, '资源名称', 'zh_label', 904001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (904001321, '生命周期状态', 'lifecycle_status', 904001002, 'LIFECYCLE_STATUS', 'string', 904000006, 'admin', 'admin', null),
@@ -14551,7 +14551,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱关联性核查-所属区县''
 																											 else dims_col_rtName||'',传输管线-光交接箱关联性核查-所属区县'' end)
 													 where isNotNull(t1.county) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.county)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
-(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03004%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03004''
 																											 else dims_col_result||'',DIMS_GX_03004'' end),
@@ -14559,7 +14559,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属省份''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属省份'' end)
 													 where isNotNull(t1.province) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03005''
 																											 else dims_col_result||'',DIMS_GX_03005'' end),
@@ -14567,7 +14567,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属地市''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属地市'' end)
 													 where isNotNull(t1.city) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.city)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03006''
 																											 else dims_col_result||'',DIMS_GX_03006'' end),
@@ -15373,22 +15373,22 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from CE_DEVICE_GJ t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
 (904003141, '传输管线-光交接箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02003', 2003, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
 (904003142, '传输管线-光交接箱规范性核查-单双面-字典规范性核查', 'DIMS_GX_02004', 2004, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
-(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02006''
 																											 else dims_col_result||'',DIMS_GX_02006'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02007''
 																											 else dims_col_result||'',DIMS_GX_02007'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
 (904003146, '传输管线-光分纤箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02008', 2008, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003147, '传输管线-光分纤箱规范性核查-产权性质-字典规范性核查', 'DIMS_GX_02009', 2009, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003148, '传输管线-光分纤箱规范性核查-产权单位-字典规范性核查', 'DIMS_GX_02010', 2010, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
@@ -15771,9 +15771,9 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-光交接箱规范性核查-纬度-经纬度规范性核查'' end)
                  where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, null),
-		
+
 (904003225, '传输管线-光分纤箱规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02087', 2087, 904001002, '传输管线', 11, null, 
-'update TSGX_CE_DEVICE_GF t1
+'update CSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02087''
                                              else dims_col_result||'',DIMS_GX_02087'' end),
@@ -15782,7 +15782,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',传输管线-光分纤箱规范性核查-经度-经纬度规范性核查'' end)
                  where  isnotfloat(longitude) or length(substring( longitude from ''\.(.*)''))<5 or substr(reverse(longitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),
 (904003226, '传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查', 'DIMS_GX_02088', 2088, 904001002, '传输管线', 11, null, 
-'update TSGX_CE_DEVICE_GF t1
+'update CSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02088%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02088''
                                              else dims_col_result||'',DIMS_GX_02088'' end),
@@ -15790,7 +15790,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查'' end)
                  where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),		
-		
+
 (904003227, '传输管线-人手井规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02089', 2089, 904001012, '传输管线', 11, null, 
 'update CE_FACILITY_WELL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02089%'' then dims_col_result
@@ -18370,19 +18370,19 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (904005511, '传输管线-光交接箱必填完整性核查.所属区县', 'CE_DEVICE_GJ.county', 904003001, 904001312, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005512, '传输管线-光交接箱必填完整性核查.规格型号', 'CE_DEVICE_GJ.specifications', 904003001, 904001314, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005513, '传输管线-光交接箱必填完整性核查.安装容量', 'CE_DEVICE_GJ.cm_install_capacity', 904003001, 904001315, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'TSGX_CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'TSGX_CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'TSGX_CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'TSGX_CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'TSGX_CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'TSGX_CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'TSGX_CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'TSGX_CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'TSGX_CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'TSGX_CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'TSGX_CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'TSGX_CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'TSGX_CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'CSGX_CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'CSGX_CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'CSGX_CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'CSGX_CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'CSGX_CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'CSGX_CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'CSGX_CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'CSGX_CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'CSGX_CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'CSGX_CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'CSGX_CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'CSGX_CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'CSGX_CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005527, '传输管线-光终端盒必填完整性核查.资源标识', 'CE_DEVICE_GB.resfdn', 904003003, 904001334, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005528, '传输管线-光终端盒必填完整性核查.资源名称', 'CE_DEVICE_GB.zh_label', 904003003, 904001335, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005529, '传输管线-光终端盒必填完整性核查.生命周期状态', 'CE_DEVICE_GB.lifecycle_status', 904003003, 904001336, 2, NULL, NULL, 'admin', 'admin', NULL),
@@ -19316,7 +19316,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_rtName is null then ''公共-ODM模块关联性核查-所属设备''
 														 else dims_col_rtName||'',公共-ODM模块关联性核查-所属设备'' end)
  where isNotNull(t1.related_device_id) and not exists(select 1
-														from CE_DEVICE_GJ t2,TSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
+														from CE_DEVICE_GJ t2,CSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
 													   where  t1.related_device_id = t2.resfdn
 															  or t1.related_device_id = t3.resfdn
 															  or t1.related_device_id = t4.resfdn
