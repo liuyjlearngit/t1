@@ -16288,83 +16288,83 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (904004024,904099001,904003024,'admin','admin',null),
 (904004025,904099001,904003025,'admin','admin',null),
 (904004026,904099001,904003026,'admin','admin',null),
-(904004027,904099003,904003050,'admin','admin',null),
-(904004028,904099003,904003051,'admin','admin',null),
-(904004029,904099003,904003052,'admin','admin',null),
-(904004030,904099003,904003053,'admin','admin',null),
-(904004031,904099003,904003054,'admin','admin',null),
-(904004032,904099003,904003055,'admin','admin',null),
-(904004033,904099003,904003056,'admin','admin',null),
-(904004034,904099003,904003057,'admin','admin',null),
-(904004035,904099003,904003058,'admin','admin',null),
-(904004036,904099003,904003059,'admin','admin',null),
-(904004037,904099003,904003060,'admin','admin',null),
-(904004038,904099003,904003061,'admin','admin',null),
-(904004039,904099003,904003062,'admin','admin',null),
-(904004040,904099003,904003063,'admin','admin',null),
-(904004041,904099003,904003064,'admin','admin',null),
-(904004042,904099003,904003065,'admin','admin',null),
-(904004043,904099003,904003066,'admin','admin',null),
-(904004044,904099003,904003067,'admin','admin',null),
-(904004045,904099003,904003068,'admin','admin',null),
-(904004046,904099003,904003069,'admin','admin',null),
-(904004047,904099003,904003070,'admin','admin',null),
-(904004048,904099003,904003071,'admin','admin',null),
-(904004049,904099003,904003072,'admin','admin',null),
-(904004050,904099003,904003073,'admin','admin',null),
-(904004051,904099003,904003074,'admin','admin',null),
-(904004052,904099003,904003075,'admin','admin',null),
-(904004053,904099003,904003076,'admin','admin',null),
-(904004054,904099003,904003077,'admin','admin',null),
-(904004055,904099003,904003078,'admin','admin',null),
-(904004056,904099003,904003079,'admin','admin',null),
-(904004057,904099003,904003080,'admin','admin',null),
-(904004058,904099003,904003081,'admin','admin',null),
-(904004059,904099003,904003082,'admin','admin',null),
-(904004060,904099003,904003083,'admin','admin',null),
-(904004061,904099003,904003084,'admin','admin',null),
-(904004062,904099003,904003085,'admin','admin',null),
-(904004063,904099003,904003086,'admin','admin',null),
-(904004064,904099003,904003087,'admin','admin',null),
-(904004065,904099003,904003088,'admin','admin',null),
-(904004066,904099003,904003089,'admin','admin',null),
-(904004067,904099003,904003090,'admin','admin',null),
-(904004068,904099003,904003091,'admin','admin',null),
-(904004069,904099003,904003092,'admin','admin',null),
-(904004070,904099003,904003093,'admin','admin',null),
-(904004071,904099003,904003094,'admin','admin',null),
-(904004072,904099003,904003095,'admin','admin',null),
-(904004073,904099003,904003096,'admin','admin',null),
-(904004074,904099003,904003097,'admin','admin',null),
-(904004075,904099003,904003098,'admin','admin',null),
-(904004076,904099003,904003099,'admin','admin',null),
-(904004077,904099003,904003100,'admin','admin',null),
-(904004078,904099003,904003101,'admin','admin',null),
-(904004079,904099003,904003102,'admin','admin',null),
-(904004080,904099003,904003103,'admin','admin',null),
-(904004081,904099003,904003104,'admin','admin',null),
-(904004082,904099003,904003105,'admin','admin',null),
-(904004083,904099003,904003106,'admin','admin',null),
-(904004084,904099003,904003107,'admin','admin',null),
-(904004085,904099003,904003108,'admin','admin',null),
-(904004086,904099003,904003109,'admin','admin',null),
-(904004087,904099003,904003110,'admin','admin',null),
-(904004088,904099003,904003111,'admin','admin',null),
-(904004089,904099003,904003112,'admin','admin',null),
-(904004090,904099003,904003113,'admin','admin',null),
-(904004091,904099003,904003114,'admin','admin',null),
-(904004092,904099003,904003115,'admin','admin',null),
-(904004093,904099003,904003116,'admin','admin',null),
-(904004094,904099003,904003117,'admin','admin',null),
-(904004095,904099003,904003118,'admin','admin',null),
-(904004096,904099003,904003119,'admin','admin',null),
+-- (904004027,904099003,904003050,'admin','admin',null),
+-- (904004028,904099003,904003051,'admin','admin',null),
+-- (904004029,904099003,904003052,'admin','admin',null),
+-- (904004030,904099003,904003053,'admin','admin',null),
+-- (904004031,904099003,904003054,'admin','admin',null),
+-- (904004032,904099003,904003055,'admin','admin',null),
+-- (904004033,904099003,904003056,'admin','admin',null),
+-- (904004034,904099003,904003057,'admin','admin',null),
+-- (904004035,904099003,904003058,'admin','admin',null),
+-- (904004036,904099003,904003059,'admin','admin',null),
+-- (904004037,904099003,904003060,'admin','admin',null),
+-- (904004038,904099003,904003061,'admin','admin',null),
+-- (904004039,904099003,904003062,'admin','admin',null),
+-- (904004040,904099003,904003063,'admin','admin',null),
+-- (904004041,904099003,904003064,'admin','admin',null),
+-- (904004042,904099003,904003065,'admin','admin',null),
+-- (904004043,904099003,904003066,'admin','admin',null),
+-- (904004044,904099003,904003067,'admin','admin',null),
+-- (904004045,904099003,904003068,'admin','admin',null),
+-- (904004046,904099003,904003069,'admin','admin',null),
+-- (904004047,904099003,904003070,'admin','admin',null),
+-- (904004048,904099003,904003071,'admin','admin',null),
+-- (904004049,904099003,904003072,'admin','admin',null),
+-- (904004050,904099003,904003073,'admin','admin',null),
+-- (904004051,904099003,904003074,'admin','admin',null),
+-- (904004052,904099003,904003075,'admin','admin',null),
+-- (904004053,904099003,904003076,'admin','admin',null),
+-- (904004054,904099003,904003077,'admin','admin',null),
+-- (904004055,904099003,904003078,'admin','admin',null),
+-- (904004056,904099003,904003079,'admin','admin',null),
+-- (904004057,904099003,904003080,'admin','admin',null),
+-- (904004058,904099003,904003081,'admin','admin',null),
+-- (904004059,904099003,904003082,'admin','admin',null),
+-- (904004060,904099003,904003083,'admin','admin',null),
+-- (904004061,904099003,904003084,'admin','admin',null),
+-- (904004062,904099003,904003085,'admin','admin',null),
+-- (904004063,904099003,904003086,'admin','admin',null),
+-- (904004064,904099003,904003087,'admin','admin',null),
+-- (904004065,904099003,904003088,'admin','admin',null),
+-- (904004066,904099003,904003089,'admin','admin',null),
+-- (904004067,904099003,904003090,'admin','admin',null),
+-- (904004068,904099003,904003091,'admin','admin',null),
+-- (904004069,904099003,904003092,'admin','admin',null),
+-- (904004070,904099003,904003093,'admin','admin',null),
+-- (904004071,904099003,904003094,'admin','admin',null),
+-- (904004072,904099003,904003095,'admin','admin',null),
+-- (904004073,904099003,904003096,'admin','admin',null),
+-- (904004074,904099003,904003097,'admin','admin',null),
+-- (904004075,904099003,904003098,'admin','admin',null),
+-- (904004076,904099003,904003099,'admin','admin',null),
+-- (904004077,904099003,904003100,'admin','admin',null),
+-- (904004078,904099003,904003101,'admin','admin',null),
+-- (904004079,904099003,904003102,'admin','admin',null),
+-- (904004080,904099003,904003103,'admin','admin',null),
+-- (904004081,904099003,904003104,'admin','admin',null),
+-- (904004082,904099003,904003105,'admin','admin',null),
+-- (904004083,904099003,904003106,'admin','admin',null),
+-- (904004084,904099003,904003107,'admin','admin',null),
+-- (904004085,904099003,904003108,'admin','admin',null),
+-- (904004086,904099003,904003109,'admin','admin',null),
+-- (904004087,904099003,904003110,'admin','admin',null),
+-- (904004088,904099003,904003111,'admin','admin',null),
+-- (904004089,904099003,904003112,'admin','admin',null),
+-- (904004090,904099003,904003113,'admin','admin',null),
+-- (904004091,904099003,904003114,'admin','admin',null),
+-- (904004092,904099003,904003115,'admin','admin',null),
+-- (904004093,904099003,904003116,'admin','admin',null),
+-- (904004094,904099003,904003117,'admin','admin',null),
+-- (904004095,904099003,904003118,'admin','admin',null),
+-- (904004096,904099003,904003119,'admin','admin',null),
 (904004097,904099003,904003120,'admin','admin',null),
 (904004098,904099003,904003121,'admin','admin',null),
 (904004099,904099003,904003122,'admin','admin',null),
 (904004100,904099003,904003123,'admin','admin',null),
 (904004101,904099003,904003124,'admin','admin',null),
-(904004102,904099003,904003125,'admin','admin',null),
-(904004103,904099003,904003126,'admin','admin',null),
+--(904004102,904099003,904003125,'admin','admin',null),
+--(904004103,904099003,904003126,'admin','admin',null),
 (904004104,904099003,904003127,'admin','admin',null),
 (904004105,904099003,904003128,'admin','admin',null),
 (904004106,904099003,904003129,'admin','admin',null),
@@ -16452,7 +16452,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (904004188,904099002,904003211,'admin','admin',null),
 (904004189,904099002,904003212,'admin','admin',null),
 (904004190,904099002,904003213,'admin','admin',null),
-(904004191,904099002,904003214,'admin','admin',null),
+--(904004191,904099002,904003214,'admin','admin',null),
 (904004192,904099002,904003215,'admin','admin',null),
 (904004193,904099002,904003216,'admin','admin',null),
 (904004194,904099002,904003217,'admin','admin',null),
@@ -19869,7 +19869,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (907003665, '动环-站点动环属性规范性核查-市电电压等级-字典规范性核查', 'DIMS_DH_02005', 2005, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
 (907003666, '动环-站点动环属性规范性核查-市电性质-字典规范性核查', 'DIMS_DH_02006', 2006, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
 (907003667, '动环-站点动环属性规范性核查-产权单位-字典规范性核查', 'DIMS_DH_02007', 2007, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
-(907003668, '动环-站点动环属性规范性核查-是否下挂IDC机房-字典规范性核查', 'DIMS_DH_02008', 2008, 907001501, '动环', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
+(907003668, '动环-站点动环属性规范性核查-是否下挂IDC机房-字典规范性核查', 'DIMS_DH_02008', 2008, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
 (907003669, '动环-机房动环属性规范性核查-资源标识-唯一性核查', 'DIMS_DH_02009', 2009, 907001502, '动环', 11, NULL, 'update RM_ROOM_PROPERTY t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02009%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_DH_02009''
@@ -19887,7 +19887,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 else dims_col_rtName||'',动环-机房动环属性规范性核查-机房名称-唯一性核查'' end)
 													                         where  exists(select 1 from RM_ROOM_PROPERTY t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001502, 1, NULL),
 (907003671, '动环-机房动环属性规范性核查-动环专业机房类型-字典规范性核查', 'DIMS_DH_02011', 2011, 907001502, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, NULL),
-(907003672, '动环-机房动环属性规范性核查-空间专业机房类型-字典规范性核查', 'DIMS_DH_02012', 2012, 907001502, '动环', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, NULL),
+(907003672, '动环-机房动环属性规范性核查-空间专业机房类型-字典规范性核查', 'DIMS_DH_02012', 2012, 907001502, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, NULL),
 (907003673, '动环-变压器规范性核查-资源标识-唯一性核查', 'DIMS_DH_02013', 2013, 907001503, '动环', 11, NULL, 'update CE_DEVICE_PE_TRANSFORM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02013%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_DH_02013''
@@ -20440,84 +20440,84 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004524,907099001,907003524,'admin','admin', null),
 (907004525,907099001,907003525,'admin','admin', null),
 (907004526,907099001,907003526,'admin','admin', null),
-(907004550,907099003,907003550,'admin','admin',null),
-(907004551,907099003,907003551,'admin','admin',null),
-(907004552,907099003,907003552,'admin','admin',null),
-(907004553,907099003,907003553,'admin','admin',null),
-(907004554,907099003,907003554,'admin','admin',null),
-(907004555,907099003,907003555,'admin','admin',null),
-(907004556,907099003,907003556,'admin','admin',null),
-(907004557,907099003,907003557,'admin','admin',null),
-(907004558,907099003,907003558,'admin','admin',null),
-(907004559,907099003,907003559,'admin','admin',null),
-(907004560,907099003,907003560,'admin','admin',null),
-(907004561,907099003,907003561,'admin','admin',null),
-(907004562,907099003,907003562,'admin','admin',null),
-(907004563,907099003,907003563,'admin','admin',null),
-(907004564,907099003,907003564,'admin','admin',null),
-(907004565,907099003,907003565,'admin','admin',null),
-(907004566,907099003,907003566,'admin','admin',null),
-(907004567,907099003,907003567,'admin','admin',null),
-(907004568,907099003,907003568,'admin','admin',null),
-(907004569,907099003,907003569,'admin','admin',null),
-(907004570,907099003,907003570,'admin','admin',null),
-(907004571,907099003,907003571,'admin','admin',null),
-(907004572,907099003,907003572,'admin','admin',null),
-(907004573,907099003,907003573,'admin','admin',null),
-(907004574,907099003,907003574,'admin','admin',null),
-(907004575,907099003,907003575,'admin','admin',null),
-(907004576,907099003,907003576,'admin','admin',null),
-(907004577,907099003,907003577,'admin','admin',null),
-(907004578,907099003,907003578,'admin','admin',null),
-(907004579,907099003,907003579,'admin','admin',null),
-(907004580,907099003,907003580,'admin','admin',null),
-(907004581,907099003,907003581,'admin','admin',null),
-(907004582,907099003,907003582,'admin','admin',null),
-(907004583,907099003,907003583,'admin','admin',null),
-(907004584,907099003,907003584,'admin','admin',null),
-(907004585,907099003,907003585,'admin','admin',null),
-(907004586,907099003,907003586,'admin','admin',null),
-(907004587,907099003,907003587,'admin','admin',null),
-(907004588,907099003,907003588,'admin','admin',null),
-(907004589,907099003,907003589,'admin','admin',null),
-(907004590,907099003,907003590,'admin','admin',null),
-(907004591,907099003,907003591,'admin','admin',null),
-(907004592,907099003,907003592,'admin','admin',null),
-(907004593,907099003,907003593,'admin','admin',null),
-(907004594,907099003,907003594,'admin','admin',null),
-(907004595,907099003,907003595,'admin','admin',null),
-(907004596,907099003,907003596,'admin','admin',null),
-(907004597,907099003,907003597,'admin','admin',null),
-(907004598,907099003,907003598,'admin','admin',null),
-(907004599,907099003,907003599,'admin','admin',null),
-(907004600,907099003,907003600,'admin','admin',null),
-(907004601,907099003,907003601,'admin','admin',null),
-(907004602,907099003,907003602,'admin','admin',null),
-(907004603,907099003,907003603,'admin','admin',null),
-(907004604,907099003,907003604,'admin','admin',null),
-(907004605,907099003,907003605,'admin','admin',null),
-(907004606,907099003,907003606,'admin','admin',null),
-(907004607,907099003,907003607,'admin','admin',null),
-(907004608,907099003,907003608,'admin','admin',null),
-(907004609,907099003,907003609,'admin','admin',null),
-(907004610,907099003,907003610,'admin','admin',null),
-(907004611,907099003,907003611,'admin','admin',null),
-(907004612,907099003,907003612,'admin','admin',null),
-(907004613,907099003,907003613,'admin','admin',null),
-(907004614,907099003,907003614,'admin','admin',null),
-(907004615,907099003,907003615,'admin','admin',null),
-(907004616,907099003,907003616,'admin','admin',null),
-(907004617,907099003,907003617,'admin','admin',null),
-(907004618,907099003,907003618,'admin','admin',null),
-(907004619,907099003,907003619,'admin','admin',null),
-(907004620,907099003,907003620,'admin','admin',null),
-(907004621,907099003,907003621,'admin','admin',null),
-(907004622,907099003,907003622,'admin','admin',null),
-(907004623,907099003,907003623,'admin','admin',null),
-(907004624,907099003,907003624,'admin','admin',null),
-(907004625,907099003,907003625,'admin','admin',null),
-(907004626,907099003,907003626,'admin','admin',null),
-(907004627,907099003,907003627,'admin','admin',null),
+-- (907004550,907099003,907003550,'admin','admin',null),
+-- (907004551,907099003,907003551,'admin','admin',null),
+-- (907004552,907099003,907003552,'admin','admin',null),
+-- (907004553,907099003,907003553,'admin','admin',null),
+-- (907004554,907099003,907003554,'admin','admin',null),
+-- (907004555,907099003,907003555,'admin','admin',null),
+-- (907004556,907099003,907003556,'admin','admin',null),
+-- (907004557,907099003,907003557,'admin','admin',null),
+-- (907004558,907099003,907003558,'admin','admin',null),
+-- (907004559,907099003,907003559,'admin','admin',null),
+-- (907004560,907099003,907003560,'admin','admin',null),
+-- (907004561,907099003,907003561,'admin','admin',null),
+-- (907004562,907099003,907003562,'admin','admin',null),
+-- (907004563,907099003,907003563,'admin','admin',null),
+-- (907004564,907099003,907003564,'admin','admin',null),
+-- (907004565,907099003,907003565,'admin','admin',null),
+-- (907004566,907099003,907003566,'admin','admin',null),
+-- (907004567,907099003,907003567,'admin','admin',null),
+-- (907004568,907099003,907003568,'admin','admin',null),
+-- (907004569,907099003,907003569,'admin','admin',null),
+-- (907004570,907099003,907003570,'admin','admin',null),
+-- (907004571,907099003,907003571,'admin','admin',null),
+-- (907004572,907099003,907003572,'admin','admin',null),
+-- (907004573,907099003,907003573,'admin','admin',null),
+-- (907004574,907099003,907003574,'admin','admin',null),
+-- (907004575,907099003,907003575,'admin','admin',null),
+-- (907004576,907099003,907003576,'admin','admin',null),
+-- (907004577,907099003,907003577,'admin','admin',null),
+-- (907004578,907099003,907003578,'admin','admin',null),
+-- (907004579,907099003,907003579,'admin','admin',null),
+-- (907004580,907099003,907003580,'admin','admin',null),
+-- (907004581,907099003,907003581,'admin','admin',null),
+-- (907004582,907099003,907003582,'admin','admin',null),
+-- (907004583,907099003,907003583,'admin','admin',null),
+-- (907004584,907099003,907003584,'admin','admin',null),
+-- (907004585,907099003,907003585,'admin','admin',null),
+-- (907004586,907099003,907003586,'admin','admin',null),
+-- (907004587,907099003,907003587,'admin','admin',null),
+-- (907004588,907099003,907003588,'admin','admin',null),
+-- (907004589,907099003,907003589,'admin','admin',null),
+-- (907004590,907099003,907003590,'admin','admin',null),
+-- (907004591,907099003,907003591,'admin','admin',null),
+-- (907004592,907099003,907003592,'admin','admin',null),
+-- (907004593,907099003,907003593,'admin','admin',null),
+-- (907004594,907099003,907003594,'admin','admin',null),
+-- (907004595,907099003,907003595,'admin','admin',null),
+-- (907004596,907099003,907003596,'admin','admin',null),
+-- (907004597,907099003,907003597,'admin','admin',null),
+-- (907004598,907099003,907003598,'admin','admin',null),
+-- (907004599,907099003,907003599,'admin','admin',null),
+-- (907004600,907099003,907003600,'admin','admin',null),
+-- (907004601,907099003,907003601,'admin','admin',null),
+-- (907004602,907099003,907003602,'admin','admin',null),
+-- (907004603,907099003,907003603,'admin','admin',null),
+-- (907004604,907099003,907003604,'admin','admin',null),
+-- (907004605,907099003,907003605,'admin','admin',null),
+-- (907004606,907099003,907003606,'admin','admin',null),
+-- (907004607,907099003,907003607,'admin','admin',null),
+-- (907004608,907099003,907003608,'admin','admin',null),
+-- (907004609,907099003,907003609,'admin','admin',null),
+-- (907004610,907099003,907003610,'admin','admin',null),
+-- (907004611,907099003,907003611,'admin','admin',null),
+-- (907004612,907099003,907003612,'admin','admin',null),
+-- (907004613,907099003,907003613,'admin','admin',null),
+-- (907004614,907099003,907003614,'admin','admin',null),
+-- (907004615,907099003,907003615,'admin','admin',null),
+-- (907004616,907099003,907003616,'admin','admin',null),
+-- (907004617,907099003,907003617,'admin','admin',null),
+-- (907004618,907099003,907003618,'admin','admin',null),
+-- (907004619,907099003,907003619,'admin','admin',null),
+-- (907004620,907099003,907003620,'admin','admin',null),
+-- (907004621,907099003,907003621,'admin','admin',null),
+-- (907004622,907099003,907003622,'admin','admin',null),
+-- (907004623,907099003,907003623,'admin','admin',null),
+-- (907004624,907099003,907003624,'admin','admin',null),
+-- (907004625,907099003,907003625,'admin','admin',null),
+-- (907004626,907099003,907003626,'admin','admin',null),
+-- (907004627,907099003,907003627,'admin','admin',null),
 (907004628,907099003,907003628,'admin','admin',null),
 (907004629,907099003,907003629,'admin','admin',null),
 (907004630,907099003,907003630,'admin','admin',null),
@@ -20566,7 +20566,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004673,907099002,907003673,'admin','admin',null),
 (907004674,907099002,907003674,'admin','admin',null),
 (907004675,907099002,907003675,'admin','admin',null),
-(907004676,907099002,907003676,'admin','admin',null),
+--(907004676,907099002,907003676,'admin','admin',null),
 (907004677,907099002,907003677,'admin','admin',null),
 (907004678,907099002,907003678,'admin','admin',null),
 (907004679,907099002,907003679,'admin','admin',null),
@@ -20575,7 +20575,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004682,907099002,907003682,'admin','admin',null),
 (907004683,907099002,907003683,'admin','admin',null),
 (907004684,907099002,907003684,'admin','admin',null),
-(907004685,907099002,907003685,'admin','admin',null),
+--(907004685,907099002,907003685,'admin','admin',null),
 (907004686,907099002,907003686,'admin','admin',null),
 (907004687,907099002,907003687,'admin','admin',null),
 (907004688,907099002,907003688,'admin','admin',null),
@@ -20589,7 +20589,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004696,907099002,907003696,'admin','admin',null),
 (907004697,907099002,907003697,'admin','admin',null),
 (907004698,907099002,907003698,'admin','admin',null),
-(907004699,907099002,907003699,'admin','admin',null),
+--(907004699,907099002,907003699,'admin','admin',null),
 (907004700,907099002,907003700,'admin','admin',null),
 (907004701,907099002,907003701,'admin','admin',null),
 (907004702,907099002,907003702,'admin','admin',null),
@@ -20600,7 +20600,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004707,907099002,907003707,'admin','admin',null),
 (907004708,907099002,907003708,'admin','admin',null),
 (907004709,907099002,907003709,'admin','admin',null),
-(907004710,907099002,907003710,'admin','admin',null),
+--(907004710,907099002,907003710,'admin','admin',null),
 (907004711,907099002,907003711,'admin','admin',null),
 (907004712,907099002,907003712,'admin','admin',null),
 (907004713,907099002,907003713,'admin','admin',null),
@@ -20608,7 +20608,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004715,907099002,907003715,'admin','admin',null),
 (907004716,907099002,907003716,'admin','admin',null),
 (907004717,907099002,907003717,'admin','admin',null),
-(907004718,907099002,907003718,'admin','admin',null),
+--(907004718,907099002,907003718,'admin','admin',null),
 (907004719,907099002,907003719,'admin','admin',null),
 (907004720,907099002,907003720,'admin','admin',null),
 (907004721,907099002,907003721,'admin','admin',null),
@@ -20619,7 +20619,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004726,907099002,907003726,'admin','admin',null),
 (907004727,907099002,907003727,'admin','admin',null),
 (907004728,907099002,907003728,'admin','admin',null),
-(907004729,907099002,907003729,'admin','admin',null),
+--(907004729,907099002,907003729,'admin','admin',null),
 (907004730,907099002,907003730,'admin','admin',null),
 (907004731,907099002,907003731,'admin','admin',null),
 (907004732,907099002,907003732,'admin','admin',null),
@@ -20630,7 +20630,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004737,907099002,907003737,'admin','admin',null),
 (907004738,907099002,907003738,'admin','admin',null),
 (907004739,907099002,907003739,'admin','admin',null),
-(907004740,907099002,907003740,'admin','admin',null),
+--(907004740,907099002,907003740,'admin','admin',null),
 (907004741,907099002,907003741,'admin','admin',null),
 (907004742,907099002,907003742,'admin','admin',null),
 (907004743,907099002,907003743,'admin','admin',null),
@@ -20645,7 +20645,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004752,907099002,907003752,'admin','admin',null),
 (907004753,907099002,907003753,'admin','admin',null),
 (907004754,907099002,907003754,'admin','admin',null),
-(907004755,907099002,907003755,'admin','admin',null),
+--(907004755,907099002,907003755,'admin','admin',null),
 (907004756,907099002,907003756,'admin','admin',null),
 (907004757,907099002,907003757,'admin','admin',null),
 (907004758,907099002,907003758,'admin','admin',null),
@@ -20653,7 +20653,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004760,907099002,907003760,'admin','admin',null),
 (907004761,907099002,907003761,'admin','admin',null),
 (907004762,907099002,907003762,'admin','admin',null),
-(907004763,907099002,907003763,'admin','admin',null),
+--(907004763,907099002,907003763,'admin','admin',null),
 (907004764,907099002,907003764,'admin','admin',null),
 (907004765,907099002,907003765,'admin','admin',null),
 (907004766,907099002,907003766,'admin','admin',null),
@@ -20666,7 +20666,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004773,907099002,907003773,'admin','admin',null),
 (907004774,907099002,907003774,'admin','admin',null),
 (907004775,907099002,907003775,'admin','admin',null),
-(907004776,907099002,907003776,'admin','admin',null),
+--(907004776,907099002,907003776,'admin','admin',null),
 (907004777,907099002,907003777,'admin','admin',null),
 (907004778,907099002,907003778,'admin','admin',null),
 (907004779,907099002,907003779,'admin','admin',null),
@@ -20674,7 +20674,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004781,907099002,907003781,'admin','admin',null),
 (907004782,907099002,907003782,'admin','admin',null),
 (907004783,907099002,907003783,'admin','admin',null),
-(907004784,907099002,907003784,'admin','admin',null),
+--(907004784,907099002,907003784,'admin','admin',null),
 (907004785,907099002,907003785,'admin','admin',null),
 (907004786,907099002,907003786,'admin','admin',null),
 (907004787,907099002,907003787,'admin','admin',null),
@@ -20682,7 +20682,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004789,907099002,907003789,'admin','admin',null),
 (907004790,907099002,907003790,'admin','admin',null),
 (907004791,907099002,907003791,'admin','admin',null),
-(907004792,907099002,907003792,'admin','admin',null),
+--(907004792,907099002,907003792,'admin','admin',null),
 (907004793,907099002,907003793,'admin','admin',null),
 (907004794,907099002,907003794,'admin','admin',null),
 (907004795,907099002,907003795,'admin','admin',null),
@@ -20690,7 +20690,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004797,907099002,907003797,'admin','admin',null),
 (907004798,907099002,907003798,'admin','admin',null),
 (907004799,907099002,907003799,'admin','admin',null),
-(907004800,907099002,907003800,'admin','admin',null),
+--(907004800,907099002,907003800,'admin','admin',null),
 (907004801,907099002,907003801,'admin','admin',null),
 (907004802,907099002,907003802,'admin','admin',null),
 (907004803,907099002,907003803,'admin','admin',null),
@@ -20698,14 +20698,14 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004805,907099002,907003805,'admin','admin',null),
 (907004806,907099002,907003806,'admin','admin',null),
 (907004807,907099002,907003807,'admin','admin',null),
-(907004808,907099002,907003808,'admin','admin',null),
+--(907004808,907099002,907003808,'admin','admin',null),
 (907004809,907099002,907003809,'admin','admin',null),
 (907004810,907099002,907003810,'admin','admin',null),
 (907004811,907099002,907003811,'admin','admin',null),
 (907004812,907099002,907003812,'admin','admin',null),
 (907004813,907099002,907003813,'admin','admin',null),
 (907004814,907099002,907003814,'admin','admin',null),
-(907004815,907099002,907003815,'admin','admin',null),
+--(907004815,907099002,907003815,'admin','admin',null),
 (907004816,907099002,907003816,'admin','admin',null),
 (907004817,907099002,907003817,'admin','admin',null),
 (907004818,907099002,907003818,'admin','admin',null),
@@ -20730,11 +20730,11 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004837,907099002,907003837,'admin','admin',null),
 (907004838,907099002,907003838,'admin','admin',null),
 (907004839,907099002,907003839,'admin','admin',null),
-(907004840,907099002,907003840,'admin','admin',null),
+--(907004840,907099002,907003840,'admin','admin',null),
 (907004841,907099002,907003841,'admin','admin',null),
 (907004842,907099002,907003842,'admin','admin',null),
 (907004843,907099002,907003843,'admin','admin',null),
-(907004844,907099002,907003844,'admin','admin',null),
+--(907004844,907099002,907003844,'admin','admin',null),
 (907004845,907099002,907003845,'admin','admin',null),
 (907004846,907099002,907003846,'admin','admin',null),
 (907004847,907099002,907003847,'admin','admin',null),
@@ -23242,7 +23242,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (903004060,903099002,903003060,'admin','admin',null),
 (903004061,903099002,903003061,'admin','admin',null),
 (903004062,903099002,903003062,'admin','admin',null),
-(903004063,903099002,903003063,'admin','admin',null),
+--(903004063,903099002,903003063,'admin','admin',null),
 (903004064,903099002,903003064,'admin','admin',null),
 (903004065,903099002,903003065,'admin','admin',null),
 (903004066,903099002,903003066,'admin','admin',null),
@@ -23758,7 +23758,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (902003002, '空间-位置点（资源点）必填完整性核查', 'DIMS_KJ_01002', 1002, 902001002, '空间', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001002, 1, NULL),
 (902003003, '空间-机房必填完整性核查', 'DIMS_KJ_01003', 1003, 902001003, '空间', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001003, 1, NULL),
 (902003004, '空间-机架位置必填完整性核查', 'DIMS_KJ_01004', 1004, 902001004, '空间', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001004, 1, NULL),
-(902003005, '空间-数据中心必填完整性核查', 'DIMS_KJ_01005', 1005, 902001005, '空间', 5, NULL, NULL, 2, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001005, 1, NULL),
+(902003005, '空间-数据中心必填完整性核查', 'DIMS_KJ_01005', 1005, 902001005, '空间', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 902001005, 1, NULL),
 (902003006, '空间-机房关联性核查-所属站点', 'DIMS_KJ_03001', 3001, 902001003, '空间', 11, NULL, 'update RM_AREA_ROOM t1
 	 set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_03001%'' then dims_col_result
 														 when dims_col_result is null then ''DIMS_KJ_03001''
@@ -23816,7 +23816,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 else dims_col_rtName||'',空间-站点规范性核查-站点名称-唯一性核查'' end)
 													                         where  exists(select 1 from RM_AREA_SITE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, NULL),
 (902003013, '空间-站点规范性核查-站点类别-字典规范性核查', 'DIMS_KJ_02003', 2003, 902001001, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, NULL),
-(902003014, '空间-站点规范性核查-生命周期状态-字典规范性核查', 'DIMS_KJ_02004', 2004, 902001001, '空间', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, NULL),
+(902003014, '空间-站点规范性核查-生命周期状态-字典规范性核查', 'DIMS_KJ_02004', 2004, 902001001, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, NULL),
 (902003015, '空间-位置点（资源点）规范性核查-资源标识-唯一性核查', 'DIMS_KJ_02005', 2005, 902001002, '空间', 11, NULL, 'update RM_AREA_RESPOINT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_02005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_KJ_02005''
@@ -23882,7 +23882,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-数据中心规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-数据中心规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',空间-数据中心规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
 (902003032, '空间-数据中心规范性核查-数据中心名称-唯一性核查', 'DIMS_KJ_02022', 2022, 902001005, '空间', 11, NULL, 'update RM_AREA_DC t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_02022%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_KJ_02022''
@@ -23890,9 +23890,9 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-数据中心规范性核查-数据中心名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-数据中心规范性核查-数据中心名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-数据中心规范性核查-数据中心名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
-(902003033, '空间-数据中心规范性核查-数据中心级别-字典规范性核查', 'DIMS_KJ_02023', 2023, 902001005, '空间', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
-(902003034, '空间-数据中心规范性核查-数据中心类别-字典规范性核查', 'DIMS_KJ_02024', 2024, 902001005, '空间', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
+(902003033, '空间-数据中心规范性核查-数据中心级别-字典规范性核查', 'DIMS_KJ_02023', 2023, 902001005, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
+(902003034, '空间-数据中心规范性核查-数据中心类别-字典规范性核查', 'DIMS_KJ_02024', 2024, 902001005, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
 (902003035, '空间-站点规范性核查-经度-经纬度规范性核查', 'DIMS_KJ_02025', 2025, 902001001, '空间', 11, null, 
 'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_02025%'' then dims_col_result
@@ -23938,7 +23938,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%空间-数据中心规范性核查-经度-经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:空间-数据中心规范性核查-经度-经纬度规范性核查''
                                              else dims_col_rtName||'',空间-数据中心规范性核查-经度-经纬度规范性核查'' end)
-                 where  isnotfloat(longitude) or length(substring( longitude from ''\.(.*)''))<5', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null),
+                 where  isnotfloat(longitude) or length(substring( longitude from ''\.(.*)''))<5', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null),
 
 (902003040, '空间-数据中心规范性核查-纬度-经纬度规范性核查', 'DIMS_KJ_02030', 2030, 902001005, '空间', 11, null, 
 'update RM_AREA_DC t1
@@ -23948,7 +23948,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%空间-数据中心规范性核查-纬度-经纬度规范性核查%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:空间-数据中心规范性核查-纬度-经纬度规范性核查''
                                              else dims_col_rtName||'',空间-数据中心规范性核查-纬度-经纬度规范性核查'' end)
-                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 ', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null),
+                 where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null),
 (902003041, '空间-站点业务合规性核查-站点下无归属机房', 'DIMS_KJ_04001', 4001, 902001001, '空间', 11, null,  
 'update RM_AREA_SITE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_04001%'' then dims_col_result
@@ -23972,7 +23972,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 											 from RM_AREA_RACKPOS t2
 											 where t1.int_id = t2.equiproom_id
 												   and (t1.equiproom_level like ''核心%''
-														or t1.equiproom_level like ''汇聚%''))', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
+														or t1.equiproom_level like ''汇聚%''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
 (902003043, '空间-数据中心业务合规性核查-数据中心下无归属站点', 'DIMS_KJ_04003', 4003, 902001005, '空间', 11, null,  
 'update RM_AREA_DC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_04003%'' then dims_col_result
@@ -23983,7 +23983,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',空间-数据中心业务合规性核查-数据中心下无归属站点'' end)
                  where isNotNull(t1.int_id) and not exists(select 1
 																from RM_AREA_SITE t2
-															   where  t1.int_id = t2.related_dc)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null);
+															   where  t1.int_id = t2.related_dc)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, null);
 --插入空间 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (902004001, 902099001, 902003001, 'admin', 'admin', null),
@@ -23993,9 +23993,9 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (902004005, 902099001, 902003005, 'admin', 'admin', null),
 (902004006, 902099003, 902003006, 'admin', 'admin', null),
 (902004007, 902099003, 902003007, 'admin', 'admin', null),
-(902004008, 902099003, 902003008, 'admin', 'admin', null),
-(902004009, 902099003, 902003009, 'admin', 'admin', null),
-(902004010, 902099003, 902003010, 'admin', 'admin', null),
+--(902004008, 902099003, 902003008, 'admin', 'admin', null),
+--(902004009, 902099003, 902003009, 'admin', 'admin', null),
+--(902004010, 902099003, 902003010, 'admin', 'admin', null),
 (902004011, 902099002, 902003011, 'admin', 'admin', null),
 (902004012, 902099002, 902003012, 'admin', 'admin', null),
 (902004013, 902099002, 902003013, 'admin', 'admin', null),
@@ -24245,7 +24245,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (900003003, '公共-ODM模块必填完整性核查', 'DIMS_GG_01003', 1003, 900001003, '公共', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001003, 1, NULL),
 (900003004, '公共-DDF端子必填完整性核查', 'DIMS_GG_01004', 1004, 900001004, '公共', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001004, 1, NULL),
 (900003005, '公共-ODF端子必填完整性核查', 'DIMS_GG_01005', 1005, 900001005, '公共', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001005, 1, NULL),
-(900003006, '公共-U位必填完整性核查', 'DIMS_GG_01006', 1006, 900001006, '公共', 5, NULL, NULL, 2, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001006, 1, NULL),
+(900003006, '公共-U位必填完整性核查', 'DIMS_GG_01006', 1006, 900001006, '公共', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 900001006, 1, NULL),
 (900003007, '公共-机架关联性核查-所属机房/资源点', 'DIMS_GG_03001', 3001, 900001001, '公共', 11, NULL, 'update CM_DEVICE_RACK t1
 	 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_03001%'' then dims_col_result
 														 when dims_col_result is null then ''DIMS_GG_03001''
@@ -24300,7 +24300,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-U位关联性核查-所属机架%'' then dims_col_rtName
 														 when dims_col_rtName is null then ''公共-U位关联性核查-所属机架''
 														 else dims_col_rtName||'',公共-U位关联性核查-所属机架'' end)
- where isNotNull(t1.related_rack) and not exists(select 1 from CM_DEVICE_RACK t2 where t2.int_id = t1.related_rack)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
+ where isNotNull(t1.related_rack) and not exists(select 1 from CM_DEVICE_RACK t2 where t2.int_id = t1.related_rack)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
 (900003013, '公共-U位关联性核查-所属省份', 'DIMS_GG_03007', 3007, 900001006, '公共', 11, NULL, 'update RM_AREA_UPOS t1
 	 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_03007%'' then dims_col_result
 														 when dims_col_result is null then ''DIMS_GG_03007''
@@ -24332,7 +24332,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 				 dims_col_rtName=(case when dims_col_rtName like ''%公共-U位关联性核查-所属机架位置%'' then dims_col_rtName
 															 when dims_col_rtName is null then ''不满足规范:公共-U位关联性核查-所属机架位置''
 															 else dims_col_rtName||'',公共-U位关联性核查-所属机架位置'' end)
-	 where isNotNull(t1.related_rackposition) and not exists(select 1 from RM_AREA_RACKPOS t2 where t2.int_id = t1.related_rackposition)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
+	 where isNotNull(t1.related_rackposition) and not exists(select 1 from RM_AREA_RACKPOS t2 where t2.int_id = t1.related_rackposition)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
 (900003017, '公共-机架规范性核查-资源标识-唯一性核查', 'DIMS_GG_02001', 2001, 900001001, '公共', 11, NULL, 'update CM_DEVICE_RACK t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02001%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02001''
@@ -24340,7 +24340,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-机架规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-机架规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-机架规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_DEVICE_RACK t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_DEVICE_RACK Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
 (900003018, '公共-机架规范性核查-机架名称-唯一性核查', 'DIMS_GG_02002', 2002, 900001001, '公共', 11, NULL, 'update CM_DEVICE_RACK t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02002%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02002''
@@ -24348,7 +24348,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-机架规范性核查-机架名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-机架规范性核查-机架名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-机架规范性核查-机架名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_DEVICE_RACK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_DEVICE_RACK Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
 (900003019, '公共-机架规范性核查-机架类型-字典规范性核查', 'DIMS_GG_02003', 2003, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
 (900003020, '公共-机架规范性核查-生命周期状态-字典规范性核查', 'DIMS_GG_02004', 2004, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
 (900003021, '公共-机架规范性核查-所属空间类型-字典规范性核查', 'DIMS_GG_02005', 2005, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
@@ -24359,7 +24359,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDM模块规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDM模块规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDM模块规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_DDM t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
+													                         where int_id in ( Select int_id  From CE_WARE_DDM Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
 (900003023, '公共-DDM模块规范性核查-DDM模块名称-唯一性核查', 'DIMS_GG_02007', 2007, 900001002, '公共', 11, NULL, 'update CE_WARE_DDM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02007''
@@ -24367,7 +24367,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDM模块规范性核查-DDM模块名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDM模块规范性核查-DDM模块名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDM模块规范性核查-DDM模块名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_DDM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CE_WARE_DDM Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
 (900003024, '公共-ODM模块规范性核查-资源标识-唯一性核查', 'DIMS_GG_02008', 2008, 900001003, '公共', 11, NULL, 'update CE_WARE_ODM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02008%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02008''
@@ -24375,7 +24375,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODM模块规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODM模块规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODM模块规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_ODM t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
+													                         where int_id in ( Select int_id  From CE_WARE_ODM Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
 (900003025, '公共-ODM模块规范性核查-ODM模块名称-唯一性核查', 'DIMS_GG_02009', 2009, 900001003, '公共', 11, NULL, 'update CE_WARE_ODM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02009%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02009''
@@ -24383,7 +24383,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODM模块规范性核查-ODM模块名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODM模块规范性核查-ODM模块名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODM模块规范性核查-ODM模块名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_WARE_ODM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CE_WARE_ODM Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
 (900003026, '公共-ODM模块规范性核查-所属设备类型-字典规范性核查', 'DIMS_GG_02010', 2010, 900001003, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001003, 1, NULL),
 (900003027, '公共-DDF端子规范性核查-资源标识-唯一性核查', 'DIMS_GG_02011', 2011, 900001004, '公共', 11, NULL, 'update CM_PORT_DDF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02011%'' then dims_col_result
@@ -24392,7 +24392,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDF端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDF端子规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDF端子规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_DDF t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_PORT_DDF Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
 (900003028, '公共-DDF端子规范性核查-DDF端子名称-唯一性核查', 'DIMS_GG_02012', 2012, 900001004, '公共', 11, NULL, 'update CM_PORT_DDF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02012%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02012''
@@ -24400,7 +24400,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDF端子规范性核查-DDF端子名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-DDF端子规范性核查-DDF端子名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-DDF端子规范性核查-DDF端子名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_DDF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_PORT_DDF Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
 (900003029, '公共-DDF端子规范性核查-端子状态-字典规范性核查', 'DIMS_GG_02013', 2013, 900001004, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001004, 1, NULL),
 (900003030, '公共-ODF端子规范性核查-资源标识-唯一性核查', 'DIMS_GG_02014', 2014, 900001005, '公共', 11, NULL, 'update CM_PORT_ODF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02014%'' then dims_col_result
@@ -24409,7 +24409,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODF端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODF端子规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODF端子规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
+													                         where int_id in ( Select int_id  From CM_PORT_ODF Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
 (900003031, '公共-ODF端子规范性核查-ODF端子名称-唯一性核查', 'DIMS_GG_02015', 2015, 900001005, '公共', 11, NULL, 'update CM_PORT_ODF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02015%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GG_02015''
@@ -24417,7 +24417,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODF端子规范性核查-ODF端子名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-ODF端子规范性核查-ODF端子名称-唯一性核查''
 																											 else dims_col_rtName||'',公共-ODF端子规范性核查-ODF端子名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
+													                         where zh_label in ( Select zh_label  From CM_PORT_ODF Group By zh_label Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
 (900003032, '公共-ODF端子规范性核查-端子状态-字典规范性核查', 'DIMS_GG_02016', 2016, 900001005, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001005, 1, NULL),
 (900003033, '公共-U位规范性核查-资源标识-唯一性核查', 'DIMS_GG_02017', 2017, 900001006, '公共', 11, NULL, 'update RM_AREA_UPOS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_02017%'' then dims_col_result
@@ -24426,11 +24426,11 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%公共-U位规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:公共-U位规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',公共-U位规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_UPOS t2 where t2.ctid <> t1.ctid and t2.int_id = t1.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
-(900003034, '公共-U位规范性核查-业务状态-字典规范性核查', 'DIMS_GG_02018', 2018, 900001006, '公共', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001006, 1, NULL),
-(900003035, '公共-机架规范性核查-产权性质-字典规范性核查', 'DIMS_GG_02019', 2019, 900001001, '公共', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
-(900003036, '公共-机架规范性核查-产权单位-字典规范性核查', 'DIMS_GG_02020', 2020, 900001001, '公共', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
-(900003037, '公共-机架规范性核查-单双面-字典规范性核查', 'DIMS_GG_02021', 2021, 900001001, '公共', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
+													                         where int_id in ( Select int_id  From RM_AREA_UPOS Group By int_id Having Count(*) > 1)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
+(900003034, '公共-U位规范性核查-业务状态-字典规范性核查', 'DIMS_GG_02018', 2018, 900001006, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001006, 1, NULL),
+(900003035, '公共-机架规范性核查-产权性质-字典规范性核查', 'DIMS_GG_02019', 2019, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
+(900003036, '公共-机架规范性核查-产权单位-字典规范性核查', 'DIMS_GG_02020', 2020, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
+(900003037, '公共-机架规范性核查-单双面-字典规范性核查', 'DIMS_GG_02021', 2021, 900001001, '公共', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 900001001, 1, NULL),
 (900003038, '公共-DDM模块业务合规性核查-DDM模块下无归属DDM端子', 'DIMS_GG_04001', 4001, 900001002, '公共', 11, null,
 'update CE_WARE_DDM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GG_04001%'' then dims_col_result
@@ -24468,9 +24468,9 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (900004010, 900099003, 900003010, 'admin', 'admin', null),
 (900004011, 900099003, 900003011, 'admin', 'admin', null),
 (900004012, 900099003, 900003012, 'admin', 'admin', null),
-(900004013, 900099003, 900003013, 'admin', 'admin', null),
-(900004014, 900099003, 900003014, 'admin', 'admin', null),
-(900004015, 900099003, 900003015, 'admin', 'admin', null),
+--(900004013, 900099003, 900003013, 'admin', 'admin', null),
+--(900004014, 900099003, 900003014, 'admin', 'admin', null),
+--(900004015, 900099003, 900003015, 'admin', 'admin', null),
 (900004016, 900099003, 900003016, 'admin', 'admin', null),
 (900004017, 900099002, 900003017, 'admin', 'admin', null),
 (900004018, 900099002, 900003018, 'admin', 'admin', null),
