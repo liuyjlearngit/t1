@@ -1,10 +1,10 @@
 package com.cmdi.dims.service;
 
-import java.util.List;
-import java.util.Map;
-
 import com.cmdi.dims.service.vo.FileLocationVo;
 import com.cmdi.dims.service.vo.TaskVo;
+
+import java.util.List;
+import java.util.Map;
 
 public interface DataService {
 
@@ -21,4 +21,7 @@ public interface DataService {
     void saveStorage(List<Map<String, Object>> indices, List<Map<String, Object>> storages);
 
     void cleanStorage(String taskCode);
+
+    Double getIndexValue(String province,String taskCode) ;
+    String getRemotePath(String taskCode) ;
 }

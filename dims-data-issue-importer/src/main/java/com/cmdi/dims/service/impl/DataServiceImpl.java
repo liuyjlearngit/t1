@@ -1,20 +1,20 @@
 package com.cmdi.dims.service.impl;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
+import com.cmdi.dims.service.DataService;
 import com.cmdi.dims.service.vo.FileLocationVo;
 import com.cmdi.dims.service.vo.TaskVo;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Component;
 
-import com.cmdi.dims.service.DataService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class DataServiceImpl implements DataService {
@@ -87,6 +87,25 @@ public class DataServiceImpl implements DataService {
         parameter.put("taskCode", taskCode);
         jdbcTemplate.update("DELETE FROM dims_data_index WHERE task_code=:taskCode", parameter);
         jdbcTemplate.update("DELETE FROM dims_data_storage WHERE task_code=:taskCode", parameter);
+    }
+
+    @Override
+    public Double getIndexValue(String province,String taskCode) {
+        String statement = "SELECT indexvalue from dims_tm_taskitem_index where provincecode=:province AND taskcode=:taskCode order by code desc limit 1";
+        Map<String, Object> parameter = new HashMap<>();
+        parameter.put("taskCode", taskCode);
+        parameter.put("province", province);
+        Double indexValue = jdbcTemplate.queryForObject(statement,parameter,java.lang.Double.class);
+        return indexValue*100;
+    }
+
+    @Override
+    public String getRemotePath(String taskCode) {
+        String statement = "SELECT code from dims_tm_taskitem_file where taskcode=:taskCode limit 1";
+        Map<String, Object> parameter = new HashMap<>();
+        parameter.put("taskCode", taskCode);
+        String path = jdbcTemplate.queryForObject(statement,parameter,java.lang.String.class);
+        return StringUtils.substringBeforeLast(path,"/");
     }
 
     public void saveStorage(List<Map<String, Object>> storages) {
