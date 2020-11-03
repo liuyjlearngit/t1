@@ -807,7 +807,7 @@ create index if not exists idx_HSS_BE_related_lstp on HSS_BE(related_lstp);
 create index if not exists idx_HSS_BE_related_dra on HSS_BE(related_dra);
 --传输管线ddl
 drop table if exists CE_DEVICE_GJ;
-drop table if exists TSGX_CE_DEVICE_GF;
+drop table if exists CSGX_CE_DEVICE_GF;
 drop table if exists CE_DEVICE_GB;
 drop table if exists CE_DEVICE_JT;
 drop table if exists CM_PORT_FIBER;
@@ -855,7 +855,7 @@ CREATE TABLE CE_DEVICE_GJ (
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );
-CREATE TABLE TSGX_CE_DEVICE_GF (
+CREATE TABLE CSGX_CE_DEVICE_GF (
 	resfdn VARCHAR (500),
 	zh_label VARCHAR (500),
 	lifecycle_status VARCHAR (500),
@@ -1311,7 +1311,7 @@ CREATE TABLE CR_LAYINGSEGMENT_CABLE (
     dims_col_rtName TEXT 
 );
 create index if not exists idx_CE_DEVICE_GJ2resfdn on CE_DEVICE_GJ(resfdn); 
-create index if not exists idx_CE_DEVICE_GF2resfdn on TSGX_CE_DEVICE_GF(resfdn); 
+create index if not exists idx_CE_DEVICE_GF2resfdn on CSGX_CE_DEVICE_GF(resfdn); 
 create index if not exists idx_CE_DEVICE_GB2resfdn on CE_DEVICE_GB(resfdn); 
 create index if not exists idx_CE_DEVICE_JT2resfdn on CE_DEVICE_JT(resfdn); 
 create index if not exists idx_CM_PORT_FIBER2resfdn on CM_PORT_FIBER(resfdn); 
