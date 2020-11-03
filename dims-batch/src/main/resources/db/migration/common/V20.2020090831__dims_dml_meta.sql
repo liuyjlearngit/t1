@@ -4239,10 +4239,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02004%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02004''
 										  					          else dims_col_result||'',DIMS_CZ_02004'' end)
-							       where isNotNull(t1.ipv4_management_address) and exists (select 1
-                                from CM_DEVICE_IP t2
-                               where t2.ctid <> t1.ctid
-                                 and t2.ipv4_management_address=t1.ipv4_management_address)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
+							       where isNotNull(ipv4_management_address) and is_not_valid_ipaddress_mul(ipv4_management_address)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003104, '承载网-设备规范性核查-生命周期状态-字典规范性核查', 'DIMS_CZ_02005', 2005, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),
  (905003105, '承载网-设备规范性核查-所属业务系统-字典规范性核查', 'DIMS_CZ_02006', 2006, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),
  (905003106, '承载网-设备规范性核查-设备类型-字典规范性核查', 'DIMS_CZ_02007', 2007, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),

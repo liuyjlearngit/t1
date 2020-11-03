@@ -228,6 +228,32 @@ create index if not exists idx_CE_SEGMENT_IP_V4_LOGIC2intId on CE_SEGMENT_IP_V4(
 create index if not exists idx_CE_ADDRESS_IP_V6_LOGIC2intId on CE_ADDRESS_IP_V6(int_id);
 create index if not exists idx_CE_SEGMENT_IP_V6_LOGIC2intId on CE_SEGMENT_IP_V6(int_id);
 
+
+create index if not exists idx_CM_DEVICE_IP2equipment_name on CM_DEVICE_IP(equipment_name);
+create index if not exists idx_CM_WARE_IP_BOARD2int_id on CM_WARE_IP_BOARD(int_id);
+create index if not exists idx_CM_WARE_IP_BOARD2board_name on CM_WARE_IP_BOARD(board_name);
+create index if not exists idx_CE_PORT_IP_PTP2int_id on CE_PORT_IP_PTP(int_id);
+create index if not exists idx_CE_PORT_IP_PTP2physical_port_name on CE_PORT_IP_PTP(physical_port_name);
+create index if not exists idx_CE_PORT_IP_FTP2logical_port_name on CE_PORT_IP_FTP(logical_port_name);
+create index if not exists idx_CE_LINK_PHYSICS2physical_link_name on CE_LINK_PHYSICS(physical_link_name);
+create index if not exists idx_CE_LINK_IP_LOGIC2logic_link_name on CE_LINK_IP_LOGIC(logic_link_name);
+create index if not exists idx_CE_ADDRESS_IP_V42zh_label on CE_ADDRESS_IP_V4(zh_label);
+create index if not exists idx_CE_SEGMENT_IP_V42zh_label on CE_SEGMENT_IP_V4(zh_label);
+create index if not exists idx_CE_ADDRESS_IP_V62zh_label on CE_ADDRESS_IP_V6(zh_label);
+create index if not exists idx_CE_SEGMENT_IP_V62zh_label on CE_SEGMENT_IP_V6(zh_label);
+create index if not exists idx_CM_DEVICE_IP2rackpos_id on CM_DEVICE_IP(rackpos_id);
+create index if not exists idx_CM_WARE_IP_BOARD2equipment_id on CM_WARE_IP_BOARD(equipment_id);
+create index if not exists idx_CE_PORT_IP_PTP2equipment_id on CE_PORT_IP_PTP(equipment_id);
+create index if not exists idx_CE_LINK_PHYSICS2a_equipment on CE_LINK_PHYSICS(a_equipment);
+create index if not exists idx_CE_LINK_PHYSICS2a_port on CE_LINK_PHYSICS(a_port);
+create index if not exists idx_CE_LINK_PHYSICS2z_equipment on CE_LINK_PHYSICS(z_equipment);
+create index if not exists idx_CE_LINK_IP_LOGIC2a_equipment on CE_LINK_IP_LOGIC(a_equipment);
+create index if not exists idx_CE_LINK_IP_LOGIC2a_port on CE_LINK_IP_LOGIC(a_port);
+create index if not exists idx_CE_LINK_IP_LOGIC2z_equipment on CE_LINK_IP_LOGIC(z_equipment);
+create index if not exists idx_CE_LINK_IP_LOGIC2z_port on CE_LINK_IP_LOGIC(z_port);
+
+
+
 --家客
 DROP TABLE IF EXISTS CM_HOME_CUST_BUSINESS;
 DROP TABLE IF EXISTS CE_BROADBAND_BUSINESS;
