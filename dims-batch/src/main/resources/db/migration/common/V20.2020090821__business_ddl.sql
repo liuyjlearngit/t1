@@ -2199,8 +2199,8 @@ drop table if exists EMS;
 drop table if exists SUBNET;
 drop table if exists TRANSI_SYSTEM;
 drop table if exists DEVICE;
-drop table if exists TSNX_BOARD;
-drop table if exists TSNX_PORT;
+drop table if exists CSNX_BOARD;
+drop table if exists CSNX_PORT;
 drop table if exists LINK_PORT_ODF;
 drop table if exists TOPO;
 drop table if exists OPATH;
@@ -2277,7 +2277,7 @@ CREATE TABLE DEVICE (
     dims_col_rtName TEXT 
 );
 
-CREATE TABLE TSNX_BOARD (
+CREATE TABLE CSNX_BOARD (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
 	related_ne VARCHAR ( 500 ),
@@ -2291,7 +2291,7 @@ CREATE TABLE TSNX_BOARD (
     dims_col_rtName TEXT 
 );
 
-CREATE TABLE TSNX_PORT (
+CREATE TABLE CSNX_PORT (
 	res_identifier VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
 	port_status VARCHAR ( 500 ),
@@ -2685,10 +2685,10 @@ create index if not exists idx_TRANSI_SYSTEM2res_identifier on TRANSI_SYSTEM(res
 create index if not exists idx_TRANSI_SYSTEM2related_omc on TRANSI_SYSTEM(related_omc);
 create index if not exists idx_DEVICE2res_identifier on DEVICE(res_identifier);
 create index if not exists idx_DEVICE2related_postion_related_room on DEVICE(related_postion_related_room);
-create index if not exists idx_BOARD2res_identifier on TSNX_BOARD(res_identifier);
-create index if not exists idx_BOARD2related_ne on TSNX_BOARD(related_ne);
-create index if not exists idx_PORT2res_identifier on TSNX_PORT(res_identifier);
-create index if not exists idx_PORT2related_ne on TSNX_PORT(related_ne);
+create index if not exists idx_BOARD2res_identifier on CSNX_BOARD(res_identifier);
+create index if not exists idx_BOARD2related_ne on CSNX_BOARD(related_ne);
+create index if not exists idx_PORT2res_identifier on CSNX_PORT(res_identifier);
+create index if not exists idx_PORT2related_ne on CSNX_PORT(related_ne);
 create index if not exists idx_LINK_PORT_ODF2res_identifier on LINK_PORT_ODF(res_identifier);
 create index if not exists idx_LINK_PORT_ODF2a_port on LINK_PORT_ODF(a_port);
 create index if not exists idx_LINK_PORT_ODF2z_port on LINK_PORT_ODF(z_port);

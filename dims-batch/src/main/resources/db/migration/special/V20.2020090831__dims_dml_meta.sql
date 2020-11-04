@@ -13734,7 +13734,7 @@ insert into dims_mm_dictionary (ID, DICTIONARYTYPE_ID, DICTKEY, DICTVALUE, CREAT
 --插入传输管线 dims_mm_entitytype
 insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTENSIONTABLE, EXTENSIONATTR, EXTENSIONVALUE, CREATOR, UPDATER, MEMO) values
 (904001001, '光交接箱', 'CE_DEVICE_GJ', '传输管线', null, 'CE_DEVICE_GJ', null, null, 'admin', 'admin', null),
-(904001002, '光分纤箱', 'TSGX_CE_DEVICE_GF', '传输管线', null, 'TSGX_CE_DEVICE_GF', null, null, 'admin', 'admin', null),
+(904001002, '光分纤箱', 'CSGX_CE_DEVICE_GF', '传输管线', null, 'CSGX_CE_DEVICE_GF', null, null, 'admin', 'admin', null),
 (904001003, '光终端盒', 'CE_DEVICE_GB', '传输管线', null, 'CE_DEVICE_GB', null, null, 'admin', 'admin', null),
 (904001004, '分纤接续点（接头）', 'CE_DEVICE_JT', '传输管线', null, 'CE_DEVICE_JT', null, null, 'admin', 'admin', null),
 (904001005, '光端子主表', 'CM_PORT_FIBER', '传输管线', null, 'CM_PORT_FIBER', null, null, 'admin', 'admin', null),
@@ -13780,7 +13780,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (904001316, '分纤点级别', 'fpp_level', 904001001, 'FPP_LEVEL', 'string', 904000078, 'admin', 'admin', null),
 (904001317, '所属市场网格编号', 'market_grid_no', 904001001, 'MARKET_GRID_NO', 'string', null, 'admin', 'admin', null),
 (904001318, '所属流程id', 'process_id', 904001001, 'PROCESS_ID', 'string', null, 'admin', 'admin', null),
---光分纤箱	TSGX_CE_DEVICE_GF
+--光分纤箱	CSGX_CE_DEVICE_GF
 (904001319, '资源标识', 'resfdn', 904001002, 'RESFDN', 'string', null, 'admin', 'admin', null),
 (904001320, '资源名称', 'zh_label', 904001002, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (904001321, '生命周期状态', 'lifecycle_status', 904001002, 'LIFECYCLE_STATUS', 'string', 904000006, 'admin', 'admin', null),
@@ -14218,7 +14218,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱关联性核查-所属区县''
 																											 else dims_col_rtName||'',传输管线-光交接箱关联性核查-所属区县'' end)
 													 where isNotNull(t1.county) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.county)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
-(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003053, '传输管线-光分纤箱关联性核查-所属省份', 'DIMS_GX_03004', 3004, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03004%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03004''
 																											 else dims_col_result||'',DIMS_GX_03004'' end),
@@ -14226,7 +14226,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属省份''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属省份'' end)
 													 where isNotNull(t1.province) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003054, '传输管线-光分纤箱关联性核查-所属地市', 'DIMS_GX_03005', 3005, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03005''
 																											 else dims_col_result||'',DIMS_GX_03005'' end),
@@ -14234,7 +14234,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱关联性核查-所属地市''
 																											 else dims_col_rtName||'',传输管线-光分纤箱关联性核查-所属地市'' end)
 													 where isNotNull(t1.city) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.city)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003055, '传输管线-光分纤箱关联性核查-所属区县', 'DIMS_GX_03006', 3006, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_03006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_03006''
 																											 else dims_col_result||'',DIMS_GX_03006'' end),
@@ -15040,22 +15040,22 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from CE_DEVICE_GJ t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
 (904003141, '传输管线-光交接箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02003', 2003, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
 (904003142, '传输管线-光交接箱规范性核查-单双面-字典规范性核查', 'DIMS_GX_02004', 2004, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
-(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+(904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02006''
 																											 else dims_col_result||'',DIMS_GX_02006'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
-(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update TSGX_CE_DEVICE_GF t1
+													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.resfdn = t1.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+(904003145, '传输管线-光分纤箱规范性核查-资源名称-唯一性核查', 'DIMS_GX_02007', 2007, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02007''
 																											 else dims_col_result||'',DIMS_GX_02007'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from TSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
 (904003146, '传输管线-光分纤箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02008', 2008, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003147, '传输管线-光分纤箱规范性核查-产权性质-字典规范性核查', 'DIMS_GX_02009', 2009, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003148, '传输管线-光分纤箱规范性核查-产权单位-字典规范性核查', 'DIMS_GX_02010', 2010, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
@@ -15439,7 +15439,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',传输管线-光交接箱规范性核查-纬度-经纬度规范性核查'' end)
                  where  isnotfloat(latitude) or length(substring( latitude from ''\.(.*)''))<5 or substr(reverse(latitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, null),
 (904003225, '传输管线-光分纤箱规范性核查-经度-经纬度规范性核查', 'DIMS_GX_02087', 2087, 904001002, '传输管线', 11, null,
-'update TSGX_CE_DEVICE_GF t1
+'update CSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02087''
                                              else dims_col_result||'',DIMS_GX_02087'' end),
@@ -15448,7 +15448,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              else dims_col_rtName||'',传输管线-光分纤箱规范性核查-经度-经纬度规范性核查'' end)
                  where  isnotfloat(longitude) or length(substring( longitude from ''\.(.*)''))<5 or substr(reverse(longitude),1,1) = ''0''', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, null),
 (904003226, '传输管线-光分纤箱规范性核查-纬度-经纬度规范性核查', 'DIMS_GX_02088', 2088, 904001002, '传输管线', 11, null,
-'update TSGX_CE_DEVICE_GF t1
+'update CSGX_CE_DEVICE_GF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02088%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_GX_02088''
                                              else dims_col_result||'',DIMS_GX_02088'' end),
@@ -15807,19 +15807,19 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (904005511, '传输管线-光交接箱必填完整性核查.所属区县', 'CE_DEVICE_GJ.county', 904003001, 904001312, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005512, '传输管线-光交接箱必填完整性核查.规格型号', 'CE_DEVICE_GJ.specifications', 904003001, 904001314, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005513, '传输管线-光交接箱必填完整性核查.安装容量', 'CE_DEVICE_GJ.cm_install_capacity', 904003001, 904001315, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'TSGX_CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'TSGX_CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'TSGX_CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'TSGX_CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'TSGX_CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'TSGX_CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'TSGX_CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'TSGX_CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'TSGX_CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'TSGX_CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'TSGX_CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'TSGX_CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
-(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'TSGX_CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005514, '传输管线-光分纤箱必填完整性核查.资源标识', 'CSGX_CE_DEVICE_GF.resfdn', 904003002, 904001319, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005515, '传输管线-光分纤箱必填完整性核查.资源名称', 'CSGX_CE_DEVICE_GF.zh_label', 904003002, 904001320, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005516, '传输管线-光分纤箱必填完整性核查.生命周期状态', 'CSGX_CE_DEVICE_GF.lifecycle_status', 904003002, 904001321, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005517, '传输管线-光分纤箱必填完整性核查.入网时间', 'CSGX_CE_DEVICE_GF.cutin_date', 904003002, 904001322, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005518, '传输管线-光分纤箱必填完整性核查.经度', 'CSGX_CE_DEVICE_GF.longitude', 904003002, 904001323, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005519, '传输管线-光分纤箱必填完整性核查.纬度', 'CSGX_CE_DEVICE_GF.latitude', 904003002, 904001324, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005520, '传输管线-光分纤箱必填完整性核查.数据质量责任人', 'CSGX_CE_DEVICE_GF.qualitor', 904003002, 904001325, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005521, '传输管线-光分纤箱必填完整性核查.一线数据维护人（代维/一线）', 'CSGX_CE_DEVICE_GF.maintainor', 904003002, 904001326, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005522, '传输管线-光分纤箱必填完整性核查.产权性质', 'CSGX_CE_DEVICE_GF.property_right', 904003002, 904001327, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005523, '传输管线-光分纤箱必填完整性核查.产权单位', 'CSGX_CE_DEVICE_GF.property_unit', 904003002, 904001328, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005524, '传输管线-光分纤箱必填完整性核查.所属省份', 'CSGX_CE_DEVICE_GF.province', 904003002, 904001329, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005525, '传输管线-光分纤箱必填完整性核查.所属地市', 'CSGX_CE_DEVICE_GF.city', 904003002, 904001330, 2, NULL, NULL, 'admin', 'admin', NULL),
+(904005526, '传输管线-光分纤箱必填完整性核查.所属区县', 'CSGX_CE_DEVICE_GF.county', 904003002, 904001331, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005527, '传输管线-光终端盒必填完整性核查.资源标识', 'CE_DEVICE_GB.resfdn', 904003003, 904001334, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005528, '传输管线-光终端盒必填完整性核查.资源名称', 'CE_DEVICE_GB.zh_label', 904003003, 904001335, 2, NULL, NULL, 'admin', 'admin', NULL),
 (904005529, '传输管线-光终端盒必填完整性核查.生命周期状态', 'CE_DEVICE_GB.lifecycle_status', 904003003, 904001336, 2, NULL, NULL, 'admin', 'admin', NULL),
@@ -21155,8 +21155,8 @@ insert into dims_mm_entitytype (ID, NAME, CODE, SPECIALITYNAME, CORETABLE, EXTEN
 (903001002, '子网', 'SUBNET', '传输内线', null, 'SUBNET', null, null, 'admin', 'admin', null),
 (903001003, '传输系统', 'TRANSI_SYSTEM', '传输内线', null, 'TRANSI_SYSTEM', null, null, 'admin', 'admin', null),
 (903001004, '网元', 'DEVICE', '传输内线', null, 'DEVICE', null, null, 'admin', 'admin', null),
-(903001005, '板卡', 'TSNX_BOARD', '传输内线', null, 'TSNX_BOARD', null, null, 'admin', 'admin', null),
-(903001006, '端口', 'TSNX_PORT', '传输内线', null, 'TSNX_PORT', null, null, 'admin', 'admin', null),
+(903001005, '板卡', 'CSNX_BOARD', '传输内线', null, 'CSNX_BOARD', null, null, 'admin', 'admin', null),
+(903001006, '端口', 'CSNX_PORT', '传输内线', null, 'CSNX_PORT', null, null, 'admin', 'admin', null),
 (903001007, '端口与ODF连接', 'LINK_PORT_ODF', '传输内线', null, 'LINK_PORT_ODF', null, null, 'admin', 'admin', null),
 (903001008, '端口连接', 'TOPO', '传输内线', null, 'TOPO', null, null, 'admin', 'admin', null),
 (903001009, '光通道（OCH）（波分）', 'OPATH', '传输内线', null, 'OPATH', null, null, 'admin', 'admin', null),
@@ -21223,7 +21223,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001338, '所属区县', 'county_id', 903001004, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
 (903001646, '起始U位', 'start_u', 903001004, 'START_U', 'string', null, 'admin', 'admin', null),
 (903001647, '占用U位数量', 'occupy_u_count', 903001004, 'OCCUPY_U_COUNT', 'string', null, 'admin', 'admin', null),
---板卡 TSNX_BOARD
+--板卡 CSNX_BOARD
 (903001339, '资源标识', 'res_identifier', 903001005, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001340, '板卡名称', 'zh_label', 903001005, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001341, '所属传输网元', 'related_ne', 903001005, 'RELATED_NE', 'string', null, 'admin', 'admin', null),
@@ -21233,7 +21233,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (903001345, '所属省份', 'province_id', 903001005, 'PROVINCE_ID', 'string', null, 'admin', 'admin', null),
 (903001346, '所属地市', 'city_id', 903001005, 'CITY_ID', 'string', null, 'admin', 'admin', null),
 (903001347, '所属区县', 'county_id', 903001005, 'COUNTY_ID', 'string', null, 'admin', 'admin', null),
---903001006 端口 TSNX_PORT
+--903001006 端口 CSNX_PORT
 (903001348, '资源标识', 'res_identifier', 903001006, 'RES_IDENTIFIER', 'string', null, 'admin', 'admin', null),
 (903001349, '端口名称', 'zh_label', 903001006, 'ZH_LABEL', 'string', null, 'admin', 'admin', null),
 (903001350, '端口状态', 'port_status', 903001006, 'PORT_STATUS', 'string', 903000008, 'admin', 'admin', null),
@@ -21651,38 +21651,38 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (903003039, '传输内线-网元规范性核查-业务级别-字典规范性核查', 'DIMS_TSNX_02013', 2013, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003040, '传输内线-网元规范性核查-设备厂家-字典规范性核查', 'DIMS_TSNX_02014', 2014, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003041, '传输内线-网元规范性核查-生命周期状态-字典规范性核查', 'DIMS_TSNX_02015', 2015, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
-(903003042, '传输内线-板卡规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02016', 2016, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
+(903003042, '传输内线-板卡规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02016', 2016, 903001005, '传输内线', 11, NULL, 'update CSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02016%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02016''
 																											 else dims_col_result||'',DIMS_TSNX_02016'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-板卡规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from TSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003043, '传输内线-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_TSNX_02017', 2017, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
+													                         where  exists(select 1 from CSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
+(903003043, '传输内线-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_TSNX_02017', 2017, 903001005, '传输内线', 11, NULL, 'update CSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02017%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02017''
 																											 else dims_col_result||'',DIMS_TSNX_02017'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-板卡规范性核查-板卡名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡规范性核查-板卡名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-板卡规范性核查-板卡名称-唯一性核查'' end)
-													                         where  exists(select 1 from TSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003044, '传输内线-端口规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02018', 2018, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
+													                         where  exists(select 1 from CSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
+(903003044, '传输内线-端口规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02018', 2018, 903001006, '传输内线', 11, NULL, 'update CSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02018''
 																											 else dims_col_result||'',DIMS_TSNX_02018'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口规范性核查-资源标识-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口规范性核查-资源标识-唯一性核查'' end)
-													                         where  exists(select 1 from TSNX_PORT t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
-(903003045, '传输内线-端口规范性核查-端口名称-唯一性核查', 'DIMS_TSNX_02019', 2019, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
+													                         where  exists(select 1 from CSNX_PORT t2 where t2.ctid <> t1.ctid and t2.res_identifier = t1.res_identifier)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
+(903003045, '传输内线-端口规范性核查-端口名称-唯一性核查', 'DIMS_TSNX_02019', 2019, 903001006, '传输内线', 11, NULL, 'update CSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02019%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02019''
 																											 else dims_col_result||'',DIMS_TSNX_02019'' end),
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口规范性核查-端口名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口规范性核查-端口名称-唯一性核查'' end)
-													                         where  exists(select 1 from TSNX_PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
+													                         where  exists(select 1 from CSNX_PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
 (903003046, '传输内线-端口规范性核查-端口状态-字典规范性核查', 'DIMS_TSNX_02020', 2020, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003047, '传输内线-端口规范性核查-端口速率-字典规范性核查', 'DIMS_TSNX_02021', 2021, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003048, '传输内线-端口规范性核查-端口组网类型-字典规范性核查', 'DIMS_TSNX_02022', 2022, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
@@ -22018,7 +22018,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003105, '传输内线-MtnChannel(SPN)规范性核查-激活标识-字典规范性核查', 'DIMS_TSNX_02079', 2079, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003106, '传输内线-MtnChannel(SPN)规范性核查-带宽-字典规范性核查', 'DIMS_TSNX_02080', 2080, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
-(903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update TSNX_BOARD t1
+(903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update CSNX_BOARD t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03004%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03004''
 																											 else dims_col_result||'',DIMS_TSNX_03004'' end),
@@ -22026,7 +22026,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡关联性核查-所属传输网元''
 																											 else dims_col_rtName||'',传输内线-板卡关联性核查-所属传输网元'' end)
 													 where isNotNull(t1.related_ne) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
-(903003108, '传输内线-端口关联性核查-所属传输网元', 'DIMS_TSNX_03005', 3005, 903001006, '传输内线', 11, NULL, 'update TSNX_PORT t1
+(903003108, '传输内线-端口关联性核查-所属传输网元', 'DIMS_TSNX_03005', 3005, 903001006, '传输内线', 11, NULL, 'update CSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03005%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03005''
 																											 else dims_col_result||'',DIMS_TSNX_03005'' end),
@@ -22041,7 +22041,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口与ODF连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口与ODF连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口与ODF连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
 (903003110, '传输内线-端口连接关联性核查-A端设备', 'DIMS_TSNX_03008', 3008, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03008%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03008''
@@ -22057,7 +22057,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003112, '传输内线-端口连接关联性核查-Z端设备', 'DIMS_TSNX_03010', 3010, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03010%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03010''
@@ -22073,7 +22073,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003114, '传输内线-波分光通道关联性核查-A端设备', 'DIMS_TSNX_03013', 3013, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03013%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03013''
@@ -22089,7 +22089,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003116, '传输内线-波分光通道关联性核查-Z端设备', 'DIMS_TSNX_03015', 3015, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03015%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03015''
@@ -22105,7 +22105,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003118, '传输内线-波分光传送段关联性核查-A端端口', 'DIMS_TSNX_03017', 3017, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03017%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03017''
@@ -22113,7 +22113,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003119, '传输内线-波分光传送段关联性核查-Z端端口', 'DIMS_TSNX_03018', 3018, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03018''
@@ -22121,7 +22121,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003120, '传输内线-波分复用段关联性核查-A端端口', 'DIMS_TSNX_03019', 3019, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03019%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03019''
@@ -22129,7 +22129,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分复用段关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分复用段关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分复用段关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
 (903003121, '传输内线-波分复用段关联性核查-Z端端口', 'DIMS_TSNX_03020', 3020, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03020%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03020''
@@ -22137,7 +22137,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分复用段关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分复用段关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分复用段关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
 (903003122, '传输内线-波分业务通道关联性核查-A端端口', 'DIMS_TSNX_03021', 3021, 903001012, '传输内线', 11, NULL, 'update SERVICE_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03021%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03021''
@@ -22145,7 +22145,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分业务通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分业务通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
 (903003123, '传输内线-波分业务通道关联性核查-Z端端口', 'DIMS_TSNX_03022', 3022, 903001012, '传输内线', 11, NULL, 'update SERVICE_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03022%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03022''
@@ -22153,7 +22153,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分业务通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分业务通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
 (903003124, '传输内线-SDH通道关联性核查-A端设备', 'DIMS_TSNX_03023', 3023, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03023%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03023''
@@ -22169,7 +22169,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003126, '传输内线-SDH通道关联性核查-Z端设备', 'DIMS_TSNX_03025', 3025, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03025%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03025''
@@ -22185,7 +22185,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003128, '传输内线-隧道关联性核查-A端设备', 'DIMS_TSNX_03027', 3027, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03027%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03027''
@@ -22201,7 +22201,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003130, '传输内线-隧道关联性核查-Z端设备', 'DIMS_TSNX_03029', 3029, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03029%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03029''
@@ -22218,7 +22218,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003132, '传输内线-伪线关联性核查-A端设备', 'DIMS_TSNX_03031', 3031, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03031%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03031''
@@ -22234,7 +22234,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 
 (903003134, '传输内线-伪线关联性核查-Z端设备', 'DIMS_TSNX_03033', 3033, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03033%'' then dims_col_result
@@ -22251,7 +22251,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003136, '传输内线-传输电路关联性核查-A端传输网元', 'DIMS_TSNX_03035', 3035, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03035%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03035''
@@ -22267,7 +22267,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输电路关联性核查-A端传输网元端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输电路关联性核查-A端传输网元端口''
 																											 else dims_col_rtName||'',传输内线-传输电路关联性核查-A端传输网元端口'' end)
-													 where isNotNull(t1.a_trans_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
+													 where isNotNull(t1.a_trans_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
 (903003138, '传输内线-传输电路关联性核查-Z端传输网元', 'DIMS_TSNX_03037', 3037, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03037%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03037''
@@ -22283,7 +22283,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输电路关联性核查-Z端传输网元端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输电路关联性核查-Z端传输网元端口''
 																											 else dims_col_rtName||'',传输内线-传输电路关联性核查-Z端传输网元端口'' end)
-													 where isNotNull(t1.z_trans_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
+													 where isNotNull(t1.z_trans_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_trans_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
 (903003140, '传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在网元名称', 'DIMS_TSNX_03041', 3041, 903001019, '传输内线', 11, NULL, 'update L3VPN_AP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03041%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03041''
@@ -22299,7 +22299,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称''
 																											 else dims_col_rtName||'',传输内线-L3VPN-接入点(SPN)关联性核查-接入点所在端口名称'' end)
-													 where isNotNull(t1.port_id) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.port_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
+													 where isNotNull(t1.port_id) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.port_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
 (903003142, '传输内线-SR隧道业务(SPN)关联性核查-源端网元', 'DIMS_TSNX_03044', 3044, 903001020, '传输内线', 11, NULL, 'update SR_TUNNEL_SER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03044%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03044''
@@ -22347,7 +22347,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-IGP连接(SPN)关联性核查-连接起点端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-IGP连接(SPN)关联性核查-连接起点端口''
 																											 else dims_col_rtName||'',传输内线-IGP连接(SPN)关联性核查-连接起点端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
 (903003148, '传输内线-IGP连接(SPN)关联性核查-连接终点网元', 'DIMS_TSNX_03052', 3052, 903001023, '传输内线', 11, NULL, 'update IGP_LINK_INFO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03052%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03052''
@@ -22363,7 +22363,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-IGP连接(SPN)关联性核查-连接终点端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-IGP连接(SPN)关联性核查-连接终点端口''
 																											 else dims_col_rtName||'',传输内线-IGP连接(SPN)关联性核查-连接终点端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001023, 1, NULL),
 (903003150, '传输内线-MtnGroup(SPN)关联性核查-Mtn Group所属网元', 'DIMS_TSNX_03054', 3054, 903001025, '传输内线', 11, NULL, 'update MTN_GROUP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03054%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03054''
@@ -22387,7 +22387,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-源端Mtn client口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003153, '传输内线-MtnChannel(SPN)关联性核查-宿端网元', 'DIMS_TSNX_03057', 3057, 903001026, '传输内线', 11, NULL, 'update MTN_CHANNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03057%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03057''
@@ -22403,7 +22403,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)关联性核查-宿端Mtn client口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from TSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003155, '传输内线-子网关联性核查-所属EMS', 'DIMS_TSNX_03001', 3001, 903001002, '传输内线', 11, NULL, 'update SUBNET t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03001%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03001''
@@ -22674,19 +22674,19 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (903005512, '传输内线-传输系统必填完整性核查.系统设计容量', 'TRANSI_SYSTEM.designed_capacity', 903003003, 903001317, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005513, '传输内线-传输系统必填完整性核查.系统层级', 'TRANSI_SYSTEM.system_level', 903003003, 903001318, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005514, '传输内线-传输系统必填完整性核查.所属EMS', 'TRANSI_SYSTEM.related_omc', 903003003, 903001319, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005515, '传输内线-板卡必填完整性核查.资源标识', 'TSNX_BOARD.res_identifier', 903003004, 903001339, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005516, '传输内线-板卡必填完整性核查.板卡名称', 'TSNX_BOARD.zh_label', 903003004, 903001340, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005517, '传输内线-板卡必填完整性核查.所属传输网元', 'TSNX_BOARD.related_ne', 903003004, 903001341, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005518, '传输内线-板卡必填完整性核查.所属槽位', 'TSNX_BOARD.related_solt', 903003004, 903001342, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005519, '传输内线-板卡必填完整性核查.板卡型号', 'TSNX_BOARD.board_model', 903003004, 903001343, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005520, '传输内线-板卡必填完整性核查.软件版本', 'TSNX_BOARD.soft_version', 903003004, 903001344, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005521, '传输内线-端口必填完整性核查.资源标识', 'TSNX_PORT.res_identifier', 903003005, 903001348, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005522, '传输内线-端口必填完整性核查.端口名称', 'TSNX_PORT.zh_label', 903003005, 903001349, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005523, '传输内线-端口必填完整性核查.端口状态', 'TSNX_PORT.port_status', 903003005, 903001350, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005524, '传输内线-端口必填完整性核查.所属传输网元', 'TSNX_PORT.related_ne', 903003005, 903001351, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005525, '传输内线-端口必填完整性核查.端口速率', 'TSNX_PORT.port_rate', 903003005, 903001354, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005526, '传输内线-端口必填完整性核查.端口组网类型', 'TSNX_PORT.port_net_type', 903003005, 903001355, 2, NULL, NULL, 'admin', 'admin', NULL),
-(903005527, '传输内线-端口必填完整性核查.端口模块类型', 'TSNX_PORT.physics_type', 903003005, 903001356, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005515, '传输内线-板卡必填完整性核查.资源标识', 'CSNX_BOARD.res_identifier', 903003004, 903001339, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005516, '传输内线-板卡必填完整性核查.板卡名称', 'CSNX_BOARD.zh_label', 903003004, 903001340, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005517, '传输内线-板卡必填完整性核查.所属传输网元', 'CSNX_BOARD.related_ne', 903003004, 903001341, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005518, '传输内线-板卡必填完整性核查.所属槽位', 'CSNX_BOARD.related_solt', 903003004, 903001342, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005519, '传输内线-板卡必填完整性核查.板卡型号', 'CSNX_BOARD.board_model', 903003004, 903001343, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005520, '传输内线-板卡必填完整性核查.软件版本', 'CSNX_BOARD.soft_version', 903003004, 903001344, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005521, '传输内线-端口必填完整性核查.资源标识', 'CSNX_PORT.res_identifier', 903003005, 903001348, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005522, '传输内线-端口必填完整性核查.端口名称', 'CSNX_PORT.zh_label', 903003005, 903001349, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005523, '传输内线-端口必填完整性核查.端口状态', 'CSNX_PORT.port_status', 903003005, 903001350, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005524, '传输内线-端口必填完整性核查.所属传输网元', 'CSNX_PORT.related_ne', 903003005, 903001351, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005525, '传输内线-端口必填完整性核查.端口速率', 'CSNX_PORT.port_rate', 903003005, 903001354, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005526, '传输内线-端口必填完整性核查.端口组网类型', 'CSNX_PORT.port_net_type', 903003005, 903001355, 2, NULL, NULL, 'admin', 'admin', NULL),
+(903005527, '传输内线-端口必填完整性核查.端口模块类型', 'CSNX_PORT.physics_type', 903003005, 903001356, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005528, '传输内线-端口与ODF连接必填完整性核查.资源标识', 'LINK_PORT_ODF.res_identifier', 903003006, 903001362, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005529, '传输内线-端口与ODF连接必填完整性核查.资源名称', 'LINK_PORT_ODF.zh_label', 903003006, 903001363, 2, NULL, NULL, 'admin', 'admin', NULL),
 (903005530, '传输内线-端口与ODF连接必填完整性核查.A端端口', 'LINK_PORT_ODF.a_port', 903003006, 903001364, 2, NULL, NULL, 'admin', 'admin', NULL),
@@ -23580,7 +23580,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_rtName is null then ''公共-ODM模块关联性核查-所属设备''
 														 else dims_col_rtName||'',公共-ODM模块关联性核查-所属设备'' end)
  where isNotNull(t1.related_device_id) and not exists(select 1
-														from CE_DEVICE_GJ t2,TSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
+														from CE_DEVICE_GJ t2,CSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
 													   where  t1.related_device_id = t2.resfdn
 															  or t1.related_device_id = t3.resfdn
 															  or t1.related_device_id = t4.resfdn
