@@ -18,10 +18,7 @@ import org.springframework.integration.sftp.session.SftpSession;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,24 +30,32 @@ import java.util.stream.Collectors;
 public class ImportServiceImpl implements ImportService {
 
     private static final int BATCH_SIZE = 2000;
-
+    private final double THRESHOLD = 80.00f;
     @Autowired
     private DataService dataService;
 
     @Override
-    public void downloadFileFromFtp(String province, String speciality) throws Exception {
+    public void downloadFileFromFtp(String province, String speciality) throws Exception{
         TaskVo task = dataService.getTask(province, speciality);
         Assert.notNull(task, "没有找到最新的成功的核查任务");
         try {
-            doDownloadFileFromFtp(province, speciality, task);
+            double indexvalue = dataService.getIndexValue(province,task.getTaskCode());
+            if(indexvalue>=THRESHOLD){
+                doDownloadFileFromFtp(province, speciality, task);
+            }else{
+                log.info(province + "-" + speciality + "整体指标值为：" + indexvalue
+                        + "，指标值低于" + THRESHOLD + ",数据质量差，不进行入库操作.....");
+            }
         } finally {
-            FileUtils.forceDelete(BatchUtil.getTaskFolder(task.getTaskCode()));
+                try {
+                    FileUtils.forceDelete(BatchUtil.getTaskFolder(task.getTaskCode()));
+                } catch (IOException e) {
+                    log.info(e.getMessage());
+                }
+            }
         }
-    }
 
     public void doDownloadFileFromFtp(String province, String speciality, TaskVo task) throws Exception {
-
-
         String taskCode = task.getTaskCode();
         File localFolder = BatchUtil.getTaskFolder(taskCode, true);
         //Date collectionDate = task.getCollectionDate();
@@ -68,7 +73,8 @@ public class ImportServiceImpl implements ImportService {
             if(StringUtils.equalsIgnoreCase(curLocation.getSchema(),"sftp")){
                 DefaultSftpSessionFactory factory = BatchUtil.createSFTPSessionFactory(curLocation);
                 try (SftpSession session = factory.getSession()) {
-                    String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    //String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    String resultFtpFilePath = dataService.getRemotePath(taskCode)+ "/" + resultZipName;
                     if (session.exists(resultFtpFilePath)) {
                         Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
                         if (Files.exists(resultZip)) {
@@ -83,7 +89,8 @@ public class ImportServiceImpl implements ImportService {
             } else{
                 DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(curLocation);
                 try (FtpSession session = factory.getSession()) {
-                    String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    //String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
+                    String resultFtpFilePath = dataService.getRemotePath(taskCode)+ "/" + resultZipName;
                     if (session.exists(resultFtpFilePath)) {
                         Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
                         if (Files.exists(resultZip)) {
@@ -210,9 +217,6 @@ public class ImportServiceImpl implements ImportService {
                 }
             }
         }
-        //log.info("清除历史冗余文件......");
-
-
     }
 
     private void saveStorage(String province, String speciality, String tableName, String taskCode, Map<String, String> indexNames, Map<String, Integer> upperHeaderMap, List<String[]> parameters, char delimiter, int columnSize) {

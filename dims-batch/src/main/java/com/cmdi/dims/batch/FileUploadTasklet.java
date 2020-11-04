@@ -9,6 +9,7 @@ import com.cmdi.dims.infrastructure.util.FtpSession;
 import com.cmdi.dims.sdk.model.FileLocationDto;
 import com.cmdi.dims.sdk.model.TaskConfigDto;
 import com.cmdi.dims.sdk.model.TaskItemBusinessDto;
+import com.cmdi.dims.sdk.model.TaskItemFileDto;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -83,11 +84,13 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             }
             try {
                // File result = compressZips(localTaskFolder, date + "_RESULT.zip", zips);
+                List<TaskItemFileDto> taskItemFileDtos = taskService.findTaskItemFilesByTaskCode(taskCode);
+                String remoteDirectory = StringUtils.substringBeforeLast(taskItemFileDtos.get(0).getCode(),"/");
                 File result = compressZips(localTaskFolder, taskCode + "_RESULT.zip", zips);
                 if(StringUtils.equalsIgnoreCase(location.getSchema(),"sftp")){
-                    uploadZipFileToSFtp(result, location);
+                    uploadZipFileToSFtp(result, location,remoteDirectory);
                 }else{
-                    uploadZipFileToFtp(result, location);
+                    uploadZipFileToFtp(result, location,remoteDirectory);
                 }
 
             } catch (Exception e) {
@@ -96,32 +99,42 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
         }
     }
 
-    private void uploadZipFileToFtp(File zipFile, FileLocationDto location) throws IOException {
+    private void uploadZipFileToFtp(File zipFile, FileLocationDto location,String remoteDirectory) throws IOException {
         DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(location);
         try (FtpSession session = factory.getSession();
              InputStream inputStream = Files.newInputStream(zipFile.toPath())
         ) {
             Assert.state(session.exists(location.getPath()), "没有找到FTP配置的目录:" + location.getPath());
             String zipFileName = FilenameUtils.getName(zipFile.getName());
-            boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
+            boolean remoteExists = session.exists(remoteDirectory + "/" + zipFileName);
+            if (remoteExists) {
+                session.remove(remoteDirectory + "/" + zipFileName);
+            }
+            session.write(inputStream, remoteDirectory + "/" + zipFileName);
+           /* boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
             if (remoteExists) {
                 session.remove(location.getPath() + "/" + zipFileName);
             }
-            session.write(inputStream, location.getPath() + "/" + zipFileName);
+            session.write(inputStream, location.getPath() + "/" + zipFileName);*/
         }
     }
-    private void uploadZipFileToSFtp(File zipFile, FileLocationDto location) throws IOException {
+    private void uploadZipFileToSFtp(File zipFile, FileLocationDto location,String remoteDirectory) throws IOException {
         DefaultSftpSessionFactory factory = BatchUtil.createSFTPSessionFactory(location);
         try (SftpSession session = factory.getSession();
              InputStream inputStream = Files.newInputStream(zipFile.toPath())
         ) {
             Assert.state(session.exists(location.getPath()), "没有找到FTP配置的目录:" + location.getPath());
             String zipFileName = FilenameUtils.getName(zipFile.getName());
-            boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
+            boolean remoteExists = session.exists(remoteDirectory + "/" + zipFileName);
+            if (remoteExists) {
+                session.remove(remoteDirectory + "/" + zipFileName);
+            }
+            session.write(inputStream, remoteDirectory + "/" + zipFileName);
+           /* boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
             if (remoteExists) {
                 session.remove(location.getPath() + "/" + zipFileName);
             }
-            session.write(inputStream, location.getPath() + "/" + zipFileName);
+            session.write(inputStream, location.getPath() + "/" + zipFileName);*/
         }
     }
 
