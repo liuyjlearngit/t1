@@ -25488,7 +25488,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-BBU关联性核查-所属基站%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-BBU关联性核查-所属基站''
 		                                      else dims_col_rtName||'',无线-BBU关联性核查-所属基站'' end)
-								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000011, 1, NULL),
  (901003536, '无线-BBU关联性核查-所属省份', 'DIMS_WX_03037', 3037, 901000011, '无线', 11, NULL, 'update BBU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03037%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03037''
@@ -26308,7 +26308,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
  (901001174, 901099003, 901003520, 'admin', 'admin', NULL),
  (901001181, 901099003, 901003527, 'admin', 'admin', NULL),
  (901001182, 901099003, 901003528, 'admin', 'admin', NULL),
- (901001189, 901099003, 901003535, 'admin', 'admin', NULL),
+-- (901001189, 901099003, 901003535, 'admin', 'admin', NULL),
  (901001193, 901099003, 901003539, 'admin', 'admin', NULL),
  (901001194, 901099003, 901003540, 'admin', 'admin', NULL),
  (901001198, 901099003, 901003544, 'admin', 'admin', NULL),
