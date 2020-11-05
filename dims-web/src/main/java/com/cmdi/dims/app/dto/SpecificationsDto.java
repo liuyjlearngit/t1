@@ -15,8 +15,8 @@ public class SpecificationsDto {
     private String specialityName;
     @ApiModelProperty("指标值")
     private Double totalValue;
-    private Double normativityValue;
-    private Double associationValue;
-    private Double complianceValue;
-    private Double integrityValue;
+    private Double normativityValue;//规范
+    private Double associationValue;//关联
+    private Double complianceValue;//合规
+    private Double integrityValue;//完整
 }

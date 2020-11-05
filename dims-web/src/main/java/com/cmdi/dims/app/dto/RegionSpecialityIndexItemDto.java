@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @ApiModel("区域专业指标")
 @Data
 @Builder
@@ -24,4 +26,6 @@ public class RegionSpecialityIndexItemDto {
     private String indexName;
     @ApiModelProperty("指标值")
     private Double value;
+    @ApiModelProperty("地址数据")
+    private ArrayList<DictProvinceDto> dictDtos;
 }
