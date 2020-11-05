@@ -13,4 +13,5 @@ public class PointerType {
     private String indType;
     private List<SpecificationsDto> specificationsDtos;
     private List<IndexItemDetailDto> indexItemDetailDto;
+    private List<IndexItemDto> indexItemDtos;
 }

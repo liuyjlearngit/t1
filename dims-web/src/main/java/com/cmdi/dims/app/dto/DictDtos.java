@@ -8,10 +8,9 @@ import lombok.Data;
 @ApiModel("字典")
 @Data
 @AllArgsConstructor
-public class DictDto {
+public class DictDtos {
     @ApiModelProperty("名称")
     private String name;
     @ApiModelProperty("值")
-    private String value;
-
+    private Double value;
 }
