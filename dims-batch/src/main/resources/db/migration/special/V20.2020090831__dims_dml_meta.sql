@@ -19119,7 +19119,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 								 and not exists(select 1 from CE_DEVICE_PE_SWITCH_POWER t2 where t2.res_code = t1.ralated_power_device)
 								 and not exists(select 1 from CE_DEVICE_PE_POWER_GENERATION t2 where t2.res_code = t1.ralated_power_device)
 								 and not exists(select 1 from CE_DEVICE_PE_HIGH_DC_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)
-								 and not exists(select 1 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001519, 1, NULL),
+								 and not exists(select 1 from CE_DEVICE_PE_HIGH_DISTRIBUTION t2 where t2.res_code = t1.ralated_power_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001519, 1, NULL),
 (907003658, '动环-动环专业内输出分路关联性核查-所属设备', 'DIMS_DH_03101', 3101, 907001524, '动环', 11, NULL, 'update CE_LINK_PE_IN t1
 									 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_03101%'' then dims_col_result
 																						 when dims_col_result is null then ''DIMS_DH_03101''
@@ -19132,7 +19132,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 					CE_DEVICE_PE_BATTERY t12,CE_DEVICE_PE_AIR t13,CE_DEVICE_PE_ENERY_SAVE t14,CE_DEVICE_PE_POWER_MONITOR t15,CE_DEVICE_PE_SMART_METER t16,CE_DEVICE_PE_OTHER t17 where t2.res_code = t1.related_device
 					or t3.res_code = t1.related_device or t4.res_code = t1.related_device or t5.res_code = t1.related_device or t6.res_code = t1.related_device or t7.res_code = t1.related_device or t8.res_code = t1.related_device
 					or t9.res_code = t1.related_device or t10.res_code = t1.related_device or t11.res_code = t1.related_device or t12.res_code = t1.related_device or t13.res_code = t1.related_device or t14.res_code = t1.related_device
-					or t15.res_code = t1.related_device or t16.res_code = t1.related_device or t17.res_code = t1.related_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
+					or t15.res_code = t1.related_device or t16.res_code = t1.related_device or t17.res_code = t1.related_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
 (907003659, '动环-跨专业输出分路关联性核查-所属设备', 'DIMS_DH_03106', 3106, 907001525, '动环', 11, NULL, 'update CE_LINK_PE_OUT t1
 									 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_03106%'' then dims_col_result
 																						 when dims_col_result is null then ''DIMS_DH_03106''
@@ -19145,7 +19145,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 					CE_DEVICE_PE_BATTERY t12,CE_DEVICE_PE_AIR t13,CE_DEVICE_PE_ENERY_SAVE t14,CE_DEVICE_PE_POWER_MONITOR t15,CE_DEVICE_PE_SMART_METER t16,CE_DEVICE_PE_OTHER t17 where t2.res_code = t1.related_device
 					or t3.res_code = t1.related_device or t4.res_code = t1.related_device or t5.res_code = t1.related_device or t6.res_code = t1.related_device or t7.res_code = t1.related_device or t8.res_code = t1.related_device
 					or t9.res_code = t1.related_device or t10.res_code = t1.related_device or t11.res_code = t1.related_device or t12.res_code = t1.related_device or t13.res_code = t1.related_device or t14.res_code = t1.related_device
-					or t15.res_code = t1.related_device or t16.res_code = t1.related_device or t17.res_code = t1.related_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, NULL),
+					or t15.res_code = t1.related_device or t16.res_code = t1.related_device or t17.res_code = t1.related_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, NULL),
 
 (907003660, '动环-跨专业输出分路关联性核查-下游设备所在机架位置', 'DIMS_DH_03107', 3107, 907001525, '动环', 11, NULL, 'update CE_LINK_PE_OUT t1
 									 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_03107%'' then dims_col_result
@@ -19856,9 +19856,9 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004654,907099003,907003654,'admin','admin',null),
 (907004655,907099003,907003655,'admin','admin',null),
 (907004656,907099003,907003656,'admin','admin',null),
-(907004657,907099003,907003657,'admin','admin',null),
-(907004658,907099003,907003658,'admin','admin',null),
-(907004659,907099003,907003659,'admin','admin',null),
+--(907004657,907099003,907003657,'admin','admin',null),
+--(907004658,907099003,907003658,'admin','admin',null),
+--(907004659,907099003,907003659,'admin','admin',null),
 (907004660,907099003,907003660,'admin','admin',null),
 (907004661,907099002,907003661,'admin','admin',null),
 (907004662,907099002,907003662,'admin','admin',null),
@@ -22986,7 +22986,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (902001312, '所属数据中心', 'related_dc', 902001001, 'RELATED_DC', 'string', null, 'admin', 'admin', null),
 (902001313, '别名', 'alias_name', 902001001, 'ALIAS_NAME', 'string', null, 'admin', 'admin', null),
 (902001314, '楼层数', 'floor_number', 902001001, 'FLOOR_NUMBER', 'integer', null, 'admin', 'admin', null),
-(902001315, '生命周期状态', 'lifecycle_status', 902001001, 'LIFECYCLE_STATUS', 'string', null, 'admin', 'admin', null),
+(902001315, '生命周期状态', 'lifecycle_status', 902001001, 'LIFECYCLE_STATUS', 'string', 902000003, 'admin', 'admin', null),
 (902001316, '使用单位', 'use_corp', 902001001, 'USE_CORP', 'string', 902000011, 'admin', 'admin', null),
 --RM_AREA_RESPOINT
 (902001317, '资源标识', 'int_id', 902001002, 'INT_ID', 'string', null, 'admin', 'admin', null),
@@ -23277,7 +23277,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%空间-机房业务合规性核查-核心、汇聚机房下无归属机架位置%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:空间-机房业务合规性核查-核心、汇聚机房下无归属机架位置''
                                              else dims_col_rtName||'',空间-机房业务合规性核查-核心、汇聚机房下无归属机架位置'' end)
-                 where isNotNull(t1.int_id) not exists(select 1
+                 where isNotNull(t1.int_id) and not exists(select 1
 											 from RM_AREA_RACKPOS t2
 											 where t1.int_id = t2.equiproom_id
 												   and (t1.equiproom_level like ''核心%''
