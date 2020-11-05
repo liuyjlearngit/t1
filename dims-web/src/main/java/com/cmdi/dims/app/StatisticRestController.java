@@ -485,6 +485,7 @@ public class StatisticRestController {
 
         List<AreaCodeConfig> configs = loadRegion(region);
         List<RegionSpecialityIndexItemDto> result = new ArrayList<>();
+        ArrayList<DictProvinceDto> dictDtos = new ArrayList<DictProvinceDto>();
         for (AreaCodeConfig currentConfig : configs) {
             Map<String, List<TaskItemIndex>> indexIndices = regionIndices.get(currentConfig.getCode());//循环判断 当前 地址的下一级 是否有符合 (查找的是 符合前台的选中的地区 的专业 的所有指标的 下一级 地区的所有数据)
             if (CollectionUtils.isNotEmpty(indices99001)) {//判断 当前 地址是否有这个指标  然后判断他的下一级是否有这个指标
@@ -595,9 +596,12 @@ public class StatisticRestController {
                         .indexName(indices99999.get(0).getName())
                         .value(value)
                         .build());
-
+                        dictDtos.add(new DictProvinceDto(currentConfig.getCode(),currentConfig.getName(),value));
             }
         }
+        List<DictProvinceDto> newList = dictDtos.stream().sorted(Comparator.comparing(DictProvinceDto::getValues))
+                .collect(Collectors.toList());//排序
+        result.add(RegionSpecialityIndexItemDto.builder().dictDtos((ArrayList<DictProvinceDto>) newList).build());
         return result;
     }
 
