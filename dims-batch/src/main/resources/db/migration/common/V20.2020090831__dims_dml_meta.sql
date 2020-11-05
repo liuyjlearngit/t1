@@ -24692,7 +24692,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-RRU关联性核查-关联小区%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-RRU关联性核查-关联小区''
 		                                      else dims_col_rtName||'',无线-RRU关联性核查-关联小区'' end)
-								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000012, 1, NULL),
  (901003541, '无线-RRU关联性核查-所属省份', 'DIMS_WX_03042', 3042, 901000012, '无线', 11, NULL, 'update RRU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03042%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03042''
@@ -24724,7 +24724,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属基站%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属基站''
 		                                      else dims_col_rtName||'',无线-DU关联性核查-所属基站'' end)
-								where isNotNull(t1.related_bs) and not exists(select 1 from ENODEB t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from GNODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+								where isNotNull(t1.related_bs) and not exists(select 1 from ENODEB t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from GNODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
  (901003545, '无线-DU关联性核查-所属机房/位置点', 'DIMS_WX_03046', 3046, 901000013, '无线', 11, NULL, 'update DU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03046%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03046''
@@ -24732,7 +24732,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-DU关联性核查-所属机房/位置点%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-DU关联性核查-所属机房/位置点''
 		                                      else dims_col_rtName||'',无线-DU关联性核查-所属机房/位置点'' end)
-								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
+								where isNotNull(t1.related_room_location) and not exists(select 1 from RM_AREA_RESPOINT t2 where isNotNull(t2.int_id) and t1.related_room_location=t2.int_id) and not exists(select 1 from RM_AREA_ROOM t3 where isNotNull(t3.int_id) and t1.related_room_location=t3.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000013, 1, NULL),
  (901003548, '无线-DU关联性核查-所属区县', 'DIMS_WX_03049', 3049, 901000013, '无线', 11, NULL, 'update DU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03049%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03049''
@@ -24788,7 +24788,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-AAU关联性核查-关联小区%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-AAU关联性核查-关联小区''
 		                                      else dims_col_rtName||'',无线-AAU关联性核查-关联小区'' end)
-								where isNotNull(t1.related_cell) and not exists(select 1 from NRCELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
+								where isNotNull(t1.related_cell) and not exists(select 1 from NRCELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000015, 1, NULL),
  (901003555, '无线-AAU关联性核查-所属省份', 'DIMS_WX_03056', 3056, 901000015, '无线', 11, NULL, 'update AAU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03056%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03056''
@@ -24908,7 +24908,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-天线工参关联性核查-关联小区%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-天线工参关联性核查-关联小区''
 										  					          else dims_col_rtName||'',无线-天线工参关联性核查-关联小区'' end)
-								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000019, 1, NULL),
  (901003570, '无线-天线工参关联性核查-所属省份', 'DIMS_WX_03073', 3073, 901000019, '无线', 11, NULL, 'update ANTENNAPARA t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03073%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03073''
@@ -24988,7 +24988,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-直放站关联性核查-信源小区%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-直放站关联性核查-信源小区''
 										  					          else dims_col_rtName||'',无线-直放站关联性核查-信源小区'' end)
-								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000021, 1, NULL),
  (901003579, '无线-直放站关联性核查-所属省份', 'DIMS_WX_03082', 3082, 901000021, '无线', 11, NULL, 'update RPT t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03082%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03082''
@@ -25020,7 +25020,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-信源小区%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-信源小区''
 										  					          else dims_col_rtName||'',无线-分布系统关联性核查-信源小区'' end)
-								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+								where isNotNull(t1.related_cell) and not exists(select 1 from CELL t2 where isNotNull(t2.int_id) and t1.related_cell~t2.int_id) and not exists(select 1 from EUTRANCELL t3 where isNotNull(t3.int_id) and t1.related_cell~t3.int_id) and not exists(select 1 from NRCELL t4 where isNotNull(t4.int_id) and t1.related_cell~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
  (901003583, '无线-分布系统关联性核查-所属省份', 'DIMS_WX_03088', 3088, 901000022, '无线', 11, NULL, 'update SPEARD t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03088%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03088''
@@ -25196,7 +25196,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU''
 										  					          else dims_col_rtName||'',无线-G-NODEB关联性核查-孤立点核查-5G基站下无DU或BBU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id) and not exists(select 1 from  BBU t3 where isNotNull(t3.related_bs) and t3.related_bs~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from DU t2 where isNotNull(t2.related_bs) and t2.related_bs~t1.int_id) and not exists(select 1 from  BBU t3 where isNotNull(t3.related_bs) and t3.related_bs~t1.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000005, 1, NULL),
  (901003606, '无线-CELL关联性核查-孤立点核查-2G小区下无RRU', 'DIMS_WX_03112', 3112, 901000007, '无线', 11, NULL, 'update CELL t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03112%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03112''
@@ -25212,7 +25212,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU''
 										  					          else dims_col_rtName||'',无线-E-UTRANCELL关联性核查-孤立点核查-4G小区下无RRU或AAU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000008, 1, NULL),
  (901003608, '无线-一体化皮站AU关联性核查-所属基站', 'DIMS_WX_03101', 3101, 901000024, '无线', 11, NULL, 'update PICOAU t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03101%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03101''
@@ -25292,7 +25292,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-NR-CELL关联性核查-5G小区下无RRU或AAU%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-NR-CELL关联性核查-5G小区下无RRU或AAU''
 										  					          else dims_col_rtName||'',无线-NR-CELL关联性核查-5G小区下无RRU或AAU'' end)
-								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
+								where isNotNull(t1.int_id) and not exists(select 1 from RRU t2 where isNotNull(t2.related_cell) and t2.related_cell~t1.int_id) and not exists(select 1 from AAU t3 where isNotNull(t3.related_cell) and t3.related_cell~t1.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000009, 1, NULL),
  (901003618, '无线-板卡关联性核查-所属网元', 'DIMS_WX_03059', 3059, 901000016, '无线', 11, NULL, 'update WX_BOARD t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03059%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03059''
@@ -25300,7 +25300,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-板卡关联性核查-所属网元%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-板卡关联性核查-所属网元''
 										  					          else dims_col_rtName||'',无线-板卡关联性核查-所属网元'' end)
-								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000016, 1, NULL),
  (901003619, '无线-分布系统关联性核查-关联基站', 'DIMS_WX_03086', 3086, 901000022, '无线', 11, NULL, 'update SPEARD t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03086%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03086''
@@ -25308,7 +25308,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 										dims_col_rtName=(case when dims_col_rtName like ''%无线-分布系统关联性核查-关联基站%'' then dims_col_rtName
 				                                  when dims_col_rtName is null then ''不满足规范:无线-分布系统关联性核查-关联基站''
 										  					          else dims_col_rtName||'',无线-分布系统关联性核查-关联基站'' end)
-								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
+								where isNotNull(t1.related_bs) and not exists(select 1 from BTS t2 where isNotNull(t2.int_id) and t1.related_bs~t2.int_id) and not exists(select 1 from ENODEB t3 where isNotNull(t3.int_id) and t1.related_bs~t3.int_id) and not exists(select 1 from GNODEB t4 where isNotNull(t4.int_id) and t1.related_bs~t4.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 901000022, 1, NULL),
  (901003620, '无线-一体化皮站AP关联性核查-所属基站', 'DIMS_WX_03100', 3100, 901000023, '无线', 11, NULL, 'update PICOAP t1
 		            set dims_col_result=(case when dims_col_result like ''%DIMS_WX_03100%'' then dims_col_result
 		                                      when dims_col_result is null then ''DIMS_WX_03100''
@@ -25466,19 +25466,19 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
  (901001182, 901099003, 901003528, 'admin', 'admin', NULL),
  --(901001189, 901099003, 901003535, 'admin', 'admin', NULL),
  (901001193, 901099003, 901003539, 'admin', 'admin', NULL),
- (901001194, 901099003, 901003540, 'admin', 'admin', NULL),
- (901001198, 901099003, 901003544, 'admin', 'admin', NULL),
+ --(901001194, 901099003, 901003540, 'admin', 'admin', NULL),
+ --(901001198, 901099003, 901003544, 'admin', 'admin', NULL),
  (901001199, 901099003, 901003545, 'admin', 'admin', NULL),
  (901001203, 901099003, 901003549, 'admin', 'admin', NULL),
  (901001207, 901099003, 901003553, 'admin', 'admin', NULL),
- (901001208, 901099003, 901003554, 'admin', 'admin', NULL),
+ --(901001208, 901099003, 901003554, 'admin', 'admin', NULL),
  (901001218, 901099003, 901003564, 'admin', 'admin', NULL),
  (901001219, 901099003, 901003565, 'admin', 'admin', NULL),
- (901001223, 901099003, 901003569, 'admin', 'admin', NULL),
+ --(901001223, 901099003, 901003569, 'admin', 'admin', NULL),
  (901001227, 901099003, 901003573, 'admin', 'admin', NULL),
  (901001231, 901099003, 901003577, 'admin', 'admin', NULL),
- (901001232, 901099003, 901003578, 'admin', 'admin', NULL),
- (901001236, 901099003, 901003582, 'admin', 'admin', NULL),
+ --(901001232, 901099003, 901003578, 'admin', 'admin', NULL),
+-- (901001236, 901099003, 901003582, 'admin', 'admin', NULL),
  (901001239, 901099003, 901003585, 'admin', 'admin', NULL),
  (901001240, 901099003, 901003586, 'admin', 'admin', NULL),
  (901001251, 901099003, 901003597, 'admin', 'admin', NULL),
@@ -25489,9 +25489,9 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
  (901001256, 901099003, 901003602, 'admin', 'admin', NULL),
  (901001257, 901099003, 901003603, 'admin', 'admin', NULL),
  (901001258, 901099003, 901003604, 'admin', 'admin', NULL),
- (901001259, 901099003, 901003605, 'admin', 'admin', NULL),
+ --(901001259, 901099003, 901003605, 'admin', 'admin', NULL),
  (901001260, 901099003, 901003606, 'admin', 'admin', NULL),
- (901001261, 901099003, 901003607, 'admin', 'admin', NULL),
+ --(901001261, 901099003, 901003607, 'admin', 'admin', NULL),
  (901001262, 901099003, 901003608, 'admin', 'admin', NULL),
  (901001263, 901099003, 901003609, 'admin', 'admin', NULL),
  (901001264, 901099003, 901003610, 'admin', 'admin', NULL),
@@ -25501,9 +25501,9 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
  (901001268, 901099003, 901003614, 'admin', 'admin', NULL),
  (901001269, 901099003, 901003615, 'admin', 'admin', NULL),
  (901001270, 901099003, 901003616, 'admin', 'admin', NULL),
- (901001271, 901099003, 901003617, 'admin', 'admin', NULL),
- (901001272, 901099003, 901003618, 'admin', 'admin', NULL),
- (901001273, 901099003, 901003619, 'admin', 'admin', NULL),
+ --(901001271, 901099003, 901003617, 'admin', 'admin', NULL),
+ --(901001272, 901099003, 901003618, 'admin', 'admin', NULL),
+-- (901001273, 901099003, 901003619, 'admin', 'admin', NULL),
  (901001274, 901099003, 901003620, 'admin', 'admin', NULL),
  (901001275, 901099003, 901003621, 'admin', 'admin', NULL),
  (901001276, 901099999, 901099001, 'admin', 'admin', NULL),
