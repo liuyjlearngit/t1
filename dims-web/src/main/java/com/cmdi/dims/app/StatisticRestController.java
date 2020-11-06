@@ -587,15 +587,7 @@ public class StatisticRestController {
                         }
                     }
                 }
-                result.add(RegionSpecialityIndexItemDto.builder()
-                        .region(currentConfig.getCode())
-                        .regionName(currentConfig.getName())
-                        .speciality(speciality)
-                        .specialityName(speciality)
-                        .indexCode(indices99999.get(0).getCode())
-                        .indexName(indices99999.get(0).getName())
-                        .value(value)
-                        .build());
+
                         dictDtos.add(new DictProvinceDto(currentConfig.getCode(),currentConfig.getName(),value));
             }
         }
@@ -1255,21 +1247,21 @@ public class StatisticRestController {
             List<Long> carrier99001 = indexCarrierRepository.findByParentIndexId(indices99001.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99001.add(indices99001.get(0).getIndexId());
-            indices99001 = indexRepository.findByIndexIdIn(carrier99001);
+            indices99001 = indexRepository.findByIndexIdInOrderByCode(carrier99001);
 
         }
         if (indices99002.size()>0){
             List<Long> carrier99002 = indexCarrierRepository.findByParentIndexId(indices99002.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99002.add(indices99002.get(0).getIndexId());
-            indices99002 = indexRepository.findByIndexIdIn(carrier99002);
+            indices99002 = indexRepository.findByIndexIdInOrderByCode(carrier99002);
 
         }
         if (indices99003.size()>0){
             List<Long> carrier99003 = indexCarrierRepository.findByParentIndexId(indices99003.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99003.add(indices99003.get(0).getIndexId());
-            indices99003 = indexRepository.findByIndexIdIn(carrier99003);
+            indices99003 = indexRepository.findByIndexIdInOrderByCode(carrier99003);
 
         }
         if (indices99004.size()>0){
@@ -1277,7 +1269,7 @@ public class StatisticRestController {
                     indexCarrierRepository.findByParentIndexId(indices99004.get(0).getIndexId()).stream()
                     .map(IndexCarrier::getChildIndexId).collect(Collectors.toList());
             carrier99004.add(indices99004.get(0).getIndexId());
-            indices99004 = indexRepository.findByIndexIdIn(carrier99004);
+            indices99004 = indexRepository.findByIndexIdInOrderByCode(carrier99004);
         }
 
         List<TaskItemIndex> taskItemIndices;
