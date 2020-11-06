@@ -15567,8 +15567,8 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在''
                                              else dims_col_rtName||'',传输管线-纤芯熔接关系表中的纤芯在纤芯表中不存在'' end)
-                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t1 where t1.upper_cable_id = t2.resfdn)
-				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t1 where t1.lower_cable_id = t2.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);
+                 where isnotnull(upper_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t1.upper_cable_id = t2.resfdn)
+				    or isnotnull(lower_cable_id) and not exists(select 1 from CE_CABLE_FIBER t2 where t1.lower_cable_id = t2.resfdn)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001025, 1, null);
 --插入传输管线 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (904004001,904099001,904003001,'admin','admin',null),
