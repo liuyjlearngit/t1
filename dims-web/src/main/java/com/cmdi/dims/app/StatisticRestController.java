@@ -593,6 +593,7 @@ public class StatisticRestController {
         }
         List<DictProvinceDto> newList = dictDtos.stream().sorted(Comparator.comparing(DictProvinceDto::getValues))
                 .collect(Collectors.toList());//排序
+        Collections.reverse(newList);//倒排
         result.add(RegionSpecialityIndexItemDto.builder().dictDtos((ArrayList<DictProvinceDto>) newList).build());
         return result;
     }

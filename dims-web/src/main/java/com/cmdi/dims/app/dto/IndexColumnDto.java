@@ -16,6 +16,8 @@ public class IndexColumnDto {
     private String code;
     @ApiModelProperty("指标值")
     private Double value;
+    @ApiModelProperty("指标值")
+    private String values;
     private Double amout;
     private Double error;
 }

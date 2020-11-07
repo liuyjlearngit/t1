@@ -16,6 +16,7 @@ public interface IndexRepository extends JpaRepository<Index, Long>, JpaSpecific
     List<Index> findByCodeEndingWithAndEnable(String codeEnd, Boolean enable);
 
     List<Index> findByCodeEndingWithAndSpecialityNameAndEnable(String codeEnd, String specialityName, Boolean enable);
-    List<Index> findByIndexIdIn(List<Long> id);
+
+    List<Index> findByIndexIdInOrderByCode(List<Long> id);
     Index findByCode(String code);
 }
