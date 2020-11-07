@@ -257,9 +257,15 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                     char delimiter = BatchUtil.safeDelimiter(taskItemFile.getFileDelimiter());
                     String header = reader.readLine();
                     Assert.hasLength(header, "header not found");
-                    Map<String, Integer> upperHeaderMap = BatchUtil.headerMapOf(header, delimiter);
-                    BatchUtil.validateHeader(upperHeaderMap, metadata);
-                    success = true;
+                    if(header.trim().startsWith("\uFEFF")){
+                        errorMessage=taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile()
+                                + "解析出错,未采用UTF-8（No BOM）编码方式";
+                        success = false;
+                    } else {
+                        Map<String, Integer> upperHeaderMap = BatchUtil.headerMapOf(header, delimiter);
+                        BatchUtil.validateHeader(upperHeaderMap, metadata);
+                        success = true;
+                    }
                 }
             } catch (Exception e) {
                 errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错" + e.getMessage();

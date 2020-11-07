@@ -132,4 +132,20 @@ public class DataServiceImpl implements DataService {
         parameters.put("OFFSET", offset);
         return namedParameterJdbcTemplate.query(DataUtil.selectErrorDataStatement(metadata), parameters, new ColumnMapRowMapper());
     }
+
+    @Override
+    public List<String> getDimsColResultList(Metadata metadata) {
+        Map<String, Object> parameters = new HashMap<>();
+        String sql = "select dims_col_result from "+ metadata.getEntityType().getExtensionTable() +" where dims_col_result is not null group by dims_col_result ";
+        return namedParameterJdbcTemplate.queryForList(sql,parameters,String.class);
+    }
+
+    @Override
+    public List<Map<String, Object>> exportDataWithResult(Metadata metadata, int limit, String rtName) {
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("LIMIT", limit);
+        parameters.put("DIMS_COL_RESULT", rtName);
+        return namedParameterJdbcTemplate.query(DataUtil.selectErrorDataStatementWithResult(metadata), parameters, new ColumnMapRowMapper());
+
+    }
 }

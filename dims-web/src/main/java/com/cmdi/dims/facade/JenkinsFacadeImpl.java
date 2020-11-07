@@ -82,6 +82,7 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         jobConfig = StringUtils.replace(jobConfig, "#data_username#", batchUsername);
         jobConfig = StringUtils.replace(jobConfig, "#data_password#", batchPassword);
         jobConfig = StringUtils.replace(jobConfig, "#data_url#", batchUrl);
+        jobConfig = StringUtils.replace(jobConfig,"#label#",province);
         if(StringUtils.isNotEmpty(filterList)
                 &&StringUtils.containsIgnoreCase(filterList,areaCodeConfig.getCode())){
             jobConfig = StringUtils.replace(jobConfig, "#flyway_path#", "special");
@@ -106,6 +107,7 @@ public class JenkinsFacadeImpl implements JenkinsFacade {
         parameter.put("data_username", batchUsername);
         parameter.put("data_password", batchPassword);
         parameter.put("data_url", batchUrl);
+        parameter.put("label", province);
         job.build(parameter, true);
     }
 }

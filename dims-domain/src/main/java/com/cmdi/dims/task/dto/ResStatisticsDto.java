@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class ResStatisticsDto {
-    private Long id;
+   // private Long id;
 
     private Long resIndex;
 

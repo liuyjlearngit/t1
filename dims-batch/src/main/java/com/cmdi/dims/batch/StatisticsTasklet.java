@@ -28,6 +28,8 @@ public class StatisticsTasklet extends AbstractDimsTasklet{
         }else{
             log.info("No statistics need to calculate for " + province + ":" + speciality);
         }
+        taskService.finish(taskCode);
+        log.info("Task:"+taskCode+" is finished.");
     }
 
     private void calculateIndex(String taskCode, String province, StatisticsResIndex resIndex) {

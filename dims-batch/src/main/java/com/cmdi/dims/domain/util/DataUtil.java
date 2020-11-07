@@ -58,6 +58,23 @@ public class DataUtil {
         insertStatement.append(" LIMIT :LIMIT OFFSET :OFFSET");
         return insertStatement.toString();
     }
+    public static String selectErrorDataStatementWithResult(Metadata metadata) {
+        StringBuilder insertStatement = new StringBuilder();
+        insertStatement.append("SELECT ");
+        for (AttributeType attributeType : metadata.getAttributeTypes()) {
+            insertStatement.append(attributeType.getColumnName());
+            insertStatement.append(", ");
+        }
+        insertStatement.append("DIMS_COL_RESULT, DIMS_COL_RTNAME FROM ")
+                .append(metadata.getEntityType().getExtensionTable())
+                .append(" WHERE DIMS_COL_RESULT IS NOT NULL")
+        .append(" AND DIMS_COL_RESULT=:DIMS_COL_RESULT");
+        /*if (metadata.getAttributeTypes().stream().anyMatch(at -> Objects.equals(at.getColumnName(), "INT_ID"))) {
+            insertStatement.append(" ORDER BY INT_ID");
+        }*/
+        insertStatement.append(" LIMIT :LIMIT");
+        return insertStatement.toString();
+    }
     public static String selectAllDataStatement(Metadata metadata) {
         StringBuilder insertStatement = new StringBuilder();
         insertStatement.append("SELECT ");

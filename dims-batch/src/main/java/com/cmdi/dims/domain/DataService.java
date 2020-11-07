@@ -27,4 +27,8 @@ public interface DataService {
     long countErrorData(Metadata metadata);
 
     List<Map<String, Object>> exportData(Metadata metadata, int limit, int offset);
+
+    List<String> getDimsColResultList(Metadata metadata);
+
+    List<Map<String, Object>> exportDataWithResult(Metadata metadata, int limit,  String rtName);
 }
