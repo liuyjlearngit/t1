@@ -5714,15 +5714,15 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03056%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03056''
 										  					          else dims_col_result||'',DIMS_JIAKE_03056'' end)
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003256, '家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联', 'DIMS_JIAKE_03057', 3057, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联''
 			 												            else dims_col_rtName||'',家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03057%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03057''
-										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)	
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003257, '家客-小区信息-家客小区魏碑任何小区网格关联', 'DIMS_JIAKE_03058', 3058, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-家客小区魏碑任何小区网格关联%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-小区信息-家客小区魏碑任何小区网格关联''
@@ -5737,7 +5737,7 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 			 												            else dims_col_rtName||'',家客-小区信息-小区下无任何覆盖信息'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03059%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03059''
-										  					          else dims_col_result||'',DIMS_JIAKE_03059'' end)					
+										  					          else dims_col_result||'',DIMS_JIAKE_03059'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CUST_RELATION_RESOURCES t2 where isNotNull(t2.residential_id) and t1.int_id=t2.residential_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003259, '家客-ONU-ONU下无ONU端口', 'DIMS_JIAKE_03060', 3060, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU-ONU下无ONU端口%'' then dims_col_rtName
@@ -5753,26 +5753,26 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 			 												            else dims_col_rtName||'',家客-分光器-分光器下无分光器端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03061%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03061''
-										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)		
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003261, '家客-分纤箱-分纤箱下无分纤箱端子', 'DIMS_JIAKE_03062', 3062, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱-分纤箱下无分纤箱端子%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱-分纤箱下无分纤箱端子''
 			 												            else dims_col_rtName||'',家客-分纤箱-分纤箱下无分纤箱端子'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03062%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03062''
-										  					          else dims_col_result||'',DIMS_JIAKE_03062'' end)			
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL);
+										  					          else dims_col_result||'',DIMS_JIAKE_03062'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL);
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(908004001, '小区信息出现在多个小区网格中', 'DIMS_JIAKE_04001', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1 
+(908004001, '小区信息出现在多个小区网格中', 'DIMS_JIAKE_04001', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%DIMS_JIAKE_04001%'' then dims_col_rtName
-		            when dims_col_rtName is null then ''DIMS_JIAKE_04001'' 
+		            when dims_col_rtName is null then ''DIMS_JIAKE_04001''
 					else dims_col_rtName||'',DIMS_JIAKE_04001'' end),
 					dims_col_result=(case when dims_col_result like ''%小区信息出现在多个小区网格中%'' then dims_col_result
-					when dims_col_result is null then ''不满足规范:小区信息出现在多个小区网格中'' 
+					when dims_col_result is null then ''不满足规范:小区信息出现在多个小区网格中''
 					else dims_col_result||'',小区信息出现在多个小区网格中'' end)
 					where isNotNull(t1.int_id) and (select count(t2.related_area) from RM_GRID t2 where isNotNull(t2.related_area) and t2.related_area=t1.int_id) > 1 ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null);
- INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") values  
+ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") values
  (908002001, '家客-家庭客户实例必填完整性核查.资源标识', 'CM_HOME_CUST_BUSINESS.int_id', 908003000, 908000600, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002002, '家客-家庭客户实例必填完整性核查.客户编号', 'CM_HOME_CUST_BUSINESS.cust_num', 908003000, 908000601, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002003, '家客-家庭客户实例必填完整性核查.客户接入地址', 'CM_HOME_CUST_BUSINESS.related_standard_address', 908003000, 908000602, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
@@ -5882,7 +5882,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
   (908002107, '家客-分纤箱端子必填完整性核查.所属地市', 'CM_GF_PORT.city_id', 908003013, 908000720, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002108, '家客-分纤箱端子必填完整性核查.所属区县', 'CM_GF_PORT.county_id', 908003013, 908000721, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL);
 -- DictRule
- INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES 
+ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES
  (908002200, '家客-宽带业务信息规范性核查-接入方式-字典规范性核查', 'enter_type', 908003121, 908000611, 1, NULL, '接入方式enter_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
  (908002201, '家客-宽带业务信息规范性核查-客户业务状态-字典规范性核查', 'service_status', 908003122, 908000612, 1, NULL, '客户业务状态service_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
  (908002202, '家客-IMS业务信息规范性核查-客户业务状态-字典规范性核查', 'service_status', 908003123, 908000620, 1, NULL, '客户业务状态service_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
@@ -6008,13 +6008,13 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 -- (908001104, 908099003, 908003252, 'admin', 'admin', null),
 -- (908001105, 908099003, 908003253, 'admin', 'admin', null),
 (908001106, 908099003, 908003254, 'admin', 'admin', null),
-(908001107, 908099003, 908003255, 'admin', 'admin', null),
-(908001108, 908099003, 908003256, 'admin', 'admin', null),
+--(908001107, 908099003, 908003255, 'admin', 'admin', null),
+--(908001108, 908099003, 908003256, 'admin', 'admin', null),
 (908001109, 908099003, 908003257, 'admin', 'admin', null),
 -- (908001110, 908099003, 908003258, 'admin', 'admin', null),
 (908001111, 908099003, 908003259, 'admin', 'admin', null),
-(908001112, 908099003, 908003260, 'admin', 'admin', null),
-(908001113, 908099003, 908003261, 'admin', 'admin', null),
+--(908001112, 908099003, 908003260, 'admin', 'admin', null),
+--(908001113, 908099003, 908003261, 'admin', 'admin', null),
 (908001114, 908099004, 908004001, 'admin', 'admin', null),
 (908001115, 908099999, 908099001, 'admin', 'admin', null),
 (908001116, 908099999, 908099002, 'admin', 'admin', null),
