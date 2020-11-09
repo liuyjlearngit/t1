@@ -61,9 +61,15 @@
                     <trim>false</trim>
                 </hudson.model.StringParameterDefinition>
                 <hudson.model.StringParameterDefinition>
-                    <name>flyway_path</name>
+                <name>flyway_path</name>
                     <description>flyway_path</description>
                     <defaultValue>#flyway_path#</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>label</name>
+                    <description>label</description>
+                    <defaultValue>#label#</defaultValue>
                     <trim>false</trim>
                 </hudson.model.StringParameterDefinition>
             </parameterDefinitions>

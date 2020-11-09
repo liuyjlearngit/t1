@@ -164,7 +164,8 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         continue;
                     }else if(baseName.matches(regex2)){
                         //in case of split files
-                        baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),"-");
+                        //baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),"-");
+                        baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
                     String tableName = StringUtils.containsIgnoreCase(specialTableName,baseName)?PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName:baseName;

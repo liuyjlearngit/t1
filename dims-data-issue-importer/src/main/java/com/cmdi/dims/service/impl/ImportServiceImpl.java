@@ -39,13 +39,14 @@ public class ImportServiceImpl implements ImportService {
         TaskVo task = dataService.getTask(province, speciality);
         Assert.notNull(task, "没有找到最新的成功的核查任务");
         try {
-            double indexvalue = dataService.getIndexValue(province,task.getTaskCode());
+            doDownloadFileFromFtp(province, speciality, task);
+           /* double indexvalue = dataService.getIndexValue(province,task.getTaskCode());
             if(indexvalue>=THRESHOLD){
                 doDownloadFileFromFtp(province, speciality, task);
             }else{
                 log.info(province + "-" + speciality + "整体指标值为：" + indexvalue
                         + "，指标值低于" + THRESHOLD + ",数据质量差，不进行入库操作.....");
-            }
+            }*/
         } finally {
                 try {
                     FileUtils.forceDelete(BatchUtil.getTaskFolder(task.getTaskCode()));

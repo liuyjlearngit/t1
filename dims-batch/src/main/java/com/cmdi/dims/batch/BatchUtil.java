@@ -225,7 +225,7 @@ public class BatchUtil {
             //建立gzip解压工作流
             GZIPInputStream gZinStream = new GZIPInputStream(inStream);
             //建立解压文件输出流
-            Path targetFile = Paths.get(itemFile.getParent().toString(), outFileName);
+           Path targetFile = Paths.get(itemFile.getParent().toString(), outFileName);
             if (Files.exists(targetFile)) {
                 FileUtils.forceDelete(targetFile.toFile());
             }
@@ -281,7 +281,7 @@ public class BatchUtil {
             List<String> notExists = new ArrayList<>();
             for (AttributeType attributeType : metadata.getAttributeTypes()) {
                 Integer index = csvHeader.get(attributeType.getColumnName().toUpperCase());
-                if (null != index) {
+               if (null != index) {
                     copy.remove(attributeType.getColumnName().toUpperCase());
                 } else {
                     notExists.add(attributeType.getColumnName().toUpperCase());

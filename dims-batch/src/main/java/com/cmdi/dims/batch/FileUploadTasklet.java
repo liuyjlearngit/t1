@@ -40,6 +40,7 @@ import java.util.Objects;
 public class FileUploadTasklet extends AbstractDimsTasklet {
 
     private static final int PAGE_SIZE = 20000;
+    private static final int EXPORT_SIZE = 1000;
 
     @Setter
     private DataService dataService;
@@ -111,11 +112,6 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 session.remove(remoteDirectory + "/" + zipFileName);
             }
             session.write(inputStream, remoteDirectory + "/" + zipFileName);
-           /* boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
-            if (remoteExists) {
-                session.remove(location.getPath() + "/" + zipFileName);
-            }
-            session.write(inputStream, location.getPath() + "/" + zipFileName);*/
         }
     }
     private void uploadZipFileToSFtp(File zipFile, FileLocationDto location,String remoteDirectory) throws IOException {
@@ -130,11 +126,6 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 session.remove(remoteDirectory + "/" + zipFileName);
             }
             session.write(inputStream, remoteDirectory + "/" + zipFileName);
-           /* boolean remoteExists = session.exists(location.getPath() + "/" + zipFileName);
-            if (remoteExists) {
-                session.remove(location.getPath() + "/" + zipFileName);
-            }
-            session.write(inputStream, location.getPath() + "/" + zipFileName);*/
         }
     }
 
@@ -144,7 +135,34 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             FileUtils.forceDelete(targetResultFile);
         }
         long total = 0;
+        //Get dims_col_result list
+        List <String> rtList = dataService.getDimsColResultList(metadata);
         try (OutputStream os = Files.newOutputStream(targetResultFile.toPath())) {
+            Charset encoding = BatchUtil.encodingOf(location.getFileEncoding());
+            os.write(buildHeader(metadata, location).getBytes(encoding));
+            os.flush();
+            for(String rtName:rtList){
+                //Export data with different result
+                List<Map<String, Object>> result = dataService.exportDataWithResult(metadata, EXPORT_SIZE, rtName);
+                if (CollectionUtils.isNotEmpty(result)) {
+                    int i = 0;
+                    for (Map<String, Object> data : result) {
+                        i++;
+                        String row = buildData(metadata, location, data);
+                        try {
+                            os.write(row.getBytes(encoding));
+                        } catch (Exception e) {
+                            log.error("row index:" + i + " row:" + row);
+                            throw e;
+                        }
+                    }
+                    total += result.size();
+                }
+                os.flush();
+            }
+            os.flush();
+        }
+       /* try (OutputStream os = Files.newOutputStream(targetResultFile.toPath())) {
             Charset encoding = BatchUtil.encodingOf(location.getFileEncoding());
             os.write(buildHeader(metadata, location).getBytes(encoding));
             os.flush();
@@ -168,7 +186,7 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 os.flush();
             }
             os.flush();
-        }
+        }*/
         if (total != count) {
             log.warn("实体对象【" + metadata.getEntityType().getName() + "】错误数据CSV生成完成，实际" + count + "条，导出" + total + "条");
         } else {
