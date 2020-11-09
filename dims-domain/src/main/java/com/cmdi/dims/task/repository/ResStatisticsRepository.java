@@ -19,5 +19,7 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
 
     List<ResStatistics> findByTaskCodeInAndProvinceAndResNameAndResType(List<String> taskCodes,String province,String resname,String restype);
 
+    List<ResStatistics> findByTaskCodeAndProvinceAndResNameAndResType(String taskCodes,String province,String resname,String restype);
+
     List<ResStatistics> findByTaskCodeInAndProvinceCodeInAndSpecialityName(List<String> taskcodes,List<String> ProvinceCodes,String SpecialityNames);
 }

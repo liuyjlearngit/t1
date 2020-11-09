@@ -12,5 +12,7 @@ public interface TaskLatestRepository extends JpaRepository<TaskLatest, Long> {
 
     List<TaskLatest> findBySpecialityName(String specialityName);
 
+    List<TaskLatest> findBySpecialityNameOrderByCreatedAtDesc(String specialityName);
+
     List<TaskLatest> findByProvince(String province);
 }

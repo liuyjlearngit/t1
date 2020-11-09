@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -47,6 +48,13 @@ public class HeadquartersResourcesController {
     private IndexCarrierRepository indexCarrierRepository;
     @Autowired
     private ResStatisticsRepository resStatisticsRepository;
+
+    //四舍五入
+    public Integer avarage(Integer substring){
+        BigDecimal b   =   new BigDecimal(substring);
+        Integer   f1   =   b.setScale(4,   BigDecimal.ROUND_HALF_UP).intValue();
+        return f1;
+    }
 
     @ApiOperation("省端自维资源概览")
     @GetMapping("/statistical")
@@ -127,9 +135,10 @@ public class HeadquartersResourcesController {
                         if (colles.getKey().equals("")){///
 
                         }else {///
+                          String jtow=  j>10000?avarage(j)+"万":j+"";
                             resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
                                     .name(colles.getKey())
-                                    .num(""+j)
+                                    .num(jtow)
                                     .unit(nuit)
                                     .build());
                             units=nuit;
@@ -159,9 +168,11 @@ public class HeadquartersResourcesController {
                     if (i==0){///
 
                     }else {
+                        String jtow=  i>10000?avarage(i)+"万":i+"";
+
                         resourcesDtos.add(ResourcesDto.builder()
                                 .resourcesName(colle.getKey())
-                                .allValue(""+i)
+                                .allValue(jtow)
                                 .allUnit(units)
                                 .numsn(threes)
                                 .build());
@@ -457,7 +468,7 @@ public class HeadquartersResourcesController {
 
     private List<RegionItemDto> graphicals(String speciality,String resname) {
         //查找所有当前专业的最新数据
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speciality);
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(speciality);
         List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
         //所有 当前 taskcode
@@ -542,12 +553,12 @@ public class HeadquartersResourcesController {
     private ExcelDownData allData(String speciality){
         //第一行  当前专业有哪些 第一级数据
 
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speciality);
-        List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
-                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(speciality);
+        TaskLatest taskLatest = bySpecialityName.get(0);
+
 
         //所有 审核数据 都是从这个里面取
-        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(taskcodes);
+        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCode(taskLatest.getTaskCode());
 
         Map<String, List<ResStatistics>> collect = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatistics::getResName));
         TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
@@ -604,7 +615,7 @@ public class HeadquartersResourcesController {
             Integer littall=0;
             List<String> value = colles.getValue();
             for (String val:value) {
-                List<ResStatistics> in = resStatisticsRepository.findByTaskCodeInAndProvinceAndResNameAndResType(taskcodes,coll,colles.getKey(),val);
+                List<ResStatistics> in = resStatisticsRepository.findByTaskCodeAndProvinceAndResNameAndResType(taskLatest.getTaskCode(),coll,colles.getKey(),val);
                 List<Integer> allsum = in.stream()//
                         .map(ResStatistics::getAmount).collect(Collectors.toList());
                 Integer sum=0;
@@ -702,7 +713,7 @@ public class HeadquartersResourcesController {
     }
 
     private Map<String, List<ResStatistics>> findBySpecialityName(String SpecialityName){
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(SpecialityName);
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(SpecialityName);
         List<String> collect = bySpecialityName.stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
         List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(collect);
