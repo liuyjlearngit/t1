@@ -4281,9 +4281,9 @@ create or replace function   is_not_valid_ipaddress(ip varchar) returns bool as
 $$
 declare
 begin
-    select is_valid_ipaddress(ip) =false;
+    return not is_valid_ipaddress(ip);
 end;
-$$ language plpgsql STABLE COST 100;
+$$ language plpgsql IMMUTABLE COST 100;
 CREATE OR REPLACE FUNCTION "public"."is_not_valid_ipaddress_mul"("ip" varchar)
   RETURNS "pg_catalog"."bool" AS $BODY$
 declare
