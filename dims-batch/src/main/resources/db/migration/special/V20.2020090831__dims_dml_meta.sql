@@ -5714,15 +5714,15 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03056%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03056''
 										  					          else dims_col_result||'',DIMS_JIAKE_03056'' end)
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003256, '家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联', 'DIMS_JIAKE_03057', 3057, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联''
 			 												            else dims_col_rtName||'',家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03057%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03057''
-										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)	
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003257, '家客-小区信息-家客小区魏碑任何小区网格关联', 'DIMS_JIAKE_03058', 3058, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-家客小区魏碑任何小区网格关联%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-小区信息-家客小区魏碑任何小区网格关联''
@@ -5737,7 +5737,7 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 			 												            else dims_col_rtName||'',家客-小区信息-小区下无任何覆盖信息'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03059%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03059''
-										  					          else dims_col_result||'',DIMS_JIAKE_03059'' end)					
+										  					          else dims_col_result||'',DIMS_JIAKE_03059'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CUST_RELATION_RESOURCES t2 where isNotNull(t2.residential_id) and t1.int_id=t2.residential_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003259, '家客-ONU-ONU下无ONU端口', 'DIMS_JIAKE_03060', 3060, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU-ONU下无ONU端口%'' then dims_col_rtName
@@ -5753,26 +5753,26 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 			 												            else dims_col_rtName||'',家客-分光器-分光器下无分光器端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03061%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03061''
-										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)		
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
+										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003261, '家客-分纤箱-分纤箱下无分纤箱端子', 'DIMS_JIAKE_03062', 3062, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱-分纤箱下无分纤箱端子%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''家客-分纤箱-分纤箱下无分纤箱端子''
 			 												            else dims_col_rtName||'',家客-分纤箱-分纤箱下无分纤箱端子'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03062%'' then dims_col_result
 				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03062''
-										  					          else dims_col_result||'',DIMS_JIAKE_03062'' end)			
-							  where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL);
+										  					          else dims_col_result||'',DIMS_JIAKE_03062'' end)
+							  where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL);
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
-(908004001, '小区信息出现在多个小区网格中', 'DIMS_JIAKE_04001', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1 
+(908004001, '小区信息出现在多个小区网格中', 'DIMS_JIAKE_04001', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%DIMS_JIAKE_04001%'' then dims_col_rtName
-		            when dims_col_rtName is null then ''DIMS_JIAKE_04001'' 
+		            when dims_col_rtName is null then ''DIMS_JIAKE_04001''
 					else dims_col_rtName||'',DIMS_JIAKE_04001'' end),
 					dims_col_result=(case when dims_col_result like ''%小区信息出现在多个小区网格中%'' then dims_col_result
-					when dims_col_result is null then ''不满足规范:小区信息出现在多个小区网格中'' 
+					when dims_col_result is null then ''不满足规范:小区信息出现在多个小区网格中''
 					else dims_col_result||'',小区信息出现在多个小区网格中'' end)
 					where isNotNull(t1.int_id) and (select count(t2.related_area) from RM_GRID t2 where isNotNull(t2.related_area) and t2.related_area=t1.int_id) > 1 ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null);
- INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") values  
+ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") values
  (908002001, '家客-家庭客户实例必填完整性核查.资源标识', 'CM_HOME_CUST_BUSINESS.int_id', 908003000, 908000600, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002002, '家客-家庭客户实例必填完整性核查.客户编号', 'CM_HOME_CUST_BUSINESS.cust_num', 908003000, 908000601, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002003, '家客-家庭客户实例必填完整性核查.客户接入地址', 'CM_HOME_CUST_BUSINESS.related_standard_address', 908003000, 908000602, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
@@ -5882,7 +5882,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
   (908002107, '家客-分纤箱端子必填完整性核查.所属地市', 'CM_GF_PORT.city_id', 908003013, 908000720, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
   (908002108, '家客-分纤箱端子必填完整性核查.所属区县', 'CM_GF_PORT.county_id', 908003013, 908000721, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL);
 -- DictRule
- INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES 
+ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES
  (908002200, '家客-宽带业务信息规范性核查-接入方式-字典规范性核查', 'enter_type', 908003121, 908000611, 1, NULL, '接入方式enter_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
  (908002201, '家客-宽带业务信息规范性核查-客户业务状态-字典规范性核查', 'service_status', 908003122, 908000612, 1, NULL, '客户业务状态service_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
  (908002202, '家客-IMS业务信息规范性核查-客户业务状态-字典规范性核查', 'service_status', 908003123, 908000620, 1, NULL, '客户业务状态service_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-13 15:33:05.739234', 'admin', '2020-10-13 15:33:05.739234', 'admin', NULL),
@@ -6008,13 +6008,13 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 -- (908001104, 908099003, 908003252, 'admin', 'admin', null),
 -- (908001105, 908099003, 908003253, 'admin', 'admin', null),
 (908001106, 908099003, 908003254, 'admin', 'admin', null),
-(908001107, 908099003, 908003255, 'admin', 'admin', null),
-(908001108, 908099003, 908003256, 'admin', 'admin', null),
+--(908001107, 908099003, 908003255, 'admin', 'admin', null),
+--(908001108, 908099003, 908003256, 'admin', 'admin', null),
 (908001109, 908099003, 908003257, 'admin', 'admin', null),
 -- (908001110, 908099003, 908003258, 'admin', 'admin', null),
 (908001111, 908099003, 908003259, 'admin', 'admin', null),
-(908001112, 908099003, 908003260, 'admin', 'admin', null),
-(908001113, 908099003, 908003261, 'admin', 'admin', null),
+--(908001112, 908099003, 908003260, 'admin', 'admin', null),
+--(908001113, 908099003, 908003261, 'admin', 'admin', null),
 (908001114, 908099004, 908004001, 'admin', 'admin', null),
 (908001115, 908099999, 908099001, 'admin', 'admin', null),
 (908001116, 908099999, 908099002, 'admin', 'admin', null),
@@ -7844,8 +7844,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (906004236,'设备厂家','vendor_id', 906002104, 'VENDOR_ID', 'string', null, 'admin', 'admin', null),
 (906004237,'关联DRA','related_dra', 906002104, 'RELATED_DRA', 'string', null, 'admin', 'admin', null);
 
-
-insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values 
  (906010001, '核心网数据整体指标', 'DIMS_HX_99999', 99999, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (906010002, '核心网数据完整性指标', 'DIMS_HX_99001', 99001, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (906010003, '彩信中心-基础信息资源必填字段完整性', 'DIMS_HX_01002', 1002, 906002001, '核心网', 5, null, null, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 906002001, 1, null),
@@ -7976,7 +7975,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_MSSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
 (906010112, '短彩信-IP地址规范性', 'DIMS_HX_02008', 2008, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02008%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02008''
@@ -8008,7 +8007,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_SMSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
 (906010117, '短彩信-IP地址规范性', 'DIMS_HX_02028', 2028, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02028%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02028''
@@ -8030,7 +8029,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_SMSGWSYS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
 (906010122, '短彩信-资源关键字段唯一性', 'DIMS_HX_02011', 2011, 906002003, '核心网', 11, null, 'update SMS_SMSGWSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02011%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02011''
@@ -8055,7 +8054,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_SMSSYS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
 (906010127, '短彩信-资源关键字段唯一性', 'DIMS_HX_02021', 2021, 906002004, '核心网', 11, null, 'update SMS_SMSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02021%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02021''
@@ -8079,7 +8078,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_SMSGWBASEINFO t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
 (906010131, '短彩信-资源关键字段唯一性', 'DIMS_HX_02016', 2016, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02016%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02016''
@@ -8122,7 +8121,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from SMS_MSSSYS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
 (906010137, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02237', 2237, 906002007, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010138, '电路域-资源关键字段唯一性', 'DIMS_HX_02235', 2235, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02235%'' then dims_col_result
@@ -8145,7 +8144,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_SSA t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
 (906010140, '电路域-资源关键字段唯一性', 'DIMS_HX_02236', 2236, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02236%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02236''
@@ -8189,7 +8188,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_MSC_POOL t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002008, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002008, 1, null),
 (906010144, '电路域-资源关键字段唯一性', 'DIMS_HX_02233', 2233, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02233%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02233''
@@ -8213,7 +8212,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_REPEAT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
 (906010148, '电路域-资源关键字段唯一性', 'DIMS_HX_02223', 2223, 906002009, '核心网', 11, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02223%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02223''
@@ -8246,7 +8245,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_LINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
 (906010151, '电路域-资源关键字段唯一性', 'DIMS_HX_02229', 2229, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02229%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02229''
@@ -8257,7 +8256,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_IPSIGNAL t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
 (906010152, '电路域-资源关键字段唯一性', 'DIMS_HX_02230', 2230, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02230%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02230''
@@ -8291,7 +8290,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_SSA_LINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
 (906010156, '电路域-资源关键字段唯一性', 'DIMS_HX_02243', 2243, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02243%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02243''
@@ -8335,7 +8334,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_IPTRAFFIC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
 (906010160, '电路域-资源关键字段唯一性', 'DIMS_HX_02228', 2228, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02228%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02228''
@@ -8369,7 +8368,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_OTHER t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002014, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002014, 1, null),
 (906010164, '电路域-(端口状态)枚举值规范性', 'DIMS_HX_02219', 2219, 906002015, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010165, '电路域-(端口类型)枚举值规范性', 'DIMS_HX_02218', 2218, 906002015, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010166, '电路域-资源关键字段唯一性', 'DIMS_HX_02217', 2217, 906002015, '核心网', 11, null, 'update CS_PORT t1
@@ -8382,7 +8381,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_PORT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
 (906010167, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02206', 2206, 906002016, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010168, '电路域-(MGW用途)枚举值规范性', 'DIMS_HX_02207', 2207, 906002016, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010169, '电路域-资源关键字段唯一性', 'DIMS_HX_02204', 2204, 906002016, '核心网', 11, null, 'update CS_MGW t1
@@ -8395,7 +8394,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_MGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
 (906010170, '电路域-资源关键字段唯一性', 'DIMS_HX_02205', 2205, 906002016, '核心网', 11, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02205%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02205''
@@ -8431,7 +8430,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_MSS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
 (906010176, '电路域-资源关键字段唯一性', 'DIMS_HX_02215', 2215, 906002018, '核心网', 11, null, 'update CS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02215%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02215''
@@ -8442,7 +8441,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_BOARD t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
 (906010177, '电路域-(STP用途)枚举值规范性', 'DIMS_HX_02211', 2211, 906002019, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010178, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02210', 2210, 906002019, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010179, '电路域-资源关键字段唯一性', 'DIMS_HX_02209', 2209, 906002019, '核心网', 11, null, 'update CS_STP t1
@@ -8466,7 +8465,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from CS_STP t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
 (906010181, '智能网-(设备工作方式)枚举值规范性', 'DIMS_HX_02037', 2037, 906002020, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010182, '智能网-资源关键字段唯一性', 'DIMS_HX_02035', 2035, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02035%'' then dims_col_result
@@ -8489,7 +8488,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
 (906010184, '智能网-IP地址规范性', 'DIMS_HX_02036', 2036, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02036%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02036''
@@ -8510,7 +8509,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_PUBRES t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
 (906010188, '智能网-资源关键字段唯一性', 'DIMS_HX_02031', 2031, 906002021, '核心网', 11, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02031%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02031''
@@ -8543,7 +8542,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_SIGNALUNIT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
 (906010191, '智能网-IP地址规范性', 'DIMS_HX_02040', 2040, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02040%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02040''
@@ -8562,7 +8561,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002023, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002023, 1, null),
 (906010193, '智能网-资源关键字段唯一性', 'DIMS_HX_02046', 2046, 906002023, '核心网', 11, null, 'update INT_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02046%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02046''
@@ -8607,7 +8606,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_RELAY t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002024, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002024, 1, null),
 (906010198, '智能网-(端口状态)枚举值规范性', 'DIMS_HX_02050', 2050, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010199, '智能网-(端口类型)枚举值规范性', 'DIMS_HX_02051', 2051, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010200, '智能网-(端口用途)枚举值规范性', 'DIMS_HX_02052', 2052, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
@@ -8621,7 +8620,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_PORT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
 (906010202, '智能网-资源关键字段唯一性', 'DIMS_HX_02043', 2043, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02043%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02043''
@@ -8632,7 +8631,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_BUSRES t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
 (906010203, '智能网-资源关键字段唯一性', 'DIMS_HX_02044', 2044, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02044%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02044''
@@ -8654,7 +8653,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_DEVICE t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
 (906010205, '智能网-资源关键字段唯一性', 'DIMS_HX_02042', 2042, 906002027, '核心网', 11, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02042%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02042''
@@ -8676,7 +8675,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_SIGNALLINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
 (906010207, '智能网-资源关键字段唯一性', 'DIMS_HX_02054', 2054, 906002028, '核心网', 11, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02054%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02054''
@@ -8709,7 +8708,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from INT_BOARD t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
 (906010210, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02064', 2064, 906002030, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010211, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02063', 2063, 906002030, '核心网', 11, null, 'update VOLTE_TAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02063%'' then dims_col_result
@@ -8732,7 +8731,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_TAS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
 (906010213, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02079', 2079, 906002031, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010214, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02078', 2078, 906002031, '核心网', 11, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02078%'' then dims_col_result
@@ -8755,7 +8754,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_PSBC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
 (906010216, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02120', 2120, 906002032, '核心网', 11, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02120%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02120''
@@ -8766,7 +8765,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_LINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
 (906010217, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02088', 2088, 906002033, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010218, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02087', 2087, 906002033, '核心网', 11, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02087%'' then dims_col_result
@@ -8789,7 +8788,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_BCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
 (906010220, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02070', 2070, 906002034, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010221, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02069', 2069, 906002034, '核心网', 11, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02069%'' then dims_col_result
@@ -8812,7 +8811,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_MRFC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
 (906010223, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02082', 2082, 906002035, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010224, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02080', 2080, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02080%'' then dims_col_result
@@ -8824,7 +8823,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_ATCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
 (906010225, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02081', 2081, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02081%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02081''
@@ -8847,7 +8846,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_MRFP t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
 (906010228, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02075', 2075, 906002036, '核心网', 11, null, 'update VOLTE_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02075%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02075''
@@ -8870,7 +8869,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_ISBG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
 (906010231, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02093', 2093, 906002037, '核心网', 11, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02093%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02093''
@@ -8892,7 +8891,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_BOARD t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002038, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002038, 1, null),
 (906010233, 'VOLTE-(是否备份)枚举值规范性', 'DIMS_HX_02109', 2109, 906002039, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010234, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02110', 2110, 906002039, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010235, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02107', 2107, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
@@ -8905,7 +8904,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
 (906010236, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02108', 2108, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02108%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02108''
@@ -8939,7 +8938,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_AP t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
 (906010240, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02061', 2061, 906002041, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010241, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02060', 2060, 906002041, '核心网', 11, null, 'update VOLTE_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02060%'' then dims_col_result
@@ -8962,7 +8961,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_AS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
 (906010243, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02106', 2106, 906002042, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010244, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02104', 2104, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02104%'' then dims_col_result
@@ -8974,7 +8973,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
 (906010245, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02105', 2105, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02105%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02105''
@@ -9008,7 +9007,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_BGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
 (906010249, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02099', 2099, 906002044, '核心网', 11, null, 'update VOLTE_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02099%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02099''
@@ -9030,7 +9029,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_BGCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
 (906010251, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02095', 2095, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02095%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02095''
@@ -9041,7 +9040,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_SCSCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
 (906010252, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02096', 2096, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02096%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02096''
@@ -9063,7 +9062,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_ICSCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
 (906010254, 'VOLTE-(POOL类型)枚举值规范性', 'DIMS_HX_02113', 2113, 906002047, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010255, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02111', 2111, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02111%'' then dims_col_result
@@ -9075,7 +9074,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_POOL t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002047, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002047, 1, null),
 (906010256, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02112', 2112, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02112%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02112''
@@ -9109,7 +9108,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_MGCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002048, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002048, 1, null),
 (906010260, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02101', 2101, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02101%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02101''
@@ -9141,7 +9140,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_PORT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002049, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002049, 1, null),
 (906010265, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02085', 2085, 906002050, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010266, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02084', 2084, 906002050, '核心网', 11, null, 'update VOLTE_ATGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02084%'' then dims_col_result
@@ -9164,7 +9163,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_ATGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002050, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002050, 1, null),
 (906010268, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02067', 2067, 906002051, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010269, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02065', 2065, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02065%'' then dims_col_result
@@ -9176,7 +9175,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_SCC_AS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
 (906010270, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02066', 2066, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02066%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02066''
@@ -9198,7 +9197,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from VOLTE_DOMAIN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002052, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002052, 1, null),
 (906010272, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02165', 2165, 906002053, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010273, 'IMS-资源关键字段唯一性', 'DIMS_HX_02163', 2163, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02163%'' then dims_col_result
@@ -9210,7 +9209,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_MRFC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002053, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002053, 1, null),
 (906010274, 'IMS-资源关键字段唯一性', 'DIMS_HX_02164', 2164, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02164%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02164''
@@ -9233,7 +9232,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_MMTAS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
 (906010277, 'IMS-资源关键字段唯一性', 'DIMS_HX_02170', 2170, 906002054, '核心网', 11, null, 'update IMS_MMTAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02170%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02170''
@@ -9257,7 +9256,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_CTXAS_PUBRES t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
 (906010281, 'IMS-资源关键字段唯一性', 'DIMS_HX_02188', 2188, 906002055, '核心网', 11, null, 'update IMS_CTXAS_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02188%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02188''
@@ -9290,7 +9289,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_MRFP t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002056, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002056, 1, null),
 (906010284, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02123', 2123, 906002057, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010285, 'IMS-资源关键字段唯一性', 'DIMS_HX_02122', 2122, 906002057, '核心网', 11, null, 'update IMS_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02122%'' then dims_col_result
@@ -9313,7 +9312,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_ISBG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
 (906010287, 'IMS-资源关键字段唯一性', 'DIMS_HX_02182', 2182, 906002058, '核心网', 11, null, 'update IMS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02182%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02182''
@@ -9324,7 +9323,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_BOARD t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002058, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002058, 1, null),
 (906010288, 'IMS-资源关键字段唯一性', 'DIMS_HX_02196', 2196, 906002059, '核心网', 11, null, 'update IMS_CTXAS_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02196%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02196''
@@ -9346,7 +9345,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_CTXAS_BUSRES t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002059, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002059, 1, null),
 (906010290, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02142', 2142, 906002060, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010291, 'IMS-资源关键字段唯一性', 'DIMS_HX_02141', 2141, 906002060, '核心网', 11, null, 'update IMS_SBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02141%'' then dims_col_result
@@ -9369,7 +9368,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_SBC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
 (906010293, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02159', 2159, 906002061, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010294, 'IMS-资源关键字段唯一性', 'DIMS_HX_02157', 2157, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02157%'' then dims_col_result
@@ -9381,7 +9380,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_AGCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
 (906010295, 'IMS-资源关键字段唯一性', 'DIMS_HX_02158', 2158, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02158%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02158''
@@ -9403,7 +9402,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_SCSCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
 (906010297, 'IMS-资源关键字段唯一性', 'DIMS_HX_02128', 2128, 906002062, '核心网', 11, null, 'update IMS_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02128%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02128''
@@ -9437,7 +9436,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_MGCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
 (906010301, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02139', 2139, 906002064, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010302, 'IMS-(HSS主备标识)枚举值规范性', 'DIMS_HX_02138', 2138, 906002064, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010303, 'IMS-资源关键字段唯一性', 'DIMS_HX_02136', 2136, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
@@ -9450,7 +9449,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_IMS_HSS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
 (906010304, 'IMS-资源关键字段唯一性', 'DIMS_HX_02137', 2137, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02137%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02137''
@@ -9474,7 +9473,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_PORT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002065, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002065, 1, null),
 (906010308, 'IMS-资源关键字段唯一性', 'DIMS_HX_02181', 2181, 906002066, '核心网', 11, null, 'update IMS_DOMAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02181%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02181''
@@ -9485,7 +9484,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_DOMAIN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002066, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002066, 1, null),
 (906010309, 'IMS-资源关键字段唯一性', 'DIMS_HX_02198', 2198, 906002067, '核心网', 11, null, 'update IMS_CTXAS_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02198%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02198''
@@ -9507,7 +9506,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_CTXAS_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002067, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002067, 1, null),
 (906010311, 'IMS-资源关键字段唯一性', 'DIMS_HX_02186', 2186, 906002068, '核心网', 11, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02186%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02186''
@@ -9518,7 +9517,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_LINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
 (906010312, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02135', 2135, 906002069, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010313, 'IMS-资源关键字段唯一性', 'DIMS_HX_02134', 2134, 906002069, '核心网', 11, null, 'update IMS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02134%'' then dims_col_result
@@ -9541,7 +9540,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_CG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002069, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002069, 1, null),
 (906010315, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02126', 2126, 906002070, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010316, 'IMS-资源关键字段唯一性', 'DIMS_HX_02125', 2125, 906002070, '核心网', 11, null, 'update IMS_PCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02125%'' then dims_col_result
@@ -9564,7 +9563,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_PCSCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002070, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002070, 1, null),
 (906010318, 'IMS-(设备工作方式)枚举值规范性', 'DIMS_HX_02194', 2194, 906002071, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010319, 'IMS-资源关键字段唯一性', 'DIMS_HX_02192', 2192, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02192%'' then dims_col_result
@@ -9587,7 +9586,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_CTXAS_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
 (906010321, 'IMS-IP地址规范性', 'DIMS_HX_02193', 2193, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02193%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02193''
@@ -9608,7 +9607,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
 (906010325, 'IMS-资源关键字段唯一性', 'DIMS_HX_02175', 2175, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02175%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02175''
@@ -9642,7 +9641,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_UMG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
 (906010329, 'IMS-资源关键字段唯一性', 'DIMS_HX_02155', 2155, 906002073, '核心网', 11, null, 'update IMS_UMG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02155%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02155''
@@ -9676,7 +9675,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_UGC t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
 (906010333, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02148', 2148, 906002075, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010334, 'IMS-资源关键字段唯一性', 'DIMS_HX_02147', 2147, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02147%'' then dims_col_result
@@ -9699,7 +9698,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
 (906010336, 'IMS-IP地址规范性', 'DIMS_HX_02150', 2150, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02150%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02150''
@@ -9727,7 +9726,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_TG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
 (906010340, 'IMS-资源关键字段唯一性', 'DIMS_HX_02161', 2161, 906002076, '核心网', 11, null, 'update IMS_TG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02161%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02161''
@@ -9749,7 +9748,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_BGCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
 (906010342, 'IMS-资源关键字段唯一性', 'DIMS_HX_02132', 2132, 906002077, '核心网', 11, null, 'update IMS_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02132%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02132''
@@ -9771,7 +9770,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_ICSCF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
 (906010344, 'IMS-资源关键字段唯一性', 'DIMS_HX_02130', 2130, 906002078, '核心网', 11, null, 'update IMS_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02130%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02130''
@@ -9794,7 +9793,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from IMS_POOL t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002079, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002079, 1, null),
 (906010347, 'IMS-资源关键字段唯一性', 'DIMS_HX_02180', 2180, 906002079, '核心网', 11, null, 'update IMS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02180%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02180''
@@ -9839,7 +9838,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_PGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
 (906010352, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02272', 2272, 906002081, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010353, '分组域-资源关键字段唯一性', 'DIMS_HX_02270', 2270, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02270%'' then dims_col_result
@@ -9851,7 +9850,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_PCRF_BE t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
 (906010354, '分组域-资源关键字段唯一性', 'DIMS_HX_02271', 2271, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02271%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02271''
@@ -9874,7 +9873,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_PCRF t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
 (906010357, '分组域-资源关键字段唯一性', 'DIMS_HX_02260', 2260, 906002082, '核心网', 11, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02260%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02260''
@@ -9908,7 +9907,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_SGW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
 (906010361, '分组域-资源关键字段唯一性', 'DIMS_HX_02307', 2307, 906002084, '核心网', 11, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02307%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02307''
@@ -9919,7 +9918,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_LINK t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
 (906010362, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02291', 2291, 906002085, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010363, '分组域-资源关键字段唯一性', 'DIMS_HX_02289', 2289, 906002085, '核心网', 11, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02289%'' then dims_col_result
@@ -9931,7 +9930,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_SW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
 (906010364, '分组域-资源关键字段唯一性', 'DIMS_HX_02290', 2290, 906002085, '核心网', 11, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02290%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02290''
@@ -9955,7 +9954,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_CG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
 (906010368, '分组域-资源关键字段唯一性', 'DIMS_HX_02274', 2274, 906002086, '核心网', 11, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02274%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02274''
@@ -9987,7 +9986,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_MME t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
 (906010373, '分组域-资源关键字段唯一性', 'DIMS_HX_02245', 2245, 906002087, '核心网', 11, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02245%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02245''
@@ -10010,7 +10009,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_DNS t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
 (906010376, '分组域-资源关键字段唯一性', 'DIMS_HX_02279', 2279, 906002088, '核心网', 11, null, 'update PS_DNS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02279%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02279''
@@ -10044,7 +10043,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_SGSN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
 (906010380, '分组域-资源关键字段唯一性', 'DIMS_HX_02302', 2302, 906002090, '核心网', 11, null, 'update PS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02302%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02302''
@@ -10055,7 +10054,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_BOARD t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002090, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002090, 1, null),
 (906010381, '分组域-(是否支持NSA)枚举值规范性', 'DIMS_HX_02252', 2252, 906002091, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010382, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02251', 2251, 906002091, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010383, '分组域-资源关键字段唯一性', 'DIMS_HX_02250', 2250, 906002091, '核心网', 11, null, 'update PS_SAE_GW t1
@@ -10079,7 +10078,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_SAE_GW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
 (906010385, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02288', 2288, 906002092, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010386, '分组域-资源关键字段唯一性', 'DIMS_HX_02286', 2286, 906002092, '核心网', 11, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02286%'' then dims_col_result
@@ -10091,7 +10090,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_FW t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
 (906010387, '分组域-资源关键字段唯一性', 'DIMS_HX_02287', 2287, 906002092, '核心网', 11, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02287%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02287''
@@ -10115,7 +10114,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_DRA t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
 (906010391, '分组域-资源关键字段唯一性', 'DIMS_HX_02282', 2282, 906002093, '核心网', 11, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02282%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02282''
@@ -10157,7 +10156,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_SPR t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
 (906010396, '分组域-资源关键字段唯一性', 'DIMS_HX_02264', 2264, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02264%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02264''
@@ -10226,7 +10225,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_POOL t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002095, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002095, 1, null),
 (906010404, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02297', 2297, 906002096, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010405, '分组域-资源关键字段唯一性', 'DIMS_HX_02296', 2296, 906002096, '核心网', 11, null, 'update PS_GGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02296%'' then dims_col_result
@@ -10249,7 +10248,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_GGSN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
 (906010407, '分组域-(端口类型)枚举值规范性', 'DIMS_HX_02306', 2306, 906002097, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010408, '分组域-(端口状态)枚举值规范性', 'DIMS_HX_02305', 2305, 906002097, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010409, '分组域-资源关键字段唯一性', 'DIMS_HX_02304', 2304, 906002097, '核心网', 11, null, 'update PS_PORT t1
@@ -10273,7 +10272,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_PORT t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
 (906010411, '分组域-(业务开放范围)枚举值规范性', 'DIMS_HX_02311', 2311, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010412, '分组域-(地址类型)枚举值规范性', 'DIMS_HX_02312', 2312, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010413, '分组域-(隧道的类型)枚举值规范性', 'DIMS_HX_02310', 2310, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
@@ -10287,7 +10286,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from PS_APN t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
 (906010415, '分组域-资源关键字段唯一性', 'DIMS_HX_02309', 2309, 906002098, '核心网', 11, null, 'update PS_APN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02309%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02309''
@@ -10310,7 +10309,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_DISTRIBUTED t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002099, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002099, 1, null),
 (906010418, 'HSS-资源关键字段唯一性', 'DIMS_HX_02318', 2318, 906002099, '核心网', 11, null, 'update HSS_DISTRIBUTED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02318%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02318''
@@ -10355,7 +10354,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_FE t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010423, 'HSS-(PG主备标识)枚举值规范性', 'DIMS_HX_02330', 2330, 906002101, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010424, 'HSS-资源关键字段唯一性', 'DIMS_HX_02328', 2328, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02328%'' then dims_col_result
@@ -10389,7 +10388,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_PG t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
 (906010427, 'HSS-IP地址规范性', 'DIMS_HX_02329', 2329, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02329%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02329''
@@ -10410,7 +10409,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_CENTRALIZED t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010431, 'HSS-资源关键字段唯一性', 'DIMS_HX_02314', 2314, 906002102, '核心网', 11, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02314%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02314''
@@ -10433,7 +10432,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_HLR_FE t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
 (906010434, 'HSS-资源关键字段唯一性', 'DIMS_HX_02333', 2333, 906002103, '核心网', 11, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02333%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02333''
@@ -10467,7 +10466,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                  where exists(select 1
 		                          from HSS_BE t2
 		                         where t2.ctid <> t1.ctid
-		                           and t2.int_id=t1.int_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010438, '核心网数据关联性指标', 'DIMS_HX_99003', 99003, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (906010439, '短彩信-关联性', 'DIMS_HX_03002', 3002, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03002%'' then dims_col_result
@@ -10476,7 +10475,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息所属机架位置关联性''
                                              else dims_col_rtName||'',彩信中心-基础信息所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
 (906010440, '短彩信-关联性', 'DIMS_HX_03003', 3003, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03003%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03003''
@@ -10484,7 +10483,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息接入电源柜位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息接入电源柜位置关联性''
                                              else dims_col_rtName||'',彩信中心-基础信息接入电源柜位置关联性'' end)
-                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
+                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
 (906010441, '短彩信-关联性', 'DIMS_HX_03009', 3009, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03009%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03009''
@@ -10492,7 +10491,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属短信中心ID关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属短信中心ID关联性''
                                              else dims_col_rtName||'',短信中心-基础信息所属短信中心ID关联性'' end)
-                 where isNotNull(related_sys) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sys)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
+                 where isNotNull(related_sys) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sys)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
 (906010442, '短彩信-关联性', 'DIMS_HX_03010', 3010, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03010%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03010''
@@ -10500,7 +10499,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属机架位置关联性''
                                              else dims_col_rtName||'',短信中心-基础信息所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
 (906010443, '短彩信-关联性', 'DIMS_HX_03011', 3011, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03011%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03011''
@@ -10508,7 +10507,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息接入电源柜位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信中心-基础信息接入电源柜位置关联性''
                                              else dims_col_rtName||'',短信中心-基础信息接入电源柜位置关联性'' end)
-                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
+                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
 (906010444, '短彩信-关联性', 'DIMS_HX_03004', 3004, 906002003, '核心网', 10, null, 'update SMS_SMSGWSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03004%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03004''
@@ -10516,7 +10515,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信网关-系统信息互联短信中心ID关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信网关-系统信息互联短信中心ID关联性''
                                              else dims_col_rtName||'',短信网关-系统信息互联短信中心ID关联性'' end)
-                 where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
+                 where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
 (906010445, '短彩信-关联性', 'DIMS_HX_03008', 3008, 906002004, '核心网', 10, null, 'update SMS_SMSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03008%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03008''
@@ -10524,7 +10523,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信中心-系统信息互联短信网关ID关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信中心-系统信息互联短信网关ID关联性''
                                              else dims_col_rtName||'',短信中心-系统信息互联短信网关ID关联性'' end)
-                 where isNotNull(related_smsgw) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_smsgw)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
+                 where isNotNull(related_smsgw) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_smsgw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
 (906010446, '短彩信-关联性', 'DIMS_HX_03005', 3005, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03005%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03005''
@@ -10532,7 +10531,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属短信网关ID关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属短信网关ID关联性''
                                              else dims_col_rtName||'',短信网关-基础信息所属短信网关ID关联性'' end)
-                 where isNotNull(related_sys) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_sys)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
+                 where isNotNull(related_sys) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_sys)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
 (906010447, '短彩信-关联性', 'DIMS_HX_03006', 3006, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03006%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03006''
@@ -10540,7 +10539,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属机架位置关联性''
                                              else dims_col_rtName||'',短信网关-基础信息所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
 (906010448, '短彩信-关联性', 'DIMS_HX_03007', 3007, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03007%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03007''
@@ -10548,7 +10547,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息接入电源柜位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:短信网关-基础信息接入电源柜位置关联性''
                                              else dims_col_rtName||'',短信网关-基础信息接入电源柜位置关联性'' end)
-                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
+                 where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
 (906010449, '短彩信-关联性', 'DIMS_HX_03001', 3001, 906002006, '核心网', 10, null, 'update SMS_MSSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03001%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03001''
@@ -10556,7 +10555,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-系统信息互联短信中心ID关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:彩信中心-系统信息互联短信中心ID关联性''
                                              else dims_col_rtName||'',彩信中心-系统信息互联短信中心ID关联性'' end)
-                 where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
+                 where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
 (906010450, '电路域-关联性', 'DIMS_HX_03119', 3119, 906002007, '核心网', 10, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03119%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03119''
@@ -10564,7 +10563,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SSA所在机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SSA所在机房关联性''
                                              else dims_col_rtName||'',SSA所在机房关联性'' end)
-                 where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
+                 where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
 (906010451, '电路域-关联性', 'DIMS_HX_03112', 3112, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03112%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03112''
@@ -10572,7 +10571,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%中继本端网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:中继本端网元关联性''
                                              else dims_col_rtName||'',中继本端网元关联性'' end)
-                 where isNotNull(zh_label)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.zh_label)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.zh_label)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.zh_label)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.zh_label) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
+                 where isNotNull(zh_label)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.zh_label)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.zh_label)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.zh_label)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.zh_label) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
 (906010452, '电路域-关联性', 'DIMS_HX_03113', 3113, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03113%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03113''
@@ -10580,7 +10579,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%中继本端端口编号关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:中继本端端口编号关联性''
                                              else dims_col_rtName||'',中继本端端口编号关联性'' end)
-                 where isNotNull(a_port_no)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_port_no)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_port_no)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_port_no)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_port_no) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
+                 where isNotNull(a_port_no)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_port_no)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_port_no)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_port_no)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_port_no) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
 (906010453, '电路域-关联性', 'DIMS_HX_03114', 3114, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03114%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03114''
@@ -10588,7 +10587,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%中继对端网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:中继对端网元关联性''
                                              else dims_col_rtName||'',中继对端网元关联性'' end)
-                 where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
+                 where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
 (906010454, '电路域-关联性', 'DIMS_HX_03109', 3109, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03109%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03109''
@@ -10596,7 +10595,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端网元关联性''
                                              else dims_col_rtName||'',链路本端网元关联性'' end)
-                 where isNotNull(a_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_end_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
+                 where isNotNull(a_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
 (906010455, '电路域-关联性', 'DIMS_HX_03110', 3110, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03110%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03110''
@@ -10604,7 +10603,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路对端网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路对端网元关联性''
                                              else dims_col_rtName||'',链路对端网元关联性'' end)
-                 where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
+                 where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
 (906010456, '电路域-关联性', 'DIMS_HX_03111', 3111, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03111%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03111''
@@ -10612,7 +10611,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端信令端口编号关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端信令端口编号关联性''
                                              else dims_col_rtName||'',链路本端信令端口编号关联性'' end)
-                 where isNotNull(a_signal_port)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_signal_port)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_signal_port) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
+                 where isNotNull(a_signal_port)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_signal_port)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_signal_port) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
 (906010457, '电路域-关联性', 'DIMS_HX_03118', 3118, 906002011, '核心网', 10, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03118%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03118''
@@ -10620,7 +10619,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IP信令端口编号关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IP信令端口编号关联性''
                                              else dims_col_rtName||'',IP信令端口编号关联性'' end)
-                 where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.int_id=t1.port_no)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
+                 where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.int_id=t1.port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
 (906010458, '电路域-关联性', 'DIMS_HX_03115', 3115, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03115%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03115''
@@ -10628,7 +10627,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IP话务MGW名称关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IP话务MGW名称关联性''
                                              else dims_col_rtName||'',IP话务MGW名称关联性'' end)
-                 where isNotNull(related_mgw) and not exists(select 1 from CS_MGW t2 where t2.int_id=t1.related_mgw)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
+                 where isNotNull(related_mgw) and not exists(select 1 from CS_MGW t2 where t2.int_id=t1.related_mgw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
 (906010459, '电路域-关联性', 'DIMS_HX_03116', 3116, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03116%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03116''
@@ -10636,7 +10635,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口编号关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IP话务端口编号关联性''
                                              else dims_col_rtName||'',IP话务端口编号关联性'' end)
-                 where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.port_no=t1.port_no)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
+                 where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.port_no=t1.port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
 (906010460, '电路域-关联性', 'DIMS_HX_03117', 3117, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03117%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03117''
@@ -10644,7 +10643,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口所连CE名称关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IP话务端口所连CE名称关联性''
                                              else dims_col_rtName||'',IP话务端口所连CE名称关联性'' end)
-                 where isNotNull(port_related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.port_related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
+                 where isNotNull(port_related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.port_related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
 (906010461, '电路域-关联性', 'DIMS_HX_03108', 3108, 906002015, '核心网', 10, null, 'update CS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03108%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03108''
@@ -10652,7 +10651,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:端口所属网元关联性''
                                              else dims_col_rtName||'',端口所属网元关联性'' end)
-                 where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
+                 where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
 (906010462, '电路域-关联性', 'DIMS_HX_03100', 3100, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03100%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03100''
@@ -10660,7 +10659,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MGW所属机架位置关联性''
                                              else dims_col_rtName||'',MGW所属机架位置关联性'' end)
-                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
+                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
 (906010463, '电路域-关联性', 'DIMS_HX_03101', 3101, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03101%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03101''
@@ -10668,7 +10667,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MGW归属MSC POOL关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MGW归属MSC POOL关联性''
                                              else dims_col_rtName||'',MGW归属MSC POOL关联性'' end)
-                 where isNotNull(realted_msc_pool) and not exists(select 1 from CS_MSC_POOL t2 where t2.int_id=t1.realted_msc_pool)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
+                 where isNotNull(realted_msc_pool) and not exists(select 1 from CS_MSC_POOL t2 where t2.int_id=t1.realted_msc_pool)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
 (906010464, '电路域-关联性', 'DIMS_HX_03102', 3102, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03102%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03102''
@@ -10676,7 +10675,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MGW关联CE关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MGW关联CE关联性''
                                              else dims_col_rtName||'',MGW关联CE关联性'' end)
-                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
+                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
 (906010465, '电路域-关联性', 'DIMS_HX_03096', 3096, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03096%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03096''
@@ -10684,7 +10683,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MSS所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MSS所属机架位置关联性''
                                              else dims_col_rtName||'',MSS所属机架位置关联性'' end)
-                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
+                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
 (906010466, '电路域-关联性', 'DIMS_HX_03097', 3097, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03097%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03097''
@@ -10692,7 +10691,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MSS关联LSTP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MSS关联LSTP关联性''
                                              else dims_col_rtName||'',MSS关联LSTP关联性'' end)
-                 where isNotNull(related_stp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_stp)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
+                 where isNotNull(related_stp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_stp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
 (906010467, '电路域-关联性', 'DIMS_HX_03098', 3098, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03098%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03098''
@@ -10700,7 +10699,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MSS关联CE关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MSS关联CE关联性''
                                              else dims_col_rtName||'',MSS关联CE关联性'' end)
-                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
+                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
 (906010468, '电路域-关联性', 'DIMS_HX_03107', 3107, 906002018, '核心网', 10, null, 'update CS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03107%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03107''
@@ -10708,7 +10707,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%板卡所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:板卡所属网元关联性''
                                              else dims_col_rtName||'',板卡所属网元关联性'' end)
-                 where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
+                 where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
 (906010469, '电路域-关联性', 'DIMS_HX_03104', 3104, 906002019, '核心网', 10, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03104%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03104''
@@ -10716,7 +10715,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%STP所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:STP所属机架位置关联性''
                                              else dims_col_rtName||'',STP所属机架位置关联性'' end)
-                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
+                 where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
 (906010470, '电路域-关联性', 'DIMS_HX_03105', 3105, 906002019, '核心网', 10, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03105%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03105''
@@ -10724,7 +10723,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%STP关联CE关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:STP关联CE关联性''
                                              else dims_col_rtName||'',STP关联CE关联性'' end)
-                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
+                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
 (906010471, '智能网-关联性', 'DIMS_HX_03014', 3014, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03014%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03014''
@@ -10732,7 +10731,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:业务处理单元所属机房关联性''
                                              else dims_col_rtName||'',业务处理单元所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
 (906010472, '智能网-关联性', 'DIMS_HX_03015', 3015, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03015%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03015''
@@ -10740,7 +10739,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:业务处理单元所属机架位置关联性''
                                              else dims_col_rtName||'',业务处理单元所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
 (906010473, '智能网-关联性', 'DIMS_HX_03016', 3016, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03016%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03016''
@@ -10748,7 +10747,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:业务处理单元所属网元关联性''
                                              else dims_col_rtName||'',业务处理单元所属网元关联性'' end)
-                 where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from INT_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
+                 where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from INT_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
 (906010474, '智能网-关联性', 'DIMS_HX_03012', 3012, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03012%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03012''
@@ -10756,7 +10755,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:网元通用所属机房关联性''
                                              else dims_col_rtName||'',网元通用所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
 (906010475, '智能网-关联性', 'DIMS_HX_03013', 3013, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03013%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03013''
@@ -10764,7 +10763,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:网元通用所属机架位置关联性''
                                              else dims_col_rtName||'',网元通用所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
 (906010476, '智能网-关联性', 'DIMS_HX_03017', 3017, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03017%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03017''
@@ -10772,7 +10771,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令处理单元所属机房关联性''
                                              else dims_col_rtName||'',信令处理单元所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
 (906010477, '智能网-关联性', 'DIMS_HX_03018', 3018, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03018%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03018''
@@ -10780,7 +10779,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令处理单元所属机架位置关联性''
                                              else dims_col_rtName||'',信令处理单元所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
 (906010478, '智能网-关联性', 'DIMS_HX_03019', 3019, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03019%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03019''
@@ -10788,7 +10787,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令处理单元所属网元关联性''
                                              else dims_col_rtName||'',信令处理单元所属网元关联性'' end)
-                 where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
+                 where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
 (906010479, '智能网-关联性', 'DIMS_HX_03024', 3024, 906002025, '核心网', 10, null, 'update INT_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03024%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03024''
@@ -10796,7 +10795,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%端口物理位置信息关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:端口物理位置信息关联性''
                                              else dims_col_rtName||'',端口物理位置信息关联性'' end)
-                 where isNotNull(physical_position_info) and not exists(select 1 from INT_BOARD t2 where t2.int_id=t1.physical_position_info)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
+                 where isNotNull(physical_position_info) and not exists(select 1 from INT_BOARD t2 where t2.int_id=t1.physical_position_info)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
 (906010480, '智能网-关联性', 'DIMS_HX_03025', 3025, 906002025, '核心网', 10, null, 'update INT_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03025%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03025''
@@ -10812,7 +10811,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%业务资源所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:业务资源所属网元关联性''
                                              else dims_col_rtName||'',业务资源所属网元关联性'' end)
-                 where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
+                 where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
 (906010482, '智能网-关联性', 'DIMS_HX_03020', 3020, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03020%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03020''
@@ -10820,7 +10819,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机房关联性''
                                              else dims_col_rtName||'',智能网网络设备所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
 (906010483, '智能网-关联性', 'DIMS_HX_03021', 3021, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03021%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03021''
@@ -10828,7 +10827,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机架位置关联性''
                                              else dims_col_rtName||'',智能网网络设备所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
 (906010484, '智能网-关联性', 'DIMS_HX_03026', 3026, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03026%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03026''
@@ -10836,7 +10835,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令链路本端网元关联性''
                                              else dims_col_rtName||'',信令链路本端网元关联性'' end)
-                 where isNotNull(aend_ne) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.aend_ne)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
+                 where isNotNull(aend_ne) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.aend_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
 (906010485, '智能网-关联性', 'DIMS_HX_03027', 3027, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03027%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03027''
@@ -10844,7 +10843,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端逻辑端口号关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令链路本端逻辑端口号关联性''
                                              else dims_col_rtName||'',信令链路本端逻辑端口号关联性'' end)
-                 where isNotNull(local_logical_port_no) and not exists(select 1 from INT_PORT t2 where t2.int_id=t1.local_logical_port_no)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
+                 where isNotNull(local_logical_port_no) and not exists(select 1 from INT_PORT t2 where t2.int_id=t1.local_logical_port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
 (906010486, '智能网-关联性', 'DIMS_HX_03028', 3028, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03028%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03028''
@@ -10852,7 +10851,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%信令链路电路名称关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:信令链路电路名称关联性''
                                              else dims_col_rtName||'',信令链路电路名称关联性'' end)
-                 where isNotNull(circuit_name) and not exists(select 1 from TRANSI_CIRCUIT t2 where t2.res_identifier=t1.circuit_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
+                 where isNotNull(circuit_name) and not exists(select 1 from TRANSI_CIRCUIT t2 where t2.res_identifier=t1.circuit_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
 (906010487, '智能网-关联性', 'DIMS_HX_03023', 3023, 906002029, '核心网', 10, null, 'update INT_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03023%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03023''
@@ -10860,7 +10859,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%板卡所属信令处理网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:板卡所属信令处理网元关联性''
                                              else dims_col_rtName||'',板卡所属信令处理网元关联性'' end)
-                 where isNotNull(related_signal_processing_unit) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.related_signal_processing_unit)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
+                 where isNotNull(related_signal_processing_unit) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.related_signal_processing_unit)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
 (906010488, 'VOLTE-关联性', 'DIMS_HX_03031', 3031, 906002030, '核心网', 10, null, 'update VOLTE_TAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03031%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03031''
@@ -10868,7 +10867,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%VOLTETAS域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:VOLTETAS域名关联性''
                                              else dims_col_rtName||'',VOLTETAS域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
 (906010489, 'VOLTE-关联性', 'DIMS_HX_03040', 3040, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03040%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03040''
@@ -10876,7 +10875,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PSBC所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PSBC所属机架位置关联性''
                                              else dims_col_rtName||'',PSBC所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
 (906010490, 'VOLTE-关联性', 'DIMS_HX_03041', 3041, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03041%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03041''
@@ -10884,7 +10883,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PSBC域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PSBC域名关联性''
                                              else dims_col_rtName||'',PSBC域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
 (906010491, 'VOLTE-关联性', 'DIMS_HX_03058', 3058, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03058%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03058''
@@ -10892,7 +10891,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端机房关联性''
                                              else dims_col_rtName||'',链路本端机房关联性'' end)
-                 where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
+                 where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
 (906010492, 'VOLTE-关联性', 'DIMS_HX_03060', 3060, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03060%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03060''
@@ -10900,7 +10899,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路对端机房关联性''
                                              else dims_col_rtName||'',链路对端机房关联性'' end)
-                 where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
+                 where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
 (906010493, 'VOLTE-关联性', 'DIMS_HX_03062', 3062, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03062%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03062''
@@ -10908,7 +10907,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端设备端口关联性''
                                              else dims_col_rtName||'',链路本端设备端口关联性'' end)
-                 where isNotNull(aend_port) and not exists(select 1 from VOLTE_PORT t2 where t2.int_id=t1.aend_port)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
+                 where isNotNull(aend_port) and not exists(select 1 from VOLTE_PORT t2 where t2.int_id=t1.aend_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
 (906010494, 'VOLTE-关联性', 'DIMS_HX_03044', 3044, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03044%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03044''
@@ -10916,7 +10915,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%BCF所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:BCF所属机架位置关联性''
                                              else dims_col_rtName||'',BCF所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
 (906010495, 'VOLTE-关联性', 'DIMS_HX_03045', 3045, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03045%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03045''
@@ -10924,7 +10923,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%BCF域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:BCF域名关联性''
                                              else dims_col_rtName||'',BCF域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
 (906010496, 'VOLTE-关联性', 'DIMS_HX_03033', 3033, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03033%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03033''
@@ -10932,7 +10931,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MRFC所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MRFC所属机架位置关联性''
                                              else dims_col_rtName||'',MRFC所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
 (906010497, 'VOLTE-关联性', 'DIMS_HX_03034', 3034, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03034%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03034''
@@ -10940,7 +10939,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MRFC域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MRFC域名关联性''
                                              else dims_col_rtName||'',MRFC域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
 (906010498, 'VOLTE-关联性', 'DIMS_HX_03036', 3036, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03036%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03036''
@@ -10948,7 +10947,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MRFC关联MRFP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MRFC关联MRFP关联性''
                                              else dims_col_rtName||'',MRFC关联MRFP关联性'' end)
-                 where isNotNull(related_mrfp) and not exists(select 1 from VOLTE_MRFP t2 where t2.int_id=t1.related_mrfp)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
+                 where isNotNull(related_mrfp) and not exists(select 1 from VOLTE_MRFP t2 where t2.int_id=t1.related_mrfp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
 (906010499, 'VOLTE-关联性', 'DIMS_HX_03043', 3043, 906002035, '核心网', 10, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03043%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03043''
@@ -10956,7 +10955,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ATCF域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ATCF域名关联性''
                                              else dims_col_rtName||'',ATCF域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
 (906010500, 'VOLTE-关联性', 'DIMS_HX_03039', 3039, 906002036, '核心网', 10, null, 'update VOLTE_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03039%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03039''
@@ -10964,7 +10963,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MRFP所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MRFP所属机架位置关联性''
                                              else dims_col_rtName||'',MRFP所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
 (906010501, 'VOLTE-关联性', 'DIMS_HX_03047', 3047, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03047%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03047''
@@ -10972,7 +10971,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置关联性''
                                              else dims_col_rtName||'',ISBG所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
 (906010502, 'VOLTE-关联性', 'DIMS_HX_03048', 3048, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03048%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03048''
@@ -10980,7 +10979,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ISBG域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ISBG域名关联性''
                                              else dims_col_rtName||'',ISBG域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
 (906010503, 'VOLTE-关联性', 'DIMS_HX_03056', 3056, 906002039, '核心网', 10, null, 'update VOLTE_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03056%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03056''
@@ -10988,7 +10987,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置关联性''
                                              else dims_col_rtName||'',DNS&ENUM所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
 (906010504, 'VOLTE-关联性', 'DIMS_HX_03037', 3037, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03037%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03037''
@@ -10996,7 +10995,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%AP所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:AP所属机架位置关联性''
                                              else dims_col_rtName||'',AP所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
 (906010505, 'VOLTE-关联性', 'DIMS_HX_03038', 3038, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03038%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03038''
@@ -11004,7 +11003,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%AP域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:AP域名关联性''
                                              else dims_col_rtName||'',AP域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
 (906010506, 'VOLTE-关联性', 'DIMS_HX_03029', 3029, 906002041, '核心网', 10, null, 'update VOLTE_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03029%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03029''
@@ -11012,7 +11011,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%VOLTE AS所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:VOLTE AS所属机架位置关联性''
                                              else dims_col_rtName||'',VOLTE AS所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
 (906010507, 'VOLTE-关联性', 'DIMS_HX_03055', 3055, 906002042, '核心网', 10, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03055%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03055''
@@ -11020,7 +11019,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置关联性''
                                              else dims_col_rtName||'',IM-MGW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
 (906010508, 'VOLTE-关联性', 'DIMS_HX_03046', 3046, 906002043, '核心网', 10, null, 'update VOLTE_BGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03046%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03046''
@@ -11028,7 +11027,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%BGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:BGW所属机架位置关联性''
                                              else dims_col_rtName||'',BGW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
 (906010509, 'VOLTE-关联性', 'DIMS_HX_03053', 3053, 906002044, '核心网', 10, null, 'update VOLTE_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03053%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03053''
@@ -11036,7 +11035,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBG关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:BGCF所属ISBG关联性''
                                              else dims_col_rtName||'',BGCF所属ISBG关联性'' end)
-                 where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
+                 where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
 (906010510, 'VOLTE-关联性', 'DIMS_HX_03050', 3050, 906002045, '核心网', 10, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03050%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03050''
@@ -11044,7 +11043,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBG关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBG关联性''
                                              else dims_col_rtName||'',SCSCF所属ISBG关联性'' end)
-                 where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
+                 where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
 (906010511, 'VOLTE-关联性', 'DIMS_HX_03052', 3052, 906002046, '核心网', 10, null, 'update VOLTE_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03052%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03052''
@@ -11052,7 +11051,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ICSCF归属I-CSCF POOL关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ICSCF归属I-CSCF POOL关联性''
                                              else dims_col_rtName||'',ICSCF归属I-CSCF POOL关联性'' end)
-                 where isNotNull(related_cscf_pool) and not exists(select 1 from VOLTE_POOL t2 where t2.int_id=t1.related_cscf_pool)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
+                 where isNotNull(related_cscf_pool) and not exists(select 1 from VOLTE_POOL t2 where t2.int_id=t1.related_cscf_pool)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
 (906010512, 'VOLTE-关联性', 'DIMS_HX_03032', 3032, 906002051, '核心网', 10, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03032%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03032''
@@ -11060,7 +11059,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SCC-AS域名关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SCC-AS域名关联性''
                                              else dims_col_rtName||'',SCC-AS域名关联性'' end)
-                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
+                 where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
 (906010513, 'IMS-关联性', 'DIMS_HX_03077', 3077, 906002054, '核心网', 10, null, 'update IMS_MMTAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03077%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03077''
@@ -11068,7 +11067,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MMTAS所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MMTAS所属机架位置关联性''
                                              else dims_col_rtName||'',MMTAS所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
 (906010514, 'IMS-关联性', 'DIMS_HX_03086', 3086, 906002055, '核心网', 10, null, 'update IMS_CTXAS_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03086%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03086''
@@ -11076,7 +11075,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-公共资源所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:CTXAS-公共资源所属机架位置关联性''
                                              else dims_col_rtName||'',CTXAS-公共资源所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
 (906010515, 'IMS-关联性', 'DIMS_HX_03064', 3064, 906002057, '核心网', 10, null, 'update IMS_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03064%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03064''
@@ -11084,7 +11083,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置关联性''
                                              else dims_col_rtName||'',ISBG所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
 (906010516, 'IMS-关联性', 'DIMS_HX_03069', 3069, 906002060, '核心网', 10, null, 'update IMS_SBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03069%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03069''
@@ -11092,7 +11091,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SBC所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SBC所属机架位置关联性''
                                              else dims_col_rtName||'',SBC所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
 (906010517, 'IMS-关联性', 'DIMS_HX_03075', 3075, 906002061, '核心网', 10, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03075%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03075''
@@ -11100,7 +11099,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%AGCF所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:AGCF所属机架位置关联性''
                                              else dims_col_rtName||'',AGCF所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
 (906010518, 'IMS-关联性', 'DIMS_HX_03065', 3065, 906002062, '核心网', 10, null, 'update IMS_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03065%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03065''
@@ -11108,7 +11107,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBG关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBG关联性''
                                              else dims_col_rtName||'',SCSCF所属ISBG关联性'' end)
-                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
+                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
 (906010519, 'IMS-关联性', 'DIMS_HX_03070', 3070, 906002063, '核心网', 10, null, 'update IMS_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03070%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03070''
@@ -11116,7 +11115,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MGCF所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MGCF所属机架位置关联性''
                                              else dims_col_rtName||'',MGCF所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
 (906010520, 'IMS-关联性', 'DIMS_HX_03068', 3068, 906002064, '核心网', 10, null, 'update IMS_IMS_HSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03068%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03068''
@@ -11124,7 +11123,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IMS HSS所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IMS HSS所属机架位置关联性''
                                              else dims_col_rtName||'',IMS HSS所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
 (906010521, 'IMS-关联性', 'DIMS_HX_03080', 3080, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03080%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03080''
@@ -11132,7 +11131,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端机房关联性''
                                              else dims_col_rtName||'',链路本端机房关联性'' end)
-                 where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
+                 where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
 (906010522, 'IMS-关联性', 'DIMS_HX_03082', 3082, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03082%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03082''
@@ -11140,7 +11139,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路对端机房关联性''
                                              else dims_col_rtName||'',链路对端机房关联性'' end)
-                 where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
+                 where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
 (906010523, 'IMS-关联性', 'DIMS_HX_03084', 3084, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03084%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03084''
@@ -11148,7 +11147,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路本端设备端口关联性''
                                              else dims_col_rtName||'',链路本端设备端口关联性'' end)
-                 where isNotNull(aend_port) and not exists(select 1 from IMS_PORT t2 where t2.int_id=t1.aend_port)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
+                 where isNotNull(aend_port) and not exists(select 1 from IMS_PORT t2 where t2.int_id=t1.aend_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
 (906010524, 'IMS-关联性', 'DIMS_HX_03087', 3087, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03087''
@@ -11156,7 +11155,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属机架位置关联性''
                                              else dims_col_rtName||'',CTXAS-SCP业务处理单元所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
 (906010525, 'IMS-关联性', 'DIMS_HX_03088', 3088, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03088%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03088''
@@ -11164,7 +11163,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属网元关联性''
                                              else dims_col_rtName||'',CTXAS-SCP业务处理单元所属网元关联性'' end)
-                 where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from IMS_CTXAS_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
+                 where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from IMS_CTXAS_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
 (906010526, 'IMS-关联性', 'DIMS_HX_03078', 3078, 906002072, '核心网', 10, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03078%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03078''
@@ -11172,7 +11171,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置关联性''
                                              else dims_col_rtName||'',DNS&ENUM所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
 (906010527, 'IMS-关联性', 'DIMS_HX_03074', 3074, 906002073, '核心网', 10, null, 'update IMS_UMG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03074%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03074''
@@ -11180,7 +11179,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%UMG所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:UMG所属机架位置关联性''
                                              else dims_col_rtName||'',UMG所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
 (906010528, 'IMS-关联性', 'DIMS_HX_03073', 3073, 906002074, '核心网', 10, null, 'update IMS_UGC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03073%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03073''
@@ -11188,7 +11187,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%UGC所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:UGC所属机架位置关联性''
                                              else dims_col_rtName||'',UGC所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
 (906010529, 'IMS-关联性', 'DIMS_HX_03071', 3071, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03071%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03071''
@@ -11196,7 +11195,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置关联性''
                                              else dims_col_rtName||'',IM-MGW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
 (906010530, 'IMS-关联性', 'DIMS_HX_03072', 3072, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03072%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03072''
@@ -11204,7 +11203,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW关联的Mgcf标识关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:IM-MGW关联的Mgcf标识关联性''
                                              else dims_col_rtName||'',IM-MGW关联的Mgcf标识关联性'' end)
-                 where isNotNull(mgcf_id) and not exists(select 1 from IMS_MGCF t2 where t2.int_id=t1.mgcf_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
+                 where isNotNull(mgcf_id) and not exists(select 1 from IMS_MGCF t2 where t2.int_id=t1.mgcf_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
 (906010531, 'IMS-关联性', 'DIMS_HX_03076', 3076, 906002076, '核心网', 10, null, 'update IMS_TG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03076%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03076''
@@ -11212,7 +11211,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%TG所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:TG所属机架位置关联性''
                                              else dims_col_rtName||'',TG所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
 (906010532, 'IMS-关联性', 'DIMS_HX_03067', 3067, 906002077, '核心网', 10, null, 'update IMS_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03067%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03067''
@@ -11220,7 +11219,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBG关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:BGCF所属ISBG关联性''
                                              else dims_col_rtName||'',BGCF所属ISBG关联性'' end)
-                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
+                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
 (906010533, 'IMS-关联性', 'DIMS_HX_03066', 3066, 906002078, '核心网', 10, null, 'update IMS_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03066%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03066''
@@ -11228,7 +11227,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%ICSCF所属ISBG关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:ICSCF所属ISBG关联性''
                                              else dims_col_rtName||'',ICSCF所属ISBG关联性'' end)
-                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
+                 where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
 (906010534, '分组域-关联性', 'DIMS_HX_03132', 3132, 906002080, '核心网', 10, null, 'update PS_PGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03132%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03132''
@@ -11236,7 +11235,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PGW所属机架位置关联性''
                                              else dims_col_rtName||'',PGW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
 (906010535, '分组域-关联性', 'DIMS_HX_03138', 3138, 906002081, '核心网', 10, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03138%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03138''
@@ -11244,7 +11243,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PCRF-BE所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PCRF-BE所属机架位置关联性''
                                              else dims_col_rtName||'',PCRF-BE所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
 (906010536, '分组域-关联性', 'DIMS_HX_03133', 3133, 906002082, '核心网', 10, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03133%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03133''
@@ -11252,7 +11251,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PCRF所属机架位置关联性''
                                              else dims_col_rtName||'',PCRF所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
 (906010537, '分组域-关联性', 'DIMS_HX_03134', 3134, 906002082, '核心网', 10, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03134%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03134''
@@ -11260,7 +11259,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PCRF所属机房关联性''
                                              else dims_col_rtName||'',PCRF所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
 (906010538, '分组域-关联性', 'DIMS_HX_03131', 3131, 906002083, '核心网', 10, null, 'update PS_SGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03131%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03131''
@@ -11268,7 +11267,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SGW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SGW所属机架位置关联性''
                                              else dims_col_rtName||'',SGW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
 (906010539, '分组域-关联性', 'DIMS_HX_03154', 3154, 906002084, '核心网', 10, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03154%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03154''
@@ -11276,7 +11275,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路A端设备关联性''
                                              else dims_col_rtName||'',链路A端设备关联性'' end)
-                 where isNotNull(a_end_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.a_end_device)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.a_end_device)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.a_end_device)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.a_end_device)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.a_end_device)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.a_end_device)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.a_end_device)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.a_end_device)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.a_end_device)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.a_end_device) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
+                 where isNotNull(a_end_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.a_end_device)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.a_end_device)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.a_end_device)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.a_end_device)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.a_end_device)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.a_end_device)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.a_end_device)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.a_end_device)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.a_end_device)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.a_end_device) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
 (906010540, '分组域-关联性', 'DIMS_HX_03155', 3155, 906002084, '核心网', 10, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03155%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03155''
@@ -11284,7 +11283,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备端口关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:链路A端设备端口关联性''
                                              else dims_col_rtName||'',链路A端设备端口关联性'' end)
-                 where isNotNull(a_end_port) and not exists(select 1 from PS_PORT t2 where t2.int_id=t1.a_end_port)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
+                 where isNotNull(a_end_port) and not exists(select 1 from PS_PORT t2 where t2.int_id=t1.a_end_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
 (906010541, '分组域-关联性', 'DIMS_HX_03147', 3147, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03147%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03147''
@@ -11292,7 +11291,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SW所属机架位置关联性''
                                              else dims_col_rtName||'',SW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
 (906010542, '分组域-关联性', 'DIMS_HX_03148', 3148, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03148%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03148''
@@ -11300,7 +11299,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SW所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SW所属机房关联性''
                                              else dims_col_rtName||'',SW所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
 (906010543, '分组域-关联性', 'DIMS_HX_03149', 3149, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03149%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03149''
@@ -11308,7 +11307,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SW关联FW关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SW关联FW关联性''
                                              else dims_col_rtName||'',SW关联FW关联性'' end)
-                 where isNotNull(related_fw) and not exists(select 1 from PS_FW t2 where t2.int_id=t1.related_fw)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
+                 where isNotNull(related_fw) and not exists(select 1 from PS_FW t2 where t2.int_id=t1.related_fw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
 (906010544, '分组域-关联性', 'DIMS_HX_03139', 3139, 906002086, '核心网', 10, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03139%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03139''
@@ -11316,7 +11315,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%CG所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:CG所属机架位置关联性''
                                              else dims_col_rtName||'',CG所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
 (906010545, '分组域-关联性', 'DIMS_HX_03126', 3126, 906002087, '核心网', 10, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03126%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03126''
@@ -11324,7 +11323,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MME所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MME所属机架位置关联性''
                                              else dims_col_rtName||'',MME所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
 (906010546, '分组域-关联性', 'DIMS_HX_03178', 3178, 906002087, '核心网', 10, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03178%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03178''
@@ -11332,7 +11331,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%MME所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:MME所属机房关联性''
                                              else dims_col_rtName||'',MME所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
 (906010547, '分组域-关联性', 'DIMS_HX_03140', 3140, 906002088, '核心网', 10, null, 'update PS_DNS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03140%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03140''
@@ -11340,7 +11339,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%DNS所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:DNS所属机架位置关联性''
                                              else dims_col_rtName||'',DNS所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
 (906010548, '分组域-关联性', 'DIMS_HX_03151', 3151, 906002089, '核心网', 10, null, 'update PS_SGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03151%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03151''
@@ -11348,7 +11347,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SGSN所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SGSN所属机架位置关联性''
                                              else dims_col_rtName||'',SGSN所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
 (906010549, '分组域-关联性', 'DIMS_HX_03128', 3128, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03128%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03128''
@@ -11356,7 +11355,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SAE-GW所属机架位置关联性''
                                              else dims_col_rtName||'',SAE-GW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
 (906010550, '分组域-关联性', 'DIMS_HX_03129', 3129, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03129%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03129''
@@ -11364,7 +11363,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SAE-GW所属机房关联性''
                                              else dims_col_rtName||'',SAE-GW所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
 (906010551, '分组域-关联性', 'DIMS_HX_03144', 3144, 906002092, '核心网', 10, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03144%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03144''
@@ -11372,7 +11371,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%FW所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:FW所属机架位置关联性''
                                              else dims_col_rtName||'',FW所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
 (906010552, '分组域-关联性', 'DIMS_HX_03145', 3145, 906002092, '核心网', 10, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03145%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03145''
@@ -11380,7 +11379,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%FW所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:FW所属机房关联性''
                                              else dims_col_rtName||'',FW所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
 (906010553, '分组域-关联性', 'DIMS_HX_03141', 3141, 906002093, '核心网', 10, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03141%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03141''
@@ -11388,7 +11387,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:DRA所属机架位置关联性''
                                              else dims_col_rtName||'',DRA所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
 (906010554, '分组域-关联性', 'DIMS_HX_03142', 3142, 906002093, '核心网', 10, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03142%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03142''
@@ -11396,7 +11395,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:DRA所属机房关联性''
                                              else dims_col_rtName||'',DRA所属机房关联性'' end)
-                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
+                 where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
 (906010555, '分组域-关联性', 'DIMS_HX_03136', 3136, 906002094, '核心网', 10, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03136%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03136''
@@ -11404,7 +11403,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%SPR所在机房关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:SPR所在机房关联性''
                                              else dims_col_rtName||'',SPR所在机房关联性'' end)
-                 where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
+                 where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
 (906010556, '分组域-关联性', 'DIMS_HX_03152', 3152, 906002096, '核心网', 10, null, 'update PS_GGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03152%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03152''
@@ -11412,7 +11411,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%GGSN所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:GGSN所属机架位置关联性''
                                              else dims_col_rtName||'',GGSN所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
 (906010557, '分组域-关联性', 'DIMS_HX_03153', 3153, 906002097, '核心网', 10, null, 'update PS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03153%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03153''
@@ -11420,7 +11419,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:端口所属网元关联性''
                                              else dims_col_rtName||'',端口所属网元关联性'' end)
-                 where isNotNull(related_ne)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.related_ne)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.related_ne)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.related_ne)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.related_ne)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.related_ne)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.related_ne)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.related_ne)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.related_ne)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.related_ne) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
+                 where isNotNull(related_ne)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.related_ne)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.related_ne)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.related_ne)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.related_ne)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.related_ne)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.related_ne)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.related_ne)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.related_ne)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
 (906010558, '分组域-关联性', 'DIMS_HX_03158', 3158, 906002098, '核心网', 10, null, 'update PS_APN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03158%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03158''
@@ -11428,7 +11427,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%APN所属SAE-GW/PGW/GGSN关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:APN所属SAE-GW/PGW/GGSN关联性''
                                              else dims_col_rtName||'',APN所属SAE-GW/PGW/GGSN关联性'' end)
-                 where isNotNull(related_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_device)  and not exists(select 1 from PS_SAE_GW t3 where t3.int_id=t1.related_device)  and not exists(select 1 from PS_GGSN t4 where t4.int_id=t1.related_device) ', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
+                 where isNotNull(related_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_device)  and not exists(select 1 from PS_SAE_GW t3 where t3.int_id=t1.related_device)  and not exists(select 1 from PS_GGSN t4 where t4.int_id=t1.related_device) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
 (906010559, 'HSS-关联性', 'DIMS_HX_03163', 3163, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03163%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03163''
@@ -11436,7 +11435,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE所属机架位置关联性''
                                              else dims_col_rtName||'',HSS_FE所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010560, 'HSS-关联性', 'DIMS_HX_03164', 3164, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03164%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03164''
@@ -11444,7 +11443,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联DRA关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE关联DRA关联性''
                                              else dims_col_rtName||'',HSS_FE关联DRA关联性'' end)
-                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010561, 'HSS-关联性', 'DIMS_HX_03165', 3165, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03165%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03165''
@@ -11452,7 +11451,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属HSS关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE所属HSS关联性''
                                              else dims_col_rtName||'',HSS_FE所属HSS关联性'' end)
-                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010562, 'HSS-关联性', 'DIMS_HX_03166', 3166, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03166%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03166''
@@ -11460,7 +11459,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE覆盖区域关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE覆盖区域关联性''
                                              else dims_col_rtName||'',HSS_FE覆盖区域关联性'' end)
-                 where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010563, 'HSS-关联性', 'DIMS_HX_03167', 3167, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03167%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03167''
@@ -11468,7 +11467,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联供电关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE关联供电关联性''
                                              else dims_col_rtName||'',HSS_FE关联供电关联性'' end)
-                 where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010564, 'HSS-关联性', 'DIMS_HX_03168', 3168, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03168%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03168''
@@ -11476,7 +11475,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联LSTP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_FE关联LSTP关联性''
                                              else dims_col_rtName||'',HSS_FE关联LSTP关联性'' end)
-                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
+                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010565, 'HSS-关联性', 'DIMS_HX_03175', 3175, 906002101, '核心网', 10, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03175%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03175''
@@ -11484,7 +11483,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%PG所属HSS关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:PG所属HSS关联性''
                                              else dims_col_rtName||'',PG所属HSS关联性'' end)
-                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
+                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
 (906010566, 'HSS-关联性', 'DIMS_HX_03159', 3159, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03159%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03159''
@@ -11492,7 +11491,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS(集中式）所属机架位置关联性''
                                              else dims_col_rtName||'',HSS(集中式）所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010567, 'HSS-关联性', 'DIMS_HX_03160', 3160, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03160%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03160''
@@ -11500,7 +11499,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联DRA关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联DRA关联性''
                                              else dims_col_rtName||'',HSS(集中式）关联DRA关联性'' end)
-                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
+                 where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010568, 'HSS-关联性', 'DIMS_HX_03161', 3161, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03161%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03161''
@@ -11508,7 +11507,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）S6a关联CE关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS(集中式）S6a关联CE关联性''
                                              else dims_col_rtName||'',HSS(集中式）S6a关联CE关联性'' end)
-                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
+                 where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010569, 'HSS-关联性', 'DIMS_HX_03162', 3162, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03162%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03162''
@@ -11516,7 +11515,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联LSTP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联LSTP关联性''
                                              else dims_col_rtName||'',HSS(集中式）关联LSTP关联性'' end)
-                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
+                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010570, 'HSS-关联性', 'DIMS_HX_03176', 3176, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03176%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03176''
@@ -11524,7 +11523,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HLR-FE所属机架位置关联性''
                                              else dims_col_rtName||'',HLR-FE所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
 (906010571, 'HSS-关联性', 'DIMS_HX_03177', 3177, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03177%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03177''
@@ -11532,7 +11531,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE覆盖区域关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HLR-FE覆盖区域关联性''
                                              else dims_col_rtName||'',HLR-FE覆盖区域关联性'' end)
-                 where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
+                 where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
 (906010572, 'HSS-关联性', 'DIMS_HX_03169', 3169, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03169%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03169''
@@ -11540,7 +11539,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属机架位置关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE所属机架位置关联性''
                                              else dims_col_rtName||'',HSS_BE所属机架位置关联性'' end)
-                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+                 where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010573, 'HSS-关联性', 'DIMS_HX_03170', 3170, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03170%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03170''
@@ -11548,7 +11547,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属HSS关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE所属HSS关联性''
                                              else dims_col_rtName||'',HSS_BE所属HSS关联性'' end)
-                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+                 where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010574, 'HSS-关联性', 'DIMS_HX_03171', 3171, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03171%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03171''
@@ -11556,7 +11555,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE上联CE IP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE上联CE IP关联性''
                                              else dims_col_rtName||'',HSS_BE上联CE IP关联性'' end)
-                 where isNotNull(related_ce_ip) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce_ip)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+                 where isNotNull(related_ce_ip) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010575, 'HSS-关联性', 'DIMS_HX_03172', 3172, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03172%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03172''
@@ -11564,7 +11563,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联供电关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE关联供电关联性''
                                              else dims_col_rtName||'',HSS_BE关联供电关联性'' end)
-                 where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+                 where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010576, 'HSS-关联性', 'DIMS_HX_03173', 3173, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03173%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03173''
@@ -11572,7 +11571,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                        dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联LSTP关联性%'' then dims_col_rtName
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE关联LSTP关联性''
                                              else dims_col_rtName||'',HSS_BE关联LSTP关联性'' end)
-                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
+                 where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010577, 'HSS-关联性', 'DIMS_HX_03174', 3174, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03174%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03174''
@@ -11581,7 +11580,8 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                              when dims_col_rtName is null then ''不满足规范:HSS_BE关联DRA关联性''
                                              else dims_col_rtName||'',HSS_BE关联DRA关联性'' end)
                  where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.zh_label=t1.related_dra)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null);
--- (906010578, '核心网数据业务合规性', 'DIMS_HX_99004', 99004, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+--(906010578, '核心网数据业务合规性', 'DIMS_HX_99004', 99004, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
+
 
 
 
@@ -11798,248 +11798,728 @@ values (906012001, 906010001, 906010003, 'admin', 'admin', null),
 (906012210, 906010107, 906010108, 'admin', 'admin', null),
 (906012211, 906010001, 906010109, 'admin', 'admin', null),
 (906012212, 906010107, 906010109, 'admin', 'admin', null),
-(906012213, 906010001, 906010112, 'admin', 'admin', null),
-(906012214, 906010107, 906010112, 'admin', 'admin', null),
-(906012215, 906010001, 906010113, 'admin', 'admin', null),
-(906012216, 906010107, 906010113, 'admin', 'admin', null),
-(906012217, 906010001, 906010114, 'admin', 'admin', null),
-(906012218, 906010107, 906010114, 'admin', 'admin', null),
-(906012219, 906010001, 906010117, 'admin', 'admin', null),
-(906012220, 906010107, 906010117, 'admin', 'admin', null),
-(906012221, 906010001, 906010118, 'admin', 'admin', null),
-(906012222, 906010107, 906010118, 'admin', 'admin', null),
-(906012223, 906010001, 906010119, 'admin', 'admin', null),
-(906012224, 906010107, 906010119, 'admin', 'admin', null),
-(906012225, 906010001, 906010120, 'admin', 'admin', null),
-(906012226, 906010107, 906010120, 'admin', 'admin', null),
-(906012227, 906010001, 906010123, 'admin', 'admin', null),
-(906012228, 906010107, 906010123, 'admin', 'admin', null),
-(906012229, 906010001, 906010124, 'admin', 'admin', null),
-(906012230, 906010107, 906010124, 'admin', 'admin', null),
-(906012231, 906010001, 906010125, 'admin', 'admin', null),
-(906012232, 906010107, 906010125, 'admin', 'admin', null),
-(906012233, 906010001, 906010128, 'admin', 'admin', null),
-(906012234, 906010107, 906010128, 'admin', 'admin', null),
-(906012235, 906010001, 906010129, 'admin', 'admin', null),
-(906012236, 906010107, 906010129, 'admin', 'admin', null),
-(906012237, 906010001, 906010132, 'admin', 'admin', null),
-(906012238, 906010107, 906010132, 'admin', 'admin', null),
-(906012239, 906010001, 906010133, 'admin', 'admin', null),
-(906012240, 906010107, 906010133, 'admin', 'admin', null),
-(906012241, 906010001, 906010134, 'admin', 'admin', null),
-(906012242, 906010107, 906010134, 'admin', 'admin', null),
-(906012243, 906010001, 906010137, 'admin', 'admin', null),
-(906012244, 906010107, 906010137, 'admin', 'admin', null),
-(906012245, 906010001, 906010145, 'admin', 'admin', null),
-(906012246, 906010107, 906010145, 'admin', 'admin', null),
-(906012247, 906010001, 906010146, 'admin', 'admin', null),
-(906012248, 906010107, 906010146, 'admin', 'admin', null),
-(906012249, 906010001, 906010153, 'admin', 'admin', null),
-(906012250, 906010107, 906010153, 'admin', 'admin', null),
-(906012251, 906010001, 906010161, 'admin', 'admin', null),
-(906012252, 906010107, 906010161, 'admin', 'admin', null),
-(906012253, 906010001, 906010164, 'admin', 'admin', null),
-(906012254, 906010107, 906010164, 'admin', 'admin', null),
-(906012255, 906010001, 906010165, 'admin', 'admin', null),
-(906012256, 906010107, 906010165, 'admin', 'admin', null),
-(906012257, 906010001, 906010167, 'admin', 'admin', null),
-(906012258, 906010107, 906010167, 'admin', 'admin', null),
-(906012259, 906010001, 906010168, 'admin', 'admin', null),
-(906012260, 906010107, 906010168, 'admin', 'admin', null),
-(906012261, 906010001, 906010171, 'admin', 'admin', null),
-(906012262, 906010107, 906010171, 'admin', 'admin', null),
-(906012263, 906010001, 906010172, 'admin', 'admin', null),
-(906012264, 906010107, 906010172, 'admin', 'admin', null),
-(906012265, 906010001, 906010173, 'admin', 'admin', null),
-(906012266, 906010107, 906010173, 'admin', 'admin', null),
-(906012267, 906010001, 906010177, 'admin', 'admin', null),
-(906012268, 906010107, 906010177, 'admin', 'admin', null),
-(906012269, 906010001, 906010178, 'admin', 'admin', null),
-(906012270, 906010107, 906010178, 'admin', 'admin', null),
-(906012271, 906010001, 906010181, 'admin', 'admin', null),
-(906012272, 906010107, 906010181, 'admin', 'admin', null),
-(906012273, 906010001, 906010184, 'admin', 'admin', null),
-(906012274, 906010107, 906010184, 'admin', 'admin', null),
-(906012275, 906010001, 906010185, 'admin', 'admin', null),
-(906012276, 906010107, 906010185, 'admin', 'admin', null),
-(906012277, 906010001, 906010186, 'admin', 'admin', null),
-(906012278, 906010107, 906010186, 'admin', 'admin', null),
-(906012279, 906010001, 906010191, 'admin', 'admin', null),
-(906012280, 906010107, 906010191, 'admin', 'admin', null),
-(906012281, 906010001, 906010194, 'admin', 'admin', null),
-(906012282, 906010107, 906010194, 'admin', 'admin', null),
-(906012283, 906010001, 906010198, 'admin', 'admin', null),
-(906012284, 906010107, 906010198, 'admin', 'admin', null),
-(906012285, 906010001, 906010199, 'admin', 'admin', null),
-(906012286, 906010107, 906010199, 'admin', 'admin', null),
-(906012287, 906010001, 906010200, 'admin', 'admin', null),
-(906012288, 906010107, 906010200, 'admin', 'admin', null),
-(906012289, 906010001, 906010210, 'admin', 'admin', null),
-(906012290, 906010107, 906010210, 'admin', 'admin', null),
-(906012291, 906010001, 906010213, 'admin', 'admin', null),
-(906012292, 906010107, 906010213, 'admin', 'admin', null),
-(906012293, 906010001, 906010217, 'admin', 'admin', null),
-(906012294, 906010107, 906010217, 'admin', 'admin', null),
-(906012295, 906010001, 906010220, 'admin', 'admin', null),
-(906012296, 906010107, 906010220, 'admin', 'admin', null),
-(906012297, 906010001, 906010223, 'admin', 'admin', null),
-(906012298, 906010107, 906010223, 'admin', 'admin', null),
-(906012299, 906010001, 906010226, 'admin', 'admin', null),
-(906012300, 906010107, 906010226, 'admin', 'admin', null),
-(906012301, 906010001, 906010229, 'admin', 'admin', null),
-(906012302, 906010107, 906010229, 'admin', 'admin', null),
-(906012303, 906010001, 906010233, 'admin', 'admin', null),
-(906012304, 906010107, 906010233, 'admin', 'admin', null),
-(906012305, 906010001, 906010234, 'admin', 'admin', null),
-(906012306, 906010107, 906010234, 'admin', 'admin', null),
-(906012307, 906010001, 906010237, 'admin', 'admin', null),
-(906012308, 906010107, 906010237, 'admin', 'admin', null),
-(906012309, 906010001, 906010240, 'admin', 'admin', null),
-(906012310, 906010107, 906010240, 'admin', 'admin', null),
-(906012311, 906010001, 906010243, 'admin', 'admin', null),
-(906012312, 906010107, 906010243, 'admin', 'admin', null),
-(906012313, 906010001, 906010246, 'admin', 'admin', null),
-(906012314, 906010107, 906010246, 'admin', 'admin', null),
-(906012315, 906010001, 906010254, 'admin', 'admin', null),
-(906012316, 906010107, 906010254, 'admin', 'admin', null),
-(906012317, 906010001, 906010258, 'admin', 'admin', null),
-(906012318, 906010107, 906010258, 'admin', 'admin', null),
-(906012319, 906010001, 906010261, 'admin', 'admin', null),
-(906012320, 906010107, 906010261, 'admin', 'admin', null),
-(906012321, 906010001, 906010262, 'admin', 'admin', null),
-(906012322, 906010107, 906010262, 'admin', 'admin', null),
-(906012323, 906010001, 906010263, 'admin', 'admin', null),
-(906012324, 906010107, 906010263, 'admin', 'admin', null),
-(906012325, 906010001, 906010265, 'admin', 'admin', null),
-(906012326, 906010107, 906010265, 'admin', 'admin', null),
-(906012327, 906010001, 906010268, 'admin', 'admin', null),
-(906012328, 906010107, 906010268, 'admin', 'admin', null),
-(906012329, 906010001, 906010272, 'admin', 'admin', null),
-(906012330, 906010107, 906010272, 'admin', 'admin', null),
-(906012331, 906010001, 906010275, 'admin', 'admin', null),
-(906012332, 906010107, 906010275, 'admin', 'admin', null),
-(906012333, 906010001, 906010278, 'admin', 'admin', null),
-(906012334, 906010107, 906010278, 'admin', 'admin', null),
-(906012335, 906010001, 906010279, 'admin', 'admin', null),
-(906012336, 906010107, 906010279, 'admin', 'admin', null),
-(906012337, 906010001, 906010284, 'admin', 'admin', null),
-(906012338, 906010107, 906010284, 'admin', 'admin', null),
-(906012339, 906010001, 906010290, 'admin', 'admin', null),
-(906012340, 906010107, 906010290, 'admin', 'admin', null),
-(906012341, 906010001, 906010293, 'admin', 'admin', null),
-(906012342, 906010107, 906010293, 'admin', 'admin', null),
-(906012343, 906010001, 906010298, 'admin', 'admin', null),
-(906012344, 906010107, 906010298, 'admin', 'admin', null),
-(906012345, 906010001, 906010301, 'admin', 'admin', null),
-(906012346, 906010107, 906010301, 'admin', 'admin', null),
-(906012347, 906010001, 906010302, 'admin', 'admin', null),
-(906012348, 906010107, 906010302, 'admin', 'admin', null),
-(906012349, 906010001, 906010305, 'admin', 'admin', null),
-(906012350, 906010107, 906010305, 'admin', 'admin', null),
-(906012351, 906010001, 906010306, 'admin', 'admin', null),
-(906012352, 906010107, 906010306, 'admin', 'admin', null),
-(906012353, 906010001, 906010312, 'admin', 'admin', null),
-(906012354, 906010107, 906010312, 'admin', 'admin', null),
-(906012355, 906010001, 906010315, 'admin', 'admin', null),
-(906012356, 906010107, 906010315, 'admin', 'admin', null),
-(906012357, 906010001, 906010318, 'admin', 'admin', null),
-(906012358, 906010107, 906010318, 'admin', 'admin', null),
-(906012359, 906010001, 906010321, 'admin', 'admin', null),
-(906012360, 906010107, 906010321, 'admin', 'admin', null),
-(906012361, 906010001, 906010322, 'admin', 'admin', null),
-(906012362, 906010107, 906010322, 'admin', 'admin', null),
-(906012363, 906010001, 906010323, 'admin', 'admin', null),
-(906012364, 906010107, 906010323, 'admin', 'admin', null),
-(906012365, 906010001, 906010327, 'admin', 'admin', null),
-(906012366, 906010107, 906010327, 'admin', 'admin', null),
-(906012367, 906010001, 906010330, 'admin', 'admin', null),
-(906012368, 906010107, 906010330, 'admin', 'admin', null),
-(906012369, 906010001, 906010333, 'admin', 'admin', null),
-(906012370, 906010107, 906010333, 'admin', 'admin', null),
-(906012371, 906010001, 906010336, 'admin', 'admin', null),
-(906012372, 906010107, 906010336, 'admin', 'admin', null),
-(906012373, 906010001, 906010337, 'admin', 'admin', null),
-(906012374, 906010107, 906010337, 'admin', 'admin', null),
-(906012375, 906010001, 906010338, 'admin', 'admin', null),
-(906012376, 906010107, 906010338, 'admin', 'admin', null),
-(906012377, 906010001, 906010345, 'admin', 'admin', null),
-(906012378, 906010107, 906010345, 'admin', 'admin', null),
-(906012379, 906010001, 906010349, 'admin', 'admin', null),
-(906012380, 906010107, 906010349, 'admin', 'admin', null),
-(906012381, 906010001, 906010352, 'admin', 'admin', null),
-(906012382, 906010107, 906010352, 'admin', 'admin', null),
-(906012383, 906010001, 906010355, 'admin', 'admin', null),
-(906012384, 906010107, 906010355, 'admin', 'admin', null),
-(906012385, 906010001, 906010358, 'admin', 'admin', null),
-(906012386, 906010107, 906010358, 'admin', 'admin', null),
-(906012387, 906010001, 906010362, 'admin', 'admin', null),
-(906012388, 906010107, 906010362, 'admin', 'admin', null),
-(906012389, 906010001, 906010365, 'admin', 'admin', null),
-(906012390, 906010107, 906010365, 'admin', 'admin', null),
-(906012391, 906010001, 906010366, 'admin', 'admin', null),
-(906012392, 906010107, 906010366, 'admin', 'admin', null),
-(906012393, 906010001, 906010369, 'admin', 'admin', null),
-(906012394, 906010107, 906010369, 'admin', 'admin', null),
-(906012395, 906010001, 906010370, 'admin', 'admin', null),
-(906012396, 906010107, 906010370, 'admin', 'admin', null),
-(906012397, 906010001, 906010371, 'admin', 'admin', null),
-(906012398, 906010107, 906010371, 'admin', 'admin', null),
-(906012399, 906010001, 906010374, 'admin', 'admin', null),
-(906012400, 906010107, 906010374, 'admin', 'admin', null),
-(906012401, 906010001, 906010377, 'admin', 'admin', null),
-(906012402, 906010107, 906010377, 'admin', 'admin', null),
-(906012403, 906010001, 906010381, 'admin', 'admin', null),
-(906012404, 906010107, 906010381, 'admin', 'admin', null),
-(906012405, 906010001, 906010382, 'admin', 'admin', null),
-(906012406, 906010107, 906010382, 'admin', 'admin', null),
-(906012407, 906010001, 906010385, 'admin', 'admin', null),
-(906012408, 906010107, 906010385, 'admin', 'admin', null),
-(906012409, 906010001, 906010388, 'admin', 'admin', null),
-(906012410, 906010107, 906010388, 'admin', 'admin', null),
-(906012411, 906010001, 906010389, 'admin', 'admin', null),
-(906012412, 906010107, 906010389, 'admin', 'admin', null),
-(906012413, 906010001, 906010392, 'admin', 'admin', null),
-(906012414, 906010107, 906010392, 'admin', 'admin', null),
-(906012415, 906010001, 906010393, 'admin', 'admin', null),
-(906012416, 906010107, 906010393, 'admin', 'admin', null),
-(906012417, 906010001, 906010397, 'admin', 'admin', null),
-(906012418, 906010107, 906010397, 'admin', 'admin', null),
-(906012419, 906010001, 906010398, 'admin', 'admin', null),
-(906012420, 906010107, 906010398, 'admin', 'admin', null),
-(906012421, 906010001, 906010399, 'admin', 'admin', null),
-(906012422, 906010107, 906010399, 'admin', 'admin', null),
-(906012423, 906010001, 906010400, 'admin', 'admin', null),
-(906012424, 906010107, 906010400, 'admin', 'admin', null),
-(906012425, 906010001, 906010404, 'admin', 'admin', null),
-(906012426, 906010107, 906010404, 'admin', 'admin', null),
-(906012427, 906010001, 906010407, 'admin', 'admin', null),
-(906012428, 906010107, 906010407, 'admin', 'admin', null),
-(906012429, 906010001, 906010408, 'admin', 'admin', null),
-(906012430, 906010107, 906010408, 'admin', 'admin', null),
-(906012431, 906010001, 906010411, 'admin', 'admin', null),
-(906012432, 906010107, 906010411, 'admin', 'admin', null),
-(906012433, 906010001, 906010412, 'admin', 'admin', null),
-(906012434, 906010107, 906010412, 'admin', 'admin', null),
-(906012435, 906010001, 906010413, 'admin', 'admin', null),
-(906012436, 906010107, 906010413, 'admin', 'admin', null),
-(906012437, 906010001, 906010416, 'admin', 'admin', null),
-(906012438, 906010107, 906010416, 'admin', 'admin', null),
-(906012439, 906010001, 906010419, 'admin', 'admin', null),
-(906012440, 906010107, 906010419, 'admin', 'admin', null),
-(906012441, 906010001, 906010423, 'admin', 'admin', null),
-(906012442, 906010107, 906010423, 'admin', 'admin', null),
-(906012443, 906010001, 906010427, 'admin', 'admin', null),
-(906012444, 906010107, 906010427, 'admin', 'admin', null),
-(906012445, 906010001, 906010428, 'admin', 'admin', null),
-(906012446, 906010107, 906010428, 'admin', 'admin', null),
-(906012447, 906010001, 906010429, 'admin', 'admin', null),
-(906012448, 906010107, 906010429, 'admin', 'admin', null),
-(906012449, 906010001, 906010432, 'admin', 'admin', null),
-(906012450, 906010107, 906010432, 'admin', 'admin', null),
-(906012451, 906010001, 906010435, 'admin', 'admin', null),
-(906012452, 906010107, 906010435, 'admin', 'admin', null);
-
-
+(906012213, 906010001, 906010111, 'admin', 'admin', null),
+(906012214, 906010107, 906010111, 'admin', 'admin', null),
+(906012215, 906010001, 906010112, 'admin', 'admin', null),
+(906012216, 906010107, 906010112, 'admin', 'admin', null),
+(906012217, 906010001, 906010113, 'admin', 'admin', null),
+(906012218, 906010107, 906010113, 'admin', 'admin', null),
+(906012219, 906010001, 906010114, 'admin', 'admin', null),
+(906012220, 906010107, 906010114, 'admin', 'admin', null),
+(906012221, 906010001, 906010116, 'admin', 'admin', null),
+(906012222, 906010107, 906010116, 'admin', 'admin', null),
+(906012223, 906010001, 906010117, 'admin', 'admin', null),
+(906012224, 906010107, 906010117, 'admin', 'admin', null),
+(906012225, 906010001, 906010118, 'admin', 'admin', null),
+(906012226, 906010107, 906010118, 'admin', 'admin', null),
+(906012227, 906010001, 906010119, 'admin', 'admin', null),
+(906012228, 906010107, 906010119, 'admin', 'admin', null),
+(906012229, 906010001, 906010120, 'admin', 'admin', null),
+(906012230, 906010107, 906010120, 'admin', 'admin', null),
+(906012231, 906010001, 906010121, 'admin', 'admin', null),
+(906012232, 906010107, 906010121, 'admin', 'admin', null),
+(906012233, 906010001, 906010123, 'admin', 'admin', null),
+(906012234, 906010107, 906010123, 'admin', 'admin', null),
+(906012235, 906010001, 906010124, 'admin', 'admin', null),
+(906012236, 906010107, 906010124, 'admin', 'admin', null),
+(906012237, 906010001, 906010125, 'admin', 'admin', null),
+(906012238, 906010107, 906010125, 'admin', 'admin', null),
+(906012239, 906010001, 906010126, 'admin', 'admin', null),
+(906012240, 906010107, 906010126, 'admin', 'admin', null),
+(906012241, 906010001, 906010128, 'admin', 'admin', null),
+(906012242, 906010107, 906010128, 'admin', 'admin', null),
+(906012243, 906010001, 906010129, 'admin', 'admin', null),
+(906012244, 906010107, 906010129, 'admin', 'admin', null),
+(906012245, 906010001, 906010130, 'admin', 'admin', null),
+(906012246, 906010107, 906010130, 'admin', 'admin', null),
+(906012247, 906010001, 906010132, 'admin', 'admin', null),
+(906012248, 906010107, 906010132, 'admin', 'admin', null),
+(906012249, 906010001, 906010133, 'admin', 'admin', null),
+(906012250, 906010107, 906010133, 'admin', 'admin', null),
+(906012251, 906010001, 906010134, 'admin', 'admin', null),
+(906012252, 906010107, 906010134, 'admin', 'admin', null),
+(906012253, 906010001, 906010136, 'admin', 'admin', null),
+(906012254, 906010107, 906010136, 'admin', 'admin', null),
+(906012255, 906010001, 906010137, 'admin', 'admin', null),
+(906012256, 906010107, 906010137, 'admin', 'admin', null),
+(906012257, 906010001, 906010139, 'admin', 'admin', null),
+(906012258, 906010107, 906010139, 'admin', 'admin', null),
+(906012259, 906010001, 906010143, 'admin', 'admin', null),
+(906012260, 906010107, 906010143, 'admin', 'admin', null),
+(906012261, 906010001, 906010145, 'admin', 'admin', null),
+(906012262, 906010107, 906010145, 'admin', 'admin', null),
+(906012263, 906010001, 906010146, 'admin', 'admin', null),
+(906012264, 906010107, 906010146, 'admin', 'admin', null),
+(906012265, 906010001, 906010147, 'admin', 'admin', null),
+(906012266, 906010107, 906010147, 'admin', 'admin', null),
+(906012267, 906010001, 906010150, 'admin', 'admin', null),
+(906012268, 906010107, 906010150, 'admin', 'admin', null),
+(906012269, 906010001, 906010151, 'admin', 'admin', null),
+(906012270, 906010107, 906010151, 'admin', 'admin', null),
+(906012271, 906010001, 906010153, 'admin', 'admin', null),
+(906012272, 906010107, 906010153, 'admin', 'admin', null),
+(906012273, 906010001, 906010155, 'admin', 'admin', null),
+(906012274, 906010107, 906010155, 'admin', 'admin', null),
+(906012275, 906010001, 906010159, 'admin', 'admin', null),
+(906012276, 906010107, 906010159, 'admin', 'admin', null),
+(906012277, 906010001, 906010161, 'admin', 'admin', null),
+(906012278, 906010107, 906010161, 'admin', 'admin', null),
+(906012279, 906010001, 906010163, 'admin', 'admin', null),
+(906012280, 906010107, 906010163, 'admin', 'admin', null),
+(906012281, 906010001, 906010164, 'admin', 'admin', null),
+(906012282, 906010107, 906010164, 'admin', 'admin', null),
+(906012283, 906010001, 906010165, 'admin', 'admin', null),
+(906012284, 906010107, 906010165, 'admin', 'admin', null),
+(906012285, 906010001, 906010166, 'admin', 'admin', null),
+(906012286, 906010107, 906010166, 'admin', 'admin', null),
+(906012287, 906010001, 906010167, 'admin', 'admin', null),
+(906012288, 906010107, 906010167, 'admin', 'admin', null),
+(906012289, 906010001, 906010168, 'admin', 'admin', null),
+(906012290, 906010107, 906010168, 'admin', 'admin', null),
+(906012291, 906010001, 906010169, 'admin', 'admin', null),
+(906012292, 906010107, 906010169, 'admin', 'admin', null),
+(906012293, 906010001, 906010171, 'admin', 'admin', null),
+(906012294, 906010107, 906010171, 'admin', 'admin', null),
+(906012295, 906010001, 906010172, 'admin', 'admin', null),
+(906012296, 906010107, 906010172, 'admin', 'admin', null),
+(906012297, 906010001, 906010173, 'admin', 'admin', null),
+(906012298, 906010107, 906010173, 'admin', 'admin', null),
+(906012299, 906010001, 906010175, 'admin', 'admin', null),
+(906012300, 906010107, 906010175, 'admin', 'admin', null),
+(906012301, 906010001, 906010176, 'admin', 'admin', null),
+(906012302, 906010107, 906010176, 'admin', 'admin', null),
+(906012303, 906010001, 906010177, 'admin', 'admin', null),
+(906012304, 906010107, 906010177, 'admin', 'admin', null),
+(906012305, 906010001, 906010178, 'admin', 'admin', null),
+(906012306, 906010107, 906010178, 'admin', 'admin', null),
+(906012307, 906010001, 906010180, 'admin', 'admin', null),
+(906012308, 906010107, 906010180, 'admin', 'admin', null),
+(906012309, 906010001, 906010181, 'admin', 'admin', null),
+(906012310, 906010107, 906010181, 'admin', 'admin', null),
+(906012311, 906010001, 906010183, 'admin', 'admin', null),
+(906012312, 906010107, 906010183, 'admin', 'admin', null),
+(906012313, 906010001, 906010184, 'admin', 'admin', null),
+(906012314, 906010107, 906010184, 'admin', 'admin', null),
+(906012315, 906010001, 906010185, 'admin', 'admin', null),
+(906012316, 906010107, 906010185, 'admin', 'admin', null),
+(906012317, 906010001, 906010186, 'admin', 'admin', null),
+(906012318, 906010107, 906010186, 'admin', 'admin', null),
+(906012319, 906010001, 906010187, 'admin', 'admin', null),
+(906012320, 906010107, 906010187, 'admin', 'admin', null),
+(906012321, 906010001, 906010190, 'admin', 'admin', null),
+(906012322, 906010107, 906010190, 'admin', 'admin', null),
+(906012323, 906010001, 906010191, 'admin', 'admin', null),
+(906012324, 906010107, 906010191, 'admin', 'admin', null),
+(906012325, 906010001, 906010192, 'admin', 'admin', null),
+(906012326, 906010107, 906010192, 'admin', 'admin', null),
+(906012327, 906010001, 906010194, 'admin', 'admin', null),
+(906012328, 906010107, 906010194, 'admin', 'admin', null),
+(906012329, 906010001, 906010197, 'admin', 'admin', null),
+(906012330, 906010107, 906010197, 'admin', 'admin', null),
+(906012331, 906010001, 906010198, 'admin', 'admin', null),
+(906012332, 906010107, 906010198, 'admin', 'admin', null),
+(906012333, 906010001, 906010199, 'admin', 'admin', null),
+(906012334, 906010107, 906010199, 'admin', 'admin', null),
+(906012335, 906010001, 906010200, 'admin', 'admin', null),
+(906012336, 906010107, 906010200, 'admin', 'admin', null),
+(906012337, 906010001, 906010201, 'admin', 'admin', null),
+(906012338, 906010107, 906010201, 'admin', 'admin', null),
+(906012339, 906010001, 906010202, 'admin', 'admin', null),
+(906012340, 906010107, 906010202, 'admin', 'admin', null),
+(906012341, 906010001, 906010204, 'admin', 'admin', null),
+(906012342, 906010107, 906010204, 'admin', 'admin', null),
+(906012343, 906010001, 906010206, 'admin', 'admin', null),
+(906012344, 906010107, 906010206, 'admin', 'admin', null),
+(906012345, 906010001, 906010209, 'admin', 'admin', null),
+(906012346, 906010107, 906010209, 'admin', 'admin', null),
+(906012347, 906010001, 906010210, 'admin', 'admin', null),
+(906012348, 906010107, 906010210, 'admin', 'admin', null),
+(906012349, 906010001, 906010212, 'admin', 'admin', null),
+(906012350, 906010107, 906010212, 'admin', 'admin', null),
+(906012351, 906010001, 906010213, 'admin', 'admin', null),
+(906012352, 906010107, 906010213, 'admin', 'admin', null),
+(906012353, 906010001, 906010215, 'admin', 'admin', null),
+(906012354, 906010107, 906010215, 'admin', 'admin', null),
+(906012355, 906010001, 906010216, 'admin', 'admin', null),
+(906012356, 906010107, 906010216, 'admin', 'admin', null),
+(906012357, 906010001, 906010217, 'admin', 'admin', null),
+(906012358, 906010107, 906010217, 'admin', 'admin', null),
+(906012359, 906010001, 906010219, 'admin', 'admin', null),
+(906012360, 906010107, 906010219, 'admin', 'admin', null),
+(906012361, 906010001, 906010220, 'admin', 'admin', null),
+(906012362, 906010107, 906010220, 'admin', 'admin', null),
+(906012363, 906010001, 906010222, 'admin', 'admin', null),
+(906012364, 906010107, 906010222, 'admin', 'admin', null),
+(906012365, 906010001, 906010223, 'admin', 'admin', null),
+(906012366, 906010107, 906010223, 'admin', 'admin', null),
+(906012367, 906010001, 906010224, 'admin', 'admin', null),
+(906012368, 906010107, 906010224, 'admin', 'admin', null),
+(906012369, 906010001, 906010226, 'admin', 'admin', null),
+(906012370, 906010107, 906010226, 'admin', 'admin', null),
+(906012371, 906010001, 906010227, 'admin', 'admin', null),
+(906012372, 906010107, 906010227, 'admin', 'admin', null),
+(906012373, 906010001, 906010229, 'admin', 'admin', null),
+(906012374, 906010107, 906010229, 'admin', 'admin', null),
+(906012375, 906010001, 906010230, 'admin', 'admin', null),
+(906012376, 906010107, 906010230, 'admin', 'admin', null),
+(906012377, 906010001, 906010232, 'admin', 'admin', null),
+(906012378, 906010107, 906010232, 'admin', 'admin', null),
+(906012379, 906010001, 906010233, 'admin', 'admin', null),
+(906012380, 906010107, 906010233, 'admin', 'admin', null),
+(906012381, 906010001, 906010234, 'admin', 'admin', null),
+(906012382, 906010107, 906010234, 'admin', 'admin', null),
+(906012383, 906010001, 906010235, 'admin', 'admin', null),
+(906012384, 906010107, 906010235, 'admin', 'admin', null),
+(906012385, 906010001, 906010237, 'admin', 'admin', null),
+(906012386, 906010107, 906010237, 'admin', 'admin', null),
+(906012387, 906010001, 906010239, 'admin', 'admin', null),
+(906012388, 906010107, 906010239, 'admin', 'admin', null),
+(906012389, 906010001, 906010240, 'admin', 'admin', null),
+(906012390, 906010107, 906010240, 'admin', 'admin', null),
+(906012391, 906010001, 906010242, 'admin', 'admin', null),
+(906012392, 906010107, 906010242, 'admin', 'admin', null),
+(906012393, 906010001, 906010243, 'admin', 'admin', null),
+(906012394, 906010107, 906010243, 'admin', 'admin', null),
+(906012395, 906010001, 906010244, 'admin', 'admin', null),
+(906012396, 906010107, 906010244, 'admin', 'admin', null),
+(906012397, 906010001, 906010246, 'admin', 'admin', null),
+(906012398, 906010107, 906010246, 'admin', 'admin', null),
+(906012399, 906010001, 906010248, 'admin', 'admin', null),
+(906012400, 906010107, 906010248, 'admin', 'admin', null),
+(906012401, 906010001, 906010250, 'admin', 'admin', null),
+(906012402, 906010107, 906010250, 'admin', 'admin', null),
+(906012403, 906010001, 906010251, 'admin', 'admin', null),
+(906012404, 906010107, 906010251, 'admin', 'admin', null),
+(906012405, 906010001, 906010253, 'admin', 'admin', null),
+(906012406, 906010107, 906010253, 'admin', 'admin', null),
+(906012407, 906010001, 906010254, 'admin', 'admin', null),
+(906012408, 906010107, 906010254, 'admin', 'admin', null),
+(906012409, 906010001, 906010255, 'admin', 'admin', null),
+(906012410, 906010107, 906010255, 'admin', 'admin', null),
+(906012411, 906010001, 906010258, 'admin', 'admin', null),
+(906012412, 906010107, 906010258, 'admin', 'admin', null),
+(906012413, 906010001, 906010259, 'admin', 'admin', null),
+(906012414, 906010107, 906010259, 'admin', 'admin', null),
+(906012415, 906010001, 906010261, 'admin', 'admin', null),
+(906012416, 906010107, 906010261, 'admin', 'admin', null),
+(906012417, 906010001, 906010262, 'admin', 'admin', null),
+(906012418, 906010107, 906010262, 'admin', 'admin', null),
+(906012419, 906010001, 906010263, 'admin', 'admin', null),
+(906012420, 906010107, 906010263, 'admin', 'admin', null),
+(906012421, 906010001, 906010264, 'admin', 'admin', null),
+(906012422, 906010107, 906010264, 'admin', 'admin', null),
+(906012423, 906010001, 906010265, 'admin', 'admin', null),
+(906012424, 906010107, 906010265, 'admin', 'admin', null),
+(906012425, 906010001, 906010267, 'admin', 'admin', null),
+(906012426, 906010107, 906010267, 'admin', 'admin', null),
+(906012427, 906010001, 906010268, 'admin', 'admin', null),
+(906012428, 906010107, 906010268, 'admin', 'admin', null),
+(906012429, 906010001, 906010269, 'admin', 'admin', null),
+(906012430, 906010107, 906010269, 'admin', 'admin', null),
+(906012431, 906010001, 906010271, 'admin', 'admin', null),
+(906012432, 906010107, 906010271, 'admin', 'admin', null),
+(906012433, 906010001, 906010272, 'admin', 'admin', null),
+(906012434, 906010107, 906010272, 'admin', 'admin', null),
+(906012435, 906010001, 906010273, 'admin', 'admin', null),
+(906012436, 906010107, 906010273, 'admin', 'admin', null),
+(906012437, 906010001, 906010275, 'admin', 'admin', null),
+(906012438, 906010107, 906010275, 'admin', 'admin', null),
+(906012439, 906010001, 906010276, 'admin', 'admin', null),
+(906012440, 906010107, 906010276, 'admin', 'admin', null),
+(906012441, 906010001, 906010278, 'admin', 'admin', null),
+(906012442, 906010107, 906010278, 'admin', 'admin', null),
+(906012443, 906010001, 906010279, 'admin', 'admin', null),
+(906012444, 906010107, 906010279, 'admin', 'admin', null),
+(906012445, 906010001, 906010280, 'admin', 'admin', null),
+(906012446, 906010107, 906010280, 'admin', 'admin', null),
+(906012447, 906010001, 906010283, 'admin', 'admin', null),
+(906012448, 906010107, 906010283, 'admin', 'admin', null),
+(906012449, 906010001, 906010284, 'admin', 'admin', null),
+(906012450, 906010107, 906010284, 'admin', 'admin', null),
+(906012451, 906010001, 906010286, 'admin', 'admin', null),
+(906012452, 906010107, 906010286, 'admin', 'admin', null),
+(906012453, 906010001, 906010287, 'admin', 'admin', null),
+(906012454, 906010107, 906010287, 'admin', 'admin', null),
+(906012455, 906010001, 906010289, 'admin', 'admin', null),
+(906012456, 906010107, 906010289, 'admin', 'admin', null),
+(906012457, 906010001, 906010290, 'admin', 'admin', null),
+(906012458, 906010107, 906010290, 'admin', 'admin', null),
+(906012459, 906010001, 906010292, 'admin', 'admin', null),
+(906012460, 906010107, 906010292, 'admin', 'admin', null),
+(906012461, 906010001, 906010293, 'admin', 'admin', null),
+(906012462, 906010107, 906010293, 'admin', 'admin', null),
+(906012463, 906010001, 906010294, 'admin', 'admin', null),
+(906012464, 906010107, 906010294, 'admin', 'admin', null),
+(906012465, 906010001, 906010296, 'admin', 'admin', null),
+(906012466, 906010107, 906010296, 'admin', 'admin', null),
+(906012467, 906010001, 906010298, 'admin', 'admin', null),
+(906012468, 906010107, 906010298, 'admin', 'admin', null),
+(906012469, 906010001, 906010300, 'admin', 'admin', null),
+(906012470, 906010107, 906010300, 'admin', 'admin', null),
+(906012471, 906010001, 906010301, 'admin', 'admin', null),
+(906012472, 906010107, 906010301, 'admin', 'admin', null),
+(906012473, 906010001, 906010302, 'admin', 'admin', null),
+(906012474, 906010107, 906010302, 'admin', 'admin', null),
+(906012475, 906010001, 906010303, 'admin', 'admin', null),
+(906012476, 906010107, 906010303, 'admin', 'admin', null),
+(906012477, 906010001, 906010305, 'admin', 'admin', null),
+(906012478, 906010107, 906010305, 'admin', 'admin', null),
+(906012479, 906010001, 906010306, 'admin', 'admin', null),
+(906012480, 906010107, 906010306, 'admin', 'admin', null),
+(906012481, 906010001, 906010307, 'admin', 'admin', null),
+(906012482, 906010107, 906010307, 'admin', 'admin', null),
+(906012483, 906010001, 906010308, 'admin', 'admin', null),
+(906012484, 906010107, 906010308, 'admin', 'admin', null),
+(906012485, 906010001, 906010310, 'admin', 'admin', null),
+(906012486, 906010107, 906010310, 'admin', 'admin', null),
+(906012487, 906010001, 906010311, 'admin', 'admin', null),
+(906012488, 906010107, 906010311, 'admin', 'admin', null),
+(906012489, 906010001, 906010312, 'admin', 'admin', null),
+(906012490, 906010107, 906010312, 'admin', 'admin', null),
+(906012491, 906010001, 906010314, 'admin', 'admin', null),
+(906012492, 906010107, 906010314, 'admin', 'admin', null),
+(906012493, 906010001, 906010315, 'admin', 'admin', null),
+(906012494, 906010107, 906010315, 'admin', 'admin', null),
+(906012495, 906010001, 906010317, 'admin', 'admin', null),
+(906012496, 906010107, 906010317, 'admin', 'admin', null),
+(906012497, 906010001, 906010318, 'admin', 'admin', null),
+(906012498, 906010107, 906010318, 'admin', 'admin', null),
+(906012499, 906010001, 906010320, 'admin', 'admin', null),
+(906012500, 906010107, 906010320, 'admin', 'admin', null),
+(906012501, 906010001, 906010321, 'admin', 'admin', null),
+(906012502, 906010107, 906010321, 'admin', 'admin', null),
+(906012503, 906010001, 906010322, 'admin', 'admin', null),
+(906012504, 906010107, 906010322, 'admin', 'admin', null),
+(906012505, 906010001, 906010323, 'admin', 'admin', null),
+(906012506, 906010107, 906010323, 'admin', 'admin', null),
+(906012507, 906010001, 906010324, 'admin', 'admin', null),
+(906012508, 906010107, 906010324, 'admin', 'admin', null),
+(906012509, 906010001, 906010327, 'admin', 'admin', null),
+(906012510, 906010107, 906010327, 'admin', 'admin', null),
+(906012511, 906010001, 906010328, 'admin', 'admin', null),
+(906012512, 906010107, 906010328, 'admin', 'admin', null),
+(906012513, 906010001, 906010330, 'admin', 'admin', null),
+(906012514, 906010107, 906010330, 'admin', 'admin', null),
+(906012515, 906010001, 906010332, 'admin', 'admin', null),
+(906012516, 906010107, 906010332, 'admin', 'admin', null),
+(906012517, 906010001, 906010333, 'admin', 'admin', null),
+(906012518, 906010107, 906010333, 'admin', 'admin', null),
+(906012519, 906010001, 906010335, 'admin', 'admin', null),
+(906012520, 906010107, 906010335, 'admin', 'admin', null),
+(906012521, 906010001, 906010336, 'admin', 'admin', null),
+(906012522, 906010107, 906010336, 'admin', 'admin', null),
+(906012523, 906010001, 906010337, 'admin', 'admin', null),
+(906012524, 906010107, 906010337, 'admin', 'admin', null),
+(906012525, 906010001, 906010338, 'admin', 'admin', null),
+(906012526, 906010107, 906010338, 'admin', 'admin', null),
+(906012527, 906010001, 906010339, 'admin', 'admin', null),
+(906012528, 906010107, 906010339, 'admin', 'admin', null),
+(906012529, 906010001, 906010341, 'admin', 'admin', null),
+(906012530, 906010107, 906010341, 'admin', 'admin', null),
+(906012531, 906010001, 906010343, 'admin', 'admin', null),
+(906012532, 906010107, 906010343, 'admin', 'admin', null),
+(906012533, 906010001, 906010345, 'admin', 'admin', null),
+(906012534, 906010107, 906010345, 'admin', 'admin', null),
+(906012535, 906010001, 906010346, 'admin', 'admin', null),
+(906012536, 906010107, 906010346, 'admin', 'admin', null),
+(906012537, 906010001, 906010349, 'admin', 'admin', null),
+(906012538, 906010107, 906010349, 'admin', 'admin', null),
+(906012539, 906010001, 906010351, 'admin', 'admin', null),
+(906012540, 906010107, 906010351, 'admin', 'admin', null),
+(906012541, 906010001, 906010352, 'admin', 'admin', null),
+(906012542, 906010107, 906010352, 'admin', 'admin', null),
+(906012543, 906010001, 906010353, 'admin', 'admin', null),
+(906012544, 906010107, 906010353, 'admin', 'admin', null),
+(906012545, 906010001, 906010355, 'admin', 'admin', null),
+(906012546, 906010107, 906010355, 'admin', 'admin', null),
+(906012547, 906010001, 906010356, 'admin', 'admin', null),
+(906012548, 906010107, 906010356, 'admin', 'admin', null),
+(906012549, 906010001, 906010358, 'admin', 'admin', null),
+(906012550, 906010107, 906010358, 'admin', 'admin', null),
+(906012551, 906010001, 906010360, 'admin', 'admin', null),
+(906012552, 906010107, 906010360, 'admin', 'admin', null),
+(906012553, 906010001, 906010361, 'admin', 'admin', null),
+(906012554, 906010107, 906010361, 'admin', 'admin', null),
+(906012555, 906010001, 906010362, 'admin', 'admin', null),
+(906012556, 906010107, 906010362, 'admin', 'admin', null),
+(906012557, 906010001, 906010363, 'admin', 'admin', null),
+(906012558, 906010107, 906010363, 'admin', 'admin', null),
+(906012559, 906010001, 906010365, 'admin', 'admin', null),
+(906012560, 906010107, 906010365, 'admin', 'admin', null),
+(906012561, 906010001, 906010366, 'admin', 'admin', null),
+(906012562, 906010107, 906010366, 'admin', 'admin', null),
+(906012563, 906010001, 906010367, 'admin', 'admin', null),
+(906012564, 906010107, 906010367, 'admin', 'admin', null),
+(906012565, 906010001, 906010369, 'admin', 'admin', null),
+(906012566, 906010107, 906010369, 'admin', 'admin', null),
+(906012567, 906010001, 906010370, 'admin', 'admin', null),
+(906012568, 906010107, 906010370, 'admin', 'admin', null),
+(906012569, 906010001, 906010371, 'admin', 'admin', null),
+(906012570, 906010107, 906010371, 'admin', 'admin', null),
+(906012571, 906010001, 906010372, 'admin', 'admin', null),
+(906012572, 906010107, 906010372, 'admin', 'admin', null),
+(906012573, 906010001, 906010374, 'admin', 'admin', null),
+(906012574, 906010107, 906010374, 'admin', 'admin', null),
+(906012575, 906010001, 906010375, 'admin', 'admin', null),
+(906012576, 906010107, 906010375, 'admin', 'admin', null),
+(906012577, 906010001, 906010377, 'admin', 'admin', null),
+(906012578, 906010107, 906010377, 'admin', 'admin', null),
+(906012579, 906010001, 906010379, 'admin', 'admin', null),
+(906012580, 906010107, 906010379, 'admin', 'admin', null),
+(906012581, 906010001, 906010380, 'admin', 'admin', null),
+(906012582, 906010107, 906010380, 'admin', 'admin', null),
+(906012583, 906010001, 906010381, 'admin', 'admin', null),
+(906012584, 906010107, 906010381, 'admin', 'admin', null),
+(906012585, 906010001, 906010382, 'admin', 'admin', null),
+(906012586, 906010107, 906010382, 'admin', 'admin', null),
+(906012587, 906010001, 906010384, 'admin', 'admin', null),
+(906012588, 906010107, 906010384, 'admin', 'admin', null),
+(906012589, 906010001, 906010385, 'admin', 'admin', null),
+(906012590, 906010107, 906010385, 'admin', 'admin', null),
+(906012591, 906010001, 906010386, 'admin', 'admin', null),
+(906012592, 906010107, 906010386, 'admin', 'admin', null),
+(906012593, 906010001, 906010388, 'admin', 'admin', null),
+(906012594, 906010107, 906010388, 'admin', 'admin', null),
+(906012595, 906010001, 906010389, 'admin', 'admin', null),
+(906012596, 906010107, 906010389, 'admin', 'admin', null),
+(906012597, 906010001, 906010390, 'admin', 'admin', null),
+(906012598, 906010107, 906010390, 'admin', 'admin', null),
+(906012599, 906010001, 906010392, 'admin', 'admin', null),
+(906012600, 906010107, 906010392, 'admin', 'admin', null),
+(906012601, 906010001, 906010393, 'admin', 'admin', null),
+(906012602, 906010107, 906010393, 'admin', 'admin', null),
+(906012603, 906010001, 906010395, 'admin', 'admin', null),
+(906012604, 906010107, 906010395, 'admin', 'admin', null),
+(906012605, 906010001, 906010397, 'admin', 'admin', null),
+(906012606, 906010107, 906010397, 'admin', 'admin', null),
+(906012607, 906010001, 906010398, 'admin', 'admin', null),
+(906012608, 906010107, 906010398, 'admin', 'admin', null),
+(906012609, 906010001, 906010399, 'admin', 'admin', null),
+(906012610, 906010107, 906010399, 'admin', 'admin', null),
+(906012611, 906010001, 906010400, 'admin', 'admin', null),
+(906012612, 906010107, 906010400, 'admin', 'admin', null),
+(906012613, 906010001, 906010403, 'admin', 'admin', null),
+(906012614, 906010107, 906010403, 'admin', 'admin', null),
+(906012615, 906010001, 906010404, 'admin', 'admin', null),
+(906012616, 906010107, 906010404, 'admin', 'admin', null),
+(906012617, 906010001, 906010406, 'admin', 'admin', null),
+(906012618, 906010107, 906010406, 'admin', 'admin', null),
+(906012619, 906010001, 906010407, 'admin', 'admin', null),
+(906012620, 906010107, 906010407, 'admin', 'admin', null),
+(906012621, 906010001, 906010408, 'admin', 'admin', null),
+(906012622, 906010107, 906010408, 'admin', 'admin', null),
+(906012623, 906010001, 906010410, 'admin', 'admin', null),
+(906012624, 906010107, 906010410, 'admin', 'admin', null),
+(906012625, 906010001, 906010411, 'admin', 'admin', null),
+(906012626, 906010107, 906010411, 'admin', 'admin', null),
+(906012627, 906010001, 906010412, 'admin', 'admin', null),
+(906012628, 906010107, 906010412, 'admin', 'admin', null),
+(906012629, 906010001, 906010413, 'admin', 'admin', null),
+(906012630, 906010107, 906010413, 'admin', 'admin', null),
+(906012631, 906010001, 906010414, 'admin', 'admin', null),
+(906012632, 906010107, 906010414, 'admin', 'admin', null),
+(906012633, 906010001, 906010416, 'admin', 'admin', null),
+(906012634, 906010107, 906010416, 'admin', 'admin', null),
+(906012635, 906010001, 906010417, 'admin', 'admin', null),
+(906012636, 906010107, 906010417, 'admin', 'admin', null),
+(906012637, 906010001, 906010419, 'admin', 'admin', null),
+(906012638, 906010107, 906010419, 'admin', 'admin', null),
+(906012639, 906010001, 906010422, 'admin', 'admin', null),
+(906012640, 906010107, 906010422, 'admin', 'admin', null),
+(906012641, 906010001, 906010423, 'admin', 'admin', null),
+(906012642, 906010107, 906010423, 'admin', 'admin', null),
+(906012643, 906010001, 906010426, 'admin', 'admin', null),
+(906012644, 906010107, 906010426, 'admin', 'admin', null),
+(906012645, 906010001, 906010427, 'admin', 'admin', null),
+(906012646, 906010107, 906010427, 'admin', 'admin', null),
+(906012647, 906010001, 906010428, 'admin', 'admin', null),
+(906012648, 906010107, 906010428, 'admin', 'admin', null),
+(906012649, 906010001, 906010429, 'admin', 'admin', null),
+(906012650, 906010107, 906010429, 'admin', 'admin', null),
+(906012651, 906010001, 906010430, 'admin', 'admin', null),
+(906012652, 906010107, 906010430, 'admin', 'admin', null),
+(906012653, 906010001, 906010432, 'admin', 'admin', null),
+(906012654, 906010107, 906010432, 'admin', 'admin', null),
+(906012655, 906010001, 906010433, 'admin', 'admin', null),
+(906012656, 906010107, 906010433, 'admin', 'admin', null),
+(906012657, 906010001, 906010435, 'admin', 'admin', null),
+(906012658, 906010107, 906010435, 'admin', 'admin', null),
+(906012659, 906010001, 906010437, 'admin', 'admin', null),
+(906012660, 906010107, 906010437, 'admin', 'admin', null),
+(906012661, 906010001, 906010439, 'admin', 'admin', null),
+(906012662, 906010438, 906010439, 'admin', 'admin', null),
+(906012663, 906010001, 906010440, 'admin', 'admin', null),
+(906012664, 906010438, 906010440, 'admin', 'admin', null),
+(906012665, 906010001, 906010441, 'admin', 'admin', null),
+(906012666, 906010438, 906010441, 'admin', 'admin', null),
+(906012667, 906010001, 906010442, 'admin', 'admin', null),
+(906012668, 906010438, 906010442, 'admin', 'admin', null),
+(906012669, 906010001, 906010443, 'admin', 'admin', null),
+(906012670, 906010438, 906010443, 'admin', 'admin', null),
+(906012671, 906010001, 906010444, 'admin', 'admin', null),
+(906012672, 906010438, 906010444, 'admin', 'admin', null),
+(906012673, 906010001, 906010445, 'admin', 'admin', null),
+(906012674, 906010438, 906010445, 'admin', 'admin', null),
+(906012675, 906010001, 906010446, 'admin', 'admin', null),
+(906012676, 906010438, 906010446, 'admin', 'admin', null),
+(906012677, 906010001, 906010447, 'admin', 'admin', null),
+(906012678, 906010438, 906010447, 'admin', 'admin', null),
+(906012679, 906010001, 906010448, 'admin', 'admin', null),
+(906012680, 906010438, 906010448, 'admin', 'admin', null),
+(906012681, 906010001, 906010449, 'admin', 'admin', null),
+(906012682, 906010438, 906010449, 'admin', 'admin', null),
+(906012683, 906010001, 906010450, 'admin', 'admin', null),
+(906012684, 906010438, 906010450, 'admin', 'admin', null),
+(906012685, 906010001, 906010451, 'admin', 'admin', null),
+(906012686, 906010438, 906010451, 'admin', 'admin', null),
+(906012687, 906010001, 906010452, 'admin', 'admin', null),
+(906012688, 906010438, 906010452, 'admin', 'admin', null),
+(906012689, 906010001, 906010453, 'admin', 'admin', null),
+(906012690, 906010438, 906010453, 'admin', 'admin', null),
+(906012691, 906010001, 906010454, 'admin', 'admin', null),
+(906012692, 906010438, 906010454, 'admin', 'admin', null),
+(906012693, 906010001, 906010455, 'admin', 'admin', null),
+(906012694, 906010438, 906010455, 'admin', 'admin', null),
+(906012695, 906010001, 906010456, 'admin', 'admin', null),
+(906012696, 906010438, 906010456, 'admin', 'admin', null),
+(906012697, 906010001, 906010457, 'admin', 'admin', null),
+(906012698, 906010438, 906010457, 'admin', 'admin', null),
+(906012699, 906010001, 906010458, 'admin', 'admin', null),
+(906012700, 906010438, 906010458, 'admin', 'admin', null),
+(906012701, 906010001, 906010459, 'admin', 'admin', null),
+(906012702, 906010438, 906010459, 'admin', 'admin', null),
+(906012703, 906010001, 906010460, 'admin', 'admin', null),
+(906012704, 906010438, 906010460, 'admin', 'admin', null),
+(906012705, 906010001, 906010461, 'admin', 'admin', null),
+(906012706, 906010438, 906010461, 'admin', 'admin', null),
+(906012707, 906010001, 906010462, 'admin', 'admin', null),
+(906012708, 906010438, 906010462, 'admin', 'admin', null),
+(906012709, 906010001, 906010463, 'admin', 'admin', null),
+(906012710, 906010438, 906010463, 'admin', 'admin', null),
+(906012711, 906010001, 906010464, 'admin', 'admin', null),
+(906012712, 906010438, 906010464, 'admin', 'admin', null),
+(906012713, 906010001, 906010465, 'admin', 'admin', null),
+(906012714, 906010438, 906010465, 'admin', 'admin', null),
+(906012715, 906010001, 906010466, 'admin', 'admin', null),
+(906012716, 906010438, 906010466, 'admin', 'admin', null),
+(906012717, 906010001, 906010467, 'admin', 'admin', null),
+(906012718, 906010438, 906010467, 'admin', 'admin', null),
+(906012719, 906010001, 906010468, 'admin', 'admin', null),
+(906012720, 906010438, 906010468, 'admin', 'admin', null),
+(906012721, 906010001, 906010469, 'admin', 'admin', null),
+(906012722, 906010438, 906010469, 'admin', 'admin', null),
+(906012723, 906010001, 906010470, 'admin', 'admin', null),
+(906012724, 906010438, 906010470, 'admin', 'admin', null),
+(906012725, 906010001, 906010471, 'admin', 'admin', null),
+(906012726, 906010438, 906010471, 'admin', 'admin', null),
+(906012727, 906010001, 906010472, 'admin', 'admin', null),
+(906012728, 906010438, 906010472, 'admin', 'admin', null),
+(906012729, 906010001, 906010473, 'admin', 'admin', null),
+(906012730, 906010438, 906010473, 'admin', 'admin', null),
+(906012731, 906010001, 906010474, 'admin', 'admin', null),
+(906012732, 906010438, 906010474, 'admin', 'admin', null),
+(906012733, 906010001, 906010475, 'admin', 'admin', null),
+(906012734, 906010438, 906010475, 'admin', 'admin', null),
+(906012735, 906010001, 906010476, 'admin', 'admin', null),
+(906012736, 906010438, 906010476, 'admin', 'admin', null),
+(906012737, 906010001, 906010477, 'admin', 'admin', null),
+(906012738, 906010438, 906010477, 'admin', 'admin', null),
+(906012739, 906010001, 906010478, 'admin', 'admin', null),
+(906012740, 906010438, 906010478, 'admin', 'admin', null),
+(906012741, 906010001, 906010479, 'admin', 'admin', null),
+(906012742, 906010438, 906010479, 'admin', 'admin', null),
+(906012743, 906010001, 906010481, 'admin', 'admin', null),
+(906012744, 906010438, 906010481, 'admin', 'admin', null),
+(906012745, 906010001, 906010482, 'admin', 'admin', null),
+(906012746, 906010438, 906010482, 'admin', 'admin', null),
+(906012747, 906010001, 906010483, 'admin', 'admin', null),
+(906012748, 906010438, 906010483, 'admin', 'admin', null),
+(906012749, 906010001, 906010484, 'admin', 'admin', null),
+(906012750, 906010438, 906010484, 'admin', 'admin', null),
+(906012751, 906010001, 906010485, 'admin', 'admin', null),
+(906012752, 906010438, 906010485, 'admin', 'admin', null),
+(906012753, 906010001, 906010486, 'admin', 'admin', null),
+(906012754, 906010438, 906010486, 'admin', 'admin', null),
+(906012755, 906010001, 906010487, 'admin', 'admin', null),
+(906012756, 906010438, 906010487, 'admin', 'admin', null),
+(906012757, 906010001, 906010488, 'admin', 'admin', null),
+(906012758, 906010438, 906010488, 'admin', 'admin', null),
+(906012759, 906010001, 906010489, 'admin', 'admin', null),
+(906012760, 906010438, 906010489, 'admin', 'admin', null),
+(906012761, 906010001, 906010490, 'admin', 'admin', null),
+(906012762, 906010438, 906010490, 'admin', 'admin', null),
+(906012763, 906010001, 906010491, 'admin', 'admin', null),
+(906012764, 906010438, 906010491, 'admin', 'admin', null),
+(906012765, 906010001, 906010492, 'admin', 'admin', null),
+(906012766, 906010438, 906010492, 'admin', 'admin', null),
+(906012767, 906010001, 906010493, 'admin', 'admin', null),
+(906012768, 906010438, 906010493, 'admin', 'admin', null),
+(906012769, 906010001, 906010494, 'admin', 'admin', null),
+(906012770, 906010438, 906010494, 'admin', 'admin', null),
+(906012771, 906010001, 906010495, 'admin', 'admin', null),
+(906012772, 906010438, 906010495, 'admin', 'admin', null),
+(906012773, 906010001, 906010496, 'admin', 'admin', null),
+(906012774, 906010438, 906010496, 'admin', 'admin', null),
+(906012775, 906010001, 906010497, 'admin', 'admin', null),
+(906012776, 906010438, 906010497, 'admin', 'admin', null),
+(906012777, 906010001, 906010498, 'admin', 'admin', null),
+(906012778, 906010438, 906010498, 'admin', 'admin', null),
+(906012779, 906010001, 906010499, 'admin', 'admin', null),
+(906012780, 906010438, 906010499, 'admin', 'admin', null),
+(906012781, 906010001, 906010500, 'admin', 'admin', null),
+(906012782, 906010438, 906010500, 'admin', 'admin', null),
+(906012783, 906010001, 906010501, 'admin', 'admin', null),
+(906012784, 906010438, 906010501, 'admin', 'admin', null),
+(906012785, 906010001, 906010502, 'admin', 'admin', null),
+(906012786, 906010438, 906010502, 'admin', 'admin', null),
+(906012787, 906010001, 906010503, 'admin', 'admin', null),
+(906012788, 906010438, 906010503, 'admin', 'admin', null),
+(906012789, 906010001, 906010504, 'admin', 'admin', null),
+(906012790, 906010438, 906010504, 'admin', 'admin', null),
+(906012791, 906010001, 906010505, 'admin', 'admin', null),
+(906012792, 906010438, 906010505, 'admin', 'admin', null),
+(906012793, 906010001, 906010506, 'admin', 'admin', null),
+(906012794, 906010438, 906010506, 'admin', 'admin', null),
+(906012795, 906010001, 906010507, 'admin', 'admin', null),
+(906012796, 906010438, 906010507, 'admin', 'admin', null),
+(906012797, 906010001, 906010508, 'admin', 'admin', null),
+(906012798, 906010438, 906010508, 'admin', 'admin', null),
+(906012799, 906010001, 906010509, 'admin', 'admin', null),
+(906012800, 906010438, 906010509, 'admin', 'admin', null),
+(906012801, 906010001, 906010510, 'admin', 'admin', null),
+(906012802, 906010438, 906010510, 'admin', 'admin', null),
+(906012803, 906010001, 906010511, 'admin', 'admin', null),
+(906012804, 906010438, 906010511, 'admin', 'admin', null),
+(906012805, 906010001, 906010512, 'admin', 'admin', null),
+(906012806, 906010438, 906010512, 'admin', 'admin', null),
+(906012807, 906010001, 906010513, 'admin', 'admin', null),
+(906012808, 906010438, 906010513, 'admin', 'admin', null),
+(906012809, 906010001, 906010514, 'admin', 'admin', null),
+(906012810, 906010438, 906010514, 'admin', 'admin', null),
+(906012811, 906010001, 906010515, 'admin', 'admin', null),
+(906012812, 906010438, 906010515, 'admin', 'admin', null),
+(906012813, 906010001, 906010516, 'admin', 'admin', null),
+(906012814, 906010438, 906010516, 'admin', 'admin', null),
+(906012815, 906010001, 906010517, 'admin', 'admin', null),
+(906012816, 906010438, 906010517, 'admin', 'admin', null),
+(906012817, 906010001, 906010518, 'admin', 'admin', null),
+(906012818, 906010438, 906010518, 'admin', 'admin', null),
+(906012819, 906010001, 906010519, 'admin', 'admin', null),
+(906012820, 906010438, 906010519, 'admin', 'admin', null),
+(906012821, 906010001, 906010520, 'admin', 'admin', null),
+(906012822, 906010438, 906010520, 'admin', 'admin', null),
+(906012823, 906010001, 906010521, 'admin', 'admin', null),
+(906012824, 906010438, 906010521, 'admin', 'admin', null),
+(906012825, 906010001, 906010522, 'admin', 'admin', null),
+(906012826, 906010438, 906010522, 'admin', 'admin', null),
+(906012827, 906010001, 906010523, 'admin', 'admin', null),
+(906012828, 906010438, 906010523, 'admin', 'admin', null),
+(906012829, 906010001, 906010524, 'admin', 'admin', null),
+(906012830, 906010438, 906010524, 'admin', 'admin', null),
+(906012831, 906010001, 906010525, 'admin', 'admin', null),
+(906012832, 906010438, 906010525, 'admin', 'admin', null),
+(906012833, 906010001, 906010526, 'admin', 'admin', null),
+(906012834, 906010438, 906010526, 'admin', 'admin', null),
+(906012835, 906010001, 906010527, 'admin', 'admin', null),
+(906012836, 906010438, 906010527, 'admin', 'admin', null),
+(906012837, 906010001, 906010528, 'admin', 'admin', null),
+(906012838, 906010438, 906010528, 'admin', 'admin', null),
+(906012839, 906010001, 906010529, 'admin', 'admin', null),
+(906012840, 906010438, 906010529, 'admin', 'admin', null),
+(906012841, 906010001, 906010530, 'admin', 'admin', null),
+(906012842, 906010438, 906010530, 'admin', 'admin', null),
+(906012843, 906010001, 906010531, 'admin', 'admin', null),
+(906012844, 906010438, 906010531, 'admin', 'admin', null),
+(906012845, 906010001, 906010532, 'admin', 'admin', null),
+(906012846, 906010438, 906010532, 'admin', 'admin', null),
+(906012847, 906010001, 906010533, 'admin', 'admin', null),
+(906012848, 906010438, 906010533, 'admin', 'admin', null),
+(906012849, 906010001, 906010534, 'admin', 'admin', null),
+(906012850, 906010438, 906010534, 'admin', 'admin', null),
+(906012851, 906010001, 906010535, 'admin', 'admin', null),
+(906012852, 906010438, 906010535, 'admin', 'admin', null),
+(906012853, 906010001, 906010536, 'admin', 'admin', null),
+(906012854, 906010438, 906010536, 'admin', 'admin', null),
+(906012855, 906010001, 906010537, 'admin', 'admin', null),
+(906012856, 906010438, 906010537, 'admin', 'admin', null),
+(906012857, 906010001, 906010538, 'admin', 'admin', null),
+(906012858, 906010438, 906010538, 'admin', 'admin', null),
+(906012859, 906010001, 906010539, 'admin', 'admin', null),
+(906012860, 906010438, 906010539, 'admin', 'admin', null),
+(906012861, 906010001, 906010540, 'admin', 'admin', null),
+(906012862, 906010438, 906010540, 'admin', 'admin', null),
+(906012863, 906010001, 906010541, 'admin', 'admin', null),
+(906012864, 906010438, 906010541, 'admin', 'admin', null),
+(906012865, 906010001, 906010542, 'admin', 'admin', null),
+(906012866, 906010438, 906010542, 'admin', 'admin', null),
+(906012867, 906010001, 906010543, 'admin', 'admin', null),
+(906012868, 906010438, 906010543, 'admin', 'admin', null),
+(906012869, 906010001, 906010544, 'admin', 'admin', null),
+(906012870, 906010438, 906010544, 'admin', 'admin', null),
+(906012871, 906010001, 906010545, 'admin', 'admin', null),
+(906012872, 906010438, 906010545, 'admin', 'admin', null),
+(906012873, 906010001, 906010546, 'admin', 'admin', null),
+(906012874, 906010438, 906010546, 'admin', 'admin', null),
+(906012875, 906010001, 906010547, 'admin', 'admin', null),
+(906012876, 906010438, 906010547, 'admin', 'admin', null),
+(906012877, 906010001, 906010548, 'admin', 'admin', null),
+(906012878, 906010438, 906010548, 'admin', 'admin', null),
+(906012879, 906010001, 906010549, 'admin', 'admin', null),
+(906012880, 906010438, 906010549, 'admin', 'admin', null),
+(906012881, 906010001, 906010550, 'admin', 'admin', null),
+(906012882, 906010438, 906010550, 'admin', 'admin', null),
+(906012883, 906010001, 906010551, 'admin', 'admin', null),
+(906012884, 906010438, 906010551, 'admin', 'admin', null),
+(906012885, 906010001, 906010552, 'admin', 'admin', null),
+(906012886, 906010438, 906010552, 'admin', 'admin', null),
+(906012887, 906010001, 906010553, 'admin', 'admin', null),
+(906012888, 906010438, 906010553, 'admin', 'admin', null),
+(906012889, 906010001, 906010554, 'admin', 'admin', null),
+(906012890, 906010438, 906010554, 'admin', 'admin', null),
+(906012891, 906010001, 906010555, 'admin', 'admin', null),
+(906012892, 906010438, 906010555, 'admin', 'admin', null),
+(906012893, 906010001, 906010556, 'admin', 'admin', null),
+(906012894, 906010438, 906010556, 'admin', 'admin', null),
+(906012895, 906010001, 906010557, 'admin', 'admin', null),
+(906012896, 906010438, 906010557, 'admin', 'admin', null),
+(906012897, 906010001, 906010558, 'admin', 'admin', null),
+(906012898, 906010438, 906010558, 'admin', 'admin', null),
+(906012899, 906010001, 906010559, 'admin', 'admin', null),
+(906012900, 906010438, 906010559, 'admin', 'admin', null),
+(906012901, 906010001, 906010560, 'admin', 'admin', null),
+(906012902, 906010438, 906010560, 'admin', 'admin', null),
+(906012903, 906010001, 906010561, 'admin', 'admin', null),
+(906012904, 906010438, 906010561, 'admin', 'admin', null),
+(906012905, 906010001, 906010562, 'admin', 'admin', null),
+(906012906, 906010438, 906010562, 'admin', 'admin', null),
+(906012907, 906010001, 906010563, 'admin', 'admin', null),
+(906012908, 906010438, 906010563, 'admin', 'admin', null),
+(906012909, 906010001, 906010564, 'admin', 'admin', null),
+(906012910, 906010438, 906010564, 'admin', 'admin', null),
+(906012911, 906010001, 906010565, 'admin', 'admin', null),
+(906012912, 906010438, 906010565, 'admin', 'admin', null),
+(906012913, 906010001, 906010566, 'admin', 'admin', null),
+(906012914, 906010438, 906010566, 'admin', 'admin', null),
+(906012915, 906010001, 906010567, 'admin', 'admin', null),
+(906012916, 906010438, 906010567, 'admin', 'admin', null),
+(906012917, 906010001, 906010568, 'admin', 'admin', null),
+(906012918, 906010438, 906010568, 'admin', 'admin', null),
+(906012919, 906010001, 906010569, 'admin', 'admin', null),
+(906012920, 906010438, 906010569, 'admin', 'admin', null),
+(906012921, 906010001, 906010570, 'admin', 'admin', null),
+(906012922, 906010438, 906010570, 'admin', 'admin', null),
+(906012923, 906010001, 906010571, 'admin', 'admin', null),
+(906012924, 906010438, 906010571, 'admin', 'admin', null),
+(906012925, 906010001, 906010572, 'admin', 'admin', null),
+(906012926, 906010438, 906010572, 'admin', 'admin', null),
+(906012927, 906010001, 906010573, 'admin', 'admin', null),
+(906012928, 906010438, 906010573, 'admin', 'admin', null),
+(906012929, 906010001, 906010574, 'admin', 'admin', null),
+(906012930, 906010438, 906010574, 'admin', 'admin', null),
+(906012931, 906010001, 906010575, 'admin', 'admin', null),
+(906012932, 906010438, 906010575, 'admin', 'admin', null),
+(906012933, 906010001, 906010576, 'admin', 'admin', null),
+(906012934, 906010438, 906010576, 'admin', 'admin', null);
 
 
 
@@ -13059,6 +13539,7 @@ insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RUL
 (906015013, 'HSS-HSS(集中式）(生命周期状态)枚举值规范性.生命周期状态', 'lifecycle_status', 906010429, 906004190, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null),
 (906015014, 'HSS-HLR-FE(生命周期状态)枚举值规范性.生命周期状态', 'lifecycle_status', 906010432, 906004209, 1, null, '生命周期状态lifecycle_status', 'admin', 'admin', null),
 (906015015, 'HSS-HSS_BE(BE主备标识)枚举值规范性.BE主备标识', 'be_primary_secondary_flag', 906010435, 906004223, 1, null, 'BE主备标识be_primary_secondary_flag', 'admin', 'admin', null);
+
 --管线
 --插入传输管线 dims_mm_dictionarytype
 insert into dims_mm_dictionarytype (ID, SPECIALITYNAME, NAME, CODE, CREATOR, UPDATER, MEMO) values
@@ -15037,7 +15518,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光交接箱规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光交接箱规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光交接箱规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_DEVICE_GJ t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
+													                         where  exists(select 1 from CE_DEVICE_GJ t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001001, 1, NULL),
 (904003141, '传输管线-光交接箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02003', 2003, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
 (904003142, '传输管线-光交接箱规范性核查-单双面-字典规范性核查', 'DIMS_GX_02004', 2004, 904001001, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001001, 1, NULL),
 (904003144, '传输管线-光分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_GX_02006', 2006, 904001002, '传输管线', 11, NULL, 'update CSGX_CE_DEVICE_GF t1
@@ -15055,7 +15536,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光分纤箱规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光分纤箱规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光分纤箱规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
+													                         where  exists(select 1 from CSGX_CE_DEVICE_GF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001002, 1, NULL),
 (904003146, '传输管线-光分纤箱规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02008', 2008, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003147, '传输管线-光分纤箱规范性核查-产权性质-字典规范性核查', 'DIMS_GX_02009', 2009, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
 (904003148, '传输管线-光分纤箱规范性核查-产权单位-字典规范性核查', 'DIMS_GX_02010', 2010, 904001002, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001002, 1, NULL),
@@ -15074,7 +15555,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光终端盒规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光终端盒规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光终端盒规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_DEVICE_GB t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001003, 1, NULL),
+													                         where  exists(select 1 from CE_DEVICE_GB t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001003, 1, NULL),
 (904003151, '传输管线-光终端盒规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02013', 2013, 904001003, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001003, 1, NULL),
 (904003152, '传输管线-分纤接续点(接头)规范性核查-资源标识-唯一性核查', 'DIMS_GX_02014', 2014, 904001004, '传输管线', 11, NULL, 'update CE_DEVICE_JT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02014%'' then dims_col_result
@@ -15091,7 +15572,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-分纤接续点(接头)规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-分纤接续点(接头)规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-分纤接续点(接头)规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_DEVICE_JT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001004, 1, NULL),
+													                         where  exists(select 1 from CE_DEVICE_JT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001004, 1, NULL),
 (904003154, '传输管线-分纤接续点(接头)规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02016', 2016, 904001004, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001004, 1, NULL),
 (904003155, '传输管线-光端子主表规范性核查-资源标识-唯一性核查', 'DIMS_GX_02017', 2017, 904001005, '传输管线', 11, NULL, 'update CM_PORT_FIBER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02017%'' then dims_col_result
@@ -15108,7 +15589,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光端子主表规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光端子主表规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光端子主表规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_PORT_FIBER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001005, 1, NULL),
+													                         where  exists(select 1 from CM_PORT_FIBER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001005, 1, NULL),
 (904003157, '传输管线-光端子主表规范性核查-状态-字典规范性核查', 'DIMS_GX_02019', 2019, 904001005, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001005, 1, NULL),
 (904003158, '传输管线-光缆段规范性核查-光缆段名称-唯一性核查', 'DIMS_GX_02020', 2020, 904001006, '传输管线', 11, NULL, 'update CE_CABLE_SEGMENT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02020%'' then dims_col_result
@@ -15117,7 +15598,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光缆段规范性核查-光缆段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光缆段规范性核查-光缆段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光缆段规范性核查-光缆段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_CABLE_SEGMENT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
+													                         where  exists(select 1 from CE_CABLE_SEGMENT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001006, 1, NULL),
 (904003159, '传输管线-光缆段规范性核查-光缆段级别-字典规范性核查', 'DIMS_GX_02021', 2021, 904001006, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001006, 1, NULL),
 (904003160, '传输管线-光缆段规范性核查-纤芯数-字典规范性核查', 'DIMS_GX_02022', 2022, 904001006, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001006, 1, NULL),
 (904003161, '传输管线-光缆段规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02023', 2023, 904001006, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001006, 1, NULL),
@@ -15136,7 +15617,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-纤芯规范性核查-纤芯名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-纤芯规范性核查-纤芯名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-纤芯规范性核查-纤芯名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_CABLE_FIBER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001007, 1, NULL),
+													                         where  exists(select 1 from CE_CABLE_FIBER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001007, 1, NULL),
 (904003164, '传输管线-纤芯规范性核查-使用状态-字典规范性核查', 'DIMS_GX_02026', 2026, 904001007, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001007, 1, NULL),
 (904003165, '传输管线-局向光纤规范性核查-资源标识-唯一性核查', 'DIMS_GX_02027', 2027, 904001008, '传输管线', 11, NULL, 'update CE_LINK_FIBERLINK t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02027%'' then dims_col_result
@@ -15153,7 +15634,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-局向光纤规范性核查-局向光纤名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-局向光纤规范性核查-局向光纤名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-局向光纤规范性核查-局向光纤名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_FIBERLINK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001008, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_FIBERLINK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001008, 1, NULL),
 (904003167, '传输管线-局向光纤规范性核查-使用状态-字典规范性核查', 'DIMS_GX_02029', 2029, 904001008, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001008, 1, NULL),
 (904003168, '传输管线-光路规范性核查-资源标识-唯一性核查', 'DIMS_GX_02030', 2030, 904001009, '传输管线', 11, NULL, 'update CE_LINK_OCIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02030%'' then dims_col_result
@@ -15170,7 +15651,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光路规范性核查-光路名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光路规范性核查-光路名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光路规范性核查-光路名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_OCIRCUIT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001009, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_OCIRCUIT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001009, 1, NULL),
 (904003170, '传输管线-光路规范性核查-包含的光纤数-字典规范性核查', 'DIMS_GX_02032', 2032, 904001009, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001009, 1, NULL),
 (904003171, '传输管线-硬跳规范性核查-资源标识-唯一性核查', 'DIMS_GX_02033', 2033, 904001010, '传输管线', 11, NULL, 'update CE_LINK_JUMPLINK t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02033%'' then dims_col_result
@@ -15187,7 +15668,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-硬跳规范性核查-硬跳名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-硬跳规范性核查-硬跳名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-硬跳规范性核查-硬跳名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_JUMPLINK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001010, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_JUMPLINK t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001010, 1, NULL),
 (904003173, '传输管线-硬跳规范性核查-A端设备类型-字典规范性核查', 'DIMS_GX_02035', 2035, 904001010, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001010, 1, NULL),
 (904003174, '传输管线-硬跳规范性核查-Z端设备类型-字典规范性核查', 'DIMS_GX_02036', 2036, 904001010, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001010, 1, NULL),
 (904003175, '传输管线-光缆盘留规范性核查-资源标识-唯一性核查', 'DIMS_GX_02037', 2037, 904001011, '传输管线', 11, NULL, 'update CE_ASSISTANCE_RESERVE t1
@@ -15205,7 +15686,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光缆盘留规范性核查-光缆盘留名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光缆盘留规范性核查-光缆盘留名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光缆盘留规范性核查-光缆盘留名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_ASSISTANCE_RESERVE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001011, 1, NULL),
+													                         where  exists(select 1 from CE_ASSISTANCE_RESERVE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001011, 1, NULL),
 (904003177, '传输管线-人手井规范性核查-资源标识-唯一性核查', 'DIMS_GX_02039', 2039, 904001012, '传输管线', 11, NULL, 'update CE_FACILITY_WELL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02039%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_GX_02039''
@@ -15221,7 +15702,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-人手井规范性核查-人手井名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-人手井规范性核查-人手井名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-人手井规范性核查-人手井名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_FACILITY_WELL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001012, 1, NULL),
+													                         where  exists(select 1 from CE_FACILITY_WELL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001012, 1, NULL),
 (904003179, '传输管线-人手井规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02041', 2041, 904001012, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001012, 1, NULL),
 (904003180, '传输管线-电杆规范性核查-资源标识-唯一性核查', 'DIMS_GX_02042', 2042, 904001013, '传输管线', 11, NULL, 'update CE_FACILITY_POLE t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02042%'' then dims_col_result
@@ -15238,7 +15719,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-电杆规范性核查-电杆名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-电杆规范性核查-电杆名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-电杆规范性核查-电杆名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_FACILITY_POLE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001013, 1, NULL),
+													                         where  exists(select 1 from CE_FACILITY_POLE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001013, 1, NULL),
 (904003182, '传输管线-电杆规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02044', 2044, 904001013, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001013, 1, NULL),
 (904003183, '传输管线-撑点规范性核查-资源标识-唯一性核查', 'DIMS_GX_02045', 2045, 904001014, '传输管线', 11, NULL, 'update CE_FACILITY_SUPPORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02045%'' then dims_col_result
@@ -15255,7 +15736,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-撑点规范性核查-撑点名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-撑点规范性核查-撑点名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-撑点规范性核查-撑点名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001014, 1, NULL),
+													                         where  exists(select 1 from CE_FACILITY_SUPPORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001014, 1, NULL),
 (904003185, '传输管线-撑点规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02047', 2047, 904001014, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001014, 1, NULL),
 (904003186, '传输管线-引上点规范性核查-资源标识-唯一性核查', 'DIMS_GX_02048', 2048, 904001015, '传输管线', 11, NULL, 'update CE_FACILITY_UP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02048%'' then dims_col_result
@@ -15272,7 +15753,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-引上点规范性核查-引上点名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-引上点规范性核查-引上点名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-引上点规范性核查-引上点名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_FACILITY_UP t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001015, 1, NULL),
+													                         where  exists(select 1 from CE_FACILITY_UP t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001015, 1, NULL),
 (904003188, '传输管线-引上点规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02050', 2050, 904001015, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001015, 1, NULL),
 (904003189, '传输管线-标石规范性核查-资源标识-唯一性核查', 'DIMS_GX_02051', 2051, 904001016, '传输管线', 11, NULL, 'update CE_FACILITY_STONE t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02051%'' then dims_col_result
@@ -15289,7 +15770,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-标石规范性核查-标石名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-标石规范性核查-标石名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-标石规范性核查-标石名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_FACILITY_STONE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, NULL),
+													                         where  exists(select 1 from CE_FACILITY_STONE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001016, 1, NULL),
 (904003191, '传输管线-标石规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02053', 2053, 904001016, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001016, 1, NULL),
 (904003192, '传输管线-引上段规范性核查-资源标识-唯一性核查', 'DIMS_GX_02054', 2054, 904001017, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_UPSEG t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02054%'' then dims_col_result
@@ -15306,7 +15787,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-引上段规范性核查-引上段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-引上段规范性核查-引上段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-引上段规范性核查-引上段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LAYINGSEGMENT_UPSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
+													                         where  exists(select 1 from CE_LAYINGSEGMENT_UPSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001017, 1, NULL),
 (904003194, '传输管线-引上段规范性核查-起点类型-字典规范性核查', 'DIMS_GX_02056', 2056, 904001017, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001017, 1, NULL),
 (904003195, '传输管线-引上段规范性核查-终点类型-字典规范性核查', 'DIMS_GX_02057', 2057, 904001017, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001017, 1, NULL),
 (904003196, '传输管线-引上段规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02058', 2058, 904001017, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001017, 1, NULL),
@@ -15325,7 +15806,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-杆路段规范性核查-杆路段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-杆路段规范性核查-杆路段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-杆路段规范性核查-杆路段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LAYINGSEGMENT_POLESEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
+													                         where  exists(select 1 from CE_LAYINGSEGMENT_POLESEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001018, 1, NULL),
 (904003199, '传输管线-杆路段规范性核查-起点类型-字典规范性核查', 'DIMS_GX_02061', 2061, 904001018, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001018, 1, NULL),
 (904003200, '传输管线-杆路段规范性核查-终点类型-字典规范性核查', 'DIMS_GX_02062', 2062, 904001018, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001018, 1, NULL),
 (904003201, '传输管线-杆路段规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02063', 2063, 904001018, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001018, 1, NULL),
@@ -15344,7 +15825,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-直埋段规范性核查-直埋段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-直埋段规范性核查-直埋段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-直埋段规范性核查-直埋段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LAYINGSEGMENT_STONESEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
+													                         where  exists(select 1 from CE_LAYINGSEGMENT_STONESEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001019, 1, NULL),
 (904003204, '传输管线-直埋段规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02066', 2066, 904001019, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001019, 1, NULL),
 (904003205, '传输管线-挂墙段 规范性核查-资源标识-唯一性核查', 'DIMS_GX_02067', 2067, 904001020, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WALLSEG t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02067%'' then dims_col_result
@@ -15361,7 +15842,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-挂墙段 规范性核查-挂墙段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-挂墙段 规范性核查-挂墙段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-挂墙段 规范性核查-挂墙段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LAYINGSEGMENT_WALLSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
+													                         where  exists(select 1 from CE_LAYINGSEGMENT_WALLSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001020, 1, NULL),
 (904003207, '传输管线-挂墙段 规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02069', 2069, 904001020, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001020, 1, NULL),
 (904003208, '传输管线-管道段规范性核查-资源标识-唯一性核查', 'DIMS_GX_02070', 2070, 904001021, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_WELLSEG t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02070%'' then dims_col_result
@@ -15378,7 +15859,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-管道段规范性核查-管道段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-管道段规范性核查-管道段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-管道段规范性核查-管道段名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LAYINGSEGMENT_WELLSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
+													                         where  exists(select 1 from CE_LAYINGSEGMENT_WELLSEG t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001021, 1, NULL),
 (904003210, '传输管线-管道段规范性核查-生命周期状态-字典规范性核查', 'DIMS_GX_02072', 2072, 904001021, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001021, 1, NULL),
 (904003211, '传输管线-管孔规范性核查-资源标识-唯一性核查', 'DIMS_GX_02073', 2073, 904001022, '传输管线', 11, NULL, 'update CE_LAYINGSEGMENT_TUBEHOLE t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_GX_02073%'' then dims_col_result
@@ -15416,7 +15897,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输管线-光缆系统规范性核查-光缆系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输管线-光缆系统规范性核查-光缆系统名称-唯一性核查''
 																											 else dims_col_rtName||'',传输管线-光缆系统规范性核查-光缆系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CM_CABLESEG_SYS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001024, 1, NULL),
+													                         where  exists(select 1 from CM_CABLESEG_SYS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_GX_CHECKONEDYNAMICSQLINDEX', 904001024, 1, NULL),
 (904003220, '传输管线-光缆系统规范性核查-光缆系统级别-字典规范性核查', 'DIMS_GX_02082', 2082, 904001024, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001024, 1, NULL),
 (904003221, '传输管线-熔接关系规范性核查-熔纤设备类型-字典规范性核查', 'DIMS_GX_02083', 2083, 904001025, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001025, 1, NULL),
 (904003222, '传输管线-敷设缆线关系规范性核查-敷设段类型-字典规范性核查', 'DIMS_GX_02084', 2084, 904001026, '传输管线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_GX_CHECKONEDICTACCURACYINDEX', 904001026, 1, NULL),
@@ -15687,76 +16168,76 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (904004114,904099003,904003137,'admin','admin',null),
 (904004115,904099003,904003138,'admin','admin',null),
 (904004116,904099002,904003139,'admin','admin',null),
-(904004117,904099002,904003140,'admin','admin',null),
+-- (904004117,904099002,904003140,'admin','admin',null),
 (904004118,904099002,904003141,'admin','admin',null),
 (904004119,904099002,904003142,'admin','admin',null),
 (904004120,904099002,904003143,'admin','admin',null),
 (904004121,904099002,904003144,'admin','admin',null),
-(904004122,904099002,904003145,'admin','admin',null),
+-- (904004122,904099002,904003145,'admin','admin',null),
 (904004123,904099002,904003146,'admin','admin',null),
 (904004124,904099002,904003147,'admin','admin',null),
 (904004125,904099002,904003148,'admin','admin',null),
 (904004126,904099002,904003149,'admin','admin',null),
-(904004127,904099002,904003150,'admin','admin',null),
+-- (904004127,904099002,904003150,'admin','admin',null),
 (904004128,904099002,904003151,'admin','admin',null),
 (904004129,904099002,904003152,'admin','admin',null),
-(904004130,904099002,904003153,'admin','admin',null),
+-- (904004130,904099002,904003153,'admin','admin',null),
 (904004131,904099002,904003154,'admin','admin',null),
 (904004132,904099002,904003155,'admin','admin',null),
-(904004133,904099002,904003156,'admin','admin',null),
+-- (904004133,904099002,904003156,'admin','admin',null),
 (904004134,904099002,904003157,'admin','admin',null),
-(904004135,904099002,904003158,'admin','admin',null),
+-- (904004135,904099002,904003158,'admin','admin',null),
 (904004136,904099002,904003159,'admin','admin',null),
 (904004137,904099002,904003160,'admin','admin',null),
 (904004138,904099002,904003161,'admin','admin',null),
 (904004139,904099002,904003162,'admin','admin',null),
-(904004140,904099002,904003163,'admin','admin',null),
+-- (904004140,904099002,904003163,'admin','admin',null),
 (904004141,904099002,904003164,'admin','admin',null),
 (904004142,904099002,904003165,'admin','admin',null),
-(904004143,904099002,904003166,'admin','admin',null),
+-- (904004143,904099002,904003166,'admin','admin',null),
 (904004144,904099002,904003167,'admin','admin',null),
 (904004145,904099002,904003168,'admin','admin',null),
-(904004146,904099002,904003169,'admin','admin',null),
+-- (904004146,904099002,904003169,'admin','admin',null),
 (904004147,904099002,904003170,'admin','admin',null),
 (904004148,904099002,904003171,'admin','admin',null),
-(904004149,904099002,904003172,'admin','admin',null),
+-- (904004149,904099002,904003172,'admin','admin',null),
 (904004150,904099002,904003173,'admin','admin',null),
 (904004151,904099002,904003174,'admin','admin',null),
 (904004152,904099002,904003175,'admin','admin',null),
-(904004153,904099002,904003176,'admin','admin',null),
+-- (904004153,904099002,904003176,'admin','admin',null),
 (904004154,904099002,904003177,'admin','admin',null),
-(904004155,904099002,904003178,'admin','admin',null),
+-- (904004155,904099002,904003178,'admin','admin',null),
 (904004156,904099002,904003179,'admin','admin',null),
 (904004157,904099002,904003180,'admin','admin',null),
-(904004158,904099002,904003181,'admin','admin',null),
+-- (904004158,904099002,904003181,'admin','admin',null),
 (904004159,904099002,904003182,'admin','admin',null),
 (904004160,904099002,904003183,'admin','admin',null),
-(904004161,904099002,904003184,'admin','admin',null),
+-- (904004161,904099002,904003184,'admin','admin',null),
 (904004162,904099002,904003185,'admin','admin',null),
 (904004163,904099002,904003186,'admin','admin',null),
-(904004164,904099002,904003187,'admin','admin',null),
+-- (904004164,904099002,904003187,'admin','admin',null),
 (904004165,904099002,904003188,'admin','admin',null),
 (904004166,904099002,904003189,'admin','admin',null),
-(904004167,904099002,904003190,'admin','admin',null),
+-- (904004167,904099002,904003190,'admin','admin',null),
 (904004168,904099002,904003191,'admin','admin',null),
 (904004169,904099002,904003192,'admin','admin',null),
-(904004170,904099002,904003193,'admin','admin',null),
+-- (904004170,904099002,904003193,'admin','admin',null),
 (904004171,904099002,904003194,'admin','admin',null),
 (904004172,904099002,904003195,'admin','admin',null),
 (904004173,904099002,904003196,'admin','admin',null),
 (904004174,904099002,904003197,'admin','admin',null),
-(904004175,904099002,904003198,'admin','admin',null),
+-- (904004175,904099002,904003198,'admin','admin',null),
 (904004176,904099002,904003199,'admin','admin',null),
 (904004177,904099002,904003200,'admin','admin',null),
 (904004178,904099002,904003201,'admin','admin',null),
 (904004179,904099002,904003202,'admin','admin',null),
-(904004180,904099002,904003203,'admin','admin',null),
+-- (904004180,904099002,904003203,'admin','admin',null),
 (904004181,904099002,904003204,'admin','admin',null),
 (904004182,904099002,904003205,'admin','admin',null),
-(904004183,904099002,904003206,'admin','admin',null),
+-- (904004183,904099002,904003206,'admin','admin',null),
 (904004184,904099002,904003207,'admin','admin',null),
 (904004185,904099002,904003208,'admin','admin',null),
-(904004186,904099002,904003209,'admin','admin',null),
+-- (904004186,904099002,904003209,'admin','admin',null),
 (904004187,904099002,904003210,'admin','admin',null),
 (904004188,904099002,904003211,'admin','admin',null),
 (904004189,904099002,904003212,'admin','admin',null),
@@ -15766,7 +16247,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (904004193,904099002,904003216,'admin','admin',null),
 (904004194,904099002,904003217,'admin','admin',null),
 (904004195,904099002,904003218,'admin','admin',null),
-(904004196,904099002,904003219,'admin','admin',null),
+-- (904004196,904099002,904003219,'admin','admin',null),
 (904004197,904099002,904003220,'admin','admin',null),
 (904004198,904099002,904003221,'admin','admin',null),
 (904004199,904099002,904003222,'admin','admin',null),
@@ -19172,7 +19653,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-站点动环属性规范性核查-站点名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-站点动环属性规范性核查-站点名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-站点动环属性规范性核查-站点名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_SITE_PROPERTY t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001501, 1, NULL),
+													                         where  exists(select 1 from RM_SITE_PROPERTY t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001501, 1, NULL),
 (907003663, '动环-站点动环属性规范性核查-动环专业站点级别-字典规范性核查', 'DIMS_DH_02003', 2003, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
 (907003664, '动环-站点动环属性规范性核查-市电是否来自不同变电站-字典规范性核查', 'DIMS_DH_02004', 2004, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
 (907003665, '动环-站点动环属性规范性核查-市电电压等级-字典规范性核查', 'DIMS_DH_02005', 2005, 907001501, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001501, 1, NULL),
@@ -19194,7 +19675,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-机房动环属性规范性核查-机房名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-机房动环属性规范性核查-机房名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-机房动环属性规范性核查-机房名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_ROOM_PROPERTY t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001502, 1, NULL),
+													                         where  exists(select 1 from RM_ROOM_PROPERTY t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001502, 1, NULL),
 (907003671, '动环-机房动环属性规范性核查-动环专业机房类型-字典规范性核查', 'DIMS_DH_02011', 2011, 907001502, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, NULL),
 (907003672, '动环-机房动环属性规范性核查-空间专业机房类型-字典规范性核查', 'DIMS_DH_02012', 2012, 907001502, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001502, 1, NULL),
 (907003673, '动环-变压器规范性核查-资源标识-唯一性核查', 'DIMS_DH_02013', 2013, 907001503, '动环', 11, NULL, 'update CE_DEVICE_PE_TRANSFORM t1
@@ -19258,7 +19739,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-高压配电系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-高压配电系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-高压配电系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_HIGH_DISTRIBUTION t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001505, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_HIGH_DISTRIBUTION t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001505, 1, NULL),
 (907003695, '动环-高压配电系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02035', 2035, 907001505, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001505, 1, NULL),
 (907003696, '动环-高压配电规范性核查-资源标识-唯一性核查', 'DIMS_DH_02036', 2036, 907001506, '动环', 11, NULL, 'update CE_DEVICE_PE_HIGH_DISTRIBUTION t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02036%'' then dims_col_result
@@ -19298,7 +19779,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-高压直流电源系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-高压直流电源系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-高压直流电源系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001507, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_HIGH_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001507, 1, NULL),
 (907003706, '动环-高压直流电源系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02046', 2046, 907001507, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001507, 1, NULL),
 (907003707, '动环-高压直流电源规范性核查-资源标识-唯一性核查', 'DIMS_DH_02047', 2047, 907001508, '动环', 11, NULL, 'update CE_DEVICE_PE_HIGH_POWER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02047%'' then dims_col_result
@@ -19359,7 +19840,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-低压配电系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-低压配电系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-低压配电系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_LOW_DISTRIBUTION t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001510, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_LOW_DISTRIBUTION t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001510, 1, NULL),
 (907003725, '动环-低压配电系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02065', 2065, 907001510, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001510, 1, NULL),
 (907003726, '动环-低压交流配电规范性核查-资源标识-唯一性核查', 'DIMS_DH_02066', 2066, 907001511, '动环', 11, NULL, 'update CE_DEVICE_PE_LOW_AC_DISTRIBUTION t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02066%'' then dims_col_result
@@ -19398,7 +19879,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-发电系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-发电系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-发电系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_SWITCH_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001512, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_SWITCH_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001512, 1, NULL),
 (907003736, '动环-发电系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02076', 2076, 907001512, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001512, 1, NULL),
 (907003737, '动环-发电机组规范性核查-资源标识-唯一性核查', 'DIMS_DH_02077', 2077, 907001513, '动环', 11, NULL, 'update CE_DEVICE_PE_POWER_GENERATION t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02077%'' then dims_col_result
@@ -19441,7 +19922,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-开关电源系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-开关电源系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-开关电源系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001514, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_OPEN_POWER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001514, 1, NULL),
 (907003751, '动环-开关电源系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02092', 2092, 907001514, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001514, 1, NULL),
 (907003752, '动环-开关电源规范性核查-资源标识-唯一性核查', 'DIMS_DH_02093', 2093, 907001515, '动环', 11, NULL, 'update CE_DEVICE_PE_SWITCH_POWER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02093%'' then dims_col_result
@@ -19502,7 +19983,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-UPS系统规范性核查-系统名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-UPS系统规范性核查-系统名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-UPS系统规范性核查-系统名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_NET_PE_UPS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001517, 1, NULL),
+													                         where  exists(select 1 from CE_NET_PE_UPS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001517, 1, NULL),
 (907003770, '动环-UPS系统规范性核查-工作方式-字典规范性核查', 'DIMS_DH_02111', 2111, 907001517, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, NULL),
 (907003771, '动环-UPS系统规范性核查-母线类型-字典规范性核查', 'DIMS_DH_02112', 2112, 907001517, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, NULL),
 (907003772, '动环-UPS系统规范性核查-使用状态-字典规范性核查', 'DIMS_DH_02113', 2113, 907001517, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001517, 1, NULL),
@@ -19656,7 +20137,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-动环专业内输出分路规范性核查-分路名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-动环专业内输出分路规范性核查-分路名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-动环专业内输出分路规范性核查-分路名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_PE_IN t2 where t2.ctid <> t1.ctid and t2.branch_name = t1.branch_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_PE_IN t2 where t2.ctid <> t1.ctid and t2.branch_name = t1.branch_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
 (907003826, '动环-动环专业内输出分路规范性核查-下游分路名称-唯一性核查', 'DIMS_DH_02167', 2167, 907001524, '动环', 11, NULL, 'update CE_LINK_PE_IN t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02167%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_DH_02167''
@@ -19664,7 +20145,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-动环专业内输出分路规范性核查-下游分路名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-动环专业内输出分路规范性核查-下游分路名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-动环专业内输出分路规范性核查-下游分路名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_PE_IN t2 where t2.ctid <> t1.ctid and t2.down_branch_name = t1.down_branch_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_PE_IN t2 where t2.ctid <> t1.ctid and t2.down_branch_name = t1.down_branch_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001524, 1, NULL),
 (907003827, '动环-动环专业内输出分路规范性核查-下游设备类型-字典规范性核查', 'DIMS_DH_02168', 2168, 907001524, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, NULL),
 (907003828, '动环-动环专业内输出分路规范性核查-下游分路类型-字典规范性核查', 'DIMS_DH_02169', 2169, 907001524, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, NULL),
 (907003829, '动环-动环专业内输出分路规范性核查-下游分路类型缩写-字典规范性核查', 'DIMS_DH_02170', 2170, 907001524, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001524, 1, NULL),
@@ -19690,7 +20171,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%动环-跨专业输出分路规范性核查-分路名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:动环-跨专业输出分路规范性核查-分路名称-唯一性核查''
 																											 else dims_col_rtName||'',动环-跨专业输出分路规范性核查-分路名称-唯一性核查'' end)
-													                         where  exists(select 1 from CE_LINK_PE_OUT t2 where t2.ctid <> t1.ctid and t2.branch_name = t1.branch_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, NULL),
+													                         where  exists(select 1 from CE_LINK_PE_OUT t2 where t2.ctid <> t1.ctid and t2.branch_name = t1.branch_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 907001525, 1, NULL),
 (907003839, '动环-跨专业输出分路规范性核查-下游设备类型-字典规范性核查', 'DIMS_DH_02180', 2180, 907001525, '动环', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 907001525, 1, NULL),
 (907003840, '动环-跨专业输出分路规范性核查-下游负载名称加载功率-唯一性核查', 'DIMS_DH_02181', 2181, 907001525, '动环', 11, NULL, 'update CE_LINK_PE_OUT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_DH_02181%'' then dims_col_result
@@ -19861,7 +20342,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 --(907004659,907099003,907003659,'admin','admin',null),
 (907004660,907099003,907003660,'admin','admin',null),
 (907004661,907099002,907003661,'admin','admin',null),
-(907004662,907099002,907003662,'admin','admin',null),
+-- (907004662,907099002,907003662,'admin','admin',null),
 (907004663,907099002,907003663,'admin','admin',null),
 (907004664,907099002,907003664,'admin','admin',null),
 (907004665,907099002,907003665,'admin','admin',null),
@@ -19869,7 +20350,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004667,907099002,907003667,'admin','admin',null),
 (907004668,907099002,907003668,'admin','admin',null),
 (907004669,907099002,907003669,'admin','admin',null),
-(907004670,907099002,907003670,'admin','admin',null),
+-- (907004670,907099002,907003670,'admin','admin',null),
 (907004671,907099002,907003671,'admin','admin',null),
 (907004672,907099002,907003672,'admin','admin',null),
 (907004673,907099002,907003673,'admin','admin',null),
@@ -19893,7 +20374,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004691,907099002,907003691,'admin','admin',null),
 (907004692,907099002,907003692,'admin','admin',null),
 (907004693,907099002,907003693,'admin','admin',null),
-(907004694,907099002,907003694,'admin','admin',null),
+-- (907004694,907099002,907003694,'admin','admin',null),
 (907004695,907099002,907003695,'admin','admin',null),
 (907004696,907099002,907003696,'admin','admin',null),
 (907004697,907099002,907003697,'admin','admin',null),
@@ -19904,7 +20385,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004702,907099002,907003702,'admin','admin',null),
 (907004703,907099002,907003703,'admin','admin',null),
 (907004704,907099002,907003704,'admin','admin',null),
-(907004705,907099002,907003705,'admin','admin',null),
+-- (907004705,907099002,907003705,'admin','admin',null),
 (907004706,907099002,907003706,'admin','admin',null),
 (907004707,907099002,907003707,'admin','admin',null),
 (907004708,907099002,907003708,'admin','admin',null),
@@ -19923,7 +20404,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004721,907099002,907003721,'admin','admin',null),
 (907004722,907099002,907003722,'admin','admin',null),
 (907004723,907099002,907003723,'admin','admin',null),
-(907004724,907099002,907003724,'admin','admin',null),
+-- (907004724,907099002,907003724,'admin','admin',null),
 (907004725,907099002,907003725,'admin','admin',null),
 (907004726,907099002,907003726,'admin','admin',null),
 (907004727,907099002,907003727,'admin','admin',null),
@@ -19934,7 +20415,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004732,907099002,907003732,'admin','admin',null),
 (907004733,907099002,907003733,'admin','admin',null),
 (907004734,907099002,907003734,'admin','admin',null),
-(907004735,907099002,907003735,'admin','admin',null),
+-- (907004735,907099002,907003735,'admin','admin',null),
 (907004736,907099002,907003736,'admin','admin',null),
 (907004737,907099002,907003737,'admin','admin',null),
 (907004738,907099002,907003738,'admin','admin',null),
@@ -19949,7 +20430,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004747,907099002,907003747,'admin','admin',null),
 (907004748,907099002,907003748,'admin','admin',null),
 (907004749,907099002,907003749,'admin','admin',null),
-(907004750,907099002,907003750,'admin','admin',null),
+-- (907004750,907099002,907003750,'admin','admin',null),
 (907004751,907099002,907003751,'admin','admin',null),
 (907004752,907099002,907003752,'admin','admin',null),
 (907004753,907099002,907003753,'admin','admin',null),
@@ -19968,7 +20449,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004766,907099002,907003766,'admin','admin',null),
 (907004767,907099002,907003767,'admin','admin',null),
 (907004768,907099002,907003768,'admin','admin',null),
-(907004769,907099002,907003769,'admin','admin',null),
+-- (907004769,907099002,907003769,'admin','admin',null),
 (907004770,907099002,907003770,'admin','admin',null),
 (907004771,907099002,907003771,'admin','admin',null),
 (907004772,907099002,907003772,'admin','admin',null),
@@ -20024,8 +20505,8 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004822,907099002,907003822,'admin','admin',null),
 (907004823,907099002,907003823,'admin','admin',null),
 (907004824,907099002,907003824,'admin','admin',null),
-(907004825,907099002,907003825,'admin','admin',null),
-(907004826,907099002,907003826,'admin','admin',null),
+-- (907004825,907099002,907003825,'admin','admin',null),
+-- (907004826,907099002,907003826,'admin','admin',null),
 (907004827,907099002,907003827,'admin','admin',null),
 (907004828,907099002,907003828,'admin','admin',null),
 (907004829,907099002,907003829,'admin','admin',null),
@@ -20037,7 +20518,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (907004835,907099002,907003835,'admin','admin',null),
 (907004836,907099002,907003836,'admin','admin',null),
 (907004837,907099002,907003837,'admin','admin',null),
-(907004838,907099002,907003838,'admin','admin',null),
+-- (907004838,907099002,907003838,'admin','admin',null),
 (907004839,907099002,907003839,'admin','admin',null),
 --(907004840,907099002,907003840,'admin','admin',null),
 (907004841,907099002,907003841,'admin','admin',null),
@@ -21595,7 +22076,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-EMS规范性核查-EMS名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-EMS规范性核查-EMS名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-EMS规范性核查-EMS名称-唯一性核查'' end)
-													                         where  exists(select 1 from EMS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001001, 1, NULL),
+													                         where  exists(select 1 from EMS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001001, 1, NULL),
 (903003029, '传输内线-EMS规范性核查-被管设备类型-字典规范性核查', 'DIMS_TSNX_02003', 2003, 903001001, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001001, 1, NULL),
 (903003030, '传输内线-子网规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02004', 2004, 903001002, '传输内线', 11, NULL, 'update SUBNET t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02004%'' then dims_col_result
@@ -21612,7 +22093,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-子网规范性核查-子网中文名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-子网规范性核查-子网中文名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-子网规范性核查-子网中文名称-唯一性核查'' end)
-													                         where  exists(select 1 from SUBNET t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001002, 1, NULL),
+													                         where  exists(select 1 from SUBNET t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001002, 1, NULL),
 (903003032, '传输内线-传输系统规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02006', 2006, 903001003, '传输内线', 11, NULL, 'update TRANSI_SYSTEM t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02006%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02006''
@@ -21628,7 +22109,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输系统规范性核查-传输系统中文名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输系统规范性核查-传输系统中文名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-传输系统规范性核查-传输系统中文名称-唯一性核查'' end)
-													                         where  exists(select 1 from TRANSI_SYSTEM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001003, 1, NULL),
+													                         where  exists(select 1 from TRANSI_SYSTEM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001003, 1, NULL),
 (903003034, '传输内线-传输系统规范性核查-系统类型-字典规范性核查', 'DIMS_TSNX_02008', 2008, 903001003, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001003, 1, NULL),
 (903003035, '传输内线-传输系统规范性核查-系统层级-字典规范性核查', 'DIMS_TSNX_02009', 2009, 903001003, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001003, 1, NULL),
 (903003036, '传输内线-网元规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02010', 2010, 903001004, '传输内线', 11, NULL, 'update DEVICE t1
@@ -21646,7 +22127,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-网元规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-网元规范性核查-网元名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-网元规范性核查-网元名称-唯一性核查'' end)
-													                         where  exists(select 1 from DEVICE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001004, 1, NULL),
+													                         where  exists(select 1 from DEVICE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001004, 1, NULL),
 (903003038, '传输内线-网元规范性核查-网元类型-字典规范性核查', 'DIMS_TSNX_02012', 2012, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003039, '传输内线-网元规范性核查-业务级别-字典规范性核查', 'DIMS_TSNX_02013', 2013, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
 (903003040, '传输内线-网元规范性核查-设备厂家-字典规范性核查', 'DIMS_TSNX_02014', 2014, 903001004, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001004, 1, NULL),
@@ -21666,7 +22147,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-板卡规范性核查-板卡名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-板卡规范性核查-板卡名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-板卡规范性核查-板卡名称-唯一性核查'' end)
-													                         where  exists(select 1 from CSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
+													                         where  exists(select 1 from CSNX_BOARD t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001005, 1, NULL),
 (903003044, '传输内线-端口规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02018', 2018, 903001006, '传输内线', 11, NULL, 'update CSNX_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02018''
@@ -21682,7 +22163,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口规范性核查-端口名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口规范性核查-端口名称-唯一性核查'' end)
-													                         where  exists(select 1 from CSNX_PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
+													                         where  exists(select 1 from CSNX_PORT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001006, 1, NULL),
 (903003046, '传输内线-端口规范性核查-端口状态-字典规范性核查', 'DIMS_TSNX_02020', 2020, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003047, '传输内线-端口规范性核查-端口速率-字典规范性核查', 'DIMS_TSNX_02021', 2021, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
 (903003048, '传输内线-端口规范性核查-端口组网类型-字典规范性核查', 'DIMS_TSNX_02022', 2022, 903001006, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001006, 1, NULL),
@@ -21702,7 +22183,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口与ODF连接规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口与ODF连接规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口与ODF连接规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from LINK_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
+													                         where  exists(select 1 from LINK_PORT_ODF t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
 (903003052, '传输内线-端口连接规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02026', 2026, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02026%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02026''
@@ -21718,7 +22199,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接规范性核查-资源名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接规范性核查-资源名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-端口连接规范性核查-资源名称-唯一性核查'' end)
-													                         where  exists(select 1 from TOPO t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													                         where  exists(select 1 from TOPO t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003054, '传输内线-端口连接规范性核查-端口连接类型-字典规范性核查', 'DIMS_TSNX_02028', 2028, 903001008, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001008, 1, NULL),
 (903003055, '传输内线-波分光通道规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02029', 2029, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02029%'' then dims_col_result
@@ -21735,7 +22216,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-波分光通道规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from OPATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													                         where  exists(select 1 from OPATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003057, '传输内线-波分光传送段规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02031', 2031, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02031%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02031''
@@ -21751,7 +22232,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段规范性核查-光传送段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段规范性核查-光传送段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-波分光传送段规范性核查-光传送段名称-唯一性核查'' end)
-													                         where  exists(select 1 from OTS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													                         where  exists(select 1 from OTS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003059, '传输内线-波分复用段规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02033', 2033, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02033%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02033''
@@ -21767,7 +22248,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分复用段规范性核查-波分复用段名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分复用段规范性核查-波分复用段名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-波分复用段规范性核查-波分复用段名称-唯一性核查'' end)
-													                         where  exists(select 1 from WDMS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
+													                         where  exists(select 1 from WDMS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001011, 1, NULL),
 (903003061, '传输内线-波分业务通道规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02035', 2035, 903001012, '传输内线', 11, NULL, 'update SERVICE_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02035%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02035''
@@ -21783,7 +22264,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分业务通道规范性核查-业务通道名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分业务通道规范性核查-业务通道名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-波分业务通道规范性核查-业务通道名称-唯一性核查'' end)
-													                         where  exists(select 1 from SERVICE_PATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
+													                         where  exists(select 1 from SERVICE_PATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001012, 1, NULL),
 (903003063, '传输内线-波分业务通道规范性核查-业务波道类别-字典规范性核查', 'DIMS_TSNX_02037', 2037, 903001012, '传输内线', 4, NULL, NULL, 2, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
 (903003064, '传输内线-波分业务通道规范性核查-业务通道速率-字典规范性核查', 'DIMS_TSNX_02038', 2038, 903001012, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
 (903003065, '传输内线-波分业务通道规范性核查-业务通道状态-字典规范性核查', 'DIMS_TSNX_02039', 2039, 903001012, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001012, 1, NULL),
@@ -21802,7 +22283,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-SDH通道规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from SDH_PATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													                         where  exists(select 1 from SDH_PATH t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003068, '传输内线-隧道规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02042', 2042, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02042%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02042''
@@ -21818,7 +22299,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-隧道规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from TUNNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													                         where  exists(select 1 from TUNNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 
 (903003070, '传输内线-伪线规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02044', 2044, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02044%'' then dims_col_result
@@ -21835,7 +22316,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-伪线规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from PW t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													                         where  exists(select 1 from PW t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003072, '传输内线-传输电路规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02046', 2046, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02046%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02046''
@@ -21851,7 +22332,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-传输电路规范性核查-电路名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-传输电路规范性核查-电路名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-传输电路规范性核查-电路名称-唯一性核查'' end)
-													                         where  exists(select 1 from TRANSI_CIRCUIT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
+													                         where  exists(select 1 from TRANSI_CIRCUIT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001016, 1, NULL),
 (903003074, '传输内线-传输电路规范性核查-电路级别-字典规范性核查', 'DIMS_TSNX_02048', 2048, 903001016, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001016, 1, NULL),
 (903003075, '传输内线-保护组规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02049', 2049, 903001017, '传输内线', 11, NULL, 'update PROTECT_GROUP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02049%'' then dims_col_result
@@ -21868,7 +22349,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-保护组规范性核查-保护组名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-保护组规范性核查-保护组名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-保护组规范性核查-保护组名称-唯一性核查'' end)
-													                         where  exists(select 1 from PROTECT_GROUP t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001017, 1, NULL),
+													                         where  exists(select 1 from PROTECT_GROUP t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001017, 1, NULL),
 (903003077, '传输内线-保护组规范性核查-保护用途-字典规范性核查', 'DIMS_TSNX_02051', 2051, 903001017, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001017, 1, NULL),
 (903003078, '传输内线-保护组规范性核查-恢复方式-字典规范性核查', 'DIMS_TSNX_02052', 2052, 903001017, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001017, 1, NULL),
 (903003079, '传输内线-保护组规范性核查-保护方式-字典规范性核查', 'DIMS_TSNX_02053', 2053, 903001017, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001017, 1, NULL),
@@ -21889,7 +22370,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-L3VPN-基本信息(SPN)规范性核查-关联隧道名称/关联SR隧道业务名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-L3VPN-基本信息(SPN)规范性核查-关联隧道名称/关联SR隧道业务名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-L3VPN-基本信息(SPN)规范性核查-关联隧道名称/关联SR隧道业务名称-唯一性核查'' end)
-													                         where  exists(select 1 from L3VPN_BI t2 where t2.ctid <> t1.ctid and t2.related_tunnel_related_SR_tunnel_service = t1.related_tunnel_related_SR_tunnel_service)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001018, 1, NULL),
+													                         where  exists(select 1 from L3VPN_BI t2 where t2.ctid <> t1.ctid and t2.related_tunnel_related_SR_tunnel_service = t1.related_tunnel_related_SR_tunnel_service)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001018, 1, NULL),
 (903003084, '传输内线-L3VPN-基本信息(SPN)规范性核查-Tunnel是否为隧道组-字典规范性核查', 'DIMS_TSNX_02058', 2058, 903001018, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001018, 1, NULL),
 (903003085, '传输内线-L3VPN-接入点(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02059', 2059, 903001019, '传输内线', 11, NULL, 'update L3VPN_AP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02059%'' then dims_col_result
@@ -21906,7 +22387,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在网元名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在网元名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在网元名称-唯一性核查'' end)
-													                         where  exists(select 1 from L3VPN_AP t2 where t2.ctid <> t1.ctid and t2.ne_id = t1.ne_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
+													                         where  exists(select 1 from L3VPN_AP t2 where t2.ctid <> t1.ctid and t2.ne_id = t1.ne_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
 (903003087, '传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在端口名称-唯一性核查', 'DIMS_TSNX_02061', 2061, 903001019, '传输内线', 11, NULL, 'update L3VPN_AP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02061%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02061''
@@ -21914,7 +22395,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在端口名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在端口名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-L3VPN-接入点(SPN)规范性核查-接入点所在端口名称-唯一性核查'' end)
-													                         where  exists(select 1 from L3VPN_AP t2 where t2.ctid <> t1.ctid and t2.port_id = t1.port_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
+													                         where  exists(select 1 from L3VPN_AP t2 where t2.ctid <> t1.ctid and t2.port_id = t1.port_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001019, 1, NULL),
 (903003088, '传输内线-SR隧道业务(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02062', 2062, 903001020, '传输内线', 11, NULL, 'update SR_TUNNEL_SER t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02062%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02062''
@@ -21930,7 +22411,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SR隧道业务(SPN)规范性核查-本地名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SR隧道业务(SPN)规范性核查-本地名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-SR隧道业务(SPN)规范性核查-本地名称-唯一性核查'' end)
-													                         where  exists(select 1 from SR_TUNNEL_SER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001020, 1, NULL),
+													                         where  exists(select 1 from SR_TUNNEL_SER t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001020, 1, NULL),
 (903003090, '传输内线-SR隧道(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02064', 2064, 903001021, '传输内线', 11, NULL, 'update SR_TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02064%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02064''
@@ -21946,7 +22427,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SR隧道(SPN)规范性核查-本地名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SR隧道(SPN)规范性核查-本地名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-SR隧道(SPN)规范性核查-本地名称-唯一性核查'' end)
-													                         where  exists(select 1 from SR_TUNNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001021, 1, NULL),
+													                         where  exists(select 1 from SR_TUNNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001021, 1, NULL),
 (903003092, '传输内线-SR隧道(SPN)规范性核查-隧道方向-字典规范性核查', 'DIMS_TSNX_02066', 2066, 903001021, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001021, 1, NULL),
 (903003093, '传输内线-SR隧道(SPN)规范性核查-隧道状态-字典规范性核查', 'DIMS_TSNX_02067', 2067, 903001021, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001021, 1, NULL),
 (903003094, '传输内线-SR隧道(SPN)规范性核查-角色-字典规范性核查', 'DIMS_TSNX_02068', 2068, 903001021, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001021, 1, NULL),
@@ -21965,7 +22446,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-IGP拓扑(SPN)规范性核查-本地名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-IGP拓扑(SPN)规范性核查-本地名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-IGP拓扑(SPN)规范性核查-本地名称-唯一性核查'' end)
-													                         where  exists(select 1 from IGP_TOPO t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001022, 1, NULL),
+													                         where  exists(select 1 from IGP_TOPO t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001022, 1, NULL),
 (903003097, '传输内线-IGP连接(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02071', 2071, 903001023, '传输内线', 11, NULL, 'update IGP_LINK_INFO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02071%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02071''
@@ -21990,7 +22471,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-网络切片(SPN)规范性核查-网络切片名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-网络切片(SPN)规范性核查-网络切片名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-网络切片(SPN)规范性核查-网络切片名称-唯一性核查'' end)
-													                         where  exists(select 1 from NETWORK_SLICING t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001024, 1, NULL),
+													                         where  exists(select 1 from NETWORK_SLICING t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001024, 1, NULL),
 (903003101, '传输内线-MtnGroup(SPN)规范性核查-资源标识-唯一性核查', 'DIMS_TSNX_02075', 2075, 903001025, '传输内线', 11, NULL, 'update MTN_GROUP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_02075%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_02075''
@@ -22015,7 +22496,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查''
 																											 else dims_col_rtName||'',传输内线-MtnChannel(SPN)规范性核查-本地名称-唯一性核查'' end)
-													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
+													                         where  exists(select 1 from MTN_CHANNEL t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001026, 1, NULL),
 (903003105, '传输内线-MtnChannel(SPN)规范性核查-激活标识-字典规范性核查', 'DIMS_TSNX_02079', 2079, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003106, '传输内线-MtnChannel(SPN)规范性核查-带宽-字典规范性核查', 'DIMS_TSNX_02080', 2080, 903001026, '传输内线', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 903001026, 1, NULL),
 (903003107, '传输内线-板卡关联性核查-所属传输网元', 'DIMS_TSNX_03004', 3004, 903001005, '传输内线', 11, NULL, 'update CSNX_BOARD t1
@@ -22041,7 +22522,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口与ODF连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口与ODF连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口与ODF连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
 (903003110, '传输内线-端口连接关联性核查-A端设备', 'DIMS_TSNX_03008', 3008, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03008%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03008''
@@ -22049,7 +22530,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-A端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-A端设备''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-A端设备'' end)
-													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003111, '传输内线-端口连接关联性核查-A端端口', 'DIMS_TSNX_03009', 3009, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03009%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03009''
@@ -22057,7 +22538,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003112, '传输内线-端口连接关联性核查-Z端设备', 'DIMS_TSNX_03010', 3010, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03010%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03010''
@@ -22065,7 +22546,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-Z端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-Z端设备''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-Z端设备'' end)
-													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003113, '传输内线-端口连接关联性核查-Z端端口', 'DIMS_TSNX_03011', 3011, 903001008, '传输内线', 11, NULL, 'update TOPO t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03011%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03011''
@@ -22073,7 +22554,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口连接关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口连接关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-端口连接关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001008, 1, NULL),
 (903003114, '传输内线-波分光通道关联性核查-A端设备', 'DIMS_TSNX_03013', 3013, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03013%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03013''
@@ -22081,7 +22562,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-A端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-A端设备''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-A端设备'' end)
-													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003115, '传输内线-波分光通道关联性核查-A端端口', 'DIMS_TSNX_03014', 3014, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03014%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03014''
@@ -22089,7 +22570,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003116, '传输内线-波分光通道关联性核查-Z端设备', 'DIMS_TSNX_03015', 3015, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03015%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03015''
@@ -22097,7 +22578,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-Z端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-Z端设备''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-Z端设备'' end)
-													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003117, '传输内线-波分光通道关联性核查-Z端端口', 'DIMS_TSNX_03016', 3016, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03016%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03016''
@@ -22105,7 +22586,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003118, '传输内线-波分光传送段关联性核查-A端端口', 'DIMS_TSNX_03017', 3017, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03017%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03017''
@@ -22113,7 +22594,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003119, '传输内线-波分光传送段关联性核查-Z端端口', 'DIMS_TSNX_03018', 3018, 903001010, '传输内线', 11, NULL, 'update OTS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03018%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03018''
@@ -22121,7 +22602,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光传送段关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光传送段关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-波分光传送段关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001010, 1, NULL),
 (903003120, '传输内线-波分复用段关联性核查-A端端口', 'DIMS_TSNX_03019', 3019, 903001011, '传输内线', 11, NULL, 'update WDMS t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03019%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03019''
@@ -22161,7 +22642,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-A端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-A端设备''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-A端设备'' end)
-													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003125, '传输内线-SDH通道关联性核查-A端端口', 'DIMS_TSNX_03024', 3024, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03024%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03024''
@@ -22169,7 +22650,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003126, '传输内线-SDH通道关联性核查-Z端设备', 'DIMS_TSNX_03025', 3025, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03025%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03025''
@@ -22177,7 +22658,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-Z端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-Z端设备''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-Z端设备'' end)
-													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003127, '传输内线-SDH通道关联性核查-Z端端口', 'DIMS_TSNX_03026', 3026, 903001013, '传输内线', 11, NULL, 'update SDH_PATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03026%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03026''
@@ -22185,7 +22666,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-SDH通道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-SDH通道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-SDH通道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001013, 1, NULL),
 (903003128, '传输内线-隧道关联性核查-A端设备', 'DIMS_TSNX_03027', 3027, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03027%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03027''
@@ -22193,7 +22674,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-A端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-A端设备''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-A端设备'' end)
-													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003129, '传输内线-隧道关联性核查-A端端口', 'DIMS_TSNX_03028', 3028, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03028%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03028''
@@ -22201,7 +22682,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003130, '传输内线-隧道关联性核查-Z端设备', 'DIMS_TSNX_03029', 3029, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03029%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03029''
@@ -22209,7 +22690,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-Z端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-Z端设备''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-Z端设备'' end)
-													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 
 (903003131, '传输内线-隧道关联性核查-Z端端口', 'DIMS_TSNX_03030', 3030, 903001014, '传输内线', 11, NULL, 'update TUNNEL t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03030%'' then dims_col_result
@@ -22218,7 +22699,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-隧道关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-隧道关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-隧道关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001014, 1, NULL),
 (903003132, '传输内线-伪线关联性核查-A端设备', 'DIMS_TSNX_03031', 3031, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03031%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03031''
@@ -22226,7 +22707,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-A端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-A端设备''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-A端设备'' end)
-													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.a_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.a_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003133, '传输内线-伪线关联性核查-A端端口', 'DIMS_TSNX_03032', 3032, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03032%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03032''
@@ -22234,7 +22715,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-A端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-A端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-A端端口'' end)
-													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.a_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.a_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 
 (903003134, '传输内线-伪线关联性核查-Z端设备', 'DIMS_TSNX_03033', 3033, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03033%'' then dims_col_result
@@ -22243,7 +22724,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-Z端设备%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-Z端设备''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-Z端设备'' end)
-													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.z_device) and not exists(select 1 from DEVICE t2 where t2.res_identifier = t1.z_device)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003135, '传输内线-伪线关联性核查-Z端端口', 'DIMS_TSNX_03034', 3034, 903001015, '传输内线', 11, NULL, 'update PW t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03034%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03034''
@@ -22251,7 +22732,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-伪线关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-伪线关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-伪线关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CSNX_PORT t2 where t2.res_identifier = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001015, 1, NULL),
 (903003136, '传输内线-传输电路关联性核查-A端传输网元', 'DIMS_TSNX_03035', 3035, 903001016, '传输内线', 11, NULL, 'update TRANSI_CIRCUIT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03035%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03035''
@@ -22436,7 +22917,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-端口与ODF连接关联性核查-Z端端口%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-端口与ODF连接关联性核查-Z端端口''
 																											 else dims_col_rtName||'',传输内线-端口与ODF连接关联性核查-Z端端口'' end)
-													 where isNotNull(t1.z_port) and not exists(select 1 from CM_PORT_ODF t2 where t2.int_id = t1.z_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
+													 where isNotNull(t1.z_port) and not exists(select 1 from CM_PORT_ODF t2 where t2.int_id = t1.z_port)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001007, 1, NULL),
 (903003159, '传输内线-波分光通道关联性核查-所属波分复用段', 'DIMS_TSNX_03012', 3012, 903001009, '传输内线', 11, NULL, 'update OPATH t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03012%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03012''
@@ -22444,7 +22925,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%传输内线-波分光通道关联性核查-所属波分复用段%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:传输内线-波分光通道关联性核查-所属波分复用段''
 																											 else dims_col_rtName||'',传输内线-波分光通道关联性核查-所属波分复用段'' end)
-													 where isNotNull(t1.related_wdms) and not exists(select 1 from WDMS t2 where t2.res_identifier = t1.related_wdms)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
+													 where isNotNull(t1.related_wdms) and not exists(select 1 from WDMS t2 where t2.res_identifier = t1.related_wdms)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 903001009, 1, NULL),
 (903003160, '传输内线-保护组关联性核查-所属EMS', 'DIMS_TSNX_03039', 3039, 903001017, '传输内线', 11, NULL, 'update PROTECT_GROUP t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_TSNX_03039%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_TSNX_03039''
@@ -22516,114 +22997,114 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (903004025,903099001,903003025,'admin','admin',null),
 (903004026,903099001,903003026,'admin','admin',null),
 (903004027,903099002,903003027,'admin','admin',null),
-(903004028,903099002,903003028,'admin','admin',null),
+-- (903004028,903099002,903003028,'admin','admin',null),
 (903004029,903099002,903003029,'admin','admin',null),
 (903004030,903099002,903003030,'admin','admin',null),
-(903004031,903099002,903003031,'admin','admin',null),
+-- (903004031,903099002,903003031,'admin','admin',null),
 (903004032,903099002,903003032,'admin','admin',null),
-(903004033,903099002,903003033,'admin','admin',null),
+-- (903004033,903099002,903003033,'admin','admin',null),
 (903004034,903099002,903003034,'admin','admin',null),
 (903004035,903099002,903003035,'admin','admin',null),
 (903004036,903099002,903003036,'admin','admin',null),
-(903004037,903099002,903003037,'admin','admin',null),
+-- (903004037,903099002,903003037,'admin','admin',null),
 (903004038,903099002,903003038,'admin','admin',null),
 (903004039,903099002,903003039,'admin','admin',null),
 (903004040,903099002,903003040,'admin','admin',null),
 (903004041,903099002,903003041,'admin','admin',null),
 (903004042,903099002,903003042,'admin','admin',null),
-(903004043,903099002,903003043,'admin','admin',null),
+-- (903004043,903099002,903003043,'admin','admin',null),
 (903004044,903099002,903003044,'admin','admin',null),
-(903004045,903099002,903003045,'admin','admin',null),
+-- (903004045,903099002,903003045,'admin','admin',null),
 (903004046,903099002,903003046,'admin','admin',null),
 (903004047,903099002,903003047,'admin','admin',null),
 (903004048,903099002,903003048,'admin','admin',null),
 (903004049,903099002,903003049,'admin','admin',null),
 (903004050,903099002,903003050,'admin','admin',null),
-(903004051,903099002,903003051,'admin','admin',null),
+-- (903004051,903099002,903003051,'admin','admin',null),
 (903004052,903099002,903003052,'admin','admin',null),
-(903004053,903099002,903003053,'admin','admin',null),
+-- (903004053,903099002,903003053,'admin','admin',null),
 (903004054,903099002,903003054,'admin','admin',null),
 (903004055,903099002,903003055,'admin','admin',null),
-(903004056,903099002,903003056,'admin','admin',null),
+-- (903004056,903099002,903003056,'admin','admin',null),
 (903004057,903099002,903003057,'admin','admin',null),
-(903004058,903099002,903003058,'admin','admin',null),
+-- (903004058,903099002,903003058,'admin','admin',null),
 (903004059,903099002,903003059,'admin','admin',null),
-(903004060,903099002,903003060,'admin','admin',null),
+-- (903004060,903099002,903003060,'admin','admin',null),
 (903004061,903099002,903003061,'admin','admin',null),
-(903004062,903099002,903003062,'admin','admin',null),
+-- (903004062,903099002,903003062,'admin','admin',null),
 --(903004063,903099002,903003063,'admin','admin',null),
 (903004064,903099002,903003064,'admin','admin',null),
 (903004065,903099002,903003065,'admin','admin',null),
 (903004066,903099002,903003066,'admin','admin',null),
-(903004067,903099002,903003067,'admin','admin',null),
+-- (903004067,903099002,903003067,'admin','admin',null),
 (903004068,903099002,903003068,'admin','admin',null),
-(903004069,903099002,903003069,'admin','admin',null),
+-- (903004069,903099002,903003069,'admin','admin',null),
 (903004070,903099002,903003070,'admin','admin',null),
-(903004071,903099002,903003071,'admin','admin',null),
+-- (903004071,903099002,903003071,'admin','admin',null),
 (903004072,903099002,903003072,'admin','admin',null),
-(903004073,903099002,903003073,'admin','admin',null),
+-- (903004073,903099002,903003073,'admin','admin',null),
 (903004074,903099002,903003074,'admin','admin',null),
 (903004075,903099002,903003075,'admin','admin',null),
-(903004076,903099002,903003076,'admin','admin',null),
+-- (903004076,903099002,903003076,'admin','admin',null),
 (903004077,903099002,903003077,'admin','admin',null),
 (903004078,903099002,903003078,'admin','admin',null),
 (903004079,903099002,903003079,'admin','admin',null),
 (903004080,903099002,903003080,'admin','admin',null),
 (903004081,903099002,903003081,'admin','admin',null),
 (903004082,903099002,903003082,'admin','admin',null),
-(903004083,903099002,903003083,'admin','admin',null),
+-- (903004083,903099002,903003083,'admin','admin',null),
 (903004084,903099002,903003084,'admin','admin',null),
 (903004085,903099002,903003085,'admin','admin',null),
-(903004086,903099002,903003086,'admin','admin',null),
-(903004087,903099002,903003087,'admin','admin',null),
+-- (903004086,903099002,903003086,'admin','admin',null),
+-- (903004087,903099002,903003087,'admin','admin',null),
 (903004088,903099002,903003088,'admin','admin',null),
-(903004089,903099002,903003089,'admin','admin',null),
+-- (903004089,903099002,903003089,'admin','admin',null),
 (903004090,903099002,903003090,'admin','admin',null),
-(903004091,903099002,903003091,'admin','admin',null),
+-- (903004091,903099002,903003091,'admin','admin',null),
 (903004092,903099002,903003092,'admin','admin',null),
 (903004093,903099002,903003093,'admin','admin',null),
 (903004094,903099002,903003094,'admin','admin',null),
 (903004095,903099002,903003095,'admin','admin',null),
-(903004096,903099002,903003096,'admin','admin',null),
+-- (903004096,903099002,903003096,'admin','admin',null),
 (903004097,903099002,903003097,'admin','admin',null),
 (903004098,903099002,903003098,'admin','admin',null),
 (903004099,903099002,903003099,'admin','admin',null),
-(903004100,903099002,903003100,'admin','admin',null),
+-- (903004100,903099002,903003100,'admin','admin',null),
 (903004101,903099002,903003101,'admin','admin',null),
 (903004102,903099002,903003102,'admin','admin',null),
 (903004103,903099002,903003103,'admin','admin',null),
-(903004104,903099002,903003104,'admin','admin',null),
+-- (903004104,903099002,903003104,'admin','admin',null),
 (903004105,903099002,903003105,'admin','admin',null),
 (903004106,903099002,903003106,'admin','admin',null),
 (903004107,903099003,903003107,'admin','admin',null),
 (903004108,903099003,903003108,'admin','admin',null),
-(903004109,903099003,903003109,'admin','admin',null),
-(903004110,903099003,903003110,'admin','admin',null),
-(903004111,903099003,903003111,'admin','admin',null),
-(903004112,903099003,903003112,'admin','admin',null),
-(903004113,903099003,903003113,'admin','admin',null),
-(903004114,903099003,903003114,'admin','admin',null),
-(903004115,903099003,903003115,'admin','admin',null),
-(903004116,903099003,903003116,'admin','admin',null),
-(903004117,903099003,903003117,'admin','admin',null),
-(903004118,903099003,903003118,'admin','admin',null),
-(903004119,903099003,903003119,'admin','admin',null),
+-- (903004109,903099003,903003109,'admin','admin',null),
+-- (903004110,903099003,903003110,'admin','admin',null),
+-- (903004111,903099003,903003111,'admin','admin',null),
+-- (903004112,903099003,903003112,'admin','admin',null),
+-- (903004113,903099003,903003113,'admin','admin',null),
+-- (903004114,903099003,903003114,'admin','admin',null),
+-- (903004115,903099003,903003115,'admin','admin',null),
+-- (903004116,903099003,903003116,'admin','admin',null),
+-- (903004117,903099003,903003117,'admin','admin',null),
+-- (903004118,903099003,903003118,'admin','admin',null),
+-- (903004119,903099003,903003119,'admin','admin',null),
 (903004120,903099003,903003120,'admin','admin',null),
 (903004121,903099003,903003121,'admin','admin',null),
 (903004122,903099003,903003122,'admin','admin',null),
 (903004123,903099003,903003123,'admin','admin',null),
-(903004124,903099003,903003124,'admin','admin',null),
-(903004125,903099003,903003125,'admin','admin',null),
-(903004126,903099003,903003126,'admin','admin',null),
-(903004127,903099003,903003127,'admin','admin',null),
-(903004128,903099003,903003128,'admin','admin',null),
-(903004129,903099003,903003129,'admin','admin',null),
-(903004130,903099003,903003130,'admin','admin',null),
-(903004131,903099003,903003131,'admin','admin',null),
-(903004132,903099003,903003132,'admin','admin',null),
-(903004133,903099003,903003133,'admin','admin',null),
-(903004134,903099003,903003134,'admin','admin',null),
-(903004135,903099003,903003135,'admin','admin',null),
+-- (903004124,903099003,903003124,'admin','admin',null),
+-- (903004125,903099003,903003125,'admin','admin',null),
+-- (903004126,903099003,903003126,'admin','admin',null),
+-- (903004127,903099003,903003127,'admin','admin',null),
+-- (903004128,903099003,903003128,'admin','admin',null),
+-- (903004129,903099003,903003129,'admin','admin',null),
+-- (903004130,903099003,903003130,'admin','admin',null),
+-- (903004131,903099003,903003131,'admin','admin',null),
+-- (903004132,903099003,903003132,'admin','admin',null),
+-- (903004133,903099003,903003133,'admin','admin',null),
+-- (903004134,903099003,903003134,'admin','admin',null),
+-- (903004135,903099003,903003135,'admin','admin',null),
 (903004136,903099003,903003136,'admin','admin',null),
 (903004137,903099003,903003137,'admin','admin',null),
 (903004138,903099003,903003138,'admin','admin',null),
@@ -22646,8 +23127,8 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (903004155,903099003,903003155,'admin','admin',null),
 (903004156,903099003,903003156,'admin','admin',null),
 (903004157,903099003,903003157,'admin','admin',null),
-(903004158,903099003,903003158,'admin','admin',null),
-(903004159,903099003,903003159,'admin','admin',null),
+-- (903004158,903099003,903003158,'admin','admin',null),
+-- (903004159,903099003,903003159,'admin','admin',null),
 (903004160,903099003,903003160,'admin','admin',null),
 (903004161,903099003,903003161,'admin','admin',null),
 (903004162,903099003,903003162,'admin','admin',null),
@@ -23123,7 +23604,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-站点规范性核查-站点名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-站点规范性核查-站点名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-站点规范性核查-站点名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_SITE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_SITE t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001001, 1, NULL),
 (902003013, '空间-站点规范性核查-站点类别-字典规范性核查', 'DIMS_KJ_02003', 2003, 902001001, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, NULL),
 (902003014, '空间-站点规范性核查-生命周期状态-字典规范性核查', 'DIMS_KJ_02004', 2004, 902001001, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001001, 1, NULL),
 (902003015, '空间-位置点（资源点）规范性核查-资源标识-唯一性核查', 'DIMS_KJ_02005', 2005, 902001002, '空间', 11, NULL, 'update RM_AREA_RESPOINT t1
@@ -23141,7 +23622,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-位置点（资源点）规范性核查-位置点名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-位置点（资源点）规范性核查-位置点名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-位置点（资源点）规范性核查-位置点名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_RESPOINT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_RESPOINT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001002, 1, NULL),
 (902003017, '空间-位置点（资源点）规范性核查-位置点类型-字典规范性核查', 'DIMS_KJ_02007', 2007, 902001002, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, NULL),
 (902003018, '空间-位置点（资源点）规范性核查-产权性质-字典规范性核查', 'DIMS_KJ_02008', 2008, 902001002, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, NULL),
 (902003019, '空间-位置点（资源点）规范性核查-产权单位-字典规范性核查', 'DIMS_KJ_02009', 2009, 902001002, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001002, 1, NULL),
@@ -23160,7 +23641,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-机房规范性核查-机房名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-机房规范性核查-机房名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-机房规范性核查-机房名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_ROOM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_ROOM t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, NULL),
 (902003022, '空间-机房规范性核查-生命周期状态-字典规范性核查', 'DIMS_KJ_02012', 2012, 902001003, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, NULL),
 (902003023, '空间-机房规范性核查-机房类型-字典规范性核查', 'DIMS_KJ_02013', 2013, 902001003, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, NULL),
 (902003024, '空间-机房规范性核查-机房级别-字典规范性核查', 'DIMS_KJ_02014', 2014, 902001003, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001003, 1, NULL),
@@ -23183,7 +23664,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-机架位置规范性核查-名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-机架位置规范性核查-名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-机架位置规范性核查-名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_RACKPOS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001004, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_RACKPOS t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001004, 1, NULL),
 (902003031, '空间-数据中心规范性核查-资源标识-唯一性核查', 'DIMS_KJ_02021', 2021, 902001005, '空间', 11, NULL, 'update RM_AREA_DC t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_02021%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_KJ_02021''
@@ -23199,7 +23680,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%空间-数据中心规范性核查-数据中心名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:空间-数据中心规范性核查-数据中心名称-唯一性核查''
 																											 else dims_col_rtName||'',空间-数据中心规范性核查-数据中心名称-唯一性核查'' end)
-													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
+													                         where  exists(select 1 from RM_AREA_DC t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001005, 1, NULL),
 (902003033, '空间-数据中心规范性核查-数据中心级别-字典规范性核查', 'DIMS_KJ_02023', 2023, 902001005, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
 (902003034, '空间-数据中心规范性核查-数据中心类别-字典规范性核查', 'DIMS_KJ_02024', 2024, 902001005, '空间', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 902001005, 1, NULL),
 (902003035, '空间-站点规范性核查-经度-经纬度规范性核查', 'DIMS_KJ_02025', 2025, 902001001, '空间', 11, null,
@@ -23306,16 +23787,16 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 --(902004009, 902099003, 902003009, 'admin', 'admin', null),
 --(902004010, 902099003, 902003010, 'admin', 'admin', null),
 (902004011, 902099002, 902003011, 'admin', 'admin', null),
-(902004012, 902099002, 902003012, 'admin', 'admin', null),
+-- (902004012, 902099002, 902003012, 'admin', 'admin', null),
 (902004013, 902099002, 902003013, 'admin', 'admin', null),
 (902004014, 902099002, 902003014, 'admin', 'admin', null),
 (902004015, 902099002, 902003015, 'admin', 'admin', null),
-(902004016, 902099002, 902003016, 'admin', 'admin', null),
+-- (902004016, 902099002, 902003016, 'admin', 'admin', null),
 (902004017, 902099002, 902003017, 'admin', 'admin', null),
 (902004018, 902099002, 902003018, 'admin', 'admin', null),
 (902004019, 902099002, 902003019, 'admin', 'admin', null),
 (902004020, 902099002, 902003020, 'admin', 'admin', null),
-(902004021, 902099002, 902003021, 'admin', 'admin', null),
+-- (902004021, 902099002, 902003021, 'admin', 'admin', null),
 (902004022, 902099002, 902003022, 'admin', 'admin', null),
 (902004023, 902099002, 902003023, 'admin', 'admin', null),
 (902004024, 902099002, 902003024, 'admin', 'admin', null),
@@ -23324,9 +23805,9 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (902004027, 902099002, 902003027, 'admin', 'admin', null),
 (902004028, 902099002, 902003028, 'admin', 'admin', null),
 (902004029, 902099002, 902003029, 'admin', 'admin', null),
-(902004030, 902099002, 902003030, 'admin', 'admin', null),
+--(902004030, 902099002, 902003030, 'admin', 'admin', null),
 (902004031, 902099002, 902003031, 'admin', 'admin', null),
-(902004032, 902099002, 902003032, 'admin', 'admin', null),
+--(902004032, 902099002, 902003032, 'admin', 'admin', null),
 (902004033, 902099002, 902003033, 'admin', 'admin', null),
 (902004034, 902099002, 902003034, 'admin', 'admin', null),
 (902004035, 902099002, 902003035, 'admin', 'admin', null),
@@ -27080,3 +27561,134 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (909001325, 'A端传输端口SDN', 'orig_port_sdn', 909001004, 'ORIG_PORT_SDN', 'string', null, 'admin', 'admin', null),
 (909001326, 'Z端传输设备SDN', 'dest_point_sdn', 909001004, 'DEST_POINT_SDN', 'string', null, 'admin', 'admin', null),
 (909001327, 'Z端传输端口SDN', 'dest_port_sdn', 909001004, 'DEST_PORT_SDN', 'string', null, 'admin', 'admin', null);
+
+--插入集客 dims_idx_index
+insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
+(909099001, '集客资源完整性指标', 'DIMS_JIKE_99001', 99001, null, '集客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(909099002, '集客资源规范性指标', 'DIMS_JIKE_99002', 99002, null, '集客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(909099003, '集客资源关联性指标', 'DIMS_JIKE_99003', 99003, null, '集客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+(909099999, '集客数据整体指标', 'DIMS_JIKE_99999', 99999, null, '集客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
+
+(909003001, '集客-电路必填完整性核查', 'DIMS_JIKE_01001', 1001, 909001001, '集客', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 909001001, 1, NULL),
+(909003002, '集客-网元必填完整性核查', 'DIMS_JIKE_01002', 1002, 909001002, '集客', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 909001002, 1, NULL),
+(909003003, '集客-端口必填完整性核查', 'DIMS_JIKE_01003', 1003, 909001003, '集客', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 909001003, 1, NULL),
+(909003004, '集客-路由段必填完整性核查', 'DIMS_JIKE_01004', 1004, 909001004, '集客', 5, NULL, NULL, 1, 'admin', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 909001004, 1, NULL),
+(909003005, '集客-电路规范性核查-电路名称-唯一性核查', 'DIMS_JIKE_02001', 2001, 909001001, '集客', 11, NULL, 'update JK_CIRCUIT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02001%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02001''
+																											 else dims_col_result||'',DIMS_JIKE_02001'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-电路规范性核查-电路名称-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-电路规范性核查-电路名称-唯一性核查''
+																											 else dims_col_rtName||'',集客-电路规范性核查-电路名称-唯一性核查'' end)
+													                         where  exists(select 1 from JK_CIRCUIT t2 where t2.ctid <> t1.ctid and t2.zh_label = t1.zh_label)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001001, 1, NULL),
+(909003006, '集客-网元规范性核查-网元类型-字典规范性核查', 'DIMS_JIKE_02002', 2002, 909001002, '集客', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 909001002, 1, NULL),
+(909003007, '集客-网元规范性核查-网元名称-唯一性核查', 'DIMS_JIKE_02003', 2003, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02003%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02003''
+																											 else dims_col_result||'',DIMS_JIKE_02003'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-网元规范性核查-网元名称-唯一性核查''
+																											 else dims_col_rtName||'',集客-网元规范性核查-网元名称-唯一性核查'' end)
+													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.ne_name = t1.ne_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+(909003008, '集客-网元规范性核查-设备厂家-字典规范性核查', 'DIMS_JIKE_02004', 2004, 909001002, '集客', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 909001002, 1, NULL),
+(909003009, '集客-网元规范性核查-生命周期状态-字典规范性核查', 'DIMS_JIKE_02005', 2005, 909001002, '集客', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 909001002, 1, NULL),
+(909003010, '集客-网元规范性核查-所在机房名称-唯一性核查', 'DIMS_JIKE_02006', 2006, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02006%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02006''
+																											 else dims_col_result||'',DIMS_JIKE_02006'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元规范性核查-所在机房名称-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-网元规范性核查-所在机房名称-唯一性核查''
+																											 else dims_col_rtName||'',集客-网元规范性核查-所在机房名称-唯一性核查'' end)
+													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.building_name = t1.building_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+(909003011, '集客-端口规范性核查-端口名称-唯一性核查', 'DIMS_JIKE_02007', 2007, 909001003, '集客', 11, NULL, 'update JK_PORT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02007%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02007''
+																											 else dims_col_result||'',DIMS_JIKE_02007'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-端口规范性核查-端口名称-唯一性核查''
+																											 else dims_col_rtName||'',集客-端口规范性核查-端口名称-唯一性核查'' end)
+													                         where  exists(select 1 from JK_PORT t2 where t2.ctid <> t1.ctid and t2.port_name = t1.port_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL),
+(909003012, '集客-电路关联性核查-所属省份', 'DIMS_JIKE_03001', 3001, 909001001, '集客', 11, NULL, 'update JK_CIRCUIT t1
+	 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_03001%'' then dims_col_result
+														 when dims_col_result is null then ''DIMS_JIKE_03001''
+														 else dims_col_result||'',DIMS_JIKE_03001'' end),
+			 dims_col_rtName=(case when dims_col_rtName like ''%集客-电路关联性核查-所属省份%'' then dims_col_rtName
+														 when dims_col_rtName is null then ''不满足规范:集客-电路关联性核查-所属省份''
+														 else dims_col_rtName||'',集客-电路关联性核查-所属省份'' end)
+ where isNotNull(t1.province_id) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001001, 1, NULL),
+(909003013, '集客-网元关联性核查-所属省份', 'DIMS_JIKE_03002', 3002, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
+	 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_03002%'' then dims_col_result
+														 when dims_col_result is null then ''DIMS_JIKE_03002''
+														 else dims_col_result||'',DIMS_JIKE_03002'' end),
+			 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元关联性核查-所属省份%'' then dims_col_rtName
+														 when dims_col_rtName is null then ''不满足规范:集客-网元关联性核查-所属省份''
+														 else dims_col_rtName||'',集客-网元关联性核查-所属省份'' end)
+ where isNotNull(t1.province_id) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+(909003014, '集客-网元关联性核查-所在机房名称', 'DIMS_JIKE_03003', 3003, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
+	 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_03003%'' then dims_col_result
+														 when dims_col_result is null then ''DIMS_JIKE_03003''
+														 else dims_col_result||'',DIMS_JIKE_03003'' end),
+			 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元关联性核查-所在机房名称%'' then dims_col_rtName
+														 when dims_col_rtName is null then ''不满足规范:集客-网元关联性核查-所在机房名称''
+														 else dims_col_rtName||'',集客-网元关联性核查-所在机房名称'' end)
+ where isNotNull(t1.building_name) and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id = t1.building_name) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.building_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+(909003015, '集客-端口关联性核查-所属省份', 'DIMS_JIKE_03004', 3004, 909001003, '集客', 11, NULL, 'update JK_PORT t1
+	 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_03004%'' then dims_col_result
+														 when dims_col_result is null then ''DIMS_JIKE_03004''
+														 else dims_col_result||'',DIMS_JIKE_03004'' end),
+			 dims_col_rtName=(case when dims_col_rtName like ''%集客-端口关联性核查-所属省份%'' then dims_col_rtName
+														 when dims_col_rtName is null then ''不满足规范:集客-端口关联性核查-所属省份''
+														 else dims_col_rtName||'',集客-端口关联性核查-所属省份'' end)
+ where isNotNull(t1.province_id) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL);
+--插入集客 dims_idx_IndexCarrier
+insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
+(909004001, 909099001, 909003001, 'admin', 'admin', null),
+(909004002, 909099001, 909003002, 'admin', 'admin', null),
+(909004003, 909099001, 909003003, 'admin', 'admin', null),
+(909004004, 909099001, 909003004, 'admin', 'admin', null),
+(909004005, 909099002, 909003005, 'admin', 'admin', null),
+(909004006, 909099002, 909003006, 'admin', 'admin', null),
+(909004007, 909099002, 909003007, 'admin', 'admin', null),
+(909004008, 909099002, 909003008, 'admin', 'admin', null),
+(909004009, 909099002, 909003009, 'admin', 'admin', null),
+(909004010, 909099002, 909003010, 'admin', 'admin', null),
+(909004011, 909099002, 909003011, 'admin', 'admin', null),
+-- (909004012, 909099003, 909003012, 'admin', 'admin', null),
+-- (909004013, 909099003, 909003013, 'admin', 'admin', null),
+(909004014, 909099003, 909003014, 'admin', 'admin', null),
+-- (909004015, 909099003, 909003015, 'admin', 'admin', null),
+(909005490, 909099999, 909099001, 'admin', 'admin', null),
+(909005491, 909099999, 909099002, 'admin', 'admin', null),
+(909005492, 909099999, 909099003, 'admin', 'admin', null);
+--插入集客 dims_idx_rule
+insert into dims_idx_rule (ID, NAME, CODE, INDEX_ID, ATTRIBUTETYPE_ID, TYPE, RULEMEMO, DICTIONARYNAME, CREATOR, UPDATER, MEMO) values
+(909005501, '集客-电路必填完整性核查.所属省份', 'JK_CIRCUIT.province_id', 909003001, 909001301, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005502, '集客-电路必填完整性核查.资源唯一标识', 'JK_CIRCUIT.sdn', 909003001, 909001302, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005503, '集客-电路必填完整性核查.电路名称', 'JK_CIRCUIT.zh_label', 909003001, 909001303, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005504, '集客-电路必填完整性核查.电路编号', 'JK_CIRCUIT.circuit_no_province', 909003001, 909001304, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005505, '集客-电路必填完整性核查.电路速率', 'JK_CIRCUIT.rate', 909003001, 909001305, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005506, '集客-电路必填完整性核查.A端传输设备SDN', 'JK_CIRCUIT.a_equip_sdn', 909003001, 909001306, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005507, '集客-电路必填完整性核查.A端传输设备端口SDN', 'JK_CIRCUIT.a_port_sdn', 909003001, 909001307, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005508, '集客-电路必填完整性核查.Z端传输设备SDN', 'JK_CIRCUIT.z_equip_sdn', 909003001, 909001308, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005509, '集客-电路必填完整性核查.Z端传输设备端口SDN', 'JK_CIRCUIT.z_port_sdn', 909003001, 909001309, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005510, '集客-网元必填完整性核查.所属省份', 'JK_EQUIPMENT.province_id', 909003002, 909001310, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005511, '集客-网元必填完整性核查.网元的唯一标识', 'JK_EQUIPMENT.sdn', 909003002, 909001311, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005512, '集客-网元必填完整性核查.网元类型', 'JK_EQUIPMENT.ne_type', 909003002, 909001312, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005513, '集客-网元必填完整性核查.网元名称', 'JK_EQUIPMENT.ne_name', 909003002, 909001313, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005514, '集客-网元必填完整性核查.设备厂家', 'JK_EQUIPMENT.vendor', 909003002, 909001314, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005515, '集客-网元必填完整性核查.生命周期状态', 'JK_EQUIPMENT.status', 909003002, 909001315, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005516, '集客-网元必填完整性核查.所在机房名称', 'JK_EQUIPMENT.building_name', 909003002, 909001316, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005517, '集客-端口必填完整性核查.所属省份', 'JK_PORT.province_id', 909003003, 909001317, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005518, '集客-端口必填完整性核查.端口的唯一标识', 'JK_PORT.sdn', 909003003, 909001318, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005519, '集客-端口必填完整性核查.端口名称', 'JK_PORT.port_name', 909003003, 909001319, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005520, '集客-端口必填完整性核查.归属网元SDN', 'JK_PORT.equip_sdn', 909003003, 909001320, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005521, '集客-路由段必填完整性核查.路由段唯一标识', 'JK_ROUTE.sdn', 909003004, 909001321, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005522, '集客-路由段必填完整性核查.所属电路SDN', 'JK_ROUTE.circuit_sdn', 909003004, 909001322, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005523, '集客-路由段必填完整性核查.路由段序号', 'JK_ROUTE.sequence_no', 909003004, 909001323, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005524, '集客-路由段必填完整性核查.A端传输设备SDN', 'JK_ROUTE.orig_point_sdn', 909003004, 909001324, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005525, '集客-路由段必填完整性核查.A端传输端口SDN', 'JK_ROUTE.orig_port_sdn', 909003004, 909001325, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005526, '集客-路由段必填完整性核查.Z端传输设备SDN', 'JK_ROUTE.dest_point_sdn', 909003004, 909001326, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005527, '集客-路由段必填完整性核查.Z端传输端口SDN', 'JK_ROUTE.dest_port_sdn', 909003004, 909001327, 2, NULL, NULL, 'admin', 'admin', NULL),
+(909005528, '集客-网元规范性核查-网元类型-字典规范性核查', 'ne_type', 909003006, 909001312, 1, NULL, '网元类型ne_type', 'admin', 'admin', NULL),
+(909005529, '集客-网元规范性核查-设备厂家-字典规范性核查', 'vendor', 909003008, 909001314, 1, NULL, '设备厂家vendor', 'admin', 'admin', NULL),
+(909005530, '集客-网元规范性核查-生命周期状态-字典规范性核查', 'status', 909003009, 909001315, 1, NULL, '生命周期状态status', 'admin', 'admin', NULL);
