@@ -196,7 +196,7 @@ public class TaskServiceImpl implements TaskService {
         List<TaskItemBusiness> taskItemBusinesses = taskItemBusinessRepository.findByTaskCodeOrderByTaskItemBusinessIdAsc(resStatisticsDtos.get(0).getTaskCode());
         Date collectionDate = taskItemBusinesses.stream().map(TaskItemBusiness::getCollectionDate).findFirst().orElse(null);
 
-        List<ResStatistics> resStatisticsIndices = resStatisticsRepository.findByTaskCode(resStatisticsDtos.get(0).getTaskCode());
+        List<ResStatistics> resStatisticsIndices = resStatisticsRepository.findByRegionTypeAndTaskCode(1,resStatisticsDtos.get(0).getTaskCode());
         if (CollectionUtils.isNotEmpty(resStatisticsIndices)) {
             resStatisticsRepository.deleteInBatch(resStatisticsIndices);
         }

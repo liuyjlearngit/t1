@@ -7,6 +7,7 @@ import com.cmdi.dims.meta.entity.EntityType;
 import com.cmdi.dims.meta.repostitory.EntityTypeRepository;
 import com.cmdi.dims.task.entity.AreaCodeConfig;
 import com.cmdi.dims.task.entity.ResStatistics;
+import com.cmdi.dims.task.entity.ReturnData;
 import com.cmdi.dims.task.entity.TaskLatest;
 import com.cmdi.dims.task.repository.*;
 import com.cmdi.dims.util.ExcelUtils;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -50,9 +52,10 @@ public class HeadquartersResourcesController {
     private ResStatisticsRepository resStatisticsRepository;
 
     //四舍五入
-    public Integer avarage(Integer substring){
-        BigDecimal b   =   new BigDecimal(substring);
-        Integer   f1   =   b.setScale(4,   BigDecimal.ROUND_HALF_UP).intValue();
+    public Integer avarage(int substring){
+        double i = (double)substring/10000;
+        BigDecimal b   =   new BigDecimal(i);
+        Integer   f1   =   b.setScale(0,   BigDecimal.ROUND_HALF_UP).intValue();
         return f1;
     }
 
@@ -72,7 +75,7 @@ public class HeadquartersResourcesController {
 
         List<String> taskcodess = taskLatestRepository.findAll().stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
-        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByRegionTypeAndTaskCodeIn(1,taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
         List<String> strname=new ArrayList<>();
         for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
             strname.add(colle.getKey());
@@ -89,7 +92,7 @@ public class HeadquartersResourcesController {
 
             List<EntityType> bySpecialityName = entityTypeRepository.findBySpecialityName(speciality);//当前专业有哪些类型
 
-            List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
+            List<ResStatistics> allnums = resStatisticsRepository.findByRegionTypeAndTaskCodeInAndProvinceCodeInAndSpecialityName(1,taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
             TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
@@ -135,7 +138,7 @@ public class HeadquartersResourcesController {
                         if (colles.getKey().equals("")){///
 
                         }else {///
-                          String jtow=  j>10000?avarage(j)+"万":j+"";
+                          String jtow=  j+"";
                             resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
                                     .name(colles.getKey())
                                     .num(jtow)
@@ -168,7 +171,7 @@ public class HeadquartersResourcesController {
                     if (i==0){///
 
                     }else {
-                        String jtow=  i>10000?avarage(i)+"万":i+"";
+                        String jtow= i+"";
 
                         resourcesDtos.add(ResourcesDto.builder()
                                 .resourcesName(colle.getKey())
@@ -214,7 +217,7 @@ public class HeadquartersResourcesController {
 
         List<String> taskcodess = taskLatestRepository.findAll().stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
-        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByRegionTypeAndTaskCodeIn(1,taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
         List<String> strname=new ArrayList<>();
         for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
             strname.add(colle.getKey());
@@ -232,7 +235,7 @@ public class HeadquartersResourcesController {
 
             List<EntityType> bySpecialityName = entityTypeRepository.findBySpecialityName(speciality);//当前专业有哪些类型
 
-            List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
+            List<ResStatistics> allnums = resStatisticsRepository.findByRegionTypeAndTaskCodeInAndProvinceCodeInAndSpecialityName(1,taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
             TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
@@ -349,7 +352,7 @@ public class HeadquartersResourcesController {
     private List<ProfessionalDot> statisticalsn() {
         List<String> taskcodess = taskLatestRepository.findAll().stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
-        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByTaskCodeIn(taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
+        Map<String, List<ResStatistics>> collect = resStatisticsRepository.findByRegionTypeAndTaskCodeIn(1,taskcodess).stream().collect(Collectors.groupingBy(ResStatistics::getSpecialityName));
         List<String> strname=new ArrayList<>();
         for (Map.Entry<String, List<ResStatistics>> colle:collect.entrySet()){
             strname.add(colle.getKey());
@@ -367,7 +370,7 @@ public class HeadquartersResourcesController {
 
             List<EntityType> bySpecialityName = entityTypeRepository.findBySpecialityName(speciality);//当前专业有哪些类型
 
-            List<ResStatistics> allnums = resStatisticsRepository.findByTaskCodeInAndProvinceCodeInAndSpecialityName(taskcodes, provinces, speciality);
+            List<ResStatistics> allnums = resStatisticsRepository.findByRegionTypeAndTaskCodeInAndProvinceCodeInAndSpecialityName(1,taskcodes, provinces, speciality);
 
             Map<String, List<ResStatistics>> resnames = allnums.stream().collect(Collectors.groupingBy(ResStatistics::getResName));//resname分组
             TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
@@ -468,11 +471,11 @@ public class HeadquartersResourcesController {
 
     private List<RegionItemDto> graphicals(String speciality,String resname) {
         //查找所有当前专业的最新数据
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(speciality);
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speciality);
         List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
         //所有 当前 taskcode
-        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeInAndResName(taskcodes,resname);
+        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByRegionTypeAndTaskCodeInAndResName(1,taskcodes,resname);
 
         ArrayList<RegionItemDto> regionItemDtos = new ArrayList<>();
 
@@ -536,7 +539,7 @@ public class HeadquartersResourcesController {
         ArrayList<ExcelDownData> list = new ArrayList<>();
 
         for (String specia:speciality) {
-            ExcelDownData excelDownData = allData(specia);
+            ExcelDownData excelDownData = allDatatow(specia);
             ExcelDownData excelDownData1 = new ExcelDownData();
             if (excelDownData==null){
                 excelDownData1.setSpeciality(specia);//这个是空的地址用的
@@ -550,126 +553,208 @@ public class HeadquartersResourcesController {
         ExcelUtils.exportExcel(request,response,speciality,collect);
     }
 
-    private ExcelDownData allData(String speciality){
-        //第一行  当前专业有哪些 第一级数据
+//    private ExcelDownData allData(String speciality){
+//        //第一行  当前专业有哪些 第一级数据
+//        allDatatow(speciality);
+//        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speciality);
+//        List<String> taskcodes = bySpecialityName.stream()//所有的taskcode 符合专业 和 地址的最新数据
+//                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+//
+//        //所有 审核数据 都是从这个里面取
+//        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(taskcodes);
+//        Map<String, List<ResStatistics>> collect = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatistics::getResName));
+//        TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
+//        stringListTreeMap.putAll(collect);
+//        ArrayList<String> strings = new ArrayList<>();//这个是第一行数据
+//        ArrayList<String> stringss = new ArrayList<>();//这个是第二行数据  大专业包含的小专业（带 单位 和 合计的） 他的size可以当总长度
+//        ArrayList<Integer> onenum = new ArrayList<>();//第一行每个长度  用来合并
+//
+//        Map<String, List<ResStatistics>> collect1 = null;//
+//        LinkedHashMap<String, List<String>> stringStringHashMap = new LinkedHashMap<>();// 键 大专业  值他包含的小专业
+//        for (Map.Entry<String, List<ResStatistics>> colles:stringListTreeMap.entrySet()){
+//
+//
+//            for (ResStatistics restatis:colles.getValue()) {//第二轮
+//                if (restatis.getResType()==null){///
+//                    restatis.setResType("");
+//                }
+//            }
+//
+//             collect1 = colles.getValue().stream().collect(Collectors.groupingBy(ResStatistics::getResType));
+//            onenum.add(collect1.size()+1);
+//             //第二行
+//            String unm="";
+//            ArrayList<String> strings1 = new ArrayList<>();//小专业数据
+//            for (Map.Entry<String, List<ResStatistics>> colless:collect1.entrySet()){
+//                strings1.add(colless.getKey());
+//
+//                unm=colless.getValue().get(0).getUnit();
+//                stringss.add(colless.getKey()+"/"+colless.getValue().get(0).getUnit());
+//            }
+//            stringStringHashMap.put(colles.getKey(),strings1);
+//
+//
+//            stringss.add("总和"+"/"+unm);
+//        }
+//
+//        for (Map.Entry<String, List<String>> colles:stringStringHashMap.entrySet()){
+//            strings.add(colles.getKey());
+//        }
+//
+//        //每个省 每个大专业下的小专业数据
+//
+//
+//        //地址数据
+//        List<String> collect2 = byTaskCodeIn.stream()//有哪些省
+//                .map(ResStatistics::getProvince).collect(Collectors.toList());
+//
+//        HashMap<String, List<Integer>> alldata = new HashMap<>();//地址 数据 下面行
+//        for (String coll:collect2) {
+//
+//        //首先查找
+//        List<Integer> allsums=new ArrayList<>();//下面数据
+//        for (Map.Entry<String, List<String>> colles:stringStringHashMap.entrySet()){
+//            Integer littall=0;
+//            List<String> value = colles.getValue();
+//            for (String val:value) {
+//                List<ResStatistics> in = resStatisticsRepository.findByTaskCodeInAndProvinceAndResNameAndResType(taskcodes,coll,colles.getKey(),val);
+//                List<Integer> allsum = in.stream()//
+//                        .map(ResStatistics::getAmount).collect(Collectors.toList());
+//                Integer sum=0;
+//                for (Integer sums:allsum) {
+//                    sum+=sums;
+//                }
+//                if (in.size()==0){
+//                    sum=0;
+//                }
+//                littall+=sum;
+//                allsums.add(sum);
+//            }
+//            allsums.add(littall);
+//        }
+//            alldata.put(coll,allsums);
+//        }
+//
+//        List<ProfessionalDot> statisticals = statisticalsn();//全国 数据
+//        List<ResourcesDto> resourcesDtos = new ArrayList<>();//当前专业数据
+//        for (ProfessionalDot profes:statisticals) {
+//            if (profes.getSpeciality().equals(speciality)){
+//                resourcesDtos.addAll(profes.getResourcesDtosn());
+//            }
+//        }
+//
+//        Map<String, List<ResourcesDto>> collect3 = resourcesDtos.stream().collect(Collectors.groupingBy(ResourcesDto::getResourcesName));
+//
+//
+//        List<Integer> allsums=new ArrayList<>();
+//        for (String res:strings) {
+//            ResourcesDto resourcesDto = collect3.get(res).get(0);
+//            if (resourcesDto.getNums().size()==0){
+//                allsums.add(Integer.valueOf(0));
+//            }
+//            int num=0;
+//            for (ResourcesDetailsDto resouces:resourcesDto.getNums()) {
+//                allsums.add(Integer.valueOf(resouces.getNum()));
+//                num+=Integer.valueOf(resouces.getNum());
+//            }
+//            allsums.add(Integer.valueOf(num));
+//        }
+//
+//        ExcelDownData excelDownData = new ExcelDownData();
+//        if (strings.size()==0){
+//            excelDownData=null;
+//        }else {
+//            excelDownData.setSpeciality(speciality);
+//            excelDownData.setAlldata(alldata);
+//            excelDownData.setAllDatas(allsums);
+//            excelDownData.setOnenum(onenum);
+//            excelDownData.setStrings(strings);
+//            excelDownData.setStringss(stringss);
+//        }
+//
+//        return excelDownData;
+//    }
 
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(speciality);
-        TaskLatest taskLatest = bySpecialityName.get(0);
+    private ExcelDownData allDatatow(String speciality){
 
+        List<String> findthree = resStatisticsRepository.findthree(speciality);
+        HashMap<String, List<String>> map = new HashMap<>();
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (String str:findthree) {
+            List<String> findforn = resStatisticsRepository.findforn(speciality, str);
+            map.put(str,findforn);
+        }
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speciality);
 
-        //所有 审核数据 都是从这个里面取
-        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCode(taskLatest.getTaskCode());
+        Map<String, String> collect = bySpecialityName.stream().collect(Collectors.toMap(TaskLatest::getTaskCode, TaskLatest::getProvince));
 
-        Map<String, List<ResStatistics>> collect = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatistics::getResName));
-        TreeMap<String, List<ResStatistics>> stringListTreeMap = new TreeMap<>();
-        stringListTreeMap.putAll(collect);
-        ArrayList<String> strings = new ArrayList<>();//这个是第一行数据
-        ArrayList<String> stringss = new ArrayList<>();//这个是第二行数据  大专业包含的小专业（带 单位 和 合计的） 他的size可以当总长度
-        ArrayList<Integer> onenum = new ArrayList<>();//第一行每个长度  用来合并
-
-        Map<String, List<ResStatistics>> collect1 = null;//
-        LinkedHashMap<String, List<String>> stringStringHashMap = new LinkedHashMap<>();// 键 大专业  值他包含的小专业
-        for (Map.Entry<String, List<ResStatistics>> colles:stringListTreeMap.entrySet()){
-
-
-            for (ResStatistics restatis:colles.getValue()) {//第二轮
-                if (restatis.getResType()==null){///
-                    restatis.setResType("");
+        ArrayList<String> one = new ArrayList<>();
+        ArrayList<String> tow = new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<>();
+        for (Map.Entry<String, String> colle:collect.entrySet()){
+            String data="";
+            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(colle.getValue());
+            String name = byCode.getName();//地址
+            if (data.equals("")){
+                data=name;
+            }
+            for (Map.Entry<String, List<String>> coll:map.entrySet()){
+                List<Object[]> objects = resStatisticsRepository.find(colle.getKey(), coll.getKey());
+                HashMap<String, String> hashMap = new HashMap<>();
+                for (int i=0;i<objects.size();i++){
+                    hashMap.put(String.valueOf(objects.get(i)[0]),String.valueOf(objects.get(i)[1]));
                 }
-            }
-
-             collect1 = colles.getValue().stream().collect(Collectors.groupingBy(ResStatistics::getResType));
-            onenum.add(collect1.size()+1);
-             //第二行
-            String unm="";
-            ArrayList<String> strings1 = new ArrayList<>();//小专业数据
-            for (Map.Entry<String, List<ResStatistics>> colless:collect1.entrySet()){
-                strings1.add(colless.getKey());
-
-                unm=colless.getValue().get(0).getUnit();
-                stringss.add(colless.getKey()+"/"+colless.getValue().get(0).getUnit());
-            }
-            stringStringHashMap.put(colles.getKey(),strings1);
-
-
-            stringss.add("总和"+"/"+unm);
-        }
-
-        for (Map.Entry<String, List<String>> colles:stringStringHashMap.entrySet()){
-            strings.add(colles.getKey());
-        }
-
-        //每个省 每个大专业下的小专业数据
-
-
-        //地址数据
-        List<String> collect2 = byTaskCodeIn.stream()//有哪些省
-                .map(ResStatistics::getProvince).collect(Collectors.toList());
-
-        HashMap<String, List<Integer>> alldata = new HashMap<>();//地址 数据 下面行
-        for (String coll:collect2) {
-
-        //首先查找
-        List<Integer> allsums=new ArrayList<>();//下面数据
-        for (Map.Entry<String, List<String>> colles:stringStringHashMap.entrySet()){
-            Integer littall=0;
-            List<String> value = colles.getValue();
-            for (String val:value) {
-                List<ResStatistics> in = resStatisticsRepository.findByTaskCodeAndProvinceAndResNameAndResType(taskLatest.getTaskCode(),coll,colles.getKey(),val);
-                List<Integer> allsum = in.stream()//
-                        .map(ResStatistics::getAmount).collect(Collectors.toList());
-                Integer sum=0;
-                for (Integer sums:allsum) {
-                    sum+=sums;
+                for (String str:coll.getValue()) {
+                    data+=","+hashMap.get(str);
                 }
-                if (in.size()==0){
-                    sum=0;
-                }
-                littall+=sum;
-                allsums.add(sum);
+                String bigAll = resStatisticsRepository.findBigAll(colle.getKey(), coll.getKey());
+                data+=","+bigAll;
             }
-            allsums.add(littall);
-        }
-            alldata.put(coll,allsums);
+            strings.add(data);
         }
 
-        List<ProfessionalDot> statisticals = statisticalsn();//全国 数据
-        List<ResourcesDto> resourcesDtos = new ArrayList<>();//当前专业数据
-        for (ProfessionalDot profes:statisticals) {
-            if (profes.getSpeciality().equals(speciality)){
-                resourcesDtos.addAll(profes.getResourcesDtosn());
+        List<String> collect1 = bySpecialityName.stream()//有哪些省
+                .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+        String unit = "个";
+
+        String end="总计";
+
+        for (Map.Entry<String, List<String>> coll:map.entrySet()){
+            one.add(coll.getKey());
+            List<ResStatistics> byResName = resStatisticsRepository.findByResName(coll.getKey());
+            String unit1 = byResName.get(0).getUnit();
+            unit=unit1;
+            integers.add(coll.getValue().size()+1);
+            for (String str:coll.getValue()) {
+                tow.add(str+"/"+unit);
             }
+            tow.add("总和"+"/"+unit);
         }
+        for (Map.Entry<String, List<String>> coll:map.entrySet()){
 
-        Map<String, List<ResourcesDto>> collect3 = resourcesDtos.stream().collect(Collectors.groupingBy(ResourcesDto::getResourcesName));
 
-
-        List<Integer> allsums=new ArrayList<>();
-        for (String res:strings) {
-            ResourcesDto resourcesDto = collect3.get(res).get(0);
-            if (resourcesDto.getNums().size()==0){
-                allsums.add(Integer.valueOf(0));
+            List<Object[]> codeAll = resStatisticsRepository.findCodeAll(collect1, coll.getKey());
+            HashMap<String, String> hashMap = new HashMap<>();
+            for (int i=0;i<codeAll.size();i++){
+                hashMap.put(String.valueOf(codeAll.get(i)[0]),String.valueOf(codeAll.get(i)[1]));
             }
-            int num=0;
-            for (ResourcesDetailsDto resouces:resourcesDto.getNums()) {
-                allsums.add(Integer.valueOf(resouces.getNum()));
-                num+=Integer.valueOf(resouces.getNum());
+            for (String str:coll.getValue()) {
+                end+=","+hashMap.get(str);
             }
-            allsums.add(Integer.valueOf(num));
+            String codeAllone = resStatisticsRepository.findCodeAllone(collect1, coll.getKey());
+            end+=","+codeAllone;
         }
-
         ExcelDownData excelDownData = new ExcelDownData();
         if (strings.size()==0){
             excelDownData=null;
         }else {
             excelDownData.setSpeciality(speciality);
-            excelDownData.setAlldata(alldata);
-            excelDownData.setAllDatas(allsums);
-            excelDownData.setOnenum(onenum);
-            excelDownData.setStrings(strings);
-            excelDownData.setStringss(stringss);
+            excelDownData.setAlldata(strings);
+            excelDownData.setAllDatas(end);
+            excelDownData.setOnenum(integers);
+            excelDownData.setStrings(one);
+            excelDownData.setStringss(tow);
         }
-
         return excelDownData;
     }
 
@@ -713,10 +798,10 @@ public class HeadquartersResourcesController {
     }
 
     private Map<String, List<ResStatistics>> findBySpecialityName(String SpecialityName){
-        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityNameOrderByCreatedAtDesc(SpecialityName);
+        List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(SpecialityName);
         List<String> collect = bySpecialityName.stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
-        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByTaskCodeIn(collect);
+        List<ResStatistics> byTaskCodeIn = resStatisticsRepository.findByRegionTypeAndTaskCodeIn(1,collect);
         for (ResStatistics res:byTaskCodeIn) {
             if (res.getResType()==null){
                 res.setResType("");
