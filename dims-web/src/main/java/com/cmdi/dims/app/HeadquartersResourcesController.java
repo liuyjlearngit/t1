@@ -732,7 +732,6 @@ public class HeadquartersResourcesController {
         }
         for (Map.Entry<String, List<String>> coll:map.entrySet()){
 
-
             List<Object[]> codeAll = resStatisticsRepository.findCodeAll(collect1, coll.getKey());
             HashMap<String, String> hashMap = new HashMap<>();
             for (int i=0;i<codeAll.size();i++){

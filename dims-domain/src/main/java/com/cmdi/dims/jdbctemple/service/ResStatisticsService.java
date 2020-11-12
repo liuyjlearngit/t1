@@ -13,7 +13,7 @@ public interface ResStatisticsService {
 
     List<ResStatisticsHeadquarters> findSplityAll(String specialityname);
 
-    List<ResStatisticsHeadquarters> findSplityAllsql(String name);
+    List<ResStatisticsHeadquarters> findSplityAllsql(String specialityname,String name);
     List<ResStatisticsHeadquarters> findSplityAllsqlong(String specialityname,String name);
 
     List<ResStatisticsHeadquarters> findAll(String specialityname,String big,String code);
@@ -21,5 +21,5 @@ public interface ResStatisticsService {
     List<String> findSplityCode(String specialityname);
     List<String> findSplityCodetow();
 
-    List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeInAndProvinceCodeInAndSpecialityName(Integer type,List<String> taskcodes,List<String> ProvinceCodes,String SpecialityNames);
+    List<ResStatisticsHeadquarters> findByWLY();
 }
