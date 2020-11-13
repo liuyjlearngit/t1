@@ -343,7 +343,7 @@ create index if not exists idx_CM_PORT_DDF2intId on CM_PORT_DDF(int_id);
 create index if not exists idx_CM_PORT_DDF2zh_label on CM_PORT_DDF(zh_label);
 create index if not exists idx_CM_PORT_DDF2related_ddm on CM_PORT_DDF(related_ddm);
 create index if not exists idx_CM_PORT_ODF2intId on CM_PORT_ODF(int_id);
-create index if not exists idx_CM_PORT_ODF2intId on CM_PORT_ODF(zh_label);
+create index if not exists idx_CM_PORT_ODF2zh_label on CM_PORT_ODF(zh_label);
 create index if not exists idx_CM_PORT_ODF2related_odm on CM_PORT_ODF(related_odm);
 
 
