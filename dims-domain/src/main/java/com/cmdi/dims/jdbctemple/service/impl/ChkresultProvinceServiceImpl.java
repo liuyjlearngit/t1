@@ -20,21 +20,21 @@ public class ChkresultProvinceServiceImpl implements ChkresultProvinceService {
 
     @Override
     public String findByversionMax() throws SQLException {
-        String sql="SELECT  max (e.version) FROM chkresult_statics_province e";
+        String sql="SELECT  max (e.version) FROM chkresult_statics_province_zb e";
         String s = secondJdbcTemplate.queryForObject(sql, String.class);
         return s;
     }
 
     @Override
     public List<ChkresultProvince> findByVersion(String version) {
-        String sql="SELECT * FROM chkresult_statics_province WHERE version=?";
+        String sql="SELECT * FROM chkresult_statics_province_zb WHERE version=?";
         List<ChkresultProvince> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ChkresultProvince.class),version);
         return query;
     }
 
     @Override
     public ChkresultProvince findByVersionAndName(String version, String name) {
-        String sql="SELECT * FROM chkresult_statics_province WHERE version=? AND province_name=?";
+        String sql="SELECT * FROM chkresult_statics_province_zb WHERE version=? AND province_name=?";
         List<ChkresultProvince> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ChkresultProvince.class),version,name);
         ChkresultProvince chkresultProvince = null;
         if (query.size()>0){

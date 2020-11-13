@@ -47,9 +47,9 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
     }
 
     @Override
-    public List<ResStatisticsHeadquarters> findSplityAllsql(String name) {
-        String sql="SELECT restype,\"sum\"(amount) amount FROM dims_tm_res_statistics_zb WHERE specialityname in ('NFV','5GC') AND resname=? GROUP BY resname,restype";
-        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),name);
+    public List<ResStatisticsHeadquarters> findSplityAllsql(String specialityname,String name) {
+        String sql="SELECT restype,\"sum\"(amount) amount FROM dims_tm_res_statistics_zb WHERE specialityname=? AND province NOT like '%大区' AND resname=? GROUP BY resname,restype";
+        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),specialityname,name);
         return query;
     }
 
@@ -62,8 +62,8 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
 
     @Override
     public List<ResStatisticsHeadquarters> findAll(String specialityname, String big,String code) {
-        String sql="SELECT restype,amount FROM dims_tm_res_statistics_zb WHERE specialityname=? AND resname=? AND province=?";
-        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),specialityname,big,code);
+        String sql="SELECT restype,amount FROM dims_tm_res_statistics_zb WHERE specialityname=? AND province=? AND resname=?";
+        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),specialityname,code,big);
         return query;
     }
 
@@ -78,7 +78,7 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
 
     @Override
     public List<String> findSplityCodetow() {
-        String sql="SELECT province FROM dims_tm_res_statistics_zb WHERE specialityname in ('NFV','5GC') GROUP BY province";
+        String sql="SELECT province FROM dims_tm_res_statistics_zb WHERE specialityname='网络云' AND province in('东北大区','华北大区','西北大区','西南大区','华东北大区','华东南大区','华中大区','华南大区') GROUP BY province";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class));
         List<String> collect = query.stream()
                 .map(ResStatisticsHeadquarters::getProvince).collect(Collectors.toList());
@@ -86,9 +86,11 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
     }
 
     @Override
-    public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeInAndProvinceCodeInAndSpecialityName(Integer type, List<String> taskcodes, List<String> ProvinceCodes, String SpecialityNames) {
-        String sql="SELECT * FROM chkresult_statics_province WHERE version=?";
+    public List<ResStatisticsHeadquarters> findByWLY() {
+        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE specialityname='网络云' AND province in('东北大区','华北大区','西北大区','西南大区','华东北大区','华东南大区','华中大区','华南大区')";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class));
-        return null;
+        return query;
     }
+
+
 }

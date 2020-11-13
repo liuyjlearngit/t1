@@ -712,7 +712,8 @@ public class HeadquartersResourcesController {
             }
             strings.add(data);
         }
-
+        ArrayList<String> strings1 = new ArrayList<>();//单位
+        strings1.add("统计单位");
         List<String> collect1 = bySpecialityName.stream()//有哪些省
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
         String unit = "个";
@@ -724,14 +725,16 @@ public class HeadquartersResourcesController {
             List<ResStatistics> byResName = resStatisticsRepository.findByResName(coll.getKey());
             String unit1 = byResName.get(0).getUnit();
             unit=unit1;
+
             integers.add(coll.getValue().size()+1);
             for (String str:coll.getValue()) {
-                tow.add(str+"/"+unit);
+                tow.add(str);
+                strings1.add(unit);
             }
-            tow.add("总和"+"/"+unit);
+            strings1.add(unit);
+            tow.add("总和");
         }
         for (Map.Entry<String, List<String>> coll:map.entrySet()){
-
 
             List<Object[]> codeAll = resStatisticsRepository.findCodeAll(collect1, coll.getKey());
             HashMap<String, String> hashMap = new HashMap<>();
@@ -754,6 +757,7 @@ public class HeadquartersResourcesController {
             excelDownData.setOnenum(integers);
             excelDownData.setStrings(one);
             excelDownData.setStringss(tow);
+            excelDownData.setWei(strings1);
         }
         return excelDownData;
     }
