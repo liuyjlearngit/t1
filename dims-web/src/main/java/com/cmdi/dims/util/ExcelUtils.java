@@ -430,7 +430,8 @@ public class ExcelUtils {
             row.setHeight((short) 800);// 设置行高
 
 
-            String[] data={datastor.getRuleNo(),datastor.getRuleTagName(),datastor.getRuleDesc(),datastor.getProvince(),datastor.getCity(),datastor.getCounty(),datastor.getIntId(),datastor.getZhLabel(),datastor.getProvince(),datastor.getNum()};
+            String[] data={datastor.getRuleNo(),datastor.getRuleTagName(),datastor.getRuleDesc(),datastor.getProvince(),datastor.getCity(),datastor.getCounty(),datastor.getIntId(),datastor.getZhLabel(),datastor.getProblemDesc(),datastor.getNum()};
+
             for (int i=0;i<10;i++){
                 HSSFCell ro = row.createCell(i);
                 ro.setCellValue(data[i]);
