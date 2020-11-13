@@ -46,7 +46,7 @@ public class ResStatisticsHeadquarters {
     private String specialityName;
 
     @Column(name = "amount")
-    private Integer amount;
+    private Double amount;
 
     @Column(name = "unit")
     private String unit;

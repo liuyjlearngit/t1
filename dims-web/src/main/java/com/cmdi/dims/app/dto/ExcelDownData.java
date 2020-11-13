@@ -24,5 +24,6 @@ public class ExcelDownData {
     private String allDatas;
     @ApiModelProperty("地址总结数据行")
     private ArrayList<String> alldata;
-
+    @ApiModelProperty("单位")
+    private ArrayList<String> wei;
 }

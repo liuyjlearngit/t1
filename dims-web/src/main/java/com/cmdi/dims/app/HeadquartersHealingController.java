@@ -119,7 +119,7 @@ public class HeadquartersHealingController {
 
                 List<ResStatisticsHeadquarters> value = colle.getValue();
 
-                int i=0;
+                Double i=0.0;
                 for (ResStatisticsHeadquarters restatis:value) {//第二轮
                     i+=restatis.getAmount();
                     if (restatis.getResType()==null){
@@ -134,7 +134,7 @@ public class HeadquartersHealingController {
                 for (Map.Entry<String, List<ResStatisticsHeadquarters>> colles:restypes.entrySet()){
 
                     List<ResStatisticsHeadquarters> value1 = colles.getValue();
-                    int j=0;
+                    Double j=0.0;
                     String nuit=null;
                     for (ResStatisticsHeadquarters resta:value1) {//第三轮
                         j+=resta.getAmount();
@@ -162,7 +162,7 @@ public class HeadquartersHealingController {
                 if (value==null){//第二轮
 
                 }else {
-                    int j=0;
+                    Double j=0.0;
                     ArrayList<ResourcesDetailsDto> resourcesDetailsDtostow = new ArrayList<>();
                     for (ResourcesDetailsDto resourcesDetailsDto:resourcesDetailsDtos) {
                         j++;
@@ -170,7 +170,7 @@ public class HeadquartersHealingController {
                         if (j==4){
                             threes.add(resourcesDetailsDtostow);
                             resourcesDetailsDtostow=new ArrayList<>();
-                            j=0;
+                            j=0.0;
                         }
                     }
                     if (resourcesDetailsDtostow.size()<4&&resourcesDetailsDtostow.size()>0){
@@ -197,13 +197,13 @@ public class HeadquartersHealingController {
             }
 //第一轮
             ArrayList<ResourcesDto> resourcesDto=new ArrayList<>();
-            int i=0;
+            Double i=0.0;
             for (ResourcesDto res:resourcesDtos) {
                 i++;
                 resourcesDto.add(res);
                 if (i==8){
                     lists.add(resourcesDto);
-                    i=0;
+                    i=0.0;
                     resourcesDto=new ArrayList<>();
                 }
             }
@@ -271,24 +271,24 @@ public class HeadquartersHealingController {
             }
         }
         collect.putAll(collect1);
-        HashMap<String,Integer> doubleStringHashMap = new HashMap<>();
+        HashMap<String,Double> doubleStringHashMap = new HashMap<>();
         for (Map.Entry<String, List<ResStatisticsHeadquarters>> colles:collect.entrySet()){
-            Integer amount = 0;
+            Double amount = 0.0;
             for (ResStatisticsHeadquarters restaistice:colles.getValue()) {
                 amount+= restaistice.getAmount();
             }
             doubleStringHashMap.put(colles.getKey(),amount);
         }
         //这里将map.entrySet()转换成list
-        List<Map.Entry<String,Integer>> list = new ArrayList<Map.Entry<String,Integer>>(doubleStringHashMap.entrySet());
+        List<Map.Entry<String,Double>> list = new ArrayList<Map.Entry<String,Double>>(doubleStringHashMap.entrySet());
         //然后通过比较器来实现排序
-        Collections.sort(list,new Comparator<Map.Entry<String, Integer>>() {
+        Collections.sort(list,new Comparator<Map.Entry<String, Double>>() {
             @Override
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+            public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });
-        for (Map.Entry<String,Integer> ma:list) {
+        for (Map.Entry<String,Double> ma:list) {
             RegionItemDto regionItemDto = new RegionItemDto();
             regionItemDto.setRegion(ma.getKey());
             regionItemDto.setRegionName(ma.getKey());
@@ -354,19 +354,25 @@ public class HeadquartersHealingController {
         ArrayList<String> strings1 = new ArrayList<>();
         ArrayList<String> strings2 = new ArrayList<>();
         ArrayList<Integer> strings3 = new ArrayList<>();
+        ArrayList<String> wei = new ArrayList<>();//单位
+        wei.add("统计单位");
         for (Map.Entry<String, List<ResStatisticsHeadquarters>> colle:collect.entrySet()){
             strings1.add(colle.getKey());
             strings3.add(colle.getValue().size()+1);
             List<ResStatisticsHeadquarters> value = colle.getValue();
             ArrayList<String> strings = new ArrayList<String>();
+
+
             for (ResStatisticsHeadquarters val:value) {
                 strings.add(val.getResType());
-                val.setResName(val.getResType()+"/"+val.getUnit());
+                val.setResName(val.getResType());
+                wei.add(val.getUnit());
                 strings2.add(val.getResName());
             }
             stringArrayListHashMap.put(colle.getKey(),strings);//所有指标
             ResStatisticsHeadquarters resStatisticsHeadquarters = new ResStatisticsHeadquarters();
-            resStatisticsHeadquarters.setResName("总和/"+value.get(0).getUnit());
+            resStatisticsHeadquarters.setResName("总和");
+            wei.add(value.get(0).getUnit());
             strings2.add(resStatisticsHeadquarters.getResName());
             value.add(resStatisticsHeadquarters);
         }
@@ -375,12 +381,12 @@ public class HeadquartersHealingController {
         for (String code:splityCode) {
             String str=code;
             for (Map.Entry<String, List<String>> colle:stringArrayListHashMap.entrySet()) {
-                Map<String, Integer> data = getData(speciality, colle.getKey(), code);
+                Map<String, Double> data = getData(speciality, colle.getKey(), code);
                 List<String> value = colle.getValue();
-                int sum=0;
+                Double sum=0.0;
                 for (String val:value) {
-                    Integer integer = data.get(val);
-                    int i = integer == null ? 0 : integer == null ? 0 : integer;
+                    Double integer = data.get(val);
+                    Double i = integer == null ? 0 : integer == null ? 0 : integer;
                     str+=","+i;
                     sum+=i;
                 }
@@ -391,17 +397,17 @@ public class HeadquartersHealingController {
 
         String end="合计";
         for (Map.Entry<String, List<String>> colle:stringArrayListHashMap.entrySet()) {
-            Map<String, Integer> byTaskCodeIns ;
+            Map<String, Double> byTaskCodeIns ;
             if (speciality.equals("5GC")||speciality.equals("NFV")){
                 byTaskCodeIns = resStatisticsRepository.findSplityAllsql(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
             }else {
                 byTaskCodeIns = resStatisticsRepository.findSplityAllsqlong(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
             }
             List<String> value = colle.getValue();
-            int sum=0;
+            Double sum=0.0;
             for (String val:value) {
-                Integer integer = byTaskCodeIns.get(val);
-                int i = integer == null ? 0 : integer == null ? 0 : integer;
+                Double integer = byTaskCodeIns.get(val);
+                Double i = integer == null ? 0 : integer == null ? 0 : integer;
                 end+=","+i;
                 sum+=i;
             }
@@ -418,15 +424,16 @@ public class HeadquartersHealingController {
             excelDownData.setOnenum(strings3);
             excelDownData.setStrings(strings1);
             excelDownData.setStringss(strings2);
+            excelDownData.setWei(wei);
         }
         return excelDownData;
     }
 
-    private Map<String, Integer> getData(String speciality,String big,String code){
+    private Map<String, Double> getData(String speciality,String big,String code){
         List<ResStatisticsHeadquarters> byTaskCodeIn = new ArrayList<>();
             byTaskCodeIn = resStatisticsRepository.findAll(speciality,big,code);
 
-        Map<String, Integer> collect = byTaskCodeIn.stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
+        Map<String, Double> collect = byTaskCodeIn.stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
         return collect;
     }
 
