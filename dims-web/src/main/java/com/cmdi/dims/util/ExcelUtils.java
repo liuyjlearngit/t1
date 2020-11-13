@@ -160,6 +160,7 @@ public class ExcelUtils {
         ArrayList<Integer> onenum = excelDownData.getOnenum();//第一行数量
         ArrayList<String> stringss = excelDownData.getStringss();//第二行数据   他的size是总长度
         ArrayList<String> alldata = excelDownData.getAlldata();//地址数据
+        ArrayList<String> wei = excelDownData.getWei();//单位
         String[] allDatas = excelDownData.getAllDatas().split(",");//总计
 
                 //第一行 数据开始
@@ -206,6 +207,17 @@ public class ExcelUtils {
         for (int i = 0; i < stringss.size(); i++) {
             HSSFCell tempCell = row2.createCell(i+1);
             tempCell.setCellValue(stringss.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        //添加单位
+        //第3行
+        HSSFRow row3 = sheet.createRow(rowNum++);
+        row3.setHeight((short) 700);
+
+        for (int i = 0; i < wei.size(); i++) {
+            HSSFCell tempCell = row3.createCell(i);
+            tempCell.setCellValue(wei.get(i));
             tempCell.setCellStyle(headerStyle);
         }
 
