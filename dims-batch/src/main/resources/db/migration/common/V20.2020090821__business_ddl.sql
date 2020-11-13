@@ -330,20 +330,20 @@ CREATE TABLE CM_PORT_ODF (
 );
 
 create index if not exists idx_CM_DEVICE_RACK2intId on CM_DEVICE_RACK(int_id);
-create index if not exists idx_CM_DEVICE_RACK2zh_label on CM_DEVICE_RACK(zh_label);
+-- create index if not exists idx_CM_DEVICE_RACK2zh_label on CM_DEVICE_RACK(zh_label);
 create index if not exists idx_CM_DEVICE_RACK2related_room on CM_DEVICE_RACK(related_room);
 create index if not exists idx_CM_DEVICE_RACK2related_rackposition on CM_DEVICE_RACK(related_rackposition);
 create index if not exists idx_CE_WARE_DDM2intId on CE_WARE_DDM(int_id);
-create index if not exists idx_CE_WARE_DDM2zh_label on CE_WARE_DDM(zh_label);
+-- create index if not exists idx_CE_WARE_DDM2zh_label on CE_WARE_DDM(zh_label);
 create index if not exists idx_CE_WARE_DDM2related_reackpos on CE_WARE_DDM(related_reackpos);
 create index if not exists idx_CE_WARE_ODM2intId on CE_WARE_ODM(int_id);
-create index if not exists idx_CE_WARE_ODM2zh_label on CE_WARE_ODM(zh_label);
+-- create index if not exists idx_CE_WARE_ODM2zh_label on CE_WARE_ODM(zh_label);
 create index if not exists idx_CE_WARE_ODM2related_device_id on CE_WARE_ODM(related_device_id);
 create index if not exists idx_CM_PORT_DDF2intId on CM_PORT_DDF(int_id);
-create index if not exists idx_CM_PORT_DDF2zh_label on CM_PORT_DDF(zh_label);
+-- create index if not exists idx_CM_PORT_DDF2zh_label on CM_PORT_DDF(zh_label);
 create index if not exists idx_CM_PORT_DDF2related_ddm on CM_PORT_DDF(related_ddm);
 create index if not exists idx_CM_PORT_ODF2intId on CM_PORT_ODF(int_id);
-create index if not exists idx_CM_PORT_ODF2zh_label on CM_PORT_ODF(zh_label);
+-- create index if not exists idx_CM_PORT_ODF2zh_label on CM_PORT_ODF(zh_label);
 create index if not exists idx_CM_PORT_ODF2related_odm on CM_PORT_ODF(related_odm);
 
 
