@@ -713,7 +713,7 @@ public class HeadquartersResourcesController {
             strings.add(data);
         }
         ArrayList<String> strings1 = new ArrayList<>();//单位
-        strings1.add("单位");
+        strings1.add("统计单位");
         List<String> collect1 = bySpecialityName.stream()//有哪些省
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
         String unit = "个";
