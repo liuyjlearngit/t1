@@ -116,10 +116,17 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         continue;
                     }else if(baseName.matches(regex2)){
                         //in case of split files
-                        baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),"-");
+                        baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String tableName = StringUtils.containsIgnoreCase(specialTableName,baseName)?PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName:baseName;
+                    String[] specialityList = specialTableName.split(",");
+                    String tableName = baseName;
+                    for(String str:specialityList){
+                        if( StringUtils.equalsIgnoreCase(str,baseName)){
+                            tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
+                            break;
+                        }
+                    }
                     String fileName = FilenameUtils.getName(file.getName());
                     if (specialityTables.containsKey(tableName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
@@ -164,11 +171,17 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         continue;
                     }else if(baseName.matches(regex2)){
                         //in case of split files
-                        //baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),"-");
                         baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String tableName = StringUtils.containsIgnoreCase(specialTableName,baseName)?PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName:baseName;
+                    String[] specialityList = specialTableName.split(",");
+                    String tableName = baseName;
+                    for(String str:specialityList){
+                        if( StringUtils.equalsIgnoreCase(str,baseName)){
+                            tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
+                            break;
+                        }
+                    }
                     String fileName = FilenameUtils.getName(entry.getFilename());
                     if (specialityTables.containsKey(tableName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
@@ -258,7 +271,8 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                 taskItemFile.setSuccess(true);
             } else {
                 taskItemFile.setSuccess(false);
-                taskItemFile.setFailureReason("文件名：" + taskItemFile.getName() + "解压后对应的CSV文件不存在！");
+                taskItemFile.setFailureReason("文件名：" + taskItemFile.getName() + "解压后对应的CSV文件不存在！"
+                + itemFile.getFileName().toString()+"解压失败,请确认是否为GZIP压缩文件！");
                 log.warn("file " + taskItemFile.getName() + " extract without csv !!!");
             }
         } catch (Exception e) {
