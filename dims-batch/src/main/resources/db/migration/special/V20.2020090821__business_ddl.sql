@@ -205,13 +205,13 @@ create table CE_LINK_IP_LOGIC(
 int_id varchar(500),logic_link_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),z_equipment varchar(500),z_port varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_ADDRESS_IP_V4(
-int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id text,province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_SEGMENT_IP_V4(
 int_id varchar(500),zh_label varchar(500),business_system varchar(500),equipment_id varchar(500),usage_description varchar(500),business_status varchar(500),address_type varchar(500),partition_state varchar(500),vpn_name varchar(500),three_line_ip_address varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_ADDRESS_IP_V6(
-int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id varchar(500),address_business_system varchar(500),ip_address_type varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500), dims_col_result text,    dims_col_rtName	text
+int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id  text,address_business_system varchar(500),ip_address_type varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500), dims_col_result text,    dims_col_rtName	text
 );
 create table CE_SEGMENT_IP_V6(
 int_id varchar(500),zh_label varchar(500),type_identifier varchar(500),network_type varchar(500),prefix_length varchar(500),partition_state varchar(500),business_status varchar(500),ipv6_address_segment_purpose varchar(500),affiliated_business varchar(500),equipment_id varchar(500),usage_description varchar(500),vpn_name varchar(500),three_line_ip_address varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,    dims_col_rtName text

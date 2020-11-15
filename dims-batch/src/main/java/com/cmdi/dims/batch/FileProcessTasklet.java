@@ -94,27 +94,48 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 String dataLine;
                 int idx;
                 Map<Integer, String> parameter;
-                String preDateLine = null;
+                //String preDateLine = null;
                 while (null != (dataLine = reader.readLine())) {
                     totalRecord++;
                     if(errorCount >= ERROR_COUNT){
                         log.info("超过最大入库失败条数，入库失败，退出......");
                         parameters.clear();
                         success = false;
-                        errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错:数据文件包含多余的分割符（超过1000条）.";
+                        errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错:数据文件包含的分割符数目与表头不符（超过1000条），无法入库.";
                         break;
                     }
                     dataLine = dataLine.replaceAll("\u0000", "");
                     String currentDateLine = dataLine;
-                    if (null != preDateLine) {
+                   /* if (null != preDateLine) {
                         currentDateLine = preDateLine + dataLine;
-                    }
+                    }*/
                     if (StringUtils.isEmpty(currentDateLine)) {
                         continue;
                     }
                     String[] columns = StringUtils.splitPreserveAllTokens(currentDateLine, delimiter);
                     parameter = new HashMap<>();
                     if (ArrayUtils.isNotEmpty(columns)) {
+                        int currentSize = columns.length;
+                        if (currentSize < columnSize) {
+                            //preDateLine = currentDateLine;
+                            errorCount++;
+                            log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行的分割符数量少于表头分隔符数量");
+                            log.warn("第" + totalRecord + "行:"+currentDateLine);
+                            continue;
+                        } else if (currentSize == columnSize) {
+                            for (idx = 0; idx < currentSize; idx++) {
+                                parameter.put(idx, columns[idx]);
+                            }
+                        } else if (currentSize > columnSize) {
+                            log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行可能包含多余的分割符");
+                            log.warn("第" + totalRecord + "行:"+currentDateLine);
+                            errorCount++;
+                           /* for (idx = 0; idx < currentSize; idx++) {
+                                parameter.put(idx, columns[idx]);
+                            }*/
+                        }
+                    }
+                    /*if (ArrayUtils.isNotEmpty(columns)) {
                         int currentSize = columns.length;
                         if (currentSize < columnSize) {
                             if (currentSize == 1) {
@@ -172,11 +193,11 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                             }
 
                         }
-
-                    } else {
+                    } */
+                    else {
                         log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行是个空行！");
                     }
-                    preDateLine = null;
+                    //preDateLine = null;
 
                     parameters.add(BatchUtil.asParameter(metadata, upperHeaderMap, parameter));
                     if (parameters.size() >= BATCH_SIZE) {
