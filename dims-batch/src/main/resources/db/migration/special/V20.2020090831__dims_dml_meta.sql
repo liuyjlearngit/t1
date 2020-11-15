@@ -23554,7 +23554,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_KJ_03001''
 														 else dims_col_result||'',DIMS_KJ_03001'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%空间-机房关联性核查-所属站点%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''空间-机房关联性核查-所属站点''
+														 when dims_col_rtName is null then ''不满足规范:空间-机房关联性核查-所属站点''
 														 else dims_col_rtName||'',空间-机房关联性核查-所属站点'' end)
  where isNotNull(t1.related_site) and not exists(select 1 from RM_AREA_SITE t2 where t2.int_id = t1.related_site)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, NULL),
 (902003007, '空间-机架位置关联性核查-所属机房', 'DIMS_KJ_03002', 3002, 902001004, '空间', 11, NULL, 'update RM_AREA_RACKPOS t1
@@ -23562,7 +23562,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_KJ_03002''
 														 else dims_col_result||'',DIMS_KJ_03002'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%空间-机架位置关联性核查-所属机房%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''空间-机架位置关联性核查-所属机房''
+														 when dims_col_rtName is null then ''不满足规范:空间-机架位置关联性核查-所属机房''
 														 else dims_col_rtName||'',空间-机架位置关联性核查-所属机房'' end)
  where isNotNull(t1.equiproom_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.equiproom_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001004, 1, NULL),
 (902003008, '空间-数据中心关联性核查-所属省份', 'DIMS_KJ_03003', 3003, 902001005, '空间', 11, NULL, 'update RM_AREA_DC t1
@@ -24041,7 +24041,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03001''
 														 else dims_col_result||'',DIMS_GG_03001'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-机架关联性核查-所属机房/资源点%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-机架关联性核查-所属机房/资源点''
+														 when dims_col_rtName is null then ''不满足规范:公共-机架关联性核查-所属机房/资源点''
 														 else dims_col_rtName||'',公共-机架关联性核查-所属机房/资源点'' end)
  where isNotNull(t1.related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id = t1.related_room)
        and not exists(select 1 from RM_AREA_RESPOINT t2 where t2.int_id = t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001001, 1, NULL),
@@ -24050,7 +24050,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03002''
 														 else dims_col_result||'',DIMS_GG_03002'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDM模块关联性核查-所属机架%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-DDM模块关联性核查-所属机架''
+														 when dims_col_rtName is null then ''不满足规范:公共-DDM模块关联性核查-所属机架''
 														 else dims_col_rtName||'',公共-DDM模块关联性核查-所属机架'' end)
  where isNotNull(t1.related_reackpos) and not exists(select 1 from CM_DEVICE_RACK t2 where t2.int_id = t1.related_reackpos)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001002, 1, NULL),
 (900003009, '公共-ODM模块关联性核查-所属设备', 'DIMS_GG_03003', 3003, 900001003, '公共', 11, NULL, 'update CE_WARE_ODM t1
@@ -24058,7 +24058,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03003''
 														 else dims_col_result||'',DIMS_GG_03003'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODM模块关联性核查-所属设备%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-ODM模块关联性核查-所属设备''
+														 when dims_col_rtName is null then ''不满足规范:公共-ODM模块关联性核查-所属设备''
 														 else dims_col_rtName||'',公共-ODM模块关联性核查-所属设备'' end)
  where isNotNull(t1.related_device_id) and not exists(select 1
 														from CE_DEVICE_GJ t2,CSGX_CE_DEVICE_GF t3,CE_DEVICE_GB t4,CE_DEVICE_DMT t5,CM_PORT_ODF t6
@@ -24072,7 +24072,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03004''
 														 else dims_col_result||'',DIMS_GG_03004'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-DDF端子关联性核查-所属DDM模块%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-DDF端子关联性核查-所属DDM模块''
+														 when dims_col_rtName is null then ''不满足规范:公共-DDF端子关联性核查-所属DDM模块''
 														 else dims_col_rtName||'',公共-DDF端子关联性核查-所属DDM模块'' end)
  where isNotNull(t1.related_ddm) and not exists(select 1 from CE_WARE_DDM t2 where t2.int_id = t1.related_ddm)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001004, 1, NULL),
 (900003011, '公共-ODF端子关联性核查-所属ODM模块', 'DIMS_GG_03005', 3005, 900001005, '公共', 11, NULL, 'update CM_PORT_ODF t1
@@ -24080,7 +24080,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03005''
 														 else dims_col_result||'',DIMS_GG_03005'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-ODF端子关联性核查-所属ODM模块%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-ODF端子关联性核查-所属ODM模块''
+														 when dims_col_rtName is null then ''不满足规范:公共-ODF端子关联性核查-所属ODM模块''
 														 else dims_col_rtName||'',公共-ODF端子关联性核查-所属ODM模块'' end)
  where isNotNull(t1.related_odm) and not exists(select 1 from CE_WARE_ODM t2 where t2.int_id = t1.related_odm)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001005, 1, NULL),
 (900003012, '公共-U位关联性核查-所属机架', 'DIMS_GG_03006', 3006, 900001006, '公共', 11, NULL, 'update RM_AREA_UPOS t1
@@ -24088,7 +24088,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 														 when dims_col_result is null then ''DIMS_GG_03006''
 														 else dims_col_result||'',DIMS_GG_03006'' end),
 			 dims_col_rtName=(case when dims_col_rtName like ''%公共-U位关联性核查-所属机架%'' then dims_col_rtName
-														 when dims_col_rtName is null then ''公共-U位关联性核查-所属机架''
+														 when dims_col_rtName is null then ''不满足规范:公共-U位关联性核查-所属机架''
 														 else dims_col_rtName||'',公共-U位关联性核查-所属机架'' end)
  where isNotNull(t1.related_rack) and not exists(select 1 from CM_DEVICE_RACK t2 where t2.int_id = t1.related_rack)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001006, 1, NULL),
 (900003013, '公共-U位关联性核查-所属省份', 'DIMS_GG_03007', 3007, 900001006, '公共', 11, NULL, 'update RM_AREA_UPOS t1
