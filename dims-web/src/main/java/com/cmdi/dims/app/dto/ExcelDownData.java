@@ -21,8 +21,9 @@ public class ExcelDownData {
     @ApiModelProperty("第一行长度")
     private ArrayList<Integer> onenum;
     @ApiModelProperty("总计")
-    private List<Integer> allDatas;
+    private String allDatas;
     @ApiModelProperty("地址总结数据行")
-    private HashMap<String, List<Integer>> alldata;
-
+    private ArrayList<String> alldata;
+    @ApiModelProperty("单位")
+    private ArrayList<String> wei;
 }

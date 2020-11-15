@@ -38,6 +38,8 @@ public class BatchUtil {
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
     static final char DefaultDelimiter = '^';
+    static final String TASK_TEMP_FOLDER = "/app";
+
 
     static String getProvince(JobExecution jobExecution) {
         return jobExecution.getJobParameters().getString(PROVINCE);
@@ -86,7 +88,9 @@ public class BatchUtil {
 
     //创建临时目录
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
-        File tempDirectory = FileUtils.getTempDirectory();
+        //File tempDirectory = FileUtils.getTempDirectory();
+        File tempDirectory = FileUtils.getFile(TASK_TEMP_FOLDER);
+        //File tempDirectory = FileUtils.getFile("D:\\Download");
         File taskDirectory = new File(tempDirectory, String.valueOf(taskCode));
         if (create) {
             if (taskDirectory.exists()) {
@@ -217,7 +221,7 @@ public class BatchUtil {
     }
 
     //String sourceDir,String sourceFileName
-    static void unGzipFile(Path itemFile) {
+    static void unGzipFile(Path itemFile) throws IOException{
         String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(), ".") + ".csv";
         try {
             //建立gzip压缩文件输入流
@@ -240,7 +244,8 @@ public class BatchUtil {
             outStream.close();
             inStream.close();
         } catch (Exception ex) {
-            System.err.println(ex.toString());
+            //System.err.println(ex.toString());
+            throw new RuntimeException("压缩文件存在问题，请检查！", ex);
         }
     }
 

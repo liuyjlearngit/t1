@@ -2,10 +2,13 @@ package com.cmdi.dims.util;
 
 import com.cmdi.dims.app.dto.ExcelDownData;
 import com.cmdi.dims.data.entity.DataStorage;
+import com.cmdi.dims.jdbctemple.entity.ErrorData;
+import com.cmdi.dims.jdbctemple.entity.VrmsProblem;
 import com.cmdi.dims.task.entity.ResStatistics;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 
 import javax.servlet.ServletOutputStream;
@@ -120,6 +123,8 @@ public class ExcelUtils {
         }
     }
 
+
+
     private static void createExcelSheet(HSSFWorkbook wb, String sheetName, ExcelDownData excelDownData){
         /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
         HSSFSheet sheet = wb.createSheet(sheetName);
@@ -154,10 +159,11 @@ public class ExcelUtils {
         ArrayList<String> strings = excelDownData.getStrings();//第一行数据
         ArrayList<Integer> onenum = excelDownData.getOnenum();//第一行数量
         ArrayList<String> stringss = excelDownData.getStringss();//第二行数据   他的size是总长度
-        HashMap<String, List<Integer>> alldata = excelDownData.getAlldata();//地址数据
-        List<Integer> allDatas = excelDownData.getAllDatas();//总计
+        ArrayList<String> alldata = excelDownData.getAlldata();//地址数据
+        ArrayList<String> wei = excelDownData.getWei();//单位
+        String[] allDatas = excelDownData.getAllDatas().split(",");//总计
 
-        //第一行 数据开始
+                //第一行 数据开始
         String[] row_first = new String[stringss.size()];
         Integer integer=0;
         Integer[] integers = new Integer[stringss.size()];
@@ -204,19 +210,30 @@ public class ExcelUtils {
             tempCell.setCellStyle(headerStyle);
         }
 
+        //添加单位
+        //第3行
+        HSSFRow row3 = sheet.createRow(rowNum++);
+        row3.setHeight((short) 700);
+
+        for (int i = 0; i < wei.size(); i++) {
+            HSSFCell tempCell = row3.createCell(i);
+            tempCell.setCellValue(wei.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
         //第三行  地址开始
-        for (Map.Entry<String, List<Integer>> colless:alldata.entrySet()){
+        for (String str:alldata){
             HSSFRow data = sheet.createRow(rowNum++);
             data.setHeight((short) 700);
+            String[] split = str.split(",");
+            for (int i=0;i<split.length;i++){
+                HSSFCell tempCell = data.createCell(i);
+                if (split[i].equals("null")){
+                    tempCell.setCellValue("无数据");
+                }else {
+                    tempCell.setCellValue(split[i]);
+                }
 
-            HSSFCell dataCell = data.createCell(0);
-            dataCell.setCellValue(colless.getKey());
-            dataCell.setCellStyle(headerStyle);
-
-            List<Integer> value = colless.getValue();
-            for (int i = 0; i < value.size(); i++) {
-                HSSFCell tempCell = data.createCell(i+1);
-                tempCell.setCellValue(value.get(i));
                 tempCell.setCellStyle(headerStyle);
             }
         }
@@ -225,13 +242,9 @@ public class ExcelUtils {
         HSSFRow end = sheet.createRow(rowNum++);
         end.setHeight((short) 700);
 
-        HSSFCell ends = end.createCell(0);
-        ends.setCellValue("总计");
-        ends.setCellStyle(headerStyle);
-
-        for (int i = 0; i < allDatas.size(); i++) {
-            HSSFCell tempCell = end.createCell(i+1);
-            tempCell.setCellValue(allDatas.get(i));
+        for (int i = 0; i < allDatas.length; i++) {
+            HSSFCell tempCell = end.createCell(i);
+            tempCell.setCellValue(allDatas[i]);
             tempCell.setCellStyle(headerStyle);
         }
 
@@ -297,6 +310,129 @@ public class ExcelUtils {
             String format1 = format.format(parse);
             String[] data={format1,datastor.getSpecialityName(),datastor.getTableName(),errorname,s2,s};
             for (int i=0;i<6;i++){
+                HSSFCell ro = row.createCell(i);
+                ro.setCellValue(data[i]);
+                ro.setCellStyle(headerStyle);
+            }
+
+        }
+
+    }
+
+    //第3次
+    public static void exportExcelthree(HttpServletRequest request, HttpServletResponse response, Map<String, List<ErrorData>> collect, String[] stringsName, String nam, String zy) throws IOException, ParseException {
+        /** 第一步，创建一个Workbook，对应一个Excel文件  */
+        HSSFWorkbook wb = new HSSFWorkbook();
+        LocalDateTime now = LocalDateTime.now();
+
+        String templateName = ""+zy+"-"+nam+"专业"+"-稽核问题数据明细-"+""+now.toLocalDate()+".xls";
+        response.setCharacterEncoding("utf-8");
+//        response.setContentType("application/vnd.ms-excel");
+//        //输出文件名
+//        response.setHeader("Pragma", "no-cache");
+//        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
+//        response.setHeader("Content-Disposition",
+//                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+        response.setContentType("application/octet-stream; charset=utf-8");
+        response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("导出模板.zip", "UTF-8"));
+        ServletOutputStream stream = response.getOutputStream();
+        ZipOutputStream zipOutputStream = new ZipOutputStream(stream);
+
+        if (collect.size()==0){
+            createExcelSheetthree(wb,zy+"-"+nam,new ArrayList<ErrorData>(),stringsName);
+        }else {
+
+        for (Map.Entry<String, List<ErrorData>> colle:collect.entrySet()){
+            if (colle.getValue().size()>60000){
+                int n=0;
+                ArrayList<ErrorData> arrayList= new ArrayList<ErrorData>();
+                for (ErrorData dataStorage:colle.getValue()) {
+                    arrayList.add(dataStorage);
+
+                    if (arrayList.size()==60000){
+                        n++;
+                        String name=zy+"-"+nam+"_"+n;
+                        createExcelSheetthree(wb,name,arrayList,stringsName);
+                        arrayList=new ArrayList<ErrorData>();
+                    }
+                }
+                if (arrayList.size()!=0){
+                    n++;
+                    String name=zy+"-"+nam+"_"+n;
+                    createExcelSheetthree(wb,name,arrayList,stringsName);
+                    arrayList=new ArrayList<ErrorData>();
+                }
+            }else {
+                createExcelSheetthree(wb,colle.getKey(),colle.getValue(),stringsName);
+            }
+        }
+
+        }
+        ZipEntry z = new ZipEntry(templateName);
+
+        zipOutputStream.putNextEntry(z);
+
+        if (null != wb && null != stream) {
+            wb.write(zipOutputStream);
+            zipOutputStream.flush();
+            // 将数据写出去
+            if (zipOutputStream != null) {
+                zipOutputStream.close();
+            }
+            stream.close();
+        }
+    }
+
+    private static void createExcelSheetthree(HSSFWorkbook wb, String sheetName, List<ErrorData> list,String[] stringsName) throws ParseException {
+        /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
+        HSSFSheet sheet = wb.createSheet(sheetName);
+
+        /** 第三步，设置样式以及字体样式*/
+        HSSFCellStyle titleStyle = createTitleCellStyle(wb);
+        HSSFCellStyle headerStyle = createHeadCellStyle(wb);
+        HSSFCellStyle contentStyle = createContentCellStyle(wb);
+
+
+
+        List<ErrorData> list1 = list;
+        if (list1.size()==0){
+            int rowNum = 0;
+            // 创建第一页的第一行，索引从0开始
+            HSSFRow row0 = sheet.createRow(rowNum++);
+            row0.setHeight((short) 800);// 设置行高
+
+            HSSFCell c00 = row0.createCell(0);
+            c00.setCellValue(sheetName+"没有错误数据");
+            c00.setCellStyle(headerStyle);
+            return;
+        }
+        /** 第四步，创建标题 ,合并标题单元格 */
+        // 行号
+        int rowNum = 0;
+        // 创建第一页的第一行，索引从0开始
+        HSSFRow row0 = sheet.createRow(rowNum++);
+        row0.setHeight((short) 800);// 设置行高
+
+        //第一行 数据开始
+
+        for (int i=0;i<stringsName.length;i++){
+            HSSFCell tempCell = row0.createCell(i);
+            tempCell.setCellValue(stringsName[i]);
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        //下面数据
+
+
+//下面行
+        for (ErrorData datastor:list1) {
+            HSSFRow row = sheet.createRow(rowNum++);//创建行
+            row.setHeight((short) 800);// 设置行高
+
+
+            String[] data={datastor.getRuleNo(),datastor.getRuleTagName(),datastor.getRuleDesc(),datastor.getProvince(),datastor.getCity(),datastor.getCounty(),datastor.getIntId(),datastor.getZhLabel(),datastor.getProblemDesc(),datastor.getNum()};
+
+            for (int i=0;i<10;i++){
                 HSSFCell ro = row.createCell(i);
                 ro.setCellValue(data[i]);
                 ro.setCellStyle(headerStyle);

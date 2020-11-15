@@ -85,9 +85,9 @@ public class StatisticRestController {
         List<String> filterlist = this.filterlist;
         boolean flag=false;
         List<String> arrayList= new  ArrayList<String>(specialities);
-        if (arrayList.contains("集客")){//所有集客数据过滤掉
-            arrayList.remove( "集客" );
-        }
+//        if (arrayList.contains("集客")){//所有集客数据过滤掉
+//            arrayList.remove( "集客" );
+//        }
 
         if(!StringUtils.isEmpty(region)){
             for (String filter:filterlist) {
@@ -1101,9 +1101,11 @@ public class StatisticRestController {
         return result;
     }
 
-    public boolean returnSpecificationsDto(String specialityname, HashMap<String, Double> indexCodes, List<SpecificationsDto> result){
-        if (indexCodes.get("v99001")==null){
-            return result.add(SpecificationsDto.builder()
+    public void returnSpecificationsDto(String specialityname, HashMap<String, Double> indexCodes, List<SpecificationsDto> result){
+        if (indexCodes.get("v99999")==null){
+
+        }else if (indexCodes.get("v99001")==null){
+             result.add(SpecificationsDto.builder()
                     .speciality(specialityname)
                     .specialityName(specialityname)
                     .totalValue(indexCodes.get("v99999"))
@@ -1112,7 +1114,7 @@ public class StatisticRestController {
                     .complianceValue(indexCodes.get("v99004"))
                     .build());
         }else if (indexCodes.get("v99002")==null){
-            return result.add(SpecificationsDto.builder()
+             result.add(SpecificationsDto.builder()
                     .speciality(specialityname)
                     .specialityName(specialityname)
                     .totalValue(indexCodes.get("v99999"))
@@ -1121,7 +1123,7 @@ public class StatisticRestController {
                     .complianceValue(indexCodes.get("v99004"))
                     .build());
         }else if (indexCodes.get("v99003")==null){
-            return result.add(SpecificationsDto.builder()
+             result.add(SpecificationsDto.builder()
                     .speciality(specialityname)
                     .specialityName(specialityname)
                     .totalValue(indexCodes.get("v99999"))
@@ -1130,7 +1132,7 @@ public class StatisticRestController {
                     .complianceValue(indexCodes.get("v99004"))
                     .build());
         }else if (indexCodes.get("v99004")==null){
-            return result.add(SpecificationsDto.builder()
+             result.add(SpecificationsDto.builder()
                     .speciality(specialityname)
                     .specialityName(specialityname)
                     .totalValue(indexCodes.get("v99999"))//
@@ -1138,16 +1140,18 @@ public class StatisticRestController {
                     .normativityValue(indexCodes.get("v99002"))
                     .associationValue(indexCodes.get("v99003"))
                     .build());
+        }else {
+            result.add(SpecificationsDto.builder()
+                    .speciality(specialityname)
+                    .specialityName(specialityname)
+                    .totalValue(indexCodes.get("v99999"))
+                    .integrityValue(indexCodes.get("v99001"))
+                    .normativityValue(indexCodes.get("v99002"))
+                    .associationValue(indexCodes.get("v99003"))
+                    .complianceValue(indexCodes.get("v99004"))
+                    .build());
         }
-        return result.add(SpecificationsDto.builder()
-                .speciality(specialityname)
-                .specialityName(specialityname)
-                .totalValue(indexCodes.get("v99999"))
-                .integrityValue(indexCodes.get("v99001"))
-                .normativityValue(indexCodes.get("v99002"))
-                .associationValue(indexCodes.get("v99003"))
-                .complianceValue(indexCodes.get("v99004"))
-                .build());
+
     }
 
     public HashMap<String, Double> getIndexCodes(String specialityname,List<String> taskCodeAll,Integer type,String code){
@@ -1211,7 +1215,7 @@ public class StatisticRestController {
         doubleHashMap.put("v99002",indice99002.size()>0?v99002:null);
         doubleHashMap.put("v99003",indice99003.size()>0?v99003:null);
         doubleHashMap.put("v99004",indice99004.size()>0?v99004:null);
-        doubleHashMap.put("v99999",v99999);
+        doubleHashMap.put("v99999",indice99999.size()>0?v99999:null);
 
         return doubleHashMap;
     }
