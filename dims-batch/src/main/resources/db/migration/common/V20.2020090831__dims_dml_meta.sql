@@ -4193,6 +4193,7 @@ insert into dims_mm_attributetype (ID, NAME, CODE, ENTITYTYPE_ID, COLUMNNAME, DA
 (908000720, '所属地市', 'city_id', 908000014, 'CITY_ID', 'string', null, 'admin', 'admin', null),
 (908000721, '所属区县', 'county_id', 908000014, 'COUNTY_ID', 'string', null, 'admin', 'admin', null);
 
+
 -- 承载网整体指标
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
 (905099001, '承载网数据完整性指标', 'DIMS_CZ_99001', 99001, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
@@ -4201,7 +4202,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (905099999, '承载网数据整体指标', 'DIMS_CZ_99999', 99999, null, '承载网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
 
 -- 承载网完整性核查
- INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "version", "createdate", "creator", "updatedate", "updater", "procname", "threadno", "priority", "memo", "ruledesc") VALUES                
+ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "version", "createdate", "creator", "updatedate", "updater", "procname", "threadno", "priority", "memo", "ruledesc") VALUES
  (905003000, '承载网-设备必填完整性核查', 'DIMS_CZ_01001', 1001, 905000500, '承载网', 5, NULL, NULL, 1, 0, '2020-10-12 15:06:18.790555', 'admin', '2020-10-12 15:06:18.790555', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 905000500, 1, NULL, NULL),
  (905003001, '承载网-板卡必填完整性核查', 'DIMS_CZ_01002', 1002, 905000501, '承载网', 5, NULL, NULL, 1, 0, '2020-10-12 15:06:18.790555', 'admin', '2020-10-12 15:06:18.790555', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 905000501, 1, NULL, NULL),
  (905003002, '承载网-物理端口必填完整性核查', 'DIMS_CZ_01003', 1003, 905000502, '承载网', 5, NULL, NULL, 1, 0, '2020-10-12 15:06:18.790555', 'admin', '2020-10-12 15:06:18.790555', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 905000502, 1, NULL, NULL),
@@ -4211,10 +4212,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
  --承载网-设备规范性核查
  (905003100, '承载网-设备规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02001', 2001, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-设备规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02001%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02001''
+				                                  when dims_col_result is null then ''DIMS_CZ_02001''
 										  					          else dims_col_result||'',DIMS_CZ_02001'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CM_DEVICE_IP t2
@@ -4222,10 +4223,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003101, '承载网-设备规范性核查-设备名称-唯一性核查', 'DIMS_CZ_02002', 2002, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备规范性核查-设备名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备规范性核查-设备名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-设备规范性核查-设备名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02002%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02002''
+				                                  when dims_col_result is null then ''DIMS_CZ_02002''
 										  					          else dims_col_result||'',DIMS_CZ_02002'' end)
 							       where isNotNull(t1.equipment_name) and exists (select 1
                                 from CM_DEVICE_IP t2
@@ -4234,10 +4235,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
  (905003102, '承载网-设备规范性核查-网元类型-字典规范性核查', 'DIMS_CZ_02003', 2003, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),
  (905003103, '承载网-设备规范性核查-IPv4管理地址-IP地址规范性核查', 'DIMS_CZ_02004', 2004, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备规范性核查-IPv4管理地址-IP地址规范性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备规范性核查-IPv4管理地址-IP地址规范性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备规范性核查-IPv4管理地址-IP地址规范性核查''
 			 												            else dims_col_rtName||'',承载网-设备规范性核查-IPv4管理地址-IP地址规范性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02004%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02004''
+				                                  when dims_col_result is null then ''DIMS_CZ_02004''
 										  					          else dims_col_result||'',DIMS_CZ_02004'' end)
 							       where isNotNull(ipv4_management_address) and is_not_valid_ipaddress_mul(ipv4_management_address)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003104, '承载网-设备规范性核查-生命周期状态-字典规范性核查', 'DIMS_CZ_02005', 2005, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),
@@ -4246,10 +4247,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
  (905003107, '承载网-设备规范性核查-网络层次-字典规范性核查', 'DIMS_CZ_02008', 2008, 905000500, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000500, 1, NULL, NULL),
  (905003108, '承载网-板卡规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02009', 2009, 905000501, '承载网', 11, NULL, 'update CM_WARE_IP_BOARD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-板卡规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-板卡规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-板卡规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02009%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02009''
+				                                  when dims_col_result is null then ''DIMS_CZ_02009''
 										  					          else dims_col_result||'',DIMS_CZ_02009'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CM_WARE_IP_BOARD t2
@@ -4257,10 +4258,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000501, 1, NULL, NULL),
  (905003109, '承载网-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_CZ_02010', 2010, 905000501, '承载网', 11, NULL, 'update CM_WARE_IP_BOARD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-板卡规范性核查-板卡名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-板卡规范性核查-板卡名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-板卡规范性核查-板卡名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-板卡规范性核查-板卡名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02010%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02010''
+				                                  when dims_col_result is null then ''DIMS_CZ_02010''
 										  					          else dims_col_result||'',DIMS_CZ_02010'' end)
 							       where isNotNull(t1.board_name) and exists (select 1
                                 from CM_WARE_IP_BOARD t2
@@ -4269,10 +4270,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 
  (905003110, '承载网-物理端口规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02011', 2011, 905000502, '承载网', 11, NULL, 'update CE_PORT_IP_PTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理端口规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理端口规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-物理端口规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02011%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02011''
+				                                  when dims_col_result is null then ''DIMS_CZ_02011''
 										  					          else dims_col_result||'',DIMS_CZ_02011'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CE_PORT_IP_PTP t2
@@ -4280,10 +4281,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000502, 1, NULL, NULL),
  (905003111, '承载网-物理端口规范性核查-物理端口名称-唯一性核查', 'DIMS_CZ_02012', 2012, 905000502, '承载网', 11, NULL, 'update CE_PORT_IP_PTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理端口规范性核查-物理端口名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理端口规范性核查-物理端口名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理端口规范性核查-物理端口名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-物理端口规范性核查-物理端口名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02012%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02012''
+				                                  when dims_col_result is null then ''DIMS_CZ_02012''
 										  					          else dims_col_result||'',DIMS_CZ_02012'' end)
 							       where isNotNull(t1.physical_port_name) and exists (select 1
                                 from CE_PORT_IP_PTP t2
@@ -4294,10 +4295,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
  (905003114, '承载网-物理端口规范性核查-端口类型-字典规范性核查', 'DIMS_CZ_02015', 2015, 905000502, '承载网', 4, NULL, NULL, 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 905000502, 1, NULL, NULL),
  (905003115, '承载网-逻辑端口规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02016', 2016, 905000503, '承载网', 11, NULL, 'update CE_PORT_IP_FTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑端口规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑端口规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-逻辑端口规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02016%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02016''
+				                                  when dims_col_result is null then ''DIMS_CZ_02016''
 										  					          else dims_col_result||'',DIMS_CZ_02016'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CE_PORT_IP_FTP t2
@@ -4305,10 +4306,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
  (905003116, '承载网-逻辑端口规范性核查-逻辑端口名称-唯一性核查', 'DIMS_CZ_02017', 2017, 905000503, '承载网', 11, NULL, 'update CE_PORT_IP_FTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑端口规范性核查-逻辑端口名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑端口规范性核查-逻辑端口名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑端口规范性核查-逻辑端口名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-逻辑端口规范性核查-逻辑端口名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02017%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02017''
+				                                  when dims_col_result is null then ''DIMS_CZ_02017''
 										  					          else dims_col_result||'',DIMS_CZ_02017'' end)
 							       where isNotNull(t1.logical_port_name) and exists (select 1
                                 from CE_PORT_IP_FTP t2
@@ -4316,10 +4317,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.logical_port_name=t1.logical_port_name)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
  (905003117, '承载网-物理链路规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02018', 2018, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-物理链路规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02018%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02018''
+				                                  when dims_col_result is null then ''DIMS_CZ_02018''
 										  					          else dims_col_result||'',DIMS_CZ_02018'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CE_LINK_PHYSICS t2
@@ -4327,10 +4328,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003118, '承载网-物理链路规范性核查-物理链路名称-唯一性核查', 'DIMS_CZ_02019', 2019, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路规范性核查-物理链路名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路规范性核查-物理链路名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路规范性核查-物理链路名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-物理链路规范性核查-物理链路名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02019%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02019''
+				                                  when dims_col_result is null then ''DIMS_CZ_02019''
 										  					          else dims_col_result||'',DIMS_CZ_02019'' end)
 							       where isNotNull(t1.physical_link_name) and exists (select 1
                                 from CE_LINK_PHYSICS t2
@@ -4338,10 +4339,10 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.physical_link_name=t1.physical_link_name)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003119, '承载网-逻辑链路规范性核查-资源标识-唯一性核查', 'DIMS_CZ_02020', 2020, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-逻辑链路规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02020%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02020''
+				                                  when dims_col_result is null then ''DIMS_CZ_02020''
 										  					          else dims_col_result||'',DIMS_CZ_02020'' end)
 							       where isNotNull(t1.int_id) and exists (select 1
                                 from CE_LINK_IP_LOGIC t2
@@ -4349,222 +4350,222 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003120, '承载网-逻辑链路规范性核查-逻辑链路名称-唯一性核查', 'DIMS_CZ_02021', 2021, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路规范性核查-逻辑链路名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路规范性核查-逻辑链路名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路规范性核查-逻辑链路名称-唯一性核查''
 			 												            else dims_col_rtName||'',承载网-逻辑链路规范性核查-逻辑链路名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_02021%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_02021''
+				                                  when dims_col_result is null then ''DIMS_CZ_02021''
 										  					          else dims_col_result||'',DIMS_CZ_02021'' end)
 							       where isNotNull(t1.logic_link_name) and exists (select 1
                                 from CE_LINK_IP_LOGIC t2
                                where t2.ctid <> t1.ctid
                                  and t2.logic_link_name=t1.logic_link_name)', 2, 0, '2020-10-12 15:08:38.918522', 'admin', '2020-10-12 15:08:38.918522', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
- -- 承载网关联性核查 
+ -- 承载网关联性核查
  (905003200, '承载网-设备关联性核查-所属机架位置', 'DIMS_CZ_03001', 3001, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备关联性核查-所属机架位置%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备关联性核查-所属机架位置''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备关联性核查-所属机架位置''
 			 												            else dims_col_rtName||'',承载网-设备关联性核查-所属机架位置'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03001%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03001''
+				                                  when dims_col_result is null then ''DIMS_CZ_03001''
 										  					          else dims_col_result||'',DIMS_CZ_03001'' end)
-							
+
 							  where isNotNull(t1.rackpos_id) and not exists(select 1 from RM_AREA_RACKPOS t2 where isNotNull(t2.int_id) and t1.rackpos_id=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003201, '承载网-设备关联性核查-所属地市', 'DIMS_CZ_03002', 3002, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备关联性核查-所属地市''
 			 												            else dims_col_rtName||'',承载网-设备关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03002%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03002''
+				                                  when dims_col_result is null then ''DIMS_CZ_03002''
 										  					          else dims_col_result||'',DIMS_CZ_03002'' end)
-							
+
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003202, '承载网-设备关联性核查-所属省份', 'DIMS_CZ_03003', 3003, 905000500, '承载网', 11, NULL, 'update CM_DEVICE_IP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-设备关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-设备关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-设备关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-设备关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03003%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03003''
+				                                  when dims_col_result is null then ''DIMS_CZ_03003''
 										  					          else dims_col_result||'',DIMS_CZ_03003'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000500, 1, NULL, NULL),
  (905003203, '承载网-板卡关联性核查-所属设备', 'DIMS_CZ_03004', 3004, 905000501, '承载网', 11, NULL, 'update CM_WARE_IP_BOARD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-板卡关联性核查-所属设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-板卡关联性核查-所属设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-板卡关联性核查-所属设备''
 			 												            else dims_col_rtName||'',承载网-板卡关联性核查-所属设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03004%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03004''
+				                                  when dims_col_result is null then ''DIMS_CZ_03004''
 										  					          else dims_col_result||'',DIMS_CZ_03004'' end)
-							
+
 							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000501, 1, NULL, NULL),
  (905003204, '承载网-板卡关联性核查-所属省份', 'DIMS_CZ_03005', 3005, 905000501, '承载网', 11, NULL, 'update CM_WARE_IP_BOARD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-板卡关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-板卡关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-板卡关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-板卡关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03005%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03005''
+				                                  when dims_col_result is null then ''DIMS_CZ_03005''
 										  					          else dims_col_result||'',DIMS_CZ_03005'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000501, 1, NULL, NULL),
  (905003205, '承载网-物理端口关联性核查-所属设备', 'DIMS_CZ_03006', 3006, 905000502, '承载网', 11, NULL, 'update CE_PORT_IP_PTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理端口关联性核查-所属设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理端口关联性核查-所属设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理端口关联性核查-所属设备''
 			 												            else dims_col_rtName||'',承载网-物理端口关联性核查-所属设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03006%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03006''
+				                                  when dims_col_result is null then ''DIMS_CZ_03006''
 										  					          else dims_col_result||'',DIMS_CZ_03006'' end)
-							
+
 							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000502, 1, NULL, NULL),
  (905003206, '承载网-物理端口关联性核查-所属省份', 'DIMS_CZ_03007', 3007, 905000502, '承载网', 11, NULL, 'update CE_PORT_IP_PTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理端口关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理端口关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理端口关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-物理端口关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03007%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03007''
+				                                  when dims_col_result is null then ''DIMS_CZ_03007''
 										  					          else dims_col_result||'',DIMS_CZ_03007'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000502, 1, NULL, NULL),
  (905003207, '承载网-逻辑端口关联性核查-所属设备', 'DIMS_CZ_03008', 3008, 905000503, '承载网', 11, NULL, 'update CE_PORT_IP_FTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑端口关联性核查-所属设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑端口关联性核查-所属设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑端口关联性核查-所属设备''
 			 												            else dims_col_rtName||'',承载网-逻辑端口关联性核查-所属设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03008%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03008''
+				                                  when dims_col_result is null then ''DIMS_CZ_03008''
 										  					          else dims_col_result||'',DIMS_CZ_03008'' end)
-							
+
 							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
  (905003208, '承载网-逻辑端口关联性核查-所属省份', 'DIMS_CZ_03009', 3009, 905000503, '承载网', 11, NULL, 'update CE_PORT_IP_FTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑端口关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑端口关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑端口关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-逻辑端口关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03009%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03009''
+				                                  when dims_col_result is null then ''DIMS_CZ_03009''
 										  					          else dims_col_result||'',DIMS_CZ_03009'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
  (905003209, '承载网-物理链路关联性核查-A端设备', 'DIMS_CZ_03010', 3010, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路关联性核查-A端设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路关联性核查-A端设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路关联性核查-A端设备''
 			 												            else dims_col_rtName||'',承载网-物理链路关联性核查-A端设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03010%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03010''
+				                                  when dims_col_result is null then ''DIMS_CZ_03010''
 										  					          else dims_col_result||'',DIMS_CZ_03010'' end)
-							
-							  where isNotNull(t1.a_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.a_equipment=t2.int_id) and not exists(select 1 from 
-VOLTE_AS t3 where isNotNull(t3.int_id) and t1.a_equipment=t3.int_id) and not exists(select 1 from 
-VOLTE_PSBC t4 where isNotNull(t4.int_id) and t1.a_equipment=t4.int_id) and not exists(select 1 from 
-VOLTE_ISBG t5 where isNotNull(t5.int_id) and t1.a_equipment=t5.int_id) and not exists(select 1 from 
-VOLTE_SCSCF t6 where isNotNull(t6.int_id) and t1.a_equipment=t6.int_id) and not exists(select 1 from 
-VOLTE_MGCF t7 where isNotNull(t7.int_id) and t1.a_equipment=t7.int_id) and not exists(select 1 from 
-IMS_IM_MGW t8 where isNotNull(t8.int_id) and t1.a_equipment=t8.int_id) and not exists(select 1 from 
-IMS_DNS_ENUM t9 where isNotNull(t9.int_id) and t1.a_equipment=t9.int_id) and not exists(select 1 from 
-CS_MSS t10 where isNotNull(t10.int_id) and t1.a_equipment=t10.int_id) and not exists(select 1 from 
-CS_MGW t11 where isNotNull(t11.int_id) and t1.a_equipment=t11.int_id) and not exists(select 1 from 
-CS_STP t12 where isNotNull(t12.int_id) and t1.a_equipment=t12.int_id) and not exists(select 1 from 
-CS_SSA t13 where isNotNull(t13.int_id) and t1.a_equipment=t13.int_id) and not exists(select 1 from 
-PS_MME t14 where isNotNull(t14.int_id) and t1.a_equipment=t14.int_id) and not exists(select 1 from 
-PS_SAE_GW t15 where isNotNull(t15.int_id) and t1.a_equipment=t15.int_id) and not exists(select 1 from 
-PS_PCRF t16 where isNotNull(t16.int_id) and t1.a_equipment=t16.int_id) and not exists(select 1 from 
-PS_SPR t17 where isNotNull(t17.int_id) and t1.a_equipment=t17.int_id) and not exists(select 1 from 
-PS_DRA t18 where isNotNull(t18.int_id) and t1.a_equipment=t18.int_id) and not exists(select 1 from 
-HSS_CENTRALIZED t19 where isNotNull(t19.int_id) and t1.a_equipment=t19.int_id) and not exists(select 1 from 
-HSS_DISTRIBUTED t20 where isNotNull(t20.int_id) and t1.a_equipment=t20.int_id) and not exists(select 1 from 
-HSS_FE t21 where isNotNull(t21.int_id) and t1.a_equipment=t21.int_id) and not exists(select 1 from 
-HSS_BE t22 where isNotNull(t22.int_id) and t1.a_equipment=t22.int_id) and not exists(select 1 from 
+
+							  where isNotNull(t1.a_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.a_equipment=t2.int_id) and not exists(select 1 from
+VOLTE_AS t3 where isNotNull(t3.int_id) and t1.a_equipment=t3.int_id) and not exists(select 1 from
+VOLTE_PSBC t4 where isNotNull(t4.int_id) and t1.a_equipment=t4.int_id) and not exists(select 1 from
+VOLTE_ISBG t5 where isNotNull(t5.int_id) and t1.a_equipment=t5.int_id) and not exists(select 1 from
+VOLTE_SCSCF t6 where isNotNull(t6.int_id) and t1.a_equipment=t6.int_id) and not exists(select 1 from
+VOLTE_MGCF t7 where isNotNull(t7.int_id) and t1.a_equipment=t7.int_id) and not exists(select 1 from
+IMS_IM_MGW t8 where isNotNull(t8.int_id) and t1.a_equipment=t8.int_id) and not exists(select 1 from
+IMS_DNS_ENUM t9 where isNotNull(t9.int_id) and t1.a_equipment=t9.int_id) and not exists(select 1 from
+CS_MSS t10 where isNotNull(t10.int_id) and t1.a_equipment=t10.int_id) and not exists(select 1 from
+CS_MGW t11 where isNotNull(t11.int_id) and t1.a_equipment=t11.int_id) and not exists(select 1 from
+CS_STP t12 where isNotNull(t12.int_id) and t1.a_equipment=t12.int_id) and not exists(select 1 from
+CS_SSA t13 where isNotNull(t13.int_id) and t1.a_equipment=t13.int_id) and not exists(select 1 from
+PS_MME t14 where isNotNull(t14.int_id) and t1.a_equipment=t14.int_id) and not exists(select 1 from
+PS_SAE_GW t15 where isNotNull(t15.int_id) and t1.a_equipment=t15.int_id) and not exists(select 1 from
+PS_PCRF t16 where isNotNull(t16.int_id) and t1.a_equipment=t16.int_id) and not exists(select 1 from
+PS_SPR t17 where isNotNull(t17.int_id) and t1.a_equipment=t17.int_id) and not exists(select 1 from
+PS_DRA t18 where isNotNull(t18.int_id) and t1.a_equipment=t18.int_id) and not exists(select 1 from
+HSS_CENTRALIZED t19 where isNotNull(t19.int_id) and t1.a_equipment=t19.int_id) and not exists(select 1 from
+HSS_DISTRIBUTED t20 where isNotNull(t20.int_id) and t1.a_equipment=t20.int_id) and not exists(select 1 from
+HSS_FE t21 where isNotNull(t21.int_id) and t1.a_equipment=t21.int_id) and not exists(select 1 from
+HSS_BE t22 where isNotNull(t22.int_id) and t1.a_equipment=t22.int_id) and not exists(select 1 from
 HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.a_equipment=t23.int_id)', 2, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003210, '承载网-物理链路关联性核查-A端端口', 'DIMS_CZ_03011', 3011, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路关联性核查-A端端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路关联性核查-A端端口''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路关联性核查-A端端口''
 			 												            else dims_col_rtName||'',承载网-物理链路关联性核查-A端端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03011%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03011''
+				                                  when dims_col_result is null then ''DIMS_CZ_03011''
 										  					          else dims_col_result||'',DIMS_CZ_03011'' end)
-							
+
 							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_PTP t2 where isNotNull(t2.physical_port_name) and t1.a_port=t2.physical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003211, '承载网-物理链路关联性核查-Z端设备', 'DIMS_CZ_03012', 3012, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路关联性核查-Z端设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路关联性核查-Z端设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路关联性核查-Z端设备''
 			 												            else dims_col_rtName||'',承载网-物理链路关联性核查-Z端设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03012%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03012''
+				                                  when dims_col_result is null then ''DIMS_CZ_03012''
 										  					          else dims_col_result||'',DIMS_CZ_03012'' end)
-							
-							  where isNotNull(t1.z_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.z_equipment=t2.int_id) and not exists(select 1 from 
-VOLTE_AS t3 where isNotNull(t3.int_id) and t1.z_equipment=t3.int_id) and not exists(select 1 from 
-VOLTE_PSBC t4 where isNotNull(t4.int_id) and t1.z_equipment=t4.int_id) and not exists(select 1 from 
-VOLTE_ISBG t5 where isNotNull(t5.int_id) and t1.z_equipment=t5.int_id) and not exists(select 1 from 
-VOLTE_SCSCF t6 where isNotNull(t6.int_id) and t1.z_equipment=t6.int_id) and not exists(select 1 from 
-VOLTE_MGCF t7 where isNotNull(t7.int_id) and t1.z_equipment=t7.int_id) and not exists(select 1 from 
-IMS_IM_MGW t8 where isNotNull(t8.int_id) and t1.z_equipment=t8.int_id) and not exists(select 1 from 
-IMS_DNS_ENUM t9 where isNotNull(t9.int_id) and t1.z_equipment=t9.int_id) and not exists(select 1 from 
-CS_MSS t10 where isNotNull(t10.int_id) and t1.z_equipment=t10.int_id) and not exists(select 1 from 
-CS_MGW t11 where isNotNull(t11.int_id) and t1.z_equipment=t11.int_id) and not exists(select 1 from 
-CS_STP t12 where isNotNull(t12.int_id) and t1.z_equipment=t12.int_id) and not exists(select 1 from 
-CS_SSA t13 where isNotNull(t13.int_id) and t1.z_equipment=t13.int_id) and not exists(select 1 from 
-PS_MME t14 where isNotNull(t14.int_id) and t1.z_equipment=t14.int_id) and not exists(select 1 from 
-PS_SAE_GW t15 where isNotNull(t15.int_id) and t1.z_equipment=t15.int_id) and not exists(select 1 from 
-PS_PCRF t16 where isNotNull(t16.int_id) and t1.z_equipment=t16.int_id) and not exists(select 1 from 
-PS_SPR t17 where isNotNull(t17.int_id) and t1.z_equipment=t17.int_id) and not exists(select 1 from 
-PS_DRA t18 where isNotNull(t18.int_id) and t1.z_equipment=t18.int_id) and not exists(select 1 from 
-HSS_CENTRALIZED t19 where isNotNull(t19.int_id) and t1.z_equipment=t19.int_id) and not exists(select 1 from 
-HSS_DISTRIBUTED t20 where isNotNull(t20.int_id) and t1.z_equipment=t20.int_id) and not exists(select 1 from 
-HSS_FE t21 where isNotNull(t21.int_id) and t1.z_equipment=t21.int_id) and not exists(select 1 from 
-HSS_BE t22 where isNotNull(t22.int_id) and t1.z_equipment=t22.int_id) and not exists(select 1 from 
+
+							  where isNotNull(t1.z_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.z_equipment=t2.int_id) and not exists(select 1 from
+VOLTE_AS t3 where isNotNull(t3.int_id) and t1.z_equipment=t3.int_id) and not exists(select 1 from
+VOLTE_PSBC t4 where isNotNull(t4.int_id) and t1.z_equipment=t4.int_id) and not exists(select 1 from
+VOLTE_ISBG t5 where isNotNull(t5.int_id) and t1.z_equipment=t5.int_id) and not exists(select 1 from
+VOLTE_SCSCF t6 where isNotNull(t6.int_id) and t1.z_equipment=t6.int_id) and not exists(select 1 from
+VOLTE_MGCF t7 where isNotNull(t7.int_id) and t1.z_equipment=t7.int_id) and not exists(select 1 from
+IMS_IM_MGW t8 where isNotNull(t8.int_id) and t1.z_equipment=t8.int_id) and not exists(select 1 from
+IMS_DNS_ENUM t9 where isNotNull(t9.int_id) and t1.z_equipment=t9.int_id) and not exists(select 1 from
+CS_MSS t10 where isNotNull(t10.int_id) and t1.z_equipment=t10.int_id) and not exists(select 1 from
+CS_MGW t11 where isNotNull(t11.int_id) and t1.z_equipment=t11.int_id) and not exists(select 1 from
+CS_STP t12 where isNotNull(t12.int_id) and t1.z_equipment=t12.int_id) and not exists(select 1 from
+CS_SSA t13 where isNotNull(t13.int_id) and t1.z_equipment=t13.int_id) and not exists(select 1 from
+PS_MME t14 where isNotNull(t14.int_id) and t1.z_equipment=t14.int_id) and not exists(select 1 from
+PS_SAE_GW t15 where isNotNull(t15.int_id) and t1.z_equipment=t15.int_id) and not exists(select 1 from
+PS_PCRF t16 where isNotNull(t16.int_id) and t1.z_equipment=t16.int_id) and not exists(select 1 from
+PS_SPR t17 where isNotNull(t17.int_id) and t1.z_equipment=t17.int_id) and not exists(select 1 from
+PS_DRA t18 where isNotNull(t18.int_id) and t1.z_equipment=t18.int_id) and not exists(select 1 from
+HSS_CENTRALIZED t19 where isNotNull(t19.int_id) and t1.z_equipment=t19.int_id) and not exists(select 1 from
+HSS_DISTRIBUTED t20 where isNotNull(t20.int_id) and t1.z_equipment=t20.int_id) and not exists(select 1 from
+HSS_FE t21 where isNotNull(t21.int_id) and t1.z_equipment=t21.int_id) and not exists(select 1 from
+HSS_BE t22 where isNotNull(t22.int_id) and t1.z_equipment=t22.int_id) and not exists(select 1 from
 HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.z_equipment=t23.int_id)', 2, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003212, '承载网-物理链路关联性核查-所属省份', 'DIMS_CZ_03013', 3013, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-物理链路关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-物理链路关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03013%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03013''
+				                                  when dims_col_result is null then ''DIMS_CZ_03013''
 										  					          else dims_col_result||'',DIMS_CZ_03013'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003213, '承载网-逻辑链路关联性核查-A端设备', 'DIMS_CZ_03014', 3014, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-A端设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路关联性核查-A端设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-A端设备''
 			 												            else dims_col_rtName||'',承载网-逻辑链路关联性核查-A端设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03014%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03014''
+				                                  when dims_col_result is null then ''DIMS_CZ_03014''
 										  					          else dims_col_result||'',DIMS_CZ_03014'' end)
-							
+
 							  where isNotNull(t1.a_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.a_equipment=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003214, '承载网-逻辑链路关联性核查-A端端口', 'DIMS_CZ_03015', 3015, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-A端端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路关联性核查-A端端口''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-A端端口''
 			 												            else dims_col_rtName||'',承载网-逻辑链路关联性核查-A端端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03015%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03015''
+				                                  when dims_col_result is null then ''DIMS_CZ_03015''
 										  					          else dims_col_result||'',DIMS_CZ_03015'' end)
-							
+
 							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.logical_port_name) and t1.a_port=t2.logical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003215, '承载网-逻辑链路关联性核查-Z端设备', 'DIMS_CZ_03016', 3016, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-Z端设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路关联性核查-Z端设备''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-Z端设备''
 			 												            else dims_col_rtName||'',承载网-逻辑链路关联性核查-Z端设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03016%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03016''
+				                                  when dims_col_result is null then ''DIMS_CZ_03016''
 										  					          else dims_col_result||'',DIMS_CZ_03016'' end)
-							
+
 							  where isNotNull(t1.z_equipment) and not exists(select 1 from meiyou表 t2 where isNotNull(t2.int_id) and t1.z_equipment=t2.int_id)', 2, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003216, '承载网-逻辑链路关联性核查-Z端端口', 'DIMS_CZ_03017', 3017, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-Z端端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路关联性核查-Z端端口''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-Z端端口''
 			 												            else dims_col_rtName||'',承载网-逻辑链路关联性核查-Z端端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03017%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03017''
+				                                  when dims_col_result is null then ''DIMS_CZ_03017''
 										  					          else dims_col_result||'',DIMS_CZ_03017'' end)
-							
+
 							  where isNotNull(t1.z_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.logical_port_name) and t1.z_port=t2.logical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003217, '承载网-逻辑链路关联性核查-所属省份', 'DIMS_CZ_03018', 3018, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''承载网-逻辑链路关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-所属省份''
 			 												            else dims_col_rtName||'',承载网-逻辑链路关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03018%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_CZ_03018''
+				                                  when dims_col_result is null then ''DIMS_CZ_03018''
 										  					          else dims_col_result||'',DIMS_CZ_03018'' end)
-							
+
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL);
 
-INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES 
+INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES
  (905002001, '承载网-设备必填完整性核查.资源标识', 'CM_DEVICE_IP.int_id', 905003000, 905000600, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 15:06:31.911362', 'admin', '2020-10-12 15:06:31.911362', 'admin', NULL),
  (905002002, '承载网-设备必填完整性核查.设备名称', 'CM_DEVICE_IP.equipment_name', 905003000, 905000601, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 15:06:31.911362', 'admin', '2020-10-12 15:06:31.911362', 'admin', NULL),
  (905002003, '承载网-设备必填完整性核查.设备型号', 'CM_DEVICE_IP.equipment_model', 905003000, 905000602, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 15:06:31.911362', 'admin', '2020-10-12 15:06:31.911362', 'admin', NULL),
@@ -4616,7 +4617,7 @@ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id",
  (905002049, '承载网-逻辑链路必填完整性核查.所属省份', 'CE_LINK_IP_LOGIC.province_id', 905003005, 905000684, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 15:06:31.911362', 'admin', '2020-10-12 15:06:31.911362', 'admin', NULL);
 
 -- dictRule
- INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES 
+ INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") VALUES
  (905002100, '承载网-设备规范性核查-网元类型-字典规范性核查', 'network_element_type', 905003102, 905000606, 1, NULL, '网元类型network_element_type', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
  (905002101, '承载网-设备规范性核查-生命周期状态-字典规范性核查', 'lifecycle_status', 905003104, 905000610, 1, NULL, '生命周期状态lifecycle_status', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
  (905002102, '承载网-设备规范性核查-所属业务系统-字典规范性核查', 'business_system', 905003105, 905000613, 1, NULL, '所属业务系统business_system', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-12 17:11:41.964236', 'admin', '2020-10-12 17:11:41.964236', 'admin', NULL),
@@ -4686,7 +4687,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (908099999, '家客数据整体指标', 'DIMS_JIAKE_99999', 99999, null, '家客', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
 
 
-INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "version", "createdate", "creator", "updatedate", "updater", "procname", "threadno", "priority", "memo", "ruledesc") VALUES 
+INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "specialityname", "type", "amountsql", "errorsql", "isenable", "version", "createdate", "creator", "updatedate", "updater", "procname", "threadno", "priority", "memo", "ruledesc") VALUES
  (908003000, '家客-家庭客户实例必填完整性核查', 'DIMS_JIAKE_01001', 1001, 908000001, '家客', 5, NULL, NULL, 1, 0, '2020-10-11 19:44:52.215695', 'admin', '2020-10-11 19:44:52.215695', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000001, 1, NULL, NULL),
  (908003001, '家客-宽带业务信息必填完整性核查', 'DIMS_JIAKE_01002', 1002, 908000002, '家客', 5, NULL, NULL, 1, 0, '2020-10-11 19:44:52.215695', 'admin', '2020-10-11 19:44:52.215695', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000002, 1, NULL, NULL),
  (908003002, '家客-IMS业务信息必填完整性核查', 'DIMS_JIAKE_01003', 1003, 908000003, '家客', 5, NULL, NULL, 1, 0, '2020-10-11 19:44:52.215695', 'admin', '2020-10-11 19:44:52.215695', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000003, 1, NULL, NULL),
@@ -4703,191 +4704,191 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
  (908003013, '家客-分纤箱端子必填完整性核查', 'DIMS_JIAKE_01014', 1014, 908000014, '家客', 5, NULL, NULL, 1, 0, '2020-10-11 19:44:52.215695', 'admin', '2020-10-11 19:44:52.215695', 'admin', 'PROC_DH_CHECKONEINTEGRALITYINDEX', 908000014, 1, NULL, NULL),
  (908003100, '家客-家庭客户实例规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02001', 2001, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例规范性核查-资源标识-唯一性核查''
 			 								  else dims_col_rtName||'',家客-家庭客户实例规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02001%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02001''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02001''
 										  		  else dims_col_result||'',DIMS_JIAKE_02001'' end)
-							       where isNotNull(t1.int_id) and exists (select 1 from CM_HOME_CUST_BUSINESS t2 
+							       where isNotNull(t1.int_id) and exists (select 1 from CM_HOME_CUST_BUSINESS t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003101, '家客-宽带业务信息规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02002', 2002, 908000002, '家客', 11, NULL, 'update CE_BROADBAND_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-宽带业务信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-宽带业务信息规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-宽带业务信息规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-宽带业务信息规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02002%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02002''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02002''
 										  					          else dims_col_result||'',DIMS_JIAKE_02002'' end)
-							       where isNotNull(t1.int_id) and exists (select 1 from CE_BROADBAND_BUSINESS t2 where t2.ctid <> t1.ctid 
+							       where isNotNull(t1.int_id) and exists (select 1 from CE_BROADBAND_BUSINESS t2 where t2.ctid <> t1.ctid
                                  and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, NULL, NULL),
  (908003102, '家客-IMS业务信息规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02003', 2003, 908000003, '家客', 11, NULL, 'update CE_IMS_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-IMS业务信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-IMS业务信息规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-IMS业务信息规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-IMS业务信息规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02003%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02003''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02003''
 										  					          else dims_col_result||'',DIMS_JIAKE_02003'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CE_IMS_BUSINESS t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, NULL, NULL),
  (908003103, '家客-互联网电视业务信息规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02004', 2004, 908000004, '家客', 11, NULL, 'update CE_TV_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-互联网电视业务信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-互联网电视业务信息规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-互联网电视业务信息规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-互联网电视业务信息规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02004%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02004''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02004''
 										  					          else dims_col_result||'',DIMS_JIAKE_02004'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CE_TV_BUSINESS t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, NULL, NULL),
  (908003104, '家客-小区信息表规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02005', 2005, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息表规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息表规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息表规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-小区信息表规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02005%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02005''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02005''
 										  					          else dims_col_result||'',DIMS_JIAKE_02005'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from RM_AREA_RESIDENTIAL t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003105, '家客-小区信息表规范性核查-小区名称-唯一性核查', 'DIMS_JIAKE_02006', 2006, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息表规范性核查-小区名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息表规范性核查-小区名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息表规范性核查-小区名称-唯一性核查''
 			 												            else dims_col_rtName||'',家客-小区信息表规范性核查-小区名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02006%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02006''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02006''
 										  					          else dims_col_result||'',DIMS_JIAKE_02006'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from RM_AREA_RESIDENTIAL t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003106, '家客-家客小区网格规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02007', 2007, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-家客小区网格规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02007%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02007''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02007''
 										  					          else dims_col_result||'',DIMS_JIAKE_02007'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from RM_GRID t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003107, '家客-家客小区网格规范性核查-网格名称（选配字段）-唯一性核查', 'DIMS_JIAKE_02008', 2008, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格规范性核查-网格名称（选配字段）-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格规范性核查-网格名称（选配字段）-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格规范性核查-网格名称（选配字段）-唯一性核查''
 			 									 else dims_col_rtName||'',家客-家客小区网格规范性核查-网格名称（选配字段）-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02008%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02008''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02008''
 										  					          else dims_col_result||'',DIMS_JIAKE_02008'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from RM_GRID t2
 								   where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003108, '家客-家客小区网格规范性核查-小区名称-唯一性核查', 'DIMS_JIAKE_02009', 2009, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格规范性核查-小区名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格规范性核查-小区名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格规范性核查-小区名称-唯一性核查''
 			 									else dims_col_rtName||'',家客-家客小区网格规范性核查-小区名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02009%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02009''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02009''
 										  		  else dims_col_result||'',DIMS_JIAKE_02009'' end)
 							       where isNotNull(t1.related_area) and exists (select 1 from RM_GRID t2
                                where t2.ctid <> t1.ctid and t2.related_area=t1.related_area)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003109, '家客-资源覆盖信息表规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02010', 2010, 908000007, '家客', 11, NULL, 'update CUST_RELATION_RESOURCES t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-资源覆盖信息表规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-资源覆盖信息表规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-资源覆盖信息表规范性核查-资源标识-唯一性核查''
 			 								  else dims_col_rtName||'',家客-资源覆盖信息表规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02010%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02010''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02010''
 										  		else dims_col_result||'',DIMS_JIAKE_02010'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CUST_RELATION_RESOURCES t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, NULL, NULL),
  (908003110, '家客-ONU规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02011', 2011, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU规范性核查-资源标识-唯一性核查''
 			 								  else dims_col_rtName||'',家客-ONU规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02011%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02011''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02011''
 										  		else dims_col_result||'',DIMS_JIAKE_02011'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CM_DEVICE_ONU t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003111, '家客-ONU规范性核查-ONU名称-唯一性核查', 'DIMS_JIAKE_02012', 2012, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU规范性核查-ONU名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU规范性核查-ONU名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU规范性核查-ONU名称-唯一性核查''
 			 								  else dims_col_rtName||'',家客-ONU规范性核查-ONU名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02012%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02012''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02012''
 										  					          else dims_col_result||'',DIMS_JIAKE_02012'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from CM_DEVICE_ONU t2
                                where t2.ctid <> t1.ctid
                                  and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003112, '家客-ONU端口规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02013', 2013, 908000009, '家客', 11, NULL, 'update CM_ONU_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU端口规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU端口规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-ONU端口规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02013%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02013''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02013''
 										  					          else dims_col_result||'',DIMS_JIAKE_02013'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CM_ONU_PORT t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, NULL, NULL),
  (908003113, '家客-分光器规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02014', 2014, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-分光器规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02014%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02014''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02014''
 										  					          else dims_col_result||'',DIMS_JIAKE_02014'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CM_DEVICE_OBD t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003114, '家客-分光器规范性核查-分光器名称-唯一性核查', 'DIMS_JIAKE_02015', 2015, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器规范性核查-分光器名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器规范性核查-分光器名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器规范性核查-分光器名称-唯一性核查''
 			 												            else dims_col_rtName||'',家客-分光器规范性核查-分光器名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02015%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02015''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02015''
 										  					          else dims_col_result||'',DIMS_JIAKE_02015'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from CM_DEVICE_OBD t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003115, '家客-分光器端口规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02016', 2016, 908000011, '家客', 11, NULL, 'update CM_OBD_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器端口规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器端口规范性核查-资源标识-唯一性核查''
 			 									 else dims_col_rtName||'',家客-分光器端口规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02016%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02016''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02016''
 										  			else dims_col_result||'',DIMS_JIAKE_02016'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CM_OBD_PORT t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, NULL, NULL),
  (908003116, '家客-多媒体箱规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02017', 2017, 908000012, '家客', 11, NULL, 'update CE_DEVICE_DMT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-多媒体箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-多媒体箱规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-多媒体箱规范性核查-资源标识-唯一性核查''
 			 									else dims_col_rtName||'',家客-多媒体箱规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02017%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02017''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02017''
 										  		  else dims_col_result||'',DIMS_JIAKE_02017'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CE_DEVICE_DMT t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
  (908003117, '家客-多媒体箱规范性核查-多媒体箱名称-唯一性核查', 'DIMS_JIAKE_02018', 2018, 908000012, '家客', 11, NULL, 'update CE_DEVICE_DMT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-多媒体箱规范性核查-多媒体箱名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-多媒体箱规范性核查-多媒体箱名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-多媒体箱规范性核查-多媒体箱名称-唯一性核查''
 			 												            else dims_col_rtName||'',家客-多媒体箱规范性核查-多媒体箱名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02018%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02018''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02018''
 										  					          else dims_col_result||'',DIMS_JIAKE_02018'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from CE_DEVICE_DMT t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
  (908003118, '家客-分纤箱规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02019', 2019, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱规范性核查-资源标识-唯一性核查''
 			 								else dims_col_rtName||'',家客-分纤箱规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02019%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02019''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02019''
 										  			else dims_col_result||'',DIMS_JIAKE_02019'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from JIAKE_CE_DEVICE_GF t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003119, '家客-分纤箱规范性核查-分纤箱名称-唯一性核查', 'DIMS_JIAKE_02020', 2020, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱规范性核查-分纤箱名称-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱规范性核查-分纤箱名称-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱规范性核查-分纤箱名称-唯一性核查''
 			 									 else dims_col_rtName||'',家客-分纤箱规范性核查-分纤箱名称-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02020%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02020''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02020''
 										  			else dims_col_result||'',DIMS_JIAKE_02020'' end)
 							       where isNotNull(t1.zh_label) and exists (select 1 from JIAKE_CE_DEVICE_GF t2
                                where t2.ctid <> t1.ctid and t2.zh_label=t1.zh_label)', 2, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003120, '家客-分纤箱端子规范性核查-资源标识-唯一性核查', 'DIMS_JIAKE_02021', 2021, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱端子规范性核查-资源标识-唯一性核查''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱端子规范性核查-资源标识-唯一性核查''
 			 												            else dims_col_rtName||'',家客-分纤箱端子规范性核查-资源标识-唯一性核查'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_02021%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_02021''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_02021''
 										  					          else dims_col_result||'',DIMS_JIAKE_02021'' end)
 							       where isNotNull(t1.int_id) and exists (select 1 from CM_GF_PORT t2
                                where t2.ctid <> t1.ctid and t2.int_id=t1.int_id)', 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
@@ -4910,510 +4911,510 @@ INSERT INTO dims_idx_index ("id", "name", "code", "orderby", "entitytype_id", "s
  (908003137, '家客-分纤箱端子规范性核查-端子状态-字典规范性核查', 'DIMS_JIAKE_02038', 2038, 908000014, '家客', 4, NULL, NULL, 1, 0, '2020-10-11 20:20:25.685681', 'admin', '2020-10-11 20:20:25.685681', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 908000014, 1, NULL, NULL),
  (908003200, '家客-家庭客户实例关联性核查-客户接入地址', 'DIMS_JIAKE_03001', 3001, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-客户接入地址%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-客户接入地址''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-客户接入地址''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-客户接入地址'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03001%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03001''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03001''
 										  					          else dims_col_result||'',DIMS_JIAKE_03001'' end)
 							  where isNotNull(t1.related_standard_address) and not exists(select 1 from meiyou表 t2 where isNotNull(t2.int_id) and t1.related_standard_address=t2.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003201, '家客-家庭客户实例关联性核查-所属设备', 'DIMS_JIAKE_03002', 3002, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-所属设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-所属设备''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-所属设备''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-所属设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03002%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03002''
-										  					          else dims_col_result||'',DIMS_JIAKE_03002'' end)			
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03002''
+										  					          else dims_col_result||'',DIMS_JIAKE_03002'' end)
 							  where isNotNull(t1.device_id) and not exists(select 1 from CM_DEVICE_ONU t2 where isNotNull(t2.int_id) and t1.device_id=t2.int_id) and not exists(select 1 from CM_DEVICE_OBD t3 where isNotNull(t3.int_id) and t1.device_id=t3.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003202, '家客-家庭客户实例关联性核查-所属设备端口', 'DIMS_JIAKE_03003', 3003, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-所属设备端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-所属设备端口''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-所属设备端口''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-所属设备端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03003%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03003''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03003''
 										  					          else dims_col_result||'',DIMS_JIAKE_03003'' end)
 							  where isNotNull(t1.port_id) and not exists(select 1 from CM_ONU_PORT t2 where isNotNull(t2.int_id) and t1.port_id=t2.int_id) and not exists(select 1 from CM_OBD_PORT t3 where isNotNull(t3.int_id) and t1.port_id=t3.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003203, '家客-家庭客户实例关联性核查-所属省份', 'DIMS_JIAKE_03004', 3004, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03004%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03004''
-										  					          else dims_col_result||'',DIMS_JIAKE_03004'' end)			
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03004''
+										  					          else dims_col_result||'',DIMS_JIAKE_03004'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003204, '家客-家庭客户实例关联性核查-所属地市', 'DIMS_JIAKE_03005', 3005, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03005%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03005''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03005''
 										  					          else dims_col_result||'',DIMS_JIAKE_03005'' end)
 							where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003205, '家客-家庭客户实例关联性核查-所属区县', 'DIMS_JIAKE_03006', 3006, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-家庭客户实例关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03006%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03006''
-										  					          else dims_col_result||'',DIMS_JIAKE_03006'' end)					
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03006''
+										  					          else dims_col_result||'',DIMS_JIAKE_03006'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003206, '家客-宽带业务信息关联性核查-所属省份', 'DIMS_JIAKE_03007', 3007, 908000002, '家客', 11, NULL, 'update CE_BROADBAND_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-宽带业务信息关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-宽带业务信息关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-宽带业务信息关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-宽带业务信息关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03007%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03007''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03007''
 										  					          else dims_col_result||'',DIMS_JIAKE_03007'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, NULL, NULL),
  (908003207, '家客-宽带业务信息关联性核查-所属地市', 'DIMS_JIAKE_03008', 3008, 908000002, '家客', 11, NULL, 'update CE_BROADBAND_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-宽带业务信息关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-宽带业务信息关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-宽带业务信息关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-宽带业务信息关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03008%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03008''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03008''
 										  					          else dims_col_result||'',DIMS_JIAKE_03008'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, NULL, NULL),
  (908003208, '家客-宽带业务信息关联性核查-所属区县', 'DIMS_JIAKE_03009', 3009, 908000002, '家客', 11, NULL, 'update CE_BROADBAND_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-宽带业务信息关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-宽带业务信息关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-宽带业务信息关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-宽带业务信息关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03009%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03009''
-										  					          else dims_col_result||'',DIMS_JIAKE_03009'' end)					
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03009''
+										  					          else dims_col_result||'',DIMS_JIAKE_03009'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000002, 1, NULL, NULL),
  (908003209, '家客-IMS业务信息关联性核查-IMS业务产品实例标识', 'DIMS_JIAKE_03010', 3010, 908000003, '家客', 11, NULL, 'update CE_IMS_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-IMS业务信息关联性核查-IMS业务产品实例标识%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-IMS业务信息关联性核查-IMS业务产品实例标识''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-IMS业务信息关联性核查-IMS业务产品实例标识''
 			 												            else dims_col_rtName||'',家客-IMS业务信息关联性核查-IMS业务产品实例标识'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03010%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03010''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03010''
 										  					          else dims_col_result||'',DIMS_JIAKE_03010'' end)
 							  where isNotNull(t1.ims_inst_id) and not exists(select 1 from meiyou表 t2 where isNotNull(t2.int_id) and t1.ims_inst_id=t2.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, NULL, NULL),
  (908003210, '家客-IMS业务信息关联性核查-所属省份', 'DIMS_JIAKE_03011', 3011, 908000003, '家客', 11, NULL, 'update CE_IMS_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-IMS业务信息关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-IMS业务信息关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-IMS业务信息关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-IMS业务信息关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03011%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03011''
-										  					          else dims_col_result||'',DIMS_JIAKE_03011'' end)					
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03011''
+										  					          else dims_col_result||'',DIMS_JIAKE_03011'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, NULL, NULL),
  (908003211, '家客-IMS业务信息关联性核查-所属地市', 'DIMS_JIAKE_03012', 3012, 908000003, '家客', 11, NULL, 'update CE_IMS_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-IMS业务信息关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-IMS业务信息关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-IMS业务信息关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-IMS业务信息关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03012%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03012''
-										  					          else dims_col_result||'',DIMS_JIAKE_03012'' end)				
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03012''
+										  					          else dims_col_result||'',DIMS_JIAKE_03012'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, NULL, NULL),
  (908003212, '家客-IMS业务信息关联性核查-所属区县', 'DIMS_JIAKE_03013', 3013, 908000003, '家客', 11, NULL, 'update CE_IMS_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-IMS业务信息关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-IMS业务信息关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-IMS业务信息关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-IMS业务信息关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03013%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03013''
-										  					          else dims_col_result||'',DIMS_JIAKE_03013'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03013''
+										  					          else dims_col_result||'',DIMS_JIAKE_03013'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000003, 1, NULL, NULL),
  (908003213, '家客-互联网电视业务信息关联性核查-互联网电视业务产品实例标识', 'DIMS_JIAKE_03014', 3014, 908000004, '家客', 11, NULL, 'update CE_TV_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-互联网电视业务信息关联性核查-互联网电视业务产品实例标识%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-互联网电视业务信息关联性核查-互联网电视业务产品实例标识''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-互联网电视业务信息关联性核查-互联网电视业务产品实例标识''
 			 												            else dims_col_rtName||'',家客-互联网电视业务信息关联性核查-互联网电视业务产品实例标识'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03014%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03014''
-										  					          else dims_col_result||'',DIMS_JIAKE_03014'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03014''
+										  					          else dims_col_result||'',DIMS_JIAKE_03014'' end)
 							  where isNotNull(t1.tv_inst_id) and not exists(select 1 from meiyou表 t2 where isNotNull(t2.int_id) and t1.tv_inst_id=t2.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, NULL, NULL),
  (908003214, '家客-互联网电视业务信息关联性核查-所属省份', 'DIMS_JIAKE_03015', 3015, 908000004, '家客', 11, NULL, 'update CE_TV_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-互联网电视业务信息关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-互联网电视业务信息关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-互联网电视业务信息关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-互联网电视业务信息关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03015%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03015''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03015''
 										  					          else dims_col_result||'',DIMS_JIAKE_03015'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, NULL, NULL),
  (908003215, '家客-互联网电视业务信息关联性核查-所属地市', 'DIMS_JIAKE_03016', 3016, 908000004, '家客', 11, NULL, 'update CE_TV_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-互联网电视业务信息关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-互联网电视业务信息关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-互联网电视业务信息关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-互联网电视业务信息关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03016%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03016''
-										  					          else dims_col_result||'',DIMS_JIAKE_03016'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03016''
+										  					          else dims_col_result||'',DIMS_JIAKE_03016'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, NULL, NULL),
  (908003216, '家客-互联网电视业务信息关联性核查-所属区县', 'DIMS_JIAKE_03017', 3017, 908000004, '家客', 11, NULL, 'update CE_TV_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-互联网电视业务信息关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-互联网电视业务信息关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-互联网电视业务信息关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-互联网电视业务信息关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03017%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03017''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03017''
 										  					          else dims_col_result||'',DIMS_JIAKE_03017'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000004, 1, NULL, NULL),
  (908003217, '家客-小区信息表关联性核查-所属省份', 'DIMS_JIAKE_03018', 3018, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息表关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息表关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息表关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-小区信息表关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03018%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03018''
-										  					          else dims_col_result||'',DIMS_JIAKE_03018'' end)			
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03018''
+										  					          else dims_col_result||'',DIMS_JIAKE_03018'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003218, '家客-小区信息表关联性核查-所属地市', 'DIMS_JIAKE_03019', 3019, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息表关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息表关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息表关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-小区信息表关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03019%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03019''
-										  					          else dims_col_result||'',DIMS_JIAKE_03019'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03019''
+										  					          else dims_col_result||'',DIMS_JIAKE_03019'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003219, '家客-小区信息表关联性核查-所属区县', 'DIMS_JIAKE_03020', 3020, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息表关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息表关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息表关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-小区信息表关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03020%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03020''
-										  					          else dims_col_result||'',DIMS_JIAKE_03020'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03020''
+										  					          else dims_col_result||'',DIMS_JIAKE_03020'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003220, '家客-家客小区网格关联性核查-所属省份', 'DIMS_JIAKE_03021', 3021, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-家客小区网格关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03021%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03021''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03021''
 										  					          else dims_col_result||'',DIMS_JIAKE_03021'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003221, '家客-家客小区网格关联性核查-所属地市', 'DIMS_JIAKE_03022', 3022, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-家客小区网格关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03022%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03022''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03022''
 										  					          else dims_col_result||'',DIMS_JIAKE_03022'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003222, '家客-家客小区网格关联性核查-所属区县', 'DIMS_JIAKE_03023', 3023, 908000006, '家客', 11, NULL, 'update RM_GRID t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家客小区网格关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家客小区网格关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家客小区网格关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-家客小区网格关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03023%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03023''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03023''
 										  					          else dims_col_result||'',DIMS_JIAKE_03023'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000006, 1, NULL, NULL),
  (908003223, '家客-资源覆盖信息表关联性核查-所属省份', 'DIMS_JIAKE_03024', 3024, 908000007, '家客', 11, NULL, 'update CUST_RELATION_RESOURCES t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-资源覆盖信息表关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-资源覆盖信息表关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-资源覆盖信息表关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-资源覆盖信息表关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03024%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03024''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03024''
 										  					          else dims_col_result||'',DIMS_JIAKE_03024'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, NULL, NULL),
  (908003224, '家客-资源覆盖信息表关联性核查-所属地市', 'DIMS_JIAKE_03025', 3025, 908000007, '家客', 11, NULL, 'update CUST_RELATION_RESOURCES t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-资源覆盖信息表关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-资源覆盖信息表关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-资源覆盖信息表关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-资源覆盖信息表关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03025%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03025''
-										  					          else dims_col_result||'',DIMS_JIAKE_03025'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03025''
+										  					          else dims_col_result||'',DIMS_JIAKE_03025'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, NULL, NULL),
  (908003225, '家客-资源覆盖信息表关联性核查-所属区县', 'DIMS_JIAKE_03026', 3026, 908000007, '家客', 11, NULL, 'update CUST_RELATION_RESOURCES t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-资源覆盖信息表关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-资源覆盖信息表关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-资源覆盖信息表关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-资源覆盖信息表关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03026%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03026''
-										  					          else dims_col_result||'',DIMS_JIAKE_03026'' end)			
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03026''
+										  					          else dims_col_result||'',DIMS_JIAKE_03026'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000007, 1, NULL, NULL),
  (908003226, '家客-ONU关联性核查-上联设备', 'DIMS_JIAKE_03027', 3027, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU关联性核查-上联设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU关联性核查-上联设备''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU关联性核查-上联设备''
 			 												            else dims_col_rtName||'',家客-ONU关联性核查-上联设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03027%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03027''
-										  					          else dims_col_result||'',DIMS_JIAKE_03027'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03027''
+										  					          else dims_col_result||'',DIMS_JIAKE_03027'' end)
 							  where isNotNull(t1.relation_up_device_id) and not exists(select 1 from CM_DEVICE_OBD t2 where isNotNull(t2.int_id) and t1.relation_up_device_id=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003227, '家客-ONU关联性核查-上联设备端口', 'DIMS_JIAKE_03028', 3028, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU关联性核查-上联设备端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU关联性核查-上联设备端口''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU关联性核查-上联设备端口''
 			 												            else dims_col_rtName||'',家客-ONU关联性核查-上联设备端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03028%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03028''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03028''
 										  					          else dims_col_result||'',DIMS_JIAKE_03028'' end)
 							  where isNotNull(t1.relation_up_device_port) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.int_id) and t1.relation_up_device_port=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003228, '家客-ONU关联性核查-所属省份', 'DIMS_JIAKE_03029', 3029, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-ONU关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03029%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03029''
-										  					          else dims_col_result||'',DIMS_JIAKE_03029'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03029''
+										  					          else dims_col_result||'',DIMS_JIAKE_03029'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003229, '家客-ONU关联性核查-所属地市', 'DIMS_JIAKE_03030', 3030, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-ONU关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03030%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03030''
-										  					          else dims_col_result||'',DIMS_JIAKE_03030'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03030''
+										  					          else dims_col_result||'',DIMS_JIAKE_03030'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003230, '家客-ONU关联性核查-所属区县', 'DIMS_JIAKE_03031', 3031, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-ONU关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03031%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03031''
-										  					          else dims_col_result||'',DIMS_JIAKE_03031'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03031''
+										  					          else dims_col_result||'',DIMS_JIAKE_03031'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003231, '家客-ONU端口关联性核查-所属省份', 'DIMS_JIAKE_03032', 3032, 908000009, '家客', 11, NULL, 'update CM_ONU_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU端口关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU端口关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU端口关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-ONU端口关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03032%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03032''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03032''
 										  					          else dims_col_result||'',DIMS_JIAKE_03032'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, NULL, NULL),
  (908003232, '家客-ONU端口关联性核查-所属地市', 'DIMS_JIAKE_03033', 3033, 908000009, '家客', 11, NULL, 'update CM_ONU_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU端口关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU端口关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU端口关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-ONU端口关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03033%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03033''
-										  					          else dims_col_result||'',DIMS_JIAKE_03033'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03033''
+										  					          else dims_col_result||'',DIMS_JIAKE_03033'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, NULL, NULL),
  (908003233, '家客-ONU端口关联性核查-所属区县', 'DIMS_JIAKE_03034', 3034, 908000009, '家客', 11, NULL, 'update CM_ONU_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU端口关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU端口关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU端口关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-ONU端口关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03034%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03034''
-										  					          else dims_col_result||'',DIMS_JIAKE_03034'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03034''
+										  					          else dims_col_result||'',DIMS_JIAKE_03034'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000009, 1, NULL, NULL),
  (908003234, '家客-分光器关联性核查-安装位置', 'DIMS_JIAKE_03035', 3035, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-安装位置%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-安装位置''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-安装位置''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-安装位置'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03035%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03035''
-										  					          else dims_col_result||'',DIMS_JIAKE_03035'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03035''
+										  					          else dims_col_result||'',DIMS_JIAKE_03035'' end)
 							  where isNotNull(t1.up_to_device) and not exists(select 1 from CE_DEVICE_GJ t2 where isNotNull(t2.resfdn) and t1.up_to_device=t2.resfdn) and not exists(select 1 from JIAKE_CE_DEVICE_GF t3 where isNotNull(t3.int_id) and t1.up_to_device=t3.int_id) and not exists(select 1 from RM_AREA_ROOM t4 where isNotNull(t4.int_id) and t1.up_to_device=t4.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003235, '家客-分光器关联性核查-上联设备', 'DIMS_JIAKE_03036', 3036, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-上联设备%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-上联设备''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-上联设备''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-上联设备'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03036%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03036''
-										  					          else dims_col_result||'',DIMS_JIAKE_03036'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03036''
+										  					          else dims_col_result||'',DIMS_JIAKE_03036'' end)
 							  where isNotNull(t1.link_to_device) and not exists(select 1 from OLT/分光器 t2 where isNotNull(t2.int_id) and t1.link_to_device=t2.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003236, '家客-分光器关联性核查-上联设备主用端口', 'DIMS_JIAKE_03037', 3037, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-上联设备主用端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-上联设备主用端口''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-上联设备主用端口''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-上联设备主用端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03037%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03037''
-										  					          else dims_col_result||'',DIMS_JIAKE_03037'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03037''
+										  					          else dims_col_result||'',DIMS_JIAKE_03037'' end)
 							  where isNotNull(t1.link_to_device_port) and not exists(select 1 from OLT端口/分光器端口 t2 where isNotNull(t2.int_id) and t1.link_to_device_port=t2.int_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003237, '家客-分光器关联性核查-所属省份', 'DIMS_JIAKE_03038', 3038, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03038%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03038''
-										  					          else dims_col_result||'',DIMS_JIAKE_03038'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03038''
+										  					          else dims_col_result||'',DIMS_JIAKE_03038'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003238, '家客-分光器关联性核查-所属地市', 'DIMS_JIAKE_03039', 3039, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03039%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03039''
-										  					          else dims_col_result||'',DIMS_JIAKE_03039'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03039''
+										  					          else dims_col_result||'',DIMS_JIAKE_03039'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003239, '家客-分光器关联性核查-所属区县', 'DIMS_JIAKE_03040', 3040, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-分光器关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03040%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03040''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03040''
 										  					          else dims_col_result||'',DIMS_JIAKE_03040'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003240, '家客-分光器端口关联性核查-所属分光器', 'DIMS_JIAKE_03041', 3041, 908000011, '家客', 11, NULL, 'update CM_OBD_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器端口关联性核查-所属分光器%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器端口关联性核查-所属分光器''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器端口关联性核查-所属分光器''
 			 												            else dims_col_rtName||'',家客-分光器端口关联性核查-所属分光器'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03041%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03041''
-										  					          else dims_col_result||'',DIMS_JIAKE_03041'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03041''
+										  					          else dims_col_result||'',DIMS_JIAKE_03041'' end)
 							  where isNotNull(t1.related_device) and not exists(select 1 from CM_DEVICE_OBD t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, NULL, NULL),
  (908003241, '家客-分光器端口关联性核查-所属省份', 'DIMS_JIAKE_03042', 3042, 908000011, '家客', 11, NULL, 'update CM_OBD_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器端口关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器端口关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器端口关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-分光器端口关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03042%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03042''
-										  					          else dims_col_result||'',DIMS_JIAKE_03042'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03042''
+										  					          else dims_col_result||'',DIMS_JIAKE_03042'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, NULL, NULL),
  (908003242, '家客-分光器端口关联性核查-所属地市', 'DIMS_JIAKE_03043', 3043, 908000011, '家客', 11, NULL, 'update CM_OBD_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器端口关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器端口关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器端口关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-分光器端口关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03043%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03043''
-										  					          else dims_col_result||'',DIMS_JIAKE_03043'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03043''
+										  					          else dims_col_result||'',DIMS_JIAKE_03043'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, NULL, NULL),
  (908003243, '家客-分光器端口关联性核查-所属区县', 'DIMS_JIAKE_03044', 3044, 908000011, '家客', 11, NULL, 'update CM_OBD_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器端口关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器端口关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器端口关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-分光器端口关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03044%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03044''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03044''
 										  					          else dims_col_result||'',DIMS_JIAKE_03044'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000011, 1, NULL, NULL),
  (908003244, '家客-多媒体箱关联性核查-所属省份', 'DIMS_JIAKE_03045', 3045, 908000012, '家客', 11, NULL, 'update CE_DEVICE_DMT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-多媒体箱关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-多媒体箱关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-多媒体箱关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-多媒体箱关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03045%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03045''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03045''
 										  					          else dims_col_result||'',DIMS_JIAKE_03045'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
  (908003245, '家客-多媒体箱关联性核查-所属地市', 'DIMS_JIAKE_03046', 3046, 908000012, '家客', 11, NULL, 'update CE_DEVICE_DMT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-多媒体箱关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-多媒体箱关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-多媒体箱关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-多媒体箱关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03046%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03046''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03046''
 										  					          else dims_col_result||'',DIMS_JIAKE_03046'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
  (908003246, '家客-多媒体箱关联性核查-所属区县', 'DIMS_JIAKE_03047', 3047, 908000012, '家客', 11, NULL, 'update CE_DEVICE_DMT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-多媒体箱关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-多媒体箱关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-多媒体箱关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-多媒体箱关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03047%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03047''
-										  					          else dims_col_result||'',DIMS_JIAKE_03047'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03047''
+										  					          else dims_col_result||'',DIMS_JIAKE_03047'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000012, 1, NULL, NULL),
  (908003247, '家客-分纤箱关联性核查-所属省份', 'DIMS_JIAKE_03048', 3048, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03048%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03048''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03048''
 										  					          else dims_col_result||'',DIMS_JIAKE_03048'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003248, '家客-分纤箱关联性核查-所属地市', 'DIMS_JIAKE_03049', 3049, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03049%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03049''
-										  					          else dims_col_result||'',DIMS_JIAKE_03049'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03049''
+										  					          else dims_col_result||'',DIMS_JIAKE_03049'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003249, '家客-分纤箱关联性核查-所属区县', 'DIMS_JIAKE_03050', 3050, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-分纤箱关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03050%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03050''
-										  					          else dims_col_result||'',DIMS_JIAKE_03050'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03050''
+										  					          else dims_col_result||'',DIMS_JIAKE_03050'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL),
  (908003250, '家客-分纤箱端子关联性核查-所属分纤箱', 'DIMS_JIAKE_03051', 3051, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子关联性核查-所属分纤箱%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱端子关联性核查-所属分纤箱''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱端子关联性核查-所属分纤箱''
 			 												            else dims_col_rtName||'',家客-分纤箱端子关联性核查-所属分纤箱'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03051%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03051''
-										  					          else dims_col_result||'',DIMS_JIAKE_03051'' end)		
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03051''
+										  					          else dims_col_result||'',DIMS_JIAKE_03051'' end)
 							  where isNotNull(t1.related_device) and not exists(select 1 from JIAKE_CE_DEVICE_GF t2 where isNotNull(t2.int_id) and t1.related_device=t2.int_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
  (908003251, '家客-分纤箱端子关联性核查-所属省份', 'DIMS_JIAKE_03052', 3052, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子关联性核查-所属省份%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱端子关联性核查-所属省份''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱端子关联性核查-所属省份''
 			 												            else dims_col_rtName||'',家客-分纤箱端子关联性核查-所属省份'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03052%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03052''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03052''
 										  					          else dims_col_result||'',DIMS_JIAKE_03052'' end)
 							  where isNotNull(t1.province_id) and not exists(select 1 from provice_view t2 where isNotNull(t2.code) and t1.province_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
  (908003252, '家客-分纤箱端子关联性核查-所属地市', 'DIMS_JIAKE_03053', 3053, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子关联性核查-所属地市%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱端子关联性核查-所属地市''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱端子关联性核查-所属地市''
 			 												            else dims_col_rtName||'',家客-分纤箱端子关联性核查-所属地市'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03053%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03053''
-										  					          else dims_col_result||'',DIMS_JIAKE_03053'' end)	
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03053''
+										  					          else dims_col_result||'',DIMS_JIAKE_03053'' end)
 							  where isNotNull(t1.city_id) and not exists(select 1 from city_view t2 where isNotNull(t2.code) and t1.city_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
  (908003253, '家客-分纤箱端子关联性核查-所属区县', 'DIMS_JIAKE_03054', 3054, 908000014, '家客', 11, NULL, 'update CM_GF_PORT t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱端子关联性核查-所属区县%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱端子关联性核查-所属区县''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱端子关联性核查-所属区县''
 			 												            else dims_col_rtName||'',家客-分纤箱端子关联性核查-所属区县'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03054%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03054''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03054''
 										  					          else dims_col_result||'',DIMS_JIAKE_03054'' end)
 							  where isNotNull(t1.county_id) and not exists(select 1 from county_view t2 where isNotNull(t2.code) and t1.county_id=t2.code)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000014, 1, NULL, NULL),
  (908003254, '家客-家庭客户实例-家庭客户实例无任何业务数据', 'DIMS_JIAKE_03055', 3055, 908000001, '家客', 11, NULL, 'update CM_HOME_CUST_BUSINESS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-家庭客户实例-家庭客户实例无任何业务数据%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-家庭客户实例-家庭客户实例无任何业务数据''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-家庭客户实例-家庭客户实例无任何业务数据''
 			 												            else dims_col_rtName||'',家客-家庭客户实例-家庭客户实例无任何业务数据'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03055%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03055''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03055''
 										  					          else dims_col_result||'',DIMS_JIAKE_03055'' end)
-							  where isNotNull(t1.cust_num) and not exists(select 1 from CE_BROADBAND_BUSINESS t2 where isNotNull(t2.cust_num) and t1.cust_num=t2.cust_num) and not exists(select 1 from 
-CE_IMS_BUSINESS t3 where isNotNull(t3.cust_num) and t1.cust_num=t3.cust_num) and not exists(select 1 from 
+							  where isNotNull(t1.cust_num) and not exists(select 1 from CE_BROADBAND_BUSINESS t2 where isNotNull(t2.cust_num) and t1.cust_num=t2.cust_num) and not exists(select 1 from
+CE_IMS_BUSINESS t3 where isNotNull(t3.cust_num) and t1.cust_num=t3.cust_num) and not exists(select 1 from
 CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000001, 1, NULL, NULL),
  (908003255, '家客-ONU-FTTB模式的ONU资源未被任何家庭客户关联', 'DIMS_JIAKE_03056', 3056, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU-FTTB模式的ONU资源未被任何家庭客户关联%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU-FTTB模式的ONU资源未被任何家庭客户关联''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU-FTTB模式的ONU资源未被任何家庭客户关联''
 			 												            else dims_col_rtName||'',家客-ONU-FTTB模式的ONU资源未被任何家庭客户关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03056%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03056''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03056''
 										  					          else dims_col_result||'',DIMS_JIAKE_03056'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003256, '家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联', 'DIMS_JIAKE_03057', 3057, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联''
 			 												            else dims_col_rtName||'',家客-分光器-FTTH模式的分光器资源未被任何家庭客户关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03057%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03057''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03057''
 										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003257, '家客-小区信息-家客小区魏碑任何小区网格关联', 'DIMS_JIAKE_03058', 3058, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-家客小区魏碑任何小区网格关联%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息-家客小区魏碑任何小区网格关联''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息-家客小区魏碑任何小区网格关联''
 			 												            else dims_col_rtName||'',家客-小区信息-家客小区魏碑任何小区网格关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03058%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03058''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03058''
 										  					          else dims_col_result||'',DIMS_JIAKE_03058'' end)
 									  where isNotNull(t1.int_id) and not exists(select 1 from RM_GRID t2 where isNotNull(t2.related_area) and t1.int_id=t2.related_area)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003258, '家客-小区信息-小区下无任何覆盖信息', 'DIMS_JIAKE_03059', 3059, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-小区下无任何覆盖信息%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-小区信息-小区下无任何覆盖信息''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息-小区下无任何覆盖信息''
 			 												            else dims_col_rtName||'',家客-小区信息-小区下无任何覆盖信息'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03059%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03059''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03059''
 										  					          else dims_col_result||'',DIMS_JIAKE_03059'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CUST_RELATION_RESOURCES t2 where isNotNull(t2.residential_id) and t1.int_id=t2.residential_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003259, '家客-ONU-ONU下无ONU端口', 'DIMS_JIAKE_03060', 3060, 908000008, '家客', 11, NULL, 'update CM_DEVICE_ONU t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-ONU-ONU下无ONU端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-ONU-ONU下无ONU端口''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-ONU-ONU下无ONU端口''
 			 												            else dims_col_rtName||'',家客-ONU-ONU下无ONU端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03060%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03060''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03060''
 										  					          else dims_col_result||'',DIMS_JIAKE_03060'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_ONU_PORT t2 where isNotNull(t2.onu_id) and t1.int_id=t2.onu_id)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000008, 1, NULL, NULL),
  (908003260, '家客-分光器-分光器下无分光器端口', 'DIMS_JIAKE_03061', 3061, 908000010, '家客', 11, NULL, 'update CM_DEVICE_OBD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分光器-分光器下无分光器端口%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分光器-分光器下无分光器端口''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分光器-分光器下无分光器端口''
 			 												            else dims_col_rtName||'',家客-分光器-分光器下无分光器端口'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03061%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03061''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03061''
 										  					          else dims_col_result||'',DIMS_JIAKE_03061'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_OBD_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
  (908003261, '家客-分纤箱-分纤箱下无分纤箱端子', 'DIMS_JIAKE_03062', 3062, 908000013, '家客', 11, NULL, 'update JIAKE_CE_DEVICE_GF t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-分纤箱-分纤箱下无分纤箱端子%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''家客-分纤箱-分纤箱下无分纤箱端子''
+		                                      when dims_col_rtName is null then ''不满足规范:家客-分纤箱-分纤箱下无分纤箱端子''
 			 												            else dims_col_rtName||'',家客-分纤箱-分纤箱下无分纤箱端子'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03062%'' then dims_col_result
-				                                  when dims_col_result is null then ''不满足规范:DIMS_JIAKE_03062''
+				                                  when dims_col_result is null then ''DIMS_JIAKE_03062''
 										  					          else dims_col_result||'',DIMS_JIAKE_03062'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_GF_PORT t2 where isNotNull(t2.related_device) and t1.int_id=t2.related_device)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000013, 1, NULL, NULL);
 insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNAME, TYPE, AMOUNTSQL, ERRORSQL, ISENABLE, CREATOR, UPDATER, PROCNAME, THREADNO, PRIORITY, MEMO) values
 (908004001, '小区信息出现在多个小区网格中', 'DIMS_JIAKE_04001', 401, 908000005, '家客', 11, null, 'update RM_AREA_RESIDENTIAL t1
-		            set dims_col_rtName=(case when dims_col_rtName like ''%DIMS_JIAKE_04001%'' then dims_col_rtName
-		            when dims_col_rtName is null then ''DIMS_JIAKE_04001''
-					else dims_col_rtName||'',DIMS_JIAKE_04001'' end),
-					dims_col_result=(case when dims_col_result like ''%小区信息出现在多个小区网格中%'' then dims_col_result
-					when dims_col_result is null then ''不满足规范:小区信息出现在多个小区网格中''
-					else dims_col_result||'',小区信息出现在多个小区网格中'' end)
+		            set dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_04001%'' then dims_col_result
+		            when dims_col_result is null then ''DIMS_JIAKE_04001''
+					else dims_col_result||'',DIMS_JIAKE_04001'' end),
+					dims_col_rtName=(case when dims_col_rtName like ''%小区信息出现在多个小区网格中%'' then dims_col_rtName
+					when dims_col_rtName is null then ''不满足规范:小区信息出现在多个小区网格中''
+					else dims_col_rtName||'',小区信息出现在多个小区网格中'' end)
 					where isNotNull(t1.int_id) and (select count(t2.related_area) from RM_GRID t2 where isNotNull(t2.related_area) and t2.related_area=t1.int_id) > 1 ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, null);
  INSERT INTO dims_idx_rule ("id", "name", "code", "index_id", "attributetype_id", "type", "rulememo", "dictionaryname", "ratelen", "datafrom", "datato", "timefrom", "timeto", "stringregex", "version", "createdate", "creator", "updatedate", "updater", "memo") values
  (908002001, '家客-家庭客户实例必填完整性核查.资源标识', 'CM_HOME_CUST_BUSINESS.int_id', 908003000, 908000600, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-10-11 20:07:30.463894', 'admin', '2020-10-11 20:07:30.463894', 'admin', NULL),
