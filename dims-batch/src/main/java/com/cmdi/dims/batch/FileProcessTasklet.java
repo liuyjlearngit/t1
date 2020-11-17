@@ -290,6 +290,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 }
             } catch (Exception e) {
                 errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错" + e.getMessage();
+                success = false;
                 log.error(errorMessage, e);
             } finally {
                 taskService.saveTaskItemBusiness(populate(metadata, taskItemFile, 0L, 0L, success, errorMessage));
