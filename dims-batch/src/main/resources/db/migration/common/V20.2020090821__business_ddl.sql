@@ -28,7 +28,7 @@ create table OMC(
 int_id varchar(500),zh_label varchar(500),vendor_id varchar(500),ip_addr varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table BSC(
-int_id 	varchar(500),userlabel varchar(500),vendor_id varchar(500),product_name varchar(500),related_rackpos varchar(500),related_omc varchar(500),local_spc varchar(500),software_version	varchar(500),lifecycle_status varchar(500),setup_time varchar(500),qualitor varchar(500),maintainor varchar(500),related_mgw varchar(500),related_mme_sgsn	varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result 	text,dims_col_rtName text
+int_id 	varchar(500),userlabel varchar(500),vendor_id varchar(500),product_name varchar(500),related_rackpos varchar(500),related_omc varchar(500),local_spc varchar(500),software_version	varchar(500),lifecycle_status varchar(500),setup_time varchar(500),qualitor varchar(500),maintainor varchar(500),related_mgw TEXT,related_mme_sgsn	varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result 	text,dims_col_rtName text
 );
 create table BTS(
 int_id  varchar(500),zh_label 	varchar(500),userlabel 	varchar(500),related_omc 	varchar(500),location_type varchar(500),related_room_location	varchar(500),vendor_id 	varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type 	varchar(500),net_model 	varchar(500),beehive_type varchar(500),related_bsc 	varchar(500),qualitor 	varchar(500),maintainor 	varchar(500),province_id 	varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
