@@ -90,7 +90,6 @@ public class BatchUtil {
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
         //File tempDirectory = FileUtils.getTempDirectory();
         File tempDirectory = FileUtils.getFile(TASK_TEMP_FOLDER);
-        //File tempDirectory = FileUtils.getFile("D:\\Download");
         File taskDirectory = new File(tempDirectory, String.valueOf(taskCode));
         if (create) {
             if (taskDirectory.exists()) {
@@ -132,7 +131,6 @@ public class BatchUtil {
     static Charset encodingOf(String encoding) {
         try {
             if (StringUtils.isEmpty(encoding)) {
-                //encoding = "GBK";
                 encoding = "UTF8";
             }
             return Charset.forName(encoding);
@@ -142,7 +140,6 @@ public class BatchUtil {
     }
 
     static char safeDelimiter(String delimiterStr) {
-        //char delimiter = 'Ж';
         char delimiter = DefaultDelimiter;
         if (StringUtils.isNotBlank(delimiterStr) && delimiterStr.length() == 1) {
             delimiter = delimiterStr.charAt(0);

@@ -109,10 +109,11 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         if (ArrayUtils.isNotEmpty(files)) {
             for (FTPFile file : files) {
                 if (file.isFile()) {
-                    //String baseName = FilenameUtils.getBaseName(file.getName());
                     String baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(file.getName()),".");
-                    if(baseName.matches(regex1)){
+                    String fileName = FilenameUtils.getName(file.getName());
+                    if(StringUtils.containsIgnoreCase(baseName,regex1)){
                         //filer files which are retransmissions
+                        log.info(fileName+"是错误文件，忽略...");
                         continue;
                     }else if(baseName.matches(regex2)){
                         //in case of split files
@@ -127,7 +128,6 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                             break;
                         }
                     }
-                    String fileName = FilenameUtils.getName(file.getName());
                     if (specialityTables.containsKey(tableName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
                         taskItemFile.setDestTable(tableName.toUpperCase());
@@ -166,8 +166,10 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                 Boolean isDirectory = entry.getAttrs().isDir();
                 if (!isDirectory) {
                     String baseName = StringUtils.substringBefore(FilenameUtils.getBaseName(entry.getFilename()),".");
-                    if(baseName.matches(regex1)){
+                    String fileName = FilenameUtils.getName(entry.getFilename());
+                    if(StringUtils.containsIgnoreCase(baseName,regex1)){
                         //filer files which are retransmissions
+                        log.info(fileName+"是错误文件，忽略...");
                         continue;
                     }else if(baseName.matches(regex2)){
                         //in case of split files
@@ -182,7 +184,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                             break;
                         }
                     }
-                    String fileName = FilenameUtils.getName(entry.getFilename());
+
                     if (specialityTables.containsKey(tableName.toUpperCase())) {
                         TaskItemFileDto taskItemFile = new TaskItemFileDto();
                         taskItemFile.setDestTable(tableName.toUpperCase());
