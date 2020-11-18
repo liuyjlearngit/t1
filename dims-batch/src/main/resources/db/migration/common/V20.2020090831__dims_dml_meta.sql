@@ -19116,7 +19116,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 															  or t1.related_device_id = t3.resfdn
 															  or t1.related_device_id = t4.resfdn
 															  or t1.related_device_id = t5.int_id
-															  or t1.related_device_id = t6.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
+															  or t1.related_device_id = t6.int_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 900001003, 1, NULL),
 (900003010, '公共-DDF端子关联性核查-所属DDM模块', 'DIMS_GG_03004', 3004, 900001004, '公共', 11, NULL, 'update CM_PORT_DDF t1
 	 set dims_col_result=(case when dims_col_result like ''%DIMS_GG_03004%'' then dims_col_result
 														 when dims_col_result is null then ''DIMS_GG_03004''
@@ -19304,7 +19304,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 --(900004006, 900099001, 900003006, 'admin', 'admin', null),
 (900004007, 900099003, 900003007, 'admin', 'admin', null),
 (900004008, 900099003, 900003008, 'admin', 'admin', null),
-(900004009, 900099003, 900003009, 'admin', 'admin', null),
+--(900004009, 900099003, 900003009, 'admin', 'admin', null),
 (900004010, 900099003, 900003010, 'admin', 'admin', null),
 (900004011, 900099003, 900003011, 'admin', 'admin', null),
 --(900004012, 900099003, 900003012, 'admin', 'admin', null),
