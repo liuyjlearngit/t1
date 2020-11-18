@@ -28,13 +28,13 @@ create table OMC(
 int_id varchar(500),zh_label varchar(500),vendor_id varchar(500),ip_addr varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table BSC(
-int_id 	varchar(500),userlabel varchar(500),vendor_id varchar(500),product_name varchar(500),related_rackpos varchar(500),related_omc varchar(500),local_spc varchar(500),software_version	varchar(500),lifecycle_status varchar(500),setup_time varchar(500),qualitor varchar(500),maintainor varchar(500),related_mgw varchar(500),related_mme_sgsn	varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result 	text,dims_col_rtName text
+int_id 	varchar(500),userlabel varchar(500),vendor_id varchar(500),product_name varchar(500),related_rackpos varchar(500),related_omc varchar(500),local_spc varchar(500),software_version	varchar(500),lifecycle_status varchar(500),setup_time varchar(500),qualitor varchar(500),maintainor varchar(500),related_mgw TEXT,related_mme_sgsn	varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result 	text,dims_col_rtName text
 );
 create table BTS(
 int_id  varchar(500),zh_label 	varchar(500),userlabel 	varchar(500),related_omc 	varchar(500),location_type varchar(500),related_room_location	varchar(500),vendor_id 	varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type 	varchar(500),net_model 	varchar(500),beehive_type varchar(500),related_bsc 	varchar(500),qualitor 	varchar(500),maintainor 	varchar(500),province_id 	varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
 );
 create table ENODEB(
-int_id  varchar(500),nodeb_id varchar(500),zh_label varchar(500),userlabel 	varchar(500),related_omc varchar(500),location_type varchar(500),related_room_location	varchar(500),rated_power varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type varchar(500),net_model varchar(500),device_type varchar(500),beehive_type varchar(500),related_bsc varchar(500),s1_ipaddress varchar(500),construction_type varchar(500),qualitor varchar(500),maintainor varchar(500),province_id varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
+int_id  varchar(500),nodeb_id varchar(500),zh_label varchar(500),userlabel 	varchar(500),related_omc varchar(500),location_type varchar(500),related_room_location	varchar(500),rated_power varchar(500),product_name varchar(500),software_version varchar(500),lifecycle_status varchar(500),setup_time 	varchar(500),vip_type varchar(500),net_model varchar(500),device_type varchar(500),beehive_type varchar(500),related_bsc text,s1_ipaddress varchar(500),construction_type varchar(500),qualitor varchar(500),maintainor varchar(500),province_id varchar(500),city_id  varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName text
 );
 create table GNODEB(
 int_id 	varchar(500),nodeb_id 	varchar(500),zh_label 	varchar(500),userlabel 	varchar(500),related_omc 	varchar(500),location_type 	varchar(500),related_room_location 	varchar(500),rated_power 	varchar(500),product_name 	varchar(500),software_version 	varchar(500),lifecycle_status 	varchar(500),setup_time 	varchar(500),vip_type 	varchar(500),net_model 	varchar(500),device_type 	varchar(500),beehive_type 	varchar(500),related_bsc 	varchar(500),qualitor 	varchar(500),maintainor 	varchar(500),province_id 	varchar(500),city_id 	varchar(500),county_id 	varchar(500),dims_col_result text,dims_col_rtName	text
@@ -58,7 +58,7 @@ create table BBU(
 int_id varchar(500),zh_label varchar(500),bbu_serial varchar(500),related_bs varchar(500),rated_power varchar(500),net_model varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table RRU(
-int_id varchar(500),zh_label varchar(500),location_type varchar(500),related_room_location varchar(500),location varchar(500),related_cell varchar(500),rated_power varchar(500),connect_model varchar(500),rru_serial varchar(500),product_name varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+int_id varchar(500),zh_label varchar(500),location_type varchar(500),related_room_location varchar(500),location varchar(500),related_cell text,rated_power varchar(500),connect_model varchar(500),rru_serial varchar(500),product_name varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CU(
 int_id varchar(500),zh_label varchar(500),cu_serial varchar(500),rated_power varchar(500),net_model varchar(500),location_type varchar(500),related_room_location varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
@@ -88,7 +88,7 @@ create table RPT(
 int_id varchar(500),zh_label varchar(500),vendor_id varchar(500),signal_receive_type varchar(500),power_supply_type varchar(500),location_type varchar(500),related_room_location varchar(500),location varchar(500),lifecycle_status varchar(500),qualitor varchar(500),maintainor varchar(500),repeater_type varchar(500),beehive_type varchar(500),related_cell varchar(500),rated_power varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table SPEARD(
-int_id varchar(500),zh_label varchar(500),integrated_vendor varchar(500),related_location varchar(500),antenna_num varchar(500),trunk_amplifier_num varchar(500),related_bs varchar(500),related_cell varchar(500),passive_device_vendor varchar(500),feeder_vendor varchar(500),antenna_vendor_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
+int_id varchar(500),zh_label varchar(500),integrated_vendor varchar(500),related_location varchar(500),antenna_num varchar(500),trunk_amplifier_num varchar(500),related_bs varchar(500),related_cell text,passive_device_vendor varchar(500),feeder_vendor varchar(500),antenna_vendor_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
 );
 create table PICOAP(
 int_id varchar(500),zh_label varchar(500),ap_serial varchar(500),related_femto varchar(500),rated_pawer varchar(500),location varchar(500),vendor_id varchar(500),product_name varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
@@ -205,13 +205,13 @@ create table CE_LINK_IP_LOGIC(
 int_id varchar(500),logic_link_name varchar(500),circuit_bandwidth varchar(500),a_equipment varchar(500),a_port varchar(500),z_equipment varchar(500),z_port varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_ADDRESS_IP_V4(
-int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id text,province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_SEGMENT_IP_V4(
 int_id varchar(500),zh_label varchar(500),business_system varchar(500),equipment_id varchar(500),usage_description varchar(500),business_status varchar(500),address_type varchar(500),partition_state varchar(500),vpn_name varchar(500),three_line_ip_address varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table CE_ADDRESS_IP_V6(
-int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id varchar(500),address_business_system varchar(500),ip_address_type varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500), dims_col_result text,    dims_col_rtName	text
+int_id varchar(500),zh_label varchar(500),business_status varchar(500),address_segment_name varchar(500),equipment_id varchar(500),port_id  text,address_business_system varchar(500),ip_address_type varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500), dims_col_result text,    dims_col_rtName	text
 );
 create table CE_SEGMENT_IP_V6(
 int_id varchar(500),zh_label varchar(500),type_identifier varchar(500),network_type varchar(500),prefix_length varchar(500),partition_state varchar(500),business_status varchar(500),ipv6_address_segment_purpose varchar(500),affiliated_business varchar(500),equipment_id varchar(500),usage_description varchar(500),vpn_name varchar(500),three_line_ip_address varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,    dims_col_rtName text
@@ -284,7 +284,7 @@ CREATE TABLE RM_AREA_RESIDENTIAL (
 int_id VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),location_id VARCHAR ( 500 ),ATTRIBUTES VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),related_grid VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),qualitor VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
 );
 CREATE TABLE RM_GRID (
-int_id VARCHAR ( 500 ),grid_code VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),related_area VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
+int_id VARCHAR ( 500 ),grid_code VARCHAR ( 500 ),zh_label VARCHAR ( 500 ),related_area TEXT,province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),lifecycle_status VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
 );
 CREATE TABLE CUST_RELATION_RESOURCES (
 int_id VARCHAR ( 500 ),room_address_id VARCHAR ( 500 ),relation_device_id VARCHAR ( 500 ),enter_type VARCHAR ( 500 ),relation_device_free_num VARCHAR ( 500 ),residential_id VARCHAR ( 500 ),province_id VARCHAR ( 500 ),city_id VARCHAR ( 500 ),county_id VARCHAR ( 500 ),dims_col_result TEXT,dims_col_rtName TEXT
@@ -931,7 +931,7 @@ CREATE TABLE CE_CABLE_SEGMENT (
 	cableSegment_level VARCHAR (500),
 	fiber_count VARCHAR (500),
 	related_site VARCHAR (500),
-	routes VARCHAR (500),
+	routes TEXT,
 	a_object_id VARCHAR (500),
 	z_object_id VARCHAR (500),
 	a_object_type VARCHAR (500),
@@ -984,7 +984,7 @@ CREATE TABLE CE_LINK_FIBERLINK (
 	city VARCHAR (500),
 	county VARCHAR (500),
 	using_status VARCHAR (500),
-	routes VARCHAR (500),
+	routes TEXT,
 	start_site_id VARCHAR (500),
 	end_site_id VARCHAR (500),
 	rs_ocircuit VARCHAR (500),
@@ -1014,7 +1014,7 @@ CREATE TABLE CE_LINK_OCIRCUIT (
 	end_room_id VARCHAR (500),
 	start_port VARCHAR (500),
 	end_port VARCHAR (500),
-	routes VARCHAR (500),
+	routes TEXT,
 	process_id VARCHAR (500),
 	start_box_id VARCHAR (500),
     end_box_id VARCHAR (500),
@@ -1255,7 +1255,7 @@ CREATE TABLE CE_LAYINGSEGMENT_TUBEHOLE (
 	qualitor VARCHAR (500),
 	maintainor VARCHAR (500),
 	related_layingsegment VARCHAR (500),
-	related_cableseg VARCHAR (500),
+	related_cableseg TEXT,
 	province VARCHAR (500),
 	city VARCHAR (500),
 	county VARCHAR (500),
@@ -1268,7 +1268,7 @@ CREATE TABLE CE_LAYINGSEGMENT_SUBHOLE (
 	subhole_no VARCHAR (500),
 	subhole_status VARCHAR (500),
 	lifecycle_status VARCHAR (500),
-	related_cableseg VARCHAR (500),
+	related_cableseg TEXT,
 	related_tubehole VARCHAR (500),
 	qualitor VARCHAR (500),
 	maintainor VARCHAR (500),
@@ -2211,13 +2211,13 @@ CREATE TABLE TRANSI_SYSTEM (
 	res_identifier VARCHAR ( 500 ),
 	province_id VARCHAR ( 500 ),
 	zh_label VARCHAR ( 500 ),
-	related_ne VARCHAR ( 500 ),
-	related_topo VARCHAR ( 500 ),
+	related_ne TEXT,
+	related_topo TEXT,
 	system_type VARCHAR ( 500 ),
 	designed_capacity VARCHAR ( 500 ),
 	system_level VARCHAR ( 500 ),
 	related_omc VARCHAR ( 500 ),
-	desc_route VARCHAR ( 500 ),
+	desc_route TEXT,
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );
@@ -2280,7 +2280,7 @@ CREATE TABLE CSNX_PORT (
 
 CREATE TABLE LINK_PORT_ODF (
 	res_identifier VARCHAR ( 500 ),
-	zh_label VARCHAR ( 500 ),
+	zh_label text,
 	a_port VARCHAR ( 500 ),
 	a_province_id VARCHAR ( 500 ),
 	a_city_id VARCHAR ( 500 ),
@@ -2363,7 +2363,7 @@ CREATE TABLE WDMS (
 	z_province_id VARCHAR ( 500 ),
 	z_city_id VARCHAR ( 500 ),
 	z_county_id VARCHAR ( 500 ),
-	route VARCHAR ( 500 ),
+	route TEXT,
 	channel_num VARCHAR ( 500 ),
 	related_protect_group VARCHAR ( 500 ),
 	use_type VARCHAR ( 500 ),
@@ -2382,7 +2382,7 @@ CREATE TABLE SERVICE_PATH (
 	z_city_id VARCHAR ( 500 ),
 	z_county_id VARCHAR ( 500 ),
 	type VARCHAR ( 500 ),
-	route VARCHAR ( 500 ),
+	route TEXT,
 	rate VARCHAR ( 500 ),
 	status VARCHAR ( 500 ),
 	related_protect_group VARCHAR ( 500 ),
@@ -2392,7 +2392,7 @@ CREATE TABLE SERVICE_PATH (
 );
 CREATE TABLE SDH_PATH (
 	res_identifier VARCHAR ( 500 ),
-	zh_label VARCHAR ( 500 ),
+	zh_label TEXT,
 	a_device VARCHAR ( 500 ),
 	a_port VARCHAR ( 500 ),
 	a_ctp VARCHAR ( 500 ),
@@ -2428,11 +2428,11 @@ CREATE TABLE TUNNEL (
 	z_city_id VARCHAR ( 500 ),
 	z_county_id VARCHAR ( 500 ),
 	related_omc VARCHAR ( 500 ),
-	related_protect_group VARCHAR ( 500 ),
+	related_protect_group TEXT,
 	use_type VARCHAR ( 500 ),
 	cir VARCHAR ( 500 ),
 	pir VARCHAR ( 500 ),
-	route VARCHAR ( 500 ),
+	route TEXT,
 	dims_col_result TEXT,
     dims_col_rtName TEXT 
 );

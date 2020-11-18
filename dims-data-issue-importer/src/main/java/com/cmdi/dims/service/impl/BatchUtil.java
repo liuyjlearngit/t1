@@ -34,9 +34,11 @@ public class BatchUtil {
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
     static final char Delimiter = '^';
+    static final String TASK_TEMP_FOLDER = "/app";
 
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
-        File tempDirectory = FileUtils.getTempDirectory();
+        //File tempDirectory = FileUtils.getTempDirectory();
+        File tempDirectory = FileUtils.getFile(TASK_TEMP_FOLDER);
         File taskDirectory = new File(tempDirectory, String.valueOf(taskCode));
         if (create) {
             if (taskDirectory.exists()) {

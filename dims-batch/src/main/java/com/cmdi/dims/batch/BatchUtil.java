@@ -38,6 +38,8 @@ public class BatchUtil {
     static final String TASK_CODE = "TASK_CODE";
     static final String SKIP = "SKIP";
     static final char DefaultDelimiter = '^';
+    static final String TASK_TEMP_FOLDER = "/app";
+
 
     static String getProvince(JobExecution jobExecution) {
         return jobExecution.getJobParameters().getString(PROVINCE);
@@ -86,7 +88,8 @@ public class BatchUtil {
 
     //创建临时目录
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
-        File tempDirectory = FileUtils.getTempDirectory();
+        //File tempDirectory = FileUtils.getTempDirectory();
+        File tempDirectory = FileUtils.getFile(TASK_TEMP_FOLDER);
         File taskDirectory = new File(tempDirectory, String.valueOf(taskCode));
         if (create) {
             if (taskDirectory.exists()) {
@@ -128,7 +131,6 @@ public class BatchUtil {
     static Charset encodingOf(String encoding) {
         try {
             if (StringUtils.isEmpty(encoding)) {
-                //encoding = "GBK";
                 encoding = "UTF8";
             }
             return Charset.forName(encoding);
@@ -138,7 +140,6 @@ public class BatchUtil {
     }
 
     static char safeDelimiter(String delimiterStr) {
-        //char delimiter = 'Ж';
         char delimiter = DefaultDelimiter;
         if (StringUtils.isNotBlank(delimiterStr) && delimiterStr.length() == 1) {
             delimiter = delimiterStr.charAt(0);
@@ -217,7 +218,7 @@ public class BatchUtil {
     }
 
     //String sourceDir,String sourceFileName
-    static void unGzipFile(Path itemFile) {
+    static void unGzipFile(Path itemFile) throws IOException{
         String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(), ".") + ".csv";
         try {
             //建立gzip压缩文件输入流
@@ -240,7 +241,8 @@ public class BatchUtil {
             outStream.close();
             inStream.close();
         } catch (Exception ex) {
-            System.err.println(ex.toString());
+            //System.err.println(ex.toString());
+            throw new RuntimeException("压缩文件存在问题，请检查！", ex);
         }
     }
 
