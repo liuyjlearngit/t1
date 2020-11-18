@@ -20,21 +20,21 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCode(String rname, String name) {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)  AND specialityname=? and resname=?";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE   specialityname=? and resname=?";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),name,rname);
         return query;
     }
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeInAndResName(String name) {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)  AND specialityname=?";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE  specialityname=?";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),name);
         return query;
     }
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeIn() {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb ";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class));
         return query;
     }
