@@ -20,28 +20,28 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCode(String rname, String name) {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)  AND specialityname=? and resname=?";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE   specialityname=? and resname=?";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),name,rname);
         return query;
     }
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeInAndResName(String name) {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)  AND specialityname=?";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE  specialityname=?";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),name);
         return query;
     }
 
     @Override
     public List<ResStatisticsHeadquarters> findByRegionTypeAndTaskCodeIn() {
-        String sql="SELECT * FROM dims_tm_res_statistics_zb WHERE collectiondate=(SELECT \"max\"(collectiondate) FROM dims_tm_res_statistics_zb)";
+        String sql="SELECT * FROM dims_tm_res_statistics_zb ";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class));
         return query;
     }
 
     @Override
     public List<ResStatisticsHeadquarters> findSplityAll(String specialityname) {
-        String sql="SELECT resname,restype,unit FROM dims_tm_res_statistics_zb WHERE specialityname=? GROUP BY resname,restype,unit";
+        String sql="SELECT resname,restype,unit FROM dims_tm_res_statistics_zb WHERE specialityname=? GROUP BY resname,restype,unit ORDER BY resname";
         List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class),specialityname);
         return query;
     }
@@ -83,6 +83,36 @@ public class ResStatisticsServiceImpl implements ResStatisticsService {
         List<String> collect = query.stream()
                 .map(ResStatisticsHeadquarters::getProvince).collect(Collectors.toList());
         return collect;
+    }
+
+    @Override
+    public List<String> getSpecail() {
+        String sql="SELECT specialityname FROM dims_tm_res_statistics_zb GROUP BY specialityname";
+        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class));
+        List<String> collect = query.stream()
+                .map(ResStatisticsHeadquarters::getSpecialityName).collect(Collectors.toList());
+        return collect;
+    }
+
+    @Override
+    public List<ResStatisticsHeadquarters> findData(String speciality) {
+        String sql="SELECT resName,resType,sum (amount) amount,unit FROM dims_tm_res_statistics_zb WHERE specialityname=? GROUP BY resName,resType,unit";
+        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class), speciality);
+        return query;
+    }
+
+    @Override
+    public List<ResStatisticsHeadquarters> findDatas(String speciality) {
+        String sql="SELECT resName,sum (amount) amount FROM dims_tm_res_statistics_zb WHERE specialityname=? GROUP BY resName";
+        List<ResStatisticsHeadquarters> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ResStatisticsHeadquarters.class), speciality);
+        return query;
+    }
+
+    @Override
+    public String findDataOne(String speciality, String key) {
+        String sql="SELECT sum (amount) amount FROM dims_tm_res_statistics_zb WHERE specialityname=? and resName=? GROUP BY resName";
+        String query = secondJdbcTemplate.queryForObject(sql, String.class,speciality,key);
+        return query;
     }
 
     @Override

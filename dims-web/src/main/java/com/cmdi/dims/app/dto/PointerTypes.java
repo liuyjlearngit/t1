@@ -11,5 +11,6 @@ import java.util.List;
 @Builder
 public class PointerTypes {
     private String specialityType;
+    private String code;
     private List<PointerType> specialityValue;
 }

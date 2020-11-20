@@ -74,7 +74,7 @@ public class HeadquartersHealingController {
         if (BooleanUtils.isTrue(mock)) {
             //return ResponseDto.success(loadMojarMock(region));
         }
-        return ResponseDto.success(statisticals());
+        return ResponseDto.success(statistical());
     }
 
     //四舍五入
@@ -87,7 +87,8 @@ public class HeadquartersHealingController {
     private List<ProfessionalDot> statisticals() {
         //判断是否是  全国
 
-
+        long l = System.currentTimeMillis();
+        System.out.println("ks"+l);
         Map<String, List<ResStatisticsHeadquarters>> collect = resStatisticsRepository.findByRegionTypeAndTaskCodeIn().stream().collect(Collectors.groupingBy(ResStatisticsHeadquarters::getSpecialityName));
         List<String> strname=new ArrayList<>();
         for (Map.Entry<String, List<ResStatisticsHeadquarters>> colle:collect.entrySet()){
@@ -221,7 +222,88 @@ public class HeadquartersHealingController {
                 }
 
         }
+        long lw = System.currentTimeMillis();
+        System.out.println("js"+lw);
         return professionalDots;
+    }
+
+    private List<ProfessionalDot> statistical(){
+        long l1 = System.currentTimeMillis();
+        System.out.println("ks"+l1);
+        List<String> specail = resStatisticsRepository.getSpecail();
+        ArrayList<ProfessionalDot> lists1 = new ArrayList<>();
+        for (String speciality:specail) {
+            ArrayList<ResDataDto> lists = new ArrayList<>();
+            ArrayList<ResourcesDto> lists2 = new ArrayList<>();
+
+            List<ResStatisticsHeadquarters> data = resStatisticsRepository.findData(speciality);
+            for (int i=0;i<data.size();i++){
+                ResDataDto resDataDto = new ResDataDto();
+                resDataDto.setResname(data.get(i).getResName());
+                resDataDto.setRestype(data.get(i).getResType());
+                resDataDto.setAmount(String.valueOf(data.get(i).getAmount()));
+                resDataDto.setUnit(data.get(i).getUnit());
+                lists.add(resDataDto);
+            }
+            List<ResStatisticsHeadquarters> datas = resStatisticsRepository.findDatas(speciality);
+            HashMap<String, String> map = new HashMap<>();
+            for (int i=0;i<datas.size();i++){
+                map.put(String.valueOf(datas.get(i).getResName()),String.valueOf(datas.get(i).getAmount()));
+            }
+            Map<String, List<ResDataDto>> collect1 = lists.stream().collect(Collectors.groupingBy(ResDataDto::getResname));
+            for (Map.Entry<String, List<ResDataDto>> colle:collect1.entrySet()){
+                String key = colle.getKey();//取 这个键 来按大指标 查找对应的 专业的总数据
+                String dataOne = resStatisticsRepository.findDataOne(speciality, key);
+                ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
+                List<ResDataDto> value = colle.getValue();
+                for (ResDataDto val:value) {
+                    resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                            .name(val.getRestype())
+                            .num(val.getAmount())
+                            .unit(val.getUnit()).build());
+                }
+                List<List<ResourcesDetailsDto>> list = new ArrayList<>();
+                if (resourcesDetailsDtos.size()%4==0){
+                    for (int i=0;i<resourcesDetailsDtos.size()/4;i++){
+                        List<ResourcesDetailsDto> resourcesDetailsDtos2 = resourcesDetailsDtos.subList(i*4,i*4+3);
+                        list.add(resourcesDetailsDtos2);
+                    }
+                }else {
+                    for (int i=0;i<resourcesDetailsDtos.size()/4;i++){
+                        List<ResourcesDetailsDto> resourcesDetailsDtos2 = resourcesDetailsDtos.subList(i*4,i*4+4);
+                        list.add(resourcesDetailsDtos2);
+                    }
+                    List<ResourcesDetailsDto> resourcesDetailsDtos2 = resourcesDetailsDtos.subList(resourcesDetailsDtos.size()/4*4,resourcesDetailsDtos.size()/4*4+resourcesDetailsDtos.size()%4);
+                    list.add(resourcesDetailsDtos2);
+                }
+                lists2.add(ResourcesDto.builder()
+                        .resourcesName(key)
+                        .allValue(dataOne)
+                        .allUnit(value.get(0).getUnit())
+                        .numsn(list).build());
+            }
+            List<List<ResourcesDto>> listtow = new ArrayList<>();
+            if (lists2.size()%8==0){
+                for (int i=0;i<lists2.size()/8;i++){
+                    List<ResourcesDto> resourcesDetailsDtos2 = lists2.subList(i*8,i*8+7);
+                    listtow.add(resourcesDetailsDtos2);
+                }
+            }else {
+                for (int i=0;i<lists2.size()/8;i++){
+                    List<ResourcesDto> resourcesDetailsDtos2 = lists2.subList(i*8,i*8+8);
+                    listtow.add(resourcesDetailsDtos2);
+                }
+                List<ResourcesDto> resourcesDetailsDtos2 = lists2.subList(lists2.size()/8*8,lists2.size()/8*8+lists2.size()%8);
+                listtow.add(resourcesDetailsDtos2);
+            }
+            lists1.add(ProfessionalDot.builder()
+                    .speciality(speciality)
+                    .specialityName(speciality)
+                    .resourcesDtos(listtow).build());
+        }
+        long l = System.currentTimeMillis();
+        System.out.println("js"+l);
+        return lists1;
     }
 
     @ApiOperation("省端自维资源柱状图")
@@ -349,8 +431,16 @@ public class HeadquartersHealingController {
                 }
             }
         }
-        Map<String, List<ResStatisticsHeadquarters>> collect = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatisticsHeadquarters::getResName));
-        HashMap<String, List<String>> stringArrayListHashMap = new HashMap<>();
+        LinkedHashMap<String, List<ResStatisticsHeadquarters>> collect = new LinkedHashMap<>();
+        for (ResStatisticsHeadquarters taskcode:byTaskCodeIn) {
+            collect.put(taskcode.getResName(),new ArrayList<>());
+        }
+        Map<String, List<ResStatisticsHeadquarters>> collec = byTaskCodeIn.stream().collect(Collectors.groupingBy(ResStatisticsHeadquarters::getResName));
+        for (Map.Entry<String, List<ResStatisticsHeadquarters>> colle:collect.entrySet()){
+            colle.setValue(collec.get(colle.getKey()));
+        }
+
+        LinkedHashMap<String, List<String>> stringArrayListHashMap = new LinkedHashMap<>();
         ArrayList<String> strings1 = new ArrayList<>();
         ArrayList<String> strings2 = new ArrayList<>();
         ArrayList<Integer> strings3 = new ArrayList<>();
@@ -449,30 +539,37 @@ public class HeadquartersHealingController {
     }
 
     private StatisticsAllData statisticsAll() {
+//        List<ProfessionalDot> statisticals = statisticals();
+//        String speciality = null;
+//        String resourcesName = null;
+//
+//        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+//        for (ProfessionalDot statis:statisticals) {
+//            if (statis.getResourcesDtos().size()>0&&statis.getResourcesDtos().get(0).size()>0){
+//                speciality = statis.getSpeciality();
+//                resourcesName = statis.getResourcesDtos().get(0).get(0).getResourcesName();
+//                professionalDots.add(statis);
+//                break;
+//            }
+//        }
+//
+//        for (int i=0;i<statisticals.size();i++){
+//            if (!statisticals.get(i).getSpeciality().equals(speciality)){
+//                professionalDots.add(statisticals.get(i));
+//            }
+//        }
+//
+//        List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
+//        StatisticsAllData statisticsAllData = new StatisticsAllData();
+//        statisticsAllData.setGraphicals(graphicals);
+//        statisticsAllData.setStatisticals(professionalDots);
         List<ProfessionalDot> statisticals = statisticals();
-        String speciality = null;
-        String resourcesName = null;
-
-        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
-        for (ProfessionalDot statis:statisticals) {
-            if (statis.getResourcesDtos().size()>0&&statis.getResourcesDtos().get(0).size()>0){
-                speciality = statis.getSpeciality();
-                resourcesName = statis.getResourcesDtos().get(0).get(0).getResourcesName();
-                professionalDots.add(statis);
-                break;
-            }
-        }
-
-        for (int i=0;i<statisticals.size();i++){
-            if (!statisticals.get(i).getSpeciality().equals(speciality)){
-                professionalDots.add(statisticals.get(i));
-            }
-        }
-
+        String speciality = statisticals.get(0).getSpeciality();//专业名
+        String resourcesName = statisticals.get(0).getResourcesDtos().get(0).get(0).getResourcesName();//大指标
         List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
         StatisticsAllData statisticsAllData = new StatisticsAllData();
         statisticsAllData.setGraphicals(graphicals);
-        statisticsAllData.setStatisticals(professionalDots);
+        statisticsAllData.setStatisticals(statisticals);
         return statisticsAllData;
     }
 }

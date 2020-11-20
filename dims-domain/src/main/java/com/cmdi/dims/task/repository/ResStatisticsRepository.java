@@ -21,6 +21,15 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
 
     List<ResStatistics> findByRegionTypeAndTaskCodeIn(Integer type,List<String> taskCodes);
 
+    @Query(value ="SELECT b.resName as resName,b.resType as resType,sum (b.amount) as amount,b.unit as unit FROM ResStatistics b WHERE b.regionType='1' AND b.taskCode in(:inname) and b.specialityName=:name GROUP BY b.resName,b.resType,b.unit")
+    List<Object[]> findData(@Param("inname") List<String> inname,@Param("name") String name);
+
+    @Query(value ="SELECT sum (b.amount) as amount FROM ResStatistics b WHERE b.regionType='1' AND b.taskCode in(:inname) and b.specialityName=:name and b.resName=:rename GROUP BY b.resName")
+    String findDataOne(@Param("inname") List<String> inname,@Param("name") String name,@Param("rename") String rename);
+
+    @Query(value ="SELECT b.resName as resName,sum (b.amount) as amount FROM ResStatistics b WHERE b.regionType='1' AND b.taskCode in(:inname) and b.specialityName=:name GROUP BY b.resName")
+    List<Object[]> findDatas(@Param("inname") List<String> inname,@Param("name") String name);
+
     @Query(value = "select b.resType,sum (b.amount) from ResStatistics b where b.regionType='1' and b.taskCode in (:inname) and b.resName=:resname  group by b.resType")
     List<Object[]> findCodeAll(@Param("inname") List<String> inname,@Param("resname") String resname);
 
@@ -36,7 +45,7 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
     @Query(value = "SELECT b.resName,sum (b.amount) FROM ResStatistics b where b.regionType='1' and  b.taskCode=:taskcode group by b.resName")
     List<Object[]> findtow(@Param("taskcode") String taskcode);
 
-    @Query(value = "SELECT b.resName FROM ResStatistics b where b.regionType='1' and  b.specialityName=:specialityname group by b.resName")
+    @Query(value = "SELECT DISTINCT b.resName FROM ResStatistics b where b.regionType='1' and  b.specialityName=:specialityname group by b.resName")
     List<String> findthree(@Param("specialityname") String specialityname);
 
     @Query(value = "SELECT b.resType FROM ResStatistics b where b.regionType='1' and  b.specialityName=:specialityname and b.resName=:name group by b.resType")

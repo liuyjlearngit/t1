@@ -21,5 +21,9 @@ public interface ResStatisticsService {
     List<String> findSplityCode(String specialityname);
     List<String> findSplityCodetow();
 
+    List<String> getSpecail();
+    List<ResStatisticsHeadquarters> findData(String speciality);
+    List<ResStatisticsHeadquarters> findDatas(String speciality);
+    String findDataOne(String speciality,String key);
     List<ResStatisticsHeadquarters> findByWLY();
 }
