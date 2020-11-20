@@ -19,4 +19,5 @@ public class ProfessionalDot {
     private List<List<ResourcesDto>> resourcesDtos;
     @ApiModelProperty("资源数据集合")
     private List<ResourcesDto> resourcesDtosn;
+
 }

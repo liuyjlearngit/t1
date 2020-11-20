@@ -56,13 +56,52 @@ public class ChkresultProvinceController {
     @Autowired
     private IndexRepository indexRepository;
 
-
+    private HashMap<String,String> map=new HashMap<>();
 //    @Autowired
 //    ChkresultporviceImp chkresultporviceImp;
 
+    public Map<String,String> getSpeciality(){
+        Map<String,String> strings = new HashMap<>();
+        strings.put("230000","东北大区");
+        strings.put("130000","华北大区");
+        strings.put("610000","西北大区");
+        strings.put("510000","西南大区");
+        strings.put("320000","华东北大区");
+        strings.put("330000","华东南大区");
+        strings.put("410000","华中大区");
+        strings.put("440000","华南大区");
+        return strings;
+    }
+
+    public HashMap<String,String> getSpecialitys(){
+        HashMap<String,String> strings = new HashMap<>();
+        strings.put("黑龙江","230000");
+        strings.put("河北","130000");
+        strings.put("陕西","610000");
+        strings.put("四川","510000");
+        strings.put("江苏","320000");
+        strings.put("浙江","330000");
+        strings.put("河南","410000");
+        strings.put("广东","440000");
+        return strings;
+    }
+
+        public List<AreaCodeConfig> getspecat(){
+            List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
+            ArrayList<AreaCodeConfig> areaCodeConfigs = new ArrayList<>();
+            for (AreaCodeConfig areaCodeConfig:byRegionTypeOrderByCode) {
+                String code = areaCodeConfig.getCode();
+                if (code.equals("710000")||code.equals("810000")||code.equals("820000")){
+                    areaCodeConfigs.add(areaCodeConfig);
+                }
+            }
+            byRegionTypeOrderByCode.removeAll(areaCodeConfigs);
+            return byRegionTypeOrderByCode;
+        }
+
     //获取所有地区编码
     public HashMap<String, String> Regions(){
-        List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
+        List<AreaCodeConfig> byRegionTypeOrderByCode = getspecat();
         HashMap<String, String> stringStringHashMap = new HashMap<>();
         for (AreaCodeConfig region:byRegionTypeOrderByCode) {
             String name = region.getName().substring(region.getName().length()-1);
@@ -70,6 +109,7 @@ public class ChkresultProvinceController {
                 region.setName(region.getName().substring(0,region.getName().length()-1));
             }
             stringStringHashMap.put(region.getName(),region.getCode());
+            map.put(region.getCode(),region.getName());
         }
         return stringStringHashMap;
     }
@@ -101,9 +141,10 @@ public class ChkresultProvinceController {
         Double alldouble=0.0;//总数据
         StatisticResultDto statisticResultDto = new StatisticResultDto();
         if (StringUtils.isNotEmpty(region)) {
-            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
-            regionName=byCode.getName();
-            Assert.notNull(byCode, "没有找到对应的区域");
+            HashMap<String, String> regions = Regions();
+            String s = map.get(region);
+            regionName=s;
+            Assert.notNull(s, "没有找到对应的区域");
             ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(chkresultProvinceRepository.findByversionMax(), regionName);
             if (byVersionAndName!=null){
                 Double  PublicTotalRate= Double.valueOf(StringUtils.isNotEmpty(byVersionAndName.getPublicTotalRate())?byVersionAndName.getPublicTotalRate().substring(0, byVersionAndName.getPublicTotalRate().length() - 1):"0");
@@ -236,7 +277,7 @@ public class ChkresultProvinceController {
         List<AreaCodeConfig> configs;
         if (StringUtils.isEmpty(region)) {
 
-            configs = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);//region空  就是全国时查找省 按code排序
+            configs = getspecat();//region空  就是全国时查找省 按code排序
         } else {
             AreaCodeConfig config = areaCodeConfigRepository.findByCodeOrderByRegionTypeDesc(region);//region非空 查找 省市县 对应code的数据
             io.jsonwebtoken.lang.Assert.notNull("没有找到对应的区域");
@@ -312,9 +353,9 @@ public class ChkresultProvinceController {
             ArrayList<SpecificationsDto> specificationsDtos = addSpecificationsDto(doubles);
             return specificationsDtos;
         }else {//省内
-            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
-            Assert.notNull(byCode, "没有找到对应的区域");
-            ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(chkresultProvinceRepository.findByversionMax(), byCode.getName());
+            String s = map.get(region);
+            Assert.notNull(s, "没有找到对应的区域");
+            ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(chkresultProvinceRepository.findByversionMax(), s);
             ArrayList<Double> doubles = returnChkresultProvince(byVersionAndName);
             ArrayList<Double> doubletow = new ArrayList<>();
             for (Double doubls :doubles) {
@@ -447,18 +488,32 @@ public class ChkresultProvinceController {
 
             String byversionMax = chkresultProvinceRepository.findByversionMax();
             ArrayList<RegionSpecialityIndexItemDto> regionSpecialityIndexItemDtos = new ArrayList<>();
-            HashMap<String, String> regions = Regions();
+            HashMap<String, String> regions = null;
+            if (speciality.equals("网络云")){
+                regions = getSpecialitys();
+            }else {
+                regions = Regions();
+            }
+            Map<String, String> speciality2 = getSpeciality();
             for (Map.Entry<String, String> colle:regions.entrySet()) {
                 ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(byversionMax, colle.getKey());
 
                 ArrayList<Double> speciality1 = getSpeciality(speciality, byVersionAndName);
                 Double avarage4 = avarage(speciality1.get(4)/100);
+                if (speciality.equals("网络云")){
+                    String s = speciality2.get(colle.getValue());
+                    dictDtos.add(new DictProvinceDto(colle.getValue(),s,avarage4));
+                    ArrayList<RegionSpecialityIndexItemDto> regionSpecialityIndexItemDtos1 = specialityAdd(speciality, s,colle.getValue(), byVersionAndName);
+                    for (RegionSpecialityIndexItemDto re :regionSpecialityIndexItemDtos1) {
+                        regionSpecialityIndexItemDtos.add(re);
+                    }
+                }else {
                     dictDtos.add(new DictProvinceDto(colle.getValue(),colle.getKey(),avarage4));
                     ArrayList<RegionSpecialityIndexItemDto> regionSpecialityIndexItemDtos1 = specialityAdd(speciality, colle.getKey(),colle.getValue(), byVersionAndName);
                     for (RegionSpecialityIndexItemDto re :regionSpecialityIndexItemDtos1) {
                         regionSpecialityIndexItemDtos.add(re);
                     }
-
+                }
             }
             List<DictProvinceDto> newList = dictDtos.stream().sorted(Comparator.comparing(DictProvinceDto::getValues))
                     .collect(Collectors.toList());//排序
@@ -571,7 +626,7 @@ public class ChkresultProvinceController {
         List<AreaCodeConfig> configs;
         if (StringUtils.isEmpty(region)) {
 
-            configs = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);//region空  就是全国时查找省 按code排序
+            configs = getspecat();//region空  就是全国时查找省 按code排序
         } else {
             AreaCodeConfig config = areaCodeConfigRepository.findByCodeOrderByRegionTypeDesc(region);//region非空 查找 省市县 对应code的数据
             io.jsonwebtoken.lang.Assert.notNull("没有找到对应的区域");
@@ -763,7 +818,7 @@ public class ChkresultProvinceController {
     }
 
     private void exportdowns(HttpServletResponse response, String region, List<String> speciality) throws SQLException, IOException, ParseException {
-        String byversionMax = chkresultProvinceRepository.findByversionMax();
+        String byversionMax =chkresultProvinceRepository.findByversionMax();
         if (StringUtils.isNotEmpty(region)){
             ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(byversionMax, region);
 
@@ -908,7 +963,14 @@ public class ChkresultProvinceController {
         if (BooleanUtils.isTrue(mock)) {
 //            return ResponseDto.success(doLoadHistoryIndexMock(region, speciality));
         }
-        return ResponseDto.success(checktypes(region, speciality));
+        List<PointerTypes> checktypes = checktypes(region, speciality);
+        int size = checktypes.get(0).getSpecialityValue().size();
+        if (size==0){
+            checktypes.get(0).setCode("400");
+        }else {
+            checktypes.get(0).setCode("200");
+        }
+        return ResponseDto.success(checktypes);
     }
 
     public String getSpecialityS(String speciality){
@@ -929,7 +991,7 @@ public class ChkresultProvinceController {
             AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
             Assert.notNull(byCode, "没有找到对应的区域");
             String speciality1 = getSpecialityS(speciality);
-            String byversionMax = chkresultStaticsProvinceRuleService.findByversionMax();
+            String byversionMax = chkresultProvinceRepository.findByversionMax();
             List<ChkresultStaticsProvinceRule> byVersionAndCodeAndSpeciality = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(byversionMax, byCode.getName(), speciality1);
             Map<String, List<ChkresultStaticsProvinceRule>> collect = byVersionAndCodeAndSpeciality.stream().collect(Collectors.groupingBy(ChkresultStaticsProvinceRule::getRuleName));
             Map<String, String> areacode = loadRegionget("").stream().collect(Collectors.toMap(AreaCodeConfig::getName, AreaCodeConfig::getCode));
