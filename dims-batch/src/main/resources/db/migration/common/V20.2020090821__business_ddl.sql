@@ -88,7 +88,7 @@ create table RPT(
 int_id varchar(500),zh_label varchar(500),vendor_id varchar(500),signal_receive_type varchar(500),power_supply_type varchar(500),location_type varchar(500),related_room_location varchar(500),location varchar(500),lifecycle_status varchar(500),qualitor varchar(500),maintainor varchar(500),repeater_type varchar(500),beehive_type varchar(500),related_cell varchar(500),rated_power varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table SPEARD(
-int_id varchar(500),zh_label varchar(500),integrated_vendor varchar(500),related_location varchar(500),antenna_num varchar(500),trunk_amplifier_num varchar(500),related_bs varchar(500),related_cell text,passive_device_vendor varchar(500),feeder_vendor varchar(500),antenna_vendor_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
+int_id varchar(500),zh_label varchar(500),integrated_vendor varchar(500),related_location varchar(500),antenna_num varchar(500),trunk_amplifier_num varchar(500),related_bs text,related_cell text,passive_device_vendor varchar(500),feeder_vendor varchar(500),antenna_vendor_id varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
 );
 create table PICOAP(
 int_id varchar(500),zh_label varchar(500),ap_serial varchar(500),related_femto varchar(500),rated_pawer varchar(500),location varchar(500),vendor_id varchar(500),product_name varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName text
@@ -1170,7 +1170,7 @@ create index if not exists idx_CM_HOME_CUST_BUSINESS2device_id on CM_HOME_CUST_B
 create index if not exists idx_CM_HOME_CUST_BUSINESS2port_id on CM_HOME_CUST_BUSINESS(port_id);
 create index if not exists idx_RM_AREA_RESIDENTIAL2zh_label on RM_AREA_RESIDENTIAL(zh_label);
 create index if not exists idx_RM_GRID2zh_label on RM_GRID(zh_label);
-create index if not exists idx_RM_GRID2related_area on RM_GRID(related_area);
+-- create index if not exists idx_RM_GRID2related_area on RM_GRID(related_area);
 create index if not exists idx_CE_IMS_BUSINESS2ims_inst_id on CE_IMS_BUSINESS(ims_inst_id);
 create index if not exists idx_CM_DEVICE_ONU2zh_label on CM_DEVICE_ONU(zh_label);
 create index if not exists idx_CE_TV_BUSINESS2tv_inst_id on CE_TV_BUSINESS(tv_inst_id);
