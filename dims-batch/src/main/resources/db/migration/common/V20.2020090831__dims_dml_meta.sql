@@ -7598,89 +7598,89 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (906010107, '核心网数据规范性指标', 'DIMS_HX_99002', 99002, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
 (906010108, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02009', 2009, 906002001, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010109, '短彩信-(设备承载业务类型)枚举值规范性', 'DIMS_HX_02007', 2007, 906002001, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010110, '短彩信-资源关键字段唯一性', 'DIMS_HX_02006', 2006, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
+(906010110, '短彩信-短彩信-彩信中心-基础信息规范性核查-设备名称-唯一性核查', 'DIMS_HX_02006', 2006, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02006%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02006''
                                              else dims_col_result||'',DIMS_HX_02006'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-彩信中心-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_MSSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
-(906010111, '短彩信-资源关键字段唯一性', 'DIMS_HX_02005', 2005, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
+(906010111, '短彩信-短彩信-彩信中心-基础信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02005', 2005, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02005%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02005''
                                              else dims_col_result||'',DIMS_HX_02005'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-彩信中心-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-彩信中心-基础信息短彩信-彩信中心-基础信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_MSSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
-(906010112, '短彩信-IP地址规范性', 'DIMS_HX_02008', 2008, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
+(906010112, '短彩信-短彩信-彩信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查', 'DIMS_HX_02008', 2008, 906002001, '核心网', 11, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02008%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02008''
                                              else dims_col_result||'',%DIMS_HX_02008'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息设备IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息设备IP地址IP地址规范性''
-                                             else dims_col_rtName||'',彩信中心-基础信息设备IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息设备IP地址短彩信-彩信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息设备IP地址短彩信-彩信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',彩信中心-基础信息设备IP地址短彩信-彩信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查'' end)
                 where isNotNull(device_ip) and is_not_valid_ipaddress(device_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
 (906010113, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02029', 2029, 906002002, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010114, '短彩信-(设备承载业务类型)枚举值规范性', 'DIMS_HX_02027', 2027, 906002002, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010115, '短彩信-资源关键字段唯一性', 'DIMS_HX_02026', 2026, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
+(906010115, '短彩信-短彩信-短信中心-基础信息规范性核查-设备名称-唯一性核查', 'DIMS_HX_02026', 2026, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02026%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02026''
                                              else dims_col_result||'',DIMS_HX_02026'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信中心-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
-(906010116, '短彩信-资源关键字段唯一性', 'DIMS_HX_02025', 2025, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
+(906010116, '短彩信-短彩信-短信中心-基础信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02025', 2025, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02025%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02025''
                                              else dims_col_result||'',DIMS_HX_02025'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信中心-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信中心-基础信息短彩信-短信中心-基础信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
-(906010117, '短彩信-IP地址规范性', 'DIMS_HX_02028', 2028, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
+(906010117, '短彩信-短彩信-短信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查', 'DIMS_HX_02028', 2028, 906002002, '核心网', 11, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02028%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02028''
                                              else dims_col_result||'',%DIMS_HX_02028'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息设备IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息设备IP地址IP地址规范性''
-                                             else dims_col_rtName||'',短信中心-基础信息设备IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息设备IP地址短彩信-短信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息设备IP地址短彩信-短信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',短信中心-基础信息设备IP地址短彩信-短信中心-基础信息规范性核查-设备IP地址-IP地址规范性核查'' end)
                 where isNotNull(device_ip) and is_not_valid_ipaddress(device_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
 (906010118, '短彩信-(系统承载业务属性)枚举值规范性', 'DIMS_HX_02013', 2013, 906002003, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010119, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02012', 2012, 906002003, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010120, '短彩信-(业务系统覆盖范围)枚举值规范性', 'DIMS_HX_02014', 2014, 906002003, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010121, '短彩信-资源关键字段唯一性', 'DIMS_HX_02010', 2010, 906002003, '核心网', 11, null, 'update SMS_SMSGWSYS t1
+(906010121, '短彩信-短彩信-短信网关-系统信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02010', 2010, 906002003, '核心网', 11, null, 'update SMS_SMSGWSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02010%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02010''
                                              else dims_col_result||'',DIMS_HX_02010'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信网关-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSGWSYS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
-(906010122, '短彩信-资源关键字段唯一性', 'DIMS_HX_02011', 2011, 906002003, '核心网', 11, null, 'update SMS_SMSGWSYS t1
+(906010122, '短彩信-短彩信-短信网关-系统信息规范性核查-业务系统名称-唯一性核查', 'DIMS_HX_02011', 2011, 906002003, '核心网', 11, null, 'update SMS_SMSGWSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02011%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02011''
                                              else dims_col_result||'',DIMS_HX_02011'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信网关-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-业务系统名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-业务系统名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信网关-系统信息短彩信-短信网关-系统信息规范性核查-业务系统名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSGWSYS t2
 		                         where t2.ctid <> t1.ctid
@@ -7688,364 +7688,364 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (906010123, '短彩信-(业务系统覆盖范围)枚举值规范性', 'DIMS_HX_02024', 2024, 906002004, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010124, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02022', 2022, 906002004, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010125, '短彩信-(系统承载业务属性)枚举值规范性', 'DIMS_HX_02023', 2023, 906002004, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010126, '短彩信-资源关键字段唯一性', 'DIMS_HX_02020', 2020, 906002004, '核心网', 11, null, 'update SMS_SMSSYS t1
+(906010126, '短彩信-短彩信-短信中心-系统信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02020', 2020, 906002004, '核心网', 11, null, 'update SMS_SMSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02020%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02020''
                                              else dims_col_result||'',DIMS_HX_02020'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信中心-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSSYS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
-(906010127, '短彩信-资源关键字段唯一性', 'DIMS_HX_02021', 2021, 906002004, '核心网', 11, null, 'update SMS_SMSSYS t1
+(906010127, '短彩信-短彩信-短信中心-系统信息规范性核查-业务系统名称-唯一性核查', 'DIMS_HX_02021', 2021, 906002004, '核心网', 11, null, 'update SMS_SMSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02021%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02021''
                                              else dims_col_result||'',DIMS_HX_02021'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信中心-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-业务系统名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-业务系统名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信中心-系统信息短彩信-短信中心-系统信息规范性核查-业务系统名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSSYS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
 (906010128, '短彩信-(设备承载业务类型)枚举值规范性', 'DIMS_HX_02017', 2017, 906002005, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010129, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02019', 2019, 906002005, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010130, '短彩信-资源关键字段唯一性', 'DIMS_HX_02015', 2015, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
+(906010130, '短彩信-短彩信-短信网关-基础信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02015', 2015, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02015%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02015''
                                              else dims_col_result||'',DIMS_HX_02015'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信网关-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSGWBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
-(906010131, '短彩信-资源关键字段唯一性', 'DIMS_HX_02016', 2016, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
+(906010131, '短彩信-短彩信-短信网关-基础信息规范性核查-设备名称-唯一性核查', 'DIMS_HX_02016', 2016, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02016%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02016''
                                              else dims_col_result||'',DIMS_HX_02016'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-基础信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-基础信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-短信网关-基础信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-短信网关-基础信息短彩信-短信网关-基础信息规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_SMSGWBASEINFO t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
-(906010132, '短彩信-IP地址规范性', 'DIMS_HX_02018', 2018, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
+(906010132, '短彩信-短彩信-短信网关-基础信息规范性核查-设备IP地址-IP地址规范性核查', 'DIMS_HX_02018', 2018, 906002005, '核心网', 11, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02018%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02018''
                                              else dims_col_result||'',%DIMS_HX_02018'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息设备IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息设备IP地址IP地址规范性''
-                                             else dims_col_rtName||'',短信网关-基础信息设备IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息设备IP地址短彩信-短信网关-基础信息规范性核查-设备IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息设备IP地址短彩信-短信网关-基础信息规范性核查-设备IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',短信网关-基础信息设备IP地址短彩信-短信网关-基础信息规范性核查-设备IP地址-IP地址规范性核查'' end)
                 where isNotNull(device_ip) and is_not_valid_ipaddress(device_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
 (906010133, '短彩信-(业务系统覆盖范围)枚举值规范性', 'DIMS_HX_02004', 2004, 906002006, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010134, '短彩信-(生命周期状态)枚举值规范性', 'DIMS_HX_02003', 2003, 906002006, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010135, '短彩信-资源关键字段唯一性', 'DIMS_HX_02002', 2002, 906002006, '核心网', 11, null, 'update SMS_MSSSYS t1
+(906010135, '短彩信-短彩信-彩信中心-系统信息规范性核查-业务系统名称-唯一性核查', 'DIMS_HX_02002', 2002, 906002006, '核心网', 11, null, 'update SMS_MSSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02002%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02002''
                                              else dims_col_result||'',DIMS_HX_02002'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-彩信中心-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-业务系统名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-业务系统名称-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-业务系统名称-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_MSSSYS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
-(906010136, '短彩信-资源关键字段唯一性', 'DIMS_HX_02001', 2001, 906002006, '核心网', 11, null, 'update SMS_MSSSYS t1
+(906010136, '短彩信-短彩信-彩信中心-系统信息规范性核查-资源标识-唯一性核查', 'DIMS_HX_02001', 2001, 906002006, '核心网', 11, null, 'update SMS_MSSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02001%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02001''
                                              else dims_col_result||'',DIMS_HX_02001'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-系统信息资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-系统信息资源关键字段唯一性''
-                                             else dims_col_rtName||'',短彩信-彩信中心-系统信息资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',短彩信-彩信中心-系统信息短彩信-彩信中心-系统信息规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from SMS_MSSSYS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
 (906010137, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02237', 2237, 906002007, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010138, '电路域-资源关键字段唯一性', 'DIMS_HX_02235', 2235, 906002007, '核心网', 11, null, 'update CS_SSA t1
+(906010138, '电路域-电路域-SSA规范性核查-网元名称-唯一性核查', 'DIMS_HX_02235', 2235, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02235%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02235''
                                              else dims_col_result||'',DIMS_HX_02235'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA电路域-SSA规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA电路域-SSA规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA电路域-SSA规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
-(906010139, '电路域-资源关键字段唯一性', 'DIMS_HX_02234', 2234, 906002007, '核心网', 11, null, 'update CS_SSA t1
+(906010139, '电路域-电路域-SSA规范性核查-资源标识-唯一性核查', 'DIMS_HX_02234', 2234, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02234%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02234''
                                              else dims_col_result||'',DIMS_HX_02234'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA电路域-SSA规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA电路域-SSA规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA电路域-SSA规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
-(906010140, '电路域-资源关键字段唯一性', 'DIMS_HX_02236', 2236, 906002007, '核心网', 11, null, 'update CS_SSA t1
+(906010140, '电路域-电路域-SSA规范性核查-网管中网元名称-唯一性核查', 'DIMS_HX_02236', 2236, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02236%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02236''
                                              else dims_col_result||'',DIMS_HX_02236'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA电路域-SSA规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA电路域-SSA规范性核查-网管中网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA电路域-SSA规范性核查-网管中网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.native_name=t1.native_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
-(906010141, '电路域-资源关键字段唯一性', 'DIMS_HX_02238', 2238, 906002007, '核心网', 11, null, 'update CS_SSA t1
+(906010141, '电路域-电路域-SSA规范性核查-对应CE名称-唯一性核查', 'DIMS_HX_02238', 2238, 906002007, '核心网', 11, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02238%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02238''
                                              else dims_col_result||'',DIMS_HX_02238'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA电路域-SSA规范性核查-对应CE名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA电路域-SSA规范性核查-对应CE名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA电路域-SSA规范性核查-对应CE名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.ce_name=t1.ce_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
-(906010142, '电路域-资源关键字段唯一性', 'DIMS_HX_02232', 2232, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
+(906010142, '电路域-电路域-MSC POOL规范性核查-MSC POOL名称-唯一性核查', 'DIMS_HX_02232', 2232, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02232%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02232''
                                              else dims_col_result||'',DIMS_HX_02232'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MSC POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL电路域-MSC POOL规范性核查-MSC POOL名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL电路域-MSC POOL规范性核查-MSC POOL名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MSC POOL电路域-MSC POOL规范性核查-MSC POOL名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MSC_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002008, 1, null),
-(906010143, '电路域-资源关键字段唯一性', 'DIMS_HX_02231', 2231, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
+(906010143, '电路域-电路域-MSC POOL规范性核查-资源标识-唯一性核查', 'DIMS_HX_02231', 2231, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02231%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02231''
                                              else dims_col_result||'',DIMS_HX_02231'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MSC POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL电路域-MSC POOL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL电路域-MSC POOL规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MSC POOL电路域-MSC POOL规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MSC_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002008, 1, null),
-(906010144, '电路域-资源关键字段唯一性', 'DIMS_HX_02233', 2233, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
+(906010144, '电路域-电路域-MSC POOL规范性核查-英文名称-唯一性核查', 'DIMS_HX_02233', 2233, 906002008, '核心网', 11, null, 'update CS_MSC_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02233%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02233''
                                              else dims_col_result||'',DIMS_HX_02233'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MSC POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSC POOL电路域-MSC POOL规范性核查-英文名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MSC POOL电路域-MSC POOL规范性核查-英文名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MSC POOL电路域-MSC POOL规范性核查-英文名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MSC_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.en_name=t1.en_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002008, 1, null),
 (906010145, '电路域-(中继类型)枚举值规范性', 'DIMS_HX_02224', 2224, 906002009, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010146, '电路域-(带宽)枚举值规范性', 'DIMS_HX_02225', 2225, 906002009, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010147, '电路域-资源关键字段唯一性', 'DIMS_HX_02222', 2222, 906002009, '核心网', 11, null, 'update CS_REPEAT t1
+(906010147, '电路域-电路域-中继规范性核查-资源标识-唯一性核查', 'DIMS_HX_02222', 2222, 906002009, '核心网', 11, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02222%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02222''
                                              else dims_col_result||'',DIMS_HX_02222'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-中继资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-中继资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-中继资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-中继电路域-中继规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-中继电路域-中继规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-中继电路域-中继规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_REPEAT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
-(906010148, '电路域-资源关键字段唯一性', 'DIMS_HX_02223', 2223, 906002009, '核心网', 11, null, 'update CS_REPEAT t1
+(906010148, '电路域-电路域-中继规范性核查-电路名称-唯一性核查', 'DIMS_HX_02223', 2223, 906002009, '核心网', 11, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02223%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02223''
                                              else dims_col_result||'',DIMS_HX_02223'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-中继资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-中继资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-中继资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-中继电路域-中继规范性核查-电路名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-中继电路域-中继规范性核查-电路名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-中继电路域-中继规范性核查-电路名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_REPEAT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.circuit_name=t1.circuit_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
-(906010149, '电路域-资源关键字段唯一性', 'DIMS_HX_02221', 2221, 906002010, '核心网', 11, null, 'update CS_LINK t1
+(906010149, '电路域-电路域-链路规范性核查-信令链路名称-唯一性核查', 'DIMS_HX_02221', 2221, 906002010, '核心网', 11, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02221%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02221''
                                              else dims_col_result||'',DIMS_HX_02221'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-链路电路域-链路规范性核查-信令链路名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-链路电路域-链路规范性核查-信令链路名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-链路电路域-链路规范性核查-信令链路名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.signal_link_name=t1.signal_link_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
-(906010150, '电路域-资源关键字段唯一性', 'DIMS_HX_02220', 2220, 906002010, '核心网', 11, null, 'update CS_LINK t1
+(906010150, '电路域-电路域-链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02220', 2220, 906002010, '核心网', 11, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02220%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02220''
                                              else dims_col_result||'',DIMS_HX_02220'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-链路电路域-链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-链路电路域-链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-链路电路域-链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
-(906010151, '电路域-资源关键字段唯一性', 'DIMS_HX_02229', 2229, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
+(906010151, '电路域-电路域-IP信令规范性核查-资源标识-唯一性核查', 'DIMS_HX_02229', 2229, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02229%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02229''
                                              else dims_col_result||'',DIMS_HX_02229'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP信令资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-IP信令资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-IP信令资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP信令电路域-IP信令规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-IP信令电路域-IP信令规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-IP信令电路域-IP信令规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_IPSIGNAL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
-(906010152, '电路域-资源关键字段唯一性', 'DIMS_HX_02230', 2230, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
+(906010152, '电路域-电路域-IP信令规范性核查-网元名称-唯一性核查', 'DIMS_HX_02230', 2230, 906002011, '核心网', 11, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02230%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02230''
                                              else dims_col_result||'',DIMS_HX_02230'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP信令资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-IP信令资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-IP信令资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP信令电路域-IP信令规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-IP信令电路域-IP信令规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-IP信令电路域-IP信令规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_IPSIGNAL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
 (906010153, '电路域-(链路级别)枚举值规范性', 'DIMS_HX_02241', 2241, 906002012, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010154, '电路域-资源关键字段唯一性', 'DIMS_HX_02242', 2242, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
+(906010154, '电路域-电路域-SSA链路规范性核查-本端网元名称-唯一性核查', 'DIMS_HX_02242', 2242, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02242%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02242''
                                              else dims_col_result||'',DIMS_HX_02242'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路电路域-SSA链路规范性核查-本端网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路电路域-SSA链路规范性核查-本端网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA链路电路域-SSA链路规范性核查-本端网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.local_ne_name=t1.local_ne_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
-(906010155, '电路域-资源关键字段唯一性', 'DIMS_HX_02239', 2239, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
+(906010155, '电路域-电路域-SSA链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02239', 2239, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02239%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02239''
                                              else dims_col_result||'',DIMS_HX_02239'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路电路域-SSA链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路电路域-SSA链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA链路电路域-SSA链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
-(906010156, '电路域-资源关键字段唯一性', 'DIMS_HX_02243', 2243, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
+(906010156, '电路域-电路域-SSA链路规范性核查-远端网元名称-唯一性核查', 'DIMS_HX_02243', 2243, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02243%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02243''
                                              else dims_col_result||'',DIMS_HX_02243'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路电路域-SSA链路规范性核查-远端网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路电路域-SSA链路规范性核查-远端网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA链路电路域-SSA链路规范性核查-远端网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.remote_ne_name=t1.remote_ne_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
-(906010157, '电路域-资源关键字段唯一性', 'DIMS_HX_02240', 2240, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
+(906010157, '电路域-电路域-SSA链路规范性核查-链路名称-唯一性核查', 'DIMS_HX_02240', 2240, 906002012, '核心网', 11, null, 'update CS_SSA_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02240%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02240''
                                              else dims_col_result||'',DIMS_HX_02240'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-SSA链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-SSA链路电路域-SSA链路规范性核查-链路名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-SSA链路电路域-SSA链路规范性核查-链路名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-SSA链路电路域-SSA链路规范性核查-链路名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_SSA_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.link_name=t1.link_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002012, 1, null),
-(906010158, '电路域-资源关键字段唯一性', 'DIMS_HX_02227', 2227, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
+(906010158, '电路域-电路域-IP话务规范性核查-MGW名称-唯一性核查', 'DIMS_HX_02227', 2227, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02227%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02227''
                                              else dims_col_result||'',DIMS_HX_02227'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-IP话务资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务电路域-IP话务规范性核查-MGW名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务电路域-IP话务规范性核查-MGW名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-IP话务电路域-IP话务规范性核查-MGW名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_IPTRAFFIC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.related_mgw=t1.related_mgw)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
-(906010159, '电路域-资源关键字段唯一性', 'DIMS_HX_02226', 2226, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
+(906010159, '电路域-电路域-IP话务规范性核查-资源标识-唯一性核查', 'DIMS_HX_02226', 2226, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02226%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02226''
                                              else dims_col_result||'',DIMS_HX_02226'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-IP话务资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务电路域-IP话务规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务电路域-IP话务规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-IP话务电路域-IP话务规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_IPTRAFFIC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
-(906010160, '电路域-资源关键字段唯一性', 'DIMS_HX_02228', 2228, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
+(906010160, '电路域-电路域-IP话务规范性核查-端口所连CE名称-唯一性核查', 'DIMS_HX_02228', 2228, 906002013, '核心网', 11, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02228%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02228''
                                              else dims_col_result||'',DIMS_HX_02228'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-IP话务资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-IP话务电路域-IP话务规范性核查-端口所连CE名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-IP话务电路域-IP话务规范性核查-端口所连CE名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-IP话务电路域-IP话务规范性核查-端口所连CE名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_IPTRAFFIC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.port_related_ce=t1.port_related_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
 (906010161, '电路域-(运营商)枚举值规范性', 'DIMS_HX_02214', 2214, 906002014, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010162, '电路域-资源关键字段唯一性', 'DIMS_HX_02213', 2213, 906002014, '核心网', 11, null, 'update CS_OTHER t1
+(906010162, '电路域-电路域-其他规范性核查-网元名称-唯一性核查', 'DIMS_HX_02213', 2213, 906002014, '核心网', 11, null, 'update CS_OTHER t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02213%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02213''
                                              else dims_col_result||'',DIMS_HX_02213'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-其他资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-其他资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-其他资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-其他电路域-其他规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-其他电路域-其他规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-其他电路域-其他规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_OTHER t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002014, 1, null),
-(906010163, '电路域-资源关键字段唯一性', 'DIMS_HX_02212', 2212, 906002014, '核心网', 11, null, 'update CS_OTHER t1
+(906010163, '电路域-电路域-其他规范性核查-资源标识-唯一性核查', 'DIMS_HX_02212', 2212, 906002014, '核心网', 11, null, 'update CS_OTHER t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02212%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02212''
                                              else dims_col_result||'',DIMS_HX_02212'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-其他资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-其他资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-其他资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-其他电路域-其他规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-其他电路域-其他规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-其他电路域-其他规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_OTHER t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002014, 1, null),
 (906010164, '电路域-(端口状态)枚举值规范性', 'DIMS_HX_02219', 2219, 906002015, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010165, '电路域-(端口类型)枚举值规范性', 'DIMS_HX_02218', 2218, 906002015, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010166, '电路域-资源关键字段唯一性', 'DIMS_HX_02217', 2217, 906002015, '核心网', 11, null, 'update CS_PORT t1
+(906010166, '电路域-电路域-端口规范性核查-资源标识-唯一性核查', 'DIMS_HX_02217', 2217, 906002015, '核心网', 11, null, 'update CS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02217%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02217''
                                              else dims_col_result||'',DIMS_HX_02217'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-端口电路域-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-端口电路域-端口规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-端口电路域-端口规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_PORT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
 (906010167, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02206', 2206, 906002016, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010168, '电路域-(MGW用途)枚举值规范性', 'DIMS_HX_02207', 2207, 906002016, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010169, '电路域-资源关键字段唯一性', 'DIMS_HX_02204', 2204, 906002016, '核心网', 11, null, 'update CS_MGW t1
+(906010169, '电路域-电路域-MGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02204', 2204, 906002016, '核心网', 11, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02204%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02204''
                                              else dims_col_result||'',DIMS_HX_02204'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MGW电路域-MGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MGW电路域-MGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MGW电路域-MGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
-(906010170, '电路域-资源关键字段唯一性', 'DIMS_HX_02205', 2205, 906002016, '核心网', 11, null, 'update CS_MGW t1
+(906010170, '电路域-电路域-MGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02205', 2205, 906002016, '核心网', 11, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02205%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02205''
                                              else dims_col_result||'',DIMS_HX_02205'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MGW电路域-MGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MGW电路域-MGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MGW电路域-MGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MGW t2
 		                         where t2.ctid <> t1.ctid
@@ -8053,200 +8053,200 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (906010171, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02201', 2201, 906002017, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010172, '电路域-(是否为携号转网设备)枚举值规范性', 'DIMS_HX_02203', 2203, 906002017, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010173, '电路域-(MSCSERVER用途)枚举值规范性', 'DIMS_HX_02202', 2202, 906002017, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010174, '电路域-资源关键字段唯一性', 'DIMS_HX_02200', 2200, 906002017, '核心网', 11, null, 'update CS_MSS t1
+(906010174, '电路域-电路域-MSS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02200', 2200, 906002017, '核心网', 11, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02200%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02200''
                                              else dims_col_result||'',DIMS_HX_02200'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MSS资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MSS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSS电路域-MSS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MSS电路域-MSS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MSS电路域-MSS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MSS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
-(906010175, '电路域-资源关键字段唯一性', 'DIMS_HX_02199', 2199, 906002017, '核心网', 11, null, 'update CS_MSS t1
+(906010175, '电路域-电路域-MSS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02199', 2199, 906002017, '核心网', 11, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02199%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02199''
                                              else dims_col_result||'',DIMS_HX_02199'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-MSS资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-MSS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-MSS电路域-MSS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-MSS电路域-MSS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-MSS电路域-MSS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_MSS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
-(906010176, '电路域-资源关键字段唯一性', 'DIMS_HX_02215', 2215, 906002018, '核心网', 11, null, 'update CS_BOARD t1
+(906010176, '电路域-电路域-板卡规范性核查-资源标识-唯一性核查', 'DIMS_HX_02215', 2215, 906002018, '核心网', 11, null, 'update CS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02215%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02215''
                                              else dims_col_result||'',DIMS_HX_02215'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-板卡电路域-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-板卡电路域-板卡规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-板卡电路域-板卡规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
 (906010177, '电路域-(STP用途)枚举值规范性', 'DIMS_HX_02211', 2211, 906002019, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010178, '电路域-(生命周期状态)枚举值规范性', 'DIMS_HX_02210', 2210, 906002019, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010179, '电路域-资源关键字段唯一性', 'DIMS_HX_02209', 2209, 906002019, '核心网', 11, null, 'update CS_STP t1
+(906010179, '电路域-电路域-STP规范性核查-网元名称-唯一性核查', 'DIMS_HX_02209', 2209, 906002019, '核心网', 11, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02209%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02209''
                                              else dims_col_result||'',DIMS_HX_02209'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-STP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-STP资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-STP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-STP电路域-STP规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-STP电路域-STP规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',电路域-STP电路域-STP规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_STP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
-(906010180, '电路域-资源关键字段唯一性', 'DIMS_HX_02208', 2208, 906002019, '核心网', 11, null, 'update CS_STP t1
+(906010180, '电路域-电路域-STP规范性核查-资源标识-唯一性核查', 'DIMS_HX_02208', 2208, 906002019, '核心网', 11, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02208%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02208''
                                              else dims_col_result||'',DIMS_HX_02208'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-STP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:电路域-STP资源关键字段唯一性''
-                                             else dims_col_rtName||'',电路域-STP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%电路域-STP电路域-STP规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:电路域-STP电路域-STP规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',电路域-STP电路域-STP规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from CS_STP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
 (906010181, '智能网-(设备工作方式)枚举值规范性', 'DIMS_HX_02037', 2037, 906002020, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010182, '智能网-资源关键字段唯一性', 'DIMS_HX_02035', 2035, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
+(906010182, '智能网-智能网-业务处理单元规范性核查-设备名称-唯一性核查', 'DIMS_HX_02035', 2035, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02035%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02035''
                                              else dims_col_result||'',DIMS_HX_02035'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-业务处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-业务处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务处理单元智能网-业务处理单元规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-业务处理单元智能网-业务处理单元规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-业务处理单元智能网-业务处理单元规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
-(906010183, '智能网-资源关键字段唯一性', 'DIMS_HX_02034', 2034, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
+(906010183, '智能网-智能网-业务处理单元规范性核查-资源标识-唯一性核查', 'DIMS_HX_02034', 2034, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02034%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02034''
                                              else dims_col_result||'',DIMS_HX_02034'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-业务处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-业务处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务处理单元智能网-业务处理单元规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-业务处理单元智能网-业务处理单元规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-业务处理单元智能网-业务处理单元规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
-(906010184, '智能网-IP地址规范性', 'DIMS_HX_02036', 2036, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
+(906010184, '智能网-智能网-业务处理单元规范性核查-业务IP地址/（浮动地址）-IP地址规范性核查', 'DIMS_HX_02036', 2036, 906002020, '核心网', 11, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02036%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02036''
                                              else dims_col_result||'',%DIMS_HX_02036'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元业务IP地址/（浮动地址）IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:业务处理单元业务IP地址/（浮动地址）IP地址规范性''
-                                             else dims_col_rtName||'',业务处理单元业务IP地址/（浮动地址）IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元业务IP地址/（浮动地址）智能网-业务处理单元规范性核查-业务IP地址/（浮动地址）-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:业务处理单元业务IP地址/（浮动地址）智能网-业务处理单元规范性核查-业务IP地址/（浮动地址）-IP地址规范性核查''
+                                             else dims_col_rtName||'',业务处理单元业务IP地址/（浮动地址）智能网-业务处理单元规范性核查-业务IP地址/（浮动地址）-IP地址规范性核查'' end)
                 where isNotNull(business_ip_address) and is_not_valid_ipaddress(business_ip_address)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
 (906010185, '智能网-(生命周期状态)枚举值规范性', 'DIMS_HX_02032', 2032, 906002021, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010186, '智能网-(网元类型)枚举值规范性', 'DIMS_HX_02033', 2033, 906002021, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010187, '智能网-资源关键字段唯一性', 'DIMS_HX_02030', 2030, 906002021, '核心网', 11, null, 'update INT_PUBRES t1
+(906010187, '智能网-智能网-网元通用规范性核查-资源标识-唯一性核查', 'DIMS_HX_02030', 2030, 906002021, '核心网', 11, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02030%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02030''
                                              else dims_col_result||'',DIMS_HX_02030'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-网元通用资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-网元通用资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-网元通用资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-网元通用智能网-网元通用规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-网元通用智能网-网元通用规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-网元通用智能网-网元通用规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_PUBRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
-(906010188, '智能网-资源关键字段唯一性', 'DIMS_HX_02031', 2031, 906002021, '核心网', 11, null, 'update INT_PUBRES t1
+(906010188, '智能网-智能网-网元通用规范性核查-网元名称-唯一性核查', 'DIMS_HX_02031', 2031, 906002021, '核心网', 11, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02031%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02031''
                                              else dims_col_result||'',DIMS_HX_02031'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-网元通用资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-网元通用资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-网元通用资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-网元通用智能网-网元通用规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-网元通用智能网-网元通用规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-网元通用智能网-网元通用规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_PUBRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
-(906010189, '智能网-资源关键字段唯一性', 'DIMS_HX_02039', 2039, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
+(906010189, '智能网-智能网-信令处理单元规范性核查-设备名称-唯一性核查', 'DIMS_HX_02039', 2039, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02039%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02039''
                                              else dims_col_result||'',DIMS_HX_02039'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-信令处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-信令处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令处理单元智能网-信令处理单元规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-信令处理单元智能网-信令处理单元规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-信令处理单元智能网-信令处理单元规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_SIGNALUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010190, '智能网-资源关键字段唯一性', 'DIMS_HX_02038', 2038, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
+(906010190, '智能网-智能网-信令处理单元规范性核查-资源标识-唯一性核查', 'DIMS_HX_02038', 2038, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02038%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02038''
                                              else dims_col_result||'',DIMS_HX_02038'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-信令处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-信令处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令处理单元智能网-信令处理单元规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-信令处理单元智能网-信令处理单元规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-信令处理单元智能网-信令处理单元规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_SIGNALUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010191, '智能网-IP地址规范性', 'DIMS_HX_02040', 2040, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
+(906010191, '智能网-智能网-信令处理单元规范性核查-业务IP地址/浮动IP-IP地址规范性核查', 'DIMS_HX_02040', 2040, 906002022, '核心网', 11, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02040%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02040''
                                              else dims_col_result||'',%DIMS_HX_02040'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元业务IP地址/浮动IPIP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令处理单元业务IP地址/浮动IPIP地址规范性''
-                                             else dims_col_rtName||'',信令处理单元业务IP地址/浮动IPIP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元业务IP地址/浮动IP智能网-信令处理单元规范性核查-业务IP地址/浮动IP-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令处理单元业务IP地址/浮动IP智能网-信令处理单元规范性核查-业务IP地址/浮动IP-IP地址规范性核查''
+                                             else dims_col_rtName||'',信令处理单元业务IP地址/浮动IP智能网-信令处理单元规范性核查-业务IP地址/浮动IP-IP地址规范性核查'' end)
                 where isNotNull(business_ip_address) and is_not_valid_ipaddress(business_ip_address)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010192, '智能网-资源关键字段唯一性', 'DIMS_HX_02045', 2045, 906002023, '核心网', 11, null, 'update INT_MAINTAIN t1
+(906010192, '智能网-智能网-维保规范性核查-资源标识-唯一性核查', 'DIMS_HX_02045', 2045, 906002023, '核心网', 11, null, 'update INT_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02045%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02045''
                                              else dims_col_result||'',DIMS_HX_02045'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-维保资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-维保资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-维保资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-维保智能网-维保规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-维保智能网-维保规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-维保智能网-维保规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002023, 1, null),
-(906010193, '智能网-资源关键字段唯一性', 'DIMS_HX_02046', 2046, 906002023, '核心网', 11, null, 'update INT_MAINTAIN t1
+(906010193, '智能网-智能网-维保规范性核查-设备名称-唯一性核查', 'DIMS_HX_02046', 2046, 906002023, '核心网', 11, null, 'update INT_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02046%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02046''
                                              else dims_col_result||'',DIMS_HX_02046'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-维保资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-维保资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-维保资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-维保智能网-维保规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-维保智能网-维保规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-维保智能网-维保规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002023, 1, null),
 (906010194, '智能网-(主/备用)枚举值规范性', 'DIMS_HX_02058', 2058, 906002024, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010195, '智能网-资源关键字段唯一性', 'DIMS_HX_02056', 2056, 906002024, '核心网', 11, null, 'update INT_RELAY t1
+(906010195, '智能网-智能网-话务中继规范性核查-网元名称-唯一性核查', 'DIMS_HX_02056', 2056, 906002024, '核心网', 11, null, 'update INT_RELAY t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02056%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02056''
                                              else dims_col_result||'',DIMS_HX_02056'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-话务中继资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继智能网-话务中继规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继智能网-话务中继规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-话务中继智能网-话务中继规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_RELAY t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002024, 1, null),
-(906010196, '智能网-资源关键字段唯一性', 'DIMS_HX_02057', 2057, 906002024, '核心网', 11, null, 'update INT_RELAY t1
+(906010196, '智能网-智能网-话务中继规范性核查-端口名称-唯一性核查', 'DIMS_HX_02057', 2057, 906002024, '核心网', 11, null, 'update INT_RELAY t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02057%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02057''
                                              else dims_col_result||'',DIMS_HX_02057'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-话务中继资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继智能网-话务中继规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继智能网-话务中继规范性核查-端口名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-话务中继智能网-话务中继规范性核查-端口名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_RELAY t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.port_name=t1.port_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002024, 1, null),
-(906010197, '智能网-资源关键字段唯一性', 'DIMS_HX_02055', 2055, 906002024, '核心网', 11, null, 'update INT_RELAY t1
+(906010197, '智能网-智能网-话务中继规范性核查-资源标识-唯一性核查', 'DIMS_HX_02055', 2055, 906002024, '核心网', 11, null, 'update INT_RELAY t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02055%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02055''
                                              else dims_col_result||'',DIMS_HX_02055'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-话务中继资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-话务中继智能网-话务中继规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-话务中继智能网-话务中继规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-话务中继智能网-话务中继规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_RELAY t2
 		                         where t2.ctid <> t1.ctid
@@ -8254,1665 +8254,1665 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (906010198, '智能网-(端口状态)枚举值规范性', 'DIMS_HX_02050', 2050, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010199, '智能网-(端口类型)枚举值规范性', 'DIMS_HX_02051', 2051, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010200, '智能网-(端口用途)枚举值规范性', 'DIMS_HX_02052', 2052, 906002025, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010201, '智能网-资源关键字段唯一性', 'DIMS_HX_02049', 2049, 906002025, '核心网', 11, null, 'update INT_PORT t1
+(906010201, '智能网-智能网-端口规范性核查-资源标识-唯一性核查', 'DIMS_HX_02049', 2049, 906002025, '核心网', 11, null, 'update INT_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02049%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02049''
                                              else dims_col_result||'',DIMS_HX_02049'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-端口智能网-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-端口智能网-端口规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-端口智能网-端口规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_PORT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
-(906010202, '智能网-资源关键字段唯一性', 'DIMS_HX_02043', 2043, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
+(906010202, '智能网-智能网-业务资源规范性核查-资源标识-唯一性核查', 'DIMS_HX_02043', 2043, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02043%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02043''
                                              else dims_col_result||'',DIMS_HX_02043'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务资源资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-业务资源资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-业务资源资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务资源智能网-业务资源规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-业务资源智能网-业务资源规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-业务资源智能网-业务资源规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BUSRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
-(906010203, '智能网-资源关键字段唯一性', 'DIMS_HX_02044', 2044, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
+(906010203, '智能网-智能网-业务资源规范性核查-业务名称-唯一性核查', 'DIMS_HX_02044', 2044, 906002026, '核心网', 11, null, 'update INT_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02044%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02044''
                                              else dims_col_result||'',DIMS_HX_02044'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务资源资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-业务资源资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-业务资源资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-业务资源智能网-业务资源规范性核查-业务名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-业务资源智能网-业务资源规范性核查-业务名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-业务资源智能网-业务资源规范性核查-业务名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BUSRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
-(906010204, '智能网-资源关键字段唯一性', 'DIMS_HX_02041', 2041, 906002027, '核心网', 11, null, 'update INT_DEVICE t1
+(906010204, '智能网-智能网-智能网网络设备规范性核查-资源标识-唯一性核查', 'DIMS_HX_02041', 2041, 906002027, '核心网', 11, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02041%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02041''
                                              else dims_col_result||'',DIMS_HX_02041'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-智能网网络设备资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-智能网网络设备资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-智能网网络设备资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-智能网网络设备智能网-智能网网络设备规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-智能网网络设备智能网-智能网网络设备规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-智能网网络设备智能网-智能网网络设备规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_DEVICE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
-(906010205, '智能网-资源关键字段唯一性', 'DIMS_HX_02042', 2042, 906002027, '核心网', 11, null, 'update INT_DEVICE t1
+(906010205, '智能网-智能网-智能网网络设备规范性核查-设备名称-唯一性核查', 'DIMS_HX_02042', 2042, 906002027, '核心网', 11, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02042%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02042''
                                              else dims_col_result||'',DIMS_HX_02042'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-智能网网络设备资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-智能网网络设备资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-智能网网络设备资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-智能网网络设备智能网-智能网网络设备规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-智能网网络设备智能网-智能网网络设备规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-智能网网络设备智能网-智能网网络设备规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_DEVICE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
-(906010206, '智能网-资源关键字段唯一性', 'DIMS_HX_02053', 2053, 906002028, '核心网', 11, null, 'update INT_SIGNALLINK t1
+(906010206, '智能网-智能网-信令链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02053', 2053, 906002028, '核心网', 11, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02053%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02053''
                                              else dims_col_result||'',DIMS_HX_02053'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-信令链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-信令链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令链路智能网-信令链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-信令链路智能网-信令链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-信令链路智能网-信令链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_SIGNALLINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
-(906010207, '智能网-资源关键字段唯一性', 'DIMS_HX_02054', 2054, 906002028, '核心网', 11, null, 'update INT_SIGNALLINK t1
+(906010207, '智能网-智能网-信令链路规范性核查-电路名称-唯一性核查', 'DIMS_HX_02054', 2054, 906002028, '核心网', 11, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02054%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02054''
                                              else dims_col_result||'',DIMS_HX_02054'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-信令链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-信令链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-信令链路智能网-信令链路规范性核查-电路名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-信令链路智能网-信令链路规范性核查-电路名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-信令链路智能网-信令链路规范性核查-电路名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_SIGNALLINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.circuit_name=t1.circuit_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
-(906010208, '智能网-资源关键字段唯一性', 'DIMS_HX_02048', 2048, 906002029, '核心网', 11, null, 'update INT_BOARD t1
+(906010208, '智能网-智能网-板卡规范性核查-板卡名称-唯一性核查', 'DIMS_HX_02048', 2048, 906002029, '核心网', 11, null, 'update INT_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02048%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02048''
                                              else dims_col_result||'',DIMS_HX_02048'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-板卡智能网-板卡规范性核查-板卡名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-板卡智能网-板卡规范性核查-板卡名称-唯一性核查''
+                                             else dims_col_rtName||'',智能网-板卡智能网-板卡规范性核查-板卡名称-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
-(906010209, '智能网-资源关键字段唯一性', 'DIMS_HX_02047', 2047, 906002029, '核心网', 11, null, 'update INT_BOARD t1
+(906010209, '智能网-智能网-板卡规范性核查-资源标识-唯一性核查', 'DIMS_HX_02047', 2047, 906002029, '核心网', 11, null, 'update INT_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02047%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02047''
                                              else dims_col_result||'',DIMS_HX_02047'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',智能网-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网-板卡智能网-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网-板卡智能网-板卡规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',智能网-板卡智能网-板卡规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from INT_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
 (906010210, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02064', 2064, 906002030, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010211, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02063', 2063, 906002030, '核心网', 11, null, 'update VOLTE_TAS t1
+(906010211, 'VOLTE-VOLTE-VOLTETAS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02063', 2063, 906002030, '核心网', 11, null, 'update VOLTE_TAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02063%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02063''
                                              else dims_col_result||'',DIMS_HX_02063'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTETAS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTETAS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-VOLTETAS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_TAS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
-(906010212, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02062', 2062, 906002030, '核心网', 11, null, 'update VOLTE_TAS t1
+(906010212, 'VOLTE-VOLTE-VOLTETAS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02062', 2062, 906002030, '核心网', 11, null, 'update VOLTE_TAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02062%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02062''
                                              else dims_col_result||'',DIMS_HX_02062'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTETAS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTETAS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-VOLTETAS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-VOLTETASVOLTE-VOLTETAS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_TAS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
 (906010213, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02079', 2079, 906002031, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010214, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02078', 2078, 906002031, '核心网', 11, null, 'update VOLTE_PSBC t1
+(906010214, 'VOLTE-VOLTE-PSBC规范性核查-网元名称-唯一性核查', 'DIMS_HX_02078', 2078, 906002031, '核心网', 11, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02078%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02078''
                                              else dims_col_result||'',DIMS_HX_02078'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-PSBC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-PSBC资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-PSBC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-PSBCVOLTE-PSBC规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-PSBCVOLTE-PSBC规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-PSBCVOLTE-PSBC规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_PSBC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
-(906010215, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02077', 2077, 906002031, '核心网', 11, null, 'update VOLTE_PSBC t1
+(906010215, 'VOLTE-VOLTE-PSBC规范性核查-资源标识-唯一性核查', 'DIMS_HX_02077', 2077, 906002031, '核心网', 11, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02077%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02077''
                                              else dims_col_result||'',DIMS_HX_02077'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-PSBC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-PSBC资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-PSBC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-PSBCVOLTE-PSBC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-PSBCVOLTE-PSBC规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-PSBCVOLTE-PSBC规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_PSBC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
-(906010216, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02120', 2120, 906002032, '核心网', 11, null, 'update VOLTE_LINK t1
+(906010216, 'VOLTE-VOLTE-链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02120', 2120, 906002032, '核心网', 11, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02120%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02120''
                                              else dims_col_result||'',DIMS_HX_02120'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-链路VOLTE-链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-链路VOLTE-链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-链路VOLTE-链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
 (906010217, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02088', 2088, 906002033, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010218, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02087', 2087, 906002033, '核心网', 11, null, 'update VOLTE_BCF t1
+(906010218, 'VOLTE-VOLTE-BCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02087', 2087, 906002033, '核心网', 11, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02087''
                                              else dims_col_result||'',DIMS_HX_02087'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BCFVOLTE-BCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BCFVOLTE-BCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BCFVOLTE-BCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
-(906010219, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02086', 2086, 906002033, '核心网', 11, null, 'update VOLTE_BCF t1
+(906010219, 'VOLTE-VOLTE-BCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02086', 2086, 906002033, '核心网', 11, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02086%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02086''
                                              else dims_col_result||'',DIMS_HX_02086'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BCFVOLTE-BCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BCFVOLTE-BCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BCFVOLTE-BCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
 (906010220, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02070', 2070, 906002034, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010221, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02069', 2069, 906002034, '核心网', 11, null, 'update VOLTE_MRFC t1
+(906010221, 'VOLTE-VOLTE-MRFC规范性核查-网元名称-唯一性核查', 'DIMS_HX_02069', 2069, 906002034, '核心网', 11, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02069%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02069''
                                              else dims_col_result||'',DIMS_HX_02069'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFC资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MRFC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFCVOLTE-MRFC规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFCVOLTE-MRFC规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MRFCVOLTE-MRFC规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MRFC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
-(906010222, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02068', 2068, 906002034, '核心网', 11, null, 'update VOLTE_MRFC t1
+(906010222, 'VOLTE-VOLTE-MRFC规范性核查-资源标识-唯一性核查', 'DIMS_HX_02068', 2068, 906002034, '核心网', 11, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02068%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02068''
                                              else dims_col_result||'',DIMS_HX_02068'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFC资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MRFC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFCVOLTE-MRFC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFCVOLTE-MRFC规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MRFCVOLTE-MRFC规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MRFC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
 (906010223, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02082', 2082, 906002035, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010224, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02080', 2080, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
+(906010224, 'VOLTE-VOLTE-ATCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02080', 2080, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02080%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02080''
                                              else dims_col_result||'',DIMS_HX_02080'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ATCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATCFVOLTE-ATCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATCFVOLTE-ATCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ATCFVOLTE-ATCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ATCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
-(906010225, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02081', 2081, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
+(906010225, 'VOLTE-VOLTE-ATCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02081', 2081, 906002035, '核心网', 11, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02081%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02081''
                                              else dims_col_result||'',DIMS_HX_02081'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ATCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATCFVOLTE-ATCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATCFVOLTE-ATCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ATCFVOLTE-ATCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ATCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
 (906010226, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02076', 2076, 906002036, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010227, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02074', 2074, 906002036, '核心网', 11, null, 'update VOLTE_MRFP t1
+(906010227, 'VOLTE-VOLTE-MRFP规范性核查-资源标识-唯一性核查', 'DIMS_HX_02074', 2074, 906002036, '核心网', 11, null, 'update VOLTE_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02074%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02074''
                                              else dims_col_result||'',DIMS_HX_02074'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFP资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MRFP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFPVOLTE-MRFP规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFPVOLTE-MRFP规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MRFPVOLTE-MRFP规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MRFP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
-(906010228, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02075', 2075, 906002036, '核心网', 11, null, 'update VOLTE_MRFP t1
+(906010228, 'VOLTE-VOLTE-MRFP规范性核查-网元名称-唯一性核查', 'DIMS_HX_02075', 2075, 906002036, '核心网', 11, null, 'update VOLTE_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02075%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02075''
                                              else dims_col_result||'',DIMS_HX_02075'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFP资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MRFP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MRFPVOLTE-MRFP规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MRFPVOLTE-MRFP规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MRFPVOLTE-MRFP规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MRFP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
 (906010229, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02094', 2094, 906002037, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010230, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02092', 2092, 906002037, '核心网', 11, null, 'update VOLTE_ISBG t1
+(906010230, 'VOLTE-VOLTE-ISBG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02092', 2092, 906002037, '核心网', 11, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02092%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02092''
                                              else dims_col_result||'',DIMS_HX_02092'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ISBG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ISBG资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ISBG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ISBGVOLTE-ISBG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ISBGVOLTE-ISBG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ISBGVOLTE-ISBG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ISBG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
-(906010231, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02093', 2093, 906002037, '核心网', 11, null, 'update VOLTE_ISBG t1
+(906010231, 'VOLTE-VOLTE-ISBG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02093', 2093, 906002037, '核心网', 11, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02093%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02093''
                                              else dims_col_result||'',DIMS_HX_02093'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ISBG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ISBG资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ISBG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ISBGVOLTE-ISBG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ISBGVOLTE-ISBG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ISBGVOLTE-ISBG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ISBG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
-(906010232, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02116', 2116, 906002038, '核心网', 11, null, 'update VOLTE_BOARD t1
+(906010232, 'VOLTE-VOLTE-板卡规范性核查-资源标识-唯一性核查', 'DIMS_HX_02116', 2116, 906002038, '核心网', 11, null, 'update VOLTE_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02116%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02116''
                                              else dims_col_result||'',DIMS_HX_02116'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-板卡VOLTE-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-板卡VOLTE-板卡规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-板卡VOLTE-板卡规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002038, 1, null),
 (906010233, 'VOLTE-(是否备份)枚举值规范性', 'DIMS_HX_02109', 2109, 906002039, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010234, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02110', 2110, 906002039, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010235, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02107', 2107, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
+(906010235, 'VOLTE-VOLTE-DNS&ENUM规范性核查-资源标识-唯一性核查', 'DIMS_HX_02107', 2107, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02107%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02107''
                                              else dims_col_result||'',DIMS_HX_02107'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-DNS&ENUM资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-DNS&ENUM资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-DNS&ENUM资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
-(906010236, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02108', 2108, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
+(906010236, 'VOLTE-VOLTE-DNS&ENUM规范性核查-网元名称-唯一性核查', 'DIMS_HX_02108', 2108, 906002039, '核心网', 11, null, 'update VOLTE_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02108%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02108''
                                              else dims_col_result||'',DIMS_HX_02108'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-DNS&ENUM资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-DNS&ENUM资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-DNS&ENUM资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-DNS&ENUMVOLTE-DNS&ENUM规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
 (906010237, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02073', 2073, 906002040, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010238, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02072', 2072, 906002040, '核心网', 11, null, 'update VOLTE_AP t1
+(906010238, 'VOLTE-VOLTE-AP规范性核查-网元名称-唯一性核查', 'DIMS_HX_02072', 2072, 906002040, '核心网', 11, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02072%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02072''
                                              else dims_col_result||'',DIMS_HX_02072'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-AP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-AP资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-AP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-APVOLTE-AP规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-APVOLTE-AP规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-APVOLTE-AP规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_AP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
-(906010239, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02071', 2071, 906002040, '核心网', 11, null, 'update VOLTE_AP t1
+(906010239, 'VOLTE-VOLTE-AP规范性核查-资源标识-唯一性核查', 'DIMS_HX_02071', 2071, 906002040, '核心网', 11, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02071%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02071''
                                              else dims_col_result||'',DIMS_HX_02071'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-AP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-AP资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-AP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-APVOLTE-AP规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-APVOLTE-AP规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-APVOLTE-AP规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_AP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
 (906010240, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02061', 2061, 906002041, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010241, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02060', 2060, 906002041, '核心网', 11, null, 'update VOLTE_AS t1
+(906010241, 'VOLTE-VOLTE-VOLTE AS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02060', 2060, 906002041, '核心网', 11, null, 'update VOLTE_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02060%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02060''
                                              else dims_col_result||'',DIMS_HX_02060'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTE AS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTE AS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-VOLTE AS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_AS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
-(906010242, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02059', 2059, 906002041, '核心网', 11, null, 'update VOLTE_AS t1
+(906010242, 'VOLTE-VOLTE-VOLTE AS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02059', 2059, 906002041, '核心网', 11, null, 'update VOLTE_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02059%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02059''
                                              else dims_col_result||'',DIMS_HX_02059'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTE AS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTE AS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-VOLTE AS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-VOLTE ASVOLTE-VOLTE AS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_AS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
 (906010243, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02106', 2106, 906002042, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010244, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02104', 2104, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
+(906010244, 'VOLTE-VOLTE-IM-MGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02104', 2104, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02104%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02104''
                                              else dims_col_result||'',DIMS_HX_02104'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-IM-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-IM-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-IM-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
-(906010245, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02105', 2105, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
+(906010245, 'VOLTE-VOLTE-IM-MGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02105', 2105, 906002042, '核心网', 11, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02105%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02105''
                                              else dims_col_result||'',DIMS_HX_02105'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-IM-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-IM-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-IM-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-IM-MGWVOLTE-IM-MGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
 (906010246, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02091', 2091, 906002043, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010247, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02090', 2090, 906002043, '核心网', 11, null, 'update VOLTE_BGW t1
+(906010247, 'VOLTE-VOLTE-BGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02090', 2090, 906002043, '核心网', 11, null, 'update VOLTE_BGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02090%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02090''
                                              else dims_col_result||'',DIMS_HX_02090'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGWVOLTE-BGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGWVOLTE-BGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BGWVOLTE-BGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
-(906010248, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02089', 2089, 906002043, '核心网', 11, null, 'update VOLTE_BGW t1
+(906010248, 'VOLTE-VOLTE-BGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02089', 2089, 906002043, '核心网', 11, null, 'update VOLTE_BGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02089%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02089''
                                              else dims_col_result||'',DIMS_HX_02089'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGWVOLTE-BGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGWVOLTE-BGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BGWVOLTE-BGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
-(906010249, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02099', 2099, 906002044, '核心网', 11, null, 'update VOLTE_BGCF t1
+(906010249, 'VOLTE-VOLTE-BGCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02099', 2099, 906002044, '核心网', 11, null, 'update VOLTE_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02099%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02099''
                                              else dims_col_result||'',DIMS_HX_02099'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGCFVOLTE-BGCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGCFVOLTE-BGCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BGCFVOLTE-BGCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
-(906010250, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02098', 2098, 906002044, '核心网', 11, null, 'update VOLTE_BGCF t1
+(906010250, 'VOLTE-VOLTE-BGCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02098', 2098, 906002044, '核心网', 11, null, 'update VOLTE_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02098%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02098''
                                              else dims_col_result||'',DIMS_HX_02098'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-BGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-BGCFVOLTE-BGCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-BGCFVOLTE-BGCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-BGCFVOLTE-BGCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_BGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
-(906010251, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02095', 2095, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
+(906010251, 'VOLTE-VOLTE-SCSCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02095', 2095, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02095%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02095''
                                              else dims_col_result||'',DIMS_HX_02095'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-SCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCSCFVOLTE-SCSCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCSCFVOLTE-SCSCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-SCSCFVOLTE-SCSCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_SCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
-(906010252, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02096', 2096, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
+(906010252, 'VOLTE-VOLTE-SCSCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02096', 2096, 906002045, '核心网', 11, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02096%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02096''
                                              else dims_col_result||'',DIMS_HX_02096'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-SCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCSCFVOLTE-SCSCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCSCFVOLTE-SCSCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-SCSCFVOLTE-SCSCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_SCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
-(906010253, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02097', 2097, 906002046, '核心网', 11, null, 'update VOLTE_ICSCF t1
+(906010253, 'VOLTE-VOLTE-ICSCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02097', 2097, 906002046, '核心网', 11, null, 'update VOLTE_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02097%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02097''
                                              else dims_col_result||'',DIMS_HX_02097'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ICSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ICSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ICSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ICSCFVOLTE-ICSCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ICSCFVOLTE-ICSCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ICSCFVOLTE-ICSCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ICSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
 (906010254, 'VOLTE-(POOL类型)枚举值规范性', 'DIMS_HX_02113', 2113, 906002047, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010255, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02111', 2111, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
+(906010255, 'VOLTE-VOLTE-POOL规范性核查-资源标识-唯一性核查', 'DIMS_HX_02111', 2111, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02111%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02111''
                                              else dims_col_result||'',DIMS_HX_02111'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOLVOLTE-POOL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOLVOLTE-POOL规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-POOLVOLTE-POOL规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002047, 1, null),
-(906010256, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02112', 2112, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
+(906010256, 'VOLTE-VOLTE-POOL规范性核查-POOL名称-唯一性核查', 'DIMS_HX_02112', 2112, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02112%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02112''
                                              else dims_col_result||'',DIMS_HX_02112'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOLVOLTE-POOL规范性核查-POOL名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOLVOLTE-POOL规范性核查-POOL名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-POOLVOLTE-POOL规范性核查-POOL名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002047, 1, null),
-(906010257, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02114', 2114, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
+(906010257, 'VOLTE-VOLTE-POOL规范性核查-包含设备名称-唯一性核查', 'DIMS_HX_02114', 2114, 906002047, '核心网', 11, null, 'update VOLTE_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02114%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02114''
                                              else dims_col_result||'',DIMS_HX_02114'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-POOLVOLTE-POOL规范性核查-包含设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-POOLVOLTE-POOL规范性核查-包含设备名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-POOLVOLTE-POOL规范性核查-包含设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.contain_devices=t1.contain_devices)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002047, 1, null),
 (906010258, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02102', 2102, 906002048, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010259, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02100', 2100, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
+(906010259, 'VOLTE-VOLTE-MGCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02100', 2100, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02100%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02100''
                                              else dims_col_result||'',DIMS_HX_02100'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MGCFVOLTE-MGCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MGCFVOLTE-MGCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MGCFVOLTE-MGCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002048, 1, null),
-(906010260, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02101', 2101, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
+(906010260, 'VOLTE-VOLTE-MGCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02101', 2101, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02101%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02101''
                                              else dims_col_result||'',DIMS_HX_02101'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-MGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-MGCFVOLTE-MGCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-MGCFVOLTE-MGCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-MGCFVOLTE-MGCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_MGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002048, 1, null),
-(906010261, 'VOLTE-IP地址规范性', 'DIMS_HX_02103', 2103, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
+(906010261, 'VOLTE-VOLTE-MGCF规范性核查-MGCF的IP地址列表-IP地址规范性核查', 'DIMS_HX_02103', 2103, 906002048, '核心网', 11, null, 'update VOLTE_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02103%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02103''
                                              else dims_col_result||'',%DIMS_HX_02103'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MGCFMGCF的IP地址列表IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MGCFMGCF的IP地址列表IP地址规范性''
-                                             else dims_col_rtName||'',MGCFMGCF的IP地址列表IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MGCFMGCF的IP地址列表VOLTE-MGCF规范性核查-MGCF的IP地址列表-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MGCFMGCF的IP地址列表VOLTE-MGCF规范性核查-MGCF的IP地址列表-IP地址规范性核查''
+                                             else dims_col_rtName||'',MGCFMGCF的IP地址列表VOLTE-MGCF规范性核查-MGCF的IP地址列表-IP地址规范性核查'' end)
                  where isNotNull(maintenace_ip_list) and is_not_valid_ipaddress_mul(maintenace_ip_list)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002048, 1, null),
 (906010262, 'VOLTE-(端口状态)枚举值规范性', 'DIMS_HX_02118', 2118, 906002049, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010263, 'VOLTE-(端口类型)枚举值规范性', 'DIMS_HX_02119', 2119, 906002049, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010264, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02117', 2117, 906002049, '核心网', 11, null, 'update VOLTE_PORT t1
+(906010264, 'VOLTE-VOLTE-端口规范性核查-资源标识-唯一性核查', 'DIMS_HX_02117', 2117, 906002049, '核心网', 11, null, 'update VOLTE_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02117%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02117''
                                              else dims_col_result||'',DIMS_HX_02117'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-端口VOLTE-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-端口VOLTE-端口规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-端口VOLTE-端口规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_PORT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002049, 1, null),
 (906010265, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02085', 2085, 906002050, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010266, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02084', 2084, 906002050, '核心网', 11, null, 'update VOLTE_ATGW t1
+(906010266, 'VOLTE-VOLTE-ATGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02084', 2084, 906002050, '核心网', 11, null, 'update VOLTE_ATGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02084%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02084''
                                              else dims_col_result||'',DIMS_HX_02084'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ATGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATGWVOLTE-ATGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATGWVOLTE-ATGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ATGWVOLTE-ATGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ATGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002050, 1, null),
-(906010267, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02083', 2083, 906002050, '核心网', 11, null, 'update VOLTE_ATGW t1
+(906010267, 'VOLTE-VOLTE-ATGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02083', 2083, 906002050, '核心网', 11, null, 'update VOLTE_ATGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02083%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02083''
                                              else dims_col_result||'',DIMS_HX_02083'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-ATGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-ATGWVOLTE-ATGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-ATGWVOLTE-ATGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-ATGWVOLTE-ATGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_ATGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002050, 1, null),
 (906010268, 'VOLTE-(生命周期状态)枚举值规范性', 'DIMS_HX_02067', 2067, 906002051, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010269, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02065', 2065, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
+(906010269, 'VOLTE-VOLTE-SCC-AS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02065', 2065, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02065%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02065''
                                              else dims_col_result||'',DIMS_HX_02065'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCC-AS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCC-AS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-SCC-AS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_SCC_AS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
-(906010270, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02066', 2066, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
+(906010270, 'VOLTE-VOLTE-SCC-AS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02066', 2066, 906002051, '核心网', 11, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02066%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02066''
                                              else dims_col_result||'',DIMS_HX_02066'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCC-AS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCC-AS资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-SCC-AS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-SCC-ASVOLTE-SCC-AS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_SCC_AS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
-(906010271, 'VOLTE-资源关键字段唯一性', 'DIMS_HX_02115', 2115, 906002052, '核心网', 11, null, 'update VOLTE_DOMAIN t1
+(906010271, 'VOLTE-VOLTE-域规范性核查-资源标识-唯一性核查', 'DIMS_HX_02115', 2115, 906002052, '核心网', 11, null, 'update VOLTE_DOMAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02115%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02115''
                                              else dims_col_result||'',DIMS_HX_02115'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-域资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE-域资源关键字段唯一性''
-                                             else dims_col_rtName||'',VOLTE-域资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE-域VOLTE-域规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE-域VOLTE-域规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',VOLTE-域VOLTE-域规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from VOLTE_DOMAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002052, 1, null),
 (906010272, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02165', 2165, 906002053, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010273, 'IMS-资源关键字段唯一性', 'DIMS_HX_02163', 2163, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
+(906010273, 'IMS-IMS-MRFC规范性核查-资源标识-唯一性核查', 'DIMS_HX_02163', 2163, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02163%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02163''
                                              else dims_col_result||'',DIMS_HX_02163'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MRFC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFCIMS-MRFC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFCIMS-MRFC规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MRFCIMS-MRFC规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MRFC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002053, 1, null),
-(906010274, 'IMS-资源关键字段唯一性', 'DIMS_HX_02164', 2164, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
+(906010274, 'IMS-IMS-MRFC规范性核查-网元名称-唯一性核查', 'DIMS_HX_02164', 2164, 906002053, '核心网', 11, null, 'update IMS_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02164%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02164''
                                              else dims_col_result||'',DIMS_HX_02164'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MRFC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFCIMS-MRFC规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFCIMS-MRFC规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MRFCIMS-MRFC规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MRFC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002053, 1, null),
 (906010275, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02171', 2171, 906002054, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010276, 'IMS-资源关键字段唯一性', 'DIMS_HX_02169', 2169, 906002054, '核心网', 11, null, 'update IMS_MMTAS t1
+(906010276, 'IMS-IMS-MMTAS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02169', 2169, 906002054, '核心网', 11, null, 'update IMS_MMTAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02169%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02169''
                                              else dims_col_result||'',DIMS_HX_02169'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MMTAS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MMTAS资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MMTAS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MMTASIMS-MMTAS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MMTASIMS-MMTAS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MMTASIMS-MMTAS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MMTAS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
-(906010277, 'IMS-资源关键字段唯一性', 'DIMS_HX_02170', 2170, 906002054, '核心网', 11, null, 'update IMS_MMTAS t1
+(906010277, 'IMS-IMS-MMTAS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02170', 2170, 906002054, '核心网', 11, null, 'update IMS_MMTAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02170%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02170''
                                              else dims_col_result||'',DIMS_HX_02170'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MMTAS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MMTAS资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MMTAS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MMTASIMS-MMTAS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MMTASIMS-MMTAS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MMTASIMS-MMTAS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MMTAS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
 (906010278, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02189', 2189, 906002055, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010279, 'IMS-(网元类型)枚举值规范性', 'DIMS_HX_02190', 2190, 906002055, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010280, 'IMS-资源关键字段唯一性', 'DIMS_HX_02187', 2187, 906002055, '核心网', 11, null, 'update IMS_CTXAS_PUBRES t1
+(906010280, 'IMS-IMS-CTXAS-公共资源规范性核查-资源标识-唯一性核查', 'DIMS_HX_02187', 2187, 906002055, '核心网', 11, null, 'update IMS_CTXAS_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02187%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02187''
                                              else dims_col_result||'',DIMS_HX_02187'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-公共资源资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-公共资源资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-公共资源资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_PUBRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
-(906010281, 'IMS-资源关键字段唯一性', 'DIMS_HX_02188', 2188, 906002055, '核心网', 11, null, 'update IMS_CTXAS_PUBRES t1
+(906010281, 'IMS-IMS-CTXAS-公共资源规范性核查-网元名称-唯一性核查', 'DIMS_HX_02188', 2188, 906002055, '核心网', 11, null, 'update IMS_CTXAS_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02188%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02188''
                                              else dims_col_result||'',DIMS_HX_02188'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-公共资源资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-公共资源资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-公共资源资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-公共资源IMS-CTXAS-公共资源规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_PUBRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
-(906010282, 'IMS-资源关键字段唯一性', 'DIMS_HX_02167', 2167, 906002056, '核心网', 11, null, 'update IMS_MRFP t1
+(906010282, 'IMS-IMS-MRFP规范性核查-网元名称-唯一性核查', 'DIMS_HX_02167', 2167, 906002056, '核心网', 11, null, 'update IMS_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02167%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02167''
                                              else dims_col_result||'',DIMS_HX_02167'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFP资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MRFP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFPIMS-MRFP规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFPIMS-MRFP规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MRFPIMS-MRFP规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MRFP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002056, 1, null),
-(906010283, 'IMS-资源关键字段唯一性', 'DIMS_HX_02166', 2166, 906002056, '核心网', 11, null, 'update IMS_MRFP t1
+(906010283, 'IMS-IMS-MRFP规范性核查-资源标识-唯一性核查', 'DIMS_HX_02166', 2166, 906002056, '核心网', 11, null, 'update IMS_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02166%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02166''
                                              else dims_col_result||'',DIMS_HX_02166'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFP资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFP资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MRFP资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MRFPIMS-MRFP规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MRFPIMS-MRFP规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MRFPIMS-MRFP规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MRFP t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002056, 1, null),
 (906010284, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02123', 2123, 906002057, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010285, 'IMS-资源关键字段唯一性', 'DIMS_HX_02122', 2122, 906002057, '核心网', 11, null, 'update IMS_ISBG t1
+(906010285, 'IMS-IMS-ISBG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02122', 2122, 906002057, '核心网', 11, null, 'update IMS_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02122%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02122''
                                              else dims_col_result||'',DIMS_HX_02122'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ISBG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-ISBG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-ISBG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ISBGIMS-ISBG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-ISBGIMS-ISBG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-ISBGIMS-ISBG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_ISBG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
-(906010286, 'IMS-资源关键字段唯一性', 'DIMS_HX_02121', 2121, 906002057, '核心网', 11, null, 'update IMS_ISBG t1
+(906010286, 'IMS-IMS-ISBG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02121', 2121, 906002057, '核心网', 11, null, 'update IMS_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02121%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02121''
                                              else dims_col_result||'',DIMS_HX_02121'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ISBG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-ISBG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-ISBG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ISBGIMS-ISBG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-ISBGIMS-ISBG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-ISBGIMS-ISBG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_ISBG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
-(906010287, 'IMS-资源关键字段唯一性', 'DIMS_HX_02182', 2182, 906002058, '核心网', 11, null, 'update IMS_BOARD t1
+(906010287, 'IMS-IMS-板卡规范性核查-资源标识-唯一性核查', 'DIMS_HX_02182', 2182, 906002058, '核心网', 11, null, 'update IMS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02182%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02182''
                                              else dims_col_result||'',DIMS_HX_02182'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-板卡IMS-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-板卡IMS-板卡规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-板卡IMS-板卡规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002058, 1, null),
-(906010288, 'IMS-资源关键字段唯一性', 'DIMS_HX_02196', 2196, 906002059, '核心网', 11, null, 'update IMS_CTXAS_BUSRES t1
+(906010288, 'IMS-IMS-CTXAS-SCP业务资源(可选)规范性核查-业务名称-唯一性核查', 'DIMS_HX_02196', 2196, 906002059, '核心网', 11, null, 'update IMS_CTXAS_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02196%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02196''
                                              else dims_col_result||'',DIMS_HX_02196'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-业务名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-业务名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-业务名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_BUSRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002059, 1, null),
-(906010289, 'IMS-资源关键字段唯一性', 'DIMS_HX_02195', 2195, 906002059, '核心网', 11, null, 'update IMS_CTXAS_BUSRES t1
+(906010289, 'IMS-IMS-CTXAS-SCP业务资源(可选)规范性核查-资源标识-唯一性核查', 'DIMS_HX_02195', 2195, 906002059, '核心网', 11, null, 'update IMS_CTXAS_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02195%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02195''
                                              else dims_col_result||'',DIMS_HX_02195'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务资源(可选)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务资源(可选)IMS-CTXAS-SCP业务资源(可选)规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_BUSRES t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002059, 1, null),
 (906010290, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02142', 2142, 906002060, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010291, 'IMS-资源关键字段唯一性', 'DIMS_HX_02141', 2141, 906002060, '核心网', 11, null, 'update IMS_SBC t1
+(906010291, 'IMS-IMS-SBC规范性核查-网元名称-唯一性核查', 'DIMS_HX_02141', 2141, 906002060, '核心网', 11, null, 'update IMS_SBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02141%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02141''
                                              else dims_col_result||'',DIMS_HX_02141'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SBC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-SBC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-SBC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SBCIMS-SBC规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-SBCIMS-SBC规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-SBCIMS-SBC规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_SBC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
-(906010292, 'IMS-资源关键字段唯一性', 'DIMS_HX_02140', 2140, 906002060, '核心网', 11, null, 'update IMS_SBC t1
+(906010292, 'IMS-IMS-SBC规范性核查-资源标识-唯一性核查', 'DIMS_HX_02140', 2140, 906002060, '核心网', 11, null, 'update IMS_SBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02140%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02140''
                                              else dims_col_result||'',DIMS_HX_02140'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SBC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-SBC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-SBC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SBCIMS-SBC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-SBCIMS-SBC规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-SBCIMS-SBC规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_SBC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
 (906010293, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02159', 2159, 906002061, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010294, 'IMS-资源关键字段唯一性', 'DIMS_HX_02157', 2157, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
+(906010294, 'IMS-IMS-AGCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02157', 2157, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02157%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02157''
                                              else dims_col_result||'',DIMS_HX_02157'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-AGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-AGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-AGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-AGCFIMS-AGCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-AGCFIMS-AGCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-AGCFIMS-AGCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_AGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
-(906010295, 'IMS-资源关键字段唯一性', 'DIMS_HX_02158', 2158, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
+(906010295, 'IMS-IMS-AGCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02158', 2158, 906002061, '核心网', 11, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02158%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02158''
                                              else dims_col_result||'',DIMS_HX_02158'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-AGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-AGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-AGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-AGCFIMS-AGCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-AGCFIMS-AGCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-AGCFIMS-AGCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_AGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
-(906010296, 'IMS-资源关键字段唯一性', 'DIMS_HX_02127', 2127, 906002062, '核心网', 11, null, 'update IMS_SCSCF t1
+(906010296, 'IMS-IMS-SCSCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02127', 2127, 906002062, '核心网', 11, null, 'update IMS_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02127%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02127''
                                              else dims_col_result||'',DIMS_HX_02127'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-SCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-SCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SCSCFIMS-SCSCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-SCSCFIMS-SCSCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-SCSCFIMS-SCSCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_SCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
-(906010297, 'IMS-资源关键字段唯一性', 'DIMS_HX_02128', 2128, 906002062, '核心网', 11, null, 'update IMS_SCSCF t1
+(906010297, 'IMS-IMS-SCSCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02128', 2128, 906002062, '核心网', 11, null, 'update IMS_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02128%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02128''
                                              else dims_col_result||'',DIMS_HX_02128'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-SCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-SCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-SCSCFIMS-SCSCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-SCSCFIMS-SCSCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-SCSCFIMS-SCSCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_SCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
 (906010298, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02145', 2145, 906002063, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010299, 'IMS-资源关键字段唯一性', 'DIMS_HX_02144', 2144, 906002063, '核心网', 11, null, 'update IMS_MGCF t1
+(906010299, 'IMS-IMS-MGCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02144', 2144, 906002063, '核心网', 11, null, 'update IMS_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02144%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02144''
                                              else dims_col_result||'',DIMS_HX_02144'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MGCFIMS-MGCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MGCFIMS-MGCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MGCFIMS-MGCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
-(906010300, 'IMS-资源关键字段唯一性', 'DIMS_HX_02143', 2143, 906002063, '核心网', 11, null, 'update IMS_MGCF t1
+(906010300, 'IMS-IMS-MGCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02143', 2143, 906002063, '核心网', 11, null, 'update IMS_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02143%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02143''
                                              else dims_col_result||'',DIMS_HX_02143'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-MGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-MGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-MGCFIMS-MGCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-MGCFIMS-MGCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-MGCFIMS-MGCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_MGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
 (906010301, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02139', 2139, 906002064, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010302, 'IMS-(HSS主备标识)枚举值规范性', 'DIMS_HX_02138', 2138, 906002064, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010303, 'IMS-资源关键字段唯一性', 'DIMS_HX_02136', 2136, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
+(906010303, 'IMS-IMS-IMS HSS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02136', 2136, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02136%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02136''
                                              else dims_col_result||'',DIMS_HX_02136'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IMS HSS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-IMS HSS资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-IMS HSS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IMS HSSIMS-IMS HSS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-IMS HSSIMS-IMS HSS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-IMS HSSIMS-IMS HSS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_IMS_HSS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
-(906010304, 'IMS-资源关键字段唯一性', 'DIMS_HX_02137', 2137, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
+(906010304, 'IMS-IMS-IMS HSS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02137', 2137, 906002064, '核心网', 11, null, 'update IMS_IMS_HSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02137%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02137''
                                              else dims_col_result||'',DIMS_HX_02137'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IMS HSS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-IMS HSS资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-IMS HSS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IMS HSSIMS-IMS HSS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-IMS HSSIMS-IMS HSS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-IMS HSSIMS-IMS HSS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_IMS_HSS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
 (906010305, 'IMS-(端口类型)枚举值规范性', 'DIMS_HX_02185', 2185, 906002065, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010306, 'IMS-(端口状态)枚举值规范性', 'DIMS_HX_02184', 2184, 906002065, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010307, 'IMS-资源关键字段唯一性', 'DIMS_HX_02183', 2183, 906002065, '核心网', 11, null, 'update IMS_PORT t1
+(906010307, 'IMS-IMS-端口规范性核查-资源标识-唯一性核查', 'DIMS_HX_02183', 2183, 906002065, '核心网', 11, null, 'update IMS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02183%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02183''
                                              else dims_col_result||'',DIMS_HX_02183'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-端口IMS-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-端口IMS-端口规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-端口IMS-端口规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_PORT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002065, 1, null),
-(906010308, 'IMS-资源关键字段唯一性', 'DIMS_HX_02181', 2181, 906002066, '核心网', 11, null, 'update IMS_DOMAIN t1
+(906010308, 'IMS-IMS-域规范性核查-资源标识-唯一性核查', 'DIMS_HX_02181', 2181, 906002066, '核心网', 11, null, 'update IMS_DOMAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02181%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02181''
                                              else dims_col_result||'',DIMS_HX_02181'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-域资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-域资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-域资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-域IMS-域规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-域IMS-域规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-域IMS-域规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_DOMAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002066, 1, null),
-(906010309, 'IMS-资源关键字段唯一性', 'DIMS_HX_02198', 2198, 906002067, '核心网', 11, null, 'update IMS_CTXAS_MAINTAIN t1
+(906010309, 'IMS-IMS-CTXAS-SCP维保(可选)规范性核查-设备名称-唯一性核查', 'DIMS_HX_02198', 2198, 906002067, '核心网', 11, null, 'update IMS_CTXAS_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02198%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02198''
                                              else dims_col_result||'',DIMS_HX_02198'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP维保(可选)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP维保(可选)资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP维保(可选)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002067, 1, null),
-(906010310, 'IMS-资源关键字段唯一性', 'DIMS_HX_02197', 2197, 906002067, '核心网', 11, null, 'update IMS_CTXAS_MAINTAIN t1
+(906010310, 'IMS-IMS-CTXAS-SCP维保(可选)规范性核查-资源标识-唯一性核查', 'DIMS_HX_02197', 2197, 906002067, '核心网', 11, null, 'update IMS_CTXAS_MAINTAIN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02197%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02197''
                                              else dims_col_result||'',DIMS_HX_02197'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP维保(可选)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP维保(可选)资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP维保(可选)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP维保(可选)IMS-CTXAS-SCP维保(可选)规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_MAINTAIN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002067, 1, null),
-(906010311, 'IMS-资源关键字段唯一性', 'DIMS_HX_02186', 2186, 906002068, '核心网', 11, null, 'update IMS_LINK t1
+(906010311, 'IMS-IMS-链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02186', 2186, 906002068, '核心网', 11, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02186%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02186''
                                              else dims_col_result||'',DIMS_HX_02186'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-链路IMS-链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-链路IMS-链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-链路IMS-链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
 (906010312, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02135', 2135, 906002069, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010313, 'IMS-资源关键字段唯一性', 'DIMS_HX_02134', 2134, 906002069, '核心网', 11, null, 'update IMS_CG t1
+(906010313, 'IMS-IMS-CG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02134', 2134, 906002069, '核心网', 11, null, 'update IMS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02134%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02134''
                                              else dims_col_result||'',DIMS_HX_02134'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CGIMS-CG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CGIMS-CG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CGIMS-CG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002069, 1, null),
-(906010314, 'IMS-资源关键字段唯一性', 'DIMS_HX_02133', 2133, 906002069, '核心网', 11, null, 'update IMS_CG t1
+(906010314, 'IMS-IMS-CG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02133', 2133, 906002069, '核心网', 11, null, 'update IMS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02133%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02133''
                                              else dims_col_result||'',DIMS_HX_02133'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CGIMS-CG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CGIMS-CG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CGIMS-CG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002069, 1, null),
 (906010315, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02126', 2126, 906002070, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010316, 'IMS-资源关键字段唯一性', 'DIMS_HX_02125', 2125, 906002070, '核心网', 11, null, 'update IMS_PCSCF t1
+(906010316, 'IMS-IMS-PCSCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02125', 2125, 906002070, '核心网', 11, null, 'update IMS_PCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02125%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02125''
                                              else dims_col_result||'',DIMS_HX_02125'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-PCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-PCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-PCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-PCSCFIMS-PCSCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-PCSCFIMS-PCSCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-PCSCFIMS-PCSCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_PCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002070, 1, null),
-(906010317, 'IMS-资源关键字段唯一性', 'DIMS_HX_02124', 2124, 906002070, '核心网', 11, null, 'update IMS_PCSCF t1
+(906010317, 'IMS-IMS-PCSCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02124', 2124, 906002070, '核心网', 11, null, 'update IMS_PCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02124%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02124''
                                              else dims_col_result||'',DIMS_HX_02124'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-PCSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-PCSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-PCSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-PCSCFIMS-PCSCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-PCSCFIMS-PCSCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-PCSCFIMS-PCSCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_PCSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002070, 1, null),
 (906010318, 'IMS-(设备工作方式)枚举值规范性', 'DIMS_HX_02194', 2194, 906002071, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010319, 'IMS-资源关键字段唯一性', 'DIMS_HX_02192', 2192, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
+(906010319, 'IMS-IMS-CTXAS-SCP业务处理单元规范性核查-设备名称-唯一性核查', 'DIMS_HX_02192', 2192, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02192%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02192''
                                              else dims_col_result||'',DIMS_HX_02192'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-设备名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
-(906010320, 'IMS-资源关键字段唯一性', 'DIMS_HX_02191', 2191, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
+(906010320, 'IMS-IMS-CTXAS-SCP业务处理单元规范性核查-资源标识-唯一性核查', 'DIMS_HX_02191', 2191, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02191%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02191''
                                              else dims_col_result||'',DIMS_HX_02191'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务处理单元资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务处理单元资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务处理单元资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-CTXAS-SCP业务处理单元IMS-CTXAS-SCP业务处理单元规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_CTXAS_BIZUNIT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
-(906010321, 'IMS-IP地址规范性', 'DIMS_HX_02193', 2193, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
+(906010321, 'IMS-IMS-CTXAS-SCP业务处理单元规范性核查-业务IP地址/浮动地址-IP地址规范性核查', 'DIMS_HX_02193', 2193, 906002071, '核心网', 11, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02193%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02193''
                                              else dims_col_result||'',%DIMS_HX_02193'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元业务IP地址/浮动地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元业务IP地址/浮动地址IP地址规范性''
-                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元业务IP地址/浮动地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元业务IP地址/浮动地址IMS-CTXAS-SCP业务处理单元规范性核查-业务IP地址/浮动地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元业务IP地址/浮动地址IMS-CTXAS-SCP业务处理单元规范性核查-业务IP地址/浮动地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元业务IP地址/浮动地址IMS-CTXAS-SCP业务处理单元规范性核查-业务IP地址/浮动地址-IP地址规范性核查'' end)
                 where isNotNull(business_ip_address) and is_not_valid_ipaddress(business_ip_address)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
 (906010322, 'IMS-(网元类型)枚举值规范性', 'DIMS_HX_02176', 2176, 906002072, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010323, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02174', 2174, 906002072, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010324, 'IMS-资源关键字段唯一性', 'DIMS_HX_02172', 2172, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
+(906010324, 'IMS-IMS-DNS&ENUM规范性核查-资源标识-唯一性核查', 'DIMS_HX_02172', 2172, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02172%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02172''
                                              else dims_col_result||'',DIMS_HX_02172'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUM资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUM资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-DNS&ENUM资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
-(906010325, 'IMS-资源关键字段唯一性', 'DIMS_HX_02175', 2175, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
+(906010325, 'IMS-IMS-DNS&ENUM规范性核查-对应IMS CE名称-唯一性核查', 'DIMS_HX_02175', 2175, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02175%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02175''
                                              else dims_col_result||'',DIMS_HX_02175'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUM资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUM资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-DNS&ENUM资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-对应IMS CE名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-对应IMS CE名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-对应IMS CE名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.related_ims_ce=t1.related_ims_ce)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
-(906010326, 'IMS-资源关键字段唯一性', 'DIMS_HX_02173', 2173, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
+(906010326, 'IMS-IMS-DNS&ENUM规范性核查-网元名称-唯一性核查', 'DIMS_HX_02173', 2173, 906002072, '核心网', 11, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02173%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02173''
                                              else dims_col_result||'',DIMS_HX_02173'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUM资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUM资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-DNS&ENUM资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-DNS&ENUMIMS-DNS&ENUM规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_DNS_ENUM t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
 (906010327, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02156', 2156, 906002073, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010328, 'IMS-资源关键字段唯一性', 'DIMS_HX_02154', 2154, 906002073, '核心网', 11, null, 'update IMS_UMG t1
+(906010328, 'IMS-IMS-UMG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02154', 2154, 906002073, '核心网', 11, null, 'update IMS_UMG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02154%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02154''
                                              else dims_col_result||'',DIMS_HX_02154'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UMG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-UMG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-UMG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UMGIMS-UMG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-UMGIMS-UMG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-UMGIMS-UMG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_UMG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
-(906010329, 'IMS-资源关键字段唯一性', 'DIMS_HX_02155', 2155, 906002073, '核心网', 11, null, 'update IMS_UMG t1
+(906010329, 'IMS-IMS-UMG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02155', 2155, 906002073, '核心网', 11, null, 'update IMS_UMG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02155%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02155''
                                              else dims_col_result||'',DIMS_HX_02155'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UMG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-UMG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-UMG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UMGIMS-UMG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-UMGIMS-UMG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-UMGIMS-UMG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_UMG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
 (906010330, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02153', 2153, 906002074, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010331, 'IMS-资源关键字段唯一性', 'DIMS_HX_02152', 2152, 906002074, '核心网', 11, null, 'update IMS_UGC t1
+(906010331, 'IMS-IMS-UGC规范性核查-网元名称-唯一性核查', 'DIMS_HX_02152', 2152, 906002074, '核心网', 11, null, 'update IMS_UGC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02152%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02152''
                                              else dims_col_result||'',DIMS_HX_02152'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UGC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-UGC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-UGC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UGCIMS-UGC规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-UGCIMS-UGC规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-UGCIMS-UGC规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_UGC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
-(906010332, 'IMS-资源关键字段唯一性', 'DIMS_HX_02151', 2151, 906002074, '核心网', 11, null, 'update IMS_UGC t1
+(906010332, 'IMS-IMS-UGC规范性核查-资源标识-唯一性核查', 'DIMS_HX_02151', 2151, 906002074, '核心网', 11, null, 'update IMS_UGC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02151%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02151''
                                              else dims_col_result||'',DIMS_HX_02151'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UGC资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-UGC资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-UGC资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-UGCIMS-UGC规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-UGCIMS-UGC规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-UGCIMS-UGC规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_UGC t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
 (906010333, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02148', 2148, 906002075, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010334, 'IMS-资源关键字段唯一性', 'DIMS_HX_02147', 2147, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
+(906010334, 'IMS-IMS-IM-MGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02147', 2147, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02147%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02147''
                                              else dims_col_result||'',DIMS_HX_02147'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IM-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-IM-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-IM-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IM-MGWIMS-IM-MGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-IM-MGWIMS-IM-MGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-IM-MGWIMS-IM-MGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
-(906010335, 'IMS-资源关键字段唯一性', 'DIMS_HX_02146', 2146, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
+(906010335, 'IMS-IMS-IM-MGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02146', 2146, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02146%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02146''
                                              else dims_col_result||'',DIMS_HX_02146'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IM-MGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-IM-MGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-IM-MGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-IM-MGWIMS-IM-MGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-IM-MGWIMS-IM-MGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-IM-MGWIMS-IM-MGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_IM_MGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
-(906010336, 'IMS-IP地址规范性', 'DIMS_HX_02150', 2150, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
+(906010336, 'IMS-IMS-IM-MGW规范性核查-关联的Mgcf的IP地址列表-IP地址规范性核查', 'DIMS_HX_02150', 2150, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02150%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02150''
                                              else dims_col_result||'',%DIMS_HX_02150'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW关联的Mgcf的IP地址列表IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IM-MGW关联的Mgcf的IP地址列表IP地址规范性''
-                                             else dims_col_rtName||'',IM-MGW关联的Mgcf的IP地址列表IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW关联的Mgcf的IP地址列表IMS-IM-MGW规范性核查-关联的Mgcf的IP地址列表-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IM-MGW关联的Mgcf的IP地址列表IMS-IM-MGW规范性核查-关联的Mgcf的IP地址列表-IP地址规范性核查''
+                                             else dims_col_rtName||'',IM-MGW关联的Mgcf的IP地址列表IMS-IM-MGW规范性核查-关联的Mgcf的IP地址列表-IP地址规范性核查'' end)
                  where isNotNull(mgcf_ip_list) and is_not_valid_ipaddress_mul(mgcf_ip_list)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
-(906010337, 'IMS-IP地址规范性', 'DIMS_HX_02149', 2149, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
+(906010337, 'IMS-IMS-IM-MGW规范性核查-IMS-MGW的IP地址列表-IP地址规范性核查', 'DIMS_HX_02149', 2149, 906002075, '核心网', 11, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02149%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02149''
                                              else dims_col_result||'',%DIMS_HX_02149'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGWIMS-MGW的IP地址列表IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IM-MGWIMS-MGW的IP地址列表IP地址规范性''
-                                             else dims_col_rtName||'',IM-MGWIMS-MGW的IP地址列表IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGWIMS-MGW的IP地址列表IMS-IM-MGW规范性核查-IMS-MGW的IP地址列表-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IM-MGWIMS-MGW的IP地址列表IMS-IM-MGW规范性核查-IMS-MGW的IP地址列表-IP地址规范性核查''
+                                             else dims_col_rtName||'',IM-MGWIMS-MGW的IP地址列表IMS-IM-MGW规范性核查-IMS-MGW的IP地址列表-IP地址规范性核查'' end)
                  where isNotNull(maintenace_ip_list) and is_not_valid_ipaddress_mul(maintenace_ip_list)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
 (906010338, 'IMS-(生命周期状态)枚举值规范性', 'DIMS_HX_02162', 2162, 906002076, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010339, 'IMS-资源关键字段唯一性', 'DIMS_HX_02160', 2160, 906002076, '核心网', 11, null, 'update IMS_TG t1
+(906010339, 'IMS-IMS-TG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02160', 2160, 906002076, '核心网', 11, null, 'update IMS_TG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02160%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02160''
                                              else dims_col_result||'',DIMS_HX_02160'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-TG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-TG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-TG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-TGIMS-TG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-TGIMS-TG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-TGIMS-TG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_TG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
-(906010340, 'IMS-资源关键字段唯一性', 'DIMS_HX_02161', 2161, 906002076, '核心网', 11, null, 'update IMS_TG t1
+(906010340, 'IMS-IMS-TG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02161', 2161, 906002076, '核心网', 11, null, 'update IMS_TG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02161%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02161''
                                              else dims_col_result||'',DIMS_HX_02161'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-TG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-TG资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-TG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-TGIMS-TG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-TGIMS-TG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-TGIMS-TG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_TG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
-(906010341, 'IMS-资源关键字段唯一性', 'DIMS_HX_02131', 2131, 906002077, '核心网', 11, null, 'update IMS_BGCF t1
+(906010341, 'IMS-IMS-BGCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02131', 2131, 906002077, '核心网', 11, null, 'update IMS_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02131%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02131''
                                              else dims_col_result||'',DIMS_HX_02131'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-BGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-BGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-BGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-BGCFIMS-BGCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-BGCFIMS-BGCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-BGCFIMS-BGCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_BGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
-(906010342, 'IMS-资源关键字段唯一性', 'DIMS_HX_02132', 2132, 906002077, '核心网', 11, null, 'update IMS_BGCF t1
+(906010342, 'IMS-IMS-BGCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02132', 2132, 906002077, '核心网', 11, null, 'update IMS_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02132%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02132''
                                              else dims_col_result||'',DIMS_HX_02132'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-BGCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-BGCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-BGCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-BGCFIMS-BGCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-BGCFIMS-BGCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-BGCFIMS-BGCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_BGCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
-(906010343, 'IMS-资源关键字段唯一性', 'DIMS_HX_02129', 2129, 906002078, '核心网', 11, null, 'update IMS_ICSCF t1
+(906010343, 'IMS-IMS-ICSCF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02129', 2129, 906002078, '核心网', 11, null, 'update IMS_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02129%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02129''
                                              else dims_col_result||'',DIMS_HX_02129'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ICSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-ICSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-ICSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ICSCFIMS-ICSCF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-ICSCFIMS-ICSCF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-ICSCFIMS-ICSCF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_ICSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
-(906010344, 'IMS-资源关键字段唯一性', 'DIMS_HX_02130', 2130, 906002078, '核心网', 11, null, 'update IMS_ICSCF t1
+(906010344, 'IMS-IMS-ICSCF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02130', 2130, 906002078, '核心网', 11, null, 'update IMS_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02130%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02130''
                                              else dims_col_result||'',DIMS_HX_02130'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ICSCF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-ICSCF资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-ICSCF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-ICSCFIMS-ICSCF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-ICSCFIMS-ICSCF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-ICSCFIMS-ICSCF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_ICSCF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
 (906010345, 'IMS-(POOL类型)枚举值规范性', 'DIMS_HX_02179', 2179, 906002079, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010346, 'IMS-资源关键字段唯一性', 'DIMS_HX_02177', 2177, 906002079, '核心网', 11, null, 'update IMS_POOL t1
+(906010346, 'IMS-IMS-POOL规范性核查-资源标识-唯一性核查', 'DIMS_HX_02177', 2177, 906002079, '核心网', 11, null, 'update IMS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02177%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02177''
                                              else dims_col_result||'',DIMS_HX_02177'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOLIMS-POOL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-POOLIMS-POOL规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',IMS-POOLIMS-POOL规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002079, 1, null),
-(906010347, 'IMS-资源关键字段唯一性', 'DIMS_HX_02180', 2180, 906002079, '核心网', 11, null, 'update IMS_POOL t1
+(906010347, 'IMS-IMS-POOL规范性核查-包含设备名称-唯一性核查', 'DIMS_HX_02180', 2180, 906002079, '核心网', 11, null, 'update IMS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02180%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02180''
                                              else dims_col_result||'',DIMS_HX_02180'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOLIMS-POOL规范性核查-包含设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-POOLIMS-POOL规范性核查-包含设备名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-POOLIMS-POOL规范性核查-包含设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.contain_ne_names=t1.contain_ne_names)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002079, 1, null),
-(906010348, 'IMS-资源关键字段唯一性', 'DIMS_HX_02178', 2178, 906002079, '核心网', 11, null, 'update IMS_POOL t1
+(906010348, 'IMS-IMS-POOL规范性核查-POOL名称-唯一性核查', 'DIMS_HX_02178', 2178, 906002079, '核心网', 11, null, 'update IMS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02178%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02178''
                                              else dims_col_result||'',DIMS_HX_02178'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',IMS-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS-POOLIMS-POOL规范性核查-POOL名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS-POOLIMS-POOL规范性核查-POOL名称-唯一性核查''
+                                             else dims_col_rtName||'',IMS-POOLIMS-POOL规范性核查-POOL名称-唯一性核查'' end)
                  where exists(select 1
 		                          from IMS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002079, 1, null),
 (906010349, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02258', 2258, 906002080, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010350, '分组域-资源关键字段唯一性', 'DIMS_HX_02257', 2257, 906002080, '核心网', 11, null, 'update PS_PGW t1
+(906010350, '分组域-分组域-PGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02257', 2257, 906002080, '核心网', 11, null, 'update PS_PGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02257%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02257''
                                              else dims_col_result||'',DIMS_HX_02257'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PGW分组域-PGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PGW分组域-PGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PGW分组域-PGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
-(906010351, '分组域-资源关键字段唯一性', 'DIMS_HX_02256', 2256, 906002080, '核心网', 11, null, 'update PS_PGW t1
+(906010351, '分组域-分组域-PGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02256', 2256, 906002080, '核心网', 11, null, 'update PS_PGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02256%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02256''
                                              else dims_col_result||'',DIMS_HX_02256'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PGW分组域-PGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PGW分组域-PGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PGW分组域-PGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
 (906010352, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02272', 2272, 906002081, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010353, '分组域-资源关键字段唯一性', 'DIMS_HX_02270', 2270, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
+(906010353, '分组域-分组域-PCRF-BE规范性核查-资源标识-唯一性核查', 'DIMS_HX_02270', 2270, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02270%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02270''
                                              else dims_col_result||'',DIMS_HX_02270'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF-BE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF-BE资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PCRF-BE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF-BE分组域-PCRF-BE规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF-BE分组域-PCRF-BE规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PCRF-BE分组域-PCRF-BE规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PCRF_BE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
-(906010354, '分组域-资源关键字段唯一性', 'DIMS_HX_02271', 2271, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
+(906010354, '分组域-分组域-PCRF-BE规范性核查-网元名称-唯一性核查', 'DIMS_HX_02271', 2271, 906002081, '核心网', 11, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02271%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02271''
                                              else dims_col_result||'',DIMS_HX_02271'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF-BE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF-BE资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PCRF-BE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF-BE分组域-PCRF-BE规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF-BE分组域-PCRF-BE规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PCRF-BE分组域-PCRF-BE规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PCRF_BE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
 (906010355, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02261', 2261, 906002082, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010356, '分组域-资源关键字段唯一性', 'DIMS_HX_02259', 2259, 906002082, '核心网', 11, null, 'update PS_PCRF t1
+(906010356, '分组域-分组域-PCRF规范性核查-资源标识-唯一性核查', 'DIMS_HX_02259', 2259, 906002082, '核心网', 11, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02259%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02259''
                                              else dims_col_result||'',DIMS_HX_02259'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PCRF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF分组域-PCRF规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF分组域-PCRF规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PCRF分组域-PCRF规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PCRF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
-(906010357, '分组域-资源关键字段唯一性', 'DIMS_HX_02260', 2260, 906002082, '核心网', 11, null, 'update PS_PCRF t1
+(906010357, '分组域-分组域-PCRF规范性核查-网元名称-唯一性核查', 'DIMS_HX_02260', 2260, 906002082, '核心网', 11, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02260%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02260''
                                              else dims_col_result||'',DIMS_HX_02260'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-PCRF资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-PCRF分组域-PCRF规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-PCRF分组域-PCRF规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-PCRF分组域-PCRF规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PCRF t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
 (906010358, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02255', 2255, 906002083, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010359, '分组域-资源关键字段唯一性', 'DIMS_HX_02254', 2254, 906002083, '核心网', 11, null, 'update PS_SGW t1
+(906010359, '分组域-分组域-SGW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02254', 2254, 906002083, '核心网', 11, null, 'update PS_SGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02254%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02254''
                                              else dims_col_result||'',DIMS_HX_02254'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGW分组域-SGW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SGW分组域-SGW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SGW分组域-SGW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
-(906010360, '分组域-资源关键字段唯一性', 'DIMS_HX_02253', 2253, 906002083, '核心网', 11, null, 'update PS_SGW t1
+(906010360, '分组域-分组域-SGW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02253', 2253, 906002083, '核心网', 11, null, 'update PS_SGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02253%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02253''
                                              else dims_col_result||'',DIMS_HX_02253'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SGW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SGW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGW分组域-SGW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SGW分组域-SGW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SGW分组域-SGW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SGW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
-(906010361, '分组域-资源关键字段唯一性', 'DIMS_HX_02307', 2307, 906002084, '核心网', 11, null, 'update PS_LINK t1
+(906010361, '分组域-分组域-链路规范性核查-资源标识-唯一性核查', 'DIMS_HX_02307', 2307, 906002084, '核心网', 11, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02307%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02307''
                                              else dims_col_result||'',DIMS_HX_02307'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-链路资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-链路资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-链路资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-链路分组域-链路规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-链路分组域-链路规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-链路分组域-链路规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_LINK t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
 (906010362, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02291', 2291, 906002085, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010363, '分组域-资源关键字段唯一性', 'DIMS_HX_02289', 2289, 906002085, '核心网', 11, null, 'update PS_SW t1
+(906010363, '分组域-分组域-SW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02289', 2289, 906002085, '核心网', 11, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02289%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02289''
                                              else dims_col_result||'',DIMS_HX_02289'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SW分组域-SW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SW分组域-SW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SW分组域-SW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
-(906010364, '分组域-资源关键字段唯一性', 'DIMS_HX_02290', 2290, 906002085, '核心网', 11, null, 'update PS_SW t1
+(906010364, '分组域-分组域-SW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02290', 2290, 906002085, '核心网', 11, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02290%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02290''
                                              else dims_col_result||'',DIMS_HX_02290'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SW分组域-SW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SW分组域-SW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SW分组域-SW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
 (906010365, '分组域-(是否支持NSA)枚举值规范性', 'DIMS_HX_02277', 2277, 906002086, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010366, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02276', 2276, 906002086, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010367, '分组域-资源关键字段唯一性', 'DIMS_HX_02273', 2273, 906002086, '核心网', 11, null, 'update PS_CG t1
+(906010367, '分组域-分组域-CG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02273', 2273, 906002086, '核心网', 11, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02273%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02273''
                                              else dims_col_result||'',DIMS_HX_02273'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-CG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-CG资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-CG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-CG分组域-CG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-CG分组域-CG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-CG分组域-CG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_CG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
-(906010368, '分组域-资源关键字段唯一性', 'DIMS_HX_02274', 2274, 906002086, '核心网', 11, null, 'update PS_CG t1
+(906010368, '分组域-分组域-CG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02274', 2274, 906002086, '核心网', 11, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02274%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02274''
                                              else dims_col_result||'',DIMS_HX_02274'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-CG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-CG资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-CG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-CG分组域-CG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-CG分组域-CG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-CG分组域-CG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_CG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
-(906010369, '分组域-IP地址规范性', 'DIMS_HX_02275', 2275, 906002086, '核心网', 11, null, 'update PS_CG t1
+(906010369, '分组域-分组域-CG规范性核查-到BOSS接口IP地址-IP地址规范性核查', 'DIMS_HX_02275', 2275, 906002086, '核心网', 11, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02275%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02275''
                                              else dims_col_result||'',%DIMS_HX_02275'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CG到BOSS接口IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CG到BOSS接口IP地址IP地址规范性''
-                                             else dims_col_rtName||'',CG到BOSS接口IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CG到BOSS接口IP地址分组域-CG规范性核查-到BOSS接口IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CG到BOSS接口IP地址分组域-CG规范性核查-到BOSS接口IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',CG到BOSS接口IP地址分组域-CG规范性核查-到BOSS接口IP地址-IP地址规范性核查'' end)
                 where isNotNull(connect_boss_ip) and is_not_valid_ipaddress(connect_boss_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
 (906010370, '分组域-(是否支持NSA)枚举值规范性', 'DIMS_HX_02247', 2247, 906002087, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010371, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02246', 2246, 906002087, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010372, '分组域-资源关键字段唯一性', 'DIMS_HX_02244', 2244, 906002087, '核心网', 11, null, 'update PS_MME t1
+(906010372, '分组域-分组域-MME规范性核查-资源标识-唯一性核查', 'DIMS_HX_02244', 2244, 906002087, '核心网', 11, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02244%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02244''
                                              else dims_col_result||'',DIMS_HX_02244'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-MME资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-MME资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-MME资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-MME分组域-MME规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-MME分组域-MME规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-MME分组域-MME规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_MME t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
-(906010373, '分组域-资源关键字段唯一性', 'DIMS_HX_02245', 2245, 906002087, '核心网', 11, null, 'update PS_MME t1
+(906010373, '分组域-分组域-MME规范性核查-网元名称-唯一性核查', 'DIMS_HX_02245', 2245, 906002087, '核心网', 11, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02245%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02245''
                                              else dims_col_result||'',DIMS_HX_02245'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-MME资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-MME资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-MME资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-MME分组域-MME规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-MME分组域-MME规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-MME分组域-MME规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_MME t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
 (906010374, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02280', 2280, 906002088, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010375, '分组域-资源关键字段唯一性', 'DIMS_HX_02278', 2278, 906002088, '核心网', 11, null, 'update PS_DNS t1
+(906010375, '分组域-分组域-DNS规范性核查-资源标识-唯一性核查', 'DIMS_HX_02278', 2278, 906002088, '核心网', 11, null, 'update PS_DNS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02278%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02278''
                                              else dims_col_result||'',DIMS_HX_02278'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DNS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-DNS资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-DNS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DNS分组域-DNS规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-DNS分组域-DNS规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-DNS分组域-DNS规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_DNS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
-(906010376, '分组域-资源关键字段唯一性', 'DIMS_HX_02279', 2279, 906002088, '核心网', 11, null, 'update PS_DNS t1
+(906010376, '分组域-分组域-DNS规范性核查-网元名称-唯一性核查', 'DIMS_HX_02279', 2279, 906002088, '核心网', 11, null, 'update PS_DNS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02279%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02279''
                                              else dims_col_result||'',DIMS_HX_02279'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DNS资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-DNS资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-DNS资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DNS分组域-DNS规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-DNS分组域-DNS规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-DNS分组域-DNS规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_DNS t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
 (906010377, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02294', 2294, 906002089, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010378, '分组域-资源关键字段唯一性', 'DIMS_HX_02293', 2293, 906002089, '核心网', 11, null, 'update PS_SGSN t1
+(906010378, '分组域-分组域-SGSN规范性核查-网元名称-唯一性核查', 'DIMS_HX_02293', 2293, 906002089, '核心网', 11, null, 'update PS_SGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02293%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02293''
                                              else dims_col_result||'',DIMS_HX_02293'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGSN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SGSN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SGSN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGSN分组域-SGSN规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SGSN分组域-SGSN规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SGSN分组域-SGSN规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SGSN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
-(906010379, '分组域-资源关键字段唯一性', 'DIMS_HX_02292', 2292, 906002089, '核心网', 11, null, 'update PS_SGSN t1
+(906010379, '分组域-分组域-SGSN规范性核查-资源标识-唯一性核查', 'DIMS_HX_02292', 2292, 906002089, '核心网', 11, null, 'update PS_SGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02292%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02292''
                                              else dims_col_result||'',DIMS_HX_02292'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGSN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SGSN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SGSN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SGSN分组域-SGSN规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SGSN分组域-SGSN规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SGSN分组域-SGSN规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SGSN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
-(906010380, '分组域-资源关键字段唯一性', 'DIMS_HX_02302', 2302, 906002090, '核心网', 11, null, 'update PS_BOARD t1
+(906010380, '分组域-分组域-板卡规范性核查-资源标识-唯一性核查', 'DIMS_HX_02302', 2302, 906002090, '核心网', 11, null, 'update PS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02302%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02302''
                                              else dims_col_result||'',DIMS_HX_02302'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-板卡资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-板卡资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-板卡资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-板卡分组域-板卡规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-板卡分组域-板卡规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-板卡分组域-板卡规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_BOARD t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002090, 1, null),
 (906010381, '分组域-(是否支持NSA)枚举值规范性', 'DIMS_HX_02252', 2252, 906002091, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010382, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02251', 2251, 906002091, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010383, '分组域-资源关键字段唯一性', 'DIMS_HX_02250', 2250, 906002091, '核心网', 11, null, 'update PS_SAE_GW t1
+(906010383, '分组域-分组域-SAE-GW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02250', 2250, 906002091, '核心网', 11, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02250%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02250''
                                              else dims_col_result||'',DIMS_HX_02250'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SAE-GW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SAE-GW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SAE-GW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SAE-GW分组域-SAE-GW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SAE-GW分组域-SAE-GW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SAE-GW分组域-SAE-GW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SAE_GW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
-(906010384, '分组域-资源关键字段唯一性', 'DIMS_HX_02249', 2249, 906002091, '核心网', 11, null, 'update PS_SAE_GW t1
+(906010384, '分组域-分组域-SAE-GW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02249', 2249, 906002091, '核心网', 11, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02249%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02249''
                                              else dims_col_result||'',DIMS_HX_02249'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SAE-GW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SAE-GW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SAE-GW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SAE-GW分组域-SAE-GW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SAE-GW分组域-SAE-GW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SAE-GW分组域-SAE-GW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SAE_GW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
 (906010385, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02288', 2288, 906002092, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010386, '分组域-资源关键字段唯一性', 'DIMS_HX_02286', 2286, 906002092, '核心网', 11, null, 'update PS_FW t1
+(906010386, '分组域-分组域-FW规范性核查-资源标识-唯一性核查', 'DIMS_HX_02286', 2286, 906002092, '核心网', 11, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02286%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02286''
                                              else dims_col_result||'',DIMS_HX_02286'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-FW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-FW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-FW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-FW分组域-FW规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-FW分组域-FW规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-FW分组域-FW规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_FW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
-(906010387, '分组域-资源关键字段唯一性', 'DIMS_HX_02287', 2287, 906002092, '核心网', 11, null, 'update PS_FW t1
+(906010387, '分组域-分组域-FW规范性核查-网元名称-唯一性核查', 'DIMS_HX_02287', 2287, 906002092, '核心网', 11, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02287%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02287''
                                              else dims_col_result||'',DIMS_HX_02287'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-FW资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-FW资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-FW资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-FW分组域-FW规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-FW分组域-FW规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-FW分组域-FW规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_FW t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
 (906010388, '分组域-(设备网络级别)枚举值规范性', 'DIMS_HX_02284', 2284, 906002093, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010389, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02283', 2283, 906002093, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010390, '分组域-资源关键字段唯一性', 'DIMS_HX_02281', 2281, 906002093, '核心网', 11, null, 'update PS_DRA t1
+(906010390, '分组域-分组域-DRA规范性核查-资源标识-唯一性核查', 'DIMS_HX_02281', 2281, 906002093, '核心网', 11, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02281%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02281''
                                              else dims_col_result||'',DIMS_HX_02281'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DRA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-DRA资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-DRA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DRA分组域-DRA规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-DRA分组域-DRA规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-DRA分组域-DRA规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_DRA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
-(906010391, '分组域-资源关键字段唯一性', 'DIMS_HX_02282', 2282, 906002093, '核心网', 11, null, 'update PS_DRA t1
+(906010391, '分组域-分组域-DRA规范性核查-网元名称-唯一性核查', 'DIMS_HX_02282', 2282, 906002093, '核心网', 11, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02282%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02282''
                                              else dims_col_result||'',DIMS_HX_02282'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DRA资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-DRA资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-DRA资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-DRA分组域-DRA规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-DRA分组域-DRA规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-DRA分组域-DRA规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_DRA t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
-(906010392, '分组域-IP地址规范性', 'DIMS_HX_02285', 2285, 906002093, '核心网', 11, null, 'update PS_DRA t1
+(906010392, '分组域-分组域-DRA规范性核查-维护IP地址-IP地址规范性核查', 'DIMS_HX_02285', 2285, 906002093, '核心网', 11, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02285%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02285''
                                              else dims_col_result||'',%DIMS_HX_02285'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DRA维护IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DRA维护IP地址IP地址规范性''
-                                             else dims_col_rtName||'',DRA维护IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DRA维护IP地址分组域-DRA规范性核查-维护IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DRA维护IP地址分组域-DRA规范性核查-维护IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',DRA维护IP地址分组域-DRA规范性核查-维护IP地址-IP地址规范性核查'' end)
                 where isNotNull(maintaince_ip) and is_not_valid_ipaddress(maintaince_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
 (906010393, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02266', 2266, 906002094, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010394, '分组域-资源关键字段唯一性', 'DIMS_HX_02263', 2263, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010394, '分组域-分组域-SPR规范性核查-网元名称-唯一性核查', 'DIMS_HX_02263', 2263, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02263%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02263''
                                              else dims_col_result||'',DIMS_HX_02263'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SPR资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR分组域-SPR规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR分组域-SPR规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SPR分组域-SPR规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SPR t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010395, '分组域-资源关键字段唯一性', 'DIMS_HX_02262', 2262, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010395, '分组域-分组域-SPR规范性核查-资源标识-唯一性核查', 'DIMS_HX_02262', 2262, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02262%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02262''
                                              else dims_col_result||'',DIMS_HX_02262'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SPR资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR分组域-SPR规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR分组域-SPR规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SPR分组域-SPR规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SPR t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010396, '分组域-资源关键字段唯一性', 'DIMS_HX_02264', 2264, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010396, '分组域-分组域-SPR规范性核查-网管中网元名称-唯一性核查', 'DIMS_HX_02264', 2264, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02264%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02264''
                                              else dims_col_result||'',DIMS_HX_02264'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-SPR资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-SPR分组域-SPR规范性核查-网管中网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-SPR分组域-SPR规范性核查-网管中网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-SPR分组域-SPR规范性核查-网管中网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_SPR t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.native_name=t1.native_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010397, '分组域-IP地址规范性', 'DIMS_HX_02268', 2268, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010397, '分组域-分组域-SPR规范性核查-Rx接口逻辑IP地址-IP地址规范性核查', 'DIMS_HX_02268', 2268, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02268%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02268''
                                              else dims_col_result||'',%DIMS_HX_02268'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SPRRx接口逻辑IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SPRRx接口逻辑IP地址IP地址规范性''
-                                             else dims_col_rtName||'',SPRRx接口逻辑IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SPRRx接口逻辑IP地址分组域-SPR规范性核查-Rx接口逻辑IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SPRRx接口逻辑IP地址分组域-SPR规范性核查-Rx接口逻辑IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',SPRRx接口逻辑IP地址分组域-SPR规范性核查-Rx接口逻辑IP地址-IP地址规范性核查'' end)
                  where isNotNull(rx_ip) and is_not_valid_ipaddress_mul(rx_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010398, '分组域-IP地址规范性', 'DIMS_HX_02267', 2267, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010398, '分组域-分组域-SPR规范性核查-Gx接口IP地址-IP地址规范性核查', 'DIMS_HX_02267', 2267, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02267%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02267''
                                              else dims_col_result||'',%DIMS_HX_02267'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SPRGx接口IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SPRGx接口IP地址IP地址规范性''
-                                             else dims_col_rtName||'',SPRGx接口IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SPRGx接口IP地址分组域-SPR规范性核查-Gx接口IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SPRGx接口IP地址分组域-SPR规范性核查-Gx接口IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',SPRGx接口IP地址分组域-SPR规范性核查-Gx接口IP地址-IP地址规范性核查'' end)
                  where isNotNull(gx_ip) and is_not_valid_ipaddress_mul(gx_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010399, '分组域-IP地址规范性', 'DIMS_HX_02269', 2269, 906002094, '核心网', 11, null, 'update PS_SPR t1
+(906010399, '分组域-分组域-SPR规范性核查-连接BOSS的IP地址-IP地址规范性核查', 'DIMS_HX_02269', 2269, 906002094, '核心网', 11, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02269%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02269''
                                              else dims_col_result||'',%DIMS_HX_02269'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SPR连接BOSS的IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SPR连接BOSS的IP地址IP地址规范性''
-                                             else dims_col_rtName||'',SPR连接BOSS的IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SPR连接BOSS的IP地址分组域-SPR规范性核查-连接BOSS的IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SPR连接BOSS的IP地址分组域-SPR规范性核查-连接BOSS的IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',SPR连接BOSS的IP地址分组域-SPR规范性核查-连接BOSS的IP地址-IP地址规范性核查'' end)
                  where isNotNull(boss_ip) and is_not_valid_ipaddress_mul(boss_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
 (906010400, '分组域-(POOL类型)枚举值规范性', 'DIMS_HX_02300', 2300, 906002095, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010401, '分组域-资源关键字段唯一性', 'DIMS_HX_02301', 2301, 906002095, '核心网', 11, null, 'update PS_POOL t1
+(906010401, '分组域-分组域-POOL规范性核查-包含设备名称-唯一性核查', 'DIMS_HX_02301', 2301, 906002095, '核心网', 11, null, 'update PS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02301%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02301''
                                              else dims_col_result||'',DIMS_HX_02301'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL分组域-POOL规范性核查-包含设备名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL分组域-POOL规范性核查-包含设备名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-POOL分组域-POOL规范性核查-包含设备名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.contain_devices=t1.contain_devices)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002095, 1, null),
-(906010402, '分组域-资源关键字段唯一性', 'DIMS_HX_02299', 2299, 906002095, '核心网', 11, null, 'update PS_POOL t1
+(906010402, '分组域-分组域-POOL规范性核查-POOL名称-唯一性核查', 'DIMS_HX_02299', 2299, 906002095, '核心网', 11, null, 'update PS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02299%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02299''
                                              else dims_col_result||'',DIMS_HX_02299'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL分组域-POOL规范性核查-POOL名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL分组域-POOL规范性核查-POOL名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-POOL分组域-POOL规范性核查-POOL名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002095, 1, null),
-(906010403, '分组域-资源关键字段唯一性', 'DIMS_HX_02298', 2298, 906002095, '核心网', 11, null, 'update PS_POOL t1
+(906010403, '分组域-分组域-POOL规范性核查-资源标识-唯一性核查', 'DIMS_HX_02298', 2298, 906002095, '核心网', 11, null, 'update PS_POOL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02298%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02298''
                                              else dims_col_result||'',DIMS_HX_02298'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-POOL资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-POOL分组域-POOL规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-POOL分组域-POOL规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-POOL分组域-POOL规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_POOL t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002095, 1, null),
 (906010404, '分组域-(生命周期状态)枚举值规范性', 'DIMS_HX_02297', 2297, 906002096, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010405, '分组域-资源关键字段唯一性', 'DIMS_HX_02296', 2296, 906002096, '核心网', 11, null, 'update PS_GGSN t1
+(906010405, '分组域-分组域-GGSN规范性核查-网元名称-唯一性核查', 'DIMS_HX_02296', 2296, 906002096, '核心网', 11, null, 'update PS_GGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02296%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02296''
                                              else dims_col_result||'',DIMS_HX_02296'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-GGSN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-GGSN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-GGSN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-GGSN分组域-GGSN规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-GGSN分组域-GGSN规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-GGSN分组域-GGSN规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_GGSN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
-(906010406, '分组域-资源关键字段唯一性', 'DIMS_HX_02295', 2295, 906002096, '核心网', 11, null, 'update PS_GGSN t1
+(906010406, '分组域-分组域-GGSN规范性核查-资源标识-唯一性核查', 'DIMS_HX_02295', 2295, 906002096, '核心网', 11, null, 'update PS_GGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02295%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02295''
                                              else dims_col_result||'',DIMS_HX_02295'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-GGSN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-GGSN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-GGSN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-GGSN分组域-GGSN规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-GGSN分组域-GGSN规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-GGSN分组域-GGSN规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_GGSN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
 (906010407, '分组域-(端口类型)枚举值规范性', 'DIMS_HX_02306', 2306, 906002097, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010408, '分组域-(端口状态)枚举值规范性', 'DIMS_HX_02305', 2305, 906002097, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010409, '分组域-资源关键字段唯一性', 'DIMS_HX_02304', 2304, 906002097, '核心网', 11, null, 'update PS_PORT t1
+(906010409, '分组域-分组域-端口规范性核查-端口名称-唯一性核查', 'DIMS_HX_02304', 2304, 906002097, '核心网', 11, null, 'update PS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02304%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02304''
                                              else dims_col_result||'',DIMS_HX_02304'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-端口分组域-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-端口分组域-端口规范性核查-端口名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-端口分组域-端口规范性核查-端口名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PORT t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
-(906010410, '分组域-资源关键字段唯一性', 'DIMS_HX_02303', 2303, 906002097, '核心网', 11, null, 'update PS_PORT t1
+(906010410, '分组域-分组域-端口规范性核查-资源标识-唯一性核查', 'DIMS_HX_02303', 2303, 906002097, '核心网', 11, null, 'update PS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02303%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02303''
                                              else dims_col_result||'',DIMS_HX_02303'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-端口资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-端口资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-端口资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-端口分组域-端口规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-端口分组域-端口规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-端口分组域-端口规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_PORT t2
 		                         where t2.ctid <> t1.ctid
@@ -9920,1309 +9920,1309 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 (906010411, '分组域-(业务开放范围)枚举值规范性', 'DIMS_HX_02311', 2311, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010412, '分组域-(地址类型)枚举值规范性', 'DIMS_HX_02312', 2312, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010413, '分组域-(隧道的类型)枚举值规范性', 'DIMS_HX_02310', 2310, 906002098, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010414, '分组域-资源关键字段唯一性', 'DIMS_HX_02308', 2308, 906002098, '核心网', 11, null, 'update PS_APN t1
+(906010414, '分组域-分组域-APN规范性核查-资源标识-唯一性核查', 'DIMS_HX_02308', 2308, 906002098, '核心网', 11, null, 'update PS_APN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02308%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02308''
                                              else dims_col_result||'',DIMS_HX_02308'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-APN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-APN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-APN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-APN分组域-APN规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-APN分组域-APN规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',分组域-APN分组域-APN规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_APN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
-(906010415, '分组域-资源关键字段唯一性', 'DIMS_HX_02309', 2309, 906002098, '核心网', 11, null, 'update PS_APN t1
+(906010415, '分组域-分组域-APN规范性核查-APN名称-唯一性核查', 'DIMS_HX_02309', 2309, 906002098, '核心网', 11, null, 'update PS_APN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02309%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02309''
                                              else dims_col_result||'',DIMS_HX_02309'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-APN资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:分组域-APN资源关键字段唯一性''
-                                             else dims_col_rtName||'',分组域-APN资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%分组域-APN分组域-APN规范性核查-APN名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:分组域-APN分组域-APN规范性核查-APN名称-唯一性核查''
+                                             else dims_col_rtName||'',分组域-APN分组域-APN规范性核查-APN名称-唯一性核查'' end)
                  where exists(select 1
 		                          from PS_APN t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
 (906010416, 'HSS-(生命周期状态)枚举值规范性', 'DIMS_HX_02319', 2319, 906002099, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010417, 'HSS-资源关键字段唯一性', 'DIMS_HX_02317', 2317, 906002099, '核心网', 11, null, 'update HSS_DISTRIBUTED t1
+(906010417, 'HSS-HSS-HSS(分布式)规范性核查-资源标识-唯一性核查', 'DIMS_HX_02317', 2317, 906002099, '核心网', 11, null, 'update HSS_DISTRIBUTED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02317%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02317''
                                              else dims_col_result||'',DIMS_HX_02317'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(分布式)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(分布式)资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS(分布式)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_DISTRIBUTED t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002099, 1, null),
-(906010418, 'HSS-资源关键字段唯一性', 'DIMS_HX_02318', 2318, 906002099, '核心网', 11, null, 'update HSS_DISTRIBUTED t1
+(906010418, 'HSS-HSS-HSS(分布式)规范性核查-网元名称-唯一性核查', 'DIMS_HX_02318', 2318, 906002099, '核心网', 11, null, 'update HSS_DISTRIBUTED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02318%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02318''
                                              else dims_col_result||'',DIMS_HX_02318'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(分布式)资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(分布式)资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS(分布式)资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS(分布式)HSS-HSS(分布式)规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_DISTRIBUTED t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002099, 1, null),
 (906010419, 'HSS-(FE主备标识)枚举值规范性', 'DIMS_HX_02322', 2322, 906002100, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010420, 'HSS-资源关键字段唯一性', 'DIMS_HX_02323', 2323, 906002100, '核心网', 11, null, 'update HSS_FE t1
+(906010420, 'HSS-HSS-HSS_FE规范性核查-备用FE名称-唯一性核查', 'DIMS_HX_02323', 2323, 906002100, '核心网', 11, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02323%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02323''
                                              else dims_col_result||'',DIMS_HX_02323'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS_FE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FEHSS-HSS_FE规范性核查-备用FE名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FEHSS-HSS_FE规范性核查-备用FE名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS_FEHSS-HSS_FE规范性核查-备用FE名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_FE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.backup_fe_name=t1.backup_fe_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010421, 'HSS-资源关键字段唯一性', 'DIMS_HX_02321', 2321, 906002100, '核心网', 11, null, 'update HSS_FE t1
+(906010421, 'HSS-HSS-HSS_FE规范性核查-网元名称-唯一性核查', 'DIMS_HX_02321', 2321, 906002100, '核心网', 11, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02321%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02321''
                                              else dims_col_result||'',DIMS_HX_02321'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS_FE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FEHSS-HSS_FE规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FEHSS-HSS_FE规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS_FEHSS-HSS_FE规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_FE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010422, 'HSS-资源关键字段唯一性', 'DIMS_HX_02320', 2320, 906002100, '核心网', 11, null, 'update HSS_FE t1
+(906010422, 'HSS-HSS-HSS_FE规范性核查-资源标识-唯一性核查', 'DIMS_HX_02320', 2320, 906002100, '核心网', 11, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02320%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02320''
                                              else dims_col_result||'',DIMS_HX_02320'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS_FE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_FEHSS-HSS_FE规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_FEHSS-HSS_FE规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS_FEHSS-HSS_FE规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_FE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
 (906010423, 'HSS-(PG主备标识)枚举值规范性', 'DIMS_HX_02330', 2330, 906002101, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010424, 'HSS-资源关键字段唯一性', 'DIMS_HX_02328', 2328, 906002101, '核心网', 11, null, 'update HSS_PG t1
+(906010424, 'HSS-HSS-PG规范性核查-网元名称-唯一性核查', 'DIMS_HX_02328', 2328, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02328%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02328''
                                              else dims_col_result||'',DIMS_HX_02328'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-PG资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-PG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PGHSS-PG规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-PGHSS-PG规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-PGHSS-PG规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_PG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
-(906010425, 'HSS-资源关键字段唯一性', 'DIMS_HX_02331', 2331, 906002101, '核心网', 11, null, 'update HSS_PG t1
+(906010425, 'HSS-HSS-PG规范性核查-连接的MDCN交换机名称-唯一性核查', 'DIMS_HX_02331', 2331, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02331%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02331''
                                              else dims_col_result||'',DIMS_HX_02331'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-PG资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-PG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PGHSS-PG规范性核查-连接的MDCN交换机名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-PGHSS-PG规范性核查-连接的MDCN交换机名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-PGHSS-PG规范性核查-连接的MDCN交换机名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_PG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.connected_mdcn_switch_name=t1.connected_mdcn_switch_name)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
-(906010426, 'HSS-资源关键字段唯一性', 'DIMS_HX_02327', 2327, 906002101, '核心网', 11, null, 'update HSS_PG t1
+(906010426, 'HSS-HSS-PG规范性核查-资源标识-唯一性核查', 'DIMS_HX_02327', 2327, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02327%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02327''
                                              else dims_col_result||'',DIMS_HX_02327'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PG资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-PG资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-PG资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-PGHSS-PG规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-PGHSS-PG规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-PGHSS-PG规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_PG t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
-(906010427, 'HSS-IP地址规范性', 'DIMS_HX_02329', 2329, 906002101, '核心网', 11, null, 'update HSS_PG t1
+(906010427, 'HSS-HSS-PG规范性核查-BOSS IP地址-IP地址规范性核查', 'DIMS_HX_02329', 2329, 906002101, '核心网', 11, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02329%'' then dims_col_result
                                              when dims_col_result is null then ''%DIMS_HX_02329''
                                              else dims_col_result||'',%DIMS_HX_02329'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PGBOSS IP地址IP地址规范性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PGBOSS IP地址IP地址规范性''
-                                             else dims_col_rtName||'',PGBOSS IP地址IP地址规范性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PGBOSS IP地址HSS-PG规范性核查-BOSS IP地址-IP地址规范性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PGBOSS IP地址HSS-PG规范性核查-BOSS IP地址-IP地址规范性核查''
+                                             else dims_col_rtName||'',PGBOSS IP地址HSS-PG规范性核查-BOSS IP地址-IP地址规范性核查'' end)
                 where isNotNull(boss_ip) and is_not_valid_ipaddress(boss_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
 (906010428, 'HSS-(HSS主备标识)枚举值规范性', 'DIMS_HX_02316', 2316, 906002102, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
 (906010429, 'HSS-(生命周期状态)枚举值规范性', 'DIMS_HX_02315', 2315, 906002102, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010430, 'HSS-资源关键字段唯一性', 'DIMS_HX_02313', 2313, 906002102, '核心网', 11, null, 'update HSS_CENTRALIZED t1
+(906010430, 'HSS-HSS-HSS(集中式）规范性核查-资源标识-唯一性核查', 'DIMS_HX_02313', 2313, 906002102, '核心网', 11, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02313%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02313''
                                              else dims_col_result||'',DIMS_HX_02313'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(集中式）资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(集中式）资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS(集中式）资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_CENTRALIZED t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
-(906010431, 'HSS-资源关键字段唯一性', 'DIMS_HX_02314', 2314, 906002102, '核心网', 11, null, 'update HSS_CENTRALIZED t1
+(906010431, 'HSS-HSS-HSS(集中式）规范性核查-网元名称-唯一性核查', 'DIMS_HX_02314', 2314, 906002102, '核心网', 11, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02314%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02314''
                                              else dims_col_result||'',DIMS_HX_02314'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(集中式）资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(集中式）资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS(集中式）资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS(集中式）HSS-HSS(集中式）规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_CENTRALIZED t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
 (906010432, 'HSS-(生命周期状态)枚举值规范性', 'DIMS_HX_02334', 2334, 906002103, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010433, 'HSS-资源关键字段唯一性', 'DIMS_HX_02332', 2332, 906002103, '核心网', 11, null, 'update HSS_HLR_FE t1
+(906010433, 'HSS-HSS-HLR-FE规范性核查-资源标识-唯一性核查', 'DIMS_HX_02332', 2332, 906002103, '核心网', 11, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02332%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02332''
                                              else dims_col_result||'',DIMS_HX_02332'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HLR-FE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HLR-FE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HLR-FE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HLR-FEHSS-HLR-FE规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HLR-FEHSS-HLR-FE规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HLR-FEHSS-HLR-FE规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_HLR_FE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
-(906010434, 'HSS-资源关键字段唯一性', 'DIMS_HX_02333', 2333, 906002103, '核心网', 11, null, 'update HSS_HLR_FE t1
+(906010434, 'HSS-HSS-HLR-FE规范性核查-网元名称-唯一性核查', 'DIMS_HX_02333', 2333, 906002103, '核心网', 11, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02333%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02333''
                                              else dims_col_result||'',DIMS_HX_02333'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HLR-FE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HLR-FE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HLR-FE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HLR-FEHSS-HLR-FE规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HLR-FEHSS-HLR-FE规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HLR-FEHSS-HLR-FE规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_HLR_FE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
 (906010435, 'HSS-(BE主备标识)枚举值规范性', 'DIMS_HX_02326', 2326, 906002104, '核心网', 4, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', null, null, null),
-(906010436, 'HSS-资源关键字段唯一性', 'DIMS_HX_02325', 2325, 906002104, '核心网', 11, null, 'update HSS_BE t1
+(906010436, 'HSS-HSS-HSS_BE规范性核查-网元名称-唯一性核查', 'DIMS_HX_02325', 2325, 906002104, '核心网', 11, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02325%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02325''
                                              else dims_col_result||'',DIMS_HX_02325'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_BE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_BE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS_BE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_BEHSS-HSS_BE规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_BEHSS-HSS_BE规范性核查-网元名称-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS_BEHSS-HSS_BE规范性核查-网元名称-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_BE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.zh_label=t1.zh_label)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010437, 'HSS-资源关键字段唯一性', 'DIMS_HX_02324', 2324, 906002104, '核心网', 11, null, 'update HSS_BE t1
+(906010437, 'HSS-HSS-HSS_BE规范性核查-资源标识-唯一性核查', 'DIMS_HX_02324', 2324, 906002104, '核心网', 11, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_02324%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_02324''
                                              else dims_col_result||'',DIMS_HX_02324'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_BE资源关键字段唯一性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_BE资源关键字段唯一性''
-                                             else dims_col_rtName||'',HSS-HSS_BE资源关键字段唯一性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS-HSS_BEHSS-HSS_BE规范性核查-资源标识-唯一性核查%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS-HSS_BEHSS-HSS_BE规范性核查-资源标识-唯一性核查''
+                                             else dims_col_rtName||'',HSS-HSS_BEHSS-HSS_BE规范性核查-资源标识-唯一性核查'' end)
                  where exists(select 1
 		                          from HSS_BE t2
 		                         where t2.ctid <> t1.ctid
 		                           and t2.int_id=t1.int_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
 (906010438, '核心网数据关联性指标', 'DIMS_HX_99003', 99003, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET'),
-(906010439, '短彩信-关联性', 'DIMS_HX_03002', 3002, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
+(906010439, '短彩信-短彩信-彩信中心-基础信息关联性核查-所属机架位置', 'DIMS_HX_03002', 3002, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03002%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03002''
                                              else dims_col_result||'',DIMS_HX_03002'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息所属机架位置关联性''
-                                             else dims_col_rtName||'',彩信中心-基础信息所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息所属机架位置短彩信-彩信中心-基础信息关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息所属机架位置短彩信-彩信中心-基础信息关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',彩信中心-基础信息所属机架位置短彩信-彩信中心-基础信息关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
-(906010440, '短彩信-关联性', 'DIMS_HX_03003', 3003, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
+(906010440, '短彩信-短彩信-彩信中心-基础信息关联性核查-接入电源柜位置', 'DIMS_HX_03003', 3003, 906002001, '核心网', 10, null, 'update SMS_MSSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03003%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03003''
                                              else dims_col_result||'',DIMS_HX_03003'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息接入电源柜位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息接入电源柜位置关联性''
-                                             else dims_col_rtName||'',彩信中心-基础信息接入电源柜位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-基础信息接入电源柜位置短彩信-彩信中心-基础信息关联性核查-接入电源柜位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:彩信中心-基础信息接入电源柜位置短彩信-彩信中心-基础信息关联性核查-接入电源柜位置''
+                                             else dims_col_rtName||'',彩信中心-基础信息接入电源柜位置短彩信-彩信中心-基础信息关联性核查-接入电源柜位置'' end)
                  where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002001, 1, null),
-(906010441, '短彩信-关联性', 'DIMS_HX_03009', 3009, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
+(906010441, '短彩信-短彩信-短信中心-基础信息关联性核查-所属短信中心ID', 'DIMS_HX_03009', 3009, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03009%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03009''
                                              else dims_col_result||'',DIMS_HX_03009'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属短信中心ID关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属短信中心ID关联性''
-                                             else dims_col_rtName||'',短信中心-基础信息所属短信中心ID关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属短信中心ID短彩信-短信中心-基础信息关联性核查-所属短信中心ID%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属短信中心ID短彩信-短信中心-基础信息关联性核查-所属短信中心ID''
+                                             else dims_col_rtName||'',短信中心-基础信息所属短信中心ID短彩信-短信中心-基础信息关联性核查-所属短信中心ID'' end)
                  where isNotNull(related_sys) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sys)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
-(906010442, '短彩信-关联性', 'DIMS_HX_03010', 3010, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
+(906010442, '短彩信-短彩信-短信中心-基础信息关联性核查-所属机架位置', 'DIMS_HX_03010', 3010, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03010%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03010''
                                              else dims_col_result||'',DIMS_HX_03010'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属机架位置关联性''
-                                             else dims_col_rtName||'',短信中心-基础信息所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息所属机架位置短彩信-短信中心-基础信息关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息所属机架位置短彩信-短信中心-基础信息关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',短信中心-基础信息所属机架位置短彩信-短信中心-基础信息关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
-(906010443, '短彩信-关联性', 'DIMS_HX_03011', 3011, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
+(906010443, '短彩信-短彩信-短信中心-基础信息关联性核查-接入电源柜位置', 'DIMS_HX_03011', 3011, 906002002, '核心网', 10, null, 'update SMS_SMSBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03011%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03011''
                                              else dims_col_result||'',DIMS_HX_03011'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息接入电源柜位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息接入电源柜位置关联性''
-                                             else dims_col_rtName||'',短信中心-基础信息接入电源柜位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-基础信息接入电源柜位置短彩信-短信中心-基础信息关联性核查-接入电源柜位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信中心-基础信息接入电源柜位置短彩信-短信中心-基础信息关联性核查-接入电源柜位置''
+                                             else dims_col_rtName||'',短信中心-基础信息接入电源柜位置短彩信-短信中心-基础信息关联性核查-接入电源柜位置'' end)
                  where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002002, 1, null),
-(906010444, '短彩信-关联性', 'DIMS_HX_03004', 3004, 906002003, '核心网', 10, null, 'update SMS_SMSGWSYS t1
+(906010444, '短彩信-短彩信-短信网关-系统信息关联性核查-互联短信中心ID', 'DIMS_HX_03004', 3004, 906002003, '核心网', 10, null, 'update SMS_SMSGWSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03004%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03004''
                                              else dims_col_result||'',DIMS_HX_03004'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-系统信息互联短信中心ID关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信网关-系统信息互联短信中心ID关联性''
-                                             else dims_col_rtName||'',短信网关-系统信息互联短信中心ID关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-系统信息互联短信中心ID短彩信-短信网关-系统信息关联性核查-互联短信中心ID%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信网关-系统信息互联短信中心ID短彩信-短信网关-系统信息关联性核查-互联短信中心ID''
+                                             else dims_col_rtName||'',短信网关-系统信息互联短信中心ID短彩信-短信网关-系统信息关联性核查-互联短信中心ID'' end)
                  where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002003, 1, null),
-(906010445, '短彩信-关联性', 'DIMS_HX_03008', 3008, 906002004, '核心网', 10, null, 'update SMS_SMSSYS t1
+(906010445, '短彩信-短彩信-短信中心-系统信息关联性核查-互联短信网关ID', 'DIMS_HX_03008', 3008, 906002004, '核心网', 10, null, 'update SMS_SMSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03008%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03008''
                                              else dims_col_result||'',DIMS_HX_03008'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-系统信息互联短信网关ID关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信中心-系统信息互联短信网关ID关联性''
-                                             else dims_col_rtName||'',短信中心-系统信息互联短信网关ID关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信中心-系统信息互联短信网关ID短彩信-短信中心-系统信息关联性核查-互联短信网关ID%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信中心-系统信息互联短信网关ID短彩信-短信中心-系统信息关联性核查-互联短信网关ID''
+                                             else dims_col_rtName||'',短信中心-系统信息互联短信网关ID短彩信-短信中心-系统信息关联性核查-互联短信网关ID'' end)
                  where isNotNull(related_smsgw) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_smsgw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002004, 1, null),
-(906010446, '短彩信-关联性', 'DIMS_HX_03005', 3005, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
+(906010446, '短彩信-短彩信-短信网关-基础信息关联性核查-所属短信网关ID', 'DIMS_HX_03005', 3005, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03005%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03005''
                                              else dims_col_result||'',DIMS_HX_03005'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属短信网关ID关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属短信网关ID关联性''
-                                             else dims_col_rtName||'',短信网关-基础信息所属短信网关ID关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属短信网关ID短彩信-短信网关-基础信息关联性核查-所属短信网关ID%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属短信网关ID短彩信-短信网关-基础信息关联性核查-所属短信网关ID''
+                                             else dims_col_rtName||'',短信网关-基础信息所属短信网关ID短彩信-短信网关-基础信息关联性核查-所属短信网关ID'' end)
                  where isNotNull(related_sys) and not exists(select 1 from SMS_SMSGWSYS t2 where t2.int_id=t1.related_sys)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
-(906010447, '短彩信-关联性', 'DIMS_HX_03006', 3006, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
+(906010447, '短彩信-短彩信-短信网关-基础信息关联性核查-所属机架位置', 'DIMS_HX_03006', 3006, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03006%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03006''
                                              else dims_col_result||'',DIMS_HX_03006'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属机架位置关联性''
-                                             else dims_col_rtName||'',短信网关-基础信息所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息所属机架位置短彩信-短信网关-基础信息关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息所属机架位置短彩信-短信网关-基础信息关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',短信网关-基础信息所属机架位置短彩信-短信网关-基础信息关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
-(906010448, '短彩信-关联性', 'DIMS_HX_03007', 3007, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
+(906010448, '短彩信-短彩信-短信网关-基础信息关联性核查-接入电源柜位置', 'DIMS_HX_03007', 3007, 906002005, '核心网', 10, null, 'update SMS_SMSGWBASEINFO t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03007%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03007''
                                              else dims_col_result||'',DIMS_HX_03007'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息接入电源柜位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息接入电源柜位置关联性''
-                                             else dims_col_rtName||'',短信网关-基础信息接入电源柜位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%短信网关-基础信息接入电源柜位置短彩信-短信网关-基础信息关联性核查-接入电源柜位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:短信网关-基础信息接入电源柜位置短彩信-短信网关-基础信息关联性核查-接入电源柜位置''
+                                             else dims_col_rtName||'',短信网关-基础信息接入电源柜位置短彩信-短信网关-基础信息关联性核查-接入电源柜位置'' end)
                  where isNotNull(ps_cabinet_position) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.ps_cabinet_position)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002005, 1, null),
-(906010449, '短彩信-关联性', 'DIMS_HX_03001', 3001, 906002006, '核心网', 10, null, 'update SMS_MSSSYS t1
+(906010449, '短彩信-短彩信-彩信中心-系统信息关联性核查-互联短信中心ID', 'DIMS_HX_03001', 3001, 906002006, '核心网', 10, null, 'update SMS_MSSSYS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03001%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03001''
                                              else dims_col_result||'',DIMS_HX_03001'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-系统信息互联短信中心ID关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:彩信中心-系统信息互联短信中心ID关联性''
-                                             else dims_col_rtName||'',彩信中心-系统信息互联短信中心ID关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%彩信中心-系统信息互联短信中心ID短彩信-彩信中心-系统信息关联性核查-互联短信中心ID%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:彩信中心-系统信息互联短信中心ID短彩信-彩信中心-系统信息关联性核查-互联短信中心ID''
+                                             else dims_col_rtName||'',彩信中心-系统信息互联短信中心ID短彩信-彩信中心-系统信息关联性核查-互联短信中心ID'' end)
                  where isNotNull(related_sms) and not exists(select 1 from SMS_SMSSYS t2 where t2.int_id=t1.related_sms)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002006, 1, null),
-(906010450, '电路域-关联性', 'DIMS_HX_03119', 3119, 906002007, '核心网', 10, null, 'update CS_SSA t1
+(906010450, '电路域-电路域-SSA关联性核查-所在机房', 'DIMS_HX_03119', 3119, 906002007, '核心网', 10, null, 'update CS_SSA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03119%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03119''
                                              else dims_col_result||'',DIMS_HX_03119'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SSA所在机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SSA所在机房关联性''
-                                             else dims_col_rtName||'',SSA所在机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SSA所在机房电路域-SSA关联性核查-所在机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SSA所在机房电路域-SSA关联性核查-所在机房''
+                                             else dims_col_rtName||'',SSA所在机房电路域-SSA关联性核查-所在机房'' end)
                  where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002007, 1, null),
-(906010451, '电路域-关联性', 'DIMS_HX_03112', 3112, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
+(906010451, '电路域-电路域-中继关联性核查-本端网元', 'DIMS_HX_03112', 3112, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03112%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03112''
                                              else dims_col_result||'',DIMS_HX_03112'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%中继本端网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:中继本端网元关联性''
-                                             else dims_col_rtName||'',中继本端网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%中继本端网元电路域-中继关联性核查-本端网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:中继本端网元电路域-中继关联性核查-本端网元''
+                                             else dims_col_rtName||'',中继本端网元电路域-中继关联性核查-本端网元'' end)
                  where isNotNull(zh_label)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.zh_label)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.zh_label)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.zh_label)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.zh_label) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
-(906010452, '电路域-关联性', 'DIMS_HX_03113', 3113, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
+(906010452, '电路域-电路域-中继关联性核查-本端端口编号', 'DIMS_HX_03113', 3113, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03113%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03113''
                                              else dims_col_result||'',DIMS_HX_03113'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%中继本端端口编号关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:中继本端端口编号关联性''
-                                             else dims_col_rtName||'',中继本端端口编号关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%中继本端端口编号电路域-中继关联性核查-本端端口编号%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:中继本端端口编号电路域-中继关联性核查-本端端口编号''
+                                             else dims_col_rtName||'',中继本端端口编号电路域-中继关联性核查-本端端口编号'' end)
                  where isNotNull(a_port_no)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_port_no)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_port_no)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_port_no)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_port_no) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
-(906010453, '电路域-关联性', 'DIMS_HX_03114', 3114, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
+(906010453, '电路域-电路域-中继关联性核查-对端网元', 'DIMS_HX_03114', 3114, 906002009, '核心网', 10, null, 'update CS_REPEAT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03114%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03114''
                                              else dims_col_result||'',DIMS_HX_03114'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%中继对端网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:中继对端网元关联性''
-                                             else dims_col_rtName||'',中继对端网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%中继对端网元电路域-中继关联性核查-对端网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:中继对端网元电路域-中继关联性核查-对端网元''
+                                             else dims_col_rtName||'',中继对端网元电路域-中继关联性核查-对端网元'' end)
                  where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002009, 1, null),
-(906010454, '电路域-关联性', 'DIMS_HX_03109', 3109, 906002010, '核心网', 10, null, 'update CS_LINK t1
+(906010454, '电路域-电路域-链路关联性核查-本端网元', 'DIMS_HX_03109', 3109, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03109%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03109''
                                              else dims_col_result||'',DIMS_HX_03109'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端网元关联性''
-                                             else dims_col_rtName||'',链路本端网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端网元电路域-链路关联性核查-本端网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端网元电路域-链路关联性核查-本端网元''
+                                             else dims_col_rtName||'',链路本端网元电路域-链路关联性核查-本端网元'' end)
                  where isNotNull(a_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
-(906010455, '电路域-关联性', 'DIMS_HX_03110', 3110, 906002010, '核心网', 10, null, 'update CS_LINK t1
+(906010455, '电路域-电路域-链路关联性核查-对端网元', 'DIMS_HX_03110', 3110, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03110%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03110''
                                              else dims_col_result||'',DIMS_HX_03110'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路对端网元关联性''
-                                             else dims_col_rtName||'',链路对端网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端网元电路域-链路关联性核查-对端网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路对端网元电路域-链路关联性核查-对端网元''
+                                             else dims_col_rtName||'',链路对端网元电路域-链路关联性核查-对端网元'' end)
                  where isNotNull(z_end_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.z_end_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.z_end_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.z_end_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
-(906010456, '电路域-关联性', 'DIMS_HX_03111', 3111, 906002010, '核心网', 10, null, 'update CS_LINK t1
+(906010456, '电路域-电路域-链路关联性核查-本端信令端口编号', 'DIMS_HX_03111', 3111, 906002010, '核心网', 10, null, 'update CS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03111%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03111''
                                              else dims_col_result||'',DIMS_HX_03111'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端信令端口编号关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端信令端口编号关联性''
-                                             else dims_col_rtName||'',链路本端信令端口编号关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端信令端口编号电路域-链路关联性核查-本端信令端口编号%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端信令端口编号电路域-链路关联性核查-本端信令端口编号''
+                                             else dims_col_rtName||'',链路本端信令端口编号电路域-链路关联性核查-本端信令端口编号'' end)
                  where isNotNull(a_signal_port)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.a_signal_port)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.a_signal_port)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.a_signal_port) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002010, 1, null),
-(906010457, '电路域-关联性', 'DIMS_HX_03118', 3118, 906002011, '核心网', 10, null, 'update CS_IPSIGNAL t1
+(906010457, '电路域-电路域-IP信令关联性核查-端口编号', 'DIMS_HX_03118', 3118, 906002011, '核心网', 10, null, 'update CS_IPSIGNAL t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03118%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03118''
                                              else dims_col_result||'',DIMS_HX_03118'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IP信令端口编号关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IP信令端口编号关联性''
-                                             else dims_col_rtName||'',IP信令端口编号关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IP信令端口编号电路域-IP信令关联性核查-端口编号%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IP信令端口编号电路域-IP信令关联性核查-端口编号''
+                                             else dims_col_rtName||'',IP信令端口编号电路域-IP信令关联性核查-端口编号'' end)
                  where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.int_id=t1.port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002011, 1, null),
-(906010458, '电路域-关联性', 'DIMS_HX_03115', 3115, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
+(906010458, '电路域-电路域-IP话务关联性核查-MGW名称', 'DIMS_HX_03115', 3115, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03115%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03115''
                                              else dims_col_result||'',DIMS_HX_03115'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务MGW名称关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IP话务MGW名称关联性''
-                                             else dims_col_rtName||'',IP话务MGW名称关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务MGW名称电路域-IP话务关联性核查-MGW名称%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IP话务MGW名称电路域-IP话务关联性核查-MGW名称''
+                                             else dims_col_rtName||'',IP话务MGW名称电路域-IP话务关联性核查-MGW名称'' end)
                  where isNotNull(related_mgw) and not exists(select 1 from CS_MGW t2 where t2.int_id=t1.related_mgw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
-(906010459, '电路域-关联性', 'DIMS_HX_03116', 3116, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
+(906010459, '电路域-电路域-IP话务关联性核查-端口编号', 'DIMS_HX_03116', 3116, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03116%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03116''
                                              else dims_col_result||'',DIMS_HX_03116'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口编号关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IP话务端口编号关联性''
-                                             else dims_col_rtName||'',IP话务端口编号关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口编号电路域-IP话务关联性核查-端口编号%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IP话务端口编号电路域-IP话务关联性核查-端口编号''
+                                             else dims_col_rtName||'',IP话务端口编号电路域-IP话务关联性核查-端口编号'' end)
                  where isNotNull(port_no) and not exists(select 1 from CS_PORT t2 where t2.port_no=t1.port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
-(906010460, '电路域-关联性', 'DIMS_HX_03117', 3117, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
+(906010460, '电路域-电路域-IP话务关联性核查-端口所连CE名称', 'DIMS_HX_03117', 3117, 906002013, '核心网', 10, null, 'update CS_IPTRAFFIC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03117%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03117''
                                              else dims_col_result||'',DIMS_HX_03117'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口所连CE名称关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IP话务端口所连CE名称关联性''
-                                             else dims_col_rtName||'',IP话务端口所连CE名称关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IP话务端口所连CE名称电路域-IP话务关联性核查-端口所连CE名称%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IP话务端口所连CE名称电路域-IP话务关联性核查-端口所连CE名称''
+                                             else dims_col_rtName||'',IP话务端口所连CE名称电路域-IP话务关联性核查-端口所连CE名称'' end)
                  where isNotNull(port_related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.port_related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002013, 1, null),
-(906010461, '电路域-关联性', 'DIMS_HX_03108', 3108, 906002015, '核心网', 10, null, 'update CS_PORT t1
+(906010461, '电路域-电路域-端口关联性核查-所属网元', 'DIMS_HX_03108', 3108, 906002015, '核心网', 10, null, 'update CS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03108%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03108''
                                              else dims_col_result||'',DIMS_HX_03108'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口所属网元关联性''
-                                             else dims_col_rtName||'',端口所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元电路域-端口关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:端口所属网元电路域-端口关联性核查-所属网元''
+                                             else dims_col_rtName||'',端口所属网元电路域-端口关联性核查-所属网元'' end)
                  where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002015, 1, null),
-(906010462, '电路域-关联性', 'DIMS_HX_03100', 3100, 906002016, '核心网', 10, null, 'update CS_MGW t1
+(906010462, '电路域-电路域-MGW关联性核查-所属机架位置', 'DIMS_HX_03100', 3100, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03100%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03100''
                                              else dims_col_result||'',DIMS_HX_03100'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MGW所属机架位置关联性''
-                                             else dims_col_rtName||'',MGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MGW所属机架位置电路域-MGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MGW所属机架位置电路域-MGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MGW所属机架位置电路域-MGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
-(906010463, '电路域-关联性', 'DIMS_HX_03101', 3101, 906002016, '核心网', 10, null, 'update CS_MGW t1
+(906010463, '电路域-电路域-MGW关联性核查-归属MSC POOL', 'DIMS_HX_03101', 3101, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03101%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03101''
                                              else dims_col_result||'',DIMS_HX_03101'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MGW归属MSC POOL关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MGW归属MSC POOL关联性''
-                                             else dims_col_rtName||'',MGW归属MSC POOL关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MGW归属MSC POOL电路域-MGW关联性核查-归属MSC POOL%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MGW归属MSC POOL电路域-MGW关联性核查-归属MSC POOL''
+                                             else dims_col_rtName||'',MGW归属MSC POOL电路域-MGW关联性核查-归属MSC POOL'' end)
                  where isNotNull(realted_msc_pool) and not exists(select 1 from CS_MSC_POOL t2 where t2.int_id=t1.realted_msc_pool)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
-(906010464, '电路域-关联性', 'DIMS_HX_03102', 3102, 906002016, '核心网', 10, null, 'update CS_MGW t1
+(906010464, '电路域-电路域-MGW关联性核查-关联CE', 'DIMS_HX_03102', 3102, 906002016, '核心网', 10, null, 'update CS_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03102%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03102''
                                              else dims_col_result||'',DIMS_HX_03102'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MGW关联CE关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MGW关联CE关联性''
-                                             else dims_col_rtName||'',MGW关联CE关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MGW关联CE电路域-MGW关联性核查-关联CE%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MGW关联CE电路域-MGW关联性核查-关联CE''
+                                             else dims_col_rtName||'',MGW关联CE电路域-MGW关联性核查-关联CE'' end)
                  where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002016, 1, null),
-(906010465, '电路域-关联性', 'DIMS_HX_03096', 3096, 906002017, '核心网', 10, null, 'update CS_MSS t1
+(906010465, '电路域-电路域-MSS关联性核查-所属机架位置', 'DIMS_HX_03096', 3096, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03096%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03096''
                                              else dims_col_result||'',DIMS_HX_03096'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MSS所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MSS所属机架位置关联性''
-                                             else dims_col_rtName||'',MSS所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MSS所属机架位置电路域-MSS关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MSS所属机架位置电路域-MSS关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MSS所属机架位置电路域-MSS关联性核查-所属机架位置'' end)
                  where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
-(906010466, '电路域-关联性', 'DIMS_HX_03097', 3097, 906002017, '核心网', 10, null, 'update CS_MSS t1
+(906010466, '电路域-电路域-MSS关联性核查-关联LSTP', 'DIMS_HX_03097', 3097, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03097%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03097''
                                              else dims_col_result||'',DIMS_HX_03097'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MSS关联LSTP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MSS关联LSTP关联性''
-                                             else dims_col_rtName||'',MSS关联LSTP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MSS关联LSTP电路域-MSS关联性核查-关联LSTP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MSS关联LSTP电路域-MSS关联性核查-关联LSTP''
+                                             else dims_col_rtName||'',MSS关联LSTP电路域-MSS关联性核查-关联LSTP'' end)
                  where isNotNull(related_stp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_stp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
-(906010467, '电路域-关联性', 'DIMS_HX_03098', 3098, 906002017, '核心网', 10, null, 'update CS_MSS t1
+(906010467, '电路域-电路域-MSS关联性核查-关联CE', 'DIMS_HX_03098', 3098, 906002017, '核心网', 10, null, 'update CS_MSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03098%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03098''
                                              else dims_col_result||'',DIMS_HX_03098'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MSS关联CE关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MSS关联CE关联性''
-                                             else dims_col_rtName||'',MSS关联CE关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MSS关联CE电路域-MSS关联性核查-关联CE%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MSS关联CE电路域-MSS关联性核查-关联CE''
+                                             else dims_col_rtName||'',MSS关联CE电路域-MSS关联性核查-关联CE'' end)
                  where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002017, 1, null),
-(906010468, '电路域-关联性', 'DIMS_HX_03107', 3107, 906002018, '核心网', 10, null, 'update CS_BOARD t1
+(906010468, '电路域-电路域-板卡关联性核查-所属网元', 'DIMS_HX_03107', 3107, 906002018, '核心网', 10, null, 'update CS_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03107%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03107''
                                              else dims_col_result||'',DIMS_HX_03107'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%板卡所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:板卡所属网元关联性''
-                                             else dims_col_rtName||'',板卡所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%板卡所属网元电路域-板卡关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:板卡所属网元电路域-板卡关联性核查-所属网元''
+                                             else dims_col_rtName||'',板卡所属网元电路域-板卡关联性核查-所属网元'' end)
                  where isNotNull(related_ne)  and not exists(select 1 from CS_OTHER t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from CS_MGW t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from CS_MSS t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from CS_STP t5 where t5.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002018, 1, null),
-(906010469, '电路域-关联性', 'DIMS_HX_03104', 3104, 906002019, '核心网', 10, null, 'update CS_STP t1
+(906010469, '电路域-电路域-STP关联性核查-所属机架位置', 'DIMS_HX_03104', 3104, 906002019, '核心网', 10, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03104%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03104''
                                              else dims_col_result||'',DIMS_HX_03104'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%STP所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:STP所属机架位置关联性''
-                                             else dims_col_rtName||'',STP所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%STP所属机架位置电路域-STP关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:STP所属机架位置电路域-STP关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',STP所属机架位置电路域-STP关联性核查-所属机架位置'' end)
                  where isNotNull(related_rackpos) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rackpos,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
-(906010470, '电路域-关联性', 'DIMS_HX_03105', 3105, 906002019, '核心网', 10, null, 'update CS_STP t1
+(906010470, '电路域-电路域-STP关联性核查-关联CE', 'DIMS_HX_03105', 3105, 906002019, '核心网', 10, null, 'update CS_STP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03105%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03105''
                                              else dims_col_result||'',DIMS_HX_03105'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%STP关联CE关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:STP关联CE关联性''
-                                             else dims_col_rtName||'',STP关联CE关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%STP关联CE电路域-STP关联性核查-关联CE%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:STP关联CE电路域-STP关联性核查-关联CE''
+                                             else dims_col_rtName||'',STP关联CE电路域-STP关联性核查-关联CE'' end)
                  where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002019, 1, null),
-(906010471, '智能网-关联性', 'DIMS_HX_03014', 3014, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
+(906010471, '智能网-智能网-业务处理单元关联性核查-所属机房', 'DIMS_HX_03014', 3014, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03014%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03014''
                                              else dims_col_result||'',DIMS_HX_03014'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属机房关联性''
-                                             else dims_col_rtName||'',业务处理单元所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机房智能网-业务处理单元关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属机房智能网-业务处理单元关联性核查-所属机房''
+                                             else dims_col_rtName||'',业务处理单元所属机房智能网-业务处理单元关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
-(906010472, '智能网-关联性', 'DIMS_HX_03015', 3015, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
+(906010472, '智能网-智能网-业务处理单元关联性核查-所属机架位置', 'DIMS_HX_03015', 3015, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03015%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03015''
                                              else dims_col_result||'',DIMS_HX_03015'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属机架位置关联性''
-                                             else dims_col_rtName||'',业务处理单元所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属机架位置智能网-业务处理单元关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属机架位置智能网-业务处理单元关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',业务处理单元所属机架位置智能网-业务处理单元关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
-(906010473, '智能网-关联性', 'DIMS_HX_03016', 3016, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
+(906010473, '智能网-智能网-业务处理单元关联性核查-所属网元', 'DIMS_HX_03016', 3016, 906002020, '核心网', 10, null, 'update INT_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03016%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03016''
                                              else dims_col_result||'',DIMS_HX_03016'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属网元关联性''
-                                             else dims_col_rtName||'',业务处理单元所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%业务处理单元所属网元智能网-业务处理单元关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:业务处理单元所属网元智能网-业务处理单元关联性核查-所属网元''
+                                             else dims_col_rtName||'',业务处理单元所属网元智能网-业务处理单元关联性核查-所属网元'' end)
                  where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from INT_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002020, 1, null),
-(906010474, '智能网-关联性', 'DIMS_HX_03012', 3012, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
+(906010474, '智能网-智能网-网元通用关联性核查-所属机房', 'DIMS_HX_03012', 3012, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03012%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03012''
                                              else dims_col_result||'',DIMS_HX_03012'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:网元通用所属机房关联性''
-                                             else dims_col_rtName||'',网元通用所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机房智能网-网元通用关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:网元通用所属机房智能网-网元通用关联性核查-所属机房''
+                                             else dims_col_rtName||'',网元通用所属机房智能网-网元通用关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
-(906010475, '智能网-关联性', 'DIMS_HX_03013', 3013, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
+(906010475, '智能网-智能网-网元通用关联性核查-所属机架位置', 'DIMS_HX_03013', 3013, 906002021, '核心网', 10, null, 'update INT_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03013%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03013''
                                              else dims_col_result||'',DIMS_HX_03013'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:网元通用所属机架位置关联性''
-                                             else dims_col_rtName||'',网元通用所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%网元通用所属机架位置智能网-网元通用关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:网元通用所属机架位置智能网-网元通用关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',网元通用所属机架位置智能网-网元通用关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002021, 1, null),
-(906010476, '智能网-关联性', 'DIMS_HX_03017', 3017, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
+(906010476, '智能网-智能网-信令处理单元关联性核查-所属机房', 'DIMS_HX_03017', 3017, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03017%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03017''
                                              else dims_col_result||'',DIMS_HX_03017'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属机房关联性''
-                                             else dims_col_rtName||'',信令处理单元所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机房智能网-信令处理单元关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属机房智能网-信令处理单元关联性核查-所属机房''
+                                             else dims_col_rtName||'',信令处理单元所属机房智能网-信令处理单元关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010477, '智能网-关联性', 'DIMS_HX_03018', 3018, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
+(906010477, '智能网-智能网-信令处理单元关联性核查-所属机架位置', 'DIMS_HX_03018', 3018, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03018%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03018''
                                              else dims_col_result||'',DIMS_HX_03018'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属机架位置关联性''
-                                             else dims_col_rtName||'',信令处理单元所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属机架位置智能网-信令处理单元关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属机架位置智能网-信令处理单元关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',信令处理单元所属机架位置智能网-信令处理单元关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010478, '智能网-关联性', 'DIMS_HX_03019', 3019, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
+(906010478, '智能网-智能网-信令处理单元关联性核查-所属网元', 'DIMS_HX_03019', 3019, 906002022, '核心网', 10, null, 'update INT_SIGNALUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03019%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03019''
                                              else dims_col_result||'',DIMS_HX_03019'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属网元关联性''
-                                             else dims_col_rtName||'',信令处理单元所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令处理单元所属网元智能网-信令处理单元关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令处理单元所属网元智能网-信令处理单元关联性核查-所属网元''
+                                             else dims_col_rtName||'',信令处理单元所属网元智能网-信令处理单元关联性核查-所属网元'' end)
                  where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002022, 1, null),
-(906010479, '智能网-关联性', 'DIMS_HX_03024', 3024, 906002025, '核心网', 10, null, 'update INT_PORT t1
+(906010479, '智能网-智能网-端口关联性核查-物理位置信息', 'DIMS_HX_03024', 3024, 906002025, '核心网', 10, null, 'update INT_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03024%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03024''
                                              else dims_col_result||'',DIMS_HX_03024'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口物理位置信息关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口物理位置信息关联性''
-                                             else dims_col_rtName||'',端口物理位置信息关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%端口物理位置信息智能网-端口关联性核查-物理位置信息%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:端口物理位置信息智能网-端口关联性核查-物理位置信息''
+                                             else dims_col_rtName||'',端口物理位置信息智能网-端口关联性核查-物理位置信息'' end)
                  where isNotNull(physical_position_info) and not exists(select 1 from INT_BOARD t2 where t2.int_id=t1.physical_position_info)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
-(906010480, '智能网-关联性', 'DIMS_HX_03025', 3025, 906002025, '核心网', 10, null, 'update INT_PORT t1
+(906010480, '智能网-智能网-端口关联性核查-所属信令处理网元', 'DIMS_HX_03025', 3025, 906002025, '核心网', 10, null, 'update INT_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03025%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03025''
                                              else dims_col_result||'',DIMS_HX_03025'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属信令处理网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口所属信令处理网元关联性''
-                                             else dims_col_rtName||'',端口所属信令处理网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属信令处理网元智能网-端口关联性核查-所属信令处理网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:端口所属信令处理网元智能网-端口关联性核查-所属信令处理网元''
+                                             else dims_col_rtName||'',端口所属信令处理网元智能网-端口关联性核查-所属信令处理网元'' end)
                  where isNotNull(related_signal_processing_unit) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.zh_label=t1.related_signal_processing_unit)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002025, 1, null),
-(906010481, '智能网-关联性', 'DIMS_HX_03022', 3022, 906002026, '核心网', 10, null, 'update INT_BUSRES t1
+(906010481, '智能网-智能网-业务资源关联性核查-所属网元', 'DIMS_HX_03022', 3022, 906002026, '核心网', 10, null, 'update INT_BUSRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03022%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03022''
                                              else dims_col_result||'',DIMS_HX_03022'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%业务资源所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:业务资源所属网元关联性''
-                                             else dims_col_rtName||'',业务资源所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%业务资源所属网元智能网-业务资源关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:业务资源所属网元智能网-业务资源关联性核查-所属网元''
+                                             else dims_col_rtName||'',业务资源所属网元智能网-业务资源关联性核查-所属网元'' end)
                  where isNotNull(related_ne) and not exists(select 1 from INT_PUBRES t2 where t2.int_id=t1.related_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002026, 1, null),
-(906010482, '智能网-关联性', 'DIMS_HX_03020', 3020, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
+(906010482, '智能网-智能网-智能网网络设备关联性核查-所属机房', 'DIMS_HX_03020', 3020, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03020%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03020''
                                              else dims_col_result||'',DIMS_HX_03020'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机房关联性''
-                                             else dims_col_rtName||'',智能网网络设备所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机房智能网-智能网网络设备关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机房智能网-智能网网络设备关联性核查-所属机房''
+                                             else dims_col_rtName||'',智能网网络设备所属机房智能网-智能网网络设备关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
-(906010483, '智能网-关联性', 'DIMS_HX_03021', 3021, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
+(906010483, '智能网-智能网-智能网网络设备关联性核查-所属机架位置', 'DIMS_HX_03021', 3021, 906002027, '核心网', 10, null, 'update INT_DEVICE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03021%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03021''
                                              else dims_col_result||'',DIMS_HX_03021'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机架位置关联性''
-                                             else dims_col_rtName||'',智能网网络设备所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%智能网网络设备所属机架位置智能网-智能网网络设备关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:智能网网络设备所属机架位置智能网-智能网网络设备关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',智能网网络设备所属机架位置智能网-智能网网络设备关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002027, 1, null),
-(906010484, '智能网-关联性', 'DIMS_HX_03026', 3026, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
+(906010484, '智能网-智能网-信令链路关联性核查-本端网元', 'DIMS_HX_03026', 3026, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03026%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03026''
                                              else dims_col_result||'',DIMS_HX_03026'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令链路本端网元关联性''
-                                             else dims_col_rtName||'',信令链路本端网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端网元智能网-信令链路关联性核查-本端网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令链路本端网元智能网-信令链路关联性核查-本端网元''
+                                             else dims_col_rtName||'',信令链路本端网元智能网-信令链路关联性核查-本端网元'' end)
                  where isNotNull(aend_ne) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.aend_ne)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
-(906010485, '智能网-关联性', 'DIMS_HX_03027', 3027, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
+(906010485, '智能网-智能网-信令链路关联性核查-本端逻辑端口号', 'DIMS_HX_03027', 3027, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03027%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03027''
                                              else dims_col_result||'',DIMS_HX_03027'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端逻辑端口号关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令链路本端逻辑端口号关联性''
-                                             else dims_col_rtName||'',信令链路本端逻辑端口号关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路本端逻辑端口号智能网-信令链路关联性核查-本端逻辑端口号%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令链路本端逻辑端口号智能网-信令链路关联性核查-本端逻辑端口号''
+                                             else dims_col_rtName||'',信令链路本端逻辑端口号智能网-信令链路关联性核查-本端逻辑端口号'' end)
                  where isNotNull(local_logical_port_no) and not exists(select 1 from INT_PORT t2 where t2.int_id=t1.local_logical_port_no)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
-(906010486, '智能网-关联性', 'DIMS_HX_03028', 3028, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
+(906010486, '智能网-智能网-信令链路关联性核查-电路名称', 'DIMS_HX_03028', 3028, 906002028, '核心网', 10, null, 'update INT_SIGNALLINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03028%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03028''
                                              else dims_col_result||'',DIMS_HX_03028'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路电路名称关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:信令链路电路名称关联性''
-                                             else dims_col_rtName||'',信令链路电路名称关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%信令链路电路名称智能网-信令链路关联性核查-电路名称%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:信令链路电路名称智能网-信令链路关联性核查-电路名称''
+                                             else dims_col_rtName||'',信令链路电路名称智能网-信令链路关联性核查-电路名称'' end)
                  where isNotNull(circuit_name) and not exists(select 1 from TRANSI_CIRCUIT t2 where t2.res_identifier=t1.circuit_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002028, 1, null),
-(906010487, '智能网-关联性', 'DIMS_HX_03023', 3023, 906002029, '核心网', 10, null, 'update INT_BOARD t1
+(906010487, '智能网-智能网-板卡关联性核查-所属信令处理网元', 'DIMS_HX_03023', 3023, 906002029, '核心网', 10, null, 'update INT_BOARD t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03023%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03023''
                                              else dims_col_result||'',DIMS_HX_03023'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%板卡所属信令处理网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:板卡所属信令处理网元关联性''
-                                             else dims_col_rtName||'',板卡所属信令处理网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%板卡所属信令处理网元智能网-板卡关联性核查-所属信令处理网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:板卡所属信令处理网元智能网-板卡关联性核查-所属信令处理网元''
+                                             else dims_col_rtName||'',板卡所属信令处理网元智能网-板卡关联性核查-所属信令处理网元'' end)
                  where isNotNull(related_signal_processing_unit) and not exists(select 1 from INT_SIGNALUNIT t2 where t2.int_id=t1.related_signal_processing_unit)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002029, 1, null),
-(906010488, 'VOLTE-关联性', 'DIMS_HX_03031', 3031, 906002030, '核心网', 10, null, 'update VOLTE_TAS t1
+(906010488, 'VOLTE-VOLTE-VOLTETAS关联性核查-域名', 'DIMS_HX_03031', 3031, 906002030, '核心网', 10, null, 'update VOLTE_TAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03031%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03031''
                                              else dims_col_result||'',DIMS_HX_03031'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTETAS域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTETAS域名关联性''
-                                             else dims_col_rtName||'',VOLTETAS域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTETAS域名VOLTE-VOLTETAS关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTETAS域名VOLTE-VOLTETAS关联性核查-域名''
+                                             else dims_col_rtName||'',VOLTETAS域名VOLTE-VOLTETAS关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002030, 1, null),
-(906010489, 'VOLTE-关联性', 'DIMS_HX_03040', 3040, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
+(906010489, 'VOLTE-VOLTE-PSBC关联性核查-所属机架位置', 'DIMS_HX_03040', 3040, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03040%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03040''
                                              else dims_col_result||'',DIMS_HX_03040'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PSBC所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PSBC所属机架位置关联性''
-                                             else dims_col_rtName||'',PSBC所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PSBC所属机架位置VOLTE-PSBC关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PSBC所属机架位置VOLTE-PSBC关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',PSBC所属机架位置VOLTE-PSBC关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
-(906010490, 'VOLTE-关联性', 'DIMS_HX_03041', 3041, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
+(906010490, 'VOLTE-VOLTE-PSBC关联性核查-域名', 'DIMS_HX_03041', 3041, 906002031, '核心网', 10, null, 'update VOLTE_PSBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03041%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03041''
                                              else dims_col_result||'',DIMS_HX_03041'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PSBC域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PSBC域名关联性''
-                                             else dims_col_rtName||'',PSBC域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PSBC域名VOLTE-PSBC关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PSBC域名VOLTE-PSBC关联性核查-域名''
+                                             else dims_col_rtName||'',PSBC域名VOLTE-PSBC关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002031, 1, null),
-(906010491, 'VOLTE-关联性', 'DIMS_HX_03058', 3058, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
+(906010491, 'VOLTE-VOLTE-链路关联性核查-本端机房', 'DIMS_HX_03058', 3058, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03058%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03058''
                                              else dims_col_result||'',DIMS_HX_03058'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端机房关联性''
-                                             else dims_col_rtName||'',链路本端机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房VOLTE-链路关联性核查-本端机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端机房VOLTE-链路关联性核查-本端机房''
+                                             else dims_col_rtName||'',链路本端机房VOLTE-链路关联性核查-本端机房'' end)
                  where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
-(906010492, 'VOLTE-关联性', 'DIMS_HX_03060', 3060, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
+(906010492, 'VOLTE-VOLTE-链路关联性核查-对端机房', 'DIMS_HX_03060', 3060, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03060%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03060''
                                              else dims_col_result||'',DIMS_HX_03060'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路对端机房关联性''
-                                             else dims_col_rtName||'',链路对端机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房VOLTE-链路关联性核查-对端机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路对端机房VOLTE-链路关联性核查-对端机房''
+                                             else dims_col_rtName||'',链路对端机房VOLTE-链路关联性核查-对端机房'' end)
                  where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
-(906010493, 'VOLTE-关联性', 'DIMS_HX_03062', 3062, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
+(906010493, 'VOLTE-VOLTE-链路关联性核查-本端设备端口', 'DIMS_HX_03062', 3062, 906002032, '核心网', 10, null, 'update VOLTE_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03062%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03062''
                                              else dims_col_result||'',DIMS_HX_03062'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端设备端口关联性''
-                                             else dims_col_rtName||'',链路本端设备端口关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口VOLTE-链路关联性核查-本端设备端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端设备端口VOLTE-链路关联性核查-本端设备端口''
+                                             else dims_col_rtName||'',链路本端设备端口VOLTE-链路关联性核查-本端设备端口'' end)
                  where isNotNull(aend_port) and not exists(select 1 from VOLTE_PORT t2 where t2.int_id=t1.aend_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002032, 1, null),
-(906010494, 'VOLTE-关联性', 'DIMS_HX_03044', 3044, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
+(906010494, 'VOLTE-VOLTE-BCF关联性核查-所属机架位置', 'DIMS_HX_03044', 3044, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03044%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03044''
                                              else dims_col_result||'',DIMS_HX_03044'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BCF所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BCF所属机架位置关联性''
-                                             else dims_col_rtName||'',BCF所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%BCF所属机架位置VOLTE-BCF关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:BCF所属机架位置VOLTE-BCF关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',BCF所属机架位置VOLTE-BCF关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
-(906010495, 'VOLTE-关联性', 'DIMS_HX_03045', 3045, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
+(906010495, 'VOLTE-VOLTE-BCF关联性核查-域名', 'DIMS_HX_03045', 3045, 906002033, '核心网', 10, null, 'update VOLTE_BCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03045%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03045''
                                              else dims_col_result||'',DIMS_HX_03045'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BCF域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BCF域名关联性''
-                                             else dims_col_rtName||'',BCF域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%BCF域名VOLTE-BCF关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:BCF域名VOLTE-BCF关联性核查-域名''
+                                             else dims_col_rtName||'',BCF域名VOLTE-BCF关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002033, 1, null),
-(906010496, 'VOLTE-关联性', 'DIMS_HX_03033', 3033, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
+(906010496, 'VOLTE-VOLTE-MRFC关联性核查-所属机架位置', 'DIMS_HX_03033', 3033, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03033%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03033''
                                              else dims_col_result||'',DIMS_HX_03033'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MRFC所属机架位置关联性''
-                                             else dims_col_rtName||'',MRFC所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC所属机架位置VOLTE-MRFC关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MRFC所属机架位置VOLTE-MRFC关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MRFC所属机架位置VOLTE-MRFC关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
-(906010497, 'VOLTE-关联性', 'DIMS_HX_03034', 3034, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
+(906010497, 'VOLTE-VOLTE-MRFC关联性核查-域名', 'DIMS_HX_03034', 3034, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03034%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03034''
                                              else dims_col_result||'',DIMS_HX_03034'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MRFC域名关联性''
-                                             else dims_col_rtName||'',MRFC域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC域名VOLTE-MRFC关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MRFC域名VOLTE-MRFC关联性核查-域名''
+                                             else dims_col_rtName||'',MRFC域名VOLTE-MRFC关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
-(906010498, 'VOLTE-关联性', 'DIMS_HX_03036', 3036, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
+(906010498, 'VOLTE-VOLTE-MRFC关联性核查-关联MRFP', 'DIMS_HX_03036', 3036, 906002034, '核心网', 10, null, 'update VOLTE_MRFC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03036%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03036''
                                              else dims_col_result||'',DIMS_HX_03036'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC关联MRFP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MRFC关联MRFP关联性''
-                                             else dims_col_rtName||'',MRFC关联MRFP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MRFC关联MRFPVOLTE-MRFC关联性核查-关联MRFP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MRFC关联MRFPVOLTE-MRFC关联性核查-关联MRFP''
+                                             else dims_col_rtName||'',MRFC关联MRFPVOLTE-MRFC关联性核查-关联MRFP'' end)
                  where isNotNull(related_mrfp) and not exists(select 1 from VOLTE_MRFP t2 where t2.int_id=t1.related_mrfp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002034, 1, null),
-(906010499, 'VOLTE-关联性', 'DIMS_HX_03043', 3043, 906002035, '核心网', 10, null, 'update VOLTE_ATCF t1
+(906010499, 'VOLTE-VOLTE-ATCF关联性核查-域名', 'DIMS_HX_03043', 3043, 906002035, '核心网', 10, null, 'update VOLTE_ATCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03043%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03043''
                                              else dims_col_result||'',DIMS_HX_03043'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ATCF域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ATCF域名关联性''
-                                             else dims_col_rtName||'',ATCF域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ATCF域名VOLTE-ATCF关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ATCF域名VOLTE-ATCF关联性核查-域名''
+                                             else dims_col_rtName||'',ATCF域名VOLTE-ATCF关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002035, 1, null),
-(906010500, 'VOLTE-关联性', 'DIMS_HX_03039', 3039, 906002036, '核心网', 10, null, 'update VOLTE_MRFP t1
+(906010500, 'VOLTE-VOLTE-MRFP关联性核查-所属机架位置', 'DIMS_HX_03039', 3039, 906002036, '核心网', 10, null, 'update VOLTE_MRFP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03039%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03039''
                                              else dims_col_result||'',DIMS_HX_03039'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MRFP所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MRFP所属机架位置关联性''
-                                             else dims_col_rtName||'',MRFP所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MRFP所属机架位置VOLTE-MRFP关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MRFP所属机架位置VOLTE-MRFP关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MRFP所属机架位置VOLTE-MRFP关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002036, 1, null),
-(906010501, 'VOLTE-关联性', 'DIMS_HX_03047', 3047, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
+(906010501, 'VOLTE-VOLTE-ISBG关联性核查-所属机架位置', 'DIMS_HX_03047', 3047, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03047%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03047''
                                              else dims_col_result||'',DIMS_HX_03047'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置关联性''
-                                             else dims_col_rtName||'',ISBG所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置VOLTE-ISBG关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置VOLTE-ISBG关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',ISBG所属机架位置VOLTE-ISBG关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
-(906010502, 'VOLTE-关联性', 'DIMS_HX_03048', 3048, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
+(906010502, 'VOLTE-VOLTE-ISBG关联性核查-域名', 'DIMS_HX_03048', 3048, 906002037, '核心网', 10, null, 'update VOLTE_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03048%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03048''
                                              else dims_col_result||'',DIMS_HX_03048'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ISBG域名关联性''
-                                             else dims_col_rtName||'',ISBG域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG域名VOLTE-ISBG关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ISBG域名VOLTE-ISBG关联性核查-域名''
+                                             else dims_col_rtName||'',ISBG域名VOLTE-ISBG关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002037, 1, null),
-(906010503, 'VOLTE-关联性', 'DIMS_HX_03056', 3056, 906002039, '核心网', 10, null, 'update VOLTE_DNS_ENUM t1
+(906010503, 'VOLTE-VOLTE-DNS&ENUM关联性核查-所属机架位置', 'DIMS_HX_03056', 3056, 906002039, '核心网', 10, null, 'update VOLTE_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03056%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03056''
                                              else dims_col_result||'',DIMS_HX_03056'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置关联性''
-                                             else dims_col_rtName||'',DNS&ENUM所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置VOLTE-DNS&ENUM关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置VOLTE-DNS&ENUM关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',DNS&ENUM所属机架位置VOLTE-DNS&ENUM关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002039, 1, null),
-(906010504, 'VOLTE-关联性', 'DIMS_HX_03037', 3037, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
+(906010504, 'VOLTE-VOLTE-AP关联性核查-所属机架位置', 'DIMS_HX_03037', 3037, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03037%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03037''
                                              else dims_col_result||'',DIMS_HX_03037'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AP所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AP所属机架位置关联性''
-                                             else dims_col_rtName||'',AP所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%AP所属机架位置VOLTE-AP关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:AP所属机架位置VOLTE-AP关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',AP所属机架位置VOLTE-AP关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
-(906010505, 'VOLTE-关联性', 'DIMS_HX_03038', 3038, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
+(906010505, 'VOLTE-VOLTE-AP关联性核查-域名', 'DIMS_HX_03038', 3038, 906002040, '核心网', 10, null, 'update VOLTE_AP t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03038%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03038''
                                              else dims_col_result||'',DIMS_HX_03038'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AP域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AP域名关联性''
-                                             else dims_col_rtName||'',AP域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%AP域名VOLTE-AP关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:AP域名VOLTE-AP关联性核查-域名''
+                                             else dims_col_rtName||'',AP域名VOLTE-AP关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002040, 1, null),
-(906010506, 'VOLTE-关联性', 'DIMS_HX_03029', 3029, 906002041, '核心网', 10, null, 'update VOLTE_AS t1
+(906010506, 'VOLTE-VOLTE-VOLTE AS关联性核查-所属机架位置', 'DIMS_HX_03029', 3029, 906002041, '核心网', 10, null, 'update VOLTE_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03029%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03029''
                                              else dims_col_result||'',DIMS_HX_03029'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE AS所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:VOLTE AS所属机架位置关联性''
-                                             else dims_col_rtName||'',VOLTE AS所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%VOLTE AS所属机架位置VOLTE-VOLTE AS关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:VOLTE AS所属机架位置VOLTE-VOLTE AS关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',VOLTE AS所属机架位置VOLTE-VOLTE AS关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002041, 1, null),
-(906010507, 'VOLTE-关联性', 'DIMS_HX_03055', 3055, 906002042, '核心网', 10, null, 'update VOLTE_IM_MGW t1
+(906010507, 'VOLTE-VOLTE-IM-MGW关联性核查-所属机架位置', 'DIMS_HX_03055', 3055, 906002042, '核心网', 10, null, 'update VOLTE_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03055%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03055''
                                              else dims_col_result||'',DIMS_HX_03055'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置关联性''
-                                             else dims_col_rtName||'',IM-MGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置VOLTE-IM-MGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置VOLTE-IM-MGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',IM-MGW所属机架位置VOLTE-IM-MGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002042, 1, null),
-(906010508, 'VOLTE-关联性', 'DIMS_HX_03046', 3046, 906002043, '核心网', 10, null, 'update VOLTE_BGW t1
+(906010508, 'VOLTE-VOLTE-BGW关联性核查-所属机架位置', 'DIMS_HX_03046', 3046, 906002043, '核心网', 10, null, 'update VOLTE_BGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03046%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03046''
                                              else dims_col_result||'',DIMS_HX_03046'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BGW所属机架位置关联性''
-                                             else dims_col_rtName||'',BGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%BGW所属机架位置VOLTE-BGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:BGW所属机架位置VOLTE-BGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',BGW所属机架位置VOLTE-BGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from CM_DEVICE_RACK t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002043, 1, null),
-(906010509, 'VOLTE-关联性', 'DIMS_HX_03053', 3053, 906002044, '核心网', 10, null, 'update VOLTE_BGCF t1
+(906010509, 'VOLTE-VOLTE-BGCF关联性核查-所属ISBG', 'DIMS_HX_03053', 3053, 906002044, '核心网', 10, null, 'update VOLTE_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03053%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03053''
                                              else dims_col_result||'',DIMS_HX_03053'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBG关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BGCF所属ISBG关联性''
-                                             else dims_col_rtName||'',BGCF所属ISBG关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBGVOLTE-BGCF关联性核查-所属ISBG%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:BGCF所属ISBGVOLTE-BGCF关联性核查-所属ISBG''
+                                             else dims_col_rtName||'',BGCF所属ISBGVOLTE-BGCF关联性核查-所属ISBG'' end)
                  where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002044, 1, null),
-(906010510, 'VOLTE-关联性', 'DIMS_HX_03050', 3050, 906002045, '核心网', 10, null, 'update VOLTE_SCSCF t1
+(906010510, 'VOLTE-VOLTE-SCSCF关联性核查-所属ISBG', 'DIMS_HX_03050', 3050, 906002045, '核心网', 10, null, 'update VOLTE_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03050%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03050''
                                              else dims_col_result||'',DIMS_HX_03050'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBG关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBG关联性''
-                                             else dims_col_rtName||'',SCSCF所属ISBG关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBGVOLTE-SCSCF关联性核查-所属ISBG%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBGVOLTE-SCSCF关联性核查-所属ISBG''
+                                             else dims_col_rtName||'',SCSCF所属ISBGVOLTE-SCSCF关联性核查-所属ISBG'' end)
                  where isNotNull(related_isbg) and not exists(select 1 from VOLTE_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002045, 1, null),
-(906010511, 'VOLTE-关联性', 'DIMS_HX_03052', 3052, 906002046, '核心网', 10, null, 'update VOLTE_ICSCF t1
+(906010511, 'VOLTE-VOLTE-ICSCF关联性核查-归属I-CSCF POOL', 'DIMS_HX_03052', 3052, 906002046, '核心网', 10, null, 'update VOLTE_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03052%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03052''
                                              else dims_col_result||'',DIMS_HX_03052'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ICSCF归属I-CSCF POOL关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ICSCF归属I-CSCF POOL关联性''
-                                             else dims_col_rtName||'',ICSCF归属I-CSCF POOL关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ICSCF归属I-CSCF POOLVOLTE-ICSCF关联性核查-归属I-CSCF POOL%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ICSCF归属I-CSCF POOLVOLTE-ICSCF关联性核查-归属I-CSCF POOL''
+                                             else dims_col_rtName||'',ICSCF归属I-CSCF POOLVOLTE-ICSCF关联性核查-归属I-CSCF POOL'' end)
                  where isNotNull(related_cscf_pool) and not exists(select 1 from VOLTE_POOL t2 where t2.int_id=t1.related_cscf_pool)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002046, 1, null),
-(906010512, 'VOLTE-关联性', 'DIMS_HX_03032', 3032, 906002051, '核心网', 10, null, 'update VOLTE_SCC_AS t1
+(906010512, 'VOLTE-VOLTE-SCC-AS关联性核查-域名', 'DIMS_HX_03032', 3032, 906002051, '核心网', 10, null, 'update VOLTE_SCC_AS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03032%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03032''
                                              else dims_col_result||'',DIMS_HX_03032'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SCC-AS域名关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SCC-AS域名关联性''
-                                             else dims_col_rtName||'',SCC-AS域名关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SCC-AS域名VOLTE-SCC-AS关联性核查-域名%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SCC-AS域名VOLTE-SCC-AS关联性核查-域名''
+                                             else dims_col_rtName||'',SCC-AS域名VOLTE-SCC-AS关联性核查-域名'' end)
                  where isNotNull(domain_name) and not exists(select 1 from VOLTE_DOMAIN t2 where t2.int_id=t1.domain_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002051, 1, null),
-(906010513, 'IMS-关联性', 'DIMS_HX_03077', 3077, 906002054, '核心网', 10, null, 'update IMS_MMTAS t1
+(906010513, 'IMS-IMS-MMTAS关联性核查-所属机架位置', 'DIMS_HX_03077', 3077, 906002054, '核心网', 10, null, 'update IMS_MMTAS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03077%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03077''
                                              else dims_col_result||'',DIMS_HX_03077'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MMTAS所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MMTAS所属机架位置关联性''
-                                             else dims_col_rtName||'',MMTAS所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MMTAS所属机架位置IMS-MMTAS关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MMTAS所属机架位置IMS-MMTAS关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MMTAS所属机架位置IMS-MMTAS关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002054, 1, null),
-(906010514, 'IMS-关联性', 'DIMS_HX_03086', 3086, 906002055, '核心网', 10, null, 'update IMS_CTXAS_PUBRES t1
+(906010514, 'IMS-IMS-CTXAS-公共资源关联性核查-所属机架位置', 'DIMS_HX_03086', 3086, 906002055, '核心网', 10, null, 'update IMS_CTXAS_PUBRES t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03086%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03086''
                                              else dims_col_result||'',DIMS_HX_03086'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-公共资源所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CTXAS-公共资源所属机架位置关联性''
-                                             else dims_col_rtName||'',CTXAS-公共资源所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-公共资源所属机架位置IMS-CTXAS-公共资源关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CTXAS-公共资源所属机架位置IMS-CTXAS-公共资源关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',CTXAS-公共资源所属机架位置IMS-CTXAS-公共资源关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002055, 1, null),
-(906010515, 'IMS-关联性', 'DIMS_HX_03064', 3064, 906002057, '核心网', 10, null, 'update IMS_ISBG t1
+(906010515, 'IMS-IMS-ISBG关联性核查-所属机架位置', 'DIMS_HX_03064', 3064, 906002057, '核心网', 10, null, 'update IMS_ISBG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03064%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03064''
                                              else dims_col_result||'',DIMS_HX_03064'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置关联性''
-                                             else dims_col_rtName||'',ISBG所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ISBG所属机架位置IMS-ISBG关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ISBG所属机架位置IMS-ISBG关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',ISBG所属机架位置IMS-ISBG关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002057, 1, null),
-(906010516, 'IMS-关联性', 'DIMS_HX_03069', 3069, 906002060, '核心网', 10, null, 'update IMS_SBC t1
+(906010516, 'IMS-IMS-SBC关联性核查-所属机架位置', 'DIMS_HX_03069', 3069, 906002060, '核心网', 10, null, 'update IMS_SBC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03069%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03069''
                                              else dims_col_result||'',DIMS_HX_03069'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SBC所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SBC所属机架位置关联性''
-                                             else dims_col_rtName||'',SBC所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SBC所属机架位置IMS-SBC关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SBC所属机架位置IMS-SBC关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',SBC所属机架位置IMS-SBC关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002060, 1, null),
-(906010517, 'IMS-关联性', 'DIMS_HX_03075', 3075, 906002061, '核心网', 10, null, 'update IMS_AGCF t1
+(906010517, 'IMS-IMS-AGCF关联性核查-所属机架位置', 'DIMS_HX_03075', 3075, 906002061, '核心网', 10, null, 'update IMS_AGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03075%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03075''
                                              else dims_col_result||'',DIMS_HX_03075'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%AGCF所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:AGCF所属机架位置关联性''
-                                             else dims_col_rtName||'',AGCF所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%AGCF所属机架位置IMS-AGCF关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:AGCF所属机架位置IMS-AGCF关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',AGCF所属机架位置IMS-AGCF关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002061, 1, null),
-(906010518, 'IMS-关联性', 'DIMS_HX_03065', 3065, 906002062, '核心网', 10, null, 'update IMS_SCSCF t1
+(906010518, 'IMS-IMS-SCSCF关联性核查-所属ISBG', 'DIMS_HX_03065', 3065, 906002062, '核心网', 10, null, 'update IMS_SCSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03065%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03065''
                                              else dims_col_result||'',DIMS_HX_03065'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBG关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBG关联性''
-                                             else dims_col_rtName||'',SCSCF所属ISBG关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SCSCF所属ISBGIMS-SCSCF关联性核查-所属ISBG%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SCSCF所属ISBGIMS-SCSCF关联性核查-所属ISBG''
+                                             else dims_col_rtName||'',SCSCF所属ISBGIMS-SCSCF关联性核查-所属ISBG'' end)
                  where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002062, 1, null),
-(906010519, 'IMS-关联性', 'DIMS_HX_03070', 3070, 906002063, '核心网', 10, null, 'update IMS_MGCF t1
+(906010519, 'IMS-IMS-MGCF关联性核查-所属机架位置', 'DIMS_HX_03070', 3070, 906002063, '核心网', 10, null, 'update IMS_MGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03070%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03070''
                                              else dims_col_result||'',DIMS_HX_03070'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MGCF所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MGCF所属机架位置关联性''
-                                             else dims_col_rtName||'',MGCF所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MGCF所属机架位置IMS-MGCF关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MGCF所属机架位置IMS-MGCF关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MGCF所属机架位置IMS-MGCF关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002063, 1, null),
-(906010520, 'IMS-关联性', 'DIMS_HX_03068', 3068, 906002064, '核心网', 10, null, 'update IMS_IMS_HSS t1
+(906010520, 'IMS-IMS-IMS HSS关联性核查-所属机架位置', 'DIMS_HX_03068', 3068, 906002064, '核心网', 10, null, 'update IMS_IMS_HSS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03068%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03068''
                                              else dims_col_result||'',DIMS_HX_03068'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IMS HSS所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IMS HSS所属机架位置关联性''
-                                             else dims_col_rtName||'',IMS HSS所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IMS HSS所属机架位置IMS-IMS HSS关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IMS HSS所属机架位置IMS-IMS HSS关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',IMS HSS所属机架位置IMS-IMS HSS关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002064, 1, null),
-(906010521, 'IMS-关联性', 'DIMS_HX_03080', 3080, 906002068, '核心网', 10, null, 'update IMS_LINK t1
+(906010521, 'IMS-IMS-链路关联性核查-本端机房', 'DIMS_HX_03080', 3080, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03080%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03080''
                                              else dims_col_result||'',DIMS_HX_03080'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端机房关联性''
-                                             else dims_col_rtName||'',链路本端机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端机房IMS-链路关联性核查-本端机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端机房IMS-链路关联性核查-本端机房''
+                                             else dims_col_rtName||'',链路本端机房IMS-链路关联性核查-本端机房'' end)
                  where isNotNull(aend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.aend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
-(906010522, 'IMS-关联性', 'DIMS_HX_03082', 3082, 906002068, '核心网', 10, null, 'update IMS_LINK t1
+(906010522, 'IMS-IMS-链路关联性核查-对端机房', 'DIMS_HX_03082', 3082, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03082%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03082''
                                              else dims_col_result||'',DIMS_HX_03082'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路对端机房关联性''
-                                             else dims_col_rtName||'',链路对端机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路对端机房IMS-链路关联性核查-对端机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路对端机房IMS-链路关联性核查-对端机房''
+                                             else dims_col_rtName||'',链路对端机房IMS-链路关联性核查-对端机房'' end)
                  where isNotNull(zend_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.zend_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
-(906010523, 'IMS-关联性', 'DIMS_HX_03084', 3084, 906002068, '核心网', 10, null, 'update IMS_LINK t1
+(906010523, 'IMS-IMS-链路关联性核查-本端设备端口', 'DIMS_HX_03084', 3084, 906002068, '核心网', 10, null, 'update IMS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03084%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03084''
                                              else dims_col_result||'',DIMS_HX_03084'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路本端设备端口关联性''
-                                             else dims_col_rtName||'',链路本端设备端口关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路本端设备端口IMS-链路关联性核查-本端设备端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路本端设备端口IMS-链路关联性核查-本端设备端口''
+                                             else dims_col_rtName||'',链路本端设备端口IMS-链路关联性核查-本端设备端口'' end)
                  where isNotNull(aend_port) and not exists(select 1 from IMS_PORT t2 where t2.int_id=t1.aend_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002068, 1, null),
-(906010524, 'IMS-关联性', 'DIMS_HX_03087', 3087, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
+(906010524, 'IMS-IMS-CTXAS-SCP业务处理单元关联性核查-所属机架位置', 'DIMS_HX_03087', 3087, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03087%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03087''
                                              else dims_col_result||'',DIMS_HX_03087'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属机架位置关联性''
-                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属机架位置IMS-CTXAS-SCP业务处理单元关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属机架位置IMS-CTXAS-SCP业务处理单元关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元所属机架位置IMS-CTXAS-SCP业务处理单元关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
-(906010525, 'IMS-关联性', 'DIMS_HX_03088', 3088, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
+(906010525, 'IMS-IMS-CTXAS-SCP业务处理单元关联性核查-所属网元', 'DIMS_HX_03088', 3088, 906002071, '核心网', 10, null, 'update IMS_CTXAS_BIZUNIT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03088%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03088''
                                              else dims_col_result||'',DIMS_HX_03088'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属网元关联性''
-                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CTXAS-SCP业务处理单元所属网元IMS-CTXAS-SCP业务处理单元关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CTXAS-SCP业务处理单元所属网元IMS-CTXAS-SCP业务处理单元关联性核查-所属网元''
+                                             else dims_col_rtName||'',CTXAS-SCP业务处理单元所属网元IMS-CTXAS-SCP业务处理单元关联性核查-所属网元'' end)
                  where isNotNull(related_ne) and  NOT (select  cast(array_agg(t2.int_id) as text []) from IMS_CTXAS_PUBRES t2) @> (select regexp_split_to_array(t1.related_ne,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002071, 1, null),
-(906010526, 'IMS-关联性', 'DIMS_HX_03078', 3078, 906002072, '核心网', 10, null, 'update IMS_DNS_ENUM t1
+(906010526, 'IMS-IMS-DNS&ENUM关联性核查-所属机架位置', 'DIMS_HX_03078', 3078, 906002072, '核心网', 10, null, 'update IMS_DNS_ENUM t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03078%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03078''
                                              else dims_col_result||'',DIMS_HX_03078'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置关联性''
-                                             else dims_col_rtName||'',DNS&ENUM所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DNS&ENUM所属机架位置IMS-DNS&ENUM关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DNS&ENUM所属机架位置IMS-DNS&ENUM关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',DNS&ENUM所属机架位置IMS-DNS&ENUM关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002072, 1, null),
-(906010527, 'IMS-关联性', 'DIMS_HX_03074', 3074, 906002073, '核心网', 10, null, 'update IMS_UMG t1
+(906010527, 'IMS-IMS-UMG关联性核查-所属机架位置', 'DIMS_HX_03074', 3074, 906002073, '核心网', 10, null, 'update IMS_UMG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03074%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03074''
                                              else dims_col_result||'',DIMS_HX_03074'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%UMG所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:UMG所属机架位置关联性''
-                                             else dims_col_rtName||'',UMG所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%UMG所属机架位置IMS-UMG关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:UMG所属机架位置IMS-UMG关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',UMG所属机架位置IMS-UMG关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002073, 1, null),
-(906010528, 'IMS-关联性', 'DIMS_HX_03073', 3073, 906002074, '核心网', 10, null, 'update IMS_UGC t1
+(906010528, 'IMS-IMS-UGC关联性核查-所属机架位置', 'DIMS_HX_03073', 3073, 906002074, '核心网', 10, null, 'update IMS_UGC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03073%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03073''
                                              else dims_col_result||'',DIMS_HX_03073'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%UGC所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:UGC所属机架位置关联性''
-                                             else dims_col_rtName||'',UGC所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%UGC所属机架位置IMS-UGC关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:UGC所属机架位置IMS-UGC关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',UGC所属机架位置IMS-UGC关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002074, 1, null),
-(906010529, 'IMS-关联性', 'DIMS_HX_03071', 3071, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
+(906010529, 'IMS-IMS-IM-MGW关联性核查-所属机架位置', 'DIMS_HX_03071', 3071, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03071%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03071''
                                              else dims_col_result||'',DIMS_HX_03071'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置关联性''
-                                             else dims_col_rtName||'',IM-MGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW所属机架位置IMS-IM-MGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IM-MGW所属机架位置IMS-IM-MGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',IM-MGW所属机架位置IMS-IM-MGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
-(906010530, 'IMS-关联性', 'DIMS_HX_03072', 3072, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
+(906010530, 'IMS-IMS-IM-MGW关联性核查-关联的Mgcf标识', 'DIMS_HX_03072', 3072, 906002075, '核心网', 10, null, 'update IMS_IM_MGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03072%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03072''
                                              else dims_col_result||'',DIMS_HX_03072'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW关联的Mgcf标识关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:IM-MGW关联的Mgcf标识关联性''
-                                             else dims_col_rtName||'',IM-MGW关联的Mgcf标识关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%IM-MGW关联的Mgcf标识IMS-IM-MGW关联性核查-关联的Mgcf标识%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:IM-MGW关联的Mgcf标识IMS-IM-MGW关联性核查-关联的Mgcf标识''
+                                             else dims_col_rtName||'',IM-MGW关联的Mgcf标识IMS-IM-MGW关联性核查-关联的Mgcf标识'' end)
                  where isNotNull(mgcf_id) and not exists(select 1 from IMS_MGCF t2 where t2.int_id=t1.mgcf_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002075, 1, null),
-(906010531, 'IMS-关联性', 'DIMS_HX_03076', 3076, 906002076, '核心网', 10, null, 'update IMS_TG t1
+(906010531, 'IMS-IMS-TG关联性核查-所属机架位置', 'DIMS_HX_03076', 3076, 906002076, '核心网', 10, null, 'update IMS_TG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03076%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03076''
                                              else dims_col_result||'',DIMS_HX_03076'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%TG所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:TG所属机架位置关联性''
-                                             else dims_col_rtName||'',TG所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%TG所属机架位置IMS-TG关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:TG所属机架位置IMS-TG关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',TG所属机架位置IMS-TG关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002076, 1, null),
-(906010532, 'IMS-关联性', 'DIMS_HX_03067', 3067, 906002077, '核心网', 10, null, 'update IMS_BGCF t1
+(906010532, 'IMS-IMS-BGCF关联性核查-所属ISBG', 'DIMS_HX_03067', 3067, 906002077, '核心网', 10, null, 'update IMS_BGCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03067%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03067''
                                              else dims_col_result||'',DIMS_HX_03067'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBG关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:BGCF所属ISBG关联性''
-                                             else dims_col_rtName||'',BGCF所属ISBG关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%BGCF所属ISBGIMS-BGCF关联性核查-所属ISBG%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:BGCF所属ISBGIMS-BGCF关联性核查-所属ISBG''
+                                             else dims_col_rtName||'',BGCF所属ISBGIMS-BGCF关联性核查-所属ISBG'' end)
                  where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002077, 1, null),
-(906010533, 'IMS-关联性', 'DIMS_HX_03066', 3066, 906002078, '核心网', 10, null, 'update IMS_ICSCF t1
+(906010533, 'IMS-IMS-ICSCF关联性核查-所属ISBG', 'DIMS_HX_03066', 3066, 906002078, '核心网', 10, null, 'update IMS_ICSCF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03066%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03066''
                                              else dims_col_result||'',DIMS_HX_03066'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%ICSCF所属ISBG关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:ICSCF所属ISBG关联性''
-                                             else dims_col_rtName||'',ICSCF所属ISBG关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%ICSCF所属ISBGIMS-ICSCF关联性核查-所属ISBG%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:ICSCF所属ISBGIMS-ICSCF关联性核查-所属ISBG''
+                                             else dims_col_rtName||'',ICSCF所属ISBGIMS-ICSCF关联性核查-所属ISBG'' end)
                  where isNotNull(related_isbg) and not exists(select 1 from IMS_ISBG t2 where t2.int_id=t1.related_isbg)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002078, 1, null),
-(906010534, '分组域-关联性', 'DIMS_HX_03132', 3132, 906002080, '核心网', 10, null, 'update PS_PGW t1
+(906010534, '分组域-分组域-PGW关联性核查-所属机架位置', 'DIMS_HX_03132', 3132, 906002080, '核心网', 10, null, 'update PS_PGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03132%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03132''
                                              else dims_col_result||'',DIMS_HX_03132'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PGW所属机架位置关联性''
-                                             else dims_col_rtName||'',PGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PGW所属机架位置分组域-PGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PGW所属机架位置分组域-PGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',PGW所属机架位置分组域-PGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002080, 1, null),
-(906010535, '分组域-关联性', 'DIMS_HX_03138', 3138, 906002081, '核心网', 10, null, 'update PS_PCRF_BE t1
+(906010535, '分组域-分组域-PCRF-BE关联性核查-所属机架位置', 'DIMS_HX_03138', 3138, 906002081, '核心网', 10, null, 'update PS_PCRF_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03138%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03138''
                                              else dims_col_result||'',DIMS_HX_03138'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF-BE所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PCRF-BE所属机架位置关联性''
-                                             else dims_col_rtName||'',PCRF-BE所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF-BE所属机架位置分组域-PCRF-BE关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PCRF-BE所属机架位置分组域-PCRF-BE关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',PCRF-BE所属机架位置分组域-PCRF-BE关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002081, 1, null),
-(906010536, '分组域-关联性', 'DIMS_HX_03133', 3133, 906002082, '核心网', 10, null, 'update PS_PCRF t1
+(906010536, '分组域-分组域-PCRF关联性核查-所属机架位置', 'DIMS_HX_03133', 3133, 906002082, '核心网', 10, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03133%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03133''
                                              else dims_col_result||'',DIMS_HX_03133'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PCRF所属机架位置关联性''
-                                             else dims_col_rtName||'',PCRF所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机架位置分组域-PCRF关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PCRF所属机架位置分组域-PCRF关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',PCRF所属机架位置分组域-PCRF关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
-(906010537, '分组域-关联性', 'DIMS_HX_03134', 3134, 906002082, '核心网', 10, null, 'update PS_PCRF t1
+(906010537, '分组域-分组域-PCRF关联性核查-所属机房', 'DIMS_HX_03134', 3134, 906002082, '核心网', 10, null, 'update PS_PCRF t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03134%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03134''
                                              else dims_col_result||'',DIMS_HX_03134'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PCRF所属机房关联性''
-                                             else dims_col_rtName||'',PCRF所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PCRF所属机房分组域-PCRF关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PCRF所属机房分组域-PCRF关联性核查-所属机房''
+                                             else dims_col_rtName||'',PCRF所属机房分组域-PCRF关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002082, 1, null),
-(906010538, '分组域-关联性', 'DIMS_HX_03131', 3131, 906002083, '核心网', 10, null, 'update PS_SGW t1
+(906010538, '分组域-分组域-SGW关联性核查-所属机架位置', 'DIMS_HX_03131', 3131, 906002083, '核心网', 10, null, 'update PS_SGW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03131%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03131''
                                              else dims_col_result||'',DIMS_HX_03131'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SGW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SGW所属机架位置关联性''
-                                             else dims_col_rtName||'',SGW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SGW所属机架位置分组域-SGW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SGW所属机架位置分组域-SGW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',SGW所属机架位置分组域-SGW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002083, 1, null),
-(906010539, '分组域-关联性', 'DIMS_HX_03154', 3154, 906002084, '核心网', 10, null, 'update PS_LINK t1
+(906010539, '分组域-分组域-链路关联性核查-A端设备', 'DIMS_HX_03154', 3154, 906002084, '核心网', 10, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03154%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03154''
                                              else dims_col_result||'',DIMS_HX_03154'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路A端设备关联性''
-                                             else dims_col_rtName||'',链路A端设备关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备分组域-链路关联性核查-A端设备%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路A端设备分组域-链路关联性核查-A端设备''
+                                             else dims_col_rtName||'',链路A端设备分组域-链路关联性核查-A端设备'' end)
                  where isNotNull(a_end_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.a_end_device)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.a_end_device)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.a_end_device)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.a_end_device)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.a_end_device)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.a_end_device)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.a_end_device)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.a_end_device)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.a_end_device)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.a_end_device)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.a_end_device) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
-(906010540, '分组域-关联性', 'DIMS_HX_03155', 3155, 906002084, '核心网', 10, null, 'update PS_LINK t1
+(906010540, '分组域-分组域-链路关联性核查-A端设备端口', 'DIMS_HX_03155', 3155, 906002084, '核心网', 10, null, 'update PS_LINK t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03155%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03155''
                                              else dims_col_result||'',DIMS_HX_03155'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备端口关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:链路A端设备端口关联性''
-                                             else dims_col_rtName||'',链路A端设备端口关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%链路A端设备端口分组域-链路关联性核查-A端设备端口%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:链路A端设备端口分组域-链路关联性核查-A端设备端口''
+                                             else dims_col_rtName||'',链路A端设备端口分组域-链路关联性核查-A端设备端口'' end)
                  where isNotNull(a_end_port) and not exists(select 1 from PS_PORT t2 where t2.int_id=t1.a_end_port)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002084, 1, null),
-(906010541, '分组域-关联性', 'DIMS_HX_03147', 3147, 906002085, '核心网', 10, null, 'update PS_SW t1
+(906010541, '分组域-分组域-SW关联性核查-所属机架位置', 'DIMS_HX_03147', 3147, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03147%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03147''
                                              else dims_col_result||'',DIMS_HX_03147'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SW所属机架位置关联性''
-                                             else dims_col_rtName||'',SW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SW所属机架位置分组域-SW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SW所属机架位置分组域-SW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',SW所属机架位置分组域-SW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
-(906010542, '分组域-关联性', 'DIMS_HX_03148', 3148, 906002085, '核心网', 10, null, 'update PS_SW t1
+(906010542, '分组域-分组域-SW关联性核查-所属机房', 'DIMS_HX_03148', 3148, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03148%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03148''
                                              else dims_col_result||'',DIMS_HX_03148'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SW所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SW所属机房关联性''
-                                             else dims_col_rtName||'',SW所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SW所属机房分组域-SW关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SW所属机房分组域-SW关联性核查-所属机房''
+                                             else dims_col_rtName||'',SW所属机房分组域-SW关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
-(906010543, '分组域-关联性', 'DIMS_HX_03149', 3149, 906002085, '核心网', 10, null, 'update PS_SW t1
+(906010543, '分组域-分组域-SW关联性核查-关联FW', 'DIMS_HX_03149', 3149, 906002085, '核心网', 10, null, 'update PS_SW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03149%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03149''
                                              else dims_col_result||'',DIMS_HX_03149'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SW关联FW关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SW关联FW关联性''
-                                             else dims_col_rtName||'',SW关联FW关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SW关联FW分组域-SW关联性核查-关联FW%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SW关联FW分组域-SW关联性核查-关联FW''
+                                             else dims_col_rtName||'',SW关联FW分组域-SW关联性核查-关联FW'' end)
                  where isNotNull(related_fw) and not exists(select 1 from PS_FW t2 where t2.int_id=t1.related_fw)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002085, 1, null),
-(906010544, '分组域-关联性', 'DIMS_HX_03139', 3139, 906002086, '核心网', 10, null, 'update PS_CG t1
+(906010544, '分组域-分组域-CG关联性核查-所属机架位置', 'DIMS_HX_03139', 3139, 906002086, '核心网', 10, null, 'update PS_CG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03139%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03139''
                                              else dims_col_result||'',DIMS_HX_03139'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%CG所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:CG所属机架位置关联性''
-                                             else dims_col_rtName||'',CG所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%CG所属机架位置分组域-CG关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:CG所属机架位置分组域-CG关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',CG所属机架位置分组域-CG关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002086, 1, null),
-(906010545, '分组域-关联性', 'DIMS_HX_03126', 3126, 906002087, '核心网', 10, null, 'update PS_MME t1
+(906010545, '分组域-分组域-MME关联性核查-所属机架位置', 'DIMS_HX_03126', 3126, 906002087, '核心网', 10, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03126%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03126''
                                              else dims_col_result||'',DIMS_HX_03126'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MME所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MME所属机架位置关联性''
-                                             else dims_col_rtName||'',MME所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MME所属机架位置分组域-MME关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MME所属机架位置分组域-MME关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',MME所属机架位置分组域-MME关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
-(906010546, '分组域-关联性', 'DIMS_HX_03178', 3178, 906002087, '核心网', 10, null, 'update PS_MME t1
+(906010546, '分组域-分组域-MME关联性核查-所属机房', 'DIMS_HX_03178', 3178, 906002087, '核心网', 10, null, 'update PS_MME t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03178%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03178''
                                              else dims_col_result||'',DIMS_HX_03178'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%MME所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:MME所属机房关联性''
-                                             else dims_col_rtName||'',MME所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%MME所属机房分组域-MME关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:MME所属机房分组域-MME关联性核查-所属机房''
+                                             else dims_col_rtName||'',MME所属机房分组域-MME关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002087, 1, null),
-(906010547, '分组域-关联性', 'DIMS_HX_03140', 3140, 906002088, '核心网', 10, null, 'update PS_DNS t1
+(906010547, '分组域-分组域-DNS关联性核查-所属机架位置', 'DIMS_HX_03140', 3140, 906002088, '核心网', 10, null, 'update PS_DNS t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03140%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03140''
                                              else dims_col_result||'',DIMS_HX_03140'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DNS所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DNS所属机架位置关联性''
-                                             else dims_col_rtName||'',DNS所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DNS所属机架位置分组域-DNS关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DNS所属机架位置分组域-DNS关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',DNS所属机架位置分组域-DNS关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002088, 1, null),
-(906010548, '分组域-关联性', 'DIMS_HX_03151', 3151, 906002089, '核心网', 10, null, 'update PS_SGSN t1
+(906010548, '分组域-分组域-SGSN关联性核查-所属机架位置', 'DIMS_HX_03151', 3151, 906002089, '核心网', 10, null, 'update PS_SGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03151%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03151''
                                              else dims_col_result||'',DIMS_HX_03151'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SGSN所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SGSN所属机架位置关联性''
-                                             else dims_col_rtName||'',SGSN所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SGSN所属机架位置分组域-SGSN关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SGSN所属机架位置分组域-SGSN关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',SGSN所属机架位置分组域-SGSN关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002089, 1, null),
-(906010549, '分组域-关联性', 'DIMS_HX_03128', 3128, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
+(906010549, '分组域-分组域-SAE-GW关联性核查-所属机架位置', 'DIMS_HX_03128', 3128, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03128%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03128''
                                              else dims_col_result||'',DIMS_HX_03128'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SAE-GW所属机架位置关联性''
-                                             else dims_col_rtName||'',SAE-GW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机架位置分组域-SAE-GW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SAE-GW所属机架位置分组域-SAE-GW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',SAE-GW所属机架位置分组域-SAE-GW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
-(906010550, '分组域-关联性', 'DIMS_HX_03129', 3129, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
+(906010550, '分组域-分组域-SAE-GW关联性核查-所属机房', 'DIMS_HX_03129', 3129, 906002091, '核心网', 10, null, 'update PS_SAE_GW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03129%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03129''
                                              else dims_col_result||'',DIMS_HX_03129'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SAE-GW所属机房关联性''
-                                             else dims_col_rtName||'',SAE-GW所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SAE-GW所属机房分组域-SAE-GW关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SAE-GW所属机房分组域-SAE-GW关联性核查-所属机房''
+                                             else dims_col_rtName||'',SAE-GW所属机房分组域-SAE-GW关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002091, 1, null),
-(906010551, '分组域-关联性', 'DIMS_HX_03144', 3144, 906002092, '核心网', 10, null, 'update PS_FW t1
+(906010551, '分组域-分组域-FW关联性核查-所属机架位置', 'DIMS_HX_03144', 3144, 906002092, '核心网', 10, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03144%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03144''
                                              else dims_col_result||'',DIMS_HX_03144'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%FW所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:FW所属机架位置关联性''
-                                             else dims_col_rtName||'',FW所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%FW所属机架位置分组域-FW关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:FW所属机架位置分组域-FW关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',FW所属机架位置分组域-FW关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
-(906010552, '分组域-关联性', 'DIMS_HX_03145', 3145, 906002092, '核心网', 10, null, 'update PS_FW t1
+(906010552, '分组域-分组域-FW关联性核查-所属机房', 'DIMS_HX_03145', 3145, 906002092, '核心网', 10, null, 'update PS_FW t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03145%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03145''
                                              else dims_col_result||'',DIMS_HX_03145'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%FW所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:FW所属机房关联性''
-                                             else dims_col_rtName||'',FW所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%FW所属机房分组域-FW关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:FW所属机房分组域-FW关联性核查-所属机房''
+                                             else dims_col_rtName||'',FW所属机房分组域-FW关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002092, 1, null),
-(906010553, '分组域-关联性', 'DIMS_HX_03141', 3141, 906002093, '核心网', 10, null, 'update PS_DRA t1
+(906010553, '分组域-分组域-DRA关联性核查-所属机架位置', 'DIMS_HX_03141', 3141, 906002093, '核心网', 10, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03141%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03141''
                                              else dims_col_result||'',DIMS_HX_03141'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DRA所属机架位置关联性''
-                                             else dims_col_rtName||'',DRA所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机架位置分组域-DRA关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DRA所属机架位置分组域-DRA关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',DRA所属机架位置分组域-DRA关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
-(906010554, '分组域-关联性', 'DIMS_HX_03142', 3142, 906002093, '核心网', 10, null, 'update PS_DRA t1
+(906010554, '分组域-分组域-DRA关联性核查-所属机房', 'DIMS_HX_03142', 3142, 906002093, '核心网', 10, null, 'update PS_DRA t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03142%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03142''
                                              else dims_col_result||'',DIMS_HX_03142'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:DRA所属机房关联性''
-                                             else dims_col_rtName||'',DRA所属机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%DRA所属机房分组域-DRA关联性核查-所属机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:DRA所属机房分组域-DRA关联性核查-所属机房''
+                                             else dims_col_rtName||'',DRA所属机房分组域-DRA关联性核查-所属机房'' end)
                  where isNotNull(related_room) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002093, 1, null),
-(906010555, '分组域-关联性', 'DIMS_HX_03136', 3136, 906002094, '核心网', 10, null, 'update PS_SPR t1
+(906010555, '分组域-分组域-SPR关联性核查-所在机房', 'DIMS_HX_03136', 3136, 906002094, '核心网', 10, null, 'update PS_SPR t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03136%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03136''
                                              else dims_col_result||'',DIMS_HX_03136'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%SPR所在机房关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:SPR所在机房关联性''
-                                             else dims_col_rtName||'',SPR所在机房关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%SPR所在机房分组域-SPR关联性核查-所在机房%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:SPR所在机房分组域-SPR关联性核查-所在机房''
+                                             else dims_col_rtName||'',SPR所在机房分组域-SPR关联性核查-所在机房'' end)
                  where isNotNull(related_room_id) and not exists(select 1 from RM_AREA_ROOM t2 where t2.int_id=t1.related_room_id)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002094, 1, null),
-(906010556, '分组域-关联性', 'DIMS_HX_03152', 3152, 906002096, '核心网', 10, null, 'update PS_GGSN t1
+(906010556, '分组域-分组域-GGSN关联性核查-所属机架位置', 'DIMS_HX_03152', 3152, 906002096, '核心网', 10, null, 'update PS_GGSN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03152%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03152''
                                              else dims_col_result||'',DIMS_HX_03152'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%GGSN所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:GGSN所属机架位置关联性''
-                                             else dims_col_rtName||'',GGSN所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%GGSN所属机架位置分组域-GGSN关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:GGSN所属机架位置分组域-GGSN关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',GGSN所属机架位置分组域-GGSN关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002096, 1, null),
-(906010557, '分组域-关联性', 'DIMS_HX_03153', 3153, 906002097, '核心网', 10, null, 'update PS_PORT t1
+(906010557, '分组域-分组域-端口关联性核查-所属网元', 'DIMS_HX_03153', 3153, 906002097, '核心网', 10, null, 'update PS_PORT t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03153%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03153''
                                              else dims_col_result||'',DIMS_HX_03153'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:端口所属网元关联性''
-                                             else dims_col_rtName||'',端口所属网元关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%端口所属网元分组域-端口关联性核查-所属网元%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:端口所属网元分组域-端口关联性核查-所属网元''
+                                             else dims_col_rtName||'',端口所属网元分组域-端口关联性核查-所属网元'' end)
                  where isNotNull(related_ne)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF_BE t3 where t3.int_id=t1.related_ne)  and not exists(select 1 from PS_PCRF t4 where t4.int_id=t1.related_ne)  and not exists(select 1 from PS_SGW t5 where t5.int_id=t1.related_ne)  and not exists(select 1 from PS_SW t6 where t6.int_id=t1.related_ne)  and not exists(select 1 from PS_CG t7 where t7.int_id=t1.related_ne)  and not exists(select 1 from PS_MME t8 where t8.int_id=t1.related_ne)  and not exists(select 1 from PS_DNS t9 where t9.int_id=t1.related_ne)  and not exists(select 1 from PS_SAE_GW t10 where t10.int_id=t1.related_ne)  and not exists(select 1 from PS_FW t11 where t11.int_id=t1.related_ne)  and not exists(select 1 from PS_DRA t12 where t12.int_id=t1.related_ne)  and not exists(select 1 from CM_DEVICE_IP t13 where t13.int_id=t1.related_ne) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002097, 1, null),
-(906010558, '分组域-关联性', 'DIMS_HX_03158', 3158, 906002098, '核心网', 10, null, 'update PS_APN t1
+(906010558, '分组域-分组域-APN关联性核查-所属SAE-GW/PGW/GGSN', 'DIMS_HX_03158', 3158, 906002098, '核心网', 10, null, 'update PS_APN t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03158%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03158''
                                              else dims_col_result||'',DIMS_HX_03158'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%APN所属SAE-GW/PGW/GGSN关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:APN所属SAE-GW/PGW/GGSN关联性''
-                                             else dims_col_rtName||'',APN所属SAE-GW/PGW/GGSN关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%APN所属SAE-GW/PGW/GGSN分组域-APN关联性核查-所属SAE-GW/PGW/GGSN%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:APN所属SAE-GW/PGW/GGSN分组域-APN关联性核查-所属SAE-GW/PGW/GGSN''
+                                             else dims_col_rtName||'',APN所属SAE-GW/PGW/GGSN分组域-APN关联性核查-所属SAE-GW/PGW/GGSN'' end)
                  where isNotNull(related_device)  and not exists(select 1 from PS_PGW t2 where t2.int_id=t1.related_device)  and not exists(select 1 from PS_SAE_GW t3 where t3.int_id=t1.related_device)  and not exists(select 1 from PS_GGSN t4 where t4.int_id=t1.related_device) ', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002098, 1, null),
-(906010559, 'HSS-关联性', 'DIMS_HX_03163', 3163, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010559, 'HSS-HSS-HSS_FE关联性核查-所属机架位置', 'DIMS_HX_03163', 3163, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03163%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03163''
                                              else dims_col_result||'',DIMS_HX_03163'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE所属机架位置关联性''
-                                             else dims_col_rtName||'',HSS_FE所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属机架位置HSS-HSS_FE关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE所属机架位置HSS-HSS_FE关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',HSS_FE所属机架位置HSS-HSS_FE关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010560, 'HSS-关联性', 'DIMS_HX_03164', 3164, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010560, 'HSS-HSS-HSS_FE关联性核查-关联DRA', 'DIMS_HX_03164', 3164, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03164%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03164''
                                              else dims_col_result||'',DIMS_HX_03164'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联DRA关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联DRA关联性''
-                                             else dims_col_rtName||'',HSS_FE关联DRA关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联DRAHSS-HSS_FE关联性核查-关联DRA%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联DRAHSS-HSS_FE关联性核查-关联DRA''
+                                             else dims_col_rtName||'',HSS_FE关联DRAHSS-HSS_FE关联性核查-关联DRA'' end)
                  where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010561, 'HSS-关联性', 'DIMS_HX_03165', 3165, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010561, 'HSS-HSS-HSS_FE关联性核查-所属HSS', 'DIMS_HX_03165', 3165, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03165%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03165''
                                              else dims_col_result||'',DIMS_HX_03165'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属HSS关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE所属HSS关联性''
-                                             else dims_col_rtName||'',HSS_FE所属HSS关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE所属HSSHSS-HSS_FE关联性核查-所属HSS%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE所属HSSHSS-HSS_FE关联性核查-所属HSS''
+                                             else dims_col_rtName||'',HSS_FE所属HSSHSS-HSS_FE关联性核查-所属HSS'' end)
                  where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010562, 'HSS-关联性', 'DIMS_HX_03166', 3166, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010562, 'HSS-HSS-HSS_FE关联性核查-覆盖区域', 'DIMS_HX_03166', 3166, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03166%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03166''
                                              else dims_col_result||'',DIMS_HX_03166'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE覆盖区域关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE覆盖区域关联性''
-                                             else dims_col_rtName||'',HSS_FE覆盖区域关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE覆盖区域HSS-HSS_FE关联性核查-覆盖区域%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE覆盖区域HSS-HSS_FE关联性核查-覆盖区域''
+                                             else dims_col_rtName||'',HSS_FE覆盖区域HSS-HSS_FE关联性核查-覆盖区域'' end)
                  where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010563, 'HSS-关联性', 'DIMS_HX_03167', 3167, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010563, 'HSS-HSS-HSS_FE关联性核查-关联供电', 'DIMS_HX_03167', 3167, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03167%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03167''
                                              else dims_col_result||'',DIMS_HX_03167'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联供电关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联供电关联性''
-                                             else dims_col_rtName||'',HSS_FE关联供电关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联供电HSS-HSS_FE关联性核查-关联供电%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联供电HSS-HSS_FE关联性核查-关联供电''
+                                             else dims_col_rtName||'',HSS_FE关联供电HSS-HSS_FE关联性核查-关联供电'' end)
                  where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010564, 'HSS-关联性', 'DIMS_HX_03168', 3168, 906002100, '核心网', 10, null, 'update HSS_FE t1
+(906010564, 'HSS-HSS-HSS_FE关联性核查-关联LSTP', 'DIMS_HX_03168', 3168, 906002100, '核心网', 10, null, 'update HSS_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03168%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03168''
                                              else dims_col_result||'',DIMS_HX_03168'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联LSTP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联LSTP关联性''
-                                             else dims_col_rtName||'',HSS_FE关联LSTP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_FE关联LSTPHSS-HSS_FE关联性核查-关联LSTP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_FE关联LSTPHSS-HSS_FE关联性核查-关联LSTP''
+                                             else dims_col_rtName||'',HSS_FE关联LSTPHSS-HSS_FE关联性核查-关联LSTP'' end)
                  where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002100, 1, null),
-(906010565, 'HSS-关联性', 'DIMS_HX_03175', 3175, 906002101, '核心网', 10, null, 'update HSS_PG t1
+(906010565, 'HSS-HSS-PG关联性核查-所属HSS', 'DIMS_HX_03175', 3175, 906002101, '核心网', 10, null, 'update HSS_PG t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03175%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03175''
                                              else dims_col_result||'',DIMS_HX_03175'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%PG所属HSS关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:PG所属HSS关联性''
-                                             else dims_col_rtName||'',PG所属HSS关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%PG所属HSSHSS-PG关联性核查-所属HSS%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:PG所属HSSHSS-PG关联性核查-所属HSS''
+                                             else dims_col_rtName||'',PG所属HSSHSS-PG关联性核查-所属HSS'' end)
                  where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002101, 1, null),
-(906010566, 'HSS-关联性', 'DIMS_HX_03159', 3159, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
+(906010566, 'HSS-HSS-HSS(集中式）关联性核查-所属机架位置', 'DIMS_HX_03159', 3159, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03159%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03159''
                                              else dims_col_result||'',DIMS_HX_03159'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）所属机架位置关联性''
-                                             else dims_col_rtName||'',HSS(集中式）所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）所属机架位置HSS-HSS(集中式）关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）所属机架位置HSS-HSS(集中式）关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',HSS(集中式）所属机架位置HSS-HSS(集中式）关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
-(906010567, 'HSS-关联性', 'DIMS_HX_03160', 3160, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
+(906010567, 'HSS-HSS-HSS(集中式）关联性核查-关联DRA', 'DIMS_HX_03160', 3160, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03160%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03160''
                                              else dims_col_result||'',DIMS_HX_03160'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联DRA关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联DRA关联性''
-                                             else dims_col_rtName||'',HSS(集中式）关联DRA关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联DRAHSS-HSS(集中式）关联性核查-关联DRA%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联DRAHSS-HSS(集中式）关联性核查-关联DRA''
+                                             else dims_col_rtName||'',HSS(集中式）关联DRAHSS-HSS(集中式）关联性核查-关联DRA'' end)
                  where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.int_id=t1.related_dra)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
-(906010568, 'HSS-关联性', 'DIMS_HX_03161', 3161, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
+(906010568, 'HSS-HSS-HSS(集中式）关联性核查-S6a关联CE', 'DIMS_HX_03161', 3161, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03161%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03161''
                                              else dims_col_result||'',DIMS_HX_03161'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）S6a关联CE关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）S6a关联CE关联性''
-                                             else dims_col_rtName||'',HSS(集中式）S6a关联CE关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）S6a关联CEHSS-HSS(集中式）关联性核查-S6a关联CE%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）S6a关联CEHSS-HSS(集中式）关联性核查-S6a关联CE''
+                                             else dims_col_rtName||'',HSS(集中式）S6a关联CEHSS-HSS(集中式）关联性核查-S6a关联CE'' end)
                  where isNotNull(related_ce) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
-(906010569, 'HSS-关联性', 'DIMS_HX_03162', 3162, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
+(906010569, 'HSS-HSS-HSS(集中式）关联性核查-关联LSTP', 'DIMS_HX_03162', 3162, 906002102, '核心网', 10, null, 'update HSS_CENTRALIZED t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03162%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03162''
                                              else dims_col_result||'',DIMS_HX_03162'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联LSTP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联LSTP关联性''
-                                             else dims_col_rtName||'',HSS(集中式）关联LSTP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS(集中式）关联LSTPHSS-HSS(集中式）关联性核查-关联LSTP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS(集中式）关联LSTPHSS-HSS(集中式）关联性核查-关联LSTP''
+                                             else dims_col_rtName||'',HSS(集中式）关联LSTPHSS-HSS(集中式）关联性核查-关联LSTP'' end)
                  where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002102, 1, null),
-(906010570, 'HSS-关联性', 'DIMS_HX_03176', 3176, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
+(906010570, 'HSS-HSS-HLR-FE关联性核查-所属机架位置', 'DIMS_HX_03176', 3176, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03176%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03176''
                                              else dims_col_result||'',DIMS_HX_03176'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HLR-FE所属机架位置关联性''
-                                             else dims_col_rtName||'',HLR-FE所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE所属机架位置HSS-HLR-FE关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HLR-FE所属机架位置HSS-HLR-FE关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',HLR-FE所属机架位置HSS-HLR-FE关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
-(906010571, 'HSS-关联性', 'DIMS_HX_03177', 3177, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
+(906010571, 'HSS-HSS-HLR-FE关联性核查-覆盖区域', 'DIMS_HX_03177', 3177, 906002103, '核心网', 10, null, 'update HSS_HLR_FE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03177%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03177''
                                              else dims_col_result||'',DIMS_HX_03177'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE覆盖区域关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HLR-FE覆盖区域关联性''
-                                             else dims_col_rtName||'',HLR-FE覆盖区域关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HLR-FE覆盖区域HSS-HLR-FE关联性核查-覆盖区域%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HLR-FE覆盖区域HSS-HLR-FE关联性核查-覆盖区域''
+                                             else dims_col_rtName||'',HLR-FE覆盖区域HSS-HLR-FE关联性核查-覆盖区域'' end)
                  where isNotNull(cover_area) and not exists(select 1 from dims_tm_areaCodeConfig t2 where t2.code=t1.cover_area and t2.regiontype = 2)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002103, 1, null),
-(906010572, 'HSS-关联性', 'DIMS_HX_03169', 3169, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010572, 'HSS-HSS-HSS_BE关联性核查-所属机架位置', 'DIMS_HX_03169', 3169, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03169%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03169''
                                              else dims_col_result||'',DIMS_HX_03169'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属机架位置关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE所属机架位置关联性''
-                                             else dims_col_rtName||'',HSS_BE所属机架位置关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属机架位置HSS-HSS_BE关联性核查-所属机架位置%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE所属机架位置HSS-HSS_BE关联性核查-所属机架位置''
+                                             else dims_col_rtName||'',HSS_BE所属机架位置HSS-HSS_BE关联性核查-所属机架位置'' end)
                  where isNotNull(related_rack) and  NOT (select  cast(array_agg(t2.int_id) as text []) from RM_AREA_RACKPOS t2) @> (select regexp_split_to_array(t1.related_rack,'',''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010573, 'HSS-关联性', 'DIMS_HX_03170', 3170, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010573, 'HSS-HSS-HSS_BE关联性核查-所属HSS', 'DIMS_HX_03170', 3170, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03170%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03170''
                                              else dims_col_result||'',DIMS_HX_03170'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属HSS关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE所属HSS关联性''
-                                             else dims_col_rtName||'',HSS_BE所属HSS关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE所属HSSHSS-HSS_BE关联性核查-所属HSS%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE所属HSSHSS-HSS_BE关联性核查-所属HSS''
+                                             else dims_col_rtName||'',HSS_BE所属HSSHSS-HSS_BE关联性核查-所属HSS'' end)
                  where isNotNull(related_hss) and not exists(select 1 from HSS_DISTRIBUTED t2 where t2.int_id=t1.related_hss)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010574, 'HSS-关联性', 'DIMS_HX_03171', 3171, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010574, 'HSS-HSS-HSS_BE关联性核查-上联CE IP', 'DIMS_HX_03171', 3171, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03171%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03171''
                                              else dims_col_result||'',DIMS_HX_03171'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE上联CE IP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE上联CE IP关联性''
-                                             else dims_col_rtName||'',HSS_BE上联CE IP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE上联CE IPHSS-HSS_BE关联性核查-上联CE IP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE上联CE IPHSS-HSS_BE关联性核查-上联CE IP''
+                                             else dims_col_rtName||'',HSS_BE上联CE IPHSS-HSS_BE关联性核查-上联CE IP'' end)
                  where isNotNull(related_ce_ip) and not exists(select 1 from CM_DEVICE_IP t2 where t2.int_id=t1.related_ce_ip)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010575, 'HSS-关联性', 'DIMS_HX_03172', 3172, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010575, 'HSS-HSS-HSS_BE关联性核查-关联供电', 'DIMS_HX_03172', 3172, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03172%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03172''
                                              else dims_col_result||'',DIMS_HX_03172'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联供电关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联供电关联性''
-                                             else dims_col_rtName||'',HSS_BE关联供电关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联供电HSS-HSS_BE关联性核查-关联供电%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联供电HSS-HSS_BE关联性核查-关联供电''
+                                             else dims_col_rtName||'',HSS_BE关联供电HSS-HSS_BE关联性核查-关联供电'' end)
                  where isNotNull(access_power_pos) and not exists(select 1 from CE_LINK_PE_OUT t2 where t2.res_code=t1.access_power_pos)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010576, 'HSS-关联性', 'DIMS_HX_03173', 3173, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010576, 'HSS-HSS-HSS_BE关联性核查-关联LSTP', 'DIMS_HX_03173', 3173, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03173%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03173''
                                              else dims_col_result||'',DIMS_HX_03173'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联LSTP关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联LSTP关联性''
-                                             else dims_col_rtName||'',HSS_BE关联LSTP关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联LSTPHSS-HSS_BE关联性核查-关联LSTP%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联LSTPHSS-HSS_BE关联性核查-关联LSTP''
+                                             else dims_col_rtName||'',HSS_BE关联LSTPHSS-HSS_BE关联性核查-关联LSTP'' end)
                  where isNotNull(related_lstp) and not exists(select 1 from CS_STP t2 where t2.int_id=t1.related_lstp)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null),
-(906010577, 'HSS-关联性', 'DIMS_HX_03174', 3174, 906002104, '核心网', 10, null, 'update HSS_BE t1
+(906010577, 'HSS-HSS-HSS_BE关联性核查-关联DRA', 'DIMS_HX_03174', 3174, 906002104, '核心网', 10, null, 'update HSS_BE t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_HX_03174%'' then dims_col_result
                                              when dims_col_result is null then ''DIMS_HX_03174''
                                              else dims_col_result||'',DIMS_HX_03174'' end),
-                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联DRA关联性%'' then dims_col_rtName
-                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联DRA关联性''
-                                             else dims_col_rtName||'',HSS_BE关联DRA关联性'' end)
+                       dims_col_rtName=(case when dims_col_rtName like ''%HSS_BE关联DRAHSS-HSS_BE关联性核查-关联DRA%'' then dims_col_rtName
+                                             when dims_col_rtName is null then ''不满足规范:HSS_BE关联DRAHSS-HSS_BE关联性核查-关联DRA''
+                                             else dims_col_rtName||'',HSS_BE关联DRAHSS-HSS_BE关联性核查-关联DRA'' end)
                  where isNotNull(related_dra) and not exists(select 1 from PS_DRA t2 where t2.zh_label=t1.related_dra)', 0, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 906002104, 1, null);
 --(906010578, '核心网数据业务合规性', 'DIMS_HX_99004', 99004, null, '核心网', 3, null, null, 1, 'admin', 'admin', 'PROC_CHECKONEINDEXSET', 0, 2, 'PROC_CHECKONEINDEXSET');
 
