@@ -86,7 +86,13 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
             try {
                // File result = compressZips(localTaskFolder, date + "_RESULT.zip", zips);
                 List<TaskItemFileDto> taskItemFileDtos = taskService.findTaskItemFilesByTaskCode(taskCode);
-                String remoteDirectory = StringUtils.substringBeforeLast(taskItemFileDtos.get(0).getCode(),"/");
+                String remoteDirectory = null;
+                for(TaskItemFileDto dto:taskItemFileDtos){
+                    if(StringUtils.containsIgnoreCase(dto.getCode(),PinyinUtil.convert(speciality))){
+                        remoteDirectory = StringUtils.substringBeforeLast(taskItemFileDtos.get(0).getCode(),"/");
+                        break;
+                    }
+                }
                 File result = compressZips(localTaskFolder, taskCode + "_RESULT.zip", zips);
                 if(StringUtils.equalsIgnoreCase(location.getSchema(),"sftp")){
                     uploadZipFileToSFtp(result, location,remoteDirectory);

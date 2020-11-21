@@ -198,18 +198,24 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                         log.warn(taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "第" + totalRecord + "行是个空行！");
                     }
                     //preDateLine = null;
-
                     parameters.add(BatchUtil.asParameter(metadata, upperHeaderMap, parameter));
                     if (parameters.size() >= BATCH_SIZE) {
                         publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
                         parameters.clear();
                     }
                 }
-                if (parameters.size() > 0) {
-                    publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
+                if(totalRecord >= 0 && totalRecord==errorCount){
+                    log.info("数据文件共"+errorCount+"行,全部存在问题，无法入库......");
                     parameters.clear();
+                    success = false;
+                    errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错:数据文件包含的分割符数目与表头不符，无法入库.";
+                }else{
+                    if (parameters.size() > 0) {
+                        publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
+                        parameters.clear();
+                    }
+                    publish(ringBuffer, metadata, new ArrayList<>(), totalRecord);
                 }
-                publish(ringBuffer, metadata, new ArrayList<>(), totalRecord);
             }
         } catch (Exception e) {
             success = false;

@@ -48,7 +48,7 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
         TaskConfigDto config = configService.loadConfig(province, speciality);
         String[] specialities = StringUtils.split(config.getIncludeSpecialities(), ",");
         List<String> specialityList = ArrayUtils.isNotEmpty(specialities) ? Lists.newArrayList(specialities) : Lists.newArrayList(config.getSpeciality());
-        Map<String, String> specialityTables = dataService.loadTables(specialityList);
+        Map<String, String> specialityTables = dataService.loadTables(specialityList,speciality);
         //taskcode由tasklister产生并存入上下文，并且生成核查任务临时目录
         File localTaskFolder = BatchUtil.getTaskFolder(taskCode, true);
         Map<String, List<TaskItemFileDto>> result = new HashMap<>();
@@ -120,9 +120,9 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String[] specialityList = specialTableName.split(",");
+                    String[] specialityTableList = specialTableName.split(",");
                     String tableName = baseName;
-                    for(String str:specialityList){
+                    for(String str:specialityTableList){
                         if( StringUtils.equalsIgnoreCase(str,baseName)){
                             tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
                             break;
@@ -176,9 +176,9 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String[] specialityList = specialTableName.split(",");
+                    String[] specialityTableList = specialTableName.split(",");
                     String tableName = baseName;
-                    for(String str:specialityList){
+                    for(String str:specialityTableList){
                         if( StringUtils.equalsIgnoreCase(str,baseName)){
                             tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
                             break;

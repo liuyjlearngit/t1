@@ -31,4 +31,6 @@ public interface DataService {
     List<String> getDimsColResultList(Metadata metadata);
 
     List<Map<String, Object>> exportDataWithResult(Metadata metadata, int limit,  String rtName);
+
+    Map<String, String> loadTables(List<String> specialities,String primarySpecialty);
 }

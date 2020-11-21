@@ -54,7 +54,7 @@ public class MetadataLoader {
         return namedParameterJdbcTemplate.query(statement, EntityTypeMapper.INSTANCE);
     }
 
-    private EntityType findEntityTypeByCode(String code) {
+    public EntityType findEntityTypeByCode(String code) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("code", code);
         String statement = "SELECT id, name, code, specialityname, coretable, extensiontable, extensionattr, extensionvalue FROM dims_mm_entitytype WHERE code=:code";
