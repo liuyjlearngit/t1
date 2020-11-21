@@ -5374,7 +5374,7 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03058%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_JIAKE_03058''
 										  					          else dims_col_result||'',DIMS_JIAKE_03058'' end)
-									  where isNotNull(t1.int_id) and not exists(select 1 from RM_GRID t2 where isNotNull(t2.related_area) and t1.int_id=t2.related_area)', 1, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
+									  where isNotNull(t1.int_id) and not exists(select 1 from RM_GRID t2 where isNotNull(t2.related_area) and t1.int_id=t2.related_area)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000005, 1, NULL, NULL),
  (908003258, '家客-小区信息-小区下无任何覆盖信息', 'DIMS_JIAKE_03059', 3059, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-小区下无任何覆盖信息%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息-小区下无任何覆盖信息''
