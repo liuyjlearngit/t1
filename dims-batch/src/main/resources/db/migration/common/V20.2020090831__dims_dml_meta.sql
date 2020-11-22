@@ -26742,7 +26742,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元规范性核查-网元名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:集客-网元规范性核查-网元名称-唯一性核查''
 																											 else dims_col_rtName||'',集客-网元规范性核查-网元名称-唯一性核查'' end)
-													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.ne_name = t1.ne_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.ne_name = t1.ne_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
 (909003008, '集客-网元规范性核查-设备厂家-字典规范性核查', 'DIMS_JIKE_02004', 2004, 909001002, '集客', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 909001002, 1, NULL),
 (909003009, '集客-网元规范性核查-生命周期状态-字典规范性核查', 'DIMS_JIKE_02005', 2005, 909001002, '集客', 4, NULL, NULL, 1, 'admin', 'admin', 'PROC_CHECKONEDICTACCURACYINDEX', 909001002, 1, NULL),
 (909003010, '集客-网元规范性核查-所在机房名称-唯一性核查', 'DIMS_JIKE_02006', 2006, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
@@ -26752,7 +26752,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元规范性核查-所在机房名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:集客-网元规范性核查-所在机房名称-唯一性核查''
 																											 else dims_col_rtName||'',集客-网元规范性核查-所在机房名称-唯一性核查'' end)
-													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.building_name = t1.building_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+													                         where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.building_name = t1.building_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
 (909003011, '集客-端口规范性核查-端口名称-唯一性核查', 'DIMS_JIKE_02007', 2007, 909001003, '集客', 11, NULL, 'update JK_PORT t1
 														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02007%'' then dims_col_result
 																											 when dims_col_result is null then ''DIMS_JIKE_02007''
@@ -26760,7 +26760,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 																 dims_col_rtName=(case when dims_col_rtName like ''%集客-端口规范性核查-端口名称-唯一性核查%'' then dims_col_rtName
 																											 when dims_col_rtName is null then ''不满足规范:集客-端口规范性核查-端口名称-唯一性核查''
 																											 else dims_col_rtName||'',集客-端口规范性核查-端口名称-唯一性核查'' end)
-													                         where  exists(select 1 from JK_PORT t2 where t2.ctid <> t1.ctid and t2.port_name = t1.port_name)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL),
+													                         where  exists(select 1 from JK_PORT t2 where t2.ctid <> t1.ctid and t2.port_name = t1.port_name)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL),
 (909003012, '集客-电路关联性核查-所属省份', 'DIMS_JIKE_03001', 3001, 909001001, '集客', 11, NULL, 'update JK_CIRCUIT t1
 	 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_03001%'' then dims_col_result
 														 when dims_col_result is null then ''DIMS_JIKE_03001''
@@ -26792,7 +26792,40 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 			 dims_col_rtName=(case when dims_col_rtName like ''%集客-端口关联性核查-所属省份%'' then dims_col_rtName
 														 when dims_col_rtName is null then ''不满足规范:集客-端口关联性核查-所属省份''
 														 else dims_col_rtName||'',集客-端口关联性核查-所属省份'' end)
- where isNotNull(t1.province_id) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL);
+ where isNotNull(t1.province_id) and not exists(select 1 from DIMS_TM_AREACODECONFIG t2 where t2.code = t1.province_id)', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL),
+(909003016, '集客-电路规范性核查-资源唯一性标识-唯一性核查', 'DIMS_JIKE_02008', 2008, 909001001, '集客', 11, NULL, 'update JK_CIRCUIT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02008%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02008''
+																											 else dims_col_result||'',DIMS_JIKE_02008'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-电路规范性核查-资源唯一性标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-电路规范性核查-资源唯一性标识-唯一性核查''
+																											 else dims_col_rtName||'',集客-电路规范性核查-资源唯一性标识-唯一性核查'' end)
+ where  exists(select 1 from JK_CIRCUIT t2 where t2.ctid <> t1.ctid and t2.sdn = t1.sdn)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001001, 1, NULL),
+(909003017, '集客-网元规范性核查-资源唯一性标识-唯一性核查', 'DIMS_JIKE_02009', 2009, 909001002, '集客', 11, NULL, 'update JK_EQUIPMENT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02009%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02009''
+																											 else dims_col_result||'',DIMS_JIKE_02009'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-网元规范性核查-资源唯一性标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-网元规范性核查-资源唯一性标识-唯一性核查''
+																											 else dims_col_rtName||'',集客-网元规范性核查-资源唯一性标识-唯一性核查'' end)
+where  exists(select 1 from JK_EQUIPMENT t2 where t2.ctid <> t1.ctid and t2.sdn = t1.sdn)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001002, 1, NULL),
+(909003018, '集客-端口规范性核查-资源唯一性标识-唯一性核查', 'DIMS_JIKE_02010', 2010, 909001003, '集客', 11, NULL, 'update JK_PORT t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02010%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02010''
+																											 else dims_col_result||'',DIMS_JIKE_02010'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-端口规范性核查-资源唯一性标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-端口规范性核查-资源唯一性标识-唯一性核查''
+																											 else dims_col_rtName||'',集客-端口规范性核查-资源唯一性标识-唯一性核查'' end)
+ where  exists(select 1 from JK_PORT t2 where t2.ctid <> t1.ctid and t2.sdn = t1.sdn)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001003, 1, NULL),
+(909003019, '集客-路由段规范性核查-资源唯一性标识-唯一性核查', 'DIMS_JIKE_02011', 2011, 909001004, '集客', 11, NULL, 'update JK_ROUTE t1
+														 set dims_col_result=(case when dims_col_result like ''%DIMS_JIKE_02011%'' then dims_col_result
+																											 when dims_col_result is null then ''DIMS_JIKE_02011''
+																											 else dims_col_result||'',DIMS_JIKE_02011'' end),
+																 dims_col_rtName=(case when dims_col_rtName like ''%集客-路由段规范性核查-资源唯一性标识-唯一性核查%'' then dims_col_rtName
+																											 when dims_col_rtName is null then ''不满足规范:集客-路由段规范性核查-资源唯一性标识-唯一性核查''
+																											 else dims_col_rtName||'',集客-路由段规范性核查-资源唯一性标识-唯一性核查'' end)
+where  exists(select 1 from JK_ROUTE t2 where t2.ctid <> t1.ctid and t2.sdn = t1.sdn)', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 909001004, 1, NULL);
+
 --插入集客 dims_idx_IndexCarrier
 insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, UPDATER, MEMO) values
 (909004001, 909099001, 909003001, 'admin', 'admin', null),
@@ -26801,15 +26834,19 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (909004004, 909099001, 909003004, 'admin', 'admin', null),
 (909004005, 909099002, 909003005, 'admin', 'admin', null),
 (909004006, 909099002, 909003006, 'admin', 'admin', null),
-(909004007, 909099002, 909003007, 'admin', 'admin', null),
+-- (909004007, 909099002, 909003007, 'admin', 'admin', null),
 (909004008, 909099002, 909003008, 'admin', 'admin', null),
 (909004009, 909099002, 909003009, 'admin', 'admin', null),
-(909004010, 909099002, 909003010, 'admin', 'admin', null),
-(909004011, 909099002, 909003011, 'admin', 'admin', null),
+-- (909004010, 909099002, 909003010, 'admin', 'admin', null),
+-- (909004011, 909099002, 909003011, 'admin', 'admin', null),
 -- (909004012, 909099003, 909003012, 'admin', 'admin', null),
 -- (909004013, 909099003, 909003013, 'admin', 'admin', null),
 (909004014, 909099003, 909003014, 'admin', 'admin', null),
 -- (909004015, 909099003, 909003015, 'admin', 'admin', null),
+(909004016, 909099002, 909003016, 'admin', 'admin', null),
+(909004017, 909099002, 909003017, 'admin', 'admin', null),
+(909004018, 909099002, 909003018, 'admin', 'admin', null),
+(909004019, 909099002, 909003019, 'admin', 'admin', null),
 (909005490, 909099999, 909099001, 'admin', 'admin', null),
 (909005491, 909099999, 909099002, 'admin', 'admin', null),
 (909005492, 909099999, 909099003, 'admin', 'admin', null);
