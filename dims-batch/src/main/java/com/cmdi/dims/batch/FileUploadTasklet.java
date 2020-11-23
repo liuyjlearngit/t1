@@ -88,8 +88,8 @@ public class FileUploadTasklet extends AbstractDimsTasklet {
                 List<TaskItemFileDto> taskItemFileDtos = taskService.findTaskItemFilesByTaskCode(taskCode);
                 String remoteDirectory = null;
                 for(TaskItemFileDto dto:taskItemFileDtos){
-                    if(StringUtils.containsIgnoreCase(dto.getCode(),PinyinUtil.convert(speciality))){
-                        remoteDirectory = StringUtils.substringBeforeLast(taskItemFileDtos.get(0).getCode(),"/");
+                    if(StringUtils.containsIgnoreCase(dto.getCode(),location.getPath())){
+                        remoteDirectory = StringUtils.substringBeforeLast(dto.getCode(),"/");
                         break;
                     }
                 }

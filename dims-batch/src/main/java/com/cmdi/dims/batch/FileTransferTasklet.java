@@ -120,9 +120,9 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String[] specialityTableList = specialTableName.split(",");
+                    String[] specialList = specialTableName.split(",");
                     String tableName = baseName;
-                    for(String str:specialityTableList){
+                    for(String str:specialList){
                         if( StringUtils.equalsIgnoreCase(str,baseName)){
                             tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
                             break;
@@ -176,9 +176,9 @@ public class FileTransferTasklet extends AbstractDimsTasklet {
                         baseName = StringUtils.substringBefore(baseName,"-");
                     }
                     //table name mapping
-                    String[] specialityTableList = specialTableName.split(",");
+                    String[] specialList = specialTableName.split(",");
                     String tableName = baseName;
-                    for(String str:specialityTableList){
+                    for(String str:specialList){
                         if( StringUtils.equalsIgnoreCase(str,baseName)){
                             tableName = PinyinUtil.convert(location.getSpecialityName())+"_"+ baseName;
                             break;

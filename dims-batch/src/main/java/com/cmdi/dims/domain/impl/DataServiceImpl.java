@@ -177,8 +177,7 @@ public class DataServiceImpl implements DataService {
     private Map<String,String> getIncludedTables(String primarySpecialty){
         Map<String,String> tableMap = new HashMap<String,String>();
         try {
-            ClassPathResource resource = new ClassPathResource(Config_Path);
-            InputStream fis = resource.getInputStream();
+            InputStream fis = new ClassPathResource(Config_Path).getInputStream();
             CsvReader csvReader = new CsvReader(fis, ';', Charset.forName("UTF-8"));
             // 读表头
             //speciality;includedspeciality;tablename
@@ -186,13 +185,13 @@ public class DataServiceImpl implements DataService {
             // 读内容
             while (csvReader.readRecord()) {
                 // 读一整行
-                //System.out.println(csvReader.getRawRecord());
+                log.info(csvReader.getRawRecord());
                 if(StringUtils.equalsIgnoreCase(csvReader.get("speciality"),primarySpecialty) ){
                     tableMap.put(csvReader.get("includedspeciality"),csvReader.get("tablename"));
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
         }
         return tableMap;
     }
