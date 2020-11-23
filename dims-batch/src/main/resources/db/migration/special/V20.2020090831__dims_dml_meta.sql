@@ -5723,10 +5723,10 @@ CE_TV_BUSINESS t4 where isNotNull(t4.cust_num) and t1.cust_num=t4.cust_num)', 1,
 				                                  when dims_col_result is null then ''DIMS_JIAKE_03057''
 										  					          else dims_col_result||'',DIMS_JIAKE_03057'' end)
 							  where isNotNull(t1.int_id) and not exists(select 1 from CM_HOME_CUST_BUSINESS t2 where isNotNull(t2.device_id) and t1.int_id=t2.device_id)', 2, 0, '2020-10-12 09:28:57.159782', 'admin', '2020-10-12 09:28:57.159782', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 908000010, 1, NULL, NULL),
- (908003257, '家客-小区信息-家客小区魏碑任何小区网格关联', 'DIMS_JIAKE_03058', 3058, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
-		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-家客小区魏碑任何小区网格关联%'' then dims_col_rtName
-		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息-家客小区魏碑任何小区网格关联''
-			 												            else dims_col_rtName||'',家客-小区信息-家客小区魏碑任何小区网格关联'' end),
+ (908003257, '家客-小区信息-家客小区未被任何小区网格关联', 'DIMS_JIAKE_03058', 3058, 908000005, '家客', 11, NULL, 'update RM_AREA_RESIDENTIAL t1
+		            set dims_col_rtName=(case when dims_col_rtName like ''%家客-小区信息-家客小区未被任何小区网格关联%'' then dims_col_rtName
+		                                      when dims_col_rtName is null then ''不满足规范:家客-小区信息-家客小区未被任何小区网格关联''
+			 												            else dims_col_rtName||'',家客-小区信息-家客小区未被任何小区网格关联'' end),
 										dims_col_result=(case when dims_col_result like ''%DIMS_JIAKE_03058%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_JIAKE_03058''
 										  					          else dims_col_result||'',DIMS_JIAKE_03058'' end)
