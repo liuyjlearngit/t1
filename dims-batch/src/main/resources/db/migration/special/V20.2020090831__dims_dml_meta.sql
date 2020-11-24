@@ -23763,7 +23763,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 											 from RM_AREA_RACKPOS t2
 											 where t1.int_id = t2.equiproom_id
 												   and (t1.equiproom_level like ''核心%''
-														or t1.equiproom_level like ''汇聚%''))', 1, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
+														or t1.equiproom_level like ''汇聚%''))', 2, 'admin', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 902001003, 1, null),
 (902003043, '空间-数据中心业务合规性核查-数据中心下无归属站点', 'DIMS_KJ_04003', 4003, 902001005, '空间', 11, null,
 'update RM_AREA_DC t1
                    set dims_col_result=(case when dims_col_result like ''%DIMS_KJ_04003%'' then dims_col_result
@@ -23818,7 +23818,7 @@ insert into dims_idx_IndexCarrier (ID, PARENTINDEX_ID, CHILDINDEX_ID, CREATOR, U
 (902004039, 902099002, 902003039, 'admin', 'admin', null),
 (902004040, 902099002, 902003040, 'admin', 'admin', null),
 (902004041, 902099004, 902003041, 'admin', 'admin', null),
-(902004042, 902099004, 902003042, 'admin', 'admin', null),
+--(902004042, 902099004, 902003042, 'admin', 'admin', null),
 (902004043, 902099004, 902003043, 'admin', 'admin', null),
 (902005490, 902099999, 902099001, 'admin', 'admin', null),
 (902005491, 902099999, 902099002, 'admin', 'admin', null),
