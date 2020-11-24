@@ -73,7 +73,7 @@ create table WX_BOARD(
 int_id varchar(500),board_serial varchar(500),product_name varchar(500),physical_location varchar(500),board_function_type varchar(500),related_bs varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table WX_PORT(
-int_id varchar(500),port_no varchar(500),location varchar(500),circuit_name varchar(500),fiber_id varchar(500),port_status varchar(500),port_type varchar(500),related_ne varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
+int_id varchar(500),port_no varchar(500),location varchar(500),circuit_name text,fiber_id varchar(500),port_status varchar(500),port_type varchar(500),related_ne varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
 );
 create table ANTENNA(
 int_id varchar(500),zh_label varchar(500),vendor_id varchar(500),product_name varchar(500),related_tower varchar(500),setup_location varchar(500),height varchar(500),setup_time varchar(500),antenna_type varchar(500),if_aau varchar(500),related_aau varchar(500),province_id varchar(500),city_id varchar(500),county_id varchar(500),dims_col_result text,dims_col_rtName	text
