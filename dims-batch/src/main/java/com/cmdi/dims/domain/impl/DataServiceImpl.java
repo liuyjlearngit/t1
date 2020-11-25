@@ -7,9 +7,12 @@ import com.cmdi.dims.domain.meta.dto.Index;
 import com.cmdi.dims.domain.meta.dto.Metadata;
 import com.cmdi.dims.domain.util.DataUtil;
 import com.cmdi.dims.sdk.model.TaskItemIndexDto;
+import com.csvreader.CsvReader;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +23,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -31,6 +37,8 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class DataServiceImpl implements DataService {
+
+    private static final String Config_Path  = "config/includedTables.csv";
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -54,6 +62,24 @@ public class DataServiceImpl implements DataService {
                 .stream()
                 .filter(e -> specialities.contains(e.getSpecialityName()))
                 .collect(Collectors.toMap(EntityType::getCode, EntityType::getName));
+    }
+    @Override
+    public Map<String, String> loadTables(List<String> specialities,String primarySpecialty) {
+        Map<String, String> specialityTables = loadTables(Lists.newArrayList(primarySpecialty));
+        Map<String, String> includeList = getIncludedTables(primarySpecialty);
+        for(String speciality:specialities){
+            if(speciality == primarySpecialty){
+                continue;
+            }
+            if(StringUtils.isNotEmpty(includeList.get(speciality))){
+                String[] tableList = includeList.get(speciality).split(",");
+                for(String str:tableList){
+                    EntityType entityType = new MetadataLoader(namedParameterJdbcTemplate).findEntityTypeByCode(str);
+                    specialityTables.put(entityType.getCode(),entityType.getName());
+                }
+            }
+        }
+        return specialityTables;
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
@@ -147,5 +173,26 @@ public class DataServiceImpl implements DataService {
         parameters.put("DIMS_COL_RESULT", rtName);
         return namedParameterJdbcTemplate.query(DataUtil.selectErrorDataStatementWithResult(metadata), parameters, new ColumnMapRowMapper());
 
+    }
+    private Map<String,String> getIncludedTables(String primarySpecialty){
+        Map<String,String> tableMap = new HashMap<String,String>();
+        try {
+            InputStream fis = new ClassPathResource(Config_Path).getInputStream();
+            CsvReader csvReader = new CsvReader(fis, ';', Charset.forName("UTF-8"));
+            // 读表头
+            //speciality;includedspeciality;tablename
+            csvReader.readHeaders();
+            // 读内容
+            while (csvReader.readRecord()) {
+                // 读一整行
+                log.info(csvReader.getRawRecord());
+                if(StringUtils.equalsIgnoreCase(csvReader.get("speciality"),primarySpecialty) ){
+                    tableMap.put(csvReader.get("includedspeciality"),csvReader.get("tablename"));
+                }
+            }
+        } catch (IOException e) {
+            log.info(e.getMessage());
+        }
+        return tableMap;
     }
 }

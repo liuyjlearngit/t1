@@ -108,6 +108,22 @@ public class DataServiceImpl implements DataService {
         return StringUtils.substringBeforeLast(path,"/");
     }
 
+    @Override
+    public String getRemotePath(String taskCode,FileLocationVo location) {
+        String statement = "SELECT code from dims_tm_taskitem_file where taskcode=:taskCode";
+        Map<String, Object> parameter = new HashMap<>();
+        parameter.put("taskCode", taskCode);
+        List<String> pathList = jdbcTemplate.queryForList(statement,parameter,java.lang.String.class);
+        String remoteDirectory= null;
+        for(String path:pathList){
+            if(StringUtils.containsIgnoreCase(path,location.getPath())){
+                remoteDirectory = StringUtils.substringBeforeLast(path,"/");
+                break;
+            }
+        }
+        return remoteDirectory;
+    }
+
     public void saveStorage(List<Map<String, Object>> storages) {
         SqlParameterSource[] sqlParameterSources = new SqlParameterSource[storages.size()];
         for (int i = 0; i < storages.size(); i++) {

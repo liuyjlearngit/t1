@@ -24,4 +24,5 @@ public interface DataService {
 
     Double getIndexValue(String province,String taskCode) ;
     String getRemotePath(String taskCode) ;
+    String getRemotePath(String taskCode,FileLocationVo curLocation) ;
 }

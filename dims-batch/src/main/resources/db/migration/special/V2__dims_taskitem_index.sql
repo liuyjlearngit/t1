@@ -25,8 +25,8 @@ create table dims_tm_taskItem_index
 		 prefectureCode     varchar(100),--地市code
 		 countyCode	        varchar(100),--区县code
 		 regionType	        smallint,--指标区域属性：1省，2地市，3区县
-		 amount             integer,--总数
-		 errorAmount        integer,--错误量
+		 amount             bigint,--总数
+		 errorAmount        bigint,--错误量
 		 indexValue	        numeric(6,5),--指标值,小数点后5位，小数点前1位
 		 version            integer default 0 not null,--乐观锁
      createdate         timestamp default current_timestamp not null,--创建时间

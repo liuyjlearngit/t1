@@ -133,6 +133,11 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-sftp</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.sourceforge.javacsv</groupId>
+            <artifactId>javacsv</artifactId>
+            <version>2.0</version>
+        </dependency>
     </dependencies>
 
 
@@ -204,6 +209,27 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.yml</include>
+                    <include>**/*.sql</include>
+                </includes>
+                <!--是否替换资源中的属性-->
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+                <!--是否替换资源中的属性-->
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>

@@ -75,7 +75,7 @@ public class ImportServiceImpl implements ImportService {
                 DefaultSftpSessionFactory factory = BatchUtil.createSFTPSessionFactory(curLocation);
                 try (SftpSession session = factory.getSession()) {
                     //String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
-                    String resultFtpFilePath = dataService.getRemotePath(taskCode)+ "/" + resultZipName;
+                    String resultFtpFilePath = dataService.getRemotePath(taskCode,curLocation)+ "/" + resultZipName;
                     if (session.exists(resultFtpFilePath)) {
                         Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
                         if (Files.exists(resultZip)) {
@@ -91,7 +91,7 @@ public class ImportServiceImpl implements ImportService {
                 DefaultFtpSessionFactory factory = BatchUtil.createSessionFactory(curLocation);
                 try (FtpSession session = factory.getSession()) {
                     //String resultFtpFilePath = curLocation.getPath() + "/" + resultZipName;
-                    String resultFtpFilePath = dataService.getRemotePath(taskCode)+ "/" + resultZipName;
+                    String resultFtpFilePath = dataService.getRemotePath(taskCode,curLocation) + "/" + resultZipName;
                     if (session.exists(resultFtpFilePath)) {
                         Path resultZip = Paths.get(localFolder.getAbsolutePath(), resultZipName);
                         if (Files.exists(resultZip)) {

@@ -112,7 +112,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                     if (StringUtils.isEmpty(currentDateLine)) {
                         continue;
                     }
-                    String[] columns = StringUtils.splitPreserveAllTokens(currentDateLine, delimiter);//分割 数据
+                    String[] columns = StringUtils.splitPreserveAllTokens(currentDateLine, delimiter);
                     parameter = new HashMap<>();
                     if (ArrayUtils.isNotEmpty(columns)) {
                         int currentSize = columns.length;
@@ -205,11 +205,18 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                         parameters.clear();
                     }
                 }
-                if (parameters.size() > 0) {
-                    publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
+                if(totalRecord > 0 && totalRecord==errorCount){
+                    log.info("数据文件共"+errorCount+"行,全部存在问题，无法入库......");
                     parameters.clear();
+                    success = false;
+                    errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错:数据文件包含的分割符数目与表头不符，无法入库.";
+                }else{
+                    if (parameters.size() > 0) {
+                        publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
+                        parameters.clear();
+                    }
+                    publish(ringBuffer, metadata, new ArrayList<>(), totalRecord);
                 }
-                publish(ringBuffer, metadata, new ArrayList<>(), totalRecord);
             }
         } catch (Exception e) {
             success = false;
@@ -260,7 +267,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         }
     }
 
-    public boolean validateHeader(List<TaskItemFileDto> taskItemFiles, TaskConfigDto taskConfigDto, File taskDirectory, String taskCode, String province) {
+    public boolean validateHeader(List<TaskItemFileDto> taskItemFiles, TaskConfigDto taskConfigDto, File taskDirectory, String taskCode, String province,String speciality) {
         Set<String> tables = new HashSet<>();
         boolean result = true;
         for (TaskItemFileDto taskItemFile : taskItemFiles) {
@@ -290,6 +297,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 }
             } catch (Exception e) {
                 errorMessage = taskItemFile.getDestTable() + "对象文件" + taskItemFile.getCsvFile() + "解析出错" + e.getMessage();
+                success = false;
                 log.error(errorMessage, e);
             } finally {
                 taskService.saveTaskItemBusiness(populate(metadata, taskItemFile, 0L, 0L, success, errorMessage));
@@ -300,7 +308,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         }
         String[] specialities = StringUtils.split(taskConfigDto.getIncludeSpecialities(), ",");
         List<String> specialityList = ArrayUtils.isNotEmpty(specialities) ? Lists.newArrayList(specialities) : Lists.newArrayList(taskConfigDto.getSpeciality());
-        Map<String, String> specialityTables = dataService.loadTables(specialityList);
+        Map<String, String> specialityTables = dataService.loadTables(specialityList,speciality);
         for (Map.Entry<String, String> table : specialityTables.entrySet()) {
             if (!tables.contains(table.getKey())) {
                 taskService.saveTaskItemBusiness(populate(table.getValue(), table.getKey(), null, taskCode, province, 0L, 0L, false, "没有找到对应的文件"));
@@ -325,7 +333,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
         File taskDirectory = BatchUtil.getTaskFolder(taskCode);
         Assert.state(taskDirectory.exists(), "task folder not exists");
         //验证表头
-        Assert.state(validateHeader(taskItemFiles, taskConfigDto, taskDirectory, taskCode, province), "文件列头不匹配");
+        Assert.state(validateHeader(taskItemFiles, taskConfigDto, taskDirectory, taskCode, province, speciality), "文件列头不匹配");
         //TODO 入库逻辑
         DataWithMetadataHandler[] handler = new DataWithMetadataHandler[HANDLER_SIZE];
 

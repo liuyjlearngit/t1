@@ -85,11 +85,19 @@ public class BatchUtil {
     static boolean isSkip(StepContext stepContext) {
         return SkipEnum.get(stepContext.getStepExecution().getJobExecution().getExecutionContext().getInt(SKIP)).isSkip();
     }
-
+    public static boolean isOSWin() {
+        Properties prop = System.getProperties();
+        String os = prop.getProperty("os.name");
+        if (os != null && os.toLowerCase().startsWith("win")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     //创建临时目录
     static File getTaskFolder(String taskCode, boolean create) throws IOException {
         //File tempDirectory = FileUtils.getTempDirectory();
-        File tempDirectory = FileUtils.getFile(TASK_TEMP_FOLDER);
+        File tempDirectory = isOSWin()?FileUtils.getTempDirectory():FileUtils.getFile(TASK_TEMP_FOLDER);
         File taskDirectory = new File(tempDirectory, String.valueOf(taskCode));
         if (create) {
             if (taskDirectory.exists()) {
@@ -220,29 +228,35 @@ public class BatchUtil {
     //String sourceDir,String sourceFileName
     static void unGzipFile(Path itemFile) throws IOException{
         String outFileName = StringUtils.substringBefore(itemFile.getFileName().toString(), ".") + ".csv";
+        Path targetFile = Paths.get(itemFile.getParent().toString(), outFileName);
+        if (Files.exists(targetFile)) {
+            FileUtils.forceDelete(targetFile.toFile());
+        }
+        //建立gzip压缩文件输入流
+        InputStream inStream = Files.newInputStream(itemFile);
+        //建立gzip解压工作流
+        GZIPInputStream gZinStream = new GZIPInputStream(inStream);
+        //建立解压文件输出流
+        OutputStream outStream = Files.newOutputStream(targetFile);
         try {
-            //建立gzip压缩文件输入流
-            InputStream inStream = Files.newInputStream(itemFile);
-            //建立gzip解压工作流
-            GZIPInputStream gZinStream = new GZIPInputStream(inStream);
-            //建立解压文件输出流
-           Path targetFile = Paths.get(itemFile.getParent().toString(), outFileName);
-            if (Files.exists(targetFile)) {
-                FileUtils.forceDelete(targetFile.toFile());
-            }
-            OutputStream outStream = Files.newOutputStream(targetFile);
-
             int num;
-            byte[] buf = new byte[1024];
+            byte[] buf = new byte[4096];
             while ((num = gZinStream.read(buf, 0, buf.length)) != -1) {
                 outStream.write(buf, 0, num);
             }
-            gZinStream.close();
-            outStream.close();
-            inStream.close();
         } catch (Exception ex) {
             //System.err.println(ex.toString());
-            throw new RuntimeException("压缩文件存在问题，请检查！", ex);
+            throw new RuntimeException("压缩文件"+itemFile.getFileName().toString()+"存在问题，请检查！", ex);
+        } finally {
+            if(gZinStream != null){
+                try {
+                    gZinStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            inStream.close();
+            outStream.close();
         }
     }
 
