@@ -4657,7 +4657,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03004%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03004''
 										  					          else dims_col_result||'',DIMS_CZ_03004'' end)
-							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000501, 1, NULL, NULL),
+							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.equipment_id=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000501, 1, NULL, NULL),
  (905003204, '承载网-板卡关联性核查-所属省份', 'DIMS_CZ_03005', 3005, 905000501, '承载网', 11, NULL, 'update CM_WARE_IP_BOARD t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-板卡关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-板卡关联性核查-所属省份''
@@ -4673,7 +4673,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03006%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03006''
 										  					          else dims_col_result||'',DIMS_CZ_03006'' end)
-							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000502, 1, NULL, NULL),
+							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.equipment_id=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000502, 1, NULL, NULL),
  (905003206, '承载网-物理端口关联性核查-所属省份', 'DIMS_CZ_03007', 3007, 905000502, '承载网', 11, NULL, 'update CE_PORT_IP_PTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理端口关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理端口关联性核查-所属省份''
@@ -4689,7 +4689,7 @@ insert into dims_idx_index (ID, NAME, CODE, ORDERBY, ENTITYTYPE_ID, SPECIALITYNA
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03008%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03008''
 										  					          else dims_col_result||'',DIMS_CZ_03008'' end)
-							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.equipment_id=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
+							  where isNotNull(t1.equipment_id) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.equipment_id=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000503, 1, NULL, NULL),
  (905003208, '承载网-逻辑端口关联性核查-所属省份', 'DIMS_CZ_03009', 3009, 905000503, '承载网', 11, NULL, 'update CE_PORT_IP_FTP t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑端口关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑端口关联性核查-所属省份''
@@ -4734,7 +4734,7 @@ HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.a_equipment=t23.int_id)', 2, 0
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03011%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03011''
 										  					          else dims_col_result||'',DIMS_CZ_03011'' end)
-							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_PTP t2 where isNotNull(t2.physical_port_name) and t1.a_port=t2.physical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
+							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_PTP t2 where isNotNull(t2.int_id) and t1.a_port=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000504, 1, NULL, NULL),
  (905003211, '承载网-物理链路关联性核查-Z端设备', 'DIMS_CZ_03012', 3012, 905000504, '承载网', 11, NULL, 'update CE_LINK_PHYSICS t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-物理链路关联性核查-Z端设备%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-物理链路关联性核查-Z端设备''
@@ -4779,7 +4779,7 @@ HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.z_equipment=t23.int_id)', 2, 0
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03014%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03014''
 										  					          else dims_col_result||'',DIMS_CZ_03014'' end)
-							  where isNotNull(t1.a_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.equipment_name) and t1.a_equipment=t2.equipment_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
+							  where isNotNull(t1.a_equipment) and not exists(select 1 from CM_DEVICE_IP t2 where isNotNull(t2.int_id) and t1.a_equipment=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003214, '承载网-逻辑链路关联性核查-A端端口', 'DIMS_CZ_03015', 3015, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-A端端口%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-A端端口''
@@ -4787,7 +4787,7 @@ HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.z_equipment=t23.int_id)', 2, 0
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03015%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03015''
 										  					          else dims_col_result||'',DIMS_CZ_03015'' end)
-							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.logical_port_name) and t1.a_port=t2.logical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
+							  where isNotNull(t1.a_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.int_id) and t1.a_port=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003215, '承载网-逻辑链路关联性核查-Z端设备', 'DIMS_CZ_03016', 3016, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-Z端设备%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-Z端设备''
@@ -4803,7 +4803,7 @@ HSS_HLR_FE t23 where isNotNull(t23.int_id) and t1.z_equipment=t23.int_id)', 2, 0
 										dims_col_result=(case when dims_col_result like ''%DIMS_CZ_03017%'' then dims_col_result
 				                                  when dims_col_result is null then ''DIMS_CZ_03017''
 										  					          else dims_col_result||'',DIMS_CZ_03017'' end)
-							  where isNotNull(t1.z_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.logical_port_name) and t1.z_port=t2.logical_port_name)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
+							  where isNotNull(t1.z_port) and not exists(select 1 from CE_PORT_IP_FTP t2 where isNotNull(t2.int_id) and t1.z_port=t2.int_id)', 1, 0, '2020-10-12 15:09:45.741528', 'admin', '2020-10-12 15:09:45.741528', 'admin', 'PROC_CHECKONEDYNAMICSQLINDEX', 905000505, 1, NULL, NULL),
  (905003217, '承载网-逻辑链路关联性核查-所属省份', 'DIMS_CZ_03018', 3018, 905000505, '承载网', 11, NULL, 'update CE_LINK_IP_LOGIC t1
 		            set dims_col_rtName=(case when dims_col_rtName like ''%承载网-逻辑链路关联性核查-所属省份%'' then dims_col_rtName
 		                                      when dims_col_rtName is null then ''不满足规范:承载网-逻辑链路关联性核查-所属省份''
