@@ -12,6 +12,8 @@ import java.util.List;
 @Builder
 public class ResourcesDetailsDto {
     @ApiModelProperty("资源详情姓名")
+    private String rname;
+    @ApiModelProperty("资源详情姓名")
     private String name;
     @ApiModelProperty("资源详情数量")
     private String num;

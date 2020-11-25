@@ -6,6 +6,7 @@ import com.cmdi.dims.index.entity.Index;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.joda.time.LocalDateTime;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -661,5 +662,130 @@ public class ExportExcelUtils {
     }
 
 
+    public static void exportExcelNew(HttpServletResponse response, String name, List<String> speciality, ArrayList<String> integerstow, LinkedHashMap<String, List<String>> map, String name1, ArrayList<String> end, ArrayList<Integer> integerss) throws IOException {
+        /** 第一步，创建一个Workbook，对应一个Excel文件  */
+        HSSFWorkbook wb = new HSSFWorkbook();
+        /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
+        String templateName = name+"-"+"核查指标统计-"+ LocalDateTime.now().toLocalDate()+".xls";
+        HSSFSheet sheet = wb.createSheet(templateName);
+
+        /** 第三步，设置样式以及字体样式*/
+        HSSFCellStyle titleStyle = createTitleCellStyle(wb);
+        HSSFCellStyle headerStyle = createHeadCellStyle(wb);
+        HSSFCellStyle contentStyle = createContentCellStyle(wb);
+
+        /** 第四步，创建标题 ,合并标题单元格 */
+        // 行号
+        int rowNum = 0;
+        // 创建第一页的第一行，索引从0开始
+        HSSFRow row0 = sheet.createRow(rowNum++);
+        row0.setHeight((short) 800);// 设置行高
+
+        HSSFCell c00 = row0.createCell(0);
+        c00.setCellValue("资源对象");
+        c00.setCellStyle(headerStyle);
+
+
+
+        //第一行 数据开始
+        String[] row_first = new String[integerstow.size()];
+        Integer integer=0;
+        Integer[] integers = new Integer[integerstow.size()];
+        for (int i=0;i<speciality.size();i++){
+            integers[i]=integer;
+            row_first[integer]=speciality.get(i);
+            integer+= integerss.get(i);
+        }
+        integers[speciality.size()]=integer;
+
+        for (int i=0;i<row_first.length;i++){
+            HSSFCell tempCell = row0.createCell(i+1);
+            tempCell.setCellValue(row_first[i]);
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        // 合并单元格，参数依次为起始行，结束行，起始列，结束列 （索引0开始）
+        // 合并
+        for (int i=0;i<speciality.size();i++){
+            if (i==0){
+                if (integers[i+1]==1){
+
+                }else {
+                    sheet.addMergedRegion(new CellRangeAddress(0, 0, 1, integers[i+1]));
+                }
+
+            }else {
+                if (integers[i]+1==integers[i+1]){
+                    break;
+                }else {
+                    sheet.addMergedRegion(new CellRangeAddress(0, 0, integers[i]+1, integers[i+1]));
+                }
+            }
+
+        }
+
+        //第二行
+        HSSFRow row2 = sheet.createRow(rowNum++);
+        row2.setHeight((short) 700);
+
+        HSSFCell cell = row2.createCell(0);
+        cell.setCellValue("统计指标");
+        cell.setCellStyle(headerStyle);
+
+        for (int i = 0; i < integerstow.size(); i++) {
+            HSSFCell tempCell = row2.createCell(i+1);
+            tempCell.setCellValue(integerstow.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
+
+        //第三行  地址开始
+        for (Map.Entry<String, List<String>> colle:map.entrySet()){
+            String key = colle.getKey();
+            List<String> value = colle.getValue();
+            HSSFRow row = sheet.createRow(rowNum++);
+            row.setHeight((short) 700);
+
+            HSSFCell cel = row.createCell(0);
+            cel.setCellValue(key);
+            cel.setCellStyle(headerStyle);
+
+            for (int i=0;i<value.size();i++){
+                HSSFCell cels = row.createCell(i+1);
+                cels.setCellValue(value.get(i));
+                cels.setCellStyle(headerStyle);
+            }
+        }
+
+        //最后一行
+        HSSFRow en = sheet.createRow(rowNum++);
+        en.setHeight((short) 700);
+
+        HSSFCell tempCell = en.createCell(0);
+        tempCell.setCellValue(name1);
+        tempCell.setCellStyle(headerStyle);
+
+        for (int i = 0; i < end.size(); i++) {
+            HSSFCell tempCel = en.createCell(i+1);
+            tempCel.setCellValue(end.get(i));
+            tempCel.setCellStyle(headerStyle);
+        }
+
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("application/vnd.ms-excel");
+        //输出文件名
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
+        response.setHeader("Content-Disposition",
+                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+        ServletOutputStream stream = response.getOutputStream();
+
+        if (null != wb && null != stream) {
+            wb.write(stream);
+            // 将数据写出去
+            wb.close();
+            stream.close();
+        }
+    }
 }
 

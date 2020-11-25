@@ -59,4 +59,8 @@ public class ResStatisticsHeadquarters {
 
     @Column(name = "memo")
     private String memo;
+
+    private String sum;
+
+    private Integer su;
 }

@@ -34,6 +34,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.Collator;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -66,6 +68,23 @@ public class StatisticRestController {
     private DataStorageRepository dataStorageRepositors;
     @Value("${filter.list}")
     List<String> filterlist;
+
+    public List<AreaCodeConfig> getspecat(){
+        List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
+        Comparator comparator = Collator.getInstance(Locale.CHINA);
+        Collections.sort(byRegionTypeOrderByCode, (u1, u2) -> {
+            return comparator.compare(u1.getName(), u2.getName());
+        });
+        ArrayList<AreaCodeConfig> areaCodeConfigs = new ArrayList<>();
+        for (AreaCodeConfig areaCodeConfig:byRegionTypeOrderByCode) {
+            String code = areaCodeConfig.getCode();
+            if (code.equals("710000")||code.equals("810000")||code.equals("820000")){
+                areaCodeConfigs.add(areaCodeConfig);
+            }
+        }
+        byRegionTypeOrderByCode.removeAll(areaCodeConfigs);
+        return byRegionTypeOrderByCode;
+    }
 
     @ApiOperation("首屏统计信息用户地图按省份展示和按专业列表展示")
     @GetMapping("/global")
@@ -369,8 +388,7 @@ public class StatisticRestController {
     private List<AreaCodeConfig> loadRegion(String region) {//传递 省市县 code 返回 他的下一级数据
         List<AreaCodeConfig> configs;
         if (StringUtils.isEmpty(region)) {
-
-            configs = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);//region空  就是全国时查找省 按code排序
+             configs = getspecat();//region空  就是全国时查找省 按code排序
         } else {
             AreaCodeConfig config = areaCodeConfigRepository.findByCodeOrderByRegionTypeDesc(region);//region非空 查找 省市县 对应code的数据
             Assert.notNull("没有找到对应的区域");
@@ -1232,7 +1250,14 @@ public class StatisticRestController {
         if (BooleanUtils.isTrue(mock)) {
 //            return ResponseDto.success(doLoadHistoryIndexMock(region, speciality));
         }
-        return ResponseDto.success(checktypes(region, speciality));
+        List<PointerTypes> checktypes = checktypes(region, speciality);
+        int size = checktypes.get(0).getSpecialityValue().size();
+        if (size==0){
+            checktypes.get(0).setCode("400");
+        }else {
+            checktypes.get(0).setCode("200");
+        }
+        return ResponseDto.success(checktypes);
     }
 
     private List<PointerTypes> checktypes(String region, String speciality) {
@@ -1393,9 +1418,8 @@ public class StatisticRestController {
 //            return ResponseDto.success(doLoadHistoryIndexMock(region, speciality));
         }
 
-        System.out.println(region);
-
-        String exportdowns = exportdowns(response, region, speciality);
+        exportdown(response, region, speciality);
+//        String exportdowns = exportdowns(response, region, speciality);
 //        ExcelDowns excelDowns = new ExcelDowns();
 //        excelDowns.exportExcel();
     }
@@ -1486,7 +1510,181 @@ public class StatisticRestController {
       return ExportExcelUtils.exportExcel(response, speciality, collect, collect1, collect2, site, specialitytypes, types);
     }
 
+    public void exportdown(HttpServletResponse response, String region, List<String> speciality) throws IOException {
+        HashMap<String, ArrayList<String>> hashMap = new HashMap<>();
+        ArrayList<String> strings1 = new ArrayList<String>();
+        ArrayList<Integer> integers = new ArrayList<>();
+        ArrayList<String> integerstow = new ArrayList<>();
 
+        String name="全国";
+        AreaCodeConfig byCode=null;
+        if (!region.equals("null")){
+             byCode = areaCodeConfigRepository.findByCode(region);
+            name=byCode.getName();
+        }
+        for (String specia:speciality) {
+            name+=specia+"_";
+            HashMap<String, ArrayList<String>> map = getMap(specia);
+            hashMap.put(specia,map.get("1"));
+            integers.add(map.get("1").size());
+            strings1.addAll(map.get("1"));
+            integerstow.addAll(map.get("2"));
+        }
+        Integer flg=region.equals("null")?1:byCode.getRegionType()+1;;
+        LinkedHashMap<String, List<String>> map = new LinkedHashMap<>();
+        ArrayList<String> end = new ArrayList<>();
+        NumberFormat num = NumberFormat.getPercentInstance();
+        if (flg==1){
+            List<AreaCodeConfig> getspecat = getspecat();
+            for (AreaCodeConfig code:getspecat) {
+                ArrayList<String> doubles = new ArrayList<>();
+                for (String spe:speciality) {
+                    String co = taskLatestRepository.findByAll(code.getCode(), spe);
+                    ArrayList<String> strings = hashMap.get(spe);
+                    boolean flag=false;
+                    if (co==null){
+                        flag=true;
+                    }
+                    for (String str:strings) {
+                        if (flag){
+                            doubles.add("无数据");
+                        }else {
+                            Double byAll = taskItemIndexRepository.findByAll(co, str);
+                            String format = num.format(byAll);
+                            doubles.add(format);
+                        }
+
+                    }
+
+                }
+                map.put(code.getName(),doubles);
+            }
+            for (String code:speciality) {
+                List<String> bys = taskLatestRepository.findBys(code);
+                ArrayList<String> strings = hashMap.get(code);
+                for (String str:strings) {
+                    Double byone = taskItemIndexRepository.findByone(bys, str);
+                    String format="无数据";
+                    if (byone!=null){
+                        format = num.format(byone/bys.size());
+                    }
+                    end.add(format);
+                }
+            }
+
+        }else if (flg==2){
+            List<AreaCodeConfig> codes = loadRegion(region);
+            codes.remove(codes.size()-1);
+            Comparator comparator = Collator.getInstance(Locale.CHINA);
+            Collections.sort(codes, (u1, u2) -> {
+                return comparator.compare(u1.getName(), u2.getName());
+            });
+            HashMap<String, String> codeall = new HashMap<>();
+            for (String spe : speciality) {
+                String co = taskLatestRepository.findByAll(region, spe);
+                codeall.put(spe,co);
+            }
+            for (AreaCodeConfig code:codes) {
+                ArrayList<String> doubles = new ArrayList<>();
+                for (String spe : speciality) {
+                    String co = codeall.get(spe);
+                    ArrayList<String> strings = hashMap.get(spe);
+                    for (String str : strings) {
+                            Double byAll = taskItemIndexRepository.findByAlltow(co,code.getCode(),str);
+                            if (byAll == null) {
+                                    doubles.add("无数据");
+                            }else {
+                            String format = num.format(byAll);
+                            doubles.add(format);
+                        }
+
+                    }
+
+                }
+                map.put(code.getName(),doubles);
+            }
+            List<String> bys = taskLatestRepository.findByAll(region);
+            for (String str:strings1) {
+                Double byone = taskItemIndexRepository.findByonetow(bys, str);
+                if (byone == null) {
+                    end.add("无数据");
+                }else {
+                    String format = num.format(byone);
+                    end.add(format);
+                }
+
+            }
+        }else {
+            List<AreaCodeConfig> codes = areaCodeConfigRepository.findByPrefectureCodeAndRegionTypeOrderByCode(region, 3);
+            Comparator comparator = Collator.getInstance(Locale.CHINA);
+            Collections.sort(codes, (u1, u2) -> {
+                return comparator.compare(u1.getName(), u2.getName());
+            });
+            HashMap<String, String> codeall = new HashMap<>();
+            String substring = region.substring(0, region.length() - 4);
+            for (String spe : speciality) {
+                String co = taskLatestRepository.findByAll(substring+"0000", spe);
+                codeall.put(spe,co);
+            }
+            for (AreaCodeConfig code:codes) {
+                ArrayList<String> doubles = new ArrayList<>();
+                for (String spe : speciality) {
+                    String co = codeall.get(spe);
+                    ArrayList<String> strings = hashMap.get(spe);
+
+                    for (String str : strings) {
+                        Double byAll = taskItemIndexRepository.findByAllfor(co,code.getCode(),str);
+                        if (byAll == null) {
+                            doubles.add("无数据");
+                        }else {
+                            String format = num.format(byAll);
+                            doubles.add(format);
+                        }
+
+                    }
+
+                }
+                map.put(code.getName(),doubles);
+            }
+            List<String> bys = taskLatestRepository.findByAll(substring+"0000");
+            for (String str:strings1) {
+                Double byone = taskItemIndexRepository.findByonefor(bys,region, str);
+                if (byone == null) {
+                    end.add("无数据");
+                }else {
+                    String format = num.format(byone);
+                    end.add(format);
+                }
+            }
+        }
+        String s = flg == 1 ? "全国" : byCode.getName();
+        ExportExcelUtils.exportExcelNew(response,name,speciality,integerstow,map,s,end,integers);
+    }
+    public HashMap<String, ArrayList<String>> getMap(String speciality){
+        String l99001 = indexRepository.findbyne(99001, speciality);
+        String l99002 = indexRepository.findbyne(99002, speciality);
+        String l99003 = indexRepository.findbyne(99003, speciality);
+        String l99004 = indexRepository.findbyne(99004, speciality);
+        String l99999 = indexRepository.findbyne(99999, speciality);
+        HashMap<String, ArrayList<String>> map = new HashMap<>();
+        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<String> stringtow = new ArrayList<>();
+        strings.add(l99001);
+        stringtow.add("完整性通过率");
+        strings.add(l99002);
+        stringtow.add("规范性通过率");
+        strings.add(l99003);
+        stringtow.add("关联性通过率");
+        if (l99004!=null){
+            strings.add(l99004);
+            stringtow.add("业务合规性通过率");
+        }
+        strings.add(l99999);
+        stringtow.add("总通过率");
+        map.put("1",strings);
+        map.put("2",stringtow);
+        return map;
+    }
 //生成 excel 调用查找方法  0.0.0 表示没有 这个属性  null表示 该值为空
     private List<DownExcel> doLoadSpecialitys(String speciality, String region) {
     final AreaCodeConfig config;

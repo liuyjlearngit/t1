@@ -26,4 +26,7 @@ public class ExcelDownData {
     private ArrayList<String> alldata;
     @ApiModelProperty("单位")
     private ArrayList<String> wei;
+    @ApiModelProperty("数据")
+    private HashMap<String,List<String>> map;
+
 }

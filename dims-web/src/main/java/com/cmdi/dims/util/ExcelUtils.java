@@ -32,7 +32,8 @@ public class ExcelUtils {
     public static void exportExcel(HttpServletRequest request, HttpServletResponse response,List<String> speciality, Map<String, List<ExcelDownData>> collect) throws IOException {
         /** 第一步，创建一个Workbook，对应一个Excel文件  */
         HSSFWorkbook wb = new HSSFWorkbook();
-
+        long l2 = System.currentTimeMillis();
+        System.out.println("excel"+l2);
         /////
         String templateName = "导出模板.xls";
         response.setCharacterEncoding("utf-8");
@@ -58,6 +59,43 @@ public class ExcelUtils {
             wb.close();
             stream.close();
         }
+        long l = System.currentTimeMillis();
+        System.out.println("end excel"+l);
+    }
+
+
+    public static void exportExcels(HttpServletRequest request, HttpServletResponse response,List<String> speciality, Map<String, ExcelDownData> collect) throws IOException {
+        long l = System.currentTimeMillis();
+        System.out.println(speciality+"xz开始"+l);
+        /** 第一步，创建一个Workbook，对应一个Excel文件  */
+        HSSFWorkbook wb = new HSSFWorkbook();
+
+        /////
+        String templateName = "导出模板.xls";
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("application/vnd.ms-excel");
+        //输出文件名
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
+        response.setHeader("Content-Disposition",
+                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+        ServletOutputStream stream = response.getOutputStream();
+
+
+        for (String specia:speciality) {
+            createnew(wb,specia,collect.get(specia));
+        }
+
+
+
+        if (null != wb && null != stream) {
+            wb.write(stream);
+            // 将数据写出去
+            wb.close();
+            stream.close();
+        }
+        long l2 = System.currentTimeMillis();
+        System.out.println(speciality+"xz结束"+l2);
     }
 
     /**
@@ -480,6 +518,156 @@ public class ExcelUtils {
         cellStyle.setFont(headerFont1); // 为标题样式设置字体样式
 
         return cellStyle;
+    }
+
+    //重新修改
+    private static void createnew(HSSFWorkbook wb, String sheetName, ExcelDownData excelDownData){
+        /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
+        HSSFSheet sheet = wb.createSheet(sheetName);
+
+        /** 第三步，设置样式以及字体样式*/
+        HSSFCellStyle titleStyle = createTitleCellStyle(wb);
+        HSSFCellStyle headerStyle = createHeadCellStyle(wb);
+        HSSFCellStyle contentStyle = createContentCellStyle(wb);
+
+        if (excelDownData.getStrings()==null){
+            int rowNum = 0;
+            // 创建第一页的第一行，索引从0开始
+            HSSFRow row0 = sheet.createRow(rowNum++);
+            row0.setHeight((short) 800);// 设置行高
+
+            HSSFCell c00 = row0.createCell(0);
+            c00.setCellValue(excelDownData.getSpeciality()+"资源为空");
+            c00.setCellStyle(headerStyle);
+            return;
+        }
+        /** 第四步，创建标题 ,合并标题单元格 */
+        // 行号
+        int rowNum = 0;
+        // 创建第一页的第一行，索引从0开始
+        HSSFRow row0 = sheet.createRow(rowNum++);
+        row0.setHeight((short) 800);// 设置行高
+
+        HSSFCell c00 = row0.createCell(0);
+        c00.setCellValue("资源对象");
+        c00.setCellStyle(headerStyle);
+
+        ArrayList<String> strings = excelDownData.getStrings();//第一行数据
+        ArrayList<Integer> onenum = excelDownData.getOnenum();//第一行数量
+        ArrayList<String> stringss = excelDownData.getStringss();//第二行数据   他的size是总长度
+        ArrayList<String> alldata = excelDownData.getAlldata();//总计
+        ArrayList<String> wei = excelDownData.getWei();//单位
+        HashMap<String, List<String>> map = excelDownData.getMap();
+
+        //第一行 数据开始
+        String[] row_first = new String[stringss.size()];
+        Integer integer=0;
+        Integer[] integers = new Integer[stringss.size()];
+        for (int i=0;i<strings.size();i++){
+            integers[i]=integer;
+            row_first[integer]=strings.get(i);
+            integer+= onenum.get(i);
+        }
+        integers[strings.size()]=integer;
+
+        for (int i=0;i<row_first.length;i++){
+            HSSFCell tempCell = row0.createCell(i+1);
+            tempCell.setCellValue(row_first[i]);
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        // 合并单元格，参数依次为起始行，结束行，起始列，结束列 （索引0开始）
+        // 合并
+        for (int i=0;i<strings.size();i++){
+            if (i==0){
+                if (integers[i+1]==1){
+
+                }else {
+                    sheet.addMergedRegion(new CellRangeAddress(0, 0, 1, integers[i+1]));
+                }
+
+            }else {
+                if (integers[i]+1==integers[i+1]){
+                    break;
+                }else {
+                    sheet.addMergedRegion(new CellRangeAddress(0, 0, integers[i]+1, integers[i+1]));
+                }
+            }
+
+        }
+
+        //第二行
+        HSSFRow row2 = sheet.createRow(rowNum++);
+        row2.setHeight((short) 700);
+
+        HSSFCell cell = row2.createCell(0);
+        cell.setCellValue("统计指标");
+        cell.setCellStyle(headerStyle);
+
+        for (int i = 0; i < stringss.size(); i++) {
+            HSSFCell tempCell = row2.createCell(i+1);
+            tempCell.setCellValue(stringss.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        //添加单位
+        //第3行
+        HSSFRow row3 = sheet.createRow(rowNum++);
+        row3.setHeight((short) 700);
+
+        HSSFCell tempCell8 = row3.createCell(0);
+        tempCell8.setCellValue("单位");
+        tempCell8.setCellStyle(headerStyle);
+
+        for (int i = 0; i < wei.size(); i++) {
+            HSSFCell tempCell = row3.createCell(i+1);
+            tempCell.setCellValue(wei.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
+        //第三行  地址开始
+//        for (Map.Entry<String, List<String>> colle:map.entrySet()){
+//            HSSFRow data = sheet.createRow(rowNum++);
+//            data.setHeight((short) 700);
+//            HSSFCell cell1 = data.createCell(0);
+//            cell1.setCellValue(colle.getKey());
+//            cell1.setCellStyle(headerStyle);
+//            List<String> value = colle.getValue();
+//            for (int i=0;i<value.size();i++){
+//                HSSFCell tempCell = data.createCell(i+1);
+//                if (value.get(i).equals("null")){
+//                    tempCell.setCellValue("无数据");
+//                }else {
+//                    tempCell.setCellValue(value.get(i));
+//                }
+//
+//                tempCell.setCellStyle(headerStyle);
+//            }
+//        }
+        for (int j=0;j<10;j++){
+
+        for (int i=4;i<32;i++){
+            HSSFRow ll = sheet.createRow(i);
+            ll.setHeight((short) 700);
+                HSSFCell llCell = ll.createCell(j);
+                llCell.setCellValue("单位");
+                llCell.setCellStyle(headerStyle);
+        }
+
+        }
+
+        //最后一行
+        HSSFRow end = sheet.createRow(rowNum++);
+        end.setHeight((short) 700);
+        HSSFCell tempCellw = end.createCell(0);
+        tempCellw.setCellValue("合计");
+        tempCellw.setCellStyle(headerStyle);
+        for (int i = 0; i < alldata.size(); i++) {
+            HSSFCell tempCell = end.createCell(i+1);
+            tempCell.setCellValue(alldata.get(i));
+            tempCell.setCellStyle(headerStyle);
+        }
+
     }
 
     /**

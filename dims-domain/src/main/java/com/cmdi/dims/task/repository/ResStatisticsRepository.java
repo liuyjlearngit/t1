@@ -17,11 +17,14 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
 
     List<ResStatistics> findByResName(String name);
 
+    @Query(value ="select distinct b.specialityName from ResStatistics b")
+    List<String> findDistinctBySpecialityNameData();
+
     List<ResStatistics> findByRegionTypeAndTaskCodeInAndResName(Integer type,List<String> taskCodes,String name);
 
     List<ResStatistics> findByRegionTypeAndTaskCodeIn(Integer type,List<String> taskCodes);
 
-    @Query(value ="SELECT b.resName as resName,b.resType as resType,sum (b.amount) as amount,b.unit as unit FROM ResStatistics b WHERE b.regionType='1' AND b.taskCode in(:inname) and b.specialityName=:name GROUP BY b.resName,b.resType,b.unit")
+    @Query(value ="SELECT b.resName as resName,b.resType as resType,sum (b.amount) as amount,b.unit as unit FROM ResStatistics b WHERE b.taskCode in(:inname)  and b.regionType='1'  AND  b.specialityName=:name GROUP BY b.resName,b.resType,b.unit")
     List<Object[]> findData(@Param("inname") List<String> inname,@Param("name") String name);
 
     @Query(value ="SELECT sum (b.amount) as amount FROM ResStatistics b WHERE b.regionType='1' AND b.taskCode in(:inname) and b.specialityName=:name and b.resName=:rename GROUP BY b.resName")
@@ -33,7 +36,7 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
     @Query(value = "select b.resType,sum (b.amount) from ResStatistics b where b.regionType='1' and b.taskCode in (:inname) and b.resName=:resname  group by b.resType")
     List<Object[]> findCodeAll(@Param("inname") List<String> inname,@Param("resname") String resname);
 
-    @Query(value = "select sum (b.amount) from ResStatistics b where b.regionType='1' and b.taskCode in (:inname) and b.resName=:resname group by b.resName")
+    @Query(value = "select sum (b.amount) from ResStatistics b where b.taskCode in (:inname)  and b.regionType='1' and b.resName=:resname group by b.resName")
     String findCodeAllone(@Param("inname") List<String> inname,@Param("resname") String resname);
 
     @Query(value = "SELECT b.resType as resType ,sum (b.amount) as amount,b.province as province FROM ResStatistics b where b.regionType='1' and b.taskCode=:taskcode and b.resName=:resname group by b.resType,b.province")
@@ -50,6 +53,12 @@ public interface ResStatisticsRepository extends JpaRepository<ResStatistics, Lo
 
     @Query(value = "SELECT b.resType FROM ResStatistics b where b.regionType='1' and  b.specialityName=:specialityname and b.resName=:name group by b.resType")
     List<String> findforn(@Param("specialityname") String specialityname,@Param("name") String name);
+
+    @Query(value = "SELECT  DISTINCT b.resName  FROM ResStatistics b WHERE b.taskCode in (:inname) ")
+    List<String> findDistinctByResNamedata(@Param("inname") List<String> inname);
+
+    @Query(value = "SELECT b.resName,b.resType,sum (b.amount) as amount,b.unit FROM ResStatistics b WHERE b.taskCode in (:inname) AND b.regionType='1' AND b.resName=:resname GROUP BY b.resName,b.resType,b.unit")
+    List<Object[]> findDataAll(@Param("inname") List<String> inname,@Param("resname") String resname);
 
     List<ResStatistics> findByTaskCodeInAndProvinceAndResNameAndResType(List<String> taskCodes,String province,String resname,String restype);
 

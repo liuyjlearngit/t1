@@ -32,8 +32,6 @@ public class MetricCityResultServiceImpl implements MetricCityResultService {
         String strs=str+version+str;
         String sql="SELECT * FROM metric_city_result WHERE \"version\"="+strs+" AND rule_no=? AND related_major=?";
         List<MetricCityResult> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(MetricCityResult.class),code,speciality);
-//        String sql="SELECT * FROM metric_city_result WHERE version=? AND area_code=? AND related_major=?";
-//        List<MetricCityResult> query = secondJdbcTemplate.query(sql, new BeanPropertyRowMapper<>(MetricCityResult.class),version,code,speciality);
         return query;
     }
 

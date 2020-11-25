@@ -112,7 +112,7 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                     if (StringUtils.isEmpty(currentDateLine)) {
                         continue;
                     }
-                    String[] columns = StringUtils.splitPreserveAllTokens(currentDateLine, delimiter);
+                    String[] columns = StringUtils.splitPreserveAllTokens(currentDateLine, delimiter);//分割 数据
                     parameter = new HashMap<>();
                     if (ArrayUtils.isNotEmpty(columns)) {
                         int currentSize = columns.length;
@@ -199,9 +199,9 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                     }
                     //preDateLine = null;
 
-                    parameters.add(BatchUtil.asParameter(metadata, upperHeaderMap, parameter));
-                    if (parameters.size() >= BATCH_SIZE) {
-                        publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);
+                    parameters.add(BatchUtil.asParameter(metadata, upperHeaderMap, parameter));//通过方法吧表 中字段和 结果对应存入map  key 属性 value 结果
+                     if (parameters.size() >= BATCH_SIZE) {
+                        publish(ringBuffer, metadata, new ArrayList<>(parameters), totalRecord);//通过方法吧数据写入
                         parameters.clear();
                     }
                 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cmdi.dims.task.entity.AreaCodeConfig;
+import org.springframework.data.jpa.repository.Query;
 
 public interface AreaCodeConfigRepository extends JpaRepository<AreaCodeConfig, String> {
     //查询省级

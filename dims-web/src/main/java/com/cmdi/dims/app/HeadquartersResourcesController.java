@@ -14,8 +14,10 @@ import com.cmdi.dims.util.ExcelUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +43,19 @@ public class HeadquartersResourcesController {
     @Autowired
     private ResStatisticsRepository resStatisticsRepository;
 
+    public List<AreaCodeConfig> getspecat(){
+        List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
+        ArrayList<AreaCodeConfig> areaCodeConfigs = new ArrayList<>();
+        for (AreaCodeConfig areaCodeConfig:byRegionTypeOrderByCode) {
+            String code = areaCodeConfig.getCode();
+            if (code.equals("710000")||code.equals("810000")||code.equals("820000")){
+                areaCodeConfigs.add(areaCodeConfig);
+            }
+        }
+        byRegionTypeOrderByCode.removeAll(areaCodeConfigs);
+        return byRegionTypeOrderByCode;
+    }
+
     //四舍五入
     public Integer avarage(int substring){
         double i = (double)substring/10000;
@@ -55,10 +70,21 @@ public class HeadquartersResourcesController {
             @ApiParam("是否采用Mock数据")
             @RequestParam(value = "mock", required = false) Boolean mock) {
         if (BooleanUtils.isTrue(mock)) {
-            //return ResponseDto.success(loadMojarMock(region));
+            //return ResponseDto.success(statistical());
         }
         //statistical();
-        return ResponseDto.success(statistical());
+        return ResponseDto.success(getspecila());
+    }
+
+    private List<ProfessionalDot> getspecila(){//包含专业
+        ArrayList<ProfessionalDot> lists1 = new ArrayList<>();
+        List<String> specail = resStatisticsRepository.findDistinctBySpecialityNameData();
+        ArrayList<DownExcel> dictDtos = new ArrayList<>();
+        for (String str:specail) {
+            dictDtos.add(DownExcel.builder().region(str).build());
+        }
+        lists1.add(ProfessionalDot.builder().name(dictDtos).pageData(specail).build());
+        return lists1;
     }
 
     private List<ProfessionalDot> statisticals() {
@@ -207,13 +233,14 @@ public class HeadquartersResourcesController {
 
     private List<ProfessionalDot> statistical(){
         long l = System.currentTimeMillis();
-        System.out.println("ks"+l);
+        log.info("开始计算"+l);
         List<TaskLatest> all = taskLatestRepository.findAll();
 
         List<String> collect = all.stream()
                 .map(TaskLatest::getSpecialityName).collect(Collectors.toList());//专业
         ArrayList<ProfessionalDot> lists1 = new ArrayList<>();
         for (String speciality:collect) {
+            log.info("开始计算"+speciality+System.currentTimeMillis());
             ArrayList<ResDataDto> lists = new ArrayList<>();
             ArrayList<ResourcesDto> lists2 = new ArrayList<>();
 
@@ -239,6 +266,7 @@ public class HeadquartersResourcesController {
             for (Map.Entry<String, List<ResDataDto>> colle:collect1.entrySet()){
                 String key = colle.getKey();//取 这个键 来按大指标 查找对应的 专业的总数据
                 String dataOne = resStatisticsRepository.findDataOne(taskcodess, speciality, key);
+                log.info("开始计算"+speciality+System.currentTimeMillis());
                 ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
                 List<ResDataDto> value = colle.getValue();
                 for (ResDataDto val:value) {
@@ -289,6 +317,65 @@ public class HeadquartersResourcesController {
         long l9 = System.currentTimeMillis();
         System.out.println("js"+l9);
         return lists1;
+    }
+
+    private List<ProfessionalDot> getData(){
+        long l = System.currentTimeMillis();
+        log.info("开始计算");
+        List<TaskLatest> all = taskLatestRepository.findAll();
+        List<String> collect = all.stream()
+                .map(TaskLatest::getSpecialityName).collect(Collectors.toList());//专业
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+        for (String code:collect) {
+            long l2 = System.currentTimeMillis();
+            log.info("开始计算专业"+code);
+            ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
+            List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(code);
+            List<String> taskcodess = bySpecialityName.stream()
+                    .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+            List<Object[]> data = resStatisticsRepository.findData(taskcodess, code);
+            for (int i=0;i<data.size();i++){
+                resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                .rname(String.valueOf(data.get(i)[0]))
+                .name(String.valueOf(data.get(i)[1]))
+                .num(String.valueOf(data.get(i)[2]))
+                .unit(String.valueOf(data.get(i)[3])).build());
+            }
+            ArrayList<ResourcesDto> resourcesDtos = new ArrayList<>();
+            Map<String, List<ResourcesDetailsDto>> collect1 = resourcesDetailsDtos.stream().collect(Collectors.groupingBy(ResourcesDetailsDto::getRname));
+            for (Map.Entry<String, List<ResourcesDetailsDto>> colle:collect1.entrySet()){
+                String codeAllone = resStatisticsRepository.findCodeAllone(taskcodess, colle.getKey());
+
+                resourcesDtos.add(ResourcesDto.builder()
+                .resourcesName(colle.getKey())
+                .allValue(codeAllone)
+                .allUnit(resourcesDetailsDtos.get(0).getUnit()).nums(resourcesDetailsDtos).build());
+            }
+            List<List<ResourcesDto>> listtow = new ArrayList<>();
+            if (resourcesDtos.size()%8==0){
+                for (int i=0;i<resourcesDtos.size()/8;i++){
+                    List<ResourcesDto> resourcesDetailsDtos2 = resourcesDtos.subList(i*8,i*8+7);
+                    listtow.add(resourcesDetailsDtos2);
+                }
+            }else {
+                for (int i=0;i<resourcesDtos.size()/8;i++){
+                    List<ResourcesDto> resourcesDetailsDtos2 = resourcesDtos.subList(i*8,i*8+8);
+                    listtow.add(resourcesDetailsDtos2);
+                }
+                List<ResourcesDto> resourcesDetailsDtos2 = resourcesDtos.subList(resourcesDtos.size()/8*8,resourcesDtos.size()/8*8+resourcesDtos.size()%8);
+                listtow.add(resourcesDetailsDtos2);
+            }
+            professionalDots.add(ProfessionalDot.builder()
+            .speciality(code)
+            .resourcesDtos(listtow).build());
+            long l1 = System.currentTimeMillis();
+            long l3 = l1 - l2;
+            log.info("结束计算专业"+code+"-"+l3);
+        }
+        long l1 = System.currentTimeMillis();
+        long l2 = l1 - l;
+        log.info("结束计算"+l2);
+        return professionalDots;
     }
 
     private List<ProfessionalDot> statisticalss() {
@@ -429,6 +516,53 @@ public class HeadquartersResourcesController {
         return professionalDots;
     }
 
+    @ApiOperation("省端自维资源概览")
+    @GetMapping("/statistical/{speciality}")
+    public ResponseDto<List<ProfessionalDot>> statisti (
+            @ApiParam("专业")
+            @PathVariable("speciality") String speciality,
+            @ApiParam("是否采用Mock数据")
+            @RequestParam(value = "mock", required = false) Boolean mock) {
+        if (BooleanUtils.isTrue(mock)) {
+            //return ResponseDto.success(loadMojarMock(region));
+        }
+        //statistical();
+        return ResponseDto.success(statistica(speciality));
+    }
+
+    private List<ProfessionalDot> statistica(String speail){
+        if (speail.equals("空")){
+            speail=resStatisticsRepository.findDistinctBySpecialityNameData().get(0);
+        }
+        //专业
+            ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
+            List<TaskLatest> bySpecialityName = taskLatestRepository.findBySpecialityName(speail);
+            List<String> taskcodess = bySpecialityName.stream()
+                    .map(TaskLatest::getTaskCode).collect(Collectors.toList());
+            List<Object[]> data = resStatisticsRepository.findData(taskcodess, speail);
+            for (int i=0;i<data.size();i++){
+                resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                        .rname(String.valueOf(data.get(i)[0]))
+                        .name(String.valueOf(data.get(i)[1]))
+                        .num(String.valueOf(data.get(i)[2]))
+                        .unit(String.valueOf(data.get(i)[3])).build());
+            }
+            ArrayList<ResourcesDto> resourcesDtos = new ArrayList<>();
+            Map<String, List<ResourcesDetailsDto>> collect1 = resourcesDetailsDtos.stream().collect(Collectors.groupingBy(ResourcesDetailsDto::getRname));
+            for (Map.Entry<String, List<ResourcesDetailsDto>> colle:collect1.entrySet()){
+                String codeAllone = resStatisticsRepository.findCodeAllone(taskcodess, colle.getKey());
+                resourcesDtos.add(ResourcesDto.builder()
+                        .resourcesName(colle.getKey())
+                        .allValue(codeAllone)
+                        .allUnit(resourcesDetailsDtos.get(0).getUnit()).nums(colle.getValue()).build());
+            }
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+            professionalDots.add(ProfessionalDot.builder()
+                    .speciality(speail)
+                    .resourcesDtosn(resourcesDtos).build());
+            return professionalDots;
+        }
+
     private List<ProfessionalDot> statisticalsn() {
         List<String> taskcodess = taskLatestRepository.findAll().stream()
                 .map(TaskLatest::getTaskCode).collect(Collectors.toList());
@@ -560,7 +694,7 @@ public class HeadquartersResourcesController {
         ArrayList<RegionItemDto> regionItemDtos = new ArrayList<>();
 
         //所有地址
-        List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
+        List<AreaCodeConfig> byRegionTypeOrderByCode = getspecat();
         List<String> name = byRegionTypeOrderByCode.stream()
                 .map(AreaCodeConfig::getName).collect(Collectors.toList());
         //按 地址分割
@@ -612,7 +746,6 @@ public class HeadquartersResourcesController {
             //return ResponseDto.success(loadMojarMock(region));
         }
         exceldowns(speciality,request,response);
-        System.out.println(speciality);
     }
 
     private void exceldowns(List<String> speciality, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -756,7 +889,8 @@ public class HeadquartersResourcesController {
 //    }
 
     private ExcelDownData allDatatow(String speciality){
-
+        long l = System.currentTimeMillis();
+        log.info(speciality+"开始"+l);
         List<String> findthree = resStatisticsRepository.findthree(speciality);
         LinkedHashMap<String, List<String>> map = new LinkedHashMap<>();
         ArrayList<Integer> integers = new ArrayList<>();
@@ -827,6 +961,8 @@ public class HeadquartersResourcesController {
             String codeAllone = resStatisticsRepository.findCodeAllone(collect1, coll.getKey());
             end+=","+codeAllone;
         }
+        long l2 = System.currentTimeMillis();
+        log.info(speciality+"计算结束"+l2);
         ExcelDownData excelDownData = new ExcelDownData();
         if (strings.size()==0){
             excelDownData=null;
@@ -854,37 +990,37 @@ public class HeadquartersResourcesController {
     }
 
     private StatisticsAllData statisticsAll(){
-//        List<ProfessionalDot> statisticals = statisticalss();
-//        String speciality = null;
-//        String resourcesName = null;
-//
-//        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
-//        for (ProfessionalDot statis:statisticals) {
-//            if (statis.getResourcesDtos().size()>0&&statis.getResourcesDtos().get(0).size()>0){
-//                speciality = statis.getSpeciality();
-//                resourcesName = statis.getResourcesDtos().get(0).get(0).getResourcesName();
-//                professionalDots.add(statis);
-//                break;
-//            }
-//        }
-//
-//        for (int i=0;i<statisticals.size();i++){
-//            if (!statisticals.get(i).getSpeciality().equals(speciality)){
-//                professionalDots.add(statisticals.get(i));
-//            }
-//        }
-//
-//        List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
-//        StatisticsAllData statisticsAllData = new StatisticsAllData();
-//        statisticsAllData.setGraphicals(graphicals);
-//        statisticsAllData.setStatisticals(professionalDots);
-        List<ProfessionalDot> statisticals = statisticals();
-        String speciality = statisticals.get(0).getSpeciality();//专业名
-        String resourcesName = statisticals.get(0).getResourcesDtos().get(0).get(0).getResourcesName();//大指标
+        List<ProfessionalDot> statisticals = statisticalss();
+        String speciality = null;
+        String resourcesName = null;
+
+        ArrayList<ProfessionalDot> professionalDots = new ArrayList<>();
+        for (ProfessionalDot statis:statisticals) {
+            if (statis.getResourcesDtos().size()>0&&statis.getResourcesDtos().get(0).size()>0){
+                speciality = statis.getSpeciality();
+                resourcesName = statis.getResourcesDtos().get(0).get(0).getResourcesName();
+                professionalDots.add(statis);
+                break;
+            }
+        }
+
+        for (int i=0;i<statisticals.size();i++){
+            if (!statisticals.get(i).getSpeciality().equals(speciality)){
+                professionalDots.add(statisticals.get(i));
+            }
+        }
+
         List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
         StatisticsAllData statisticsAllData = new StatisticsAllData();
         statisticsAllData.setGraphicals(graphicals);
-        statisticsAllData.setStatisticals(statisticals);
+        statisticsAllData.setStatisticals(professionalDots);
+//        List<ProfessionalDot> statisticals = statisticals();
+//        String speciality = statisticals.get(0).getSpeciality();//专业名
+//        String resourcesName = statisticals.get(0).getResourcesDtos().get(0).get(0).getResourcesName();//大指标
+//        List<RegionItemDto> graphicals = graphicals(speciality, resourcesName);
+//        StatisticsAllData statisticsAllData = new StatisticsAllData();
+//        statisticsAllData.setGraphicals(graphicals);
+//        statisticsAllData.setStatisticals(statisticals);
         return statisticsAllData;
     }
 

@@ -17,6 +17,8 @@ public class ResourcesDto {
     private String allValue;
     @ApiModelProperty("单位")
     private String allUnit;
+    @ApiModelProperty("总页")
+    private Integer page;
     @ApiModelProperty("资源详情集合")
     private List<List<ResourcesDetailsDto>> numsn;
     @ApiModelProperty("资源详情集合")

@@ -988,11 +988,11 @@ public class ChkresultProvinceController {
     private List<PointerTypes> checktypes(String region, String speciality) throws SQLException {
         List<PointerTypes> pointerTypes = new ArrayList<>();
         if (StringUtils.isNotEmpty(region)) {
-            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
-            Assert.notNull(byCode, "没有找到对应的区域");
+            String s = map.get(region);
+            Assert.notNull(s, "没有找到对应的区域");
             String speciality1 = getSpecialityS(speciality);
             String byversionMax = chkresultProvinceRepository.findByversionMax();
-            List<ChkresultStaticsProvinceRule> byVersionAndCodeAndSpeciality = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(byversionMax, byCode.getName(), speciality1);
+            List<ChkresultStaticsProvinceRule> byVersionAndCodeAndSpeciality = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(byversionMax, s, speciality1);
             Map<String, List<ChkresultStaticsProvinceRule>> collect = byVersionAndCodeAndSpeciality.stream().collect(Collectors.groupingBy(ChkresultStaticsProvinceRule::getRuleName));
             Map<String, String> areacode = loadRegionget("").stream().collect(Collectors.toMap(AreaCodeConfig::getName, AreaCodeConfig::getCode));
 
@@ -1047,15 +1047,15 @@ public class ChkresultProvinceController {
     private List<EntityRecordDto> doLoadHistoryEntity(String region, String speciality) throws SQLException {
         ArrayList<EntityRecordDto> entityRecordDtos = new ArrayList<>();
         if (StringUtils.isNotEmpty(region)) {
-            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
-            Assert.notNull(byCode, "没有找到对应的区域");
+            String s = map.get(region);
+            Assert.notNull(s, "没有找到对应的区域");
             List<String> byversion = metricCityResultService.findByversion();
             String speciality1 = getSpecialityS(speciality);
 
             for (String version:byversion) {
                 ArrayList<EntityColumnDto> entityColumnDtos = new ArrayList<>();
                 Map<String, List<MetricCityResult>> collect = metricCityResultService.findByCodeAndSpeciality(version, region, speciality1).stream().collect(Collectors.groupingBy(MetricCityResult::getRuleNo));
-                Map<String, Integer> onedata = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(version, byCode.getName(), speciality1).stream().collect(Collectors.toMap(ChkresultStaticsProvinceRule::getRuleNoOrg, ChkresultStaticsProvinceRule::getPassedNum));
+                Map<String, Integer> onedata = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(version, s, speciality1).stream().collect(Collectors.toMap(ChkresultStaticsProvinceRule::getRuleNoOrg, ChkresultStaticsProvinceRule::getPassedNum));
                 for (Map.Entry<String, List<MetricCityResult>> colle:collect.entrySet()){
                     if (collect.size()>0&&onedata.size()>0){
                         entityColumnDtos.add(EntityColumnDto.builder().name(colle.getValue().get(0).getCheckObject()).amount(Long.valueOf(onedata.get(colle.getKey()))).build());
@@ -1091,8 +1091,8 @@ public class ChkresultProvinceController {
     private List<IndexRecordDto> doLoadHistoryIndex(String region, String speciality) throws ParseException {
         ArrayList<IndexRecordDto> entityRecordDtos = new ArrayList<>();
         if (StringUtils.isNotEmpty(region)) {
-            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
-            Assert.notNull(byCode, "没有找到对应的区域");
+            String s1 = map.get(region);
+            Assert.notNull(s1, "没有找到对应的区域");
             List<String> byversion = metricCityResultService.findByversion();
             String speciality1 = getSpecialityS(speciality);
 
@@ -1100,7 +1100,7 @@ public class ChkresultProvinceController {
                 ArrayList<IndexColumnDto> entityColumnDtos = new ArrayList<>();
                 Map<String, List<MetricCityResult>> collect = metricCityResultService.findByCodeAndSpeciality(version, region, speciality1).stream().collect(Collectors.groupingBy(MetricCityResult::getRuleNo));
                 Map<String, String> onedata= new HashMap<>();
-                List<ChkresultStaticsProvinceRule> byVersionAndCodeAndSpeciality = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(version, byCode.getName(), speciality1);
+                List<ChkresultStaticsProvinceRule> byVersionAndCodeAndSpeciality = chkresultStaticsProvinceRuleService.findByVersionAndCodeAndSpeciality(version, s1, speciality1);
                 for (ChkresultStaticsProvinceRule value:byVersionAndCodeAndSpeciality) {
                     String passrate = value.getPassrate();
                     String ruleNoOrg = value.getRuleNoOrg();

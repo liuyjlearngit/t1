@@ -1,10 +1,8 @@
 package com.cmdi.dims.app;
 
 import com.cmdi.dims.app.dto.*;
-import com.cmdi.dims.jdbctemple.entity.ErrorData;
 import com.cmdi.dims.jdbctemple.entity.ResStatisticsHeadquarters;
 import com.cmdi.dims.jdbctemple.service.ResStatisticsService;
-import com.cmdi.dims.jdbctemple.service.impl.ErrorDataServiceImpl;
 import com.cmdi.dims.task.entity.AreaCodeConfig;
 import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
 import com.cmdi.dims.util.ExcelUtils;
@@ -18,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -67,14 +66,18 @@ public class HeadquartersHealingController {
     }
 
     @ApiOperation("省端自维资源概览")
-    @GetMapping("/statistical")
+    @GetMapping("/statistical/{speciality}/{resname}")
     public ResponseDto<List<ProfessionalDot>> statistical (
+            @ApiParam("专业")
+            @PathVariable("speciality") String speciality,
+            @ApiParam("页数")
+            @PathVariable("resname") Integer resname,
             @ApiParam("是否采用Mock数据")
             @RequestParam(value = "mock", required = false) Boolean mock) {
         if (BooleanUtils.isTrue(mock)) {
             //return ResponseDto.success(loadMojarMock(region));
         }
-        return ResponseDto.success(statistical());
+        return ResponseDto.success(statistica(speciality,resname));
     }
 
     //四舍五入
@@ -306,6 +309,68 @@ public class HeadquartersHealingController {
         return lists1;
     }
 
+    @ApiOperation("包含专业")
+    @GetMapping("/statistical")
+    public ResponseDto<List<String>> statistical (
+            @ApiParam("是否采用Mock数据")
+            @RequestParam(value = "mock", required = false) Boolean mock) {
+        if (BooleanUtils.isTrue(mock)) {
+            //return ResponseDto.success(loadMojarMock(region));
+        }
+        return ResponseDto.success(getspecila());
+    }
+    private List<String> getspecila(){//包含专业
+        List<String> specail = resStatisticsRepository.getSpecail();
+        return specail;
+    }
+
+    private List<ProfessionalDot> statistica(String speail,Integer page){
+        List<String> bigName = resStatisticsRepository.findBigName(speail);
+        List<String> strings=null;
+        int i=0;
+        i=bigName.size()/8;
+        if (bigName.size()%8!=0){
+            i=i+1;
+        }
+        if (bigName.size()>page*8){
+            strings = bigName.subList((page-1) * 8, (page-1) * 8 + 8);
+        }else {
+            strings = bigName.subList(bigName.size()/8*8,bigName.size()/8*8+bigName.size()%8);
+        }
+        List<ResStatisticsHeadquarters> bySpeali = resStatisticsRepository.findBySpeali(speail, strings);
+        Map<String, List<ResStatisticsHeadquarters>> collect1 = bySpeali.stream().collect(Collectors.groupingBy(ResStatisticsHeadquarters::getResName));
+        ArrayList<ResourcesDto> lists2 = new ArrayList<>();
+        ArrayList<ProfessionalDot> lists1 = new ArrayList<>();
+        for (Map.Entry<String, List<ResStatisticsHeadquarters>> colle:collect1.entrySet()){
+            ResStatisticsHeadquarters key = null;//取 这个键 来按大指标 查找对应的 专业的总数据
+            ArrayList<ResourcesDetailsDto> resourcesDetailsDtos = new ArrayList<>();
+            List<ResStatisticsHeadquarters> value = colle.getValue();
+            for (ResStatisticsHeadquarters val:value) {
+                if (val.getResType().equals("总数量")){
+                    key=val;
+                }else {
+                    val.setAmount(0.0);
+                    key=val;
+                }
+                resourcesDetailsDtos.add(ResourcesDetailsDto.builder()
+                        .name(val.getResType())
+                        .num(String.valueOf(val.getAmount()))
+                        .unit(val.getUnit()).build());
+            }
+
+            lists2.add(ResourcesDto.builder()
+                    .resourcesName(key.getResName())
+                    .allValue(String.valueOf(key.getAmount()))
+                    .allUnit(key.getUnit())
+                    .nums(resourcesDetailsDtos).build());
+        }
+        lists1.add(ProfessionalDot.builder()
+                .speciality(speail)
+                .page(i)
+                .resourcesDtosn(lists2).build());
+        return lists1;
+    }
+
     @ApiOperation("省端自维资源柱状图")
     @GetMapping("/graphical/statistics/{speciality}/{resname}")
     public ResponseDto<List<RegionItemDto>> graphical (
@@ -394,28 +459,35 @@ public class HeadquartersHealingController {
             //return ResponseDto.success(loadMojarMock(region));
         }
         exceldowns(speciality,request,response);
-        System.out.println(speciality);
     }
 
     private void exceldowns(List<String> speciality, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        ArrayList<ExcelDownData> list = new ArrayList<>();
-
+//        ArrayList<ExcelDownData> list = new ArrayList<>();
+//
+//        for (String specia:speciality) {
+//            ExcelDownData excelDownData = excelData(specia);
+//            ExcelDownData excelDownData1 = new ExcelDownData();
+//            if (excelDownData==null){
+//                excelDownData1.setSpeciality(specia);//这个是空的地址用的
+//                list.add(excelDownData1);
+//            }else {
+//                list.add(excelDownData);
+//            }
+//
+//        }
+//        Map<String, List<ExcelDownData>> collect = list.stream().collect(Collectors.groupingBy(ExcelDownData::getSpeciality));
+//        ExcelUtils.exportExcel(request,response,speciality,collect);
+        Map<String, ExcelDownData> map = new HashMap<>();
         for (String specia:speciality) {
             ExcelDownData excelDownData = excelData(specia);
-            ExcelDownData excelDownData1 = new ExcelDownData();
-            if (excelDownData==null){
-                excelDownData1.setSpeciality(specia);//这个是空的地址用的
-                list.add(excelDownData1);
-            }else {
-                list.add(excelDownData);
-            }
-
+            map.put(specia,excelDownData);
         }
-        Map<String, List<ExcelDownData>> collect = list.stream().collect(Collectors.groupingBy(ExcelDownData::getSpeciality));
-        ExcelUtils.exportExcel(request,response,speciality,collect);
+        ExcelUtils.exportExcels(request,response,speciality,map);
     }
 
+
     private ExcelDownData excelData(String speciality){
+
         List<ResStatisticsHeadquarters> byTaskCodeIn = new ArrayList<>();
         List<String> splityCode=new ArrayList<>();
         if (speciality.equals("网络云")){
@@ -424,12 +496,7 @@ public class HeadquartersHealingController {
         }else {
             byTaskCodeIn = resStatisticsRepository.findSplityAll(speciality);//当前专业的 所有信息
             splityCode=resStatisticsRepository.findSplityCode(speciality);//当前专业的 有哪些地址
-            if(speciality.equals("5GC")||speciality.equals("NFV")){
-                List<String> strings = getSpeciality();
-                for (String string:strings) {
-                    splityCode.remove(string);
-                }
-            }
+
         }
         LinkedHashMap<String, List<ResStatisticsHeadquarters>> collect = new LinkedHashMap<>();
         for (ResStatisticsHeadquarters taskcode:byTaskCodeIn) {
@@ -461,10 +528,7 @@ public class HeadquartersHealingController {
             }
             stringArrayListHashMap.put(colle.getKey(),strings);//所有指标
             ResStatisticsHeadquarters resStatisticsHeadquarters = new ResStatisticsHeadquarters();
-            resStatisticsHeadquarters.setResName("总和");
             wei.add(value.get(0).getUnit());
-            strings2.add(resStatisticsHeadquarters.getResName());
-            value.add(resStatisticsHeadquarters);
         }
         //上面有了 当前专业的  第一行  第二行
         ArrayList<String> strings = new ArrayList<>();
@@ -515,6 +579,49 @@ public class HeadquartersHealingController {
             excelDownData.setStrings(strings1);
             excelDownData.setStringss(strings2);
             excelDownData.setWei(wei);
+        }
+        return excelDownData;
+    }
+
+
+    private ExcelDownData excelDatas(String speciality){
+        long l = System.currentTimeMillis();
+        log.info(speciality+"开始"+l);
+        //获取前三行数据
+        List<ResStatisticsHeadquarters> splityAll = resStatisticsRepository.getData(speciality);//当前专业的 所有信息
+        List<String> splityCodetow = resStatisticsRepository.findSplityCode(speciality);//当前专业的 有哪些地址
+        List<String> bigName = resStatisticsRepository.findBigName(speciality);//第一行
+
+        List<Integer> findone = new ArrayList<>();//第一行数量
+        Map<String, List<ResStatisticsHeadquarters>> collect = splityAll.stream().collect(Collectors.groupingBy(ResStatisticsHeadquarters::getResName));
+        for (String name:bigName) {
+            findone.add(collect.get(name).size());
+        }
+        ArrayList<String> stringstow = new ArrayList<>();//第2行
+        ArrayList<String> stringsthree = new ArrayList<>();//第3行
+        for (ResStatisticsHeadquarters splity:splityAll) {
+            stringstow.add(splity.getResType());
+            stringsthree.add(splity.getUnit());
+        }
+        HashMap<String, List<String>> map = new HashMap<>();//数据
+        for (String code:splityCodetow) {
+            List<String> data = resStatisticsRepository.findData(speciality, code);
+            map.put(code,data);
+        }
+        List<String> findall = resStatisticsRepository.findall(speciality);//总计
+        long l2 = System.currentTimeMillis();
+        log.info(speciality+"计算结束"+l2);
+        ExcelDownData excelDownData = new ExcelDownData();
+        if (findone.size()==0){
+            excelDownData=null;
+        }else {
+            excelDownData.setSpeciality(speciality);
+            excelDownData.setAlldata((ArrayList<String>) findall);
+            excelDownData.setMap(map);
+            excelDownData.setOnenum((ArrayList<Integer>) findone);
+            excelDownData.setStrings((ArrayList<String>) bigName);
+            excelDownData.setStringss(stringstow);
+            excelDownData.setWei(stringsthree);
         }
         return excelDownData;
     }
