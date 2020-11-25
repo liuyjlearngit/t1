@@ -229,7 +229,11 @@ public class ExcelUtils {
                 }
 
             }else {
-                sheet.addMergedRegion(new CellRangeAddress(0, 0, integers[i]+1, integers[i+1]));
+                if (integers[i]+1==integers[i+1]){
+                    break;
+                }else {
+                    sheet.addMergedRegion(new CellRangeAddress(0, 0, integers[i]+1, integers[i+1]));
+                }
             }
 
         }

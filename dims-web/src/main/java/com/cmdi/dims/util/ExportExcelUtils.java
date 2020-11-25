@@ -430,7 +430,7 @@ public class ExportExcelUtils {
         HSSFWorkbook wb = new HSSFWorkbook();
 
         /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
-        HSSFSheet sheet = wb.createSheet("excel导出指标详情");
+        HSSFSheet sheet = wb.createSheet(name);
 
         /** 第三步，设置样式以及字体样式*/
         HSSFCellStyle titleStyle = createTitleCellStyle(wb);

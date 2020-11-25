@@ -462,27 +462,27 @@ public class HeadquartersHealingController {
     }
 
     private void exceldowns(List<String> speciality, HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        ArrayList<ExcelDownData> list = new ArrayList<>();
-//
-//        for (String specia:speciality) {
-//            ExcelDownData excelDownData = excelData(specia);
-//            ExcelDownData excelDownData1 = new ExcelDownData();
-//            if (excelDownData==null){
-//                excelDownData1.setSpeciality(specia);//这个是空的地址用的
-//                list.add(excelDownData1);
-//            }else {
-//                list.add(excelDownData);
-//            }
-//
-//        }
-//        Map<String, List<ExcelDownData>> collect = list.stream().collect(Collectors.groupingBy(ExcelDownData::getSpeciality));
-//        ExcelUtils.exportExcel(request,response,speciality,collect);
-        Map<String, ExcelDownData> map = new HashMap<>();
+        ArrayList<ExcelDownData> list = new ArrayList<>();
+
         for (String specia:speciality) {
             ExcelDownData excelDownData = excelData(specia);
-            map.put(specia,excelDownData);
+            ExcelDownData excelDownData1 = new ExcelDownData();
+            if (excelDownData==null){
+                excelDownData1.setSpeciality(specia);//这个是空的地址用的
+                list.add(excelDownData1);
+            }else {
+                list.add(excelDownData);
+            }
+
         }
-        ExcelUtils.exportExcels(request,response,speciality,map);
+        Map<String, List<ExcelDownData>> collect = list.stream().collect(Collectors.groupingBy(ExcelDownData::getSpeciality));
+        ExcelUtils.exportExcel(request,response,speciality,collect);
+//        Map<String, ExcelDownData> map = new HashMap<>();
+//        for (String specia:speciality) {
+//            ExcelDownData excelDownData = excelData(specia);
+//            map.put(specia,excelDownData);
+//        }
+//        ExcelUtils.exportExcel(request,response,speciality,map);
     }
 
 
@@ -515,7 +515,7 @@ public class HeadquartersHealingController {
         wei.add("统计单位");
         for (Map.Entry<String, List<ResStatisticsHeadquarters>> colle:collect.entrySet()){
             strings1.add(colle.getKey());
-            strings3.add(colle.getValue().size()+1);
+            strings3.add(colle.getValue().size());
             List<ResStatisticsHeadquarters> value = colle.getValue();
             ArrayList<String> strings = new ArrayList<String>();
 
@@ -528,7 +528,6 @@ public class HeadquartersHealingController {
             }
             stringArrayListHashMap.put(colle.getKey(),strings);//所有指标
             ResStatisticsHeadquarters resStatisticsHeadquarters = new ResStatisticsHeadquarters();
-            wei.add(value.get(0).getUnit());
         }
         //上面有了 当前专业的  第一行  第二行
         ArrayList<String> strings = new ArrayList<>();
@@ -542,9 +541,7 @@ public class HeadquartersHealingController {
                     Double integer = data.get(val);
                     Double i = integer == null ? 0 : integer == null ? 0 : integer;
                     str+=","+i;
-                    sum+=i;
                 }
-                str+=","+sum;
             }
             strings.add(str);
         }
@@ -552,7 +549,7 @@ public class HeadquartersHealingController {
         String end="合计";
         for (Map.Entry<String, List<String>> colle:stringArrayListHashMap.entrySet()) {
             Map<String, Double> byTaskCodeIns ;
-            if (speciality.equals("5GC")||speciality.equals("NFV")){
+            if (speciality.equals("网络云")){
                 byTaskCodeIns = resStatisticsRepository.findSplityAllsql(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
             }else {
                 byTaskCodeIns = resStatisticsRepository.findSplityAllsqlong(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
@@ -563,9 +560,7 @@ public class HeadquartersHealingController {
                 Double integer = byTaskCodeIns.get(val);
                 Double i = integer == null ? 0 : integer == null ? 0 : integer;
                 end+=","+i;
-                sum+=i;
             }
-            end+=","+sum;
         }
 
         ExcelDownData excelDownData = new ExcelDownData();

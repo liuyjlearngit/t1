@@ -80,9 +80,7 @@ public class HeadquartersResourcesController {
         ArrayList<ProfessionalDot> lists1 = new ArrayList<>();
         List<String> specail = resStatisticsRepository.findDistinctBySpecialityNameData();
         ArrayList<DownExcel> dictDtos = new ArrayList<>();
-        for (String str:specail) {
-            dictDtos.add(DownExcel.builder().region(str).build());
-        }
+
         lists1.add(ProfessionalDot.builder().name(dictDtos).pageData(specail).build());
         return lists1;
     }
