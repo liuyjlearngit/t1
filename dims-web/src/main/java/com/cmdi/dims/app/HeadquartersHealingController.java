@@ -549,11 +549,9 @@ public class HeadquartersHealingController {
         String end="合计";
         for (Map.Entry<String, List<String>> colle:stringArrayListHashMap.entrySet()) {
             Map<String, Double> byTaskCodeIns ;
-            if (speciality.equals("网络云")){
-                byTaskCodeIns = resStatisticsRepository.findSplityAllsql(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
-            }else {
+
                 byTaskCodeIns = resStatisticsRepository.findSplityAllsqlong(speciality,colle.getKey()).stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
-            }
+
             List<String> value = colle.getValue();
             Double sum=0.0;
             for (String val:value) {
@@ -624,7 +622,6 @@ public class HeadquartersHealingController {
     private Map<String, Double> getData(String speciality,String big,String code){
         List<ResStatisticsHeadquarters> byTaskCodeIn = new ArrayList<>();
             byTaskCodeIn = resStatisticsRepository.findAll(speciality,big,code);
-
         Map<String, Double> collect = byTaskCodeIn.stream().collect(Collectors.toMap(ResStatisticsHeadquarters::getResType, ResStatisticsHeadquarters::getAmount));
         return collect;
     }

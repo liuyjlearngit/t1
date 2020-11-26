@@ -666,8 +666,8 @@ public class ExportExcelUtils {
         /** 第一步，创建一个Workbook，对应一个Excel文件  */
         HSSFWorkbook wb = new HSSFWorkbook();
         /** 第二步，在Workbook中添加一个sheet,对应Excel文件中的sheet  */
-        String templateName = name+"-"+"核查指标统计-"+ LocalDateTime.now().toLocalDate()+".xls";
-        HSSFSheet sheet = wb.createSheet(templateName);
+        String templateName = name+"-"+"核查指标统计-"+ LocalDateTime.now().toLocalDate();
+        HSSFSheet sheet = wb.createSheet(LocalDateTime.now().toLocalDate()+"");
 
         /** 第三步，设置样式以及字体样式*/
         HSSFCellStyle titleStyle = createTitleCellStyle(wb);
@@ -677,14 +677,21 @@ public class ExportExcelUtils {
         /** 第四步，创建标题 ,合并标题单元格 */
         // 行号
         int rowNum = 0;
+
+        HSSFRow row1 = sheet.createRow(rowNum++);
+        row1.setHeight((short)800);
+        HSSFCell cell1 = row1.createCell(0);
+        cell1.setCellValue(templateName);
+        cell1.setCellStyle(titleStyle);
+        sheet.addMergedRegion(new CellRangeAddress(0, 0, 0,integerstow.size() ));
+
         // 创建第一页的第一行，索引从0开始
         HSSFRow row0 = sheet.createRow(rowNum++);
-        row0.setHeight((short) 800);// 设置行高
+        row0.setHeight((short) 500);// 设置行高
 
         HSSFCell c00 = row0.createCell(0);
         c00.setCellValue("资源对象");
         c00.setCellStyle(headerStyle);
-
 
 
         //第一行 数据开始
@@ -711,14 +718,14 @@ public class ExportExcelUtils {
                 if (integers[i+1]==1){
 
                 }else {
-                    sheet.addMergedRegion(new CellRangeAddress(0, 0, 1, integers[i+1]));
+                    sheet.addMergedRegion(new CellRangeAddress(1, 1, 1, integers[i+1]));
                 }
 
             }else {
                 if (integers[i]+1==integers[i+1]){
                     break;
                 }else {
-                    sheet.addMergedRegion(new CellRangeAddress(0, 0, integers[i]+1, integers[i+1]));
+                    sheet.addMergedRegion(new CellRangeAddress(1, 1, integers[i]+1, integers[i+1]));
                 }
             }
 
@@ -777,7 +784,7 @@ public class ExportExcelUtils {
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Content-Type", "application/octet-stream;charset=utf-8"); // 告诉浏览器输出内容为流
         response.setHeader("Content-Disposition",
-                "attachment;filename=" + URLEncoder.encode(templateName, "UTF-8"));
+                "attachment;filename=" + URLEncoder.encode(templateName+".xls", "UTF-8"));
         ServletOutputStream stream = response.getOutputStream();
 
         if (null != wb && null != stream) {

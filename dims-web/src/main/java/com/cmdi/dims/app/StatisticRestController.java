@@ -1516,7 +1516,7 @@ public class StatisticRestController {
         ArrayList<Integer> integers = new ArrayList<>();
         ArrayList<String> integerstow = new ArrayList<>();
 
-        String name="全国";
+        String name="全国-";
         AreaCodeConfig byCode=null;
         if (!region.equals("null")){
              byCode = areaCodeConfigRepository.findByCode(region);
@@ -1530,10 +1530,12 @@ public class StatisticRestController {
             strings1.addAll(map.get("1"));
             integerstow.addAll(map.get("2"));
         }
+        name=name.substring(0,name.length()-1);
         Integer flg=region.equals("null")?1:byCode.getRegionType()+1;;
         LinkedHashMap<String, List<String>> map = new LinkedHashMap<>();
         ArrayList<String> end = new ArrayList<>();
-        NumberFormat num = NumberFormat.getPercentInstance();
+        NumberFormat nf = java.text.NumberFormat.getPercentInstance();
+        nf.setMinimumFractionDigits(2);
         if (flg==1){
             List<AreaCodeConfig> getspecat = getspecat();
             for (AreaCodeConfig code:getspecat) {
@@ -1550,8 +1552,7 @@ public class StatisticRestController {
                             doubles.add("无数据");
                         }else {
                             Double byAll = taskItemIndexRepository.findByAll(co, str);
-                            String format = num.format(byAll);
-                            doubles.add(format);
+                            doubles.add(nf.format(byAll));
                         }
 
                     }
@@ -1561,12 +1562,15 @@ public class StatisticRestController {
             }
             for (String code:speciality) {
                 List<String> bys = taskLatestRepository.findBys(code);
+                if (bys.size()==0){
+                    bys.add("");
+                }
                 ArrayList<String> strings = hashMap.get(code);
                 for (String str:strings) {
                     Double byone = taskItemIndexRepository.findByone(bys, str);
                     String format="无数据";
                     if (byone!=null){
-                        format = num.format(byone/bys.size());
+                        format =nf.format(byone/bys.size());
                     }
                     end.add(format);
                 }
@@ -1594,8 +1598,7 @@ public class StatisticRestController {
                             if (byAll == null) {
                                     doubles.add("无数据");
                             }else {
-                            String format = num.format(byAll);
-                            doubles.add(format);
+                            doubles.add(nf.format(byAll));
                         }
 
                     }
@@ -1604,13 +1607,15 @@ public class StatisticRestController {
                 map.put(code.getName(),doubles);
             }
             List<String> bys = taskLatestRepository.findByAll(region);
+            if (bys.size()==0){
+                bys.add("");
+            }
             for (String str:strings1) {
                 Double byone = taskItemIndexRepository.findByonetow(bys, str);
                 if (byone == null) {
                     end.add("无数据");
                 }else {
-                    String format = num.format(byone);
-                    end.add(format);
+                    end.add(nf.format(byone));
                 }
 
             }
@@ -1637,8 +1642,7 @@ public class StatisticRestController {
                         if (byAll == null) {
                             doubles.add("无数据");
                         }else {
-                            String format = num.format(byAll);
-                            doubles.add(format);
+                            doubles.add(nf.format(byAll));
                         }
 
                     }
@@ -1647,13 +1651,15 @@ public class StatisticRestController {
                 map.put(code.getName(),doubles);
             }
             List<String> bys = taskLatestRepository.findByAll(substring+"0000");
+            if (bys.size()==0){
+                bys.add("");
+            }
             for (String str:strings1) {
                 Double byone = taskItemIndexRepository.findByonefor(bys,region, str);
                 if (byone == null) {
                     end.add("无数据");
                 }else {
-                    String format = num.format(byone);
-                    end.add(format);
+                    end.add(nf.format(byone));
                 }
             }
         }

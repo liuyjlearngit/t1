@@ -820,7 +820,44 @@ public class ChkresultProvinceController {
     private void exportdowns(HttpServletResponse response, String region, List<String> speciality) throws SQLException, IOException, ParseException {
         String byversionMax =chkresultProvinceRepository.findByversionMax();
         if (StringUtils.isNotEmpty(region)){
-            ChkresultProvince byVersionAndName = chkresultProvinceRepository.findByVersionAndName(byversionMax, region);
+            List<SpecificationsDto> specificationsDtos = loadGlobalMojar(region);
+            Map<String, List<SpecificationsDto>> collect = specificationsDtos.stream().collect(Collectors.groupingBy(SpecificationsDto::getSpeciality));
+            ArrayList<Double> three = new ArrayList<>();
+            for (String special:speciality) {
+                SpecificationsDto specificationsDto = collect.get(special).get(0);
+                Boolean judge = judge(special);
+                if (judge){
+                    three.add(specificationsDto.getTotalValue());
+                    three.add(specificationsDto.getIntegrityValue());
+                    three.add(specificationsDto.getNormativityValue());
+                    three.add(specificationsDto.getAssociationValue());
+                    three.add(specificationsDto.getComplianceValue());
+                }else {
+                    three.add(specificationsDto.getTotalValue());
+                    three.add(specificationsDto.getIntegrityValue());
+                    three.add(specificationsDto.getNormativityValue());
+                    three.add(specificationsDto.getAssociationValue());
+                }
+            }
+
+
+            HashMap<String, ArrayList<Double>> hashMap = new HashMap<>();
+            HashMap<String, Object> hashMap1 = excelAdd(speciality);
+            ArrayList<String> one = (ArrayList<String>) hashMap1.get("指标");
+            ArrayList<Integer> num = (ArrayList<Integer>) hashMap1.get("数量");
+            List<AreaCodeConfig> areaCodeConfigs = loadRegion(region);
+            ArrayList<Double> doubles = new ArrayList<>();
+            doubles.add(0.0);
+            doubles.add(0.0);
+            doubles.add(0.0);
+            doubles.add(0.0);
+            doubles.add(0.0);
+            for (AreaCodeConfig areaCodeConfig:areaCodeConfigs) {
+                hashMap.put(areaCodeConfig.getName(),doubles);
+            }
+            AreaCodeConfig byCode = areaCodeConfigRepository.findByCode(region);
+            String name=byCode.getName();
+            ExportExcelUtils.exportExcelHead(response,one,num,hashMap,name,speciality,three);
 
         }else {//全国
             List<SpecificationsDto> specificationsDtos = loadGlobalMojar(region);
