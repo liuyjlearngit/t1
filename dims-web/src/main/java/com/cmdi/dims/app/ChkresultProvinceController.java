@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.text.Collator;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -89,6 +90,10 @@ public class ChkresultProvinceController {
         public List<AreaCodeConfig> getspecat(){
             List<AreaCodeConfig> byRegionTypeOrderByCode = areaCodeConfigRepository.findByRegionTypeOrderByCode(1);
             ArrayList<AreaCodeConfig> areaCodeConfigs = new ArrayList<>();
+            Comparator comparator = Collator.getInstance(Locale.CHINA);
+            Collections.sort(byRegionTypeOrderByCode, (u1, u2) -> {
+                return comparator.compare(u1.getName(), u2.getName());
+            });
             for (AreaCodeConfig areaCodeConfig:byRegionTypeOrderByCode) {
                 String code = areaCodeConfig.getCode();
                 if (code.equals("710000")||code.equals("810000")||code.equals("820000")){
@@ -102,7 +107,7 @@ public class ChkresultProvinceController {
     //获取所有地区编码
     public HashMap<String, String> Regions(){
         List<AreaCodeConfig> byRegionTypeOrderByCode = getspecat();
-        HashMap<String, String> stringStringHashMap = new HashMap<>();
+        LinkedHashMap<String, String> stringStringHashMap = new LinkedHashMap<>();
         for (AreaCodeConfig region:byRegionTypeOrderByCode) {
             String name = region.getName().substring(region.getName().length()-1);
             if (name.equals("省")){
@@ -847,11 +852,14 @@ public class ChkresultProvinceController {
             ArrayList<Integer> num = (ArrayList<Integer>) hashMap1.get("数量");
             List<AreaCodeConfig> areaCodeConfigs = loadRegion(region);
             ArrayList<Double> doubles = new ArrayList<>();
-            doubles.add(0.0);
-            doubles.add(0.0);
-            doubles.add(0.0);
-            doubles.add(0.0);
-            doubles.add(0.0);
+            for (int i=0;i<one.size();i++) {
+                doubles.add(0.0);
+
+            }
+            Comparator comparator = Collator.getInstance(Locale.CHINA);
+            Collections.sort(areaCodeConfigs, (u1, u2) -> {
+                return comparator.compare(u1.getName(), u2.getName());
+            });
             for (AreaCodeConfig areaCodeConfig:areaCodeConfigs) {
                 hashMap.put(areaCodeConfig.getName(),doubles);
             }
@@ -881,7 +889,7 @@ public class ChkresultProvinceController {
             }
 
 
-            HashMap<String, ArrayList<Double>> hashMap = new HashMap<>();
+            LinkedHashMap<String, ArrayList<Double>> hashMap = new LinkedHashMap<>();
             HashMap<String, Object> hashMap1 = excelAdd(speciality);
             ArrayList<String> one = (ArrayList<String>) hashMap1.get("指标");
             ArrayList<Integer> num = (ArrayList<Integer>) hashMap1.get("数量");
