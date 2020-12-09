@@ -10,9 +10,9 @@ spring:
       password: dims@123
     second:
       driver-class-name: org.postgresql.Driver
-      url: jdbc:postgresql://192.168.137.130:5432/dims-test
+      url: jdbc:postgresql://10.252.243.186:5432/quartz
       username: postgres
-      password: postgres
+      password: Vn_1aas
     tomcat:
       validation-query: select 1
       test-on-borrow: true

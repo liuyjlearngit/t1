@@ -87,6 +87,12 @@ public class FileProcessTasklet extends AbstractDimsTasklet {
                 Assert.hasLength(header, "header not found");
 
                 Map<String, Integer> upperHeaderMap = BatchUtil.headerMapOf(header, delimiter);
+                if(upperHeaderMap.size() < StringUtils.splitPreserveAllTokens(header, delimiter).length){
+                    success = false;
+                    errorMessage = "对象文件" + taskItemFile.getCsvFile() +"表头字段重复，无法入库！";
+                    log.info("对象文件" + taskItemFile.getCsvFile() +"表头字段重复，无法入库！");
+                    throw new Exception(errorMessage);
+                }
                 BatchUtil.validateHeader(upperHeaderMap, metadata);
                 int columnSize = upperHeaderMap.size();
 

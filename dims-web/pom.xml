@@ -176,7 +176,7 @@
                     <password>lizhongnan</password>
                 </configuration>-->
                 <configuration>
-                    <url>jdbc:postgresql://192.168.137.128/dims</url>
+                    <url>jdbc:postgresql://192.168.137.101/dims</url>
                     <user>postgres</user>
                     <password>postgres</password>
                 </configuration>
