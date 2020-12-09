@@ -131,11 +131,6 @@ public class ChkresultProvinceController {
         return f1;
     }
 
-    public void abc(){
-        System.out.println("111");
-    }
-
-
     @ApiOperation("首屏统计信息用户地图按省份展示和按专业列表展示")
     @GetMapping("/global")
     public ResponseDto<StatisticResultDto> global(
