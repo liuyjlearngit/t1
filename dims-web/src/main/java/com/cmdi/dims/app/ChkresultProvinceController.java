@@ -3,9 +3,11 @@ package com.cmdi.dims.app;
 
 import cn.hutool.core.lang.Assert;
 import com.cmdi.dims.app.dto.*;
-import com.cmdi.dims.index.entity.Index;
 import com.cmdi.dims.index.repository.IndexRepository;
-import com.cmdi.dims.jdbctemple.entity.*;
+import com.cmdi.dims.jdbctemple.entity.ChkresultProvince;
+import com.cmdi.dims.jdbctemple.entity.ChkresultStaticsProvinceRule;
+import com.cmdi.dims.jdbctemple.entity.ErrorData;
+import com.cmdi.dims.jdbctemple.entity.MetricCityResult;
 import com.cmdi.dims.jdbctemple.service.impl.*;
 import com.cmdi.dims.task.entity.AreaCodeConfig;
 import com.cmdi.dims.task.repository.AreaCodeConfigRepository;
@@ -14,7 +16,6 @@ import com.cmdi.dims.util.ExportExcelUtils;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +25,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.text.Collator;
 import java.text.NumberFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -131,6 +130,11 @@ public class ChkresultProvinceController {
         double   f1   =   b.setScale(4,   BigDecimal.ROUND_HALF_UP).doubleValue();
         return f1;
     }
+
+    public void abc(){
+        System.out.println("111");
+    }
+
 
     @ApiOperation("首屏统计信息用户地图按省份展示和按专业列表展示")
     @GetMapping("/global")
